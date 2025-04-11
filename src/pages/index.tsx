@@ -13,10 +13,10 @@ export default function Hello() {
     return (
         <Layout title="Course Overview" description="CS 2100 Course Overview">
             <Box p={4}>
-                <Heading size='xl'>CS 2100: Program Design and Implementation I</Heading>
+                <Heading size='xl'>CS 2000: Introduction to Program Design and Implementation</Heading>
                 <Blockquote.Root>
                     <Blockquote.Content>
-                    Building on intro programming experience (from CS 2000 or a different institution), examines the fundamentals of program design and implementation. Studies design of data and object-oriented programs, including common patterns, use of data structures, and underlying principles such as abstraction, encapsulation, inheritance, and interfaces. Introduces common software engineering practices such as test-driven development, version control, development environments, and good programming habits. Practices using these design principles by writing medium-sized applications and using data science code libraries. Continues to interweave ethical challenges and skills in program design.
+                    Introduces computer science and data science to students with no programming experience. Starts by building programs with numbers, text, and images, then moves to exploring real, complex data sets both interactively and through coding. Students then practice coding using a popular industrial language with a professional programmer’s interface to the code. Students learn to identify and respond to ethical challenges in program design. 
                     </Blockquote.Content>
                 </Blockquote.Root>
                 <Alert.Root status='warning'>
