@@ -49,6 +49,7 @@ const config: Config = {
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
         },
+        pages: {},
         blog: false,
         theme: {
           customCss: './src/css/custom.css',

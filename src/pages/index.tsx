@@ -11,7 +11,7 @@ import { LuConstruction } from 'react-icons/lu';
 export default function Hello() {
     const pluginData = usePluginData('docusaurus-plugin-content-docs') as GlobalPluginData;
     return (
-        <Layout title="Course Overview" description="CS 2100 Course Overview">
+        <Layout title="Course Overview" description="CS 2000 Course Overview">
             <Box p={4}>
                 <Heading size='xl'>CS 2000: Introduction to Program Design and Implementation</Heading>
                 <Blockquote.Root>
