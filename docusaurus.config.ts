@@ -83,7 +83,16 @@ const config: Config = {
           position: 'left',
           label: 'Lecture Notes',
         },
-      
+        {
+          position: 'left',
+          to: '/schedule/',
+          label: 'Schedule',
+        },
+        {
+          position: 'left',
+          to: '/outcomes/',
+          label: 'Outcomes',
+        },
       ],
     },
     footer: {
