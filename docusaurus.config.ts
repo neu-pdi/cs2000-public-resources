@@ -44,7 +44,7 @@ const config: Config = {
         docs: {
           path: 'lecture-notes',
           routeBasePath: 'lecture-notes',
-          sidebarPath: './sidebars.ts',
+          sidebarPath: './sidebars/lecture-notes.ts',
           editUrl: 'https://github.com/neu-pdi/cs2000-public-resources/edit/main/lecture-notes/',
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
@@ -55,6 +55,18 @@ const config: Config = {
           customCss: './src/css/custom.css',
         },
       } satisfies Preset.Options,
+    ],
+  ],
+
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'homework',
+        path: 'homework',
+        sidebarPath: './sidebars/homework.ts',
+        routeBasePath: 'homework',
+      },
     ],
   ],
   stylesheets: [
@@ -78,15 +90,22 @@ const config: Config = {
       },
       items: [
         {
+          position: 'left',
+          to: '/schedule/',
+          label: 'Schedule',
+        },
+        {
           type: 'docSidebar',
           sidebarId: 'lectureNotesSidebar',
           position: 'left',
           label: 'Lecture Notes',
         },
         {
+          type: 'doc',
+          docId: '1',
           position: 'left',
-          to: '/schedule/',
-          label: 'Schedule',
+          label: 'Homework',
+          docsPluginId: 'homework',
         },
         {
           position: 'left',
