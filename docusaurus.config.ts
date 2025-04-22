@@ -68,6 +68,15 @@ const config: Config = {
         routeBasePath: 'homework',
       },
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'lab',
+        path: 'lab',
+        sidebarPath: './sidebars/lab.ts',
+        routeBasePath: 'lab',
+      },
+    ],
   ],
   stylesheets: [
     {
@@ -106,6 +115,13 @@ const config: Config = {
           position: 'left',
           label: 'Homework',
           docsPluginId: 'homework',
+        },
+        {
+          type: 'doc',
+          docId: '1',
+          position: 'left',
+          label: 'Labs',
+          docsPluginId: 'lab',
         },
         {
           position: 'left',

@@ -1,7 +1,9 @@
-+++
-title = "Course Project"
-weight = 0
-+++
+---
+sidebar_position: 0
+homework_number: 0
+hide_table_of_contents: true
+title: Course Project
+---
 
 The Course Project will be split into multiple assignments, spread throughout
 the course. In order to more easily understand its full scope, this page
