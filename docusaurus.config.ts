@@ -77,6 +77,15 @@ const config: Config = {
         routeBasePath: 'lab',
       },
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'recitation',
+        path: 'recitation',
+        sidebarPath: './sidebars/recitation.ts',
+        routeBasePath: 'recitation',
+      },
+    ],
   ],
   stylesheets: [
     {
@@ -122,6 +131,13 @@ const config: Config = {
           position: 'left',
           label: 'Labs',
           docsPluginId: 'lab',
+        },
+        {
+          type: 'doc',
+          docId: '1',
+          position: 'left',
+          label: 'Recitations',
+          docsPluginId: 'recitation',
         },
         {
           position: 'left',
