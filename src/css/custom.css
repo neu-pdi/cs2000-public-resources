@@ -28,3 +28,9 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+
+.override-target, :target {
+  background-color: #ffe030;
+  scroll-margin-top: 200px;
+}

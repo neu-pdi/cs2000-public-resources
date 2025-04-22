@@ -5,50 +5,51 @@ description: Learning Outcomes
 hide_table_of_contents: true
 ---
 
-1. Students can identify input / output data for particular problems, and write them down formally as type annotations.
-   1. <a href="#(1.1)"></a>Simple types: numbers, strings, booleans, images, tables
-   2. Parametric types: Lists, Trees
-   3. Limitations of signatures in capturing _effects_. 
-2. Students can write thorough test suites for functions of varying complexity.
-   1. What is a test? How do I write one?
-   2. What makes a set of tests "good" -- edge cases, coverage, concise.
-3. Students can clearly articulate, in precise language, documentation strings for functions. 
-   1. What is a docstring for?
-   2. What should be in, and not be in, a good docstring?
-4. Students can solve smaller problem in the service of solving larger problems, without being told the breakdown ahead of time.
-   1. Separate types of data should have separate functions
-   2. Data transformations expressed as a sequence of simpler operations
-5. Students identify types of data that can be represented using tables, and write programs using common table operations.
-6. Students can write programs using mutable and immutable variables and mutable and immutable data. 
-   1. Loops over list with a single mutable variable
-   2. Difference between variable and value mutation.
-7. Students can identify pros and cons of using given data to solve the desired
+* 1\. Students can identify input / output data for particular problems, and write them down formally as type annotations.
+  *  <a id="(1.1)" href="#(1.1)">1.1\.</a> Simple types: numbers, strings, booleans, images, tables
+  * <a id="(1.2)" href="#(1.2)">1.2\.</a> Parametric types: Lists, Trees
+  * <a id="(1.3)" href="#(1.3)">1.3\.</a> Limitations of signatures in capturing _effects_.
+* 2\. Students can write thorough test suites for functions of varying complexity.
+  * <a id="(2.1)" href="#(2.1)">2.1\.</a> What is a test? How do I write one?
+  * <a id="(2.2)" href="#(2.2)">2.2\.</a> What makes a set of tests "good" -- edge cases, coverage, concise.
+* 3\. Students can clearly articulate, in precise language, documentation strings for functions.
+  * <a id="(3.1)" href="#(3.1)">3.1\.</a> What is a docstring for?
+  * <a id="(3.2)" href="#(3.2)">3.2\.</a> What should be in, and not be in, a good docstring?
+
+* 4\. Students can solve smaller problem in the service of solving larger problems, without being told the breakdown ahead of time.
+   * <a id="(4.1)" href="#(4.1)">4.1\.</a> Separate types of data should have separate functions
+   * <a id="(4.2)" href="#(4.2)">4.2\.</a> Data transformations expressed as a sequence of simpler operations
+* <a id="(5)" href="#(5)">5\.</a> Students identify types of data that can be represented using tables, and write programs using common table operations.
+* 6\. Students can write programs using mutable and immutable variables and mutable and immutable data. 
+   * <a id="(6.1)" href="#(6.1)">6.1\.</a> Loops over list with a single mutable variable
+   * <a id="(6.2)" href="#(6.2)">6.2\.</a> Difference between variable and value mutation.
+* 7\. Students can identify pros and cons of using given data to solve the desired
    problem, and identify and defend privacy issues in problems presented to them
    without being told there is a privacy issue to identify.
     
-    1. Given the functional requirements of the program to be built and an explicitly identified and concrete second objective (privacy, fairness, accessibility), students can identify ways in which the given data can be used to solve the primary problem while falling short on the secondary objective.
+    * <a id="(7.1)" href="#(7.1)">7.1\.</a> Given the functional requirements of the program to be built and an explicitly identified and concrete second objective (privacy, fairness, accessibility), students can identify ways in which the given data can be used to solve the primary problem while falling short on the secondary objective.
 
-    2. Given the functional requirements of the program to be built, students independently identify a way that using the given data to solve the problem would fall short on a second objective (privacy, fairness, accessibility) *when prompted to look for one*. 
+    * <a id="(7.2)" href="#(7.2)">7.2\.</a> Given the functional requirements of the program to be built, students independently identify a way that using the given data to solve the problem would fall short on a second objective (privacy, fairness, accessibility) *when prompted to look for one*. 
 
-    3. Given the functional requirements of the program to be built, students independently identify a way that using the given data to solve the problem would fall short on a second objective (privacy, fairness, accessibility) *without a prompt* after practice following a checklist. 
+    * <a id="(7.3)" href="#(7.3)">7.3\.</a> Given the functional requirements of the program to be built, students independently identify a way that using the given data to solve the problem would fall short on a second objective (privacy, fairness, accessibility) *without a prompt* after practice following a checklist. 
 
-    4. Given a definition of privacy and examples of privacy problems using that definition, students can identify new privacy issues of the same kind when cued to look for a privacy problem. 
+    * <a id="(7.4)" href="#(7.4)">7.4\.</a> Given a definition of privacy and examples of privacy problems using that definition, students can identify new privacy issues of the same kind when cued to look for a privacy problem. 
 
-    5. Relying on prior definitions of privacy, students can independently identify new privacy problems of the same kind given the cue to look for a problem but not the explicit cue to look for a privacy problem. 
+    * <a id="(7.5)" href="#(7.5)">7.5\.</a> Relying on prior definitions of privacy, students can independently identify new privacy problems of the same kind given the cue to look for a problem but not the explicit cue to look for a privacy problem. 
 
-    6. Given experience with specific solutions previously presented to them for privacy problems, students can suggest similar mitigations for new privacy problems.
+    * <a id="(7.6)" href="#(7.6)">7.6\.</a> Given experience with specific solutions previously presented to them for privacy problems, students can suggest similar mitigations for new privacy problems.
    
-8. Given a technical problem, students can (a) identify the stakeholders, (b) identify values and interests at stake for each stakeholder, (c) discuss conflicts of values, and (d) identify modifications that would mitigate conflicts of values.
+* 8\. Given a technical problem, students can (a) identify the stakeholders, (b) identify values and interests at stake for each stakeholder, (c) discuss conflicts of values, and (d) identify modifications that would mitigate conflicts of values.
 
-    1. Given a technical problem, students can (a) identify stakeholders relative to a certain problem (e.g. privacy), including at least one stakeholder not listed in the problem set-up. Notes: Stakeholders are relative to the concern you are addressing, so have to do it with a very specific concern (such as privacy). For privacy in particular, students should recognize that people related to or friends with a named party might also have a stake in the privacy of the named party.  Keep in mind that there are some stakeholders who are directly in contact with the technology and others who might be affected by the technology without being in contact with it. 
+    * <a id="(8.1)" href="#(8.1)">8.1\.</a> Given a technical problem, students can (a) identify stakeholders relative to a certain problem (e.g. privacy), including at least one stakeholder not listed in the problem set-up. Notes: Stakeholders are relative to the concern you are addressing, so have to do it with a very specific concern (such as privacy). For privacy in particular, students should recognize that people related to or friends with a named party might also have a stake in the privacy of the named party.  Keep in mind that there are some stakeholders who are directly in contact with the technology and others who might be affected by the technology without being in contact with it. 
 
-    2. Given a technical problem, students can (a) identify at least one stakeholder not listed in the problem setup and (b) identify at least one value and/or interest at stake for each stakeholder.
+    * <a id="(8.2)" href="#(8.2)">8.2\.</a> Given a technical problem, students can (a) identify at least one stakeholder not listed in the problem setup and (b) identify at least one value and/or interest at stake for each stakeholder.
   
-    3. Given a technical problem, students can (a) identify the stakeholders, including some not listed in the problem setup and (b) identify at least one value and/or interest at stake for each stakeholder and (c) identify conflicts between the values and/or interests of stakeholders.
+    * <a id="(8.3)" href="#(8.3)">8.3\.</a> Given a technical problem, students can (a) identify the stakeholders, including some not listed in the problem setup and (b) identify at least one value and/or interest at stake for each stakeholder and (c) identify conflicts between the values and/or interests of stakeholders.
 
-    4. Given a technical problem, students can (a) identify the stakeholders, including some not listed in the problem setup and (b) identify at least one value and/or interest at stake for each stakeholder, (c) identify conflicts between the values and/or interests of stakeholders and (d) recognize resolutions to value conflicts.  
+    * <a id="(8.4)" href="#(8.4)">8.4\.</a> Given a technical problem, students can (a) identify the stakeholders, including some not listed in the problem setup and (b) identify at least one value and/or interest at stake for each stakeholder, (c) identify conflicts between the values and/or interests of stakeholders and (d) recognize resolutions to value conflicts.  
 
-9. <a href="#(9)"></a>Students learn to work with others while solving problems.
+* <a id="(9)" href="#(9)">9\.</a> Students learn to work with others while solving problems.
 
  ## Assessable Outcomes by Week / Assignment
  
