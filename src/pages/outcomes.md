@@ -55,19 +55,19 @@ hide_table_of_contents: true
  
  Week | Topic | Lab Outcome | Homework Outcome
 -- | -- | -- | -- 
-1 | Programming with numbers, strings, images: IDE, interactions, operations on standard values | - | [1:](/homework/1.md) None
-2  | Definitions, functions, conditionals: type annotations, test cases | [1:](/lab/1.md) [7.1](#(7.1)), [9](#(9)) |[2:](/homework/2.md) [1.1](#(1.1)), [2.1](#(2.1)), [3.1](#(3.1)), [7.1](#(7.1))
-3  | Introduction to tables: constructing, importing, extracting | [2:](/lab/2.md) ?,9 | [3:](/homework/3.md) [1.1](#(1.1)), [2.1](#(2.1)), [3.1](#(3.1)), [5](#(5)), [7.2](#(7.2))
-4  | More on tables: transforming, filtering | [3:](/lab/3.md) ?, [9](#(9))| [4:](/homework/4.md) [1.1](#(1.1)), [2.1](#(2.1)), [3.2](#(3.2)), [4.2](#(4.2)), [5](#(5)), [7.3](#(7.3))
-5  | From tables to lists: extracting columns, performing operations on them, visualizing data | [4:](/lab/4.md) ?, [9](#(9)) | [5:](/homework/5.md) [1.1](#(1.1)), [2.1](#(2.1)), [3.2](#(3.2)), [5](#(5)), [7.4](#(7.4))
+1 | Programming with numbers, strings, images: IDE, interactions, operations on standard values | - | [1:](/homework/1) None
+2  | Definitions, functions, conditionals: type annotations, test cases | [1:](/lab/1) [7.1](#(7.1)), [9](#(9)) |[2:](/homework/2) [1.1](#(1.1)), [2.1](#(2.1)), [3.1](#(3.1)), [7.1](#(7.1))
+3  | Introduction to tables: constructing, importing, extracting | [2:](/lab/2) ?,9 | [3:](/homework/3) [1.1](#(1.1)), [2.1](#(2.1)), [3.1](#(3.1)), [5](#(5)), [7.2](#(7.2))
+4  | More on tables: transforming, filtering | [3:](/lab/3) ?, [9](#(9))| [4:](/homework/4) [1.1](#(1.1)), [2.1](#(2.1)), [3.2](#(3.2)), [4.2](#(4.2)), [5](#(5)), [7.3](#(7.3))
+5  | From tables to lists: extracting columns, performing operations on them, visualizing data | [4:](/lab/4) ?, [9](#(9)) | [5:](/homework/5) [1.1](#(1.1)), [2.1](#(2.1)), [3.2](#(3.2)), [5](#(5)), [7.4](#(7.4))
 6  | Computing with lists: iteration & mutable local variables | - | -
-7  | Structured data: towards trees | [5:](/lab/5.md) ?, [9](#(9)) | [6:](/homework/6.md) [1.2](#(1.2)), [2.2](#(2.2)), [6.1](#(6.1)), [4.2](#(4.2)), [7.5](#(7.5))
-8  | Working with trees: recursive functions | [6:](/lab/6.md) ?, [9](#(9))| [7:](/homework/7.md) [1.2](#(1.2)), [2.2](#(2.2)), [4.1](#(4.1)), [7.6](#(7.6)), [8.1](#(8.1))
-9  | More with trees | [7:](/lab/7.md) ?, [9](#(9)) | [8:](/homework/8.md) [1.2](#(1.2)), [2.2](#(2.2)), [4.2](#(4.2)), [8.2](#(8.2))
-10 | Transition to Python: IDE, files, definitions, testing | [8:](/lab/8.md) ?, [9](#(9)) | [9:](/homework/9.md) [8.3](#(8.3))
-11  | Transition to Python: more state & aliasing, loops, mutable data structures | [10:](/lab/10.md)  [9](#(9)) | [10:](/homework/10.md) [1.3](#(1.3)), [6.2](#(4.2)), [8.4](#(8.4))
+7  | Structured data: towards trees | [5:](/lab/5) ?, [9](#(9)) | [6:](/homework/6) [1.2](#(1.2)), [2.2](#(2.2)), [6.1](#(6.1)), [4.2](#(4.2)), [7.5](#(7.5))
+8  | Working with trees: recursive functions | [6:](/lab/6) ?, [9](#(9))| [7:](/homework/7) [1.2](#(1.2)), [2.2](#(2.2)), [4.1](#(4.1)), [7.6](#(7.6)), [8.1](#(8.1))
+9  | More with trees | [7:](/lab/7) ?, [9](#(9)) | [8:](/homework/8) [1.2](#(1.2)), [2.2](#(2.2)), [4.2](#(4.2)), [8.2](#(8.2))
+10 | Transition to Python: IDE, files, definitions, testing | [8:](/lab/8) ?, [9](#(9)) | [9:](/homework/9) [8.3](#(8.3))
+11  | Transition to Python: more state & aliasing, loops, mutable data structures | [10:](/lab/10)  [9](#(9)) | [10:](/homework/10) [1.3](#(1.3)), [6.2](#(4.2)), [8.4](#(8.4))
 12  | Tables in Python: pandas & matplotlib | - | - 
-13  | File I/O: csv files, via pandas and manually | [10:](/lab/10.md) ?, [9](#(9)) | - 
+13  | File I/O: csv files, via pandas and manually | [10:](/lab/10) ?, [9](#(9)) | - 
 14  | More with Python: catch up, bonus content, etc | - | -
 
 
