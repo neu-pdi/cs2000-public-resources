@@ -57,7 +57,7 @@ hide_table_of_contents: true
 -- | -- | -- | -- 
 1 | Programming with numbers, strings, images: IDE, interactions, operations on standard values | - | [1:](/homework/1.md) None
 2  | Definitions, functions, conditionals: type annotations, test cases | [1:](/lab/1.md) [7.1](#(7.1)), [9](#(9)) |[2:](/homework/2.md) [1.1](#(1.1)), [2.1](#(2.1)), [3.1](#(3.1)), [7.1](#(7.1))
-3  | Introduction to tables: constructing, importing, extracting | [2:](/lab/2.md) ?,9 | [3:](/homework/3.md)[1.1](#(1.1)), [2.1](#(2.1)), [3.1](#(3.1)), [5](#(5)), [7.2](#(7.2))
+3  | Introduction to tables: constructing, importing, extracting | [2:](/lab/2.md) ?,9 | [3:](/homework/3.md) [1.1](#(1.1)), [2.1](#(2.1)), [3.1](#(3.1)), [5](#(5)), [7.2](#(7.2))
 4  | More on tables: transforming, filtering | [3:](/lab/3.md) ?, [9](#(9))| [4:](/homework/4.md) [1.1](#(1.1)), [2.1](#(2.1)), [3.2](#(3.2)), [4.2](#(4.2)), [5](#(5)), [7.3](#(7.3))
 5  | From tables to lists: extracting columns, performing operations on them, visualizing data | [4:](/lab/4.md) ?, [9](#(9)) | [5:](/homework/5.md) [1.1](#(1.1)), [2.1](#(2.1)), [3.2](#(3.2)), [5](#(5)), [7.4](#(7.4))
 6  | Computing with lists: iteration & mutable local variables | - | -
