@@ -40,3 +40,7 @@ html[data-theme='dark'] *::selection {
   background-color: var(--target-background-color);
   scroll-margin-top: 200px;
 }
+
+em {
+  font-style: italic;
+}
