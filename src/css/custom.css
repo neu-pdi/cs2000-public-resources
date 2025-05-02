@@ -15,6 +15,7 @@
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --target-background-color: #ffe030;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -27,10 +28,11 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --target-background-color: #6f662e;
 }
 
 
 .override-target, :target {
-  background-color: #ffe030;
+  background-color: var(--target-background-color);
   scroll-margin-top: 200px;
 }
