@@ -22,6 +22,7 @@
     "@emotion/react": "^11.14.0",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
+    "common-tags": "^1.8.2",
     "html-entities": "^2.5.2",
     "next-themes": "^0.4.4",
     "prism-react-renderer": "^2.3.0",
@@ -37,6 +38,7 @@
     "@docusaurus/module-type-aliases": "3.7.0",
     "@docusaurus/tsconfig": "3.7.0",
     "@docusaurus/types": "3.7.0",
+    "@types/common-tags": "^1.8.4",
     "typescript": "~5.6.2"
   },
   "browserslist": {
