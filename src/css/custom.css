@@ -31,8 +31,12 @@
   --target-background-color: #6f662e;
 }
 
+html[data-theme='dark'] *::selection {
+  --mix-background: rgba(91, 91, 98, 0.8);
+}
 
-.override-target, :target {
+.override-target,
+:target {
   background-color: var(--target-background-color);
   scroll-margin-top: 200px;
 }
