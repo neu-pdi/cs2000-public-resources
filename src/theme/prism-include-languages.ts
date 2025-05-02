@@ -29,7 +29,7 @@ export default function prismIncludeLanguages(
     require(`prismjs/components/prism-${lang}`);
   });
 
-  require('./prism-pyret.js');
+  require('./prism-pyret');
 
   // Clean up and eventually restore former globalThis.Prism object (if any)
   delete (globalThis as Optional<typeof globalThis, 'Prism'>).Prism;
