@@ -4,6 +4,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 import rehypeKatex from 'rehype-katex';
 import remarkMath from 'remark-math';
 import { getChakraThemeSyncPlugin } from './src/plugins/chakra-theme-sync';
+import oneDarkDarker from './src/theme/one-dark-darker-theme';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -45,11 +46,13 @@ const config: Config = {
           path: 'lecture-notes',
           routeBasePath: 'lecture-notes',
           sidebarPath: './sidebars/lecture-notes.ts',
-          editUrl: 'https://github.com/neu-pdi/cs2000-public-resources/edit/main/lecture-notes/',
+          editUrl:
+            'https://github.com/neu-pdi/cs2000-public-resources/edit/main/lecture-notes/',
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
         },
         pages: {},
+
         blog: false,
         theme: {
           customCss: './src/css/custom.css',
@@ -196,9 +199,9 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     prism: {
-      additionalLanguages: ['java'],
-      theme: prismThemes.github,
-      darkTheme: prismThemes.oneDark,
+      additionalLanguages: ['python', 'javascript'],
+      theme: prismThemes.oneLight,
+      darkTheme: oneDarkDarker,
     },
   } satisfies Preset.ThemeConfig,
 };
