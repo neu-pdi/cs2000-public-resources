@@ -2,7 +2,7 @@ import Layout from '@theme/Layout';
 
 import { GlobalPluginData } from '@docusaurus/plugin-content-docs/client';
 import { usePluginData } from '@docusaurus/useGlobalData';
-import LectureSummary from '../components/LectureSummary';
+import DaySummary from '../components/DaySummary';
 import { Alert, Box, Heading, Text } from '@chakra-ui/react';
 import { Blockquote } from "@chakra-ui/react"
 import { Highlight } from 'prism-react-renderer';
@@ -30,8 +30,8 @@ export default function Hello() {
                         </Alert.Description>
                     </Alert.Content>
                 </Alert.Root>
-                <Heading size='lg'>Lecture Overview</Heading>
-                <LectureSummary version={pluginData.versions[0].name} />
+                <Heading size='lg'>Day Overview</Heading>
+                <DaySummary version={pluginData.versions[0].name} />
             </Box>
         </Layout>
     );

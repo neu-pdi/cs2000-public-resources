@@ -42,10 +42,10 @@ const config: Config = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          path: 'lecture-notes',
-          routeBasePath: 'lecture-notes',
-          sidebarPath: './sidebars/lecture-notes.ts',
-          editUrl: 'https://github.com/neu-pdi/cs2000-public-resources/edit/main/lecture-notes/',
+          path: 'days',
+          routeBasePath: 'days',
+          sidebarPath: './sidebars/days.ts',
+          editUrl: 'https://github.com/neu-pdi/cs2000-public-resources/edit/main/days/',
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
         },
@@ -115,9 +115,9 @@ const config: Config = {
         },
         {
           type: 'docSidebar',
-          sidebarId: 'lectureNotesSidebar',
+          sidebarId: 'daysSidebar',
           position: 'left',
-          label: 'Lecture Notes',
+          label: 'Days',
         },
         {
           type: 'doc',
