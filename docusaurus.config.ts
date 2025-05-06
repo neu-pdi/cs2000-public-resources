@@ -1,10 +1,9 @@
 import type * as Preset from '@docusaurus/preset-classic';
 import type { Config } from '@docusaurus/types';
-import { themes as prismThemes } from 'prism-react-renderer';
 import rehypeKatex from 'rehype-katex';
 import remarkMath from 'remark-math';
 import { getChakraThemeSyncPlugin } from './src/plugins/chakra-theme-sync';
-import oneDarkDarker from './src/theme/one-dark-darker-theme';
+import { oneDarkTheme, oneLightTheme } from './src/theme/one-dark-themes';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -200,8 +199,8 @@ const config: Config = {
     },
     prism: {
       additionalLanguages: ['python', 'javascript'],
-      theme: prismThemes.oneLight,
-      darkTheme: oneDarkDarker,
+      theme: oneLightTheme,
+      darkTheme: oneDarkTheme,
     },
   } satisfies Preset.ThemeConfig,
 };
