@@ -45,23 +45,29 @@ em {
   font-style: italic;
 }
 
-ul {
-  list-style-type: disc;
-  list-style-position: inside;
+.markdown ul {
+  list-style: disc;
+  list-style-position: outside;
 }
-ol {
+.markdown ol {
   list-style-type: decimal;
-  list-style-position: inside;
+  list-style-position: outside;
 }
-ul ul,
-ol ul {
+.markdown ul ul,
+.markdown ol ul {
   list-style-type: circle;
-  list-style-position: inside;
+  list-style-position: outside;
   margin-left: 15px;
 }
-ol ol,
-ul ol {
+.markdown ol ol,
+.markdown ul ol {
   list-style-type: lower-latin;
-  list-style-position: inside;
+  list-style-position: outside;
   margin-left: 15px;
+}
+
+/* This ensures that list indicators are at top of li */
+.markdown ol > li:has(pre)::before,
+.markdown ul > li:has(pre)::before {
+  content: '';
 }
