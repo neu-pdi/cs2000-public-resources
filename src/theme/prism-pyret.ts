@@ -45,17 +45,49 @@ const after = /(?![A-Za-z0-9-])/;
 const unsigned_dec_num = /[0-9]+(?:\.[0-9]+)?(?:[eE][-+]?[0-9]+)?/;
 const unsigned_rat_num = /[0-9]+\/[0-9]+/;
 
-const keywords = [
-  'end',
+const check_keywords = [
+  'is',
+  'is==',
+  'is=~',
+  'is-not',
+  'is-not==',
+  'is-not=~',
+  'is-not<=>',
+  'is-roughly',
+  'is-not-roughly',
+  'is<=>',
+  'because',
+  'satisfies',
+  'violates',
+  'raises',
+  'raises-other-than',
+  'raises-satisfies',
+  'raises-violates',
+];
+
+// this helps us avoid some false positives
+const block_start_keywords = [
   'check',
   'where',
-  'fun',
   'ask',
   'then',
   'otherwise',
-  'data',
-  'table',
+  'with',
+  'sharing',
+  'block',
+  // not really block but followed by `:`
+  'doc',
+  'spy',
+  'else',
   'row',
+  'source',
+  'table',
+];
+
+const keywords = [
+  'end',
+  'fun',
+  'data',
   'select',
   'from',
   'sieve',
@@ -66,20 +98,32 @@ const keywords = [
   'extend',
   'load-table',
   'cases',
-  'doc',
   'for',
-  'block',
   'ref',
   'if',
-  'else',
+  'when',
   'shadow',
   'let',
+  'letrec',
   'var',
   'spy',
   'lam',
+  'method',
+  'type',
+  'type-let',
+  'newtype',
+  'lazy',
+  'module',
+  'sanitize',
+  'using',
+  'rec',
 ];
 
 Prism.languages.pyret = {
+  'annotation': {
+    pattern: regex`${/(?<=(?:::\s*)|(?:->\s*))/}${ident}${after}`,
+    // alias: 'invalid',
+  },
   'comment': {
     pattern: /(^|[^\\])#[^|].*/,
     lookbehind: true,
@@ -108,24 +152,31 @@ Prism.languages.pyret = {
     pattern: regexg`${/((?:^|\s)fun[ \t]+)/}${ident}${/(?=\s*\()/}`,
     lookbehind: true,
   },
-  'checks': {
-    // TODO: these boundaries are sketchy
-    pattern: regex`${/(?<![A-Za-z0-9-])/}${/(?:is|is==|is=~|is-not|is-not==|is-not=~|is-not<=>|is-roughly|is-not-roughly|is<=>|because|satisfies|violates)/}${/(?![A-Za-z0-9-=~<>])/}`,
+  'checks-keyword': {
+    pattern: regex`${/(?<![^\s])/}(?:${check_keywords.join('|')})${/(?![^\s])/}`,
     alias: 'keyword',
   },
-  'import': {
+  'import-keyword': {
     pattern: regex`${before}${/(?:include|import|as)/}${after}`,
     alias: 'keyword',
   },
-  'provide': {
+  'provide-keyword': {
     pattern: regex`${before}${/(?:provide|provide-types)/}${after}`,
+    alias: 'keyword',
+  },
+  'english-keyword': {
+    pattern: regex`${before}${/(?:and|or)/}${after}`,
+    alias: 'keyword',
+  },
+  'block-keyword': {
+    pattern: regex`${before}(?:${block_start_keywords.join('|')})${/(?=:)/}${after}`,
     alias: 'keyword',
   },
   'keyword': regex`${before}(?:${keywords.join('|')})${after}`,
   'builtin': regex`${before}${/(?:raise|file|js-file|my-gdrive|shared-gdrive)/}${after}`,
   'boolean': regex`${before}${/(?:false|true)/}${after}`,
   'number': {
-    pattern: regex`${/(?<![A-Za-z0-9-/])/}[-+]?${unsigned_dec_num}${/(?![A-Za-z0-9-/])/}`,
+    pattern: regex`${/(?<![A-Za-z0-9-/])/}[~]?[-+]?${unsigned_dec_num}${/(?![A-Za-z0-9-/])/}`,
   },
   'rational': {
     // TODO: does this need separator?
@@ -136,8 +187,7 @@ Prism.languages.pyret = {
   /* 'inexact': {
     alias: 'number',
   }, */
-  // TODO: check if this is actually correct
-  'operator': regex`${before}${/[-+%=]=?|!=|:=|\*\*?=?|\/\/?=?|<[<=>]?|>[=>]?|[&|^~]/}${after}`,
+  'operator': regex`${before}${/[-+%=<>\|*/]|!|\^|!=|:=|=~/}${after}`,
   'punctuation': /[{}[\];(),.:]/,
 };
 Prism.languages.arr = Prism.languages.pyret;
