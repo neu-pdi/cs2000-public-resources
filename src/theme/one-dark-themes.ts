@@ -128,6 +128,12 @@ const theme = (palette: Pallette): PrismTheme => ({
       },
     },
     {
+      types: ['annotation'],
+      style: {
+        color: palette.light_grey,
+      },
+    },
+    {
       types: ['url'],
       style: {
         color: palette.cyan,
@@ -175,4 +181,3 @@ const theme = (palette: Pallette): PrismTheme => ({
 
 export const oneDarkTheme = theme(darkPalette);
 export const oneLightTheme = theme(lightPalette);
-
