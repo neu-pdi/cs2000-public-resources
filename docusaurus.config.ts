@@ -147,6 +147,11 @@ const config: Config = {
           to: '/outcomes/',
           label: 'Outcomes',
         },
+        {
+          position: 'left',
+          to: '/skills/',
+          label: 'Skills',
+        },
       ],
     },
     footer: {
