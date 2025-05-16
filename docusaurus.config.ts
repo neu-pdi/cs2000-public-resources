@@ -112,6 +112,11 @@ const config: Config = {
       items: [
         {
           position: 'left',
+          to: '/syllabus/',
+          label: 'Syllabus',
+        },
+        {
+          position: 'left',
           to: '/schedule/',
           label: 'Schedule',
         },

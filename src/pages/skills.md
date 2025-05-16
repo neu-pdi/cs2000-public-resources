@@ -6,7 +6,8 @@ hide_table_of_contents: true
 ---
 
 This course will teach the following skills, repeated assessment of which will
-form the primary source of final grades.
+form the primary source of final grades. Each skill will be marked as "Doesn't
+meet expectations", "Approaching expectations", and "Meets expectations".
 
 1. <a id="(1)" href="#(1)">Design basic functions (Pyret)</a>
 2. <a id="(2)" href="#(2)">Construct / Transform Tables (Pyret)</a>
