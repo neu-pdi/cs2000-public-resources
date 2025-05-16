@@ -28,15 +28,15 @@ assessment slots during the semester.
 
  Week | Topic | Skill Introduced | Skills Assessable
 -- | -- | -- | -- 
-1 | Programming with numbers, strings, images: IDE, interactions, operations on standard values | |
+1 | Programming with numbers, strings, images: IDE, interactions, operations on standard values | [11](#(11)), [12](#(12)) |
 2  | Definitions, functions, conditionals: type annotations, test cases | [1](#(1)), [7](#(7)) | 
-3  | Introduction to tables: constructing, importing, extracting | [2](#(2)) | [1](#(1)), [7](#(7))
-4  | More on tables: transforming, filtering | [2](#(2)) | [1](#(1)), [7](#(7))
-5  | From tables to lists: extracting columns, performing operations on them, visualizing data | | [1](#(2)), [2](#(2)), [7](#(7))
-6  | Computing with lists: iteration & mutable local variables | [3](#(3)) | [2](#(2)), [7](#(7))
-7  | Structured & conditional data | [4](#(3)) | [2](#(2)), [3](#(3)), [7](#(7))
-8  | Working with trees: recursive functions |  [5](#(5)) | [3](#(3)), [4](#(4))
-9  | More with trees | [6](#(6)) | [3](#(3)), [4](#(4)), [5](#(5))
+3  | Introduction to tables: constructing, importing, extracting | [2](#(2)) | [1](#(1)), [7](#(7)), [11](#(11)), [12](#(12))
+4  | More on tables: transforming, filtering | [2](#(2)) | [1](#(1)), [7](#(7)), [11](#(11)), [12](#(12))
+5  | From tables to lists: extracting columns, performing operations on them, visualizing data | | [1](#(2)), [2](#(2)), [7](#(7)), [11](#(11)), [12](#(12))
+6  | Computing with lists: iteration & mutable local variables | [3](#(3)) | [2](#(2)), [7](#(7)), [11](#(11)), [12](#(12))
+7  | Structured & conditional data | [4](#(3)) | [2](#(2)), [3](#(3)), [7](#(7)), [11](#(11)), [12](#(12))
+8  | Working with trees: recursive functions |  [5](#(5)) | [3](#(3)), [4](#(4)), [11](#(11)), [12](#(12))
+9  | More with trees | [6](#(6)) | [3](#(3)), [4](#(4)), [5](#(5)), [11](#(11)), [12](#(12))
 10 | Transition to Python: IDE, files, definitions, testing | [8](#(8)) | [4](#(4)), [5](#(5)), [6](#(6))
 11  | Transition to Python: more state & aliasing, loops, mutable data structures | [9](#(9)), [10](#(10)) | [5](#(5)), [6](#(6)), [8](#(8))
 12  | Tables in Python: pandas & matplotlib |  | [6](#(6)), [8](#(8)), [9](#(9)), [10](#(10)) 
