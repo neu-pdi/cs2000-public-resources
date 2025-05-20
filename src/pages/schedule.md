@@ -14,7 +14,7 @@ Week | Topic | Days | Reading | Recitation | HW Due | Lab
 Week 1 (Sept 3-5) | Programming with Numbers, strings, images: IDE, interactions, operations on standard values | [D1](/days/1), [D2](/days/2) | [3.1][dcic3.1] | - | - | -
 Week 2 (Sept 8-12) | Definitions, functions, conditionals: type annotations, test cases | [D3](/days/3), [D4](/days/4), [D5](/days/5) | [3.2][dcic3.2], [3.3][dcic3.3], [3.4][dcic3.4] | [R1](/recitation/1) | [HW1](/homework/1) | [Lab1](/lab/1)
 Week 3 (Sept 15-19) | Introduction to tables: constructing, importing, extracting | [D6](/days/6), [D7](/days/7), [D8](/days/8) | [4.1][dcic4.1] w/o 4.1.5 | [R2](/recitation/2) | [HW2](/homework/2) | [Lab2](/lab/2)
-Week 4 (Sept 22-26) | More on tables: transforming, filtering | [D9](/days/9), [D10](/days/10), [D11](/days/11) | [4.1.5][dcic4.1.5], [4.2][dcic4.2] | [R3](/recitation/3) | [HW3](/homework/3) | [Lab3](/lab/3)
+Week 4 (Sept 22-26) | More on tables: transforming, filtering | [D9](/days/9), [D10](/days/10), [D11](/days/11) | [4.1.5][dcic4.1.5], [4.2][dcic4.2], [DRAFT:29.1](dcic29.1) | [R3](/recitation/3) | [HW3](/homework/3) | [Lab3](/lab/3)
 Week 5 (Sept 29-Oct 3) | From tables to lists: extracting columns, performing operations on them, visualizing data | [D12](/days/12), [D13](/days/13), [D14](/days/14) | [5.1][dcic5.1] | [R4](/recitation/4) | [HW4](/homework/4) | [Lab4](/lab/4)
 Week 6 (Oct 6-10) | Computing with lists: iteration & mutable local variables | [D15](/days/15), [D16](/days/16), [D17](/days/17) | NEW CONTENT* | [R5](/recitation/5) | [HW5](/homework/5) | [Lab5](/lab/5) 
 Week 7 (Oct 13-17) HOLIDAY Oct 13 | Structured & conditional data | [D18](/days/18), [D19](/days/19) | [6.1][dcic6.1] | [R6](/recitation/6) | [HW6](/homework/6) | [SkillBundle1](/skills#(bundle1))
@@ -45,3 +45,4 @@ $: New section in DCIC about manual file I/O, to supplement existing content loa
 [dcic12.1]: https://dcic-world.org/2024-09-03/modifying-variables.html
 [dcic10.1]: https://dcic-world.org/2024-09-03/python-tables-Pandas.html
 [dcic9.2]: https://dcic-world.org/2024-09-03/dictionaries.html
+[dcic29.1]: https://dbp.io/static/dcic/alternate.html#%28part._.Lambda__.Anonymous_.Functions__with_.Tables_%29
