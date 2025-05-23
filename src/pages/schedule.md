@@ -15,7 +15,7 @@ Week 1 (Sept 3-5) | Programming with Numbers, strings, images: IDE, interactions
 Week 2 (Sept 8-12) | Definitions, functions, conditionals: type annotations, test cases | [D3](/days/3), [D4](/days/4), [D5](/days/5) |  | [R1](/recitation/1) | [HW1](/homework/1) | [Lab1](/lab/1)
 Week 3 (Sept 15-19) | Introduction to tables: constructing, importing, extracting | [D6](/days/6), [D7](/days/7), [D8](/days/8) | | [R2](/recitation/2) | [HW2](/homework/2) | [Lab2](/lab/2)
 Week 4 (Sept 22-26) | More on tables: transforming, filtering | [D9](/days/9), [D10](/days/10), [D11](/days/11) |  | [R3](/recitation/3) | [HW3](/homework/3) | [Lab3](/lab/3)
-Week 5 (Sept 29-Oct 3) | From tables to lists: extracting columns, performing operations on them, visualizing data | [D12](/days/12), [D13](/days/13), [D14](/days/14) | [5.1][dcic5.1] | [R4](/recitation/4) | [HW4](/homework/4) | [Lab4](/lab/4)
+Week 5 (Sept 29-Oct 3) | From tables to lists: extracting columns, performing operations on them, visualizing data | [D12](/days/12), [D13](/days/13), [D14](/days/14) | | [R4](/recitation/4) | [HW4](/homework/4) | [Lab4](/lab/4)
 Week 6 (Oct 6-10) | Computing with lists: iteration & mutable local variables | [D15](/days/15), [D16](/days/16), [D17](/days/17) | NEW CONTENT* | [R5](/recitation/5) | [HW5](/homework/5) | [Lab5](/lab/5) 
 Week 7 (Oct 13-17) HOLIDAY Oct 13 | Structured & conditional data | [D18](/days/18), [D19](/days/19) | [6.1][dcic6.1] | [R6](/recitation/6) | [HW6](/homework/6) | [SkillBundle1](/skills#(bundle1))
 Week 8 (Oct 20-24) | From lists to trees | [D20](/days/20), [D21](/days/21), [D22](/days/22) | ?? 7 | [R7](/recitation/7) | [HW7](/homework/7) | [Lab6](/lab/6)
