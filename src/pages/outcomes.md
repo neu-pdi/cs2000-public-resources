@@ -89,25 +89,24 @@ Lecture                | Learning Goals
 [11](/days/11) | - task planning with data <br/> - visualizing data
 [12](/days/12) | - extracting columns (lists) from tables
 [13](/days/13) | - using standard computations over lists
-[14](/days/14) | - combining column extraction, standard computations
-[15](/days/15) | - mutable variables <br/> - `for each`
-[16](/days/16) | - building custom reusable computations <br/> - `when`
-[17](/days/17) | - testing with mutable variables
-[18](/days/18) | - structured data <br/> - `cases`
-[19](/days/19) | - conditional data
-[20](/days/20) | - lists as structured data <br/> - computing functions by examples
-[21](/days/21) | - recursive functions over lists <br/> - template for recursive functions
-[22](/days/22) | - introduce tree structured data <br/> - challenge of representing trees with tables
-[23](/days/23) | - trees as recursive data <br/> - multiple self references = multiple recursive calls
-[24](/days/24) | - recursive functions over trees <br/> - warning: trying to use `for each` on trees
-[25](/days/25) | - show python IDE, codespaces, terminal <br/> - arithmetic, strings, definitions
-[26](/days/26) | - testing in python, dataclasses, lists
-[27](/days/27) | - for loops in python
-[28](/days/28) | - scoping in python (global, nonlocal), different program directory
-[29](/days/29) | - mutable data structures, aliasing, contrast with pyret <br/> equality in python
-[30](/days/30) | - tables in python: loading csvs with pandas, filtering, data cleaning
-[31](/days/31) | - tables in python: computing new columns, basic stats
-[32](/days/32) | - visualizing with matplotlib
-[33](/days/33) | - file I/O, reading & writing CSVs by hand
-[34](/days/34) | - extra content: dictionaries
+[14](/days/14) | - mutable variables <br/> - `for each`
+[15](/days/15) | - building custom reusable computations <br/> - `when`
+[16](/days/16) | - testing with mutable variables
+[17](/days/17) | - structured data <br/> - `cases`
+[18](/days/18) | - conditional data
+[19](/days/19) | - lists as structured data <br/> - computing functions by examples
+[20](/days/20) | - recursive functions over lists <br/> - template for recursive functions
+[21](/days/21) | - introduce tree structured data <br/> - challenge of representing trees with tables
+[22](/days/22) | - trees as recursive data <br/> - multiple self references = multiple recursive calls
+[23](/days/23) | - recursive functions over trees <br/> - warning: trying to use `for each` on trees
+[24](/days/24) | - show python IDE, codespaces, terminal <br/> - arithmetic, strings, definitions
+[25](/days/25) | - testing in python, dataclasses, lists
+[26](/days/26) | - for loops in python
+[27](/days/27) | - scoping in python (global, nonlocal), different program directory
+[28](/days/28) | - mutable data structures, aliasing, contrast with pyret <br/> equality in python
+[29](/days/29) | - tables in python: loading csvs with pandas, filtering, data cleaning
+[30](/days/30) | - tables in python: computing new columns, basic stats
+[31](/days/31) | - visualizing with matplotlib
+[32](/days/32) | - file I/O, reading & writing CSVs by hand
+[33](/days/33) | - extra content: dictionaries
 
