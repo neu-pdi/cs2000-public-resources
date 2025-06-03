@@ -17,8 +17,8 @@ Week 3 (Sept 15-19) | Introduction to tables: constructing, importing, extractin
 Week 4 (Sept 22-26) | More on tables: transforming, filtering | [D9](/days/9), [D10](/days/10), [D11](/days/11) |  | [R3](/recitation/3) | [HW3](/homework/3) | [Lab3](/lab/3)
 Week 5 (Sept 29-Oct 3) | From tables to lists: extracting columns, performing operations on them, visualizing data | [D12](/days/12), [D13](/days/13), [SKILLDAY](/days/skill)([1](/skills/#(1)),[2](/skills/#(2)),[7](/skills/#(7)),[11](/skills/#(11)),[12](/skills/#(12))) | | [R4](/recitation/4) | [HW4](/homework/4) | [Lab4](/lab/4)
 Week 6 (Oct 6-10) | Computing with lists: iteration & mutable local variables | [D14](/days/14), [D15](/days/15), [D16](/days/16) |  | [R5](/recitation/5) | [HW5](/homework/5) | [Lab5](/lab/5) 
-Week 7 (Oct 13-17) HOLIDAY Oct 13 | Structured & conditional data | [D17](/days/17), [D18](/days/18) | [6.1][dcic6.1] | [R6](/recitation/6) | [HW6](/homework/6) | [SkillBundle1](/skills#(bundle1))
-Week 8 (Oct 20-24) | From lists to trees | [D19](/days/19), [D20](/days/20), [D21](/days/21) | ?? 7 | [R7](/recitation/7) | [HW7](/homework/7) | [Lab6](/lab/6)
+Week 7 (Oct 13-17) HOLIDAY Oct 13 | Structured & conditional data | [D17](/days/17), [D18](/days/18) | | [R6](/recitation/6) | [HW6](/homework/6) | [SkillBundle1](/skills#(bundle1))
+Week 8 (Oct 20-24) | From lists to trees | [D19](/days/19), [D20](/days/20), [D21](/days/21) | | [R7](/recitation/7) | [HW7](/homework/7) | [Lab6](/lab/6)
 Week 9 (Oct 27-31) | More with trees | [D22](/days/22), [D23](/days/23), [SKILLDAY](/days/skill)([3](/skills/#(3)),[4](/skills/#(4)),[5](/skills/#(5)),[11](/skills/#(11)),[12](/skills/#(12))) | ?? 7 | [R8](/recitation/8) | [HW8](/homework/8) | [Lab7](/lab/7)
 Week 10 (Nov 3-7) | Transition to Python: IDE, files, definitions, testing | [D24](/days/24), [D25](/days/25), [D26](/days/26) | [9.1][dcic9.1] | [R9](/recitation/9) | [HW9](/homework/9) | [Lab8](/lab/8)
 Week 11 (Nov 10-14) HOLIDAY Nov 11 | Scoping, mutable state, equality | [D27](/days/27), [D28](/days/27) | [11.1][dcic11.1], [12.1][dcic12.1] | [R10](/recitation/10) | [HW10](/homework/10) | [Lab9](/lab/9)
@@ -27,19 +27,8 @@ Week 13 (Nov 24-25) HOLIDAY Nov 26-28 | File I/O: csv files, via pandas and manu
 Week 14 (Dec 1-5) | More with Python: catch up, bonus content, etc | [D33](/days/33), [SKILLDAY](/days/skill)([6](/skills/#(6)),[8](/skills/#(8)),[9](/skills/#(9)),[10](/skills/#(10))) | [9.2][dcic9.1] | - | [HW12](/homework/12) | No lab
 
 
-*: New reading on Pyret `for map…`, DCIC 12.1.1 (rewritten for Pyret), DCIC 9.1.8 (rewritten for Pyret)
-
 $: New section in DCIC about manual file I/O, to supplement existing content loading CSVs from files. 
 
-[dcic3.1]: https://dcic-world.org/2024-09-03/getting-started.html
-[dcic3.2]: https://dcic-world.org/2024-09-03/Naming_Values.html
-[dcic3.3]: https://dcic-world.org/2024-09-03/From_Repeated_Expressions_to_Functions.html
-[dcic3.4]: https://dcic-world.org/2024-09-03/Conditionals_and_Booleans.html
-[dcic4.1]: https://dcic-world.org/2024-09-03/intro-tabular-data.html
-[dcic4.1.5]: https://dcic-world.org/2024-09-03/intro-tabular-data.html#(part._.Examples_for_.Table-.Producing_.Functions)
-[dcic4.2]: https://dcic-world.org/2024-09-03/processing-tables.html
-[dcic5.1]: https://dcic-world.org/2024-09-03/tables-to-lists.html
-[dcic6.1]: https://dcic-world.org/2024-09-03/intro-struct-data.html
 [dcic9.1]: https://dcic-world.org/2024-09-03/intro-python.html
 [dcic11.1]: https://dcic-world.org/2024-09-03/unified-state.html
 [dcic12.1]: https://dcic-world.org/2024-09-03/modifying-variables.html
