@@ -1,0 +1,372 @@
+Division,Line,Stop Name,Entrance Latitude,Entrance Longitude
+BMT,4th Av,Atlantic Av-Barclays Ctr,40.683905,-73.978879
+BMT,4th Av,Union St,40.6771544,-73.9834296
+BMT,4th Av,4 Av-9 St,40.670538,-73.988778
+BMT,4th Av,Prospect Av,40.6652787,-73.9932544
+BMT,4th Av,25 St,40.6605007,-73.998224
+BMT,4th Av,36 St,40.65449,-74.004499
+BMT,4th Av,45 St,40.6494326,-74.0097327
+BMT,4th Av,53 St,40.6446672,-74.014688
+BMT,4th Av,59 St,40.6406896,-74.0188637
+BMT,4th Av,Bay Ridge Av,40.634827,-74.02358
+BMT,4th Av,77 St,40.6295183,-74.025749
+BMT,4th Av,86 St,40.6226535,-74.0285564
+BMT,4th Av,Bay Ridge-95 St,40.616021,-74.031383
+IND,63rd St,21 St-Queensbridge,40.7541656,-73.9425499
+IND,63rd St,Roosevelt Island,40.7590185,-73.9534576
+IND/BMT,63rd St,Lexington Av/63 St,40.7649678,-73.9666793
+IND,6th Av - Culver,57 St,40.7634853,-73.9779774
+IND,6th Av - Culver,47-50 Sts-Rockefeller Ctr,40.7580251,-73.9821103
+IND,6th Av - Culver,42 St-Bryant Pk/5 Av,40.7537136,-73.985193
+IND,6th Av - Culver,34 St-Herald Sq,40.74875,-73.9887643
+IND,6th Av - Culver,34 St-Herald Square,40.748851,-73.988718
+IND,6th Av - Culver,23 St,40.7429882,-73.9932331
+IND,6th Av - Culver,14 St/6 Av,40.7374199,-73.9971973
+IND,6th Av - Culver,Broadway-Lafayette St/Bleecker St,40.7252073,-73.9965618
+IND,6th Av - Culver,Grand St,40.7183694,-73.9938821
+IND,6th Av - Culver,2 Av,40.723682,-73.9916677
+IND,6th Av - Culver,Delancey St-Essex St,40.7183827,-73.9884421
+IND,6th Av - Culver,East Broadway,40.7142366,-73.9903537
+IND,6th Av - Culver,York St,40.70138,-73.986655
+IND,6th Av - Culver,Bergen St,40.6855861,-73.991461
+IND,6th Av - Culver,Carroll St,40.6792701,-73.9957771
+IND,6th Av - Culver,Smith-9 Sts,40.6746146,-73.9972884
+IND,6th Av - Culver,7 Av,40.6667886,-73.9818356
+IND,6th Av - Culver,15 St-Prospect Park,40.6594527,-73.9799593
+IND,6th Av - Culver,Fort Hamilton Pkwy,40.6518513,-73.9760848
+IND,6th Av - Culver,Church Av,40.6449233,-73.9800183
+IND,6th Av - Culver,Ditmas Av,40.6371339,-73.9784986
+IND,6th Av - Culver,18 Av,40.630531,-73.977251
+IND,6th Av - Culver,Avenue I,40.6261773,-73.9764106
+IND,6th Av - Culver,Bay Pkwy,40.620797,-73.975479
+IND,6th Av - Culver,Avenue N,40.6161563,-73.9745128
+IND,6th Av - Culver,Avenue P,40.608615,-73.973097
+IND,6th Av - Culver,Kings Hwy,40.602197,-73.97264
+IND,6th Av - Culver,Avenue U,40.5950561,-73.9736337
+IND,6th Av - Culver,Avenue X,40.5905319,-73.9742703
+IND,6th Av - Culver,Neptune Av,40.5809192,-73.9746771
+IND,8th Av - Fulton St,Inwood-207 St,40.8678352,-73.9214448
+IND,8th Av - Fulton St,Dyckman St,40.865367,-73.9280766
+IND,8th Av - Fulton St,190 St,40.858902,-73.9342217
+IND,8th Av - Fulton St,181 St,40.8508848,-73.9385335
+IND,8th Av - Fulton St,175 St,40.8463795,-73.9402964
+IND,8th Av - Fulton St,168 St-Washington Hts,40.8418738,-73.939572
+IND,8th Av - Fulton St,163 St-Amsterdam Av,40.835192,-73.940146
+IND,8th Av - Fulton St,155 St,40.830875,-73.9416528
+IND,8th Av - Fulton St,135 St,40.8171366,-73.948229
+IND,8th Av - Fulton St,125 St,40.8106533,-73.9528842
+IND,8th Av - Fulton St,116 St,40.80433,-73.9556383
+IND,8th Av - Fulton St,Cathedral Pkwy (110 St),40.8000144,-73.9588852
+IND,8th Av - Fulton St,103 St,40.7962977,-73.9616715
+IND,8th Av - Fulton St,96 St,40.7916384,-73.9649398
+IND,8th Av - Fulton St,81 St-Museum of Natural History,40.7803452,-73.9731888
+IND,8th Av - Fulton St,72 St,40.7749488,-73.9771817
+IND,8th Av - Fulton St,59 St-Columbus Circle,40.7667708,-73.9833664
+IND,8th Av - Fulton St,50 St,40.7617615,-73.9869788
+IND,8th Av - Fulton St,Times Sq-42 St/Port Authority Bus Terminal,40.7559971,-73.9910421
+IND,8th Av - Fulton St,34 St-Penn Station,40.7517496,-73.9942753
+IND,8th Av - Fulton St,14 St/8 Av,40.7399648,-74.0026775
+IND,8th Av - Fulton St,Spring St,40.7256308,-74.0043768
+IND,8th Av - Fulton St,Canal St,40.7216563,-74.0056651
+IND,8th Av - Fulton St,Chambers St/WTC/Park Place/Cortlandt St,40.7137352,-74.0090664
+IND,8th Av - Fulton St,High St,40.699405,-73.991413
+IND,8th Av - Fulton St,Jay St-MetroTech,40.6924743,-73.9875859
+IND,8th Av - Fulton St,Hoyt-Schermerhorn Sts,40.6890314,-73.9858587
+IND,8th Av - Fulton St,Lafayette Av,40.686553,-73.974606
+IND,8th Av - Fulton St,Clinton-Washington Avs,40.6836751,-73.9670602
+IND,8th Av - Fulton St,Franklin Av,40.681256,-73.95559
+IND,8th Av - Fulton St,Nostrand Av,40.6805772,-73.9497346
+IND,8th Av - Fulton St,Kingston-Throop Avs,40.6796847,-73.94135
+IND,8th Av - Fulton St,Utica Av,40.6795584,-73.932104
+IND,8th Av - Fulton St,Ralph Av,40.679164,-73.92187
+IND,8th Av - Fulton St,Rockaway Av,40.6786088,-73.9137396
+IND,8th Av - Fulton St,Broadway Junction,40.6783526,-73.9039332
+IND,8th Av - Fulton St,Liberty Av,40.6744501,-73.896778
+IND,8th Av - Fulton St,Van Siclen Av,40.6727846,-73.8905905
+IND,8th Av - Fulton St,Shepherd Av,40.6742442,-73.8809291
+IND,8th Av - Fulton St,Euclid Av,40.6752842,-73.8721143
+IND,8th Av - Fulton St; 6th Av - Culver,W 4 St-Wash Sq,40.7310974,-74.0015985
+IND,8th Av - Fulton St; Concourse,145 St,40.8239303,-73.9450243
+BMT,Astoria,Astoria-Ditmars Blvd,40.7749371,-73.9123447
+BMT,Astoria,Astoria Blvd,40.7703305,-73.9179733
+BMT,Astoria,30 Av,40.766787,-73.921629
+BMT,Astoria,Broadway,40.7618934,-73.9256167
+BMT,Astoria,36 Av,40.7565079,-73.9299782
+BMT,Astoria,39 Av-Dutch Kills,40.7525155,-73.9329258
+BMT,Astoria,Lexington Av/59 St,40.7620908,-73.9663577
+BMT,Astoria,5 Av/59 St,40.7651969,-73.9747154
+BMT,Broadway,City Hall,40.7131236,-74.0070415
+BMT,Broadway,Rector St,40.7063426,-74.014018
+BMT,Broadway,Whitehall St-South Ferry,40.7041502,-74.0133314
+BMT,Broadway,Borough Hall/Court St,40.6944821,-73.9928266
+IRT,Broadway - 7Av,Van Cortlandt Park-242 St,40.889783,-73.898432
+IRT,Broadway - 7Av,238 St,40.884813,-73.900923
+IRT,Broadway - 7Av,231 St,40.878775,-73.905024
+IRT,Broadway - 7Av,Marble Hill-225 St,40.8744658,-73.910563
+IRT,Broadway - 7Av,215 St,40.869428,-73.9154543
+IRT,Broadway - 7Av,207 St,40.8642822,-73.9192293
+IRT,Broadway - 7Av,191 St,40.856413,-73.932605
+IRT,Broadway - 7Av,157 St,40.8342854,-73.9451903
+IRT,Broadway - 7Av,137 St-City College,40.8213608,-73.9544144
+IRT,Broadway - 7Av,116 St-Columbia University,40.8075562,-73.9640135
+IRT,Broadway - 7Av,79 St,40.7837622,-73.9802909
+IRT,Broadway - 7Av,66 St-Lincoln Center,40.7735889,-73.9820215
+IRT,Broadway - 7Av,Times Sq-42 St,40.755862,-73.9869267
+IRT,Broadway - 7Av,28 St,40.746787,-73.993955
+IRT,Broadway - 7Av,18 St,40.7410753,-73.9980934
+IRT,Broadway - 7Av,Christopher St-Stonewall,40.7335094,-74.0031819
+IRT,Broadway - 7Av,Houston St,40.7278265,-74.0056485
+IRT,Broadway - 7Av,Franklin St,40.7189487,-74.0071251
+IRT,Broadway - 7Av,Chambers St,40.7155528,-74.0094938
+IRT,Broadway - 7Av,WTC Cortlandt,40.7110837,-74.0124731
+BMT,Broadway - Brighton,57 St-7 Av,40.7642779,-73.9812874
+BMT,Broadway - Brighton,49 St,40.7594831,-73.9848474
+BMT,Broadway - Brighton,14 St-Union Sq,40.735276,-73.9910998
+BMT,Broadway - Brighton,8 St-NYU,40.729778,-73.993262
+BMT,Broadway - Brighton,Prince St,40.7242611,-73.9979364
+BMT,Broadway - Brighton,DeKalb Av,40.6912625,-73.9823804
+BMT,Broadway - Brighton,Prospect Park,40.6623162,-73.9622109
+BMT,Broadway - Brighton,Parkside Av,40.654251,-73.961909
+BMT,Broadway - Brighton,Beverley Rd,40.644272,-73.964528
+BMT,Broadway - Brighton,Cortelyou Rd,40.641314,-73.963996
+BMT,Broadway - Brighton,Newkirk Plaza,40.6350503,-73.9627394
+BMT,Broadway - Brighton,Avenue H,40.6298896,-73.9618253
+BMT,Broadway - Brighton,Avenue J,40.6253471,-73.9610073
+BMT,Broadway - Brighton,Avenue M,40.6181527,-73.9594627
+BMT,Broadway - Brighton,Ave U,40.599,-73.9560243
+BMT,Broadway - Brighton,Neck Rd,40.5950522,-73.9551299
+BMT,Broadway - Brighton,Sheepshead Bay,40.585734,-73.954371
+BMT,Broadway - Brighton,Brighton Beach,40.5775938,-73.9621381
+BMT,Broadway - Brighton,Ocean Pkwy,40.5765342,-73.9696213
+BMT,Broadway - Brighton,W 8 St-NY Aquarium,40.5756165,-73.976811
+BMT,Canarsie,3 Av,40.7331516,-73.9870664
+BMT,Canarsie,1 Av,40.7310897,-73.9826309
+BMT,Canarsie,Bedford Av,40.717669,-73.957588
+BMT,Canarsie,Metropolitan Av/Lorimer St,40.71421,-73.949313
+BMT,Canarsie,Graham Av,40.7146301,-73.9445676
+BMT,Canarsie,Montrose Av,40.7077427,-73.9401016
+BMT,Canarsie,Morgan Av,40.7061192,-73.9336391
+BMT,Canarsie,Jefferson St,40.7070877,-73.9238656
+BMT,Canarsie,Myrtle-Wyckoff Avs,40.6997979,-73.9113533
+BMT,Canarsie,Halsey St,40.6959986,-73.905269
+BMT,Canarsie,Wilson Av,40.688805,-73.904741
+BMT,Canarsie,Bushwick Av-Aberdeen St,40.6823234,-73.9051549
+BMT,Canarsie,Atlantic Av,40.67556092,-73.9029737
+BMT,Canarsie,Sutter Av,40.668527,-73.901765
+BMT,Canarsie,Livonia Av,40.6638732,-73.9005254
+BMT,Canarsie,New Lots Av,40.6590028,-73.8993145
+BMT,Canarsie,East 105 St,40.651462,-73.899191
+BMT,Canarsie,Canarsie-Rockaway Pkwy,40.645585,-73.902541
+IRT,Clark St,Fulton St,40.7089354,-74.0069749
+IRT,Clark St,Wall St,40.7063517,-74.0096437
+IRT,Clark St,Clark St,40.6976131,-73.9933883
+IND,Concourse,Norwood-205 St,40.8750794,-73.8796013
+IND,Concourse,Bedford Park Blvd,40.8724884,-73.8879163
+IND,Concourse,Kingsbridge Rd,40.866369,-73.894521
+IND,Concourse,Fordham Rd,40.861401,-73.898098
+IND,Concourse,182-183 Sts,40.8560263,-73.9011541
+IND,Concourse,Tremont Av,40.849864,-73.906084
+IND,Concourse,174-175 Sts,40.8449373,-73.9111261
+IND,Concourse,170 St,40.8386549,-73.9141871
+IND,Concourse,167 St,40.833111,-73.919399
+IND,Concourse,161 St-Yankee Stadium,40.827471,-73.92625
+IND,Crosstown,Greenpoint Av,40.7306151,-73.9542445
+IND,Crosstown,Court Sq-23 St,40.7462617,-73.9448587
+IND,Crosstown,21 St,40.7446383,-73.9491112
+IND,Crosstown,Nassau Av,40.7254669,-73.9519718
+IND,Crosstown,Flushing Av,40.699582,-73.950164
+IND,Crosstown,Myrtle-Willoughby Avs,40.695456,-73.9494675
+IND,Crosstown,Bedford-Nostrand Avs,40.6895625,-73.9549988
+IND,Crosstown,Classon Av,40.6889585,-73.9602224
+IRT,Dyre Av,Eastchester-Dyre Av,40.88798,-73.831195
+IRT,Dyre Av,Baychester Av,40.879519,-73.837958
+IRT,Dyre Av,Gun Hill Rd,40.870117,-73.845869
+IRT,Dyre Av,Pelham Pkwy,40.8588167,-73.8555237
+IRT,Dyre Av,Morris Park,40.854544,-73.860248
+IRT,Eastern Pky,Hoyt St,40.690972,-73.985448
+IRT,Eastern Pky,Nevins St,40.6882442,-73.9806363
+IRT,Eastern Pky,Grand Army Plaza,40.6751588,-73.9712167
+IRT,Eastern Pky,Eastern Pkwy-Brooklyn Museum,40.671789,-73.964301
+IRT,Eastern Pky,Franklin Av-Medgar Evers College/Botanic Garden,40.6703472,-73.957973
+IRT,Eastern Pky,Kingston Av,40.669289,-73.942463
+IRT,Eastern Pky,Crown Hts-Utica Av,40.6688507,-73.9342363
+IRT,Eastern Pky,Sutter Av-Rutland Rd,40.664887,-73.923109
+IRT,Eastern Pky,Saratoga Av,40.661401,-73.915543
+IRT,Eastern Pky,Junius St,40.6633592,-73.9031178
+IRT,Eastern Pky,Pennsylvania Av,40.6645892,-73.8941123
+IRT,Flushing,Flushing-Main St,40.7595971,-73.8304171
+IRT,Flushing,Mets-Willets Point,40.7547146,-73.8459125
+IRT,Flushing,111 St,40.75161,-73.856065
+IRT,Flushing,103 St-Corona Plaza,40.7499645,-73.8625882
+IRT,Flushing,Junction Blvd,40.7492396,-73.8696622
+IRT,Flushing,90 St-Elmhurst Av,40.748601,-73.876595
+IRT,Flushing,82 St-Jackson Hts,40.7478196,-73.8840322
+IRT,Flushing,Jackson Hts-Roosevelt Av/74 St-Broadway,40.7471163,-73.8914148
+IRT,Flushing,69 St,40.746148,-73.896396
+IRT,Flushing,61 St-Woodside,40.7455308,-73.9032919
+IRT,Flushing,52 St,40.744067,-73.91308
+IRT,Flushing,46 St-Bliss St,40.7431175,-73.9187933
+IRT,Flushing,40 St-Lowery St,40.7437596,-73.9243672
+IRT,Flushing,33 St-Rawson St,40.7446191,-73.9317842
+IRT,Flushing,Hunters Point Av,40.7425199,-73.9486192
+IRT,Flushing,Vernon Blvd-Jackson Av,40.7426057,-73.9542528
+IRT,Flushing,Grand Central-42 St,40.7508941,-73.9751175
+IRT,Flushing,34 St-Hudson Yards,40.754904,-74.001323
+IRT,Flushing,34 St - Hudson Yards,40.755766,-74.0002359
+IRT/BMT,Flushing; Astoria,Queensboro Plaza,40.7503023,-73.9402294
+BMT,Franklin Shuttle,Park Pl,40.6745435,-73.9579335
+BMT,Jamaica,121 St,40.7002829,-73.8292737
+BMT,Jamaica,104 St,40.695033,-73.843298
+BMT,Jamaica,Woodhaven Blvd,40.6935603,-73.8526132
+BMT,Jamaica,85 St-Forest Pkwy,40.6926897,-73.8590944
+BMT,Jamaica,75 St-Elderts Ln,40.691479,-73.86661
+BMT,Jamaica,Cypress Hills,40.689596,-73.873555
+BMT,Jamaica,Crescent St,40.6836199,-73.8726013
+BMT,Jamaica,Norwood Av,40.6817899,-73.8790283
+BMT,Jamaica,Cleveland St,40.67968,-73.885709
+BMT,Jamaica,Alabama Av,40.6767708,-73.8999078
+BMT,Jamaica,Chauncey St,40.683335,-73.911394
+BMT,Jamaica,Gates Av,40.6900429,-73.9231697
+BMT,Jamaica,Kosciuszko St,40.692935,-73.928247
+BMT,Jamaica,Myrtle Av,40.6970278,-73.9355833
+BMT,Jamaica,Lorimer St,40.704293,-73.94833
+BMT,Jamaica,Hewes St,40.707149,-73.954427
+BMT,Jamaica,Marcy Av,40.708681,-73.958927
+BMT,Jamaica,Bowery,40.7199997,-73.9935462
+BMT,Jamaica,Brooklyn Bridge-City Hall/Chambers St,40.712699,-74.004099
+BMT,Jamaica,Broad St,40.705747,-74.011554
+IRT,Jerome Av,Woodlawn,40.886819,-73.878376
+IRT,Jerome Av,Mosholu Pkwy,40.8795606,-73.8851577
+IRT,Jerome Av,Bedford Park Blvd-Lehman College,40.8735714,-73.8898784
+IRT,Jerome Av,183 St,40.8585019,-73.9041003
+IRT,Jerome Av,Burnside Av,40.8533424,-73.9079574
+IRT,Jerome Av,176 St,40.848385,-73.912003
+IRT,Jerome Av,Mt Eden Av,40.844702,-73.91465
+IRT,Jerome Av,149 St-Grand Concourse,40.818259,-73.927659
+IRT,Jerome Av,138 St-Grand Concourse,40.8133392,-73.9299986
+IRT,Lenox - White Plains Rd,Wakefield-241 St,40.9032151,-73.8504013
+IRT,Lenox - White Plains Rd,Nereid Av,40.8982594,-73.8543463
+IRT,Lenox - White Plains Rd,233 St,40.893622,-73.8574101
+IRT,Lenox - White Plains Rd,225 St,40.8880179,-73.8605127
+IRT,Lenox - White Plains Rd,219 St,40.8837982,-73.8628369
+IRT,Lenox - White Plains Rd,Burke Av,40.871631,-73.867283
+IRT,Lenox - White Plains Rd,Allerton Av,40.865605,-73.867476
+IRT,Lenox - White Plains Rd,Bronx Park East,40.8487261,-73.8684392
+IRT,Lenox - White Plains Rd,E 180 St,40.841223,-73.873499
+IRT,Lenox - White Plains Rd,West Farms Sq-E Tremont Av,40.8404556,-73.8800035
+IRT,Lenox - White Plains Rd,174 St,40.8373453,-73.88803
+IRT,Lenox - White Plains Rd,Freeman St,40.8304069,-73.8920048
+IRT,Lenox - White Plains Rd,Simpson St,40.823884,-73.893197
+IRT,Lenox - White Plains Rd,Intervale Av,40.8224646,-73.8967402
+IRT,Lenox - White Plains Rd,Jackson Av,40.8162481,-73.9079543
+IRT,Lenox - White Plains Rd,3 Av-149 St,40.816033,-73.918064
+IRT,Lenox - White Plains Rd,Harlem-148 St,40.8240843,-73.936986
+IRT,Lenox - White Plains Rd,Central Park North (110 St),40.7985092,-73.9526653
+IRT,Lexington Av,110 St,40.7948147,-73.9446136
+IRT,Lexington Av,86 Street,40.7795098,-73.9553242
+IRT,Lexington Av,68 St-Hunter College,40.7678158,-73.9643754
+IRT,Lexington Av,Lexington Av/51-53 Sts,40.7567229,-73.972565
+IRT,Lexington Av,33 St,40.7458701,-73.9826382
+IRT,Lexington Av,Astor Pl,40.7300186,-73.9914524
+IRT,Lexington Av,Bowling Green,40.7048374,-74.0145964
+IND,Liberty Av,Grant Av,40.6768128,-73.8654636
+IND,Liberty Av,80 St,40.6793842,-73.8603012
+IND,Liberty Av,88 St,40.6800052,-73.8504319
+IND,Liberty Av,Rockaway Blvd,40.6803312,-73.8451644
+IND,Liberty Av,Ozone Park-Lefferts Blvd,40.68589,-73.827081
+BMT,Myrtle Av,Middle Village-Metropolitan Av,40.7122137,-73.8892288
+BMT,Myrtle Av,Fresh Pond Rd,40.7060033,-73.8965041
+BMT,Myrtle Av,Forest Av,40.704443,-73.902389
+BMT,Myrtle Av,Seneca Av,40.702856,-73.907898
+BMT,Myrtle Av,Knickerbocker Av,40.6989325,-73.918769
+BMT,Myrtle Av,Central Av,40.697887,-73.926505
+IRT,Nostrand,President St-Medgar Evers College,40.6681787,-73.950866
+IRT,Nostrand,Sterling St,40.6633164,-73.9510467
+IRT,Nostrand,Winthrop St,40.656171,-73.950346
+IRT,Nostrand,Beverly Rd,40.6450334,-73.9492515
+IRT,Nostrand,Newkirk Av-Little Haiti,40.6398937,-73.9486759
+IRT,Nostrand,Flatbush Av-Brooklyn College,40.6332807,-73.9479297
+IRT,Pelham,Pelham Bay Park,40.852803,-73.827195
+IRT,Pelham,Buhre Av,40.846891,-73.832639
+IRT,Pelham,Middletown Rd,40.843609,-73.836478
+IRT,Pelham,Westchester Sq-E Tremont Av,40.840128,-73.842875
+IRT,Pelham,Zerega Av,40.8366399,-73.8467133
+IRT,Pelham,Castle Hill Av,40.834093,-73.851857
+IRT,Pelham,Parkchester,40.8332372,-73.8608907
+IRT,Pelham,St Lawrence Av,40.8314802,-73.8674288
+IRT,Pelham,Morrison Av-Soundview,40.829517,-73.87486
+IRT,Pelham,Elder Av,40.82846,-73.879362
+IRT,Pelham,Whitlock Av,40.827298,-73.886256
+IRT,Pelham,Hunts Point Av,40.820614,-73.891519
+IRT,Pelham,Longwood Av,40.8163303,-73.8964885
+IRT,Pelham,E 149 St,40.8123603,-73.9041644
+IRT,Pelham,E 143 St-St Mary's St,40.8080597,-73.9080761
+IRT,Pelham,Cypress Av,40.8052005,-73.9139656
+IRT,Pelham,Brook Av,40.807467,-73.919448
+IRT,Pelham,3 Av-138 St,40.810712,-73.92705
+IND/BMT,Queens - Archer,Jamaica Center-Parsons/Archer,40.7016719,-73.8024947
+IND/BMT,Queens - Archer,Sutphin Blvd-Archer Av-JFK Airport,40.7004005,-73.8079881
+IND,Queens - Archer,Jamaica-Van Wyck,40.7027553,-73.8172816
+IND,Queens Blvd,Jamaica-179 St,40.712483,-73.785064
+IND,Queens Blvd,169 St,40.7101668,-73.7949132
+IND,Queens Blvd,Parsons Blvd,40.707063,-73.80462
+IND,Queens Blvd,Sutphin Blvd,40.7049172,-73.8119582
+IND,Queens Blvd,Briarwood,40.7089519,-73.8201774
+IND,Queens Blvd,Kew Gardens-Union Tpke,40.714673,-73.832151
+IND,Queens Blvd,75 Av,40.7186225,-73.8382901
+IND,Queens Blvd,Forest Hills-71 Av,40.7222806,-73.8451532
+IND,Queens Blvd,67 Av,40.7266187,-73.8535368
+IND,Queens Blvd,63 Dr-Rego Park,40.729967,-73.8627461
+IND,Queens Blvd,Grand Av-Newtown,40.7375079,-73.8774159
+IND,Queens Blvd,Elmhurst Av,40.7427942,-73.8830343
+IND,Queens Blvd,65 St,40.7491552,-73.897499
+IND,Queens Blvd,Northern Blvd,40.7530985,-73.9071227
+IND,Queens Blvd,46 St,40.756634,-73.9144105
+IND,Queens Blvd,Steinway St,40.756583,-73.921108
+IND,Queens Blvd,Queens Plaza,40.748679,-73.9384765
+IND,Queens Blvd,5 Av/53 St,40.7606388,-73.9764862
+IND,Rockaway,Aqueduct Racetrack,40.6722991,-73.83559
+IND,Rockaway,Aqueduct-N Conduit Av,40.6693618,-73.8348422
+IND,Rockaway,Howard Beach-JFK Airport,40.6604843,-73.830536
+IND,Rockaway,Broad Channel,40.6080632,-73.815982
+IND,Rockaway,Beach 90 St,40.5880155,-73.8141178
+IND,Rockaway,Beach 98 St,40.5852808,-73.8204642
+IND,Rockaway,Beach 105 St,40.583187,-73.827388
+IND,Rockaway,Rockaway Park-Beach 116 St,40.5805473,-73.8374145
+IND,Rockaway,Beach 67 St,40.590744,-73.797789
+IND,Rockaway,Beach 60 St,40.5924904,-73.7894055
+IND,Rockaway,Beach 44 St,40.593091,-73.7759873
+IND,Rockaway,Beach 36 St,40.595521,-73.768271
+IND,Rockaway,Beach 25 St,40.5997277,-73.7619694
+IND,Rockaway,Far Rockaway-Mott Av,40.604657,-73.754178
+BMT,Sea Beach,8 Av,40.634552,-74.010726
+BMT,Sea Beach,62 St/New Utrecht Av,40.625606,-73.99683
+BMT,Sea Beach,20 Av,40.617341,-73.98484
+BMT,Sea Beach / West End / Culver / Brighton,Coney Island-Stillwell Av,40.5764558,-73.9812435
+SIR,Staten Island,St George,40.6441717,-74.0731753
+SIR,Staten Island,Tompkinsville,40.6376665,-74.0750213
+SIR,Staten Island,Stapleton,40.6273214,-74.075095
+SIR,Staten Island,Clifton,40.6207463,-74.0710103
+SIR,Staten Island,Grasmere,40.6036771,-74.0836629
+SIR,Staten Island,Old Town,40.5963353,-74.0874145
+SIR,Staten Island,Dongan Hills,40.5885359,-74.0963615
+SIR,Staten Island,Dongan Hill,40.5889957,-74.0956595
+SIR,Staten Island,Jefferson Av,40.5839541,-74.1027069
+SIR,Staten Island,Grant City,40.5790723,-74.109741
+SIR,Staten Island,New Dorp,40.5740313,-74.116692
+SIR,Staten Island,Oakwood Heights,40.5646184,-74.1268361
+SIR,Staten Island,Bay Terrace,40.5559377,-74.1374575
+SIR,Staten Island,Great Kills,40.5517017,-74.1506414
+SIR,Staten Island,Eltingville,40.5448229,-74.1645123
+SIR,Staten Island,Annadale,40.540231,-74.1787012
+SIR,Staten Island,Huguenot,40.5331368,-74.1922904
+SIR,Staten Island,Prince's Bay,40.5251148,-74.200672
+SIR,Staten Island,Pleasant Plains,40.522445,-74.2171263
+SIR,Staten Island,Richmond Valley,40.5196294,-74.2295408
+SIR,Staten Island,Arthur Kill,40.5167299,-74.2420297
+SIR,Staten Island,Tottenville,40.5132347,-74.2509716
+BMT,West End,9 Av,40.6464022,-73.9944751
+BMT,West End,55 St,40.6315288,-73.9956256
+BMT,West End,71 St,40.6191533,-73.99925
+BMT,West End,25 Av,40.597952,-73.987442
+BMT,West End,Bay 50 St,40.588305,-73.983791
