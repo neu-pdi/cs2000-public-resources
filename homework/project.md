@@ -5,28 +5,19 @@ hide_table_of_contents: true
 title: Course Project
 ---
 
-The Course Project will be split into multiple assignments, spread throughout
-the course. In order to more easily understand its full scope, this page
-includes all parts of it.
+The Course Project will be split into multiple assignments, spread throughout the course. In order to more easily understand its full scope, this page includes all parts of it.
 
+You've been recruited to work in the research wing helping to develop housing policy for New York City, focusing on identifying optimal locations for housing development and acquisition. Your analysis will support 2 key housing strategies currently being pursued by urban planners and housing advocates.
 
-You’ve been recruited to work in the research wing working to help pass
-legislation modelled after an act that is currently under discussion in RI, the
-Create Homes Act.  
+There are 2 components of the housing development strategy that you will work on research projects related to:
 
-There are two components of the Act that you will work on research projects
-related to (these descriptions come from from
-https://reclaimri.org/campaign/housing-justice-legislation):
+1. **Creating a development pipeline to identify and utilize underutilized public property for housing.**
+2. **Supporting the acquisition and improvement of existing multi-family housing.**
 
-1. Creating a land bank to recapture and develop housing on underutilized public property.
-2. Funding the acquisition, preservation, and renovation of existing multi-family housing.
+**Tasks related to each component:**
 
-Tasks related to each component: 
+1. **Public Property Development Analysis**: You will identify existing public property that is unused or underutilized using NYC property records. Once identified, you will visualize where these properties are located across the five boroughs, and compute metrics of desirability for housing development.
 
-1. You will identify existing public property that is unused or underutilized using public tax records. Once it has been identified, you will visualize where it is, and compute metrics of desirability for development — distance to public transit, to schools, etc. 
-2. You will identify existing inventory of multi-family housing, again using the public tax records. These record should be used to determine priority buildings: ones with a low tax value to square footage ratio, which may indicate poor condition but also mean less expensive to acquire, and again use desirability metrics, and visualize the results.
+2. **Multi-Family Housing Acquisition Strategy**: You will identify existing inventory of multi-family housing across NYC, using the property records to determine priority buildings for acquisition. These analyses will focus on properties with favorable building-area-to-lot-area ratios, which may indicate development potential or undervaluation, making them less expensive to acquire. You will again apply desirability metrics including transit accessibility and school proximity, and create visualizations showing the distribution of opportunities across NYC's neighborhoods.
 
-In order to do this we need:
-- data that indicates publicly owned property and what it is used for / value of buildings.  Building type “99 - Vacant” and “LU_DESC” “CITY OF BOSTON”? Not sure if that’s everything but maybe enough?
-- data with locations of public transit, schools, anything else “desirable” (parks? libraries?). Tax assessors has a “GIS ID” — not sure how to use that. 
-- data with multi-family houses, unit sizes and tax values (to be able to compute value per unit). Tax assessors DB gives living area and total value 
+By the end of this project, you will have created an analysis framework that identifies both public development opportunities and private acquisition targets, visualized geographically, and prioritized using evidence-based metrics that best support housing development across New York City.
