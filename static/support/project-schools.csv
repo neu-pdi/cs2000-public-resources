@@ -1,4 +1,4 @@
-School Name,Latitude,Longitude,Address (Full),City,Zip,Percent Asian,Percent Black,Percent Hispanic,Percent Black / Hispanic,Percent White
+schoolname,latitude,longitude,address,city,zip,percentasian,percentblack,percenthispanic,percentblackhispanic,percentwhite
 THE PECK SLIP SCHOOL,40.708639,-74.001925,"1 PECK SLIP NEW YORK, NY 10038",NEW YORK,10038,16%,3%,13%,16%,59%
 P.S. 527 - EAST SIDE SCHOOL FOR SOCIAL ACTION,40.78058,-73.94791,"323 E 91ST ST NEW YORK, NY 10128",NEW YORK,10128,15%,2%,19%,21%,59%
 WEST END SECONDARY SCHOOL,40.772487,-73.988153,"227-243 W 61ST ST NEW YORK, NY 10023",NEW YORK,10023,4%,10%,18%,27%,63%
