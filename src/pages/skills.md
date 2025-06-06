@@ -12,7 +12,8 @@ form the primary source of final grades.
 
 Each skill will be marked as "Doesn't meet expectations", "Approaching
 expectations", and "Meets expectations", and students may attempt any skill
-assessment up to four times, with the best result being used for their grade.
+assessment up to five times (four independently, and once via the bulk
+assessments, see below), with the best result being used for their grade.
 
 1. <a id="(1)" href="#(1)">Design basic functions (Pyret)</a>
 2. <a id="(2)" href="#(2)">Construct / Transform Tables (Pyret)</a>
