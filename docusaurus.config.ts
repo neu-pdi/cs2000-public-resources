@@ -149,11 +149,6 @@ const config: Config = {
         },
         {
           position: 'left',
-          to: '/outcomes/',
-          label: 'Outcomes',
-        },
-        {
-          position: 'left',
           to: '/skills/',
           label: 'Skills',
         },
