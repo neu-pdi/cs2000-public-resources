@@ -22,7 +22,7 @@ export default function DaySummary({ version }: { version: string }) {
                 const { required_preparation, optional_preparation } = docContent.frontMatter
                 const headings = docContent.toc || [];
                 const headngMinutes = headings.map(heading => {
-                    const regeex = /\(([0-9]+) minutes\)/
+                    const regeex = /\(([0-9]+) mins\)/
                     const match = heading.value.match(regeex)
                     return match ? parseInt(match[1]) : 0
                 })

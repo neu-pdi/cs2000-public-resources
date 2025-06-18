@@ -10,21 +10,52 @@ hide_table_of_contents: true
 This course will teach the following skills, repeated assessment of which will
 form the primary source of final grades. 
 
-Each skill will be marked as "Doesn't meet expectations", "Approaching
+Each skill will be assessed as "Doesn't meet expectations", "Approaching
 expectations", and "Meets expectations", and students may attempt any skill
 assessment up to five times (four independently, and once via the bulk
 assessments, see below), with the best result being used for their grade.
 
+A brief summary of what is expected for "Meets expections" is given below each
+numbered skill.
+
 1. <a id="(1)" href="#(1)">Design basic functions (Pyret)</a>
+   - Type annotations (for basic types -- strings, numbers, images, booleans)
+   - Doc strings (concise, not redundant with type annotation, not including unnecessary implementation details)
+   - Test cases in `where` blocks (covering common cases, "edge" cases -- zero and negative numbers, empty strings, etc)
+   - Well-formatted implementations -- clear naming for function arguments, no unnecessary `if` expressions, etc. 
 2. <a id="(2)" href="#(2)">Construct / Transform Tables (Pyret)</a>
+   - Create literal tables in code, and import them from CSVs (stored at URLs and files)
+   - Extracting rows and single values from tables
+   - Using common table utilities like `build-column`, `filter-with`, `transform-column` to transform tables
+   - Use `lam` for more concise transformations
 3. <a id="(3)" href="#(3)">Iteration: Lists (Pyret)</a>
+   - Use local mutable variables defined with `var`, along with `for each` loops
+     to construct values incrementally, element by element from a list.
 4. <a id="(4)" href="#(4)">Structured & Conditional Data (Pyret)</a>
+   - Create and use data that has multiple fields, using field projection ("dot" notation) to access fields
+   - Correct type annotations for data type, vs. constructor name.
+   - Create and use data that has multiple variants, using `cases` to write code
+     that can do different things depending on the variant.
 5. <a id="(5)" href="#(5)">Recursion: Lists (Pyret)</a>
+   - Design functions over lists using `cases`, which recur on the tail in the
+     `link` case.
 6. <a id="(6)" href="#(6)">Recursion: Trees (Pyret)</a>
+   - Design trees using `data`, which have more than one field that refer to the data definition.
+   - Design functions over trees using `cases`, which recur on the self-referential fields. 
 7. <a id="(7)" href="#(7)">Variable Scope (Pyret & Python)</a>
+   - Understand the behavior of variables defined within functions and outside.
+   - Understand Python's variable definition and variable update behavior.
+   - Understand Python's `global` syntax, and why and when it is necessary.
 8. <a id="(8)" href="#(8)">Design basic functions (Python)</a>
+   - Type annotations (for types like strings, numbers, booleans, lists)
+   - Doc strings (concise, not redundant with type annotations, not including unnecessary implementation details)
+   - Test cases in separate test functions using `assert`, following `pytest` conventions (covering common cases, "edge" cases, etc)
+   - Well-formatted implementations -- clear naming for function arguments, no unnecessary if statements, etc.
 9. <a id="(9)" href="#(9)">Iteration: Lists (Python)</a>
+   - Use local variables and `for ... in` loops to construct values incrementally, element by element from a list.
 10. <a id="(10)" href="#(10)">Aliasing & Mutation (Python)</a>
+    - Understand the difference between modifying variables and modifying fields of dataclasses or elements of lists.
+    - Understand the consequences of having multiple variables pointing to the same data. 
 11. <a id="(11)" href="#(11)">Identifying Privacy Issues in Problem Formulation</a>
 12. <a id="(12)" href="#(12)">Identifying Stakeholders in Problem Formulation</a> 
 
