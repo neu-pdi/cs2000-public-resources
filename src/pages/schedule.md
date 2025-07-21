@@ -11,7 +11,7 @@ hide_table_of_contents: true
 
 Week | Topic | Days | Recitation | HW Due | Lab
 -- | -- | -- | -- | -- | --
-Week 1 (Sept 3-5) | Programming with Numbers, strings, images: IDE, interactions, operations on standard values | [D1](/days/1), [D2](/days/2) | - | - | -
+Week 1 (Sept 3-5) | Programming with Numbers, strings, images: IDE, interactions, operations on standard values | [D1](/days/1), [D2](/days/2) | No Recitation | No HW | No Lab
 Week 2 (Sept 8-12) | Definitions, functions, conditionals: type annotations, test cases | [D3](/days/3), [D4](/days/4), [D5](/days/5) | [R1](/recitation/1) | [HW1](/homework/1) | [Lab1](/lab/1)
 Week 3 (Sept 15-19) | Introduction to tables: constructing, importing, extracting | [D6](/days/6), [D7](/days/7), [D8](/days/8) | [R2](/recitation/2) | [HW2](/homework/2) | [Lab2](/lab/2)
 Week 4 (Sept 22-26) | More on tables: transforming, filtering | [D9](/days/9), [D10](/days/10), [D11](/days/11) | [R3](/recitation/3) | [HW3](/homework/3) | [Lab3](/lab/3)
@@ -23,5 +23,5 @@ Week 9 (Oct 27-31) | More with trees | [D22](/days/22), [D23](/days/23), [SkillD
 Week 10 (Nov 3-7) | Transition to Python: IDE, files, definitions, testing | [D24](/days/24), [D25](/days/25), [D26](/days/26) | [R9](/recitation/9) | [HW9](/homework/9) | [Lab8](/lab/8)
 Week 11 (Nov 10-14) HOLIDAY Nov 11 | Scoping, mutable state, equality | [D27](/days/27), [D28](/days/28) | [R10](/recitation/10) | [HW10](/homework/10) | [Lab9](/lab/9)
 Week 12 (Nov 17-21) | Tables in Python: pandas & matplotlib | [D29](/days/29), [D30](/days/30), [D31](/days/31) | [R11](/recitation/11) | [HW11](/homework/11) | [SkillBundle2](/skills#(bundle2))
-Week 13 (Nov 24-25) HOLIDAY Nov 26-28 | File I/O: csv files, via pandas and manually | [D32](/days/32) | [R12](/recitation/12) | | [Lab10](/lab/10)
-Week 14 (Dec 1-5) | More with Python: catch up, bonus content, etc | [D33](/days/33), [SkillDay3](/skills/#(day3)) | | [HW12](/homework/12) | No lab
+Week 13 (Nov 24-25) HOLIDAY Nov 26-28 | File I/O: csv files, via pandas and manually | [D32](/days/32) | [R12](/recitation/12) | No HW | [Lab10](/lab/10)
+Week 14 (Dec 1-5) | More with Python: catch up, bonus content, etc | [D33](/days/33), [SkillDay3](/skills/#(day3)) | No Recitation | [HW12](/homework/12) | No Lab
