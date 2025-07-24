@@ -9,7 +9,7 @@ hide_table_of_contents: true
 
 (Dates used are for Fall 2025, US Campuses; will differ for other semesters or non-US campuses)
 
-Week | Topic | Days | Recitation | HW Due | Lab
+Week | Topic | Days | Recitation | HW Due (Thurs 9PM Boston / 6PM Oakland) | Lab
 -- | -- | -- | -- | -- | --
 Week 1 (Sept 3-5) | Programming with Numbers, strings, images: IDE, interactions, operations on standard values | [D1](/days/1), [D2](/days/2) | No Recitation | No HW | No Lab
 Week 2 (Sept 8-12) | Definitions, functions, conditionals: type annotations, test cases | [D3](/days/3), [D4](/days/4), [D5](/days/5) | [R1](/recitation/1) | [HW1](/homework/1) | [Lab1](/lab/1)
