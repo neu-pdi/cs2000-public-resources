@@ -111,10 +111,10 @@ skip the bulk assessment entirely. The two bundles are:
 
  Week | Topic | Skill Introduced | Assessable@Hours | Skill Day | Skill Bundle
 -- | -- | -- | --  | -- | --
-1 | Programming with numbers, strings, images: IDE, interactions, operations on standard values | [11](#(11)), [12](#(12)) | | |
+1 | Programming with numbers, strings, images: IDE, interactions, operations on standard values |  | | |
 2  | Definitions, functions, conditionals: type annotations, test cases | [1](#(1))| | |
-3  | Introduction to tables: constructing, importing, extracting | [2](#(2)) | [1](#(1)), [11](#(11)), [12](#(12)) | |
-4  | More on tables: transforming, filtering | [2](#(2)) | [1](#(1)), [11](#(11)), [12](#(12)) | |
+3  | Ethics, intro to tables: constructing, importing, extracting | [2](#(2)), [11](#(11)), [12](#(12)) | [1](#(1)) | |
+4  | More on tables: transforming, filtering | [2](#(2)), [11](#(11)), [12](#(12)) | [1](#(1)), [11](#(11)), [12](#(12)) | |
 5  | From tables to lists: extracting columns, performing operations on them, visualizing data | | [1](#(2)), [2](#(2)), [11](#(11)), [12](#(12)) | [SkillDay1](#(day1)) |
 6  | Computing with lists: iteration & mutable local variables | [3](#(3)) | [2](#(2)), [11](#(11)), [12](#(12)) | |
 7  | Structured & conditional data | [4](#(3)) | [2](#(2)), [3](#(3)), [11](#(11)), [12](#(12)) | | 
