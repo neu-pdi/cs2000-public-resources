@@ -24,7 +24,7 @@ numbered skill.
    - Test cases in `where` blocks (covering common cases, "edge" cases -- zero and negative numbers, empty strings, etc)
    - Well-formatted implementations -- clear naming for function arguments, no unnecessary `if` expressions, etc. 
 2. <a id="(2)" href="#(2)">Construct / Transform Tables (Pyret)</a>
-   - Create literal tables in code, and import them from CSVs (stored at URLs and files)
+   - Create literal tables in code, for testing
    - Extracting rows and single values from tables
    - Using common table utilities like `build-column`, `filter-with`, `transform-column` to transform tables
    - Use `lam` for more concise transformations
