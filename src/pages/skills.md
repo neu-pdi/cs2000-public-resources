@@ -15,49 +15,67 @@ expectations", and "Meets expectations", and students may attempt any skill
 assessment up to five times (four independently, and once via the bulk
 assessments, see below), with the best result being used for their grade.
 
-A brief summary of what is expected for "Meets expections" is given below each
-numbered skill.
 
 1. <a id="(1)" href="#(1)">Design basic functions (Pyret)</a>
-   - Type annotations (for basic types -- strings, numbers, images, booleans)
-   - Doc strings (concise, not redundant with type annotation, not including unnecessary implementation details)
-   - Test cases in `where` blocks (covering common cases, "edge" cases -- zero and negative numbers, empty strings, etc)
-   - Well-formatted implementations -- clear naming for function arguments, no unnecessary `if` expressions, etc. 
+   | | |
+   |---|---| 
+   | **Meets Expectations** | • Correct type annotation<br/>• Docstring that describes behavior, doesn't repeat type annotation.<br/>• A few (2+) correct tests<br/>• Well-formatted implementation -- clear naming for function arguments, no unnecessary if expressions, etc. |
+   | **Approaching Expectations** | • Missing docstring, or long, includes redundant type information, etc.<br/>• 1+ correct tests.<br/>• Correct implementation. |
 2. <a id="(2)" href="#(2)">Construct / Transform Tables (Pyret)</a>
-   - Create literal tables in code, for testing
-   - Extracting rows and single values from tables
-   - Using common table utilities like `build-column`, `filter-with`, `transform-column` to transform tables
-   - Use `lam` for more concise transformations
+   | | |
+   |---|---| 
+   | **Meets Expectations** | • Function designed has signature, docstring, and at least one test<br/>• Function uses correct table function (filter-with, build-column, etc)<br/>• Row helper does what is expected, whether defined with `lam` or named |
+   | **Approaching Expectations** | • Function uses correct table function (filter-with, build-column, etc)<br/>• Row helper accesses fields from row, but not in a way that solves the problem |
 3. <a id="(3)" href="#(3)">Iteration: Lists (Pyret)</a>
-   - Use local mutable variables defined with `var`, along with `for each` loops
-     to construct values incrementally, element by element from a list.
+   | | |
+   |---|---| 
+   | **Meets Expectations** | • Uses `for each` properly, drawing elements from the list<br/>• Mutates a single variable within the loop to correctly accumulate the result<br/>• Returns the final result after the loop |
+   | **Approaching Expectations** | • Uses `for each`, drawing elements from the list<br/>• Either: Mutates within the loop, but in such a way that doesn't produce the correct accumulated answer, or doesn't use the final result properly at the end of the loop |
 4. <a id="(4)" href="#(4)">Structured & Conditional Data (Pyret)</a>
-   - Create and use data that has multiple fields, using field projection ("dot" notation) to access fields
-   - Correct type annotations for data type, vs. constructor name.
-   - Create and use data that has multiple variants, using `cases` to write code
-     that can do different things depending on the variant.
+   | | |
+   |---|---| 
+   | **Meets Expectations** | • Uses `data` with variants as needed, fields with appropriate type annotations<br/>• Function uses either field projection or `cases` as needed<br/>• Function has signature, doc string, and tests |
+   | **Approaching Expectations** | • Uses `data` with variants as needed, fields if needed (possibly missing or incorrect annotations)<br/>• Function should use either field projection or cases, but may not do it correctly, or to match the problem |
 5. <a id="(5)" href="#(5)">Recursion: Lists (Pyret)</a>
-   - Design functions over lists using `cases`, which recur on the tail in the
-     `link` case.
+   | | |
+   |---|---| 
+   | **Meets Expectations** | • Function has appropriate type signature, doc string, and tests<br/>• Function uses `cases` to handle `empty` case and `link` case<br/>• In `link` case, calls function recursively on rest of list appropriately |
+   | **Approaching Expectations** | • Uses `cases` to break apart list, and has recursive call to rest of list |
 6. <a id="(6)" href="#(6)">Recursion: Trees (Pyret)</a>
-   - Design trees using `data`, which have more than one field that refer to the data definition.
-   - Design functions over trees using `cases`, which recur on the self-referential fields. 
-7. <a id="(7)" href="#(7)">Variable Scope (Pyret & Python)</a>
-   - Understand the behavior of variables defined within functions and outside.
-   - Understand Python's variable definition and variable update behavior.
-   - Understand Python's `global` syntax, and why and when it is necessary.
+   | | |
+   |---|---| 
+   | **Meets Expectations** | • Function has appropriate type signature, doc string, and tests<br/>• Function uses `cases` to handle base case and recursive case<br/>• In recursive case, calls function recursively on subtrees appropriately |
+   | **Approaching Expectations** | • Uses `cases` to break apart tree, and has recursive call on subtrees | 
+7. <a id="(7)" href="#(7)">Variable Scope (Python)</a>
+   | | |
+   |---|---| 
+   | **Meets Expectations** | • Output of given code, that uses variables, defined locally, in functions, globally, etc, is correct<br/>• Explanation of behavior, including global keyword if needed, is correct |
+   | **Approaching Expectations** | • Explanation mentions key idea, but does not use it to correctly characterize behavior |
 8. <a id="(8)" href="#(8)">Design basic functions (Python)</a>
-   - Type annotations (for types like strings, numbers, booleans, lists)
-   - Doc strings (concise, not redundant with type annotations, not including unnecessary implementation details)
-   - Test cases in separate test functions using `assert`, following `pytest` conventions (covering common cases, "edge" cases, etc)
-   - Well-formatted implementations -- clear naming for function arguments, no unnecessary if statements, etc.
+   | | |
+   |---|---| 
+   | **Meets Expectations** | • Correct type annotation<br/>• Docstring that describes behavior, doesn't repeat type annotation<br/>• A few (2+) correct tests<br/>• Correct implementation |
+   | **Approaching Expectations** | • Missing docstring, or long, includes redundant type information, etc.<br/>• 1+ correct tests<br/>• Correct implementation |
 9. <a id="(9)" href="#(9)">Iteration: Lists (Python)</a>
-   - Use local variables and `for ... in` loops to construct values incrementally, element by element from a list.
+   | | |
+   |---|---| 
+   | **Meets Expectations** | • Uses `for ... in ...` properly, drawing elements from the list<br/>• Mutates a single variable within the loop to correctly accumulate the result<br/>• Returns the final result after the loop |
+   | **Approaching Expectations** | • Uses `for ... in ...`, drawing elements from the list<br/>• Either: Mutates within the loop, but in such a way that doesn't produce the correct accumulated answer, or doesn't use the final result properly at the end of the loop |
 10. <a id="(10)" href="#(10)">Aliasing & Mutation (Python)</a>
-    - Understand the difference between modifying variables and modifying fields of dataclasses or elements of lists.
-    - Understand the consequences of having multiple variables pointing to the same data. 
+   | | |
+   |---|---| 
+   | **Meets Expectations** | • Output of given code that uses mutation of values like lists, aliasing, etc, is correct<br/>• Explanation of behavior is correct |
+   | **Approaching Expectations** | • Explanation mentions key idea, but does not use it to correctly characterize behavior | 
 11. <a id="(11)" href="#(11)">Identifying Privacy Issues in Problem Formulation</a>
-12. <a id="(12)" href="#(12)">Identifying Stakeholders in Problem Formulation</a> 
+   | | |
+   |---|---| 
+   | **Meets Expectations** | • TBD |
+   | **Approaching Expectations** | • TBD |
+12. <a id="(12)" href="#(12)">Identifying Stakeholders in Problem Formulation</a>
+   | | |
+   |---|---| 
+   | **Meets Expectations** | • TBD |
+   | **Approaching Expectations** | • TBD | 
 
 ## Skill Introduction
 
