@@ -62,20 +62,20 @@ assessments, see below), with the best result being used for their grade.
    | **Meets Expectations** | • Uses `for ... in ...` properly, drawing elements from the list<br/>• Mutates a single variable within the loop to correctly accumulate the result<br/>• Returns the final result after the loop |
    | **Approaching Expectations** | • Uses `for ... in ...`, drawing elements from the list<br/>• Either: Mutates within the loop, but in such a way that doesn't produce the correct accumulated answer, or doesn't use the final result properly at the end of the loop |
 10. <a id="(10)" href="#(10)">Aliasing & Mutation (Python)</a>
-   | | |
-   |---|---| 
-   | **Meets Expectations** | • Output of given code that uses mutation of values like lists, aliasing, etc, is correct<br/>• Explanation of behavior is correct |
-   | **Approaching Expectations** | • Explanation mentions key idea, but does not use it to correctly characterize behavior | 
+    | | |
+    |---|---| 
+    | **Meets Expectations** | • Output of given code that uses mutation of values like lists, aliasing, etc, is correct<br/>• Explanation of behavior is correct |
+    | **Approaching Expectations** | • Explanation mentions key idea, but does not use it to correctly characterize behavior |
 11. <a id="(11)" href="#(11)">Identifying Privacy Issues in Problem Formulation</a>
-   | | |
-   |---|---| 
-   | **Meets Expectations** | • TBD |
-   | **Approaching Expectations** | • TBD |
+    | | |
+    |---|---| 
+    | **Meets Expectations** | • TBD |
+    | **Approaching Expectations** | • TBD |
 12. <a id="(12)" href="#(12)">Identifying Stakeholders in Problem Formulation</a>
-   | | |
-   |---|---| 
-   | **Meets Expectations** | • TBD |
-   | **Approaching Expectations** | • TBD | 
+    | | |
+    |---|---| 
+    | **Meets Expectations** | • TBD |
+    | **Approaching Expectations** | • TBD |
 
 ## Skill Introduction
 
