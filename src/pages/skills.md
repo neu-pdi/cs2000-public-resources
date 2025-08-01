@@ -122,9 +122,8 @@ to the lab session. If they have already completed a given skill, they can skip
 that one, and if they have already completed all the skills, they are welcome to
 skip the bulk assessment entirely. The two bundles are:
 
-- <a id="(bundle1)" href="#(bundle1)">Skill Bundle 1</a>: [1](#(1)), [2](#(2)), [3](#(3)), [4](#(4)), [5](#(5)), [11](#(11)), [12](#(12))
-- <a id="(bundle2)" href="#(bundle2)">Skill Bundle 2</a>:  [6](#(6)), [7](#(7)), [8](#(8)), [9](#(9)), [10](#(10)), [11](#(11)), [12](#(12))
-
+- <a id="(bundle1)" href="#(bundle1)">Skill Bundle 1</a>: [1](#(1)), [2](#(2)), [3](#(3)), [4](#(4)), [11](#(11)), [12](#(12))
+- <a id="(bundle2)" href="#(bundle2)">Skill Bundle 2</a>: [5](#(5)), [6](#(6)), [7](#(7)), [8](#(8)), [9](#(9)), [10](#(10))
 ## Skill Schedule
 
  Week | Topic | Skill Introduced | Assessable@Hours | Skill Day | Skill Bundle
