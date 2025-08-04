@@ -3,9 +3,13 @@ import type { Config } from '@docusaurus/types';
 import rehypeKatex from 'rehype-katex';
 import remarkMath from 'remark-math';
 import { getChakraThemeSyncPlugin } from './src/plugins/chakra-theme-sync';
+import { createVariableSubstitutionPlugin } from './src/plugins/variable-substitution';
 import { oneDarkTheme, oneLightTheme } from './src/theme/one-dark-themes';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+
+// Configuration variables
+const dcicDomain = 'https://dcic.pdi.run';
 
 const config: Config = {
   title: 'NEU CS 2000 Public Resources',
@@ -17,6 +21,11 @@ const config: Config = {
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/cs2000-public-resources/',
+
+  // Custom fields for reusable variables
+  customFields: {
+    dcicDomain,
+  },
 
   // GitHub pages deployment config.
   organizationName: 'neu-pdi', // Usually your GitHub org/user name.
@@ -47,7 +56,7 @@ const config: Config = {
           sidebarPath: './sidebars/days.ts',
           editUrl:
             'https://github.com/neu-pdi/cs2000-public-resources/edit/main/days/',
-          remarkPlugins: [remarkMath],
+          remarkPlugins: [remarkMath, createVariableSubstitutionPlugin(dcicDomain)],
           rehypePlugins: [rehypeKatex],
         },
         pages: {},
@@ -69,6 +78,7 @@ const config: Config = {
         path: 'homework',
         sidebarPath: './sidebars/homework.ts',
         routeBasePath: 'homework',
+        remarkPlugins: [createVariableSubstitutionPlugin(dcicDomain)],
       },
     ],
     [
@@ -78,6 +88,7 @@ const config: Config = {
         path: 'lab',
         sidebarPath: './sidebars/lab.ts',
         routeBasePath: 'lab',
+        remarkPlugins: [createVariableSubstitutionPlugin(dcicDomain)],
       },
     ],
     [
@@ -87,6 +98,7 @@ const config: Config = {
         path: 'recitation',
         sidebarPath: './sidebars/recitation.ts',
         routeBasePath: 'recitation',
+        remarkPlugins: [createVariableSubstitutionPlugin(dcicDomain)],
       },
     ],
   ],

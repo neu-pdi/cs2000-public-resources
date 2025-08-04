@@ -32,7 +32,8 @@
     "react-markdown": "^10.0.1",
     "rehype-katex": "^7.0.1",
     "rehype-prism": "^2.3.3",
-    "remark-math": "^6.0.0"
+    "remark-math": "^6.0.0",
+    "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.7.0",
