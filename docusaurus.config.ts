@@ -164,6 +164,11 @@ const config: Config = {
           to: '/skills/',
           label: 'Skills',
         },
+        {
+          position: 'left',
+          to: '/tables/',
+          label: 'Tables',
+        },
       ],
     },
     footer: {
