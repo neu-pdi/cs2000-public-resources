@@ -5,9 +5,9 @@ hide_table_of_contents: true
 ---
 
 
-### Schedule of Topics & Assignments
+### Schedule of Topics & Assignments (Boston & Oakland)
 
-(Dates used are for Fall 2025, US Campuses; will differ for other semesters or non-US campuses)
+(Dates used are for Fall 2025, Boston & Oakland Campuses; will differ for other semesters or other campuses)
 
 Week | Topic | Days | Recitation | HW Due (Thurs 9PM Boston / 6PM Oakland) | Lab
 -- | -- | -- | -- | -- | --
