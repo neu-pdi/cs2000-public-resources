@@ -47,14 +47,22 @@ Grades will be primarily assigned by achievement levels of the course
 [Skills](/skills/), along with required grade thresholds on HW for each letter grade,
 and + (other than A) given for participation in 8 or more out of 10 labs, - given for participating in fewer than 6 out of ten labs.
 
-This is captured by the following table -- the highest row that a student satisfies all columns of will be their grade, and if no rows are completely satisfied, the student will not pass the course.
+This is captured by the following table -- the highest row that a student satisfies all columns of will be their grade, and **if no rows are completely satisfied, the student will not pass the course.**
 
-Grade | Skills Needed | HW Needed 
--- | -- | --
-A | Meets expectations on 10+/12, Approaching expectations on remainder | 85% or better
-B | Meets expectations on 8+/12, Approaching expectations on remainder | 75% or better
-C | Meets expectations on 5+/12, Approaching expectations on remainder | 65% or better
-D | Approaching expectations or better on 9+/12 | 55% or better
+Grade | Skills Needed | HW Average | Participate in Labs
+-- | -- | -- | -- 
+A | "Meets expectations" on X/12 where X >= 11, "Approaching expectations" on (12-X)/12 | 80% or better | 6 or more
+A- | "Meets expectations" on X/12 where X >= 11, "Approaching expectations" on (12-X)/12 | 80% or better | 
+B+ | "Meets expectations" on X/12 where X >= 9, "Approaching expectations" on (12-X)/12 | 70% or better | 8 or more
+B | "Meets expectations" on X/12 where X >= 9, "Approaching expectations" on (12-X)/12 | 70% or better | 6 or more
+B- | "Meets expectations" on X/12 where X >= 9, "Approaching expectations" on (12-X)/12 | 70% or better | 
+C+ | "Meets expectations" on X/12 where X >= 7, "Approaching expectations" on (12-X)/12 | 60% or better | 8 or more
+C | "Meets expectations" on X/12 where X >= 7, "Approaching expectations" on (12-X)/12 | 60% or better | 6 or more
+C- | "Meets expectations" on X/12 where X >= 7, "Approaching expectations" on (12-X)/12 | 60% or better |
+D+ | "Approaching expectations" or "Meets expectations" on 9+/12 | 50% or better | 8 or more
+D | "Approaching expectations" or "Meets expectations" on 9+/12 | 50% or better | 6 or more
+D- | "Approaching expectations" or "Meets expectations" on 9+/12 | 50% or better |
+
 
 
 ### Textbook
