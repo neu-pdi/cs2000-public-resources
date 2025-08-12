@@ -127,3 +127,23 @@ this will result in direct harm to your education.
 > Part of the reason for these being guidelines, rather than academic integrity policies, is that some interaction with LLMs is now unavoidable -- using a search engine now will give you an AI generated overview, and similar interactions with models (trying to understand concepts) is not necessarily discouraged, though we would always encourage you to bring larger questions to our course staff, who will likely be able to give you better answers, more suited to your background, to our curriculum, etc.
 >
 > Finally, if you do use LLMs for search, you are responsible for validating any information you find. Sources of ground truth are official language documentation, our course textbook, course staff, and the course website.
+
+### Accommodations
+
+TBD
+
+### Title IX
+
+Title IX of the Education Amendments of 1972 protects individuals from sex or gender-based discrimination, including discrimination based on gender-identity, in educational programs and activities that receive federal financial assistance.
+
+Northeastern’s Title IX Policy prohibits Prohibited Offenses, which are defined as sexual harassment, sexual assault, relationship or domestic violence, and stalking. The Title IX Policy applies to the entire community, including male, female, transgender students, faculty and staff.
+
+If you or someone you know has been a survivor of a Prohibited Offense, confidential support and guidance can be found through University Health and Counseling Services and the Center for Spiritual Dialogue and Service clergy members. By law, those employees are not required to report allegations of sex or gender-based discrimination to the University.
+
+Alleged violations can be reported non-confidentially to the Title IX Coordinator within The Office for Gender Equity and Compliance at titleix@northeastern.edu and/or through NUPD. Reporting Prohibited Offenses to NUPD does NOT commit the victim/affected party to future legal action.
+
+Faculty members are considered “responsible employees” at Northeastern University, meaning they are required to report all allegations of sex or gender-based discrimination to the Title IX Coordinator.
+
+In case of an emergency, please call 911.
+
+Please visit https://www.northeastern.edu/titleix for a complete list of reporting options and resources both on- and off-campus.
