@@ -86,7 +86,8 @@ The following rules are intended to help you get the most out of your education 
 In detail:
 - You must understand the material you turn in.
 - Copying material from another person without their knowledge is not allowed.
-- Additionally, sharing solutions in public forums (e.g., posting to public questions, posting code online, etc) constitutes an academic integrity violation, as it may make it harder for other students to do work on their own, harming their own learning.
+- Additionally, sharing solutions in forums (e.g., posting to public questions, posting code online, etc) constitutes an academic integrity violation, as it may make it harder for other students to do work on their own, harming their own learning.
+- Any sharing information about the content of skill assessments is an academic integrity violation, and may result in failing the class.
 
 However, there are other cases that do not violate policies, but where we still offer strong _guidelines_: 
 
