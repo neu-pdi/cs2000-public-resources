@@ -49,19 +49,115 @@ and + (other than A) given for participation in 8 or more out of 10 labs, - give
 
 This is captured by the following table -- the highest row that a student satisfies all columns of will be their grade, and **if no rows are completely satisfied, the student will not pass the course.**
 
-Grade | Skills Needed | HW Average | Participate in Labs
--- | -- | -- | -- 
-A | "Meets expectations" on X/12 where X >= 11, "Approaching expectations" on (12-X)/12 | 80% or better | 6 or more
-A- | "Meets expectations" on X/12 where X >= 11, "Approaching expectations" on (12-X)/12 | 80% or better | 
-B+ | "Meets expectations" on X/12 where X >= 9, "Approaching expectations" on (12-X)/12 | 70% or better | 8 or more
-B | "Meets expectations" on X/12 where X >= 9, "Approaching expectations" on (12-X)/12 | 70% or better | 6 or more
-B- | "Meets expectations" on X/12 where X >= 9, "Approaching expectations" on (12-X)/12 | 70% or better | 
-C+ | "Meets expectations" on X/12 where X >= 7, "Approaching expectations" on (12-X)/12 | 60% or better | 8 or more
-C | "Meets expectations" on X/12 where X >= 7, "Approaching expectations" on (12-X)/12 | 60% or better | 6 or more
-C- | "Meets expectations" on X/12 where X >= 7, "Approaching expectations" on (12-X)/12 | 60% or better |
-D+ | "Approaching expectations" or "Meets expectations" on 9+/12 | 50% or better | 8 or more
-D | "Approaching expectations" or "Meets expectations" on 9+/12 | 50% or better | 6 or more
-D- | "Approaching expectations" or "Meets expectations" on 9+/12 | 50% or better |
+<table>
+<thead>
+<tr>
+<th></th>
+<th colspan="3" align="center">Skills Needed (out of 12 total)</th>
+<th></th>
+<th></th>
+</tr>
+<tr>
+<th>Grade</th>
+<th><strong>Meets Expectations</strong></th>
+<th><strong>Approaching Expectations</strong></th>
+<th><strong>Not Approaching</strong></th>
+<th>HW Average</th>
+<th>Lab Participation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A</strong></td>
+<td>11+</td>
+<td>1 or fewer</td>
+<td>0</td>
+<td>80% or better</td>
+<td>6 or more</td>
+</tr>
+<tr>
+<td><strong>A-</strong></td>
+<td>11+</td>
+<td>1 or fewer</td>
+<td>0</td>
+<td>80% or better</td>
+<td>any</td>
+</tr>
+<tr>
+<td><strong>B+</strong></td>
+<td>9+</td>
+<td>3 or fewer</td>
+<td>0</td>
+<td>70% or better</td>
+<td>8 or more</td>
+</tr>
+<tr>
+<td><strong>B</strong></td>
+<td>9+</td>
+<td>3 or fewer</td>
+<td>0</td>
+<td>70% or better</td>
+<td>6 or more</td>
+</tr>
+<tr>
+<td><strong>B-</strong></td>
+<td>9+</td>
+<td>3 or fewer</td>
+<td>0</td>
+<td>70% or better</td>
+<td>any</td>
+</tr>
+<tr>
+<td><strong>C+</strong></td>
+<td>7+</td>
+<td>5 or fewer</td>
+<td>0</td>
+<td>60% or better</td>
+<td>8 or more</td>
+</tr>
+<tr>
+<td><strong>C</strong></td>
+<td>7+</td>
+<td>5 or fewer</td>
+<td>0</td>
+<td>60% or better</td>
+<td>6 or more</td>
+</tr>
+<tr>
+<td><strong>C-</strong></td>
+<td>7+</td>
+<td>5 or fewer</td>
+<td>0</td>
+<td>60% or better</td>
+<td>any</td>
+</tr>
+<tr>
+<td><strong>D+</strong></td>
+<td></td>
+<td></td>
+<td>3 or fewer</td>
+<td>50% or better</td>
+<td>8 or more</td>
+</tr>
+<tr>
+<td><strong>D</strong></td>
+<td></td>
+<td></td>
+<td>3 or fewer</td>
+<td>50% or better</td>
+<td>6 or more</td>
+</tr>
+<tr>
+<td><strong>D-</strong></td>
+<td></td>
+<td></td>
+<td>3 or fewer</td>
+<td>50% or better</td>
+<td>any</td>
+</tr>
+</tbody>
+</table>
+
 
 
 
