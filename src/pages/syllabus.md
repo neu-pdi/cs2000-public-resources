@@ -200,7 +200,7 @@ However, there are other cases that do not violate policies, but where we still 
 > material will result in not being able to pass the skill assessments. 
 > 
 > Even with perfect homework scores, failing to 
-> pass sufficient skill assessments will result in a failing grade in the course (consult the grading table), so take homework for what it is 
+> pass sufficient skill assessments will result in a failing grade in the course (consult the [grading table](#grading)), so take homework for what it is 
 > intended: extensive opportunity to practice the skills we are teaching, paired with high quality feedback 
 > about the solution you came up with.
 
