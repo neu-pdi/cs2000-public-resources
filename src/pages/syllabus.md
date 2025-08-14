@@ -199,7 +199,7 @@ Computer science, both academically and professionally, is a collaborative disci
 The following rules are intended to help you get the most out of your education and to clarify the line between honest and dishonest work. The professor reserves the right to ask you to verbally explain the reasoning behind any answer or code that you turn in and to modify your grade based on your answers. It is vitally important that you turn in work that you understand and follow the guidelines for academic honesty. The minimum penalty for an academic integrity violation is a zero on the assignment and a report to the [Office of Student Conduct and Conflict Resolution (OSCCR)](https://osccr.sites.northeastern.edu/). Penalties are increased if there are aggravating factors, such as stealing another student's work or lying about cheating.
 
 Specifically:
-- You must understand the material you turn in.
+- You are responsible for any material you turn in.
 - Copying material from another person without their knowledge is not allowed.
 - Additionally, sharing solutions in forums (e.g., posting to public questions, posting code online, etc) constitutes an academic integrity violation, as it may make it harder for other students to do work on their own, harming their own learning.
 - Any sharing or receiving information about the content of skill assessments is an academic integrity violation, and may result in failing the class.
