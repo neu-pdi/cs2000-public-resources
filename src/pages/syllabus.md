@@ -10,7 +10,7 @@ Introduces computer science and data science to students with no prior programmi
 
 ### Course Structure
 
-There will be three in-person **classes** (in Boston & Oakland) or two in-person **classes** (in NYC), one **lab**, and one _optional_ **recitation** per week. All content is directed around teaching a set of 12 **skills**, assessment of which will form the primary assessment of the class, and which are described in detail at [Skills](/skills). 
+There will be three in-person **classes** (in Boston & Oakland) or two in-person **classes** (in NYC & London), one **lab**, and one _optional_ **recitation** per week. All content is directed around teaching a set of 12 **skills**, assessment of which will form the primary assessment of the class, and which are described in detail at [Skills](/skills). 
 
 Each class period (of CS2000) has reading you are expected to do _before_ class. During the class we will briefly review the new material that was covered in the reading (but, in much less depth -- it is not a substitute for doing the reading), and then the majority of class will be dedicated to working with classmates, assisted by your instructor, on exercises related to the new material. 
 
@@ -20,9 +20,32 @@ Students can register for any CS 2001 lab section on their campus.
 
 There will also be **weekly homework** assignments. The purpose of homework is to give you hands-on experience with the course material you learned in lecture, and to teach you the skills used for the **skill assessments**.
 
-There are also 12 **skills**, repeatable, on paper, no-note, assessment of which forms the primary grading for the class. 
+There are also 12 **skills**, which have repeatable assessments (taken on paper without notes), and form the primary grading for the class. 
 
 There are no quizzes or exams in this class.
+
+### Communication
+
+Discord, Course Website, (lack of) use of Canvas.
+
+### Course Tools
+Github, github.dev, vscode, pyret, python, Pawtograder.
+
+### People
+
+Professors, contact, office hours
+
+### Due Dates, Late Tokens, Regrades
+
+### Office Hours
+What they are, link to calendar
+
+### Recitation Times
+
+In addition to general purpose Office Hours held by TAs, there will be dedicated Recitation Hours held by TAs. These optional sessions, scheduled throughout the day, will have particular exercises and material that they go over, and will not assist with homework problems. Attendance will be limited based on room size, but enough should be scheduled to allow students to attend if they want.
+
+### Attendance
+Not required, but what to do if you miss class, etc.
 
 ### Skills
 
@@ -169,10 +192,6 @@ https://dcic.pdi.run, and all readings will be linked to from appropriate parts 
 this site.
 
 
-### Recitation Times
-
-In addition to general purpose Office Hours held by TAs, there will be dedicated Recitation Hours held by TAs. These optional sessions, scheduled throughout the day, will have particular exercises and material that they go over, and will not assist with homework problems. Attendance will be limited based on room size, but enough should be scheduled to allow students to attend if they want.
-
 ## Collaboration and Academic Honesty
 
 Computer science, both academically and professionally, is a collaborative discipline. In any collaboration, however, all parties are expected to make their own contributions and to generously credit the contributions of others. In our class, therefore, collaboration on assignments is encouraged, but you as an individual are responsible for understanding all the material in the assignment and doing your own work. Always strive to do your best, give generous credit to others, start early, and seek help early from both your professors and classmates.
@@ -183,7 +202,7 @@ Specifically:
 - You must understand the material you turn in.
 - Copying material from another person without their knowledge is not allowed.
 - Additionally, sharing solutions in forums (e.g., posting to public questions, posting code online, etc) constitutes an academic integrity violation, as it may make it harder for other students to do work on their own, harming their own learning.
-- Any sharing information about the content of skill assessments is an academic integrity violation, and may result in failing the class.
+- Any sharing or receiving information about the content of skill assessments is an academic integrity violation, and may result in failing the class.
 
 Also, see the [Official University Academic Integrity Policy](https://osccr.sites.northeastern.edu/academic-integrity-policy/).
 
@@ -210,22 +229,23 @@ If you feel that cheating is your only option, please ask for help.
 
 ### The AI Policy
 
-As with our **Collaboration Guidelines**, we offer _guidelines_ around use of generative AI. While violations of this are not considered 
-academic integrity violations, they will likely result in you learning less from the course, which with both directly hurt you,
-as you may end up unable to pass sufficient skill assessments to pass the course. It may also indirectly hurt you, as you will not have built the foundation for future courses that this course intends. 
+AI coding assistants like Cursor, Windsurf, and Copilot should not be used in this course. We believe that using an AI assistant is an important skill that should be covered _after_ the basics (which is why there is a different policy in CS 3100). Until you have the ability to design, understand, and review code, using an AI assistant amounts to wandering around in the dark, with no ability to determine if you are getting closer to what you want. (Using these tools to get decent grades while learning nothing is pretty clearly shooting yourself in the foot: you are in college to learn; if you end up unable to do anything but prompt engineer, you will have essentially no skills, given these models are intentionally rendering whatever "skill" underlying prompt engineering obselete in every generation).
 
-As a result, we offer similar **AI Guidelines** -- these are strong recommendations, as we believe that deviations from 
-this will result in direct harm to your education.
+The same is true of asking questions of chat models like ChatGPT, Claude, or Gemini. Putting in assignment instructions into such a model and getting out code or test cases amounts to getting the model to do the thinking for you -- and as a result, you will not learn. "Only look"ing at AI-generated solutions "before writing your own" undermines the learning just the same, as you will not be learning to actually solve problems, you will just be copying (and, importantly, never developing the ability to recognize when the AI generated solution isn't what you want).
+ 
+ Part of the reason for these being guidelines, rather than academic integrity policies, is that some interaction with LLMs is now unavoidable -- using a search engine now will give you an AI generated overview, and similar interactions with models (trying to understand concepts) is not necessarily discouraged, though we would always encourage you to bring larger questions to our course staff, who will likely be able to give you better answers, more suited to your background, to our curriculum, etc.
 
-> **AI Guidelines**
-> 
-> AI coding assistants like Cursor, Windsurf, and Copilot should not be used in this course. We believe that using an AI assistant is an important skill that should be covered _after_ the basics (which is why there is a different policy in CS 3100). Until you have the ability to design, understand, and review code, using an AI assistant amounts to wandering around in the dark, with no ability to determine if you are getting closer to what you want. (Using these tools to get decent grades while learning nothing is pretty clearly shooting yourself in the foot: you are in college to learn; if you end up unable to do anything but prompt engineer, you will have essentially no skills, given these models are intentionally rendering whatever "skill" underlying prompt engineering obselete in every generation).
->
-> The same is true of asking questions of chat models like ChatGPT, Claude, or Gemini. Putting in assignment instructions into such a model and getting out code or test cases amounts to getting the model to do the thinking for you -- and as a result, you will not learn. "Only look"ing at AI-generated solutions "before writing your own" undermines the learning just the same, as you will not be learning to actually solve problems, you will just be copying (and, importantly, never developing the ability to recognize when the AI generated solution isn't what you want).
-> 
-> Part of the reason for these being guidelines, rather than academic integrity policies, is that some interaction with LLMs is now unavoidable -- using a search engine now will give you an AI generated overview, and similar interactions with models (trying to understand concepts) is not necessarily discouraged, though we would always encourage you to bring larger questions to our course staff, who will likely be able to give you better answers, more suited to your background, to our curriculum, etc.
->
-> Finally, if you do use LLMs for search, you are responsible for validating any information you find. Sources of ground truth are official language documentation, our course textbook, course staff, and the course website.
+ Finally, if you do use LLMs for search, you are responsible for validating any information you find. Sources of ground truth are official language documentation, our course textbook, course staff, and the course website. Reading documentation can be challenging, but it is an important skill to be developing.
+
+### Inclusive Environment
+
+To create and preserve a classroom atmosphere that optimizes teaching and learning, all participants share a responsibility in creating a civil and non-disruptive forum for the discussion of ideas. Students are expected to conduct themselves at all times in a manner that does not disrupt teaching or learning. Your comments to others should be constructive and free from harassing statements. You are encouraged to disagree with other students and the instructor, but such disagreements need to respectful and be based upon facts and documentation (rather than prejudices and personalities). The instructor reserves the right to interrupt conversations that deviate from these expectations. Repeated unprofessional or disrespectful conduct may result in a lower grade or more severe consequences. Part of the learning process in this course is respectful engagement of ideas with others.
+We believe that diversity and inclusiveness are essential to excellence in academic discourse and innovation. In this class, the perspective of people of all races, ethnicities, gender expressions and gender identities, religions, sexual orientations, disabilities, socioeconomic backgrounds, and nationalities will be respected and viewed as a resource and benefit throughout the semester. Suggestions to further diversify class materials and assignments are encouraged. If any course meetings conflict with your religious events, please do not hesitate to reach out to Rush to make alternative arrangements.
+
+### Name and Pronoun Usage
+
+As this course includes some discussion, it is vitally important for us to create an educational environment of inclusion and mutual respect. This includes the ability for all students to have their chosen gender
+pronoun(s) and chosen name affirmed. If the class roster does not align with your name and/or pronouns, please inform us of the necessary changes.
 
 ### Accommodations
 
@@ -246,3 +266,14 @@ Faculty members are considered “responsible employees” at Northeastern Unive
 In case of an emergency, please call 911.
 
 Please visit https://www.northeastern.edu/titleix for a complete list of reporting options and resources both on- and off-campus.
+
+### Policy on Recording 
+... two party consente
+
+### UHCS
+
+### WeCare
+
+### Resources
+
+TBD -- e.g., Knack, GLS, Library
