@@ -48,6 +48,44 @@ end
 
 ---
 
+## Creating Tables from CSVs
+
+First, make sure you have the CSV library included:
+
+```pyret
+include csv
+```
+
+This allows you to use two functions:
+
+**csv-table-url**(url :: String, options) -> Table  
+Load a table from a CSV file at the given URL. Use `default-options` for the options parameter.
+
+**csv-table-file**(filename :: String, options) -> Table  
+Load a table from a CSV file in your project. Use `default-options` for the options parameter.
+
+Example:
+
+```pyret
+include csv
+
+# From URL
+recipes = load-table:
+  title :: String,
+  servings :: Number,
+  prep-time :: Number
+  source: csv-table-url("https://pdi.run/f25-2000-recipes.csv", default-options)
+end
+
+# From file that exists inside the github repository, so you see 
+# it in the left side
+data = load-table:
+  name :: String,
+  value :: Number
+  source: csv-table-file("mydata.csv", default-options)
+end
+```
+
 ## Creating and Manipulating Tables
 
 **filter-with**(t :: Table, keep :: (Row -> Boolean)) -> Table  
