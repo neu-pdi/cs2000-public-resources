@@ -21,3 +21,5 @@ There are 2 components of the housing development strategy that you will work on
 2. **Multi-Family Housing Acquisition Strategy**: You will identify existing inventory of multi-family housing across NYC, using the property records to determine priority buildings for acquisition. These analyses will focus on properties with favorable building-area-to-lot-area ratios, which may indicate development potential or undervaluation, making them less expensive to acquire. You will again apply desirability metrics including transit accessibility and school proximity, and create visualizations showing the distribution of opportunities across NYC's neighborhoods.
 
 By the end of this project, you will have created an analysis framework that identifies both public development opportunities and private acquisition targets, visualized geographically, and prioritized using evidence-based metrics that best support housing development across New York City.
+
+If you are curious about the data format, there is a document describing it [Here](/support/nyc_data_reference.pdf).
