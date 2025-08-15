@@ -42,7 +42,7 @@ What they are, link to calendar
 
 ### Recitation Times
 
-In addition to general purpose Office Hours held by TAs, there will be dedicated Recitation Hours held by TAs. These optional sessions, scheduled throughout the day, will have particular exercises and material that they go over, and will not assist with homework problems. Attendance will be limited based on room size, but enough should be scheduled to allow students to attend if they want.
+In addition to general purpose Office Hours held by TAs, there will be dedicated Recitation Hours held by TAs. These optional sessions, scheduled throughout the day, held both in person and online, will have particular exercises and material that they go over, and will not assist with homework problems. Attendance will be limited for each session, but enough should be scheduled to allow students to attend if they want.
 
 ### Attendance
 Not required, but what to do if you miss class, etc.
