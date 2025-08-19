@@ -69,13 +69,13 @@ assessments, see below), with the best result being used for their grade.
 11. <a id="(11)" href="#(11)">Identifying Privacy Issues in Problem Formulation</a>
     | | |
     |---|---| 
-    | **Meets Expectations** | • TBD |
-    | **Approaching Expectations** | • TBD |
+    | **Meets Expectations** | • Privacy analysis chart is complete and each entry is correct<br/> • Identify named privacy issue in a new context<br/> • Proposed mitigation strategy is appropriate given context |
+    | **Approaching Expectations** | • Chart is complete but at least one entry is not correct<br/> • Attempts to identify named privacy issue but mis-identifies, or explanation is unclear<br/> • Proposed mitigation of known privacy issue would not address the privacy threat |
 12. <a id="(12)" href="#(12)">Identifying Stakeholders in Problem Formulation</a>
     | | |
     |---|---| 
-    | **Meets Expectations** | • TBD |
-    | **Approaching Expectations** | • TBD |
+    | **Meets Expectations** | • Complete stakeholder matrix that lists all relevant stakeholders and at least one relevant interest at stake for each stakeholder<br/> • Answer identifies the specified number of conflicts between stakeholder interests/values (e.g., if the task is to identify 2 values conflicts, the answer identifies 2 values conflicts) |
+    | **Approaching Expectations** | • If prompted to provide a complete chart, chart fails to identify relevant stakeholders OR fails to identify their relevant interests/values<br/> • Chart does not identify relevant interests<br/> • Identifies some, but fewer than specified number of conflicts between stakeholder interests/values (e.g., if the task is to identify 2 values conflicts, the answer identifies 1 values conflict) |
 
 ## Skill Introduction
 
