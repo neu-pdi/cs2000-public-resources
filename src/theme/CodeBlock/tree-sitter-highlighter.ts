@@ -4,6 +4,8 @@ export interface Token {
   content: string;
   type: string;
   className?: string;
+  startIndex?: number;
+  endIndex?: number;
 }
 
 export interface Line {
@@ -62,6 +64,7 @@ const tokenTypeMap: Record<string, string> = {
 
 // Get CSS class for a token type
 function getTokenClass(nodeType: string): string {
+  console.log(nodeType);
   return tokenTypeMap[nodeType] || 'token';
 }
 
@@ -77,6 +80,8 @@ function extractTokens(node: Node, source: string): Token[] {
         content,
         type: node.type,
         className: getTokenClass(node.type),
+        startIndex: node.startIndex,
+        endIndex: node.endIndex,
       });
     }
   } else {
@@ -92,50 +97,47 @@ function extractTokens(node: Node, source: string): Token[] {
   return tokens;
 }
 
-// Split tokens into lines
-function splitTokensIntoLines(tokens: Token[]): Line[] {
+// Split tokens into lines while preserving original structure
+function splitTokensIntoLines(tokens: Token[], originalCode: string): Line[] {
   const lines: Line[] = [];
-  let currentLine: Token[] = [];
-
+  const originalLines = originalCode.split('\n');
+  
+  // Create a map of character positions to tokens using tree-sitter node positions
+  const tokenMap = new Map<number, Token>();
+  
   for (const token of tokens) {
-    const content = token.content;
-    const linesInToken = content.split('\n');
-
-    if (linesInToken.length === 1) {
-      // Single line token
-      currentLine.push(token);
-    } else {
-      // Multi-line token
-      for (let i = 0; i < linesInToken.length; i++) {
-        const lineContent = linesInToken[i];
-        if (i === 0) {
-          // First line - add to current line
-          if (lineContent) {
-            currentLine.push({ ...token, content: lineContent });
-          }
-        } else if (i === linesInToken.length - 1) {
-          // Last line - start new line
-          if (lineContent) {
-            lines.push({ tokens: currentLine });
-            currentLine = [{ ...token, content: lineContent }];
-          } else {
-            lines.push({ tokens: currentLine });
-            currentLine = [];
-          }
-        } else {
-          // Middle lines - end current line and start new one
-          lines.push({ tokens: currentLine });
-          currentLine = lineContent ? [{ ...token, content: lineContent }] : [];
-        }
-      }
+    // Use the token's actual position from tree-sitter
+    if (token.startIndex !== undefined) {
+      tokenMap.set(token.startIndex, token);
     }
   }
-
-  // Add the last line if it has tokens
-  if (currentLine.length > 0) {
-    lines.push({ tokens: currentLine });
+  
+  // Process each original line
+  let currentPos = 0;
+  for (const originalLine of originalLines) {
+    const lineTokens: Token[] = [];
+    
+    // Find tokens that belong to this line
+    for (const [pos, token] of tokenMap) {
+      if (pos >= currentPos && pos < currentPos + originalLine.length) {
+        // This token belongs to this line
+        lineTokens.push(token);
+      }
+    }
+    
+    // If no tokens found for this line, create a text token with the original line
+    if (lineTokens.length === 0) {
+      lineTokens.push({
+        content: originalLine,
+        type: 'text',
+        className: 'token',
+      });
+    }
+    
+    lines.push({ tokens: lineTokens });
+    currentPos += originalLine.length + 1; // +1 for newline
   }
-
+  
   return lines;
 }
 
@@ -188,9 +190,6 @@ export async function highlightWithTreeSitter(
 
     // Set the language
     if (lang) {
-      console.log(lang);
-      console.log(parser);
-
       parser.setLanguage(lang);
     }
 
@@ -205,7 +204,7 @@ export async function highlightWithTreeSitter(
     const tokens = extractTokens(rootNode, code);
 
     // Split into lines
-    const lines = splitTokensIntoLines(tokens);
+    const lines = splitTokensIntoLines(tokens, code);
 
     // Clean up
     parser.delete();
