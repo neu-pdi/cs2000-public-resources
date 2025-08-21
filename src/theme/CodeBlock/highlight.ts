@@ -368,8 +368,47 @@ class HighlightIterLayer {
 
         // Process combined injections
         if (currentConfig.combinedInjectionsQuery) {
-          // Implementation of combined injections processing
-          // This is a simplified version - the full implementation would be more complex
+          const combinedInjectionsQuery = currentConfig.combinedInjectionsQuery;
+          const injectionsByPatternIndex = new Array(combinedInjectionsQuery.patternCount()).fill(null).map(() => ({
+            languageName: null as string | null,
+            contentNodes: [] as Node[],
+            includesChildren: false
+          }));
+
+          const matches = combinedInjectionsQuery.matches(tree.rootNode);
+          for (const mat of matches) {
+            const entry = injectionsByPatternIndex[mat.patternIndex];
+            const [languageName, contentNode, includeChildren] = injectionForMatch(
+              currentConfig,
+              parentName,
+              combinedInjectionsQuery,
+              mat,
+              source,
+            );
+            if (languageName !== null) {
+              entry.languageName = languageName;
+            }
+            if (contentNode !== null) {
+              entry.contentNodes.push(contentNode);
+            }
+            entry.includesChildren = includeChildren;
+          }
+
+          for (const { languageName, contentNodes, includesChildren } of injectionsByPatternIndex) {
+            if (languageName !== null && contentNodes.length > 0) {
+              const nextConfig = injectionCallback(languageName);
+              if (nextConfig) {
+                const ranges = HighlightIterLayer.intersectRanges(
+                  currentRanges,
+                  contentNodes,
+                  includesChildren,
+                );
+                if (ranges.length > 0) {
+                  queue.push([nextConfig, currentDepth + 1, ranges]);
+                }
+              }
+            }
+          }
         }
 
         const captures = cursor.captures(currentConfig.query, tree.rootNode, source);
@@ -412,9 +451,101 @@ class HighlightIterLayer {
     nodes: Node[],
     includesChildren: boolean,
   ): Range[] {
-    // Implementation of range intersection logic
-    // This is a simplified version - the full implementation would be more complex
-    return parentRanges;
+    if (nodes.length === 0) return [];
+    
+    const result: Range[] = [];
+    let parentRangeIndex = 0;
+    let parentRange = parentRanges[parentRangeIndex];
+    
+    for (const node of nodes) {
+      const nodeRange = {
+        startIndex: node.startIndex,
+        endIndex: node.endIndex,
+        startPosition: node.startPosition,
+        endPosition: node.endPosition,
+      };
+
+      // Get excluded ranges (children if includesChildren is false)
+      const excludedRanges: Range[] = [];
+      if (!includesChildren) {
+        const cursor = node.walk();
+        if (cursor.gotoFirstChild()) {
+          do {
+            excludedRanges.push({
+              startIndex: cursor.startIndex,
+              endIndex: cursor.endIndex,
+              startPosition: cursor.startPosition,
+              endPosition: cursor.endPosition,
+            });
+          } while (cursor.gotoNextSibling());
+        }
+      }
+
+      // Add the range after the last excluded range
+      excludedRanges.push({
+        startIndex: nodeRange.endIndex,
+        endIndex: Number.MAX_SAFE_INTEGER,
+        startPosition: nodeRange.endPosition,
+        endPosition: { row: Number.MAX_SAFE_INTEGER, column: Number.MAX_SAFE_INTEGER },
+      });
+
+      let precedingRange = {
+        startIndex: 0,
+        endIndex: nodeRange.startIndex,
+        startPosition: { row: 0, column: 0 },
+        endPosition: nodeRange.startPosition,
+      };
+
+      for (const excludedRange of excludedRanges) {
+        let range = {
+          startIndex: precedingRange.endIndex,
+          endIndex: excludedRange.startIndex,
+          startPosition: precedingRange.endPosition,
+          endPosition: excludedRange.startPosition,
+        };
+        precedingRange = excludedRange;
+
+        if (range.endIndex < parentRange.startIndex) {
+          continue;
+        }
+
+        while (parentRange.startIndex <= range.endIndex) {
+          if (parentRange.endIndex > range.startIndex) {
+            if (range.startIndex < parentRange.startIndex) {
+              range.startIndex = parentRange.startIndex;
+              range.startPosition = parentRange.startPosition;
+            }
+
+            if (parentRange.endIndex < range.endIndex) {
+              if (range.startIndex < parentRange.endIndex) {
+                result.push({
+                  startIndex: range.startIndex,
+                  endIndex: parentRange.endIndex,
+                  startPosition: range.startPosition,
+                  endPosition: parentRange.endPosition,
+                });
+              }
+              range.startIndex = parentRange.endIndex;
+              range.startPosition = parentRange.endPosition;
+            } else {
+              if (range.startIndex < range.endIndex) {
+                result.push(range);
+              }
+              break;
+            }
+          }
+
+          parentRangeIndex++;
+          if (parentRangeIndex < parentRanges.length) {
+            parentRange = parentRanges[parentRangeIndex];
+          } else {
+            return result;
+          }
+        }
+      }
+    }
+    
+    return result;
   }
 
   // Get the sort key for this layer
@@ -589,14 +720,150 @@ export class HighlightIter {
         const capture = layer.nextCapture()!;
 
         // Process injections, local variables, and highlights
-        // This is a simplified implementation - the full implementation would be more complex
-        
-        // For now, just emit a highlight start event
-        const currentHighlight = layer.config.highlightIndices[capture.patternIndex];
-        if (currentHighlight) {
+        if (capture.patternIndex < layer.config.localsPatternIndex) {
+          // This is an injection
+          const [languageName, contentNode, includeChildren] = injectionForMatch(
+            layer.config,
+            this.languageName,
+            layer.config.query,
+            { pattern: capture.patternIndex, patternIndex: capture.patternIndex, captures: [capture] } as QueryMatch,
+            this.source,
+          );
+
+          if (languageName !== null && contentNode !== null) {
+            const nextConfig = this.injectionCallback(languageName);
+            if (nextConfig) {
+              const ranges = HighlightIterLayer.intersectRanges(
+                layer.ranges,
+                [contentNode],
+                includeChildren,
+              );
+              if (ranges.length > 0) {
+                const newLayers = HighlightIterLayer.new(
+                  this.source,
+                  this.languageName,
+                  this.highlighter,
+                  this.cancellationFlag,
+                  this.injectionCallback,
+                  nextConfig,
+                  layer.depth + 1,
+                  ranges,
+                );
+                for (const newLayer of newLayers) {
+                  this.insertLayer(newLayer);
+                }
+              }
+            }
+          }
+          this.sortLayers();
+          continue;
+        }
+
+        // Remove from the local scope stack any local scopes that have already ended
+        while (range.startIndex > layer.scopeStack[layer.scopeStack.length - 1].range.end) {
+          layer.scopeStack.pop();
+        }
+
+        // Process local variables
+        let referenceHighlight: Highlight | null = null;
+        let definitionHighlight: Highlight | null = null;
+
+        if (capture.patternIndex < layer.config.highlightsPatternIndex) {
+          // This is a local variable capture
+          if (capture.name === "local.scope" && layer.config.localScopeCaptureIndex === capture.patternIndex) {
+            definitionHighlight = null;
+            const scope: LocalScope = {
+              inherits: true,
+              range: { start: range.startIndex, end: range.endIndex },
+              localDefs: [],
+            };
+            layer.scopeStack.push(scope);
+          } else if (capture.name === "local.definition" && layer.config.localDefCaptureIndex === capture.patternIndex) {
+            referenceHighlight = null;
+            definitionHighlight = null;
+            const scope = layer.scopeStack[layer.scopeStack.length - 1];
+
+            let valueRange = { start: 0, end: 0 };
+            // Note: QueryCapture doesn't have captures property, this would need to be handled differently
+            // For now, we'll use a simplified approach
+
+            const name = this.source.slice(range.startIndex, range.endIndex);
+            scope.localDefs.push({
+              name,
+              valueRange,
+              highlight: null,
+            });
+            definitionHighlight = scope.localDefs[scope.localDefs.length - 1].highlight;
+          } else if (capture.name === "local.reference" && layer.config.localRefCaptureIndex === capture.patternIndex && definitionHighlight === null) {
+            definitionHighlight = null;
+            const name = this.source.slice(range.startIndex, range.endIndex);
+            
+            for (let i = layer.scopeStack.length - 1; i >= 0; i--) {
+              const scope = layer.scopeStack[i];
+              const highlight = scope.localDefs.find(def => 
+                def.name === name && range.startIndex >= def.valueRange.end
+              )?.highlight;
+              
+              if (highlight !== undefined) {
+                referenceHighlight = highlight;
+                break;
+              }
+              
+              if (!scope.inherits) {
+                break;
+              }
+            }
+          }
+
+          this.sortLayers();
+          continue;
+        }
+
+        // This is a highlight capture
+        // If this exact range has already been highlighted by an earlier pattern, or by
+        // a different layer, then skip over this one
+        if (this.lastHighlightRange) {
+          const [lastStart, lastEnd, lastDepth] = this.lastHighlightRange;
+          if (range.startIndex === lastStart && range.endIndex === lastEnd && layer.depth < lastDepth) {
+            this.sortLayers();
+            continue;
+          }
+        }
+
+        // Once a highlighting pattern is found for the current node, keep iterating over
+        // any later highlighting patterns that also match this node
+        let currentCapture = capture;
+        while (true) {
+          const nextCapture = layer.peekCapture();
+          if (nextCapture && nextCapture.node === currentCapture.node) {
+            const followingCapture = layer.nextCapture()!;
+            // If the current node was found to be a local variable, then ignore
+            // the following match if it's a highlighting pattern that is disabled
+            // for local variables
+            if ((definitionHighlight !== null || referenceHighlight !== null) &&
+                layer.config.nonLocalVariablePatterns[followingCapture.patternIndex]) {
+              continue;
+            }
+            currentCapture = followingCapture;
+          } else {
+            break;
+          }
+        }
+
+        const currentHighlight = layer.config.highlightIndices[currentCapture.patternIndex];
+
+        // If this node represents a local definition, then store the current
+        // highlight value on the local scope entry representing this node
+        if (definitionHighlight !== null) {
+          definitionHighlight = currentHighlight;
+        }
+
+        // Emit a scope start event and push the node's end position to the stack
+        const finalHighlight = referenceHighlight || currentHighlight;
+        if (finalHighlight) {
           this.lastHighlightRange = [range.startIndex, range.endIndex, layer.depth];
           layer.highlightEndStack.push(range.endIndex);
-          return this.emitEvent(range.startIndex, { type: 'highlightStart', highlight: currentHighlight });
+          return this.emitEvent(range.startIndex, { type: 'highlightStart', highlight: finalHighlight });
         }
       } else {
         // If there are no more captures, then emit any remaining highlight end events
@@ -781,24 +1048,40 @@ function injectionForMatch(
   let contentNode: Node | null = null;
 
   for (const capture of queryMatch.captures) {
-    if (capture.patternIndex === languageCaptureIndex) {
+    if (capture.name === "injection.language" && languageCaptureIndex !== null) {
       languageName = capture.node.text;
-    } else if (capture.patternIndex === contentCaptureIndex) {
+    } else if (capture.name === "injection.content" && contentCaptureIndex !== null) {
       contentNode = capture.node;
     }
   }
 
   let includeChildren = false;
-  // Note: propertySettings is not available in web-tree-sitter
-  // This is a simplified implementation
+  
+  // Check for property settings in the query match
+  if (queryMatch.setProperties) {
+    for (const [key, value] of Object.entries(queryMatch.setProperties)) {
+      switch (key) {
+        case "injection.language":
+          if (languageName === null) {
+            languageName = value;
+          }
+          break;
+        case "injection.self":
+          if (languageName === null) {
+            languageName = config.languageName;
+          }
+          break;
+        case "injection.parent":
+          if (languageName === null) {
+            languageName = parentName;
+          }
+          break;
+        case "injection.include-children":
+          includeChildren = true;
+          break;
+      }
+    }
+  }
 
   return [languageName, contentNode, includeChildren];
-}
-
-// Helper function for shrinking and clearing vectors
-function shrinkAndClear<T>(vec: T[], capacity: number): void {
-  if (vec.length > capacity) {
-    vec.splice(capacity);
-  }
-  vec.length = 0;
 }
