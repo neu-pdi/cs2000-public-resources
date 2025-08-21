@@ -3,7 +3,8 @@
   "extends": "@docusaurus/tsconfig",
   "compilerOptions": {
     "baseUrl": ".",
-    "strict": true
+    "strict": true,
+    "skipLibCheck": false
   },
   "exclude": [".docusaurus", "build"]
 }

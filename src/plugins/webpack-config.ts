@@ -28,6 +28,29 @@ export default function webpackConfigPlugin(): Plugin {
             child_process: false,
           },
         },
+        module: {
+          rules: [
+            // Handle WASM files
+            {
+              test: /\.wasm$/,
+              type: 'asset/resource',
+            },
+            // Ignore native binary files
+            {
+              test: /\.node$/,
+              type: 'javascript/auto',
+              use: 'ignore-loader',
+            },
+          ],
+        },
+        experiments: {
+          asyncWebAssembly: true,
+        },
+        // Configure web-tree-sitter to load WASM from static directory
+        output: {
+          ...config.output,
+          publicPath: config.output?.publicPath || '/',
+        },
       };
     },
   };
