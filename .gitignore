@@ -19,5 +19,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# direnv
+# nix
 .direnv
+/.pre-commit-config.yaml
