@@ -20,7 +20,7 @@ hide_table_of_contents: true
 | Week 8 (Oct 20-24) | Conditional data, lists, and trees | [D19](/days/19), [D20](/days/20), [D21](/days/21) | [R7](/recitation/7) | [HW7](/homework/7) | [SkillBundle1](</skills#(bundle1)>) |
 | Week 9 (Oct 27-31) | More with trees | [D22](/days/22), [D23](/days/23), [SkillDay2](</skills/#(day2)>) | [R8](/recitation/8) | [HW8](/homework/8) | [Lab7](/lab/7) |
 | Week 10 (Nov 3-7) | Transition to Python: IDE, files, definitions, testing | [D24](/days/24), [D25](/days/25), [D26](/days/26) | [R9](/recitation/9) | [HW9](/homework/9) | [Lab8](/lab/8) |
-| Week 11 (Nov 10-14) HOLIDAY Nov 11 | Scoping, mutable state, equality | [D27](/days/27), [D28](/days/28) | [R10](/recitation/10) | [HW10](/homework/10) | [Lab9](/lab/9) |
+| Week 11 (Nov 10-14) HOLIDAY Nov 11 | Scoping, mutable state, equality | [D27](/days/27), [D28](/days/28) | [R10](/recitation/10) | [HW10](/homework/10) | No Lab |
 | Week 12 (Nov 17-21) | Tables in Python: pandas & matplotlib | [D29](/days/29), [D30](/days/30), [D31](/days/31) | [R11](/recitation/11) | [HW11](/homework/11) | [SkillBundle2](</skills#(bundle2)>) |
-| Week 13 (Nov 24-25) HOLIDAY Nov 26-28 | File I/O: csv files, via pandas and manually | [D32](/days/32) | [R12](/recitation/12) | No HW | [Lab10](/lab/10) |
-| Week 14 (Dec 1-5) | More with Python: catch up, bonus content, etc | [D33](/days/33), [SkillDay3](</skills/#(day3)>) | No Recitation | [HW12](/homework/12) | No Lab |
+| Week 13 (Nov 24-25) HOLIDAY Nov 26-28 | File I/O: csv files, via pandas and manually | [D32](/days/32) | [R12](/recitation/12) | No HW | [Lab9](/lab/9) |
+| Week 14 (Dec 1-5) | More with Python: catch up, bonus content, etc | [D33](/days/33), [SkillDay3](</skills/#(day3)>), Bonus | No Recitation | [HW12](/homework/12) | [Lab10](/lab/10) |
