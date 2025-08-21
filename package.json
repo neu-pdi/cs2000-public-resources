@@ -34,7 +34,8 @@
     "rehype-katex": "^7.0.1",
     "rehype-prism": "^2.3.3",
     "remark-math": "^6.0.0",
-    "unist-util-visit": "^5.0.0"
+    "unist-util-visit": "^5.0.0",
+    "web-tree-sitter": "^0.25.8"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^3.8.1",
