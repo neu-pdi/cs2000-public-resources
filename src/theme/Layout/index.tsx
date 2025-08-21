@@ -1,4 +1,4 @@
-import React, {type ReactNode, useEffect} from 'react';
+import React, { type ReactNode, useEffect } from 'react';
 import clsx from 'clsx';
 import ErrorBoundary from '@docusaurus/ErrorBoundary';
 import {
@@ -6,14 +6,14 @@ import {
   SkipToContentFallbackId,
   ThemeClassNames,
 } from '@docusaurus/theme-common';
-import {useKeyboardNavigation} from '@docusaurus/theme-common/internal';
+import { useKeyboardNavigation } from '@docusaurus/theme-common/internal';
 import SkipToContent from '@theme/SkipToContent';
 import AnnouncementBar from '@theme/AnnouncementBar';
 import Navbar from '@theme/Navbar';
 import Footer from '@theme/Footer';
 import LayoutProvider from '@theme/Layout/Provider';
 import ErrorPageContent from '@theme/ErrorPageContent';
-import type {Props} from '@theme/Layout';
+import type { Props } from '@theme/Layout';
 import styles from './styles.module.css';
 import { useLocation } from '@docusaurus/router';
 
@@ -33,7 +33,7 @@ export default function Layout(props: Props): ReactNode {
   useEffect(() => {
     document
       .querySelectorAll<HTMLElement>('.override-target')
-      .forEach(el => el.classList.remove('override-target'));
+      .forEach((el) => el.classList.remove('override-target'));
 
     if (hash) {
       const id = decodeURIComponent(hash.slice(1));
@@ -44,7 +44,6 @@ export default function Layout(props: Props): ReactNode {
       }
     }
   }, [hash, pathname, search]);
-
 
   return (
     <LayoutProvider>
@@ -62,7 +61,8 @@ export default function Layout(props: Props): ReactNode {
           ThemeClassNames.wrapper.main,
           styles.mainWrapper,
           wrapperClassName,
-        )}>
+        )}
+      >
         <ErrorBoundary fallback={(params) => <ErrorPageContent {...params} />}>
           {children}
         </ErrorBoundary>

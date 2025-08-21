@@ -8,7 +8,7 @@ interface DcicLinkProps {
 
 export function DcicLink({ path, children }: DcicLinkProps) {
   const dcicDomain = useDcicDomain();
-  
+
   return (
     <a href={`${dcicDomain}${path}`} target="_blank" rel="noopener noreferrer">
       {children}

@@ -8,72 +8,71 @@ hide_table_of_contents: true
 # Skills
 
 This course will teach the following skills, repeated assessment of which will
-form the primary source of final grades. 
+form the primary source of final grades.
 
 Each skill will be assessed as "Doesn't meet expectations", "Approaching
 expectations", and "Meets expectations", and students may attempt any skill
 assessment up to five times (four independently, and once via the bulk
 assessments, see below), with the best result being used for their grade.
 
-
-1. <a id="(1)" href="#(1)">Design basic functions (Pyret)</a>
-   | | |
-   |---|---| 
-   | **Meets Expectations** | • Correct type annotation<br/>• Docstring that describes behavior, doesn't repeat type annotation.<br/>• A few (2+) correct tests<br/>• Well-formatted implementation -- clear naming for function arguments, no unnecessary if expressions, etc. |
-   | **Approaching Expectations** | • Missing docstring, or long, includes redundant type information, etc.<br/>• 1+ correct tests.<br/>• Correct implementation. |
-2. <a id="(2)" href="#(2)">Construct / Transform Tables (Pyret)</a>
-   | | |
-   |---|---| 
-   | **Meets Expectations** | • Function designed has signature, docstring, and at least one test<br/>• Function uses correct table function (filter-with, build-column, etc)<br/>• Row helper does what is expected, whether defined with `lam` or named |
-   | **Approaching Expectations** | • Function uses correct table function (filter-with, build-column, etc)<br/>• Row helper accesses fields from row, but not in a way that solves the problem |
-3. <a id="(3)" href="#(3)">Iteration: Lists (Pyret)</a>
-   | | |
-   |---|---| 
-   | **Meets Expectations** | • Uses `for each` properly, drawing elements from the list<br/>• Mutates a single variable within the loop to correctly accumulate the result<br/>• Returns the final result after the loop |
-   | **Approaching Expectations** | • Uses `for each`, drawing elements from the list<br/>• Either: Mutates within the loop, but in such a way that doesn't produce the correct accumulated answer, or doesn't use the final result properly at the end of the loop |
-4. <a id="(4)" href="#(4)">Structured & Conditional Data (Pyret)</a>
-   | | |
-   |---|---| 
-   | **Meets Expectations** | • Uses `data` with variants as needed, fields with appropriate type annotations<br/>• Function uses either field projection or `cases` as needed<br/>• Function has signature, doc string, and tests |
-   | **Approaching Expectations** | • Uses `data` with variants as needed, fields if needed (possibly missing or incorrect annotations)<br/>• Function should use either field projection or cases, but may not do it correctly, or to match the problem |
-5. <a id="(5)" href="#(5)">Recursion: Lists (Pyret)</a>
-   | | |
-   |---|---| 
-   | **Meets Expectations** | • Function has appropriate type signature, doc string, and tests<br/>• Function uses `cases` to handle `empty` case and `link` case<br/>• In `link` case, calls function recursively on rest of list appropriately |
-   | **Approaching Expectations** | • Uses `cases` to break apart list, and has recursive call to rest of list |
-6. <a id="(6)" href="#(6)">Recursion: Trees (Pyret)</a>
-   | | |
-   |---|---| 
-   | **Meets Expectations** | • Function has appropriate type signature, doc string, and tests<br/>• Function uses `cases` to handle base case and recursive case<br/>• In recursive case, calls function recursively on subtrees appropriately |
-   | **Approaching Expectations** | • Uses `cases` to break apart tree, and has recursive call on subtrees | 
-7. <a id="(7)" href="#(7)">Variable Scope (Python)</a>
-   | | |
-   |---|---| 
-   | **Meets Expectations** | • Output of given code, that uses variables, defined locally, in functions, globally, etc, is correct<br/>• Explanation of behavior, including global keyword if needed, is correct |
-   | **Approaching Expectations** | • Explanation mentions key idea, but does not use it to correctly characterize behavior |
-8. <a id="(8)" href="#(8)">Design basic functions (Python)</a>
-   | | |
-   |---|---| 
-   | **Meets Expectations** | • Correct type annotation<br/>• Docstring that describes behavior, doesn't repeat type annotation<br/>• A few (2+) correct tests<br/>• Correct implementation |
-   | **Approaching Expectations** | • Missing docstring, or long, includes redundant type information, etc.<br/>• 1+ correct tests<br/>• Correct implementation |
-9. <a id="(9)" href="#(9)">Iteration: Lists (Python)</a>
-   | | |
-   |---|---| 
-   | **Meets Expectations** | • Uses `for ... in ...` properly, drawing elements from the list<br/>• Mutates a single variable within the loop to correctly accumulate the result<br/>• Returns the final result after the loop |
-   | **Approaching Expectations** | • Uses `for ... in ...`, drawing elements from the list<br/>• Either: Mutates within the loop, but in such a way that doesn't produce the correct accumulated answer, or doesn't use the final result properly at the end of the loop |
+01. <a id="(1)" href="#(1)">Design basic functions (Pyret)</a>
+    |  |  |
+    | -- | -- |
+    | **Meets Expectations** | • Correct type annotation<br/>• Docstring that describes behavior, doesn't repeat type annotation.<br/>• A few (2+) correct tests<br/>• Well-formatted implementation -- clear naming for function arguments, no unnecessary if expressions, etc. |
+    | **Approaching Expectations** | • Missing docstring, or long, includes redundant type information, etc.<br/>• 1+ correct tests.<br/>• Correct implementation. |
+02. <a id="(2)" href="#(2)">Construct / Transform Tables (Pyret)</a>
+    |  |  |
+    | -- | -- |
+    | **Meets Expectations** | • Function designed has signature, docstring, and at least one test<br/>• Function uses correct table function (filter-with, build-column, etc)<br/>• Row helper does what is expected, whether defined with `lam` or named |
+    | **Approaching Expectations** | • Function uses correct table function (filter-with, build-column, etc)<br/>• Row helper accesses fields from row, but not in a way that solves the problem |
+03. <a id="(3)" href="#(3)">Iteration: Lists (Pyret)</a>
+    |  |  |
+    | -- | -- |
+    | **Meets Expectations** | • Uses `for each` properly, drawing elements from the list<br/>• Mutates a single variable within the loop to correctly accumulate the result<br/>• Returns the final result after the loop |
+    | **Approaching Expectations** | • Uses `for each`, drawing elements from the list<br/>• Either: Mutates within the loop, but in such a way that doesn't produce the correct accumulated answer, or doesn't use the final result properly at the end of the loop |
+04. <a id="(4)" href="#(4)">Structured & Conditional Data (Pyret)</a>
+    |  |  |
+    | -- | -- |
+    | **Meets Expectations** | • Uses `data` with variants as needed, fields with appropriate type annotations<br/>• Function uses either field projection or `cases` as needed<br/>• Function has signature, doc string, and tests |
+    | **Approaching Expectations** | • Uses `data` with variants as needed, fields if needed (possibly missing or incorrect annotations)<br/>• Function should use either field projection or cases, but may not do it correctly, or to match the problem |
+05. <a id="(5)" href="#(5)">Recursion: Lists (Pyret)</a>
+    |  |  |
+    | -- | -- |
+    | **Meets Expectations** | • Function has appropriate type signature, doc string, and tests<br/>• Function uses `cases` to handle `empty` case and `link` case<br/>• In `link` case, calls function recursively on rest of list appropriately |
+    | **Approaching Expectations** | • Uses `cases` to break apart list, and has recursive call to rest of list |
+06. <a id="(6)" href="#(6)">Recursion: Trees (Pyret)</a>
+    |  |  |
+    | -- | -- |
+    | **Meets Expectations** | • Function has appropriate type signature, doc string, and tests<br/>• Function uses `cases` to handle base case and recursive case<br/>• In recursive case, calls function recursively on subtrees appropriately |
+    | **Approaching Expectations** | • Uses `cases` to break apart tree, and has recursive call on subtrees |
+07. <a id="(7)" href="#(7)">Variable Scope (Python)</a>
+    |  |  |
+    | -- | -- |
+    | **Meets Expectations** | • Output of given code, that uses variables, defined locally, in functions, globally, etc, is correct<br/>• Explanation of behavior, including global keyword if needed, is correct |
+    | **Approaching Expectations** | • Explanation mentions key idea, but does not use it to correctly characterize behavior |
+08. <a id="(8)" href="#(8)">Design basic functions (Python)</a>
+    |  |  |
+    | -- | -- |
+    | **Meets Expectations** | • Correct type annotation<br/>• Docstring that describes behavior, doesn't repeat type annotation<br/>• A few (2+) correct tests<br/>• Correct implementation |
+    | **Approaching Expectations** | • Missing docstring, or long, includes redundant type information, etc.<br/>• 1+ correct tests<br/>• Correct implementation |
+09. <a id="(9)" href="#(9)">Iteration: Lists (Python)</a>
+    |  |  |
+    | -- | -- |
+    | **Meets Expectations** | • Uses `for ... in ...` properly, drawing elements from the list<br/>• Mutates a single variable within the loop to correctly accumulate the result<br/>• Returns the final result after the loop |
+    | **Approaching Expectations** | • Uses `for ... in ...`, drawing elements from the list<br/>• Either: Mutates within the loop, but in such a way that doesn't produce the correct accumulated answer, or doesn't use the final result properly at the end of the loop |
 10. <a id="(10)" href="#(10)">Aliasing & Mutation (Python)</a>
-    | | |
-    |---|---| 
+    |  |  |
+    | -- | -- |
     | **Meets Expectations** | • Output of given code that uses mutation of values like lists, aliasing, etc, is correct<br/>• Explanation of behavior is correct |
     | **Approaching Expectations** | • Explanation mentions key idea, but does not use it to correctly characterize behavior |
 11. <a id="(11)" href="#(11)">Identifying Privacy Issues in Problem Formulation</a>
-    | | |
-    |---|---| 
+    |  |  |
+    | -- | -- |
     | **Meets Expectations** | • Privacy analysis chart is complete and each entry is correct<br/> • Identify named privacy issue in a new context<br/> • Proposed mitigation strategy is appropriate given context |
     | **Approaching Expectations** | • Chart is complete but at least one entry is not correct<br/> • Attempts to identify named privacy issue but mis-identifies, or explanation is unclear<br/> • Proposed mitigation of known privacy issue would not address the privacy threat |
 12. <a id="(12)" href="#(12)">Identifying Stakeholders in Problem Formulation</a>
-    | | |
-    |---|---| 
+    |  |  |
+    | -- | -- |
     | **Meets Expectations** | • Complete stakeholder matrix that lists all relevant stakeholders and at least one relevant interest at stake for each stakeholder<br/> • Answer identifies the specified number of conflicts between stakeholder interests/values (e.g., if the task is to identify 2 values conflicts, the answer identifies 2 values conflicts) |
     | **Approaching Expectations** | • If prompted to provide a complete chart, chart fails to identify relevant stakeholders OR fails to identify their relevant interests/values<br/> • Chart does not identify relevant interests<br/> • Identifies some, but fewer than specified number of conflicts between stakeholder interests/values (e.g., if the task is to identify 2 values conflicts, the answer identifies 1 values conflict) |
 
@@ -108,9 +107,9 @@ attempt any of those available (likely, due to time, 1-2 of them). See the
 schedule below to see what weeks these occur in, and what skills are assessable
 during each one.
 
-- <a id="(day1)" href="#(day1)">Skill Day 1</a>:  [1](/skills/#(1)), [2](/skills/#(2)), [11](/skills/#(11)), [12](/skills/#(12))
-- <a id="(day2)" href="#(day2)">Skill Day 2</a>: [3](/skills/#(3)), [4](/skills/#(4)), [5](/skills/#(5)), [11](/skills/#(11)), [12](/skills/#(12))
-- <a id="(day3)" href="#(day3)">Skill Day 3</a>: [6](/skills/#(6)), [7](/skills/#(7)), [8](/skills/#(8)), [9](/skills/#(9)), [10](/skills/#(10))
+- <a id="(day1)" href="#(day1)">Skill Day 1</a>: [1](</skills/#(1)>), [2](</skills/#(2)>), [11](</skills/#(11)>), [12](</skills/#(12)>)
+- <a id="(day2)" href="#(day2)">Skill Day 2</a>: [3](</skills/#(3)>), [4](</skills/#(4)>), [5](</skills/#(5)>), [11](</skills/#(11)>), [12](</skills/#(12)>)
+- <a id="(day3)" href="#(day3)">Skill Day 3</a>: [6](</skills/#(6)>), [7](</skills/#(7)>), [8](</skills/#(8)>), [9](</skills/#(9)>), [10](</skills/#(10)>)
 
 ### Skill Bundles
 
@@ -122,24 +121,24 @@ to the lab session. If they have already completed a given skill, they can skip
 that one, and if they have already completed all the skills, they are welcome to
 skip the bulk assessment entirely. The two bundles are:
 
-- <a id="(bundle1)" href="#(bundle1)">Skill Bundle 1</a>: [1](#(1)), [2](#(2)), [3](#(3)), [4](#(4)), [11](#(11)), [12](#(12))
-- <a id="(bundle2)" href="#(bundle2)">Skill Bundle 2</a>: [5](#(5)), [6](#(6)), [7](#(7)), [8](#(8)), [9](#(9)), [10](#(10))
+- <a id="(bundle1)" href="#(bundle1)">Skill Bundle 1</a>: [1](<#(1)>), [2](<#(2)>), [3](<#(3)>), [4](<#(4)>), [11](<#(11)>), [12](<#(12)>)
+- <a id="(bundle2)" href="#(bundle2)">Skill Bundle 2</a>: [5](<#(5)>), [6](<#(6)>), [7](<#(7)>), [8](<#(8)>), [9](<#(9)>), [10](<#(10)>)
+
 ## Skill Schedule
 
- Week | Topic | Skill Introduced | Assessable@Hours | Skill Day | Skill Bundle
--- | -- | -- | --  | -- | --
-1 | Programming with numbers, strings, images: IDE, interactions, operations on standard values |  | | |
-2  | Definitions, functions, conditionals: type annotations, test cases | [1](#(1))| | |
-3  | Ethics, intro to tables: constructing, importing, extracting | [2](#(2)), [11](#(11)), [12](#(12)) | [1](#(1)) | |
-4  | More on tables: transforming, filtering | [2](#(2)), [11](#(11)), [12](#(12)) | [1](#(1)), [11](#(11)), [12](#(12)) | |
-5  | From tables to lists: extracting columns, performing operations on them, visualizing data | | [1](#(2)), [2](#(2)), [11](#(11)), [12](#(12)) | [SkillDay1](#(day1)) |
-6  | Computing with lists: iteration & mutable local variables | [3](#(3)) | [2](#(2)), [11](#(11)), [12](#(12)) | |
-7  | Structured & conditional data | [4](#(3)) | [2](#(2)), [3](#(3)), [11](#(11)), [12](#(12)) | | 
-8  | Working with trees: recursive functions |  [5](#(5)) | [3](#(3)), [4](#(4)), [11](#(11)), [12](#(12)) | | [SkillBundle1](#(bundle1))
-9  | More with trees | [6](#(6)) | [3](#(3)), [4](#(4)), [5](#(5)), [11](#(11)), [12](#(12)) | [SkillDay2](#(day2)) |
-10 | Transition to Python: IDE, files, definitions, testing | [7](#(7)), [8](#(8)) | [4](#(4)), [5](#(5)), [6](#(6)) | |
-11  | Transition to Python: more state & aliasing, loops, mutable data structures | [9](#(9)), [10](#(10)) | [5](#(5)), [6](#(6)), [7](#(7)), [8](#(8)) | |
-12  | Tables in Python: pandas & matplotlib |  | [6](#(6)), [7](#(7)), [8](#(8)), [9](#(9)), [10](#(10)) | | [SkillBundle2](#(bundle2)) 
-13  | File I/O: csv files, via pandas and manually | | [7](#(7)), [8](#(8)), [9](#(9)), [10](#(10)) | |
-14  | More with Python: catch up, bonus content, etc | | [9](#(9)), [10](#(10)) | [SkillDay3](#(day3)) |
-
+| Week | Topic | Skill Introduced | Assessable@Hours | Skill Day | Skill Bundle |
+| -- | -- | -- | -- | -- | -- |
+| 1 | Programming with numbers, strings, images: IDE, interactions, operations on standard values |  |  |  |  |
+| 2 | Definitions, functions, conditionals: type annotations, test cases | [1](<#(1)>) |  |  |  |
+| 3 | Ethics, intro to tables: constructing, importing, extracting | [2](<#(2)>), [11](<#(11)>), [12](<#(12)>) | [1](<#(1)>) |  |  |
+| 4 | More on tables: transforming, filtering | [2](<#(2)>), [11](<#(11)>), [12](<#(12)>) | [1](<#(1)>), [11](<#(11)>), [12](<#(12)>) |  |  |
+| 5 | From tables to lists: extracting columns, performing operations on them, visualizing data |  | [1](<#(2)>), [2](<#(2)>), [11](<#(11)>), [12](<#(12)>) | [SkillDay1](<#(day1)>) |  |
+| 6 | Computing with lists: iteration & mutable local variables | [3](<#(3)>) | [2](<#(2)>), [11](<#(11)>), [12](<#(12)>) |  |  |
+| 7 | Structured & conditional data | [4](<#(3)>) | [2](<#(2)>), [3](<#(3)>), [11](<#(11)>), [12](<#(12)>) |  |  |
+| 8 | Working with trees: recursive functions | [5](<#(5)>) | [3](<#(3)>), [4](<#(4)>), [11](<#(11)>), [12](<#(12)>) |  | [SkillBundle1](<#(bundle1)>) |
+| 9 | More with trees | [6](<#(6)>) | [3](<#(3)>), [4](<#(4)>), [5](<#(5)>), [11](<#(11)>), [12](<#(12)>) | [SkillDay2](<#(day2)>) |  |
+| 10 | Transition to Python: IDE, files, definitions, testing | [7](<#(7)>), [8](<#(8)>) | [4](<#(4)>), [5](<#(5)>), [6](<#(6)>) |  |  |
+| 11 | Transition to Python: more state & aliasing, loops, mutable data structures | [9](<#(9)>), [10](<#(10)>) | [5](<#(5)>), [6](<#(6)>), [7](<#(7)>), [8](<#(8)>) |  |  |
+| 12 | Tables in Python: pandas & matplotlib |  | [6](<#(6)>), [7](<#(7)>), [8](<#(8)>), [9](<#(9)>), [10](<#(10)>) |  | [SkillBundle2](<#(bundle2)>) |
+| 13 | File I/O: csv files, via pandas and manually |  | [7](<#(7)>), [8](<#(8)>), [9](<#(9)>), [10](<#(10)>) |  |  |
+| 14 | More with Python: catch up, bonus content, etc |  | [9](<#(9)>), [10](<#(10)>) | [SkillDay3](<#(day3)>) |  |

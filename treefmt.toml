@@ -1,0 +1,11 @@
+# The formatter multiplexer - https://github.com/numtide/treefmt
+
+[formatter.md]
+command = "mdformat"
+options = ["--number", "--compact-tables"]
+includes = ["*.md"]
+
+[formatter.prettier]
+command = "prettier"
+options = ["--write"]
+includes = ["src/**/*.{ts,tsx,css}"]

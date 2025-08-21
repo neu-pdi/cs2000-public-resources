@@ -10,9 +10,9 @@ Introduces computer science and data science to students with no prior programmi
 
 ### Course Structure
 
-There will be three in-person **classes** (in Boston & Oakland) or two in-person **classes** (in NYC & London), one **lab**, and one _optional_ **recitation** per week. All content is directed around teaching a set of 12 **skills**, assessment of which will form the primary assessment of the class, and which are described in detail at [Skills](/skills). 
+There will be three in-person **classes** (in Boston & Oakland) or two in-person **classes** (in NYC & London), one **lab**, and one _optional_ **recitation** per week. All content is directed around teaching a set of 12 **skills**, assessment of which will form the primary assessment of the class, and which are described in detail at [Skills](/skills).
 
-Each class period (of CS2000) has reading you are expected to do _before_ class. During the class we will briefly review the new material that was covered in the reading (but, in much less depth -- it is not a substitute for doing the reading), and then the majority of class will be dedicated to working with classmates, assisted by your instructor, on exercises related to the new material. 
+Each class period (of CS2000) has reading you are expected to do _before_ class. During the class we will briefly review the new material that was covered in the reading (but, in much less depth -- it is not a substitute for doing the reading), and then the majority of class will be dedicated to working with classmates, assisted by your instructor, on exercises related to the new material.
 
 The lab period (CS2001) will include a set of exercises to be done with a partner in your lab section, guided by those running the lab (TAs or instructors). Labs will be graded primarily by effort & attendance. The recitation is an _optional_ additional practice session with TAs, to allow students who want more practice on the topic of the week to work through exercises with guidance.
 
@@ -20,7 +20,7 @@ Students can register for any CS 2001 lab section on their campus.
 
 There will also be **weekly homework** assignments. The purpose of homework is to give you hands-on experience with the course material you learned in lecture, and to teach you the skills used for the **skill assessments**.
 
-There are also 12 **skills**, which have repeatable assessments (taken on paper without notes), and form the primary grading for the class. 
+There are also 12 **skills**, which have repeatable assessments (taken on paper without notes), and form the primary grading for the class.
 
 There are no quizzes or exams in this class.
 
@@ -29,6 +29,7 @@ There are no quizzes or exams in this class.
 Discord, Course Website, (lack of) use of Canvas.
 
 ### Course Tools
+
 Github, github.dev, vscode, pyret, python, Pawtograder.
 
 ### People
@@ -38,6 +39,7 @@ Professors, contact, office hours
 ### Due Dates, Late Tokens, Regrades
 
 ### Office Hours
+
 What they are, link to calendar
 
 ### Recitation Times
@@ -45,21 +47,22 @@ What they are, link to calendar
 In addition to general purpose Office Hours held by TAs, there will be dedicated Recitation Hours held by TAs. These optional sessions, scheduled throughout the day, held both in person and online, will have particular exercises and material that they go over, and will not assist with homework problems. Attendance will be limited for each session, but enough should be scheduled to allow students to attend if they want.
 
 ### Attendance
+
 Not required, but what to do if you miss class, etc.
 
 ### Skills
 
 The course will teach the following skills, grading of which will be performed by repeatable (with highest grade taken), on-paper, no-note, assessment that can be scored as "Doesn't meet expectations", "Approaching expectations", or "Meets expectations". See the [Skills](/skills) page for much more detail.
 
-1. Design basic functions (Pyret)
-2. Construct / Transform Tables (Pyret)
-3. Iteration: Lists (Pyret)
-4. Structured & Conditional Data (Pyret)
-5. Recursion: Lists (Pyret)
-6. Recursion: Trees (Pyret)
-7. Variable Scope (Python)
-8. Design basic functions (Python)
-9. Iteration: Lists (Python)
+01. Design basic functions (Pyret)
+02. Construct / Transform Tables (Pyret)
+03. Iteration: Lists (Pyret)
+04. Structured & Conditional Data (Pyret)
+05. Recursion: Lists (Pyret)
+06. Recursion: Trees (Pyret)
+07. Variable Scope (Python)
+08. Design basic functions (Python)
+09. Iteration: Lists (Python)
 10. Aliasing & Mutation (Python)
 11. Identifying Privacy Issues in Problem Formulation
 12. Identifying Stakeholders in Problem Formulation
@@ -181,16 +184,12 @@ This is captured by the following table -- the highest row that a student satisf
 </tbody>
 </table>
 
-
-
-
 ### Textbook
 
-We will follow the textbook "A Data-Centric Introduction to Computing", 
-by Fisler, Krishnamurthi, Lerner, and Politz. It is freely available online at 
-https://dcic.pdi.run, and all readings will be linked to from appropriate parts of 
+We will follow the textbook "A Data-Centric Introduction to Computing",
+by Fisler, Krishnamurthi, Lerner, and Politz. It is freely available online at
+https://dcic.pdi.run, and all readings will be linked to from appropriate parts of
 this site.
-
 
 ## Collaboration and Academic Honesty
 
@@ -199,6 +198,7 @@ Computer science, both academically and professionally, is a collaborative disci
 The following rules are intended to help you get the most out of your education and to clarify the line between honest and dishonest work. The professor reserves the right to ask you to verbally explain the reasoning behind any answer or code that you turn in and to modify your grade based on your answers. It is vitally important that you turn in work that you understand and follow the guidelines for academic honesty. The minimum penalty for an academic integrity violation is a zero on the assignment and a report to the [Office of Student Conduct and Conflict Resolution (OSCCR)](https://osccr.sites.northeastern.edu/). Penalties are increased if there are aggravating factors, such as stealing another student's work or lying about cheating.
 
 Specifically:
+
 - You are responsible for any material you turn in.
 - Copying material from another person without their knowledge is not allowed.
 - Additionally, sharing solutions in forums (e.g., posting to public questions, posting code online, etc) constitutes an academic integrity violation, as it may make it harder for other students to do work on their own, harming their own learning.
@@ -206,21 +206,21 @@ Specifically:
 
 Also, see the [Official University Academic Integrity Policy](https://osccr.sites.northeastern.edu/academic-integrity-policy/).
 
-However, there are other cases that do not violate policies, but where we still offer strong _guidelines_: 
+However, there are other cases that do not violate policies, but where we still offer strong _guidelines_:
 
 > **Collaboration Guidelines**
 >
-> We _strongly recommend_ that you _write_ all code yourself. Even if you discuss solutions, or approaches, with others, 
+> We _strongly recommend_ that you _write_ all code yourself. Even if you discuss solutions, or approaches, with others,
 > do the actual typing on your own! And avoid playing games or trying to find loopholes -- i.e., do not merely type what someone says, or type
-> what you see on anothers screen. 
-> 
-> Because there is lots of gray area in this, we do not consider violating these guidelines to be academic 
-> integrity violations, but doing so may result in you not learning the material, and in this class, not learning the 
-> material will result in not being able to pass the skill assessments. 
-> 
-> Even with perfect homework scores, failing to 
-> pass sufficient skill assessments will result in a failing grade in the course (consult the [grading table](#grading)), so take homework for what it is 
-> intended: extensive opportunity to practice the skills we are teaching, paired with high quality feedback 
+> what you see on anothers screen.
+>
+> Because there is lots of gray area in this, we do not consider violating these guidelines to be academic
+> integrity violations, but doing so may result in you not learning the material, and in this class, not learning the
+> material will result in not being able to pass the skill assessments.
+>
+> Even with perfect homework scores, failing to
+> pass sufficient skill assessments will result in a failing grade in the course (consult the [grading table](#grading)), so take homework for what it is
+> intended: extensive opportunity to practice the skills we are teaching, paired with high quality feedback
 > about the solution you came up with.
 
 If you have a question about the difference between our policies and guidelines, please ask an instructor.
@@ -233,9 +233,10 @@ AI coding assistants like Cursor, Windsurf, and Copilot should not be used in th
 
 The same is true of asking questions of chat models like ChatGPT, Claude, or Gemini. Putting in assignment instructions into such a model and getting out code or test cases amounts to getting the model to do the thinking for you -- and as a result, you will not learn. "Only look"ing at AI-generated solutions "before writing your own" undermines the learning just the same, as you will not be learning to actually solve problems, you will just be copying (and, importantly, never developing the ability to recognize when the AI generated solution isn't what you want).
 
-Emerging research is beginning to show that substituting practice on fundamental skills by delegating that practice to [LLMs significantly decreases learning](https://doi.org/10.48550/arXiv.2506.08872). Whilst using an LLM might reduce the immediate strain of learning something new, it can also [diminish the development of critical thinking skills](https://doi.org/10.1016/j.chb.2024.108386) by decreasing engagement and [impeding independent problem-solving](https://doi.org/10.1186/s41239-024-00467-0). Moreover, even the [benefits of using LLMs for experienced developers](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) have been questioned, LLMs can be useful useful once you have gained competence in program design and are able to break down a problem and specify it precisely—which are the skills we are trying to develop in CS 2000 and CS 2100.
+Emerging research is beginning to show that substituting practice on fundamental skills by delegating that practice to [LLMs significantly decreases learning](https://doi.org/10.48550/arXiv.2506.08872). Whilst using an LLM might reduce the immediate strain of learning something new, it can also [diminish the development of critical thinking skills](https://doi.org/10.1016/j.chb.2024.108386) by decreasing engagement and [impeding independent problem-solving](https://doi.org/10.1186/s41239-024-00467-0). Moreover, even the [benefits of using LLMs for experienced developers](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) have been questioned. LLMs can be useful useful once you have gained competence in program design and are able to break down a problem and specify it precisely—which are the skills we are trying to develop in CS 2000 and CS 2100.
  
 Part of the reason for these being guidelines, rather than academic integrity policies, is that some interaction with LLMs is now unavoidable -- using a search engine now will give you an AI generated overview, and similar interactions with models (trying to understand concepts) is not necessarily discouraged, though we would always encourage you to bring larger questions to our course staff, who will likely be able to give you better answers, more suited to your background, to our curriculum, etc. Finally, if you do use LLMs for search, you are responsible for validating any information you find. 
+
 
 Make sure to refer to sources of ground truth for reliable information such as the official language documentation, our course textbook, course staff, and the course website. Reading documentation can be challenging at first, but it is an important skill to develop in any technical field. Learning to navigate technical documents helps you develop a precise understanding of how something works—which is a valuable transferable skill that you can use to gain competence with new tools and help you solve problems independently.
 
@@ -269,7 +270,8 @@ In case of an emergency, please call 911.
 
 Please visit https://www.northeastern.edu/titleix for a complete list of reporting options and resources both on- and off-campus.
 
-### Policy on Recording 
+### Policy on Recording
+
 ... two party consente
 
 ### UHCS
