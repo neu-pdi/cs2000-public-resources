@@ -1,15 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-if [ -n "${IN_NIX_SHELL-}" ]; then
-  # handled by devshell
-  exit 0
-fi
-
 if command -v treefmt >/dev/null 2>&1; then
   echo "[husky] Running treefmt check..."
   treefmt --fail-on-change
 else
-  echo "[husky] treefmt not found. Please install it or run via Nix."
+  echo "[husky] treefmt not found."
   exit 1
 fi
