@@ -76,29 +76,40 @@ function eventsToTokens(
   const tokens: Token[] = [];
   let currentHighlight: Highlight | null = null;
   
+  console.log('Processing events:', events.length);
+  
   for (const event of events) {
+    console.log('Event:', event);
     switch (event.type) {
       case 'source':
         if (event.start < event.end) {
           const content = source.slice(event.start, event.end);
+          const tokenType = currentHighlight ? highlightNames[currentHighlight.value] : 'text';
+          const className = currentHighlight ? getHighlightClass(currentHighlight, highlightNames) : 'token';
+          
+          console.log('Creating token:', { content, tokenType, className, currentHighlight });
+          
           tokens.push({
             content,
-            type: currentHighlight ? highlightNames[currentHighlight.value] : 'text',
-            className: currentHighlight ? getHighlightClass(currentHighlight, highlightNames) : 'token',
+            type: tokenType,
+            className: className,
             startIndex: event.start,
             endIndex: event.end,
           });
         }
         break;
       case 'highlightStart':
+        console.log('Highlight start:', event.highlight);
         currentHighlight = event.highlight;
         break;
       case 'highlightEnd':
+        console.log('Highlight end');
         currentHighlight = null;
         break;
     }
   }
   
+  console.log('Generated tokens:', tokens);
   return tokens;
 }
 
