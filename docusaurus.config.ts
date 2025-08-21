@@ -5,6 +5,7 @@ import remarkMath from 'remark-math';
 import { getChakraThemeSyncPlugin } from './src/plugins/chakra-theme-sync';
 import { createVariableSubstitutionPlugin } from './src/plugins/variable-substitution';
 import { oneDarkTheme, oneLightTheme } from './src/theme/one-dark-themes';
+import webpackConfigPlugin from './src/plugins/webpack-config';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -70,6 +71,7 @@ const config: Config = {
   ],
 
   plugins: [
+    webpackConfigPlugin,
     getChakraThemeSyncPlugin,
     [
       '@docusaurus/plugin-content-docs',
@@ -111,6 +113,7 @@ const config: Config = {
       crossorigin: 'anonymous',
     },
   ],
+
 
   themeConfig: {
     // Replace with your project's social card

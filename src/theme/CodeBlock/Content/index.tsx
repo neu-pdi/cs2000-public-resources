@@ -1,10 +1,9 @@
 import React, { type ComponentProps, type ReactNode } from 'react';
 import clsx from 'clsx';
 import { useCodeBlockContext } from '@docusaurus/theme-common/internal';
-import { usePrismTheme } from '@docusaurus/theme-common';
-import { Highlight } from 'prism-react-renderer';
 import type { Props } from '@theme/CodeBlock/Content';
-import Line from '@theme/CodeBlock/Line';
+import TreeSitterLine from '../Line/TreeSitterLine';
+import { useTreeSitterHighlight } from '../useTreeSitterHighlight';
 
 import styles from './styles.module.css';
 
@@ -49,30 +48,52 @@ export default function CodeBlockContent({
   className: classNameProp,
 }: Props): ReactNode {
   const { metadata, wordWrap } = useCodeBlockContext();
-  const prismTheme = usePrismTheme();
   const { code, language, lineNumbersStart, lineClassNames } = metadata;
+  
+  const { result, loading, error } = useTreeSitterHighlight(code, language);
+  
+  if (loading) {
+    return (
+      <Pre
+        ref={wordWrap.codeBlockRef}
+        className={clsx(classNameProp, 'language-text')}
+      >
+        <Code>
+          <span>Loading...</span>
+        </Code>
+      </Pre>
+    );
+  }
+  
+  if (!result) {
+    return (
+      <Pre
+        ref={wordWrap.codeBlockRef}
+        className={clsx(classNameProp, 'language-text')}
+      >
+        <Code>
+          <span>No highlighting available</span>
+        </Code>
+      </Pre>
+    );
+  }
+  
   return (
-    <Highlight theme={prismTheme} code={code} language={language}>
-      {({ className, style, tokens: lines, getLineProps, getTokenProps }) => (
-        <Pre
-          ref={wordWrap.codeBlockRef}
-          className={clsx(classNameProp, className)}
-          style={style}
-        >
-          <Code>
-            {lines.map((line, i) => (
-              <Line
-                key={i}
-                line={line}
-                getLineProps={getLineProps}
-                getTokenProps={getTokenProps}
-                classNames={lineClassNames[i]}
-                showLineNumbers={lineNumbersStart !== undefined}
-              />
-            ))}
-          </Code>
-        </Pre>
-      )}
-    </Highlight>
+    <Pre
+      ref={wordWrap.codeBlockRef}
+      className={clsx(classNameProp, result.className)}
+      style={result.style}
+    >
+      <Code>
+        {result.lines.map((line, i) => (
+          <TreeSitterLine
+            key={i}
+            tokens={line.tokens}
+            classNames={lineClassNames[i] ? lineClassNames[i].join(' ') : undefined}
+            showLineNumbers={lineNumbersStart !== undefined}
+          />
+        ))}
+      </Code>
+    </Pre>
   );
 }
