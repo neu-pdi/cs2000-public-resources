@@ -53,13 +53,16 @@ const highlightClassMap: Record<string, string> = {
   "punctuation.special": "token punctuation",
   "embedded": "token string",
   
+  // Local variable tracking
+  "local.definition": "token variable",
+  "local.reference": "token variable",
+  
   // Fallback
   "default": "token",
 };
 
 // Get CSS class for a highlight
 function getHighlightClass(highlight: Highlight, highlightNames: string[]): string {
-  console.log(highlight);
   if (highlight.value < highlightNames.length) {
     const highlightName = highlightNames[highlight.value];
     return highlightClassMap[highlightName] || highlightClassMap["default"];
@@ -76,18 +79,18 @@ function eventsToTokens(
   const tokens: Token[] = [];
   let currentHighlight: Highlight | null = null;
   
-  console.log('Processing events:', events.length);
+  console.log('=== TREE-SITTER HIGHLIGHTING DEBUG ===');
+  console.log('Source code:', JSON.stringify(source));
+  console.log('Highlight names:', highlightNames);
+  console.log('Number of events:', events.length);
   
   for (const event of events) {
-    console.log('Event:', event);
     switch (event.type) {
       case 'source':
         if (event.start < event.end) {
           const content = source.slice(event.start, event.end);
           const tokenType = currentHighlight ? highlightNames[currentHighlight.value] : 'text';
-          const className = currentHighlight ? getHighlightClass(currentHighlight, highlightNames) : 'token';
-          
-          console.log('Creating token:', { content, tokenType, className, currentHighlight });
+          const className = currentHighlight ? getHighlightClass(currentHighlight, highlightNames) : 'unmatched-token';
           
           tokens.push({
             content,
@@ -99,17 +102,16 @@ function eventsToTokens(
         }
         break;
       case 'highlightStart':
-        console.log('Highlight start:', event.highlight);
         currentHighlight = event.highlight;
         break;
       case 'highlightEnd':
-        console.log('Highlight end');
         currentHighlight = null;
         break;
     }
   }
   
   console.log('Generated tokens:', tokens);
+  console.log('=== END DEBUG ===');
   return tokens;
 }
 
@@ -168,59 +170,23 @@ const highlightConfigs = new Map<string, HighlightConfiguration>();
 // Create a Python highlight configuration
 function createPythonHighlightConfig(language: Language): HighlightConfiguration {
   const highlightsQuery = `
-    ; Identifier naming conventions
-    (identifier) @variable
-
-    ((identifier) @constructor
-     (#match? @constructor "^[A-Z]"))
-
-    ((identifier) @constant
-     (#match? @constant "^[A-Z][A-Z_]*$"))
-
-    ; Function calls
-    (decorator) @function
-    (decorator
-      (identifier) @function)
-
-    (call
-      function: (attribute attribute: (identifier) @function.method))
-    (call
-      function: (identifier) @function)
-
-    ; Builtin functions
-    ((call
-      function: (identifier) @function.builtin)
-     (#match?
-       @function.builtin
-       "^(abs|all|any|ascii|bin|bool|breakpoint|bytearray|bytes|callable|chr|classmethod|compile|complex|delattr|dict|dir|divmod|enumerate|eval|exec|filter|float|format|frozenset|getattr|globals|hasattr|hash|help|hex|id|input|int|isinstance|issubclass|iter|len|list|locals|map|max|memoryview|min|next|object|oct|open|ord|pow|print|property|range|repr|reversed|round|set|setattr|slice|sorted|staticmethod|str|sum|super|tuple|type|vars|zip|__import__)$"))
-
-    ; Function definitions
-    (function_definition
-      name: (identifier) @function)
-
-    (attribute attribute: (identifier) @property)
-    (type (identifier) @type)
-
+    ; Comments must come first to avoid conflicts
+    (comment) @comment
+    
     ; Literals
+    (string) @string
+    (escape_sequence) @escape
     [
       (none)
       (true)
       (false)
     ] @constant.builtin
-
     [
       (integer)
       (float)
     ] @number
 
-    (comment) @comment
-    (string) @string
-    (escape_sequence) @escape
-
-    (interpolation
-      "{" @punctuation.special
-      "}" @punctuation.special) @embedded
-
+    ; Operators
     [
       "-"
       "-="
@@ -267,6 +233,7 @@ function createPythonHighlightConfig(language: Language): HighlightConfiguration
       "not in"
     ] @operator
 
+    ; Keywords
     [
       "as"
       "assert"
@@ -300,6 +267,43 @@ function createPythonHighlightConfig(language: Language): HighlightConfiguration
       "match"
       "case"
     ] @keyword
+
+    ; Function calls
+    (decorator) @function
+    (decorator
+      (identifier) @function)
+
+    (call
+      function: (attribute attribute: (identifier) @function.method))
+    (call
+      function: (identifier) @function)
+
+    ; Builtin functions
+    ((call
+      function: (identifier) @function.builtin)
+     (#match?
+       @function.builtin
+       "^(abs|all|any|ascii|bin|bool|breakpoint|bytearray|bytes|callable|chr|classmethod|compile|complex|delattr|dict|dir|divmod|enumerate|eval|exec|filter|float|format|frozenset|getattr|globals|hasattr|hash|help|hex|id|input|int|isinstance|issubclass|iter|len|list|locals|map|max|memoryview|min|next|object|oct|open|ord|pow|print|property|range|repr|reversed|round|set|setattr|slice|sorted|staticmethod|str|sum|super|tuple|type|vars|zip|__import__)$"))
+
+    ; Function definitions
+    (function_definition
+      name: (identifier) @function)
+
+    (attribute attribute: (identifier) @property)
+    (type (identifier) @type)
+
+    ; Identifier naming conventions (must come last)
+    ((identifier) @constructor
+     (#match? @constructor "^[A-Z]"))
+
+    ((identifier) @constant
+     (#match? @constant "^[A-Z][A-Z_]*$"))
+
+    (identifier) @variable
+
+    (interpolation
+      "{" @punctuation.special
+      "}" @punctuation.special) @embedded
   `;
 
   const injectionQuery = `
@@ -381,26 +385,59 @@ export async function highlightWithTreeSitter(
       parser.setLanguage(lang);
     }
 
-    // Get or create highlight configuration
-    let config = highlightConfigs.get(language);
-    if (!config) {
-      if (language === 'python' || language === 'py') {
-        config = createPythonHighlightConfig(lang);
-        highlightConfigs.set(language, config);
-      } else {
-        throw new Error(`No highlight configuration for language: ${language}`);
-      }
+    // Debug: Parse the code and see what tree-sitter produces
+    const tree = parser.parse(code);
+    if (tree) {
+      console.log('=== TREE-SITTER TREE DEBUG ===');
+      console.log('Tree root node:', tree.rootNode.toString());
+      console.log('Tree root node type:', tree.rootNode.type);
+      console.log('Tree root node text:');
+      console.dir(tree.rootNode.text)
+      console.log('=== END TREE DEBUG ===');
+      tree.delete();
     }
 
-    // Configure recognized highlight names
+    // Clear existing configs to ensure fresh configuration
+    highlightConfigs.clear();
+    
+    // Create highlight configuration
+    let config: HighlightConfiguration;
+    if (language === 'python' || language === 'py') {
+      config = createPythonHighlightConfig(lang);
+      highlightConfigs.set(language, config);
+    } else {
+      throw new Error(`No highlight configuration for language: ${language}`);
+    }
+
+    // Configure recognized highlight names - must match the order in the query
     const recognizedNames = [
-      "keyword", "string", "comment", "function", "variable", "number", 
-      "operator", "punctuation", "type", "constant", "boolean", "property",
-      "class", "decorator", "escape", "error", "function.builtin", 
-      "function.method", "constant.builtin", "constructor", "punctuation.special",
-      "embedded"
+      "comment",           // 0
+      "string",           // 1
+      "escape",           // 2
+      "constant.builtin", // 3
+      "number",           // 4
+      "operator",         // 5
+      "keyword",          // 6
+      "function",         // 7
+      "function.method",  // 8
+      "function.builtin", // 9
+      "function",         // 10
+      "property",         // 11
+      "type",             // 12
+      "constructor",      // 13
+      "constant",         // 14
+      "variable",         // 15
+      "punctuation.special", // 16
+      "embedded",         // 17
+      "local.definition", // 18
+      "local.reference"   // 19
     ];
+    
+    console.log('=== CONFIGURATION DEBUG ===');
+    console.log('Configuring with names:', recognizedNames);
     config.configure(recognizedNames);
+    console.log('Configuration complete');
+    console.log('=== END CONFIGURATION DEBUG ===');
 
     // Create highlighter and highlight the code
     const highlighter = new Highlighter();
@@ -413,6 +450,11 @@ export async function highlightWithTreeSitter(
       events.push(event);
       event = highlightIter.next();
     }
+
+    console.log('=== TREE-SITTER PARSER DEBUG ===');
+    console.log('Raw highlight events:', events);
+    console.log('First few events:', events.slice(0, 10));
+    console.log('=== END PARSER DEBUG ===');
 
     // Convert events to tokens
     const tokens = eventsToTokens(events, code, recognizedNames);
@@ -437,7 +479,7 @@ export async function highlightWithTreeSitter(
 
     // Provide a simple fallback that at least preserves the code structure
     const lines = code.split('\n').map((line) => ({
-      tokens: [{ content: line, type: 'text', className: 'token' }],
+      tokens: [{ content: line, type: 'text', className: 'fallback-token' }],
     }));
 
     return {

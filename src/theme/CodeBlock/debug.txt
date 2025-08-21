@@ -1,0 +1,912 @@
+Failed to get subsystem status for purpose 
+Object { rejected: true, message: Error }
+content-script.js:104:25
+Tree-sitter highlighting failed, falling back to basic highlighting: Error: Incompatible language version 0. Compatibility range 13 through 15.
+    setLanguage webpack-internal:///./node_modules/web-tree-sitter/tree-sitter.js:3833
+    highlightWithTreeSitter webpack-internal:///./src/theme/CodeBlock/tree-sitter-highlighter.ts:186
+    highlight webpack-internal:///./src/theme/CodeBlock/useTreeSitterHighlight.ts:8
+    useTreeSitterHighlight webpack-internal:///./src/theme/CodeBlock/useTreeSitterHighlight.ts:9
+    React 5
+<anonymous code>:1:147461
+=== TREE-SITTER TREE DEBUG === tree-sitter-highlighter.ts:187:48
+Tree root node: (module (comment) (comment) (comment) (comment) (expression_statement (assignment left: (identifier) right: (call function: (identifier) arguments: (argument_list (string (string_start) (string_content) (string_end)) (string (string_start) (string_content) (string_end)))))) (expression_statement (assignment left: (identifier) right: (call function: (attribute object: (identifier) attribute: (identifier)) arguments: (argument_list)))) (expression_statement (call function: (attribute object: (identifier) attribute: (identifier)) arguments: (argument_list))) (comment) (expression_statement (assignment left: (identifier) right: (list))) (for_statement left: (identifier) right: (identifier) body: (block (expression_statement (assignment left: (identifier) right: (call function: (attribute object: (call function: (attribute object: (identifier) attribute: (identifier)) arguments: (argument_list)) attribute: (identifier)) arguments: (argument_list (string (string_start) (string_content) (string_end)))))) (expression_statement (call function: (attribute object: (identifier) attribute: (identifier)) arguments: (argument_list (identifier)))))) (comment) (expression_statement (assignment left: (identifier) right: (subscript value: (identifier) subscript: (integer)))) (expression_statement (assignment left: (identifier) right: (subscript value: (identifier) subscript: (slice (integer))))) (comment) (expression_statement (assignment left: (identifier) right: (call function: (attribute object: (identifier) attribute: (identifier)) arguments: (argument_list (string (string_start) (string_content) (string_end)))))) (expression_statement (assignment left: (identifier) right: (call function: (attribute object: (identifier) attribute: (identifier)) arguments: (argument_list (string (string_start) (string_content) (string_end)))))) (expression_statement (assignment left: (identifier) right: (list))) (for_statement left: (identifier) right: (identifier) body: (block (expression_statement (assignment left: (subscript value: (identifier) subscript: (identifier)) right: (call function: (identifier) arguments: (argument_list (subscript value: (identifier) subscript: (identifier)))))) (if_statement condition: (comparison_operator (subscript value: (identifier) subscript: (identifier)) (string (string_start) (string_content) (string_end))) consequence: (block (expression_statement (call function: (attribute object: (identifier) attribute: (identifier)) arguments: (argument_list (identifier)))))))) (comment) (expression_statement (assignment left: (identifier) right: (binary_operator left: (list (identifier)) right: (identifier)))) (expression_statement (assignment left: (identifier) right: (call function: (identifier) arguments: (argument_list (string (string_start) (string_content) (string_end)) (string (string_start) (string_content) (string_end)))))) (for_statement left: (identifier) right: (identifier) body: (block (expression_statement (call function: (attribute object: (identifier) attribute: (identifier)) arguments: (argument_list (binary_operator left: (call function: (attribute object: (string (string_start) (string_content) (string_end)) attribute: (identifier)) arguments: (argument_list (list_comprehension body: (call function: (identifier) arguments: (argument_list (identifier))) (for_in_clause left: (identifier) right: (identifier))))) right: (string (string_start) (string_content (escape_sequence)) (string_end)))))))) (expression_statement (call function: (attribute object: (identifier) attribute: (identifier)) arguments: (argument_list)))) tree-sitter-highlighter.ts:187:94
+Tree root node type: module tree-sitter-highlighter.ts:187:150
+Tree root node text: tree-sitter-highlighter.ts:187:205
+# Read the file
+# First download the file from the URL:
+# https://pdi.run/f25-library-loans.csv
+# and save it as 'library_loans.csv' in the same directory as this file.
+file = open('library_loans.csv', 'r')
+lines = file.readlines()
+file.close()
+
+# Convert lines to list of lists
+data = []
+for line in lines:
+    cells = line.strip().split(',')
+    data.append(cells)
+
+# Separate header and data
+headers = data[0]
+loans = data[1:]
+
+# Convert days to int and filter for home-loan
+days_index = headers.index('days')
+loan_type_index = headers.index('loan_type')
+
+home_loans = []
+for row in loans:
+    row[days_index] = int(row[days_index])
+    if row[loan_type_index] == 'home-loan':
+        home_loans.append(row)
+
+# Write filtered data to a new CSV
+output = [headers] + home_loans
+out_file = open('home_loans.csv', 'w')
+for row in output:
+    out_file.write(','.join([str(cell) for cell in row]) + '\n')
+out_file.close() tree-sitter-highlighter.ts:187:241
+=== END TREE DEBUG === tree-sitter-highlighter.ts:187:273
+=== TREE-SITTER PARSER DEBUG === tree-sitter-highlighter.ts:211:123
+Raw highlight events: 
+Array(270) [ {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, … ]
+tree-sitter-highlighter.ts:211:171
+=== END PARSER DEBUG === tree-sitter-highlighter.ts:211:215
+=== TREE-SITTER HIGHLIGHTING DEBUG === tree-sitter-highlighter.ts:15:105
+Source code: "# Read the file\n# First download the file from the URL:\n# https://pdi.run/f25-library-loans.csv\n# and save it as 'library_loans.csv' in the same directory as this file.\nfile = open('library_loans.csv', 'r')\nlines = file.readlines()\nfile.close()\n\n# Convert lines to list of lists\ndata = []\nfor line in lines:\n    cells = line.strip().split(',')\n    data.append(cells)\n\n# Separate header and data\nheaders = data[0]\nloans = data[1:]\n\n# Convert days to int and filter for home-loan\ndays_index = headers.index('days')\nloan_type_index = headers.index('loan_type')\n\nhome_loans = []\nfor row in loans:\n    row[days_index] = int(row[days_index])\n    if row[loan_type_index] == 'home-loan':\n        home_loans.append(row)\n\n# Write filtered data to a new CSV\noutput = [headers] + home_loans\nout_file = open('home_loans.csv', 'w')\nfor row in output:\n    out_file.write(','.join([str(cell) for cell in row]) + '\\n')\nout_file.close()" tree-sitter-highlighter.ts:15:159
+Highlight names: 
+Array(20) [ "comment", "string", "escape", "constant.builtin", "number", "operator", "keyword", "function", "function.method", "function.builtin", … ]
+tree-sitter-highlighter.ts:15:210
+Number of events: 270 tree-sitter-highlighter.ts:15:257
+Generated tokens: 
+[
+  {
+    "content": "# Read the file",
+    "type": "constant.builtin",
+    "className": "token constant",
+    "startIndex": 0,
+    "endIndex": 15
+  },
+  {
+    "content": "\n",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 15,
+    "endIndex": 16
+  },
+  {
+    "content": "# First download the file from the URL:",
+    "type": "constant.builtin",
+    "className": "token constant",
+    "startIndex": 16,
+    "endIndex": 55
+  },
+  {
+    "content": "\n",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 55,
+    "endIndex": 56
+  },
+  {
+    "content": "# https://pdi.run/f25-library-loans.csv",
+    "type": "constant.builtin",
+    "className": "token constant",
+    "startIndex": 56,
+    "endIndex": 95
+  },
+  {
+    "content": "\n",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 95,
+    "endIndex": 96
+  },
+  {
+    "content": "# and save it as 'library_loans.csv' in the same directory as this file.",
+    "type": "constant.builtin",
+    "className": "token constant",
+    "startIndex": 96,
+    "endIndex": 168
+  },
+  {
+    "content": "\nfile ",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 168,
+    "endIndex": 174
+  },
+  {
+    "content": "=",
+    "type": "function.method",
+    "className": "token function",
+    "startIndex": 174,
+    "endIndex": 175
+  },
+  {
+    "content": " ",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 175,
+    "endIndex": 176
+  },
+  {
+    "content": "open",
+    "type": "variable",
+    "className": "token variable",
+    "startIndex": 176,
+    "endIndex": 180
+  },
+  {
+    "content": "(",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 180,
+    "endIndex": 181
+  },
+  {
+    "content": "'library_loans.csv'",
+    "type": "number",
+    "className": "token number",
+    "startIndex": 181,
+    "endIndex": 200
+  },
+  {
+    "content": ", ",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 200,
+    "endIndex": 202
+  },
+  {
+    "content": "'r'",
+    "type": "number",
+    "className": "token number",
+    "startIndex": 202,
+    "endIndex": 205
+  },
+  {
+    "content": ")\nlines ",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 205,
+    "endIndex": 213
+  },
+  {
+    "content": "=",
+    "type": "function.method",
+    "className": "token function",
+    "startIndex": 213,
+    "endIndex": 214
+  },
+  {
+    "content": " file.",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 214,
+    "endIndex": 220
+  },
+  {
+    "content": "readlines",
+    "type": "embedded",
+    "className": "token string",
+    "startIndex": 220,
+    "endIndex": 229
+  },
+  {
+    "content": "()\nfile.",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 229,
+    "endIndex": 237
+  },
+  {
+    "content": "close",
+    "type": "embedded",
+    "className": "token string",
+    "startIndex": 237,
+    "endIndex": 242
+  },
+  {
+    "content": "()\n\n",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 242,
+    "endIndex": 246
+  },
+  {
+    "content": "# Convert lines to list of lists",
+    "type": "constant.builtin",
+    "className": "token constant",
+    "startIndex": 246,
+    "endIndex": 278
+  },
+  {
+    "content": "\ndata ",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 278,
+    "endIndex": 284
+  },
+  {
+    "content": "=",
+    "type": "function.method",
+    "className": "token function",
+    "startIndex": 284,
+    "endIndex": 285
+  },
+  {
+    "content": " []\n",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 285,
+    "endIndex": 289
+  },
+  {
+    "content": "for",
+    "type": "function.builtin",
+    "className": "token function",
+    "startIndex": 289,
+    "endIndex": 292
+  },
+  {
+    "content": " line ",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 292,
+    "endIndex": 298
+  },
+  {
+    "content": "in",
+    "type": "function.method",
+    "className": "token function",
+    "startIndex": 298,
+    "endIndex": 300
+  },
+  {
+    "content": " lines:\n    cells ",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 300,
+    "endIndex": 318
+  },
+  {
+    "content": "=",
+    "type": "function.method",
+    "className": "token function",
+    "startIndex": 318,
+    "endIndex": 319
+  },
+  {
+    "content": " line.",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 319,
+    "endIndex": 325
+  },
+  {
+    "content": "strip",
+    "type": "embedded",
+    "className": "token string",
+    "startIndex": 325,
+    "endIndex": 330
+  },
+  {
+    "content": "().",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 330,
+    "endIndex": 333
+  },
+  {
+    "content": "split",
+    "type": "embedded",
+    "className": "token string",
+    "startIndex": 333,
+    "endIndex": 338
+  },
+  {
+    "content": "(",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 338,
+    "endIndex": 339
+  },
+  {
+    "content": "','",
+    "type": "number",
+    "className": "token number",
+    "startIndex": 339,
+    "endIndex": 342
+  },
+  {
+    "content": ")\n    data.",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 342,
+    "endIndex": 353
+  },
+  {
+    "content": "append",
+    "type": "embedded",
+    "className": "token string",
+    "startIndex": 353,
+    "endIndex": 359
+  },
+  {
+    "content": "(cells)\n\n",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 359,
+    "endIndex": 368
+  },
+  {
+    "content": "# Separate header and data",
+    "type": "constant.builtin",
+    "className": "token constant",
+    "startIndex": 368,
+    "endIndex": 394
+  },
+  {
+    "content": "\nheaders ",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 394,
+    "endIndex": 403
+  },
+  {
+    "content": "=",
+    "type": "function.method",
+    "className": "token function",
+    "startIndex": 403,
+    "endIndex": 404
+  },
+  {
+    "content": " data[",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 404,
+    "endIndex": 410
+  },
+  {
+    "content": "0",
+    "type": "function",
+    "className": "token function",
+    "startIndex": 410,
+    "endIndex": 411
+  },
+  {
+    "content": "]\nloans ",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 411,
+    "endIndex": 419
+  },
+  {
+    "content": "=",
+    "type": "function.method",
+    "className": "token function",
+    "startIndex": 419,
+    "endIndex": 420
+  },
+  {
+    "content": " data[",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 420,
+    "endIndex": 426
+  },
+  {
+    "content": "1",
+    "type": "function",
+    "className": "token function",
+    "startIndex": 426,
+    "endIndex": 427
+  },
+  {
+    "content": ":]\n\n",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 427,
+    "endIndex": 431
+  },
+  {
+    "content": "# Convert days to int and filter for home-loan",
+    "type": "constant.builtin",
+    "className": "token constant",
+    "startIndex": 431,
+    "endIndex": 477
+  },
+  {
+    "content": "\ndays_index ",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 477,
+    "endIndex": 489
+  },
+  {
+    "content": "=",
+    "type": "function.method",
+    "className": "token function",
+    "startIndex": 489,
+    "endIndex": 490
+  },
+  {
+    "content": " headers.",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 490,
+    "endIndex": 499
+  },
+  {
+    "content": "index",
+    "type": "embedded",
+    "className": "token string",
+    "startIndex": 499,
+    "endIndex": 504
+  },
+  {
+    "content": "(",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 504,
+    "endIndex": 505
+  },
+  {
+    "content": "'days'",
+    "type": "number",
+    "className": "token number",
+    "startIndex": 505,
+    "endIndex": 511
+  },
+  {
+    "content": ")\nloan_type_index ",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 511,
+    "endIndex": 529
+  },
+  {
+    "content": "=",
+    "type": "function.method",
+    "className": "token function",
+    "startIndex": 529,
+    "endIndex": 530
+  },
+  {
+    "content": " headers.",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 530,
+    "endIndex": 539
+  },
+  {
+    "content": "index",
+    "type": "embedded",
+    "className": "token string",
+    "startIndex": 539,
+    "endIndex": 544
+  },
+  {
+    "content": "(",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 544,
+    "endIndex": 545
+  },
+  {
+    "content": "'loan_type'",
+    "type": "number",
+    "className": "token number",
+    "startIndex": 545,
+    "endIndex": 556
+  },
+  {
+    "content": ")\n\nhome_loans ",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 556,
+    "endIndex": 570
+  },
+  {
+    "content": "=",
+    "type": "function.method",
+    "className": "token function",
+    "startIndex": 570,
+    "endIndex": 571
+  },
+  {
+    "content": " []\n",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 571,
+    "endIndex": 575
+  },
+  {
+    "content": "for",
+    "type": "function.builtin",
+    "className": "token function",
+    "startIndex": 575,
+    "endIndex": 578
+  },
+  {
+    "content": " row ",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 578,
+    "endIndex": 583
+  },
+  {
+    "content": "in",
+    "type": "function.method",
+    "className": "token function",
+    "startIndex": 583,
+    "endIndex": 585
+  },
+  {
+    "content": " loans:\n    row[days_index] ",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 585,
+    "endIndex": 613
+  },
+  {
+    "content": "=",
+    "type": "function.method",
+    "className": "token function",
+    "startIndex": 613,
+    "endIndex": 614
+  },
+  {
+    "content": " ",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 614,
+    "endIndex": 615
+  },
+  {
+    "content": "int",
+    "type": "variable",
+    "className": "token variable",
+    "startIndex": 615,
+    "endIndex": 618
+  },
+  {
+    "content": "(row[days_index])\n    ",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 618,
+    "endIndex": 640
+  },
+  {
+    "content": "if",
+    "type": "function.builtin",
+    "className": "token function",
+    "startIndex": 640,
+    "endIndex": 642
+  },
+  {
+    "content": " row[loan_type_index] ",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 642,
+    "endIndex": 664
+  },
+  {
+    "content": "==",
+    "type": "function.method",
+    "className": "token function",
+    "startIndex": 664,
+    "endIndex": 666
+  },
+  {
+    "content": " ",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 666,
+    "endIndex": 667
+  },
+  {
+    "content": "'home-loan'",
+    "type": "number",
+    "className": "token number",
+    "startIndex": 667,
+    "endIndex": 678
+  },
+  {
+    "content": ":\n        home_loans.",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 678,
+    "endIndex": 699
+  },
+  {
+    "content": "append",
+    "type": "embedded",
+    "className": "token string",
+    "startIndex": 699,
+    "endIndex": 705
+  },
+  {
+    "content": "(row)\n\n",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 705,
+    "endIndex": 712
+  },
+  {
+    "content": "# Write filtered data to a new CSV",
+    "type": "constant.builtin",
+    "className": "token constant",
+    "startIndex": 712,
+    "endIndex": 746
+  },
+  {
+    "content": "\noutput ",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 746,
+    "endIndex": 754
+  },
+  {
+    "content": "=",
+    "type": "function.method",
+    "className": "token function",
+    "startIndex": 754,
+    "endIndex": 755
+  },
+  {
+    "content": " [headers] ",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 755,
+    "endIndex": 766
+  },
+  {
+    "content": "+",
+    "type": "function.method",
+    "className": "token function",
+    "startIndex": 766,
+    "endIndex": 767
+  },
+  {
+    "content": " home_loans\nout_file ",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 767,
+    "endIndex": 788
+  },
+  {
+    "content": "=",
+    "type": "function.method",
+    "className": "token function",
+    "startIndex": 788,
+    "endIndex": 789
+  },
+  {
+    "content": " ",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 789,
+    "endIndex": 790
+  },
+  {
+    "content": "open",
+    "type": "variable",
+    "className": "token variable",
+    "startIndex": 790,
+    "endIndex": 794
+  },
+  {
+    "content": "(",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 794,
+    "endIndex": 795
+  },
+  {
+    "content": "'home_loans.csv'",
+    "type": "number",
+    "className": "token number",
+    "startIndex": 795,
+    "endIndex": 811
+  },
+  {
+    "content": ", ",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 811,
+    "endIndex": 813
+  },
+  {
+    "content": "'w'",
+    "type": "number",
+    "className": "token number",
+    "startIndex": 813,
+    "endIndex": 816
+  },
+  {
+    "content": ")\n",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 816,
+    "endIndex": 818
+  },
+  {
+    "content": "for",
+    "type": "function.builtin",
+    "className": "token function",
+    "startIndex": 818,
+    "endIndex": 821
+  },
+  {
+    "content": " row ",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 821,
+    "endIndex": 826
+  },
+  {
+    "content": "in",
+    "type": "function.method",
+    "className": "token function",
+    "startIndex": 826,
+    "endIndex": 828
+  },
+  {
+    "content": " output:\n    out_file.",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 828,
+    "endIndex": 850
+  },
+  {
+    "content": "write",
+    "type": "embedded",
+    "className": "token string",
+    "startIndex": 850,
+    "endIndex": 855
+  },
+  {
+    "content": "(",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 855,
+    "endIndex": 856
+  },
+  {
+    "content": "','",
+    "type": "number",
+    "className": "token number",
+    "startIndex": 856,
+    "endIndex": 859
+  },
+  {
+    "content": ".",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 859,
+    "endIndex": 860
+  },
+  {
+    "content": "join",
+    "type": "embedded",
+    "className": "token string",
+    "startIndex": 860,
+    "endIndex": 864
+  },
+  {
+    "content": "([",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 864,
+    "endIndex": 866
+  },
+  {
+    "content": "str",
+    "type": "variable",
+    "className": "token variable",
+    "startIndex": 866,
+    "endIndex": 869
+  },
+  {
+    "content": "(cell) ",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 869,
+    "endIndex": 876
+  },
+  {
+    "content": "for",
+    "type": "function.builtin",
+    "className": "token function",
+    "startIndex": 876,
+    "endIndex": 879
+  },
+  {
+    "content": " cell ",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 879,
+    "endIndex": 885
+  },
+  {
+    "content": "in",
+    "type": "function.method",
+    "className": "token function",
+    "startIndex": 885,
+    "endIndex": 887
+  },
+  {
+    "content": " row]) ",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 887,
+    "endIndex": 894
+  },
+  {
+    "content": "+",
+    "type": "function.method",
+    "className": "token function",
+    "startIndex": 894,
+    "endIndex": 895
+  },
+  {
+    "content": " ",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 895,
+    "endIndex": 896
+  },
+  {
+    "content": "'",
+    "type": "number",
+    "className": "token number",
+    "startIndex": 896,
+    "endIndex": 897
+  },
+  {
+    "content": "\\n",
+    "type": "operator",
+    "className": "token operator",
+    "startIndex": 897,
+    "endIndex": 899
+  },
+  {
+    "content": "'",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 899,
+    "endIndex": 900
+  },
+  {
+    "content": ")\nout_file.",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 900,
+    "endIndex": 911
+  },
+  {
+    "content": "close",
+    "type": "embedded",
+    "className": "token string",
+    "startIndex": 911,
+    "endIndex": 916
+  },
+  {
+    "content": "()",
+    "type": "text",
+    "className": "unmatched-token",
+    "startIndex": 916,
+    "endIndex": 918
+  }
+]tree-sitter-highlighter.ts:15:836
+=== END DEBUG === tree-sitter-highlighter.ts:15:876
+Source map error: Error: JSON.parse: unexpected character at line 1 column 1 of the JSON data
+Stack in the worker:parseSourceMapInput@resource://devtools/client/shared/vendor/source-map/lib/util.js:163:15
+_factory@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:1066:22
+SourceMapConsumer@resource://devtools/client/shared/vendor/source-map/lib/source-map-consumer.js:26:12
+_fetch@resource://devtools/client/shared/source-map-loader/utils/fetchSourceMap.js:83:19
+
+Resource URL: http://localhost:3000/cs2000-public-resources/days/%3Canonymous%20code%3E
+Source Map URL: installHook.js.map
