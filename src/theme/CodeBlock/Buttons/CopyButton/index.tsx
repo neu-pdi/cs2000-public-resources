@@ -7,10 +7,10 @@ import React, {
 } from 'react';
 import clsx from 'clsx';
 import copy from 'copy-text-to-clipboard';
-import {translate} from '@docusaurus/Translate';
-import {useCodeBlockContext} from '@docusaurus/theme-common/internal';
+import { translate } from '@docusaurus/Translate';
+import { useCodeBlockContext } from '@docusaurus/theme-common/internal';
 import Button from '@theme/CodeBlock/Buttons/Button';
-import type {Props} from '@theme/CodeBlock/Buttons/CopyButton';
+import type { Props } from '@theme/CodeBlock/Buttons/CopyButton';
 import IconCopy from '@theme/Icon/Copy';
 import IconSuccess from '@theme/Icon/Success';
 
@@ -40,7 +40,7 @@ function ariaLabel(isCopied: boolean) {
 
 function useCopyButton() {
   const {
-    metadata: {code},
+    metadata: { code },
   } = useCodeBlockContext();
   const [isCopied, setIsCopied] = useState(false);
   const copyTimeout = useRef<number | undefined>(undefined);
@@ -55,11 +55,11 @@ function useCopyButton() {
 
   useEffect(() => () => window.clearTimeout(copyTimeout.current), []);
 
-  return {copyCode, isCopied};
+  return { copyCode, isCopied };
 }
 
-export default function CopyButton({className}: Props): ReactNode {
-  const {copyCode, isCopied} = useCopyButton();
+export default function CopyButton({ className }: Props): ReactNode {
+  const { copyCode, isCopied } = useCopyButton();
 
   return (
     <Button
@@ -70,7 +70,8 @@ export default function CopyButton({className}: Props): ReactNode {
         styles.copyButton,
         isCopied && styles.copyButtonCopied,
       )}
-      onClick={copyCode}>
+      onClick={copyCode}
+    >
       <span className={styles.copyButtonIcons} aria-hidden="true">
         <IconCopy className={styles.copyButtonIcon} />
         <IconSuccess className={styles.copyButtonSuccessIcon} />

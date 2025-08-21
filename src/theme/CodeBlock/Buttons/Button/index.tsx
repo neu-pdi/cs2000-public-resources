@@ -1,6 +1,6 @@
-import React, {type ReactNode} from 'react';
+import React, { type ReactNode } from 'react';
 import clsx from 'clsx';
-import type {Props} from '@theme/CodeBlock/Buttons/Button';
+import type { Props } from '@theme/CodeBlock/Buttons/Button';
 
 export default function CodeBlockButton({
   className,

@@ -1,9 +1,9 @@
-import React, {type ComponentProps, type ReactNode} from 'react';
+import React, { type ComponentProps, type ReactNode } from 'react';
 import clsx from 'clsx';
-import {useCodeBlockContext} from '@docusaurus/theme-common/internal';
-import {usePrismTheme} from '@docusaurus/theme-common';
-import {Highlight} from 'prism-react-renderer';
-import type {Props} from '@theme/CodeBlock/Content';
+import { useCodeBlockContext } from '@docusaurus/theme-common/internal';
+import { usePrismTheme } from '@docusaurus/theme-common';
+import { Highlight } from 'prism-react-renderer';
+import type { Props } from '@theme/CodeBlock/Content';
 import Line from '@theme/CodeBlock/Line';
 
 import styles from './styles.module.css';
@@ -24,7 +24,7 @@ const Pre = React.forwardRef<HTMLPreElement, ComponentProps<'pre'>>(
 );
 
 function Code(props: ComponentProps<'code'>) {
-  const {metadata} = useCodeBlockContext();
+  const { metadata } = useCodeBlockContext();
   return (
     <code
       {...props}
@@ -48,16 +48,17 @@ function Code(props: ComponentProps<'code'>) {
 export default function CodeBlockContent({
   className: classNameProp,
 }: Props): ReactNode {
-  const {metadata, wordWrap} = useCodeBlockContext();
+  const { metadata, wordWrap } = useCodeBlockContext();
   const prismTheme = usePrismTheme();
-  const {code, language, lineNumbersStart, lineClassNames} = metadata;
+  const { code, language, lineNumbersStart, lineClassNames } = metadata;
   return (
     <Highlight theme={prismTheme} code={code} language={language}>
-      {({className, style, tokens: lines, getLineProps, getTokenProps}) => (
+      {({ className, style, tokens: lines, getLineProps, getTokenProps }) => (
         <Pre
           ref={wordWrap.codeBlockRef}
           className={clsx(classNameProp, className)}
-          style={style}>
+          style={style}
+        >
           <Code>
             {lines.map((line, i) => (
               <Line
