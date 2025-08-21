@@ -23,8 +23,9 @@ Use `{{DCIC_DOMAIN}}` in your markdown files:
 ```
 
 This works in:
+
 - `days/*.md` files
-- `homework/*.md` files  
+- `homework/*.md` files
 - `lab/*.md` files
 - `recitation/*.md` files
 
