@@ -1,0 +1,4 @@
+mdformat==0.7.22
+mdformat_gfm==0.3.6
+mdformat_frontmatter==2.0.8
+mdformat_admon==2.1.1
