@@ -64,6 +64,8 @@ Load a table from a CSV file at the given URL. Use `default-options` for the opt
 **csv-table-file**(filename :: String, options) -> Table\
 Load a table from a CSV file in your project. Use `default-options` for the options parameter.
 
+Since CSVs read all data as strings, you probably want to include `sanitize` clauses as we do below to convert numeric columns to numbers. This will fail if any values aren't indeed numbers, in which case you need to do more sophisticated cleaning using `transform-column`.
+
 Example:
 
 ```pyret
@@ -75,14 +77,17 @@ recipes = load-table:
   servings :: Number,
   prep-time :: Number
   source: csv-table-url("https://pdi.run/f25-2000-recipes.csv", default-options)
+  sanitize servings using num-sanitizer
+  sanitize prep-time using num-sanitizer
 end
 
 # From file that exists inside the github repository, so you see 
 # it in the left side
-data = load-table:
+dat = load-table:
   name :: String,
   value :: Number
   source: csv-table-file("mydata.csv", default-options)
+  sanitize value using num-sanitizer
 end
 ```
 
