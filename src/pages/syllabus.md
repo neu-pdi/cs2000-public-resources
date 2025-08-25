@@ -230,7 +230,9 @@ pronoun(s) and chosen name affirmed. If the class roster does not align with you
 
 ### Accommodations
 
-TBD
+If you have a documented disability, please register with [Disability Access Services](https://disabilityaccessservices.northeastern.edu/) to get the accommodations that will
+help you succeed. Please do this even if you are unsure whether you will need accommodations, since there may be a delay if you decide you need them later. Please do not wait until it has seriously impacted your work, as accommodations are not retroactive. See [additional information
+for Oakland students](https://oakland.northeastern.edu/student-life/access-services/accommodations/#request).
 
 ### Title IX
 
@@ -250,12 +252,24 @@ Please visit https://www.northeastern.edu/titleix for a complete list of reporti
 
 ### Policy on Recording
 
-... two party consente
+Massachusetts and California laws prohibit students from recording classes without the consent of all participants, unless a disability accommodation is in place. We encourage you to seek accommodations to which you are legally entitled.
 
 ### UHCS
 
 ### WeCare
 
+WeCare is a program operated through the Office for Student Affairs. The mission is to assist students experiencing unexpected challenges to maintaining their academic progress. WeCare works with students to coordinate among university offices and to offer appropriate on and off campus referrals to support successfully resolving the issue. WeCare also provides information to faculty and staff to identify Northeastern resources and policies to help students succeed.
+
+For more information see https://studentlife.northeastern.edu/we-care/. Call 617.373.4384 or email wecare@northeastern.edu.
+
+### Libraries
+
+Students can access research resources at the [F.W. Olin library (Oakland)] (https://library.northeastern.edu/global_campus/global-campus-portals/oakland/) and through the [Snell Library (Boston and online)](https://library.northeastern.edu/). The Snell Library collaborates with both the First-Year Writing and Advanced Writing in the Disciplines programs to support students’ information literacy. Online research tutorials can be found here: https://subjectguides.lib.neu.edu/researchtutorials/getstarted
+
+### Global Learner Support
+
+Northeastern University's Global Learner Support (GLS) offers "language, cultural, and academic support while promoting the development of intercultural competence and global understanding." They offer tutoring, workshops, and much more. Visit https://gls.northeastern.edu/ to learn more.
+
 ### Resources
 
-TBD -- e.g., Knack, GLS, Library
+TBD -- e.g., Knack
