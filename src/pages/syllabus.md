@@ -272,7 +272,7 @@ For more information see https://studentlife.northeastern.edu/we-care/. Call 617
 
 ### Libraries
 
-Students can access research resources at the [F.W. Olin library (Oakland)] (https://library.northeastern.edu/global_campus/global-campus-portals/oakland/) and through the [Snell Library (Boston and online)](https://library.northeastern.edu/). The Snell Library collaborates with both the First-Year Writing and Advanced Writing in the Disciplines programs to support students’ information literacy. Online research tutorials can be found here: https://subjectguides.lib.neu.edu/researchtutorials/getstarted
+Students can access research resources at the [F.W. Olin library (Oakland)](https://library.northeastern.edu/global_campus/global-campus-portals/oakland/) and through the [Snell Library (Boston and online)](https://library.northeastern.edu/). The Snell Library collaborates with both the First-Year Writing and Advanced Writing in the Disciplines programs to support students’ information literacy. Online research tutorials can be found here: https://subjectguides.lib.neu.edu/researchtutorials/getstarted
 
 ### Global Learner Support
 
