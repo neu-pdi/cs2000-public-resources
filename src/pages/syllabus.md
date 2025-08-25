@@ -34,24 +34,9 @@ Github, github.dev, vscode, pyret, python, Pawtograder.
 
 ### People
 
-<table>
-  <thead>
-    <tr>
-      <th>Instructor</th>
-      <th>Campus</th>
-      <th>Office</th>
-      <th>Office Hours</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="https://www.khoury.northeastern.edu/people/ellen-spertus/">Prof. Ellen Spertus</a></td>
-      <td>Oakland</td>
-      <td>CPM 201</td>
-      <td>TBD</td>
-    </tr>
-  </tbody>
-</table>
+| Instructor | Campus | Office | Office Hours |
+| -- | -- | -- | -- |
+| [Prof. Ellen Spertus](https://www.khoury.northeastern.edu/people/ellen-spertus/) | Oakland | CPM 201 | TBD |
 
 ### Due Dates, Late Tokens, Regrades
 
@@ -215,13 +200,13 @@ Computer science, both academically and professionally, is a collaborative disci
 Specifically:
 
 - You are responsible for any material you turn in.The professor reserves the right to ask you to verbally explain the reasoning behind any answer or code that you turn in and to modify your grade based on your answers. It is vitally important that you turn in work that you understand.
--  Copying material from another person without their knowledge is not allowed.
+- Copying material from another person without their knowledge is not allowed.
 - Additionally, sharing solutions in forums (e.g., posting to public questions, posting code online, etc) constitutes an academic integrity violation, as it may make it harder for other students to do work on their own, harming their own learning.
 - Any sharing or receiving information about the content of skill assessments is an academic integrity violation, and may result in failing the class.
 
 We _strongly recommend_ that you _write_ all code yourself. Even if you discuss solutions, or approaches, with others, do the actual typing on your own! And avoid playing games or trying to find loopholes -- i.e., do not merely type what someone says, or type what you see on anothers screen. While we do not consider collaboration a violation, we still encourage following these recommendations-- relying on others for your solutions may result in you not learning the material, and in this class, not learning the material will result in not being able to pass the skill assessments. Even with perfect homework scores, failing to pass sufficient skill assessments will result in a failing grade in the course (consult the [grading table](#grading)), so take homework for what it is intended: extensive opportunity to practice the skills we are teaching, paired with high quality feedback about the solution you came up with.
 
-The minimum penalty for an academic integrity violation is a zero on the assignment and a report to the  [Office of Student Conduct and Conflict Resolution (OSCCR)](https://osccr.sites.northeastern.edu/). Penalties are increased if there are aggravating factors, such as stealing another student's work or lying about cheating. Also, see the  [Official University Academic Integrity Policy](https://osccr.sites.northeastern.edu/academic-integrity-policy/).
+The minimum penalty for an academic integrity violation is a zero on the assignment and a report to the [Office of Student Conduct and Conflict Resolution (OSCCR)](https://osccr.sites.northeastern.edu/). Penalties are increased if there are aggravating factors, such as stealing another student's work or lying about cheating. Also, see the [Official University Academic Integrity Policy](https://osccr.sites.northeastern.edu/academic-integrity-policy/).
 
 ### The AI Policy
 
@@ -278,8 +263,6 @@ Please visit https://www.northeastern.edu/titleix for a complete list of reporti
 The [International Tutoring Center (ITC)](https://international.northeastern.edu/itc/) provides current Northeastern University international and non-native English-speaking students with free, comprehensive English language and academic support. The ITC includes student-centered one-on-one tutoring sessions and workshops on reading, writing, and language and culture. For more on tutoring and workshops, see https://cps.northeastern.edu/academic-resources/global-student-success/international-tutoring.
 
 ### UHCS
-
-
 
 ### WeCare
 
