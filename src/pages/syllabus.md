@@ -34,7 +34,24 @@ Github, github.dev, vscode, pyret, python, Pawtograder.
 
 ### People
 
-Professors, contact, office hours
+<table>
+  <thead>
+    <tr>
+      <th>Instructor</th>
+      <th>Campus</th>
+      <th>Office</th>
+      <th>Office Hours</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://www.khoury.northeastern.edu/people/ellen-spertus/">Prof. Ellen Spertus</a></td>
+      <td>Oakland</td>
+      <td>CPM 201</td>
+      <td>TBD</td>
+    </tr>
+  </tbody>
+</table>
 
 ### Due Dates, Late Tokens, Regrades
 
@@ -256,7 +273,13 @@ In case of an emergency, please call 911.
 
 Please visit https://www.northeastern.edu/titleix for a complete list of reporting options and resources both on- and off-campus.
 
+### International Tutoring Center
+
+The International Tutoring Center (ITC) provides current Northeastern University international and non-native English speaking students with free, comprehensive English language and academic support. The ITC includes student centered one-on-one tutoring sessions, Reading, Language and Culture, and Writing Workshops. For more information on available workshops and tutoring opportunities please visit https://cps.northeastern.edu/academic-resources/global-student-success/international-tutoring.
+
 ### UHCS
+
+The [International Tutoring Center (ITC)](https://international.northeastern.edu/itc/) provides current Northeastern University international and non-native English-speaking students with free, comprehensive English language and academic support. The ITC includes student-centered one-on-one tutoring sessions and workshops on reading, writing, and language and culture. 
 
 ### WeCare
 
