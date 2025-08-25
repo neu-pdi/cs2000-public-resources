@@ -275,11 +275,11 @@ Please visit https://www.northeastern.edu/titleix for a complete list of reporti
 
 ### International Tutoring Center
 
-The International Tutoring Center (ITC) provides current Northeastern University international and non-native English speaking students with free, comprehensive English language and academic support. The ITC includes student centered one-on-one tutoring sessions, Reading, Language and Culture, and Writing Workshops. For more information on available workshops and tutoring opportunities please visit https://cps.northeastern.edu/academic-resources/global-student-success/international-tutoring.
+The [International Tutoring Center (ITC)](https://international.northeastern.edu/itc/) provides current Northeastern University international and non-native English-speaking students with free, comprehensive English language and academic support. The ITC includes student-centered one-on-one tutoring sessions and workshops on reading, writing, and language and culture. For more on tutoring and workshops, see https://cps.northeastern.edu/academic-resources/global-student-success/international-tutoring.
 
 ### UHCS
 
-The [International Tutoring Center (ITC)](https://international.northeastern.edu/itc/) provides current Northeastern University international and non-native English-speaking students with free, comprehensive English language and academic support. The ITC includes student-centered one-on-one tutoring sessions and workshops on reading, writing, and language and culture. 
+
 
 ### WeCare
 
