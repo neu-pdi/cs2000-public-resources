@@ -4,7 +4,7 @@ description: Syllabus
 hide_table_of_contents: true
 ---
 
-### Course Description
+## Course Description
 
 Introduces computer science and data science to students with no prior programming experience. Starts by building programs with numbers, text, and images. Explores real, complex datasets both interactively and through coding by doing data analysis, constructing graphs, and computing interesting results. Offers students an opportunity to build a solid foundation and practice coding with a popular industrial coding language with a professional programmer’s interface to the code. Covers skills needed to identify and respond to ethical challenges that arise in the program design process.
 
@@ -191,7 +191,7 @@ by Fisler, Krishnamurthi, Lerner, and Politz. It is freely available online at
 https://dcic.pdi.run, and all readings will be linked to from appropriate parts of
 this site.
 
-## Collaboration and Academic Honesty
+### Collaboration and Academic Honesty
 
 Computer science, both academically and professionally, is a collaborative discipline. In any collaboration, however, all parties are expected to make their own contributions and to generously credit the contributions of others. In our class, therefore, collaboration on assignments is encouraged, but you as an individual are responsible for understanding all the material in the assignment and doing your own work. Always strive to do your best, give generous credit to others, start early, and seek help early from both your professors and classmates.
 
@@ -234,6 +234,12 @@ If you have a documented disability, please register with [Disability Access Ser
 help you succeed. Please do this even if you are unsure whether you will need accommodations, since there may be a delay if you decide you need them later. Please do not wait until it has seriously impacted your work, as accommodations are not retroactive. See [additional information
 for Oakland students](https://oakland.northeastern.edu/student-life/access-services/accommodations/#request).
 
+### Policy on Recording
+
+Massachusetts and California laws prohibit students from recording classes without the consent of all participants, unless a disability accommodation is in place. We encourage you to seek accommodations to which you are legally entitled.
+
+## University Resources
+
 ### Title IX
 
 Title IX of the Education Amendments of 1972 protects individuals from sex or gender-based discrimination, including discrimination based on gender-identity, in educational programs and activities that receive federal financial assistance.
@@ -249,10 +255,6 @@ Faculty members are considered “responsible employees” at Northeastern Unive
 In case of an emergency, please call 911.
 
 Please visit https://www.northeastern.edu/titleix for a complete list of reporting options and resources both on- and off-campus.
-
-### Policy on Recording
-
-Massachusetts and California laws prohibit students from recording classes without the consent of all participants, unless a disability accommodation is in place. We encourage you to seek accommodations to which you are legally entitled.
 
 ### UHCS
 
