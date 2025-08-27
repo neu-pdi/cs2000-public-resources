@@ -37,6 +37,7 @@ Github, github.dev, vscode, pyret, python, Pawtograder.
 | Instructor | Campus | Office | Office Hours |
 | -- | -- | -- | -- |
 | [Prof. Ellen Spertus](https://www.khoury.northeastern.edu/people/ellen-spertus/) | Oakland | CPM 201 | TBD |
+| [Prof. Alvaro Monge](https://www.khoury.northeastern.edu/people/alvaro-monge/) | Oakland | CARN 201 | TBD |
 
 ### Due Dates, Late Tokens, Regrades
 
