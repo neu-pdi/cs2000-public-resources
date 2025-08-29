@@ -188,7 +188,7 @@ names-table = create-table-with-col("student-name", names-list)
 
 ______________________________________________________________________
 
-## Extracting Data Through Table Methods
+## Table Methods: Extracting Data and Other
 
 Table methods are how we extract data from a table. Methods are similar in spirit to functions, but their notation (_table.operation(args)_) is more suggestive of going inside a table to extract data.
 
@@ -220,6 +220,21 @@ Returns a table that is the same as table _t_, except with the column whose name
 
 ```pyret
 students-no-points = students.drop("points")
+```
+
+**t.empty()** -> Table\
+Returns a new table with the same columns as table _t_, but with all rows removed.
+
+```pyret
+empty-students = students.empty()
+# Creates a table with same column structure but no data rows
+check:
+  t1 = table: city, pop
+    row: "Houston", 2400000
+    row: "NYC", 8400000
+  end
+  t1.empty() is table: city, pop end
+end
 ```
 
 **Getting a value**: The syntax `my-row[col-name]` accesses a row at a particular column, resulting in a particular value. e.g. `my-row["age"]` → `20`.
