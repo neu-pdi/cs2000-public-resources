@@ -209,8 +209,8 @@ This is captured by the following table -- the highest row that a student satisf
 ### Textbook
 
 We will follow the textbook "A Data-Centric Introduction to Computing",
-by Fisler, Krishnamurthi, Lerner, and Politz. It is freely available online at
-https://dcic.pdi.run, and all readings will be linked to from appropriate parts of
+by Fisler, Krishnamurthi, Lerner, and Politz. However, we have made a few **MINOR** changes, so you should use our version of it, available freely online at
+https://dcic.pdi.run (you should see a banner at the top that says it is our version, and the menus should always be yellow) and all readings will be linked to from appropriate parts of
 this site.
 
 ### Collaboration and Academic Honesty
