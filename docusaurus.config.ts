@@ -133,6 +133,11 @@ const config: Config = {
           label: 'Schedule',
         },
         {
+          position: 'left',
+          to: '/officehours/',
+          label: 'Office Hours / Recitations',
+        },
+        {
           type: 'docSidebar',
           sidebarId: 'daysSidebar',
           position: 'left',

@@ -12,7 +12,7 @@ Introduces computer science and data science to students with no prior programmi
 
 There will be three in-person **classes** (in Boston & Oakland) or two in-person **classes** (in NYC & London), one **lab**, and one _optional_ **recitation** per week. All content is directed around teaching a set of 12 **skills**, assessment of which will form the primary assessment of the class, and which are described in detail at [Skills](/skills).
 
-Each class period (of CS2000) has reading you are expected to do _before_ class. During the class we will briefly review the new material that was covered in the reading (but, in much less depth -- it is not a substitute for doing the reading), and then the majority of class will be dedicated to working with classmates, assisted by your instructor, on exercises related to the new material.
+Each class period (of CS2000) has reading you are **expected to do _before_ class**. During the class we will briefly review the new material that was covered in the reading (but, in much less depth -- it is not a substitute for doing the reading), and then the majority of class will be dedicated to working with classmates, assisted by your instructor, on exercises related to the new material.
 
 The lab period (CS2001) will include a set of exercises to be done with a partner in your lab section, guided by those running the lab (TAs or instructors). Labs will be graded primarily by effort & attendance. The recitation is an _optional_ additional practice session with TAs, to allow students who want more practice on the topic of the week to work through exercises with guidance.
 
@@ -26,11 +26,17 @@ There are no quizzes or exams in this class.
 
 ### Communication
 
-Discord, Course Website, (lack of) use of Canvas.
+There are three primary sources of communication for this course:
+
+1. This website. This is where you will find policies, homework assignments, lab assignments, recitation contents, notes from each day of class.
+2. [Pawtograder](https://app.pawtograder.com/). This is the course grading platform. This is where you will submit homework assignments, and get feedback on them. This is also where you will see your grades for the on-paper skill assessments. It will have your gradebook. It is also the place where you will ask questions online about homework, and where you will do online office hours.
+3. Discord. Please join at \_\_\_. Note you must set your Display Name for the server to your full name before you will be given access to private course channels. This will be a place for any discussion that are not direct questions about homework (which should take place on Pawtograder). Discord will also be used for lab communication (each lab will have a private channel), for announcements about the course. For any questions that are _not_ specifically about homework.
+
+Note that **we will not use Canvas for anything.**
 
 ### Course Tools
 
-Github, github.dev, vscode, pyret, python, Pawtograder.
+For the first two thirds of the course, the only software you will need is a web browser. All programming will be done via the online programming environment provided by Github, which we will refer to as github.dev (as this is the website for it). This provides an online version of the programming editor VSCode, and allows you to program using the programming language Pyret. For the last section of the course, you will install VSCode on your computer, and install Python.
 
 ### People
 
@@ -38,18 +44,32 @@ Github, github.dev, vscode, pyret, python, Pawtograder.
 | -- | -- | -- | -- |
 | [Prof. Ellen Spertus](https://www.khoury.northeastern.edu/people/ellen-spertus/) | Oakland | CPM 201 | TBD |
 | [Prof. Alvaro Monge](https://www.khoury.northeastern.edu/people/alvaro-monge/) | Oakland | CARN 201 | TBD |
-| [Prof. Rush Sanghrajka](https://www.khoury.northeastern.edu/people/rush-sanghrajka/) | Boston | Meserve 309 | Wednesdays & Thursdays 3-5pm [Make an Appointment, Walk-ins Welcome](http://tinyurl.com/office-hours-with-rush)|
+| [Prof. Rush Sanghrajka](https://www.khoury.northeastern.edu/people/rush-sanghrajka/) | Boston | Meserve 309 | Wednesdays & Thursdays 3-5pm [Make an Appointment, Walk-ins Welcome](http://tinyurl.com/office-hours-with-rush) |
+| [Prof. Daniel Patterson](https://dbp.io) | Boston | Meserve 317 | TBD |
+| [Prof. John Park](#) | Boston |  | TBD |
+
 ### Due Dates, Late Tokens, Regrades
+
+All homework assignments will be due on Thursdays, at 6PM Pacific time / 9PM Eastern time (this is the same moment in time).
+
+Any assignment can have a "Late Token" applied (see https://docs.pawtograder.com/students/assignments/late-tokens), which gives you a 24hr extension on it. You have enough late tokens to use one on any assignment, but you _must_ apply it _before_ the assignment is due. No assignments will be accepted after the due date, or, if a late token has been applied, after the late due date. If there is an exceptional situation that makes you unable to do this, please reach out to your instructor.
+
+If you have an assignment on Pawtograder that you believe was graded in error, you can submit a request request within Pawtograder, explaining what you think the mistake was. If you have a skill assessment that you think was not graded correctly, reach out to a TA or your instructor so they can go over it with you. Note that you will not be able to see the assessment or your response within Pawtograder, but any TA can view it for you.
 
 ### Office Hours
 
-What they are, link to calendar
+We hold extensive office hours -- both online, via [Pawtograder](https://app.pawtograder.com/) and, depending on campus, in person. These can be used for any questions you have about course content, not limited to: review about reading, questions about exercises from class, any questions about homework assignments, etc. The schedule for these are available here:
+
+[Office Hours](/officehours)
 
 ### Recitation Times
 
 In addition to general purpose Office Hours held by TAs, there will be dedicated Recitation Hours held by TAs. These optional sessions, scheduled throughout the day, held both in person and online, will have particular exercises and material that they go over, and will not assist with homework problems. Attendance will be limited for each session, but enough should be scheduled to allow students to attend if they want.
 
+The calendar that has office hours also shows the recitation times, identified as RECITATION. Note that homework questions will _not_ be answered during recitations.
+
 ### Attendance
+
 Attendance is not required in CS2000. Please do not come to class when you're sick. We'd much rather you stay home and take care of yourself. If you need to stay home and miss class, no need to notify us in advance. You are still responsible for completing assigned work and keeping up with content that you may have missed due to an absence. The course website describes the classwork for each day, available for review. Feel free to stop by office hours with the instructors or TAs with any questions or help with the missed classwork.
 
 ### Skills
@@ -262,8 +282,6 @@ Please visit https://www.northeastern.edu/titleix for a complete list of reporti
 
 The [International Tutoring Center (ITC)](https://international.northeastern.edu/itc/) provides current Northeastern University international and non-native English-speaking students with free, comprehensive English language and academic support. The ITC includes student-centered one-on-one tutoring sessions and workshops on reading, writing, and language and culture. For more on tutoring and workshops, see https://cps.northeastern.edu/academic-resources/global-student-success/international-tutoring.
 
-### UHCS
-
 ### WeCare
 
 WeCare is a program operated through the Office for Student Affairs. The mission is to assist students experiencing unexpected challenges to maintaining their academic progress. WeCare works with students to coordinate among university offices and to offer appropriate on and off campus referrals to support successfully resolving the issue. WeCare also provides information to faculty and staff to identify Northeastern resources and policies to help students succeed.
@@ -277,7 +295,3 @@ Students can access research resources at the [F.W. Olin library (Oakland)](http
 ### Global Learner Support
 
 Northeastern University's Global Learner Support (GLS) offers "language, cultural, and academic support while promoting the development of intercultural competence and global understanding." They offer tutoring, workshops, and much more. Visit https://gls.northeastern.edu/ to learn more.
-
-### Resources
-
-TBD -- e.g., Knack
