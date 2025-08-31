@@ -49,6 +49,7 @@ If you'd like to install VSCode on your computer earlier, you can use Pyret via 
 | [Prof. Rush Sanghrajka](https://www.khoury.northeastern.edu/people/rush-sanghrajka/) | Boston | Meserve 309 | Wednesdays & Thursdays 3-5pm [Make an Appointment, Walk-ins Welcome](http://tinyurl.com/office-hours-with-rush) |
 | [Prof. Daniel Patterson](https://dbp.io) | Boston | Meserve 317 | TBD |
 | [Prof. John Park](#) | Boston |  | TBD |
+| [Prof. Jeongkyu Lee](https://www.khoury.northeastern.edu/people/jeongkyu-lee/) | NYC | Found Faculty Lounge | TBD |
 
 ### Due Dates, Late Tokens, Regrades
 
