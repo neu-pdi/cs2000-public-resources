@@ -38,6 +38,8 @@ Note that **we will not use Canvas for anything.**
 
 For the first two thirds of the course, the only software you will need is a web browser. All programming will be done via the online programming environment provided by Github, which we will refer to as github.dev (as this is the website for it). This provides an online version of the programming editor VSCode, and allows you to program using the programming language Pyret. For the last section of the course, you will install VSCode on your computer, and install Python.
 
+If you'd like to install VSCode on your computer earlier, you can use Pyret via the same extension, with the same environment. However, this will involve some setup to push your work to Github, where assignment submissions are drawn from, so if you are interested in doing this earlier than Week 10 (when all will do it), come to office hours and ask a TA to help.
+
 ### People
 
 | Instructor | Campus | Office | Office Hours |
