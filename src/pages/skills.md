@@ -18,7 +18,7 @@ assessments, see below), with the best result being used for their grade.
 01. <a id="(1)" href="#(1)">Design basic functions (Pyret)</a>
     |  |  |
     | -- | -- |
-    | **Meets Expectations** | • Correct type annotation<br/>• Docstring that describes behavior, doesn't repeat type annotation.<br/>• A few (2+) correct tests<br/>• Well-formatted implementation -- clear naming for function arguments, no unnecessary if expressions, etc. |
+    | **Meets Expectations** | • Correct type annotation<br/>• Docstring that describes behavior, doesn't repeat type annotation.<br/>• A few (2+) correct, meaningfully different tests<br/>• Well-formatted implementation -- clear naming for function arguments, no unnecessary if expressions, etc. |
     | **Approaching Expectations** | • Missing docstring, or long, includes redundant type information, etc.<br/>• 1+ correct tests.<br/>• Correct implementation. |
 02. <a id="(2)" href="#(2)">Construct / Transform Tables (Pyret)</a>
     |  |  |
@@ -53,7 +53,7 @@ assessments, see below), with the best result being used for their grade.
 08. <a id="(8)" href="#(8)">Design basic functions (Python)</a>
     |  |  |
     | -- | -- |
-    | **Meets Expectations** | • Correct type annotation<br/>• Docstring that describes behavior, doesn't repeat type annotation<br/>• A few (2+) correct tests<br/>• Correct implementation |
+    | **Meets Expectations** | • Correct type annotation<br/>• Docstring that describes behavior, doesn't repeat type annotation<br/>• A few (2+) correct, meaningfully different tests<br/>• Correct implementation |
     | **Approaching Expectations** | • Missing docstring, or long, includes redundant type information, etc.<br/>• 1+ correct tests<br/>• Correct implementation |
 09. <a id="(9)" href="#(9)">Iteration: Lists (Python)</a>
     |  |  |
