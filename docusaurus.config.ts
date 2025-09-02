@@ -55,7 +55,7 @@ const config: Config = {
           routeBasePath: 'days',
           sidebarPath: './sidebars/days.ts',
           editUrl:
-            'https://github.com/neu-pdi/cs2000-public-resources/edit/main/days/',
+            'https://github.com/neu-pdi/cs2000-public-resources/edit/main/',
           remarkPlugins: [remarkMath, createVariableSubstitutionPlugin(dcicDomain)],
           rehypePlugins: [rehypeKatex],
         },
