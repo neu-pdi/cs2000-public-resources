@@ -29,17 +29,6 @@ export default function Hello() {
             ethical challenges in program design. 
           </Blockquote.Content>
         </Blockquote.Root>
-        <Alert.Root status="warning">
-          <Alert.Indicator>
-            <LuConstruction />
-          </Alert.Indicator>
-          <Alert.Title>Draft Content</Alert.Title>
-          <Alert.Content>
-            <Alert.Description>
-              This content is a work in progress.
-            </Alert.Description>
-          </Alert.Content>
-        </Alert.Root>
         <Heading size="lg">Day Overview</Heading>
         <DaySummary version={pluginData.versions[0].name} />
       </Box>
