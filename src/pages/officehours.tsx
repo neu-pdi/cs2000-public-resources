@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Layout from '@theme/Layout';
+import { Box, Heading, Text, VStack } from '@chakra-ui/react';
+
+/*
+import { useState, useEffect } from 'react';
 import {
-  Box,
-  Heading,
   Button,
   Alert,
   Table,
-  Text,
-  VStack,
   HStack,
   Code,
   Spinner,
@@ -250,6 +250,33 @@ export default function CsvTest() {
                 <Code>&sheet=YourSheetName</Code>
               </Text>
             </VStack>
+          </Box>
+        </VStack>
+      </Box>
+    </Layout>
+  );
+}
+*/
+
+export default function OfficeHours() {
+  return (
+    <Layout
+      title="Office Hours / Recitations"
+      description="Office Hours and Recitation Schedule"
+    >
+      <Box p={6} maxW="1200px" mx="auto">
+        <VStack spacing={8} align="center" py={16}>
+          <Heading size="2xl" textAlign="center">
+            Office Hours / Recitations
+          </Heading>
+          <Box textAlign="center">
+            <Heading size="lg" color="gray.500" mb={4}>
+              Coming Soon
+            </Heading>
+            <Text fontSize="lg" color="gray.600" maxW="md">
+              Office hours and recitation schedules will be available here
+              shortly. Please check back soon for the latest information.
+            </Text>
           </Box>
         </VStack>
       </Box>
