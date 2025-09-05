@@ -442,14 +442,18 @@ export default function OfficeHours() {
           <Table.Root size="sm">
             <Table.Header>
               <Table.Row>
-                <Table.ColumnHeader fontWeight="bold" bg="gray.100" p={2}>
+                <Table.ColumnHeader
+                  fontWeight="bold"
+                  bg={{ base: 'gray.100', _dark: 'gray.700' }}
+                  p={2}
+                >
                   Time {isInPerson ? '(ET)' : showOaklandTime ? '(PT)' : '(ET)'}
                 </Table.ColumnHeader>
                 {schedule.map((day, dayIndex) => (
                   <Table.ColumnHeader
                     key={dayIndex}
                     fontWeight="bold"
-                    bg="gray.100"
+                    bg={{ base: 'gray.100', _dark: 'gray.700' }}
                     p={2}
                     textAlign="center"
                   >
@@ -490,7 +494,11 @@ export default function OfficeHours() {
 
                   return (
                     <Table.Row key={timeIndex}>
-                      <Table.Cell fontWeight="bold" p={2} bg="gray.50">
+                      <Table.Cell
+                        fontWeight="bold"
+                        p={2}
+                        bg={{ base: 'gray.50', _dark: 'gray.600' }}
+                      >
                         {displayTime}
                       </Table.Cell>
                       {schedule.map((day, dayIndex) => {
