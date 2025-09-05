@@ -38,11 +38,17 @@ interface DaySchedule {
 export default function OfficeHours() {
   const [onlineCsvData, setOnlineCsvData] = useState<string[][]>([]);
   const [inPersonCsvData, setInPersonCsvData] = useState<string[][]>([]);
+  const [oaklandInPersonCsvData, setOaklandInPersonCsvData] = useState<
+    string[][]
+  >([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [lastFetch, setLastFetch] = useState<Date | null>(null);
   const [onlineSchedule, setOnlineSchedule] = useState<DaySchedule[]>([]);
   const [inPersonSchedule, setInPersonSchedule] = useState<DaySchedule[]>([]);
+  const [oaklandInPersonSchedule, setOaklandInPersonSchedule] = useState<
+    DaySchedule[]
+  >([]);
   const [showOaklandTime, setShowOaklandTime] = useState(false);
 
   // The Google Sheets CSV API URL for Online Office Hours
@@ -51,6 +57,9 @@ export default function OfficeHours() {
 
   const inPersonOfficeHoursCsvUrl =
     'https://docs.google.com/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=In+Person+Office+Hours';
+
+  const oaklandInPersonOfficeHoursCsvUrl =
+    'https://docs.google.com/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Oakland+In+Person';
 
   const parseCsv = (csvText: string): string[][] => {
     const lines = csvText.trim().split('\n');
@@ -281,16 +290,112 @@ export default function OfficeHours() {
     return schedule;
   };
 
+  const parseOaklandInPersonOfficeHours = (data: string[][]): DaySchedule[] => {
+    const schedule: DaySchedule[] = [];
+    let currentDay: DaySchedule | null = null;
+
+    for (const row of data) {
+      const firstCol = row[0]?.trim() || '';
+
+      // Check if this is a day header row (mentions day name and includes "(PT)")
+      if (
+        firstCol.match(
+          /^(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)/i,
+        ) &&
+        firstCol.includes('(PT)')
+      ) {
+        // This is a new day with room information
+        if (currentDay) {
+          schedule.push(currentDay);
+        }
+
+        // Parse room information from the day header
+        // Format: "Wednesday (PT) CPM 200"
+        const dayName =
+          firstCol.match(
+            /^(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)/i,
+          )?.[0] || '';
+        const rooms: { timeRange: string; room: string }[] = [];
+
+        // Remove day name and "(PT)" to get the room
+        const roomMatch = firstCol
+          .replace(dayName, '')
+          .replace('(PT)', '')
+          .trim();
+        if (roomMatch) {
+          rooms.push({ timeRange: 'all day', room: roomMatch });
+        }
+
+        currentDay = {
+          day: dayName,
+          slots: [],
+          rooms: rooms,
+        };
+      } else if (
+        currentDay &&
+        firstCol &&
+        (firstCol.match(/^\d+:\d+/) ||
+          firstCol.match(/^\d+(am|pm)/i) ||
+          firstCol.match(/^\d+\s*-\s*\d+/) ||
+          firstCol.includes('-'))
+      ) {
+        // This is a time slot
+        // Collect ALL TA names from columns after the first (up to 4 TAs)
+        const allTAs: string[] = [];
+
+        const isValidTA = (value: string) => {
+          if (!value || value === '') return false;
+          if (value.includes('(PT)') || value.includes('(ET)')) return false;
+          if (value.match(/^\d+(am|pm)/i)) return false;
+          if (value.match(/^\d+\s*-\s*\d+(am|pm)/i)) return false;
+          return true;
+        };
+
+        // Check all columns after the first for TA names
+        for (let i = 1; i < row.length; i++) {
+          const value = row[i]?.trim();
+          if (isValidTA(value)) {
+            allTAs.push(value);
+          }
+        }
+
+        // Use the room from the day header
+        let room = '';
+        if (currentDay.rooms && currentDay.rooms.length > 0) {
+          room = currentDay.rooms[0].room;
+        }
+
+        currentDay.slots.push({
+          time: firstCol,
+          ta1: allTAs[0] || undefined,
+          ta2: allTAs[1] || undefined,
+          room: room || undefined,
+          // Store all TAs for potential future use
+          allTAs: allTAs,
+        });
+      }
+    }
+
+    // Don't forget the last day
+    if (currentDay) {
+      schedule.push(currentDay);
+    }
+
+    return schedule;
+  };
+
   const fetchCsvData = async () => {
     setLoading(true);
     setError(null);
 
     try {
-      // Fetch both online and in-person schedules
-      const [onlineResponse, inPersonResponse] = await Promise.all([
-        fetch(onlineOfficeHoursCsvUrl),
-        fetch(inPersonOfficeHoursCsvUrl),
-      ]);
+      // Fetch online, in-person, and Oakland in-person schedules
+      const [onlineResponse, inPersonResponse, oaklandInPersonResponse] =
+        await Promise.all([
+          fetch(onlineOfficeHoursCsvUrl),
+          fetch(inPersonOfficeHoursCsvUrl),
+          fetch(oaklandInPersonOfficeHoursCsvUrl),
+        ]);
 
       if (!onlineResponse.ok) {
         throw new Error(
@@ -302,24 +407,37 @@ export default function OfficeHours() {
           `In-person office hours HTTP error! status: ${inPersonResponse.status}`,
         );
       }
+      if (!oaklandInPersonResponse.ok) {
+        throw new Error(
+          `Oakland in-person office hours HTTP error! status: ${oaklandInPersonResponse.status}`,
+        );
+      }
 
-      const [onlineCsvText, inPersonCsvText] = await Promise.all([
-        onlineResponse.text(),
-        inPersonResponse.text(),
-      ]);
+      const [onlineCsvText, inPersonCsvText, oaklandInPersonCsvText] =
+        await Promise.all([
+          onlineResponse.text(),
+          inPersonResponse.text(),
+          oaklandInPersonResponse.text(),
+        ]);
 
       const onlineParsedData = parseCsv(onlineCsvText);
       const inPersonParsedData = parseCsv(inPersonCsvText);
+      const oaklandInPersonParsedData = parseCsv(oaklandInPersonCsvText);
 
       setOnlineCsvData(onlineParsedData);
       setInPersonCsvData(inPersonParsedData);
+      setOaklandInPersonCsvData(oaklandInPersonParsedData);
 
       const onlineParsedSchedule = parseOnlineOfficeHours(onlineParsedData);
       const inPersonParsedSchedule =
         parseInPersonOfficeHours(inPersonParsedData);
+      const oaklandInPersonParsedSchedule = parseOaklandInPersonOfficeHours(
+        oaklandInPersonParsedData,
+      );
 
       setOnlineSchedule(onlineParsedSchedule);
       setInPersonSchedule(inPersonParsedSchedule);
+      setOaklandInPersonSchedule(oaklandInPersonParsedSchedule);
       setLastFetch(new Date());
     } catch (err) {
       setError(
@@ -406,15 +524,18 @@ export default function OfficeHours() {
     schedule: DaySchedule[],
     title: string,
     isInPerson: boolean = false,
+    isOakland: boolean = false,
   ) => {
     if (schedule.length === 0) return null;
 
     // Get timezone info for display
-    const timezoneInfo = isInPerson
-      ? '(Boston)'
-      : showOaklandTime
-        ? '(Oakland/PT)'
-        : '(Boston/ET)';
+    const timezoneInfo = isOakland
+      ? ''
+      : isInPerson
+        ? '(Boston)'
+        : showOaklandTime
+          ? '(Oakland/PT)'
+          : '(Boston/ET)';
 
     return (
       <Box mb={8}>
@@ -447,7 +568,14 @@ export default function OfficeHours() {
                   bg={{ base: 'gray.100', _dark: 'gray.700' }}
                   p={2}
                 >
-                  Time {isInPerson ? '(ET)' : showOaklandTime ? '(PT)' : '(ET)'}
+                  Time{' '}
+                  {isOakland
+                    ? '(PT)'
+                    : isInPerson
+                      ? '(ET)'
+                      : showOaklandTime
+                        ? '(PT)'
+                        : '(ET)'}
                 </Table.ColumnHeader>
                 {schedule.map((day, dayIndex) => (
                   <Table.ColumnHeader
@@ -577,7 +705,7 @@ export default function OfficeHours() {
       description="Office Hours and Recitation Schedule"
     >
       <Box p={6} maxW="1200px" mx="auto">
-        <VStack spacing={6} align="stretch">
+        <VStack gap={6} align="stretch">
           <Box>
             <Heading size="xl" mb={4}>
               ONLINE Office Hours / Recitations
@@ -587,15 +715,14 @@ export default function OfficeHours() {
               viewed in Eastern (ET) or Pacific (PT) time.{' '}
               <Text as="span" fontWeight="bold">
                 Access online office hours via{' '}
-                <Text
-                  as="a"
-                  href="https://app.pawtograder.com/"
-                  color="blue.600"
-                  textDecoration="underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Pawtograder
+                <Text as="span" color="blue.600" textDecoration="underline">
+                  <a
+                    href="https://app.pawtograder.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Pawtograder
+                  </a>
                 </Text>
               </Text>
             </Text>
@@ -603,12 +730,11 @@ export default function OfficeHours() {
             <HStack>
               <Button
                 onClick={fetchCsvData}
-                isLoading={loading}
-                loadingText="Loading..."
+                loading={loading}
                 colorScheme="blue"
                 size="sm"
               >
-                Refresh Schedule
+                {loading ? 'Loading...' : 'Refresh Schedule'}
               </Button>
               {lastFetch && (
                 <Text fontSize="sm" color="gray.500">
@@ -634,7 +760,7 @@ export default function OfficeHours() {
             </Box>
           )}
 
-          {/* Render both online and in-person schedules */}
+          {/* Render online, in-person, and Oakland in-person schedules */}
           {!loading && (
             <>
               {renderScheduleTable(
@@ -646,12 +772,20 @@ export default function OfficeHours() {
                 inPersonSchedule,
                 'IN-PERSON Office Hours Schedule',
                 true,
+                false,
+              )}
+              {renderScheduleTable(
+                oaklandInPersonSchedule,
+                'IN-PERSON Office Hours Schedule (Oakland)',
+                true,
+                true,
               )}
             </>
           )}
 
           {onlineSchedule.length === 0 &&
             inPersonSchedule.length === 0 &&
+            oaklandInPersonSchedule.length === 0 &&
             !loading &&
             !error && (
               <Alert.Root status="info">
