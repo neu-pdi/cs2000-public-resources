@@ -41,12 +41,24 @@ export default function OfficeHours() {
   const [oaklandInPersonCsvData, setOaklandInPersonCsvData] = useState<
     string[][]
   >([]);
+  const [bostonRecitationsCsvData, setBostonRecitationsCsvData] = useState<
+    string[][]
+  >([]);
+  const [oaklandRecitationsCsvData, setOaklandRecitationsCsvData] = useState<
+    string[][]
+  >([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [lastFetch, setLastFetch] = useState<Date | null>(null);
   const [onlineSchedule, setOnlineSchedule] = useState<DaySchedule[]>([]);
   const [inPersonSchedule, setInPersonSchedule] = useState<DaySchedule[]>([]);
   const [oaklandInPersonSchedule, setOaklandInPersonSchedule] = useState<
+    DaySchedule[]
+  >([]);
+  const [bostonRecitationsSchedule, setBostonRecitationsSchedule] = useState<
+    DaySchedule[]
+  >([]);
+  const [oaklandRecitationsSchedule, setOaklandRecitationsSchedule] = useState<
     DaySchedule[]
   >([]);
   const [showOaklandTime, setShowOaklandTime] = useState(false);
@@ -60,6 +72,12 @@ export default function OfficeHours() {
 
   const oaklandInPersonOfficeHoursCsvUrl =
     'https://docs.google.com/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Oakland+In+Person';
+
+  const bostonRecitationsCsvUrl =
+    'https://docs.google.com/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Boston+Recitations';
+
+  const oaklandRecitationsCsvUrl =
+    'https://docs.google.com/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Oakland+Recitations';
 
   const parseCsv = (csvText: string): string[][] => {
     const lines = csvText.trim().split('\n');
@@ -384,18 +402,96 @@ export default function OfficeHours() {
     return schedule;
   };
 
+  const parseRecitationsSchedule = (data: string[][]): DaySchedule[] => {
+    const schedule: DaySchedule[] = [];
+
+    for (const row of data) {
+      const firstCol = row[0]?.trim() || '';
+      const roomCol = row[1]?.trim() || '';
+
+      // Skip header rows and empty rows
+      if (
+        !firstCol ||
+        firstCol.includes('Recitations') ||
+        firstCol.includes('TA 1') ||
+        firstCol.includes('TA 2')
+      ) {
+        continue;
+      }
+
+      // Skip info rows that don't contain time slots
+      if (!firstCol.match(/\d+.*[ap]m/i)) {
+        continue;
+      }
+
+      // Parse the time and day from the first column
+      // Format examples: "12pm-1pm Mondays in person", "11:50am-12:50pm Wednesday"
+      const timeMatch = firstCol.match(
+        /(\d+(?::\d+)?[ap]m-\d+(?::\d+)?[ap]m)/i,
+      );
+      const dayMatch = firstCol.match(
+        /(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)s?/i,
+      );
+
+      if (!timeMatch || !dayMatch) {
+        continue;
+      }
+
+      const timeSlot = timeMatch[1];
+      const dayName = dayMatch[1];
+
+      // Find or create day schedule
+      let daySchedule = schedule.find((d) => d.day === dayName);
+      if (!daySchedule) {
+        daySchedule = {
+          day: dayName,
+          slots: [],
+          rooms: roomCol ? [{ timeRange: 'all day', room: roomCol }] : [],
+        };
+        schedule.push(daySchedule);
+      }
+
+      // Collect TAs from subsequent columns
+      const allTAs: string[] = [];
+      for (let i = 2; i < row.length; i++) {
+        const ta = row[i]?.trim();
+        if (ta && ta !== '') {
+          allTAs.push(ta);
+        }
+      }
+
+      // Add the time slot
+      daySchedule.slots.push({
+        time: timeSlot,
+        ta1: allTAs[0] || undefined,
+        ta2: allTAs[1] || undefined,
+        room: roomCol || undefined,
+        allTAs: allTAs,
+      });
+    }
+
+    return schedule;
+  };
+
   const fetchCsvData = async () => {
     setLoading(true);
     setError(null);
 
     try {
-      // Fetch online, in-person, and Oakland in-person schedules
-      const [onlineResponse, inPersonResponse, oaklandInPersonResponse] =
-        await Promise.all([
-          fetch(onlineOfficeHoursCsvUrl),
-          fetch(inPersonOfficeHoursCsvUrl),
-          fetch(oaklandInPersonOfficeHoursCsvUrl),
-        ]);
+      // Fetch all schedules: online, in-person, Oakland in-person, and recitations
+      const [
+        onlineResponse,
+        inPersonResponse,
+        oaklandInPersonResponse,
+        bostonRecitationsResponse,
+        oaklandRecitationsResponse,
+      ] = await Promise.all([
+        fetch(onlineOfficeHoursCsvUrl),
+        fetch(inPersonOfficeHoursCsvUrl),
+        fetch(oaklandInPersonOfficeHoursCsvUrl),
+        fetch(bostonRecitationsCsvUrl),
+        fetch(oaklandRecitationsCsvUrl),
+      ]);
 
       if (!onlineResponse.ok) {
         throw new Error(
@@ -412,21 +508,42 @@ export default function OfficeHours() {
           `Oakland in-person office hours HTTP error! status: ${oaklandInPersonResponse.status}`,
         );
       }
+      if (!bostonRecitationsResponse.ok) {
+        throw new Error(
+          `Boston recitations HTTP error! status: ${bostonRecitationsResponse.status}`,
+        );
+      }
+      if (!oaklandRecitationsResponse.ok) {
+        throw new Error(
+          `Oakland recitations HTTP error! status: ${oaklandRecitationsResponse.status}`,
+        );
+      }
 
-      const [onlineCsvText, inPersonCsvText, oaklandInPersonCsvText] =
-        await Promise.all([
-          onlineResponse.text(),
-          inPersonResponse.text(),
-          oaklandInPersonResponse.text(),
-        ]);
+      const [
+        onlineCsvText,
+        inPersonCsvText,
+        oaklandInPersonCsvText,
+        bostonRecitationsCsvText,
+        oaklandRecitationsCsvText,
+      ] = await Promise.all([
+        onlineResponse.text(),
+        inPersonResponse.text(),
+        oaklandInPersonResponse.text(),
+        bostonRecitationsResponse.text(),
+        oaklandRecitationsResponse.text(),
+      ]);
 
       const onlineParsedData = parseCsv(onlineCsvText);
       const inPersonParsedData = parseCsv(inPersonCsvText);
       const oaklandInPersonParsedData = parseCsv(oaklandInPersonCsvText);
+      const bostonRecitationsParsedData = parseCsv(bostonRecitationsCsvText);
+      const oaklandRecitationsParsedData = parseCsv(oaklandRecitationsCsvText);
 
       setOnlineCsvData(onlineParsedData);
       setInPersonCsvData(inPersonParsedData);
       setOaklandInPersonCsvData(oaklandInPersonParsedData);
+      setBostonRecitationsCsvData(bostonRecitationsParsedData);
+      setOaklandRecitationsCsvData(oaklandRecitationsParsedData);
 
       const onlineParsedSchedule = parseOnlineOfficeHours(onlineParsedData);
       const inPersonParsedSchedule =
@@ -434,10 +551,18 @@ export default function OfficeHours() {
       const oaklandInPersonParsedSchedule = parseOaklandInPersonOfficeHours(
         oaklandInPersonParsedData,
       );
+      const bostonRecitationsParsedSchedule = parseRecitationsSchedule(
+        bostonRecitationsParsedData,
+      );
+      const oaklandRecitationsParsedSchedule = parseRecitationsSchedule(
+        oaklandRecitationsParsedData,
+      );
 
       setOnlineSchedule(onlineParsedSchedule);
       setInPersonSchedule(inPersonParsedSchedule);
       setOaklandInPersonSchedule(oaklandInPersonParsedSchedule);
+      setBostonRecitationsSchedule(bostonRecitationsParsedSchedule);
+      setOaklandRecitationsSchedule(oaklandRecitationsParsedSchedule);
       setLastFetch(new Date());
     } catch (err) {
       setError(
@@ -525,17 +650,20 @@ export default function OfficeHours() {
     title: string,
     isInPerson: boolean = false,
     isOakland: boolean = false,
+    skipLocationInfo: boolean = false,
   ) => {
     if (schedule.length === 0) return null;
 
     // Get timezone info for display
-    const timezoneInfo = isOakland
+    const timezoneInfo = skipLocationInfo
       ? ''
-      : isInPerson
-        ? '(Boston)'
-        : showOaklandTime
-          ? '(Oakland/PT)'
-          : '(Boston/ET)';
+      : isOakland
+        ? ''
+        : isInPerson
+          ? '(Boston)'
+          : showOaklandTime
+            ? '(Oakland/PT)'
+            : '(Boston/ET)';
 
     return (
       <Box mb={8}>
@@ -600,14 +728,17 @@ export default function OfficeHours() {
                 .sort((a, b) => {
                   // Sort times chronologically (always sort by original ET times)
                   const timeToMinutes = (time: string) => {
-                    const match = time.match(/(\d+)(am|pm)/i);
+                    // Handle both "11am-12pm" and "11:50am-12:50pm" formats
+                    const match = time.match(/(\d+)(?::(\d+))?([ap]m)/i);
                     if (match) {
                       let hours = parseInt(match[1]);
-                      if (match[2].toLowerCase() === 'pm' && hours !== 12)
-                        hours += 12;
-                      if (match[2].toLowerCase() === 'am' && hours === 12)
-                        hours = 0;
-                      return hours * 60;
+                      const minutes = parseInt(match[2] || '0');
+                      const period = match[3].toLowerCase();
+
+                      if (period === 'pm' && hours !== 12) hours += 12;
+                      if (period === 'am' && hours === 12) hours = 0;
+
+                      return hours * 60 + minutes;
                     }
                     return 0;
                   };
@@ -648,15 +779,55 @@ export default function OfficeHours() {
                                       <>
                                         {slot.room && (
                                           <>
-                                            <Text
-                                              as="span"
-                                              fontWeight="bold"
-                                              color="purple.600"
-                                              fontSize="2xs"
-                                            >
-                                              {slot.room}
-                                            </Text>
-                                            <br />
+                                            {slot.room.startsWith('http') ? (
+                                              <>
+                                                <a
+                                                  href={slot.room.split(' ')[0]}
+                                                  target="_blank"
+                                                  rel="noopener noreferrer"
+                                                  style={{
+                                                    color: '#7c3aed',
+                                                    fontWeight: 'bold',
+                                                    fontSize: '10px',
+                                                    textDecoration: 'underline',
+                                                  }}
+                                                >
+                                                  ONLINE
+                                                </a>
+                                                {(() => {
+                                                  const passcodeMatch =
+                                                    slot.room.match(
+                                                      /Passcode:\s*(\d+)/i,
+                                                    );
+                                                  return passcodeMatch ? (
+                                                    <>
+                                                      <br />
+                                                      <Text
+                                                        as="span"
+                                                        fontSize="2xs"
+                                                        color="gray.600"
+                                                      >
+                                                        Passcode:{' '}
+                                                        {passcodeMatch[1]}
+                                                      </Text>
+                                                    </>
+                                                  ) : null;
+                                                })()}
+                                                <br />
+                                              </>
+                                            ) : (
+                                              <>
+                                                <Text
+                                                  as="span"
+                                                  fontWeight="bold"
+                                                  color="purple.600"
+                                                  fontSize="2xs"
+                                                >
+                                                  {slot.room}
+                                                </Text>
+                                                <br />
+                                              </>
+                                            )}
                                           </>
                                         )}
                                         {slot.allTAs.map((ta, taIndex) => (
@@ -780,12 +951,27 @@ export default function OfficeHours() {
                 true,
                 true,
               )}
+              {renderScheduleTable(
+                bostonRecitationsSchedule,
+                'RECITATIONS Schedule (Boston/Online)',
+                true,
+                false,
+                true,
+              )}
+              {renderScheduleTable(
+                oaklandRecitationsSchedule,
+                'RECITATIONS Schedule (Oakland)',
+                true,
+                true,
+              )}
             </>
           )}
 
           {onlineSchedule.length === 0 &&
             inPersonSchedule.length === 0 &&
             oaklandInPersonSchedule.length === 0 &&
+            bostonRecitationsSchedule.length === 0 &&
+            oaklandRecitationsSchedule.length === 0 &&
             !loading &&
             !error && (
               <Alert.Root status="info">
@@ -798,16 +984,6 @@ export default function OfficeHours() {
                 </Alert.Content>
               </Alert.Root>
             )}
-
-          {/* Recitation Schedule Section */}
-          <Box mt={8} pt={6} borderTop="1px solid" borderColor="gray.200">
-            <Heading size="lg" mb={4} color="gray.600">
-              Recitation Schedule
-            </Heading>
-            <Text fontSize="lg" color="gray.500">
-              Coming soon
-            </Text>
-          </Box>
         </VStack>
       </Box>
     </Layout>

@@ -51,6 +51,10 @@ If you'd like to install VSCode on your computer earlier, you can use Pyret via 
 | [Prof. John Park](#) | Boston |  | TBD |
 | [Prof. Jeongkyu Lee](https://www.khoury.northeastern.edu/people/jeongkyu-lee/) | NYC | Found Faculty Lounge | TBD |
 
+| Coordinator | Campus | Office | Office Hours |
+| -- | -- | -- | -- |
+| [Kayla McLaughlin](https://www.khoury.northeastern.edu/people/kayla-mclaughlin/) | Boston | WVH 316 | Mondays, 11-12pm & 2-3pm in WVH314 |
+
 ### Due Dates, Late Tokens, Regrades
 
 All homework assignments will be due on Thursdays, at 6PM Pacific time / 9PM Eastern time (this is the same moment in time).
