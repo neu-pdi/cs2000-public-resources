@@ -883,20 +883,41 @@ export default function OfficeHours() {
             </Heading>
             <Text color="gray.600" mb={4}>
               Online and in-person office hours schedules. Online times can be
-              viewed in Eastern (ET) or Pacific (PT) time.{' '}
-              <Text as="span" fontWeight="bold">
-                Access online office hours via{' '}
-                <Text as="span" color="blue.600" textDecoration="underline">
+              viewed in Eastern (ET) or Pacific (PT) time.
+            </Text>
+
+            <Box
+              bg="blue.50"
+              border="1px"
+              borderColor="blue.200"
+              borderRadius="md"
+              p={4}
+              mb={4}
+              _dark={{ bg: 'blue.900', borderColor: 'blue.700' }}
+            >
+              <Text
+                fontWeight="bold"
+                color="blue.800"
+                _dark={{ color: 'blue.200' }}
+              >
+                📢 Office hours are available on Discord via the
+                #office-hours-waiting channel.{' '}
+                <Text
+                  as="span"
+                  color="blue.600"
+                  textDecoration="underline"
+                  _dark={{ color: 'blue.300' }}
+                >
                   <a
-                    href="https://app.pawtograder.com/"
+                    href="https://pdi.run/cs2000-discord"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Pawtograder
+                    Join Discord here
                   </a>
                 </Text>
               </Text>
-            </Text>
+            </Box>
 
             <HStack>
               <Button
