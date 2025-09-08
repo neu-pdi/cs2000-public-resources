@@ -901,7 +901,7 @@ export default function OfficeHours() {
                 _dark={{ color: 'blue.200' }}
               >
                 📢 Office hours are available on Discord via the
-                #office-hours-waiting channel.{' '}
+                #office-hours channel.{' '}
                 <Text
                   as="span"
                   color="blue.600"
