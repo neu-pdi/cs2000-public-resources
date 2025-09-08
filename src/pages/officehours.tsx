@@ -425,9 +425,9 @@ export default function OfficeHours() {
       }
 
       // Parse the time and day from the first column
-      // Format examples: "12pm-1pm Mondays in person", "11:50am-12:50pm Wednesday"
+      // Format examples: "12pm-1pm Mondays in person", "11:50am-12:50pm Wednesday", "6-7pm Wednesdays online"
       const timeMatch = firstCol.match(
-        /(\d+(?::\d+)?[ap]m-\d+(?::\d+)?[ap]m)/i,
+        /(\d+(?::\d+)?(?:[ap]m)?-\d+(?::\d+)?[ap]m)/i,
       );
       const dayMatch = firstCol.match(
         /(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)s?/i,
