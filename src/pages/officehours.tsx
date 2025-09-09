@@ -61,6 +61,22 @@ export default function OfficeHours() {
   const [oaklandRecitationsSchedule, setOaklandRecitationsSchedule] = useState<
     DaySchedule[]
   >([]);
+  const [
+    bostonInstructorAssessmentsCsvData,
+    setBostonInstructorAssessmentsCsvData,
+  ] = useState<string[][]>([]);
+  const [
+    bostonInstructorAssessmentsSchedule,
+    setBostonInstructorAssessmentsSchedule,
+  ] = useState<DaySchedule[]>([]);
+  const [
+    oaklandInstructorAssessmentsCsvData,
+    setOaklandInstructorAssessmentsCsvData,
+  ] = useState<string[][]>([]);
+  const [
+    oaklandInstructorAssessmentsSchedule,
+    setOaklandInstructorAssessmentsSchedule,
+  ] = useState<DaySchedule[]>([]);
   const [showOaklandTime, setShowOaklandTime] = useState(false);
 
   // The Google Sheets CSV API URL for Online Office Hours
@@ -78,6 +94,12 @@ export default function OfficeHours() {
 
   const oaklandRecitationsCsvUrl =
     'https://docs.google.com/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Oakland+Recitations';
+
+  const bostonInstructorAssessmentsUrl =
+    'https://docs.google.com/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Boston+Instructor+Assessments';
+
+  const oaklandInstructorAssessmentsUrl =
+    'https://docs.google.com/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Oakland+Instructor+Assessments';
 
   const parseCsv = (csvText: string): string[][] => {
     const lines = csvText.trim().split('\n');
@@ -478,19 +500,23 @@ export default function OfficeHours() {
     setError(null);
 
     try {
-      // Fetch all schedules: online, in-person, Oakland in-person, and recitations
+      // Fetch all schedules: online, in-person, Oakland in-person, recitations, and instructor assessments
       const [
         onlineResponse,
         inPersonResponse,
         oaklandInPersonResponse,
         bostonRecitationsResponse,
         oaklandRecitationsResponse,
+        bostonInstructorAssessmentsResponse,
+        oaklandInstructorAssessmentsResponse,
       ] = await Promise.all([
         fetch(onlineOfficeHoursCsvUrl),
         fetch(inPersonOfficeHoursCsvUrl),
         fetch(oaklandInPersonOfficeHoursCsvUrl),
         fetch(bostonRecitationsCsvUrl),
         fetch(oaklandRecitationsCsvUrl),
+        fetch(bostonInstructorAssessmentsUrl),
+        fetch(oaklandInstructorAssessmentsUrl),
       ]);
 
       if (!onlineResponse.ok) {
@@ -518,6 +544,16 @@ export default function OfficeHours() {
           `Oakland recitations HTTP error! status: ${oaklandRecitationsResponse.status}`,
         );
       }
+      if (!bostonInstructorAssessmentsResponse.ok) {
+        throw new Error(
+          `Boston instructor assessments HTTP error! status: ${bostonInstructorAssessmentsResponse.status}`,
+        );
+      }
+      if (!oaklandInstructorAssessmentsResponse.ok) {
+        throw new Error(
+          `Oakland instructor assessments HTTP error! status: ${oaklandInstructorAssessmentsResponse.status}`,
+        );
+      }
 
       const [
         onlineCsvText,
@@ -525,12 +561,16 @@ export default function OfficeHours() {
         oaklandInPersonCsvText,
         bostonRecitationsCsvText,
         oaklandRecitationsCsvText,
+        bostonInstructorAssessmentsCsvText,
+        oaklandInstructorAssessmentsCsvText,
       ] = await Promise.all([
         onlineResponse.text(),
         inPersonResponse.text(),
         oaklandInPersonResponse.text(),
         bostonRecitationsResponse.text(),
         oaklandRecitationsResponse.text(),
+        bostonInstructorAssessmentsResponse.text(),
+        oaklandInstructorAssessmentsResponse.text(),
       ]);
 
       const onlineParsedData = parseCsv(onlineCsvText);
@@ -538,12 +578,24 @@ export default function OfficeHours() {
       const oaklandInPersonParsedData = parseCsv(oaklandInPersonCsvText);
       const bostonRecitationsParsedData = parseCsv(bostonRecitationsCsvText);
       const oaklandRecitationsParsedData = parseCsv(oaklandRecitationsCsvText);
+      const bostonInstructorAssessmentsParsedData = parseCsv(
+        bostonInstructorAssessmentsCsvText,
+      );
+      const oaklandInstructorAssessmentsParsedData = parseCsv(
+        oaklandInstructorAssessmentsCsvText,
+      );
 
       setOnlineCsvData(onlineParsedData);
       setInPersonCsvData(inPersonParsedData);
       setOaklandInPersonCsvData(oaklandInPersonParsedData);
       setBostonRecitationsCsvData(bostonRecitationsParsedData);
       setOaklandRecitationsCsvData(oaklandRecitationsParsedData);
+      setBostonInstructorAssessmentsCsvData(
+        bostonInstructorAssessmentsParsedData,
+      );
+      setOaklandInstructorAssessmentsCsvData(
+        oaklandInstructorAssessmentsParsedData,
+      );
 
       const onlineParsedSchedule = parseOnlineOfficeHours(onlineParsedData);
       const inPersonParsedSchedule =
@@ -557,12 +609,22 @@ export default function OfficeHours() {
       const oaklandRecitationsParsedSchedule = parseRecitationsSchedule(
         oaklandRecitationsParsedData,
       );
+      const bostonInstructorAssessmentsParsedSchedule =
+        parseRecitationsSchedule(bostonInstructorAssessmentsParsedData);
+      const oaklandInstructorAssessmentsParsedSchedule =
+        parseRecitationsSchedule(oaklandInstructorAssessmentsParsedData);
 
       setOnlineSchedule(onlineParsedSchedule);
       setInPersonSchedule(inPersonParsedSchedule);
       setOaklandInPersonSchedule(oaklandInPersonParsedSchedule);
       setBostonRecitationsSchedule(bostonRecitationsParsedSchedule);
       setOaklandRecitationsSchedule(oaklandRecitationsParsedSchedule);
+      setBostonInstructorAssessmentsSchedule(
+        bostonInstructorAssessmentsParsedSchedule,
+      );
+      setOaklandInstructorAssessmentsSchedule(
+        oaklandInstructorAssessmentsParsedSchedule,
+      );
       setLastFetch(new Date());
     } catch (err) {
       setError(
@@ -681,6 +743,18 @@ export default function OfficeHours() {
             </Button>
           )}
         </HStack>
+
+        {title.includes('Assessable@Hours') && (
+          <Text fontSize="sm" color="gray.600" mb={4}>
+            These hours can be used for skill assessments, as described at{' '}
+            <a
+              href="/skills/#assessablehours"
+              style={{ textDecoration: 'underline', color: '#7c3aed' }}
+            >
+              /skills/#assessablehours
+            </a>
+          </Text>
+        )}
 
         <Box
           overflowX="auto"
@@ -985,6 +1059,20 @@ export default function OfficeHours() {
                 true,
                 true,
               )}
+              {renderScheduleTable(
+                bostonInstructorAssessmentsSchedule,
+                'INSTRUCTOR Assessable@Hours Schedule (Boston)',
+                true,
+                false,
+                true,
+              )}
+              {renderScheduleTable(
+                oaklandInstructorAssessmentsSchedule,
+                'INSTRUCTOR Assessable@Hours Schedule (Oakland)',
+                true,
+                true,
+                true,
+              )}
             </>
           )}
 
@@ -993,6 +1081,8 @@ export default function OfficeHours() {
             oaklandInPersonSchedule.length === 0 &&
             bostonRecitationsSchedule.length === 0 &&
             oaklandRecitationsSchedule.length === 0 &&
+            bostonInstructorAssessmentsSchedule.length === 0 &&
+            oaklandInstructorAssessmentsSchedule.length === 0 &&
             !loading &&
             !error && (
               <Alert.Root status="info">
