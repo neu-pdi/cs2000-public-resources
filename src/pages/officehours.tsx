@@ -77,6 +77,12 @@ export default function OfficeHours() {
     oaklandInstructorAssessmentsSchedule,
     setOaklandInstructorAssessmentsSchedule,
   ] = useState<DaySchedule[]>([]);
+  const [onlineRecitationsCsvData, setOnlineRecitationsCsvData] = useState<
+    string[][]
+  >([]);
+  const [onlineRecitationsSchedule, setOnlineRecitationsSchedule] = useState<
+    DaySchedule[]
+  >([]);
   const [showOaklandTime, setShowOaklandTime] = useState(false);
 
   // The Google Sheets CSV API URL for Online Office Hours
@@ -91,6 +97,9 @@ export default function OfficeHours() {
 
   const bostonRecitationsCsvUrl =
     'https://docs.google.com/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Boston+Recitations';
+
+  const onlineRecitationsCsvUrl =
+    'https://docs.google.com/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Online+Recitations';
 
   const oaklandRecitationsCsvUrl =
     'https://docs.google.com/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Oakland+Recitations';
@@ -505,6 +514,7 @@ export default function OfficeHours() {
         onlineResponse,
         inPersonResponse,
         oaklandInPersonResponse,
+        onlineRecitationsResponse,
         bostonRecitationsResponse,
         oaklandRecitationsResponse,
         bostonInstructorAssessmentsResponse,
@@ -513,6 +523,7 @@ export default function OfficeHours() {
         fetch(onlineOfficeHoursCsvUrl),
         fetch(inPersonOfficeHoursCsvUrl),
         fetch(oaklandInPersonOfficeHoursCsvUrl),
+        fetch(onlineRecitationsCsvUrl),
         fetch(bostonRecitationsCsvUrl),
         fetch(oaklandRecitationsCsvUrl),
         fetch(bostonInstructorAssessmentsUrl),
@@ -532,6 +543,11 @@ export default function OfficeHours() {
       if (!oaklandInPersonResponse.ok) {
         throw new Error(
           `Oakland in-person office hours HTTP error! status: ${oaklandInPersonResponse.status}`,
+        );
+      }
+      if (!onlineRecitationsResponse.ok) {
+        throw new Error(
+          `Online recitations HTTP error! status: ${onlineRecitationsResponse.status}`,
         );
       }
       if (!bostonRecitationsResponse.ok) {
@@ -559,6 +575,7 @@ export default function OfficeHours() {
         onlineCsvText,
         inPersonCsvText,
         oaklandInPersonCsvText,
+        onlineRecitationsCsvText,
         bostonRecitationsCsvText,
         oaklandRecitationsCsvText,
         bostonInstructorAssessmentsCsvText,
@@ -567,6 +584,7 @@ export default function OfficeHours() {
         onlineResponse.text(),
         inPersonResponse.text(),
         oaklandInPersonResponse.text(),
+        onlineRecitationsResponse.text(),
         bostonRecitationsResponse.text(),
         oaklandRecitationsResponse.text(),
         bostonInstructorAssessmentsResponse.text(),
@@ -576,6 +594,7 @@ export default function OfficeHours() {
       const onlineParsedData = parseCsv(onlineCsvText);
       const inPersonParsedData = parseCsv(inPersonCsvText);
       const oaklandInPersonParsedData = parseCsv(oaklandInPersonCsvText);
+      const onlineRecitationsParsedData = parseCsv(onlineRecitationsCsvText);
       const bostonRecitationsParsedData = parseCsv(bostonRecitationsCsvText);
       const oaklandRecitationsParsedData = parseCsv(oaklandRecitationsCsvText);
       const bostonInstructorAssessmentsParsedData = parseCsv(
@@ -588,6 +607,7 @@ export default function OfficeHours() {
       setOnlineCsvData(onlineParsedData);
       setInPersonCsvData(inPersonParsedData);
       setOaklandInPersonCsvData(oaklandInPersonParsedData);
+      setOnlineRecitationsCsvData(onlineRecitationsParsedData);
       setBostonRecitationsCsvData(bostonRecitationsParsedData);
       setOaklandRecitationsCsvData(oaklandRecitationsParsedData);
       setBostonInstructorAssessmentsCsvData(
@@ -603,6 +623,9 @@ export default function OfficeHours() {
       const oaklandInPersonParsedSchedule = parseOaklandInPersonOfficeHours(
         oaklandInPersonParsedData,
       );
+      const onlineRecitationsParsedSchedule = parseRecitationsSchedule(
+        onlineRecitationsParsedData,
+      );
       const bostonRecitationsParsedSchedule = parseRecitationsSchedule(
         bostonRecitationsParsedData,
       );
@@ -617,6 +640,7 @@ export default function OfficeHours() {
       setOnlineSchedule(onlineParsedSchedule);
       setInPersonSchedule(inPersonParsedSchedule);
       setOaklandInPersonSchedule(oaklandInPersonParsedSchedule);
+      setOnlineRecitationsSchedule(onlineRecitationsParsedSchedule);
       setBostonRecitationsSchedule(bostonRecitationsParsedSchedule);
       setOaklandRecitationsSchedule(oaklandRecitationsParsedSchedule);
       setBostonInstructorAssessmentsSchedule(
@@ -713,6 +737,7 @@ export default function OfficeHours() {
     isInPerson: boolean = false,
     isOakland: boolean = false,
     skipLocationInfo: boolean = false,
+    enableUrlRendering: boolean = false,
   ) => {
     if (schedule.length === 0) return null;
 
@@ -846,7 +871,8 @@ export default function OfficeHours() {
                           >
                             {slot ? (
                               <>
-                                {isInPerson && slot.allTAs ? (
+                                {(isInPerson || enableUrlRendering) &&
+                                slot.allTAs ? (
                                   // For in-person, show all TAs
                                   <>
                                     {slot.allTAs.length > 0 ? (
@@ -1047,8 +1073,16 @@ export default function OfficeHours() {
                 true,
               )}
               {renderScheduleTable(
+                onlineRecitationsSchedule,
+                'ONLINE Recitations Schedule',
+                false,
+                false,
+                false,
+                true,
+              )}
+              {renderScheduleTable(
                 bostonRecitationsSchedule,
-                'RECITATIONS Schedule (Boston/Online)',
+                'RECITATIONS Schedule (Boston)',
                 true,
                 false,
                 true,
@@ -1079,6 +1113,7 @@ export default function OfficeHours() {
           {onlineSchedule.length === 0 &&
             inPersonSchedule.length === 0 &&
             oaklandInPersonSchedule.length === 0 &&
+            onlineRecitationsSchedule.length === 0 &&
             bostonRecitationsSchedule.length === 0 &&
             oaklandRecitationsSchedule.length === 0 &&
             bostonInstructorAssessmentsSchedule.length === 0 &&
