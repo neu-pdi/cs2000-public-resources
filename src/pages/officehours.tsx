@@ -359,20 +359,33 @@ export default function OfficeHours() {
         }
 
         // Parse room information from the day header
-        // Format: "Wednesday (PT) CPM 200"
         const dayName =
           firstCol.match(
             /^(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)/i,
           )?.[0] || '';
         const rooms: { timeRange: string; room: string }[] = [];
 
-        // Remove day name and "(PT)" to get the room
-        const roomMatch = firstCol
-          .replace(dayName, '')
-          .replace('(PT)', '')
-          .trim();
-        if (roomMatch) {
-          rooms.push({ timeRange: 'all day', room: roomMatch });
+        // Handle complex room schedules like "Wednesday (PT) 3-4pm CARN201 4-6pm CPM 200"
+        // Remove day name and "(PT)" to get the room information
+        let roomInfo = firstCol.replace(dayName, '').replace('(PT)', '').trim();
+
+        // Check for multiple time-room combinations
+        const timeRoomPattern =
+          /(\d+(?::\d+)?(?:am|pm)?-\d+(?::\d+)?(?:am|pm)?)\s+([A-Z]+\s*\d+)/gi;
+        const matches = [...roomInfo.matchAll(timeRoomPattern)];
+
+        if (matches.length > 0) {
+          // Multiple time-room combinations found
+          for (const match of matches) {
+            const timeRange = match[1];
+            const room = match[2];
+            rooms.push({ timeRange, room });
+          }
+        } else {
+          // Simple case like "Wednesday (PT) CPM 200" - just a room name
+          if (roomInfo) {
+            rooms.push({ timeRange: 'all day', room: roomInfo });
+          }
         }
 
         currentDay = {
@@ -408,10 +421,54 @@ export default function OfficeHours() {
           }
         }
 
-        // Use the room from the day header
+        // Determine room for this time slot
         let room = '';
         if (currentDay.rooms && currentDay.rooms.length > 0) {
-          room = currentDay.rooms[0].room;
+          if (currentDay.rooms.length === 1) {
+            room = currentDay.rooms[0].room;
+          } else {
+            // Multiple rooms - determine which one based on time
+            const timeHour = parseInt(firstCol.match(/(\d+)/)?.[1] || '0');
+            const isPM = firstCol.toLowerCase().includes('pm');
+            const hour24 =
+              isPM && timeHour !== 12
+                ? timeHour + 12
+                : timeHour === 12 && !isPM
+                  ? 0
+                  : timeHour;
+
+            // Find matching room based on time ranges
+            for (const roomEntry of currentDay.rooms) {
+              if (roomEntry.timeRange === 'all day') {
+                room = roomEntry.room;
+                break;
+              }
+
+              // Parse the time range to see if current slot falls within it
+              const rangeMatch = roomEntry.timeRange.match(
+                /(\d+)(?::\d+)?(?:am|pm)?-(\d+)(?::\d+)?(?:am|pm)?/i,
+              );
+              if (rangeMatch) {
+                const startHour = parseInt(rangeMatch[1]);
+                const endHour = parseInt(rangeMatch[2]);
+
+                // Simple hour-based matching (can be enhanced for more precision)
+                let startHour24 = startHour;
+                let endHour24 = endHour;
+
+                // Handle PM times in range
+                if (roomEntry.timeRange.toLowerCase().includes('pm')) {
+                  if (startHour !== 12) startHour24 += 12;
+                  if (endHour !== 12) endHour24 += 12;
+                }
+
+                if (hour24 >= startHour24 && hour24 < endHour24) {
+                  room = roomEntry.room;
+                  break;
+                }
+              }
+            }
+          }
         }
 
         currentDay.slots.push({
