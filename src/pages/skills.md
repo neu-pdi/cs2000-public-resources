@@ -15,15 +15,17 @@ expectations", and "Meets expectations", and students may attempt any skill
 assessment up to five times (four independently, and once via the bulk
 assessments, see below), with the best result being used for their grade.
 
-01. <a id="(1)" href="#(1)">Design basic functions (Pyret)</a>
-    |  |  |
-    | -- | -- |
-    | **Meets Expectations** | • Correct type annotation<br/>• Docstring that describes behavior, doesn't repeat type annotation.<br/>• A few (2+) correct, meaningfully different tests<br/>• Well-formatted implementation -- clear naming for function arguments, no unnecessary if expressions, etc. |
-    | **Approaching Expectations** | • Missing docstring, or long, includes redundant type information, etc.<br/>• 1+ correct tests.<br/>• Correct implementation. |
+1. <a id="(1)" href="#(1)">Design basic functions (Pyret)</a>
+   |  |  |
+   | -- | -- |
+   | **Meets Expectations** | • Correct type annotation<br/>• Docstring that describes behavior, doesn't repeat type annotation.<br/>• A few (2+) correct, meaningfully different tests<br/>• Well-formatted implementation -- clear naming for function arguments, no unnecessary if expressions, etc. |
+   | **Approaching Expectations** | • Missing docstring, or long, includes redundant type information, etc.<br/>• 1+ correct tests.<br/>• Correct implementation. |
+
 <details>
+    <summary>Examples</summary>
     <p>Sample question: Design a function <code>square</code> that, given a number, returns the result of multiplying the number by itself.</p>
     <p>Answer meeting exceptations:</p>
-    <pre>
+```pyret
 fun square(n :: Number) -> Number:
   doc: "Multiplies the input by itself"
   n * n
@@ -32,16 +34,16 @@ where:
   square(0) is 0
   square(2) is 4
 end
-    </pre>
+```
     <p>Answer approaching expectations (docstring, insufficient tests)</p>
-    <pre>
+```pyret
 fun square(n :: Number) -> Number:
   doc: "Takes a number as an argument and returns a number. The result is what you get when multiplying the first number by itself."
   n * n
 where:
   square(1) is 1
 end
-    </pre>
+```
 </details> 
 02. <a id="(2)" href="#(2)">Construct / Transform Tables (Pyret)</a>
     |  |  |
