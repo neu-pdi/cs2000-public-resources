@@ -127,6 +127,38 @@ Access to data could be minimized by keeping the data encrypted [does not addres
     | -- | -- |
     | **Meets Expectations** | • Complete stakeholder matrix that lists all relevant stakeholders and at least one relevant interest at stake for each stakeholder<br/> • Answer identifies the specified number of conflicts between stakeholder interests/values (e.g., if the task is to identify 2 values conflicts, the answer identifies 2 values conflicts) |
     | **Approaching Expectations** | • If prompted to provide a complete chart, chart fails to identify relevant stakeholders OR fails to identify their relevant interests/values<br/> • Chart does not identify relevant interests<br/> • Identifies some, but fewer than specified number of conflicts between stakeholder interests/values (e.g., if the task is to identify 2 values conflicts, the answer identifies 1 values conflict) |
+<details>
+    <summary>Examples</summary>
+    <p>**Sample question**: A university is created a cafeteria and collects information about students' dietary restrictions, which may be due to students' health requirements or strongly-held beliefs. Below is a stakeholder matrix:
+
+| Stakeholder| Interest/Value |
+| University budget managers |  |
+| Vegetarians |  |
+| |  |
+FIRST: Complete the stakeholder matrix for cafeteria system design by identifying, and filling in, interests/values that correspond to the listed    stakeholders  , and, in the third case, by supplying both the stakeholder and the listed interest/value.
+
+SECOND: Explain in one or two sentences which (if any) stakeholder interests/values can come into conflict.
+
+<p>**Answer meeting expectations**</p>
+
+| Stakeholder| Interest/Value |
+| University budget managers | minimizing food waste |
+| Vegetarians | having healthy and tasty food options |
+| Meat eaters | having non-vegetarian food options  |
+
+<p>The interests of vegetarians and meat eaters could come into conflict because each group wants multiple options of their preferred food type, but the cafeteria can only offer a limited number of options.</p>
+
+<p>**Answer approaching expectations** (incomplete chart, incorrect conflict)</p>
+
+| Stakeholder| Interest/Value |
+| University budget managers | minimizing food waste |
+| Vegetarians | having soda |
+|  | |
+
+<p>The interests of budget managers and vegetarians could come into conflict if they like the tastes of different types of soda.
+
+</details>
+
 
 ## Skill Introduction
 
