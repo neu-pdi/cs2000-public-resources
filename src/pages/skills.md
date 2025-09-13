@@ -24,7 +24,7 @@ assessments, see below), with the best result being used for their grade.
 <details>
     <summary>Examples</summary>
     <p>Sample question: Design a function <code>square</code> that, given a number, returns the result of multiplying the number by itself.</p>
-    <p>Answer meeting exceptations:</p>
+    <p>Answer meeting expectations:</p>
 ```pyret
 fun square(n :: Number) -> Number:
   doc: "Multiplies the input by itself"
@@ -97,29 +97,31 @@ end
     | **Approaching Expectations** | • Chart is complete but at least one entry is not correct<br/> • Attempts to identify named privacy issue but mis-identifies, or explanation is unclear<br/> • Proposed mitigation of known privacy issue would not address the privacy threat |
 <details>
     <summary>Examples</summary>
-    <p>Sample question: You are designing a campus food service application. Students can specify their dietary restrictions through a website that logs their student id to access other personal information. The resulting record can be accessed by any cafeteria worker (full-time staff and student workers) and is searchable by all fields. Here is an analysis of the flow of information in the context:
+    <p>**Sample question**: You are designing a campus food service application. Students can specify their dietary restrictions through a website that requires their student id, which is used to creating a record containing other personal information. The resulting record can be accessed by any food service employee (full-time staff and student workers) and is searchable by all fields.</p>
+   <p>Here is an analysis of the flow of information in the context:</p>
 
 |  |  |
 |----------|---------|
 | What type of information is shared? | Personal information, including legal name, photo, phone number, address, and dietary restrictions |
 | Who is/are the subject of the information? | The student |
 | Who is the sender of the information? | The university |
-| Who are the potential recipients of the information? | Intended: Meal planners and food servers |
+| Who are the potential recipients of the information? | Intended: Meal planners and food servers, ???? |
 | What principles govern the collection and transmission of this information? | Students provide their dietary restrictions freely while logged in with their student id, although they do not have a choice about what linked information is accessed  |
 
-The principle of data minimization suggests that we limit the collection, storage, and transmission of personal data to only the data absolutely necessary to perform the task.
+<p>The principle of data minimization suggests that we limit the collection, storage, and transmission of personal data to only the data absolutely necessary to perform the task.</p>
 
-Using our privacy analysis, identify **one unintended recipient**, and also **how access to data might be designed to minimize transmission**. 
+<p>Using our privacy analysis, identify **one unintended recipient**, and also **how access to data might be designed to minimize transmission**.</p>
 
-<p>Answer meeting exceptations:</p>
+<dl>
+<dt>Answer meeting expectations:</dt>
+<dd>One unintended recipient would be student workers, who should not be allowed to retrieve other students' photos, addresses, or phone numbers.
+Access to data could be minimized by making contact information available only to the manager, in case a student needs to be notified that food was mislabeled.</dd>
 
-<p>One unintended recipient would be student workers, who should not be allowed to retrieve other students' photos, addresses, or phone numbers.
-Access to data could be minimized by making contact information available only to the manager, in case a student needs to be notified that food was mislabeled.
-</p>
-    
+<dt>Answer approaching expectations:</dt>
+<dd>One unintended recipient would be students who don't work for the food service [incorrect] who could get private information [too vague].
+Access to data could be minimized by keeping the data encrypted [does not address the privacy threat].</dd>
+</dl>
 </details>
-
-
 12. <a id="(12)" href="#(12)">Identifying Stakeholders in Problem Formulation</a>
     |  |  |
     | -- | -- |
