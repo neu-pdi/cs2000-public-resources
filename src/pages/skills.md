@@ -95,6 +95,24 @@ end
     | -- | -- |
     | **Meets Expectations** | • Privacy analysis chart is complete and each entry is correct<br/> • Identify named privacy issue in a new context<br/> • Proposed mitigation strategy is appropriate given context |
     | **Approaching Expectations** | • Chart is complete but at least one entry is not correct<br/> • Attempts to identify named privacy issue but mis-identifies, or explanation is unclear<br/> • Proposed mitigation of known privacy issue would not address the privacy threat |
+<details>
+    <summary>Examples</summary>
+    <p>Sample question: You are designing a campus food service application. Students can specify their dietary restrictions through a website that logs their student id to access other personal information. The resulting record can be accessed by any cafeteria worker and is searchable by all fields. Here is an analysis of the flow of information in the context:
+
+|  |  |
+|----------|---------|
+| What type of information is shared? | Personal information, including legal name, photo, phone number, address, and dietary restrictions |
+| Who is/are the subject of the information? | The student |
+| Who is the sender of the information? | The university |
+| Who are the potential recipients of the information? | Intended: Meal planners and food servers |
+| What principles govern the collection and transmission of this information? | Students provide their dietary restrictions freely while logged in with their student id, although they do not have a choice about what linked information is accessed  |
+
+The principle of data minimization suggests that we limit the collection, storage, and transmission of personal data to only the data absolutely necessary to perform the task.
+
+Using our privacy analysis, identify **one unintended recipient**, and also **how access to data might be designed to minimize transmission**. 
+</details>
+
+    <p>Answer meeting exceptations:</p>
 12. <a id="(12)" href="#(12)">Identifying Stakeholders in Problem Formulation</a>
     |  |  |
     | -- | -- |
