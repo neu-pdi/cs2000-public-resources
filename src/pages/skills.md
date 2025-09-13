@@ -97,7 +97,7 @@ end
     | **Approaching Expectations** | • Chart is complete but at least one entry is not correct<br/> • Attempts to identify named privacy issue but mis-identifies, or explanation is unclear<br/> • Proposed mitigation of known privacy issue would not address the privacy threat |
 <details>
     <summary>Examples</summary>
-    <p>Sample question: You are designing a campus food service application. Students can specify their dietary restrictions through a website that logs their student id to access other personal information. The resulting record can be accessed by any cafeteria worker and is searchable by all fields. Here is an analysis of the flow of information in the context:
+    <p>Sample question: You are designing a campus food service application. Students can specify their dietary restrictions through a website that logs their student id to access other personal information. The resulting record can be accessed by any cafeteria worker (full-time staff and student workers) and is searchable by all fields. Here is an analysis of the flow of information in the context:
 
 |  |  |
 |----------|---------|
@@ -110,9 +110,16 @@ end
 The principle of data minimization suggests that we limit the collection, storage, and transmission of personal data to only the data absolutely necessary to perform the task.
 
 Using our privacy analysis, identify **one unintended recipient**, and also **how access to data might be designed to minimize transmission**. 
+
+<p>Answer meeting exceptations:</p>
+
+<p>One unintended recipient would be student workers, who should not be allowed to retrieve other students' photos, addresses, or phone numbers.
+Access to data could be minimized by making contact information available only to the manager, in case a student needs to be notified that food was mislabeled.
+</p>
+    
 </details>
 
-    <p>Answer meeting exceptations:</p>
+
 12. <a id="(12)" href="#(12)">Identifying Stakeholders in Problem Formulation</a>
     |  |  |
     | -- | -- |
