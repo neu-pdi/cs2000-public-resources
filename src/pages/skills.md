@@ -128,16 +128,18 @@ end
     <summary>Examples</summary>
     <p>**Sample question**: A university has a cafeteria and collects information about students' dietary restrictions, which may be due to students' health requirements or strongly-held beliefs. Below is a stakeholder matrix:</p>
 
-| Stakeholder| Interest/Value |
-| University budget managers |  |
-| Vegetarians |  |
-| |  |
+| Stakeholder | Interest/Value |
+|-------------|----------------|
+| University budget managers | |
+| Vegetarians | |
+| | |
 
 <p>FIRST: Complete the stakeholder matrix for cafeteria system design by identifying, and filling in, interests/values that correspond to the listed stakeholders, and, in the third case, by supplying both the stakeholder and the listed interest/value. SECOND: Explain in one or two sentences which (if any) stakeholder interests/values can come into conflict.</p>
 
 <p>**Answer meeting expectations**</p>
 
-| Stakeholder| Interest/Value |
+| Stakeholder | Interest/Value |
+|-------------|----------------|
 | University budget managers | minimizing food waste |
 | Vegetarians | having healthy and tasty food options |
 | Meat eaters | having non-vegetarian food options  |
@@ -146,7 +148,8 @@ end
 
 <p>**Answer approaching expectations** (incomplete chart, incorrect conflict)</p>
 
-| Stakeholder| Interest/Value |
+| Stakeholder | Interest/Value |
+|-------------|----------------|
 | University budget managers | minimizing food waste |
 | Vegetarians | having soda |
 |  | |
