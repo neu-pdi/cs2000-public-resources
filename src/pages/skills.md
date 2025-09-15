@@ -97,15 +97,15 @@ end
     | **Approaching Expectations** | • Chart is complete but at least one entry is not correct<br/> • Attempts to identify named privacy issue but mis-identifies, or explanation is unclear<br/> • Proposed mitigation of known privacy issue would not address the privacy threat |
 <details>
     <summary>Examples</summary>
-    <p>**Sample question**: You are designing a campus food service application. Students can specify their dietary restrictions through a website that requires their student id, which is used to creating a record containing other personal information. The resulting record can be accessed by any food service employee (full-time staff and student workers) and is searchable by all fields.</p>
+    <p>**Sample question**: You are designing a a system for a campus food service. Students can specify their dietary restrictions through a website that requires their student id, which is used to creating a record containing other personal information. The resulting record can be accessed by any food service employee (full-time staff and student workers) and is searchable by all fields.</p>
    <p>Here is an analysis of the flow of information in the context:</p>
 
 |  |  |
 |----------|---------|
 | What type of information is shared? | Personal information, including legal name, photo, phone number, address, and dietary restrictions |
 | Who is/are the subject of the information? | The student |
-| Who is the sender of the information? | The university |
-| Who are the potential recipients of the information? | Intended: Meal planners and food servers, ???? |
+| Who is the sender of the information? | The student and the university |
+| Who are the potential recipients of the information? | Food service workers<br/>intended: meal planners/preparers and managers<br/>unintended: ??? |
 | What principles govern the collection and transmission of this information? | Students provide their dietary restrictions freely while logged in with their student id, although they do not have a choice about what linked information is accessed  |
 
 <p>The principle of data minimization suggests that we limit the collection, storage, and transmission of personal data to only the data absolutely necessary to perform the task.</p>
@@ -129,13 +129,13 @@ Access to data could be minimized by keeping the data encrypted [does not addres
     | **Approaching Expectations** | • If prompted to provide a complete chart, chart fails to identify relevant stakeholders OR fails to identify their relevant interests/values<br/> • Chart does not identify relevant interests<br/> • Identifies some, but fewer than specified number of conflicts between stakeholder interests/values (e.g., if the task is to identify 2 values conflicts, the answer identifies 1 values conflict) |
 <details>
     <summary>Examples</summary>
-    <p>**Sample question**: A university is created a cafeteria and collects information about students' dietary restrictions, which may be due to students' health requirements or strongly-held beliefs. Below is a stakeholder matrix:
+    <p>**Sample question**: A university has a cafeteria and collects information about students' dietary restrictions, which may be due to students' health requirements or strongly-held beliefs. Below is a stakeholder matrix:
 
 | Stakeholder| Interest/Value |
 | University budget managers |  |
 | Vegetarians |  |
 | |  |
-FIRST: Complete the stakeholder matrix for cafeteria system design by identifying, and filling in, interests/values that correspond to the listed    stakeholders  , and, in the third case, by supplying both the stakeholder and the listed interest/value.
+FIRST: Complete the stakeholder matrix for cafeteria system design by identifying, and filling in, interests/values that correspond to the listed stakeholders , and, in the third case, by supplying both the stakeholder and the listed interest/value.
 
 SECOND: Explain in one or two sentences which (if any) stakeholder interests/values can come into conflict.
 
