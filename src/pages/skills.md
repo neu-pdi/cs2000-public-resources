@@ -112,21 +112,24 @@ end
 
 <p>Using our privacy analysis, identify **one unintended recipient**, and also **how access to data might be designed to minimize transmission**.</p>
 
-<dl>
-<dt>Answer meeting expectations:</dt>
-<dd>One unintended recipient would be student workers, who should not be allowed to retrieve other students' photos, addresses, or phone numbers.
-Access to data could be minimized by making contact information available only to the manager, in case a student needs to be notified that food was mislabeled.</dd>
+**Answer meeting expectations:**
 
-<dt>Answer approaching expectations:</dt>
-<dd>One unintended recipient would be students who don't work for the food service [incorrect] who could get private information [too vague].
-Access to data could be minimized by keeping the data encrypted [does not address the privacy threat].</dd>
-</dl>
+One unintended recipient would be student workers, who should not be allowed to retrieve other students' photos, addresses, or phone numbers.
+
+Access to data could be minimized by making contact information available only to the manager, in case a student needs to be notified that food was mislabeled.
+
+**Answer approaching expectations:**
+
+One unintended recipient would be students who don't work for the food service [incorrect] who could get private information [too vague].
+
+Access to data could be minimized by keeping the data encrypted [does not address the privacy threat].
+
 </details>
 12. <a id="(12)" href="#(12)">Identifying Stakeholders in Problem Formulation</a>
-    |  |  |
-    | -- | -- |
-    | **Meets Expectations** | • Complete stakeholder matrix that lists all relevant stakeholders and at least one relevant interest at stake for each stakeholder<br/> • Answer identifies the specified number of conflicts between stakeholder interests/values (e.g., if the task is to identify 2 values conflicts, the answer identifies 2 values conflicts) |
-    | **Approaching Expectations** | • If prompted to provide a complete chart, chart fails to identify relevant stakeholders OR fails to identify their relevant interests/values<br/> • Chart does not identify relevant interests<br/> • Identifies some, but fewer than specified number of conflicts between stakeholder interests/values (e.g., if the task is to identify 2 values conflicts, the answer identifies 1 values conflict) |
+|  |  |
+| -- | -- |
+| **Meets Expectations** | • Complete stakeholder matrix that lists all relevant stakeholders and at least one relevant interest at stake for each stakeholder<br/> • Answer identifies the specified number of conflicts between stakeholder interests/values (e.g., if the task is to identify 2 values conflicts, the answer identifies 2 values conflicts) |
+| **Approaching Expectations** | • If prompted to provide a complete chart, chart fails to identify relevant stakeholders OR fails to identify their relevant interests/values<br/> • Chart does not identify relevant interests<br/> • Identifies some, but fewer than specified number of conflicts between stakeholder interests/values (e.g., if the task is to identify 2 values conflicts, the answer identifies 1 values conflict) |
 <details>
     <summary>Examples</summary>
     <p>**Sample question**: A university has a cafeteria and collects information about students' dietary restrictions, which may be due to students' health requirements or strongly-held beliefs. Below is a stakeholder matrix:</p>
