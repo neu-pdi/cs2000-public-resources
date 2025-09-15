@@ -830,10 +830,10 @@ export default function OfficeHours() {
           <Text fontSize="sm" color="gray.600" mb={4}>
             These hours can be used for skill assessments, as described at{' '}
             <a
-              href="/skills/#assessablehours"
+              href="/skills#assessablehours"
               style={{ textDecoration: 'underline', color: '#7c3aed' }}
             >
-              /skills/#assessablehours
+              /skills#assessablehours
             </a>
           </Text>
         )}
