@@ -66,10 +66,13 @@ Load a table from a CSV file in your project. Use `default-options` for the opti
 
 Since CSVs read all data as strings, you probably want to include `sanitize` clauses as we do below to convert numeric columns to numbers. This will fail if any values aren't indeed numbers, in which case you need to do more sophisticated cleaning using `transform-column`.
 
+Be sure to **include data-source** at the top of the file, or else `num-sanitizer` will be unbound.
+
 Example:
 
 ```pyret
 include csv
+include data-source
 
 # From URL
 recipes = load-table:
