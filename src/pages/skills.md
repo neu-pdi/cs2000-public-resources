@@ -129,15 +129,13 @@ Access to data could be minimized by keeping the data encrypted [does not addres
     | **Approaching Expectations** | • If prompted to provide a complete chart, chart fails to identify relevant stakeholders OR fails to identify their relevant interests/values<br/> • Chart does not identify relevant interests<br/> • Identifies some, but fewer than specified number of conflicts between stakeholder interests/values (e.g., if the task is to identify 2 values conflicts, the answer identifies 1 values conflict) |
 <details>
     <summary>Examples</summary>
-    <p>**Sample question**: A university has a cafeteria and collects information about students' dietary restrictions, which may be due to students' health requirements or strongly-held beliefs. Below is a stakeholder matrix:
+    <p>**Sample question**: A university has a cafeteria and collects information about students' dietary restrictions, which may be due to students' health requirements or strongly-held beliefs. Below is a stakeholder matrix:</p>
 
 | Stakeholder| Interest/Value |
 | University budget managers |  |
 | Vegetarians |  |
 | |  |
-FIRST: Complete the stakeholder matrix for cafeteria system design by identifying, and filling in, interests/values that correspond to the listed stakeholders , and, in the third case, by supplying both the stakeholder and the listed interest/value.
-
-SECOND: Explain in one or two sentences which (if any) stakeholder interests/values can come into conflict.
+<p>FIRST: Complete the stakeholder matrix for cafeteria system design by identifying, and filling in, interests/values that correspond to the listed stakeholders, and, in the third case, by supplying both the stakeholder and the listed interest/value. SECOND: Explain in one or two sentences which (if any) stakeholder interests/values can come into conflict.</p>
 
 <p>**Answer meeting expectations**</p>
 
@@ -155,7 +153,7 @@ SECOND: Explain in one or two sentences which (if any) stakeholder interests/val
 | Vegetarians | having soda |
 |  | |
 
-<p>The interests of budget managers and vegetarians could come into conflict if they like the tastes of different types of soda.
+<p>The interests of budget managers and vegetarians could come into conflict if they like the tastes of different types of soda.</p>
 
 </details>
 
