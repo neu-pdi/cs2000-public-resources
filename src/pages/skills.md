@@ -18,7 +18,7 @@ assessments, see below), with the best result being used for their grade.
 1. <a id="(1)" href="#(1)">Design basic functions (Pyret)</a>
    |  |  |
    | -- | -- |
-   | **Meets Expectations** | • Correct type annotation<br/>• Docstring that describes behavior, doesn't repeat type annotation.<br/>• A few (2+) correct, meaningfully different tests<br/>• Well-formatted implementation -- clear naming for function arguments, no unnecessary if expressions, etc. |
+   | **Meets Expectations** | • Correct type annotation<br/>• Docstring that describes behavior, doesn't repeat type annotation.<br/>• A few (2+) correct, meaningfully different tests<br/>• Well-formatted implementation:<br/>    • may include numbers, strings, `if` (NOT images)<br/>    • minor typos are okay |
    | **Approaching Expectations** | • Missing docstring, or long, includes redundant type information, etc.<br/>• 1+ correct tests.<br/>• Correct implementation. |
 
 <details>
