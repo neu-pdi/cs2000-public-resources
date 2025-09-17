@@ -101,12 +101,12 @@ end
    <p>Here is an analysis of the flow of information in the context:</p>
 
 |  |  |
-|----------|---------|
+| -- | -- |
 | What type of information is shared? | Personal information, including legal name, photo, phone number, address, and dietary restrictions |
 | Who is/are the subject of the information? | The student |
 | Who is the sender of the information? | The student and the university |
 | Who are the potential recipients of the information? | Food service workers<br/>intended: meal planners/preparers and managers<br/>unintended: ??? |
-| What principles govern the collection and transmission of this information? | Students provide their dietary restrictions freely while logged in with their student id, although they do not have a choice about what linked information is accessed  |
+| What principles govern the collection and transmission of this information? | Students provide their dietary restrictions freely while logged in with their student id, although they do not have a choice about what linked information is accessed |
 
 <p>The principle of data minimization suggests that we limit the collection, storage, and transmission of personal data to only the data absolutely necessary to perform the task.</p>
 
@@ -129,35 +129,34 @@ end
     <p>**Sample question**: A university has a cafeteria and collects information about students' dietary restrictions, which may be due to students' health requirements or strongly-held beliefs. Below is a stakeholder matrix:</p>
 
 | Stakeholder | Interest/Value |
-|-------------|----------------|
-| University budget managers | |
-| Vegetarians | |
-| | |
+| -- | -- |
+| University budget managers |  |
+| Vegetarians |  |
+|  |  |
 
 <p>FIRST: Complete the stakeholder matrix for cafeteria system design by identifying, and filling in, interests/values that correspond to the listed stakeholders, and, in the third case, by supplying both the stakeholder and the listed interest/value. SECOND: Explain in one or two sentences which (if any) stakeholder interests/values can come into conflict.</p>
 
 <p>**Answer meeting expectations**</p>
 
 | Stakeholder | Interest/Value |
-|-------------|----------------|
+| -- | -- |
 | University budget managers | minimizing food waste |
 | Vegetarians | having healthy and tasty food options |
-| Meat eaters | having non-vegetarian food options  |
+| Meat eaters | having non-vegetarian food options |
 
 <p>The interests of vegetarians and meat eaters could come into conflict because each group wants multiple options of their preferred food type, but the cafeteria can only offer a limited number of options.</p>
 
 <p>**Answer approaching expectations** (incomplete chart, incorrect conflict)</p>
 
 | Stakeholder | Interest/Value |
-|-------------|----------------|
+| -- | -- |
 | University budget managers | minimizing food waste |
 | Vegetarians | having soda |
-|  | |
+|  |  |
 
 <p>The interests of budget managers and vegetarians could come into conflict if they like the tastes of different types of soda.</p>
 
 </details>
-
 
 ## Skill Introduction
 

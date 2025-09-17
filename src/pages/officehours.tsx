@@ -1066,7 +1066,7 @@ export default function OfficeHours() {
                   _dark={{ color: 'blue.300' }}
                 >
                   <a
-                    href="https://pdi.run/cs2000-discord"
+                    href="https://discord.gg/HsKXgZXXKH"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
