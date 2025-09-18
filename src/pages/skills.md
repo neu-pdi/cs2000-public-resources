@@ -23,25 +23,25 @@ assessments, see below), with the best result being used for their grade.
 
 <details>
     <summary>Examples</summary>
-    <p>Sample question: Design a function <code>square</code> that, given a number, returns the result of multiplying the number by itself.</p>
+    <p>Sample question: Design a function <code>nm-square</code> that, given a number, returns the result of multiplying the number by itself.</p>
     <p>Answer meeting expectations:</p>
 ```pyret
-fun square(n :: Number) -> Number:
+fun nm-square(n :: Number) -> Number:
   doc: "Multiplies the input by itself"
   n * n
 where:
-  square(-1) is 1
-  square(0) is 0
-  square(2) is 4
+  nm-square(-1) is 1
+  nm-square(0) is 0
+  nm-square(2) is 4
 end
 ```
     <p>Answer approaching expectations (docstring, insufficient tests)</p>
 ```pyret
-fun square(n :: Number) -> Number:
+fun nm-square(n :: Number) -> Number:
   doc: "Takes a number as an argument and returns a number. The result is what you get when multiplying the first number by itself."
   n * n
 where:
-  square(1) is 1
+  nm-square(1) is 1
 end
 ```
 </details> 
