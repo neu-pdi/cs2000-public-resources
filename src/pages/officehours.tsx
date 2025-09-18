@@ -297,8 +297,34 @@ export default function OfficeHours() {
             room = currentDay.rooms[0].room;
           } else {
             // Multiple rooms - determine which one based on time
-            const timeHour = parseInt(firstCol.match(/(\d+)/)?.[1] || '0');
-            const isPM = firstCol.toLowerCase().includes('pm');
+            // Parse the start time more carefully to handle formats like "11am-12pm"
+            const timeMatch = firstCol.match(/^(\d+)(am|pm)?/i);
+            const timeHour = parseInt(timeMatch?.[1] || '0');
+            const startPeriod = timeMatch?.[2]?.toLowerCase();
+
+            // If no period specified for start time, infer from context
+            let isPM = false;
+            if (startPeriod) {
+              isPM = startPeriod === 'pm';
+            } else {
+              // If no start period, infer based on the end time
+              // For formats like "12-1pm", the end time suggests start time period
+              const endTimeMatch = firstCol.match(/-(\d+)(am|pm)/i);
+              if (endTimeMatch) {
+                const endPeriod = endTimeMatch[2].toLowerCase();
+                // If end is PM, start is likely PM too for consecutive hours
+                // Exception: times crossing noon like "11-12pm" would be "11am-12pm"
+                if (endPeriod === 'pm') {
+                  const endHour = parseInt(endTimeMatch[1]);
+                  // If it's a consecutive hour range, start should be PM too
+                  // Exception: 11-12pm should be 11am-12pm (crossing noon)
+                  isPM = !(timeHour === 11 && endHour === 12);
+                } else {
+                  isPM = false; // End is AM, so start is AM
+                }
+              }
+            }
+
             const hour24 =
               isPM && timeHour !== 12
                 ? timeHour + 12
