@@ -50,6 +50,46 @@ end
     | -- | -- |
     | **Meets Expectations** | • Function designed has signature, docstring, and at least one test<br/>• Function uses correct table function (filter-with, build-column, etc)<br/>• Row helper does what is expected, whether defined with `lam` or named |
     | **Approaching Expectations** | • Function uses correct table function (filter-with, build-column, etc)<br/>• Row helper accesses fields from row, but not in a way that solves the problem |
+<details>
+    <summary>Examples</summary>
+    <p>Sample question: Design a function <code>find-scholars</code> that takes a table of students with "name" and "campus" columns and returns a new table containing only the students whose campus is **not** "Boston".</p>
+    <p>Answer meeting expectations:</p>
+```pyret
+
+fun find-scholars(t :: Table) -> Table:
+  doc: "Find students not in Boston"
+  
+  fun is-scholar(r :: Row) -> Boolean:
+    r["campus"] <> "Boston"
+  end
+  
+  filter-with(t, is-scholar)
+where:
+  students = table: name, campus
+    row: "Ajay", "Oakland"
+    row: "Jason", "Boston"
+    row: "Lauren", "London"
+  end
+  
+  result = table: name, campus
+    row: "Ajay", "Oakland"
+    row: "Lauren", "London"
+  end
+  
+  find-scholars(students) is result
+end
+```
+    <p>Answer approaching expectations (missing docstring, incorrect row helper, no tests)</p>
+```pyret
+fun find-scholars(t :: Table) -> Table:
+  fun is-scholar(r :: Row) -> Boolean:
+    r["campus"] < "Boston"
+  end
+  
+  filter-with(t, is-scholar)
+end
+```
+</details> 
 03. <a id="(3)" href="#(3)">Iteration: Lists (Pyret)</a>
     |  |  |
     | -- | -- |
