@@ -57,28 +57,29 @@ end
 ```pyret
 
 fun find-scholars(t :: Table) -> Table:
-  doc: "Find students not in Boston"
-  
-  fun is-scholar(r :: Row) -> Boolean:
-    r["campus"] <> "Boston"
-  end
-  
-  filter-with(t, is-scholar)
-where:
-  students = table: name, campus
-    row: "Ajay", "Oakland"
-    row: "Jason", "Boston"
-    row: "Lauren", "London"
-  end
-  
-  result = table: name, campus
-    row: "Ajay", "Oakland"
-    row: "Lauren", "London"
-  end
-  
-  find-scholars(students) is result
+doc: "Find students not in Boston"
+
+fun is-scholar(r :: Row) -> Boolean:
+r["campus"] \<> "Boston"
 end
-```
+
+filter-with(t, is-scholar)
+where:
+students = table: name, campus
+row: "Ajay", "Oakland"
+row: "Jason", "Boston"
+row: "Lauren", "London"
+end
+
+result = table: name, campus
+row: "Ajay", "Oakland"
+row: "Lauren", "London"
+end
+
+find-scholars(students) is result
+end
+
+````
     <p>Answer approaching expectations (missing docstring, incorrect row helper, no tests)</p>
 ```pyret
 fun find-scholars(t :: Table) -> Table:
@@ -88,7 +89,8 @@ fun find-scholars(t :: Table) -> Table:
   
   filter-with(t, is-scholar)
 end
-```
+````
+
 </details> 
 03. <a id="(3)" href="#(3)">Iteration: Lists (Pyret)</a>
     |  |  |
