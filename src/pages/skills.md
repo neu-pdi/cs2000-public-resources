@@ -139,13 +139,13 @@ end
     | **Approaching Expectations** | • Chart is complete but at least one entry is not correct<br/> • Attempts to identify named privacy issue but mis-identifies, or explanation is unclear<br/> • Proposed mitigation of known privacy issue would not address the privacy threat |
 <details>
     <summary>Examples</summary>
-    <p>**Sample question**: You are designing a a system for a campus food service. Students can specify their dietary restrictions through a website that requires their student id, which is used to creating a record containing other personal information. The resulting record can be accessed by any food service employee (full-time staff and student workers) and is searchable by all fields.</p>
+    <p>**Sample question**: You are designing a system for a campus food service. Students can specify their dietary restrictions through a website that requires their student id, which is used to create a record containing other personal information. The resulting record can be accessed by any food service employee (full-time staff and student workers) and is searchable by all fields.</p>
    <p>Here is an analysis of the flow of information in the context:</p>
 
 |  |  |
 | -- | -- |
 | What type of information is shared? | Personal information, including legal name, photo, phone number, address, and dietary restrictions |
-| Who is/are the subject of the information? | The student |
+| Who is/are the subject(s) of the information? | The student |
 | Who is the sender of the information? | The student and the university |
 | Who are the potential recipients of the information? | Food service workers<br/>intended: meal planners/preparers and managers<br/>unintended: ??? |
 | What principles govern the collection and transmission of this information? | Students provide their dietary restrictions freely while logged in with their student id, although they do not have a choice about what linked information is accessed |
