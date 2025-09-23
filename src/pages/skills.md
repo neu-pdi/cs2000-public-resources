@@ -25,6 +25,7 @@ assessments, see below), with the best result being used for their grade.
     <summary>Examples</summary>
     <p>Sample question: Design a function <code>nm-square</code> that, given a number, returns the result of multiplying the number by itself.</p>
     <p>Answer meeting expectations:</p>
+
 ```pyret
 fun nm-square(n :: Number) -> Number:
   doc: "Multiplies the input by itself"
@@ -35,7 +36,11 @@ where:
   nm-square(2) is 4
 end
 ```
-    <p>Answer approaching expectations (docstring, insufficient tests)</p>
+
+```
+<p>Answer approaching expectations (docstring, insufficient tests)</p>
+```
+
 ```pyret
 fun nm-square(n :: Number) -> Number:
   doc: "Takes a number as an argument and returns a number. The result is what you get when multiplying the first number by itself."
@@ -44,6 +49,7 @@ where:
   nm-square(1) is 1
 end
 ```
+
 </details> 
 02. <a id="(2)" href="#(2)">Construct / Transform Tables (Pyret)</a>
     |  |  |
@@ -54,33 +60,36 @@ end
     <summary>Examples</summary>
     <p>Sample question: Design a function <code>find-scholars</code> that takes a table of students with "name" and "campus" columns and returns a new table containing only the students whose campus is **not** "Boston".</p>
     <p>Answer meeting expectations:</p>
+
 ```pyret
-
 fun find-scholars(t :: Table) -> Table:
-doc: "Find students not in Boston"
+  doc: "Find students not in Boston"
 
-fun is-scholar(r :: Row) -> Boolean:
-r["campus"] \<> "Boston"
-end
+  fun is-scholar(r :: Row) -> Boolean:
+    r["campus"] <> "Boston"
+  end
 
-filter-with(t, is-scholar)
+  filter-with(t, is-scholar)
 where:
-students = table: name, campus
-row: "Ajay", "Oakland"
-row: "Jason", "Boston"
-row: "Lauren", "London"
-end
+  students = table: name, campus
+    row: "Ajay", "Oakland"
+    row: "Jason", "Boston"
+    row: "Lauren", "London"
+  end
 
-result = table: name, campus
-row: "Ajay", "Oakland"
-row: "Lauren", "London"
-end
+  result = table: name, campus
+    row: "Ajay", "Oakland"
+    row: "Lauren", "London"
+  end
 
-find-scholars(students) is result
+  find-scholars(students) is result
 end
+```
 
-````
-    <p>Answer approaching expectations (missing docstring, incorrect row helper, no tests)</p>
+```
+<p>Answer approaching expectations (missing docstring, incorrect row helper, no tests)</p>
+```
+
 ```pyret
 fun find-scholars(t :: Table) -> Table:
   fun is-scholar(r :: Row) -> Boolean:
@@ -89,7 +98,7 @@ fun find-scholars(t :: Table) -> Table:
   
   filter-with(t, is-scholar)
 end
-````
+```
 
 </details> 
 03. <a id="(3)" href="#(3)">Iteration: Lists (Pyret)</a>
