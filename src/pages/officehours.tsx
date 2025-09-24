@@ -242,18 +242,35 @@ export default function OfficeHours() {
           )?.[0] || '';
         const rooms: { timeRange: string; room: string }[] = [];
 
-        // Handle complex room schedules like "Thursday 11-4pm East Village 102 5-10PM Cargill 097"
-        if (firstCol.includes('11-4pm') && firstCol.includes('5-10')) {
-          // Special case for Thursday with multiple rooms
-          rooms.push(
-            { timeRange: '11am-4pm', room: 'East Village 102' },
-            { timeRange: '5pm-10pm', room: 'Cargill 097' },
+        // Parse room information from the day header
+        const afterDay = firstCol.replace(dayName, '').trim();
+
+        if (afterDay.includes(';')) {
+          // Multiple room ranges separated by semicolons
+          // e.g., "11-4pm East Village 102; 5-10PM Richards 155"
+          const segments = afterDay.split(';');
+          for (const segment of segments) {
+            const trimmed = segment.trim();
+            // Match "time range + room" pattern
+            const match = trimmed.match(
+              /^(\d+(?::\d+)?(?:am|pm)?-\d+(?::\d+)?(?:am|pm)?)\s+(.+)$/i,
+            );
+            if (match) {
+              const [, timeRange, room] = match;
+              rooms.push({ timeRange: timeRange.trim(), room: room.trim() });
+            }
+          }
+        } else if (afterDay) {
+          // Single room - could be with time range or just room name
+          const timeRoomMatch = afterDay.match(
+            /^(\d+(?::\d+)?(?:am|pm)?-\d+(?::\d+)?(?:am|pm)?)\s+(.+)$/i,
           );
-        } else {
-          // Simple case like "Wednesday Mugar 201"
-          const roomMatch = firstCol.replace(dayName, '').trim();
-          if (roomMatch) {
-            rooms.push({ timeRange: 'all day', room: roomMatch });
+          if (timeRoomMatch) {
+            const [, timeRange, room] = timeRoomMatch;
+            rooms.push({ timeRange: timeRange.trim(), room: room.trim() });
+          } else {
+            // Just a room name like "Mugar 201"
+            rooms.push({ timeRange: 'all day', room: afterDay });
           }
         }
 
@@ -333,15 +350,20 @@ export default function OfficeHours() {
                   : timeHour;
 
             if (hour24 >= 11 && hour24 < 17) {
-              // 11am-4pm
+              // 11am-4pm range
               room =
-                currentDay.rooms.find((r) => r.timeRange.includes('11am-4pm'))
-                  ?.room || '';
+                currentDay.rooms.find(
+                  (r) =>
+                    r.timeRange.includes('11') && r.timeRange.includes('4'),
+                )?.room || '';
             } else if (hour24 >= 17) {
-              // 5pm+
+              // 5pm+ range
               room =
-                currentDay.rooms.find((r) => r.timeRange.includes('5pm-10pm'))
-                  ?.room || '';
+                currentDay.rooms.find(
+                  (r) =>
+                    r.timeRange.includes('5') &&
+                    (r.timeRange.includes('10') || r.timeRange.includes('PM')),
+                )?.room || '';
             }
           }
         }
