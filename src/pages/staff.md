@@ -190,7 +190,7 @@ import styles from './index.module.css';
   <p>katiyar.ac@northeastern.edu</p>
 </div>
 <div className={styles.staffCard}>
-  <img src={require('@site/static/img/staff/alan-tai.jpg').default} alt="Alan Tai" className={styles.staffPhoto} />
+  <img src={require('@site/static/img/staff/alan-tai.png').default} alt="Alan Tai" className={styles.staffPhoto} />
   <h3>Alan Tai</h3>
   <p>tai.a@northeastern.edu</p>
 </div>
