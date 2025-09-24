@@ -138,6 +138,11 @@ const config: Config = {
           label: 'Office Hours / Recitations',
         },
         {
+          position: 'left',
+          to: '/staff/',
+          label: 'Staff',
+        },
+        {
           type: 'docSidebar',
           sidebarId: 'daysSidebar',
           position: 'left',
