@@ -108,7 +108,7 @@ end
     | **Approaching Expectations** | • Uses `for each`, drawing elements from the list<br/>• Either: Mutates within the loop, but in such a way that doesn't produce the correct accumulated answer, or doesn't use the final result properly at the end of the loop |
 <details>
     <summary>Examples</summary>
-    <p>Design a function <code>list-of-squares</code></code> that takes a list of numbers, and returns a list where each element is the square of N where N is the element from the list. You must use for each, rather than a built in list function or recursion.</p>
+    <p>Design a function <code>list-of-squares</code> that takes a list of numbers, and returns a list where each element is the square of N where N is the element from the list. You must use for each, rather than a built in list function or recursion.</p>
     <p>Answer meeting expectations:</p>
 
 ```pyret
