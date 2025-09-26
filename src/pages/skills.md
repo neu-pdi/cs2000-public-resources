@@ -141,7 +141,7 @@ fun list-of-squares(numbers :: List<Number>) -> List<String> block:
     result := result + [list: n * n]
   end
   
-  result
+  numbers
 where:
   list-of-squares([list: ]) is [list: ]
   list-of-squares([list: 5, 6]) is [list: 25, 36]
