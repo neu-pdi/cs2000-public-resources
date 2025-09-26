@@ -38,7 +38,7 @@ end
 ```
 
 ```
-<p>Answer approaching expectations (docstring, insufficient tests)</p>
+<p>Answer approaching expectations (docstring, insufficient tests):</p>
 ```
 
 ```pyret
@@ -87,7 +87,7 @@ end
 ```
 
 ```
-<p>Answer approaching expectations (missing docstring, incorrect row helper, no tests)</p>
+<p>Answer approaching expectations (missing docstring, incorrect row helper, no tests):</p>
 ```
 
 ```pyret
@@ -106,6 +106,49 @@ end
     | -- | -- |
     | **Meets Expectations** | • Uses `for each` properly, drawing elements from the list<br/>• Mutates a single variable within the loop to correctly accumulate the result<br/>• Returns the final result after the loop |
     | **Approaching Expectations** | • Uses `for each`, drawing elements from the list<br/>• Either: Mutates within the loop, but in such a way that doesn't produce the correct accumulated answer, or doesn't use the final result properly at the end of the loop |
+<details>
+    <summary>Examples</summary>
+    <p>Design a function <code>list-of-squares</code></cond> that takes a list of numbers, and returns a list where each element is the square of N where N is the element from the list. You must use for each, rather than a built in list function or recursion.</p>
+    <p>Answer meeting expectations:</p>
+
+```pyret
+fun list-of-squares(numbers :: List<Number>) -> List<String> block:
+  doc: "produce the squares of the numbers in the input"
+
+  var result = [list: ]
+  
+  for each(n from numbers):
+    result := result + [list: n * n]
+  end
+  
+  result
+where:
+  list-of-squares([list: ]) is [list: ]
+  list-of-squares([list: 5, 6]) is [list: 25, 36]
+  list-of-squares([list: -1, 0, 1]) is [list: 1, 0, 1]
+end
+```
+
+<p>Answer approaching expectations (doesn't use the final result properly):</p>
+
+```pyret
+fun list-of-squares(numbers :: List<Number>) -> List<String> block:
+  doc: "produce the squares of the numbers in the input"
+
+  var result = [list: ]
+  
+  for each(n from numbers):
+    result := result + [list: n * n]
+  end
+  
+  result
+where:
+  list-of-squares([list: ]) is [list: ]
+  list-of-squares([list: 5, 6]) is [list: 25, 36]
+  list-of-squares([list: -1, 0, 1]) is [list: 1, 0, 1]
+end
+```
+</details> 
 04. <a id="(4)" href="#(4)">Structured & Conditional Data (Pyret)</a>
     |  |  |
     | -- | -- |
