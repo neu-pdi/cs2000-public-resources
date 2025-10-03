@@ -148,6 +148,7 @@ where:
   list-of-squares([list: -1, 0, 1]) is [list: 1, 0, 1]
 end
 ```
+
 </details> 
 04. <a id="(4)" href="#(4)">Structured & Conditional Data (Pyret)</a>
     |  |  |

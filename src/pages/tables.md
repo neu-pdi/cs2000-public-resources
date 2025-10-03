@@ -116,6 +116,7 @@ ______________________________________________________________________
 ## Creating and Manipulating Tables
 
 ### filter-with
+
 **filter-with**(t :: Table, keep :: (Row -> Boolean)) -> Table\
 Given a table and a predicate on rows, returns a table with only the rows for which the predicate returns true.
 
@@ -127,6 +128,7 @@ high-scorers = filter-with(students, is-high-score)
 ```
 
 ### order-by
+
 **order-by**(t :: Table, colname :: String, sort-up :: Boolean) -> Table\
 Given a table and the name of a column in that table, return a table with the same rows but ordered based on the named column. If sort-up is true, the table will be sorted in ascending order, otherwise it will be in descending order.
 
@@ -139,6 +141,7 @@ alphabetical = order-by(students, "name", true)
 ```
 
 ### build-column
+
 **build-column**(t :: Table, colname :: String, builder :: (Row -> A)) -> Table\
 Consumes an existing table, and produces a new table containing an additional column with the given colname, using builder to produce the values for that column, once for each row.\
 Here, A is the type of the new column, determined by the type of value the builder function returns.
@@ -151,6 +154,7 @@ orders-with-total = build-column(orders, "total", calc-total)
 ```
 
 ### add-row
+
 **add-row**(t :: Table, r :: Row) -> Table\
 Consumes a table and a row to add, and produces a new table with the rows from the original table followed by the given row. Note that it is easiest to create a single row by using the `.row()` method on a table.
 
@@ -160,6 +164,7 @@ updated-students = add-row(students, new-student)
 ```
 
 ### add-col
+
 **add-col**(t :: Table, colname :: String, c-vals :: List\<Any>) -> Table\
 Consumes a column name and a list of values, and produces a new table with the columns of the original followed by a column with the given name and values. Note that the length of _c-vals_ must equal the length of the table.
 
@@ -169,6 +174,7 @@ students-with-pf = add-col(students, "pass-fail", pass-fail-list)
 ```
 
 ### select-columns
+
 **select-columns**(t :: Table, colnames :: List\<String>) -> Table\
 Consumes a table and a list of column names, and produces a new table containing only those columns. The order of the columns is as given in the list.
 
@@ -178,6 +184,7 @@ basic-info = select-columns(students, [list: "name", "score"])
 ```
 
 ### transform-column
+
 **transform-column**(t :: Table, colname :: String, f :: (A -> B)) -> Table\
 Consumes a table, a column name and a transformation function, and produces a new table where the given function has been applied to all values in the named column. The values in the original column are of type _A_ (the input to the function) and values in the new column have type _B_ (the output of the function).
 
@@ -189,6 +196,7 @@ bonus-scores = transform-column(students, "score", add-bonus)
 ```
 
 ### create-table-with-col
+
 **create-table-with-col**(colname :: String, colvals :: List) -> Table\
 Creates a new table with a single column having the given name and values.
 
@@ -204,6 +212,7 @@ ______________________________________________________________________
 Table methods are how we extract data from a table. Methods are similar in spirit to functions, but their notation (_table.operation(args)_) is more suggestive of going inside a table to extract data.
 
 ### .row-n
+
 **t.row-n**(n :: Number) -> Row\
 For a table _t_, returns the \_n_th row, where row numbers start at 0
 
@@ -213,6 +222,7 @@ third-student = students.row-n(2)
 ```
 
 ### .length
+
 **t.length()** -> Number\
 For a table _t_, returns the number of rows in the table
 
@@ -221,6 +231,7 @@ num-students = students.length()
 ```
 
 ### .get-column
+
 **t.get-column**(colname :: String) -> List\<A>\
 Returns a list of the values in the named column in table _t_. _A_ is the type of the data in the named column
 
@@ -230,6 +241,7 @@ all-names = students.get-column("name")
 ```
 
 ### .drop
+
 **t.drop**(colname :: String) -> Table\
 Returns a table that is the same as table _t_, except with the column whose name is _colname_ removed.
 
@@ -238,6 +250,7 @@ students-no-points = students.drop("points")
 ```
 
 ### .empty
+
 **t.empty()** -> Table\
 Returns a new table with the same columns as table _t_, but with all rows removed.
 
@@ -254,6 +267,7 @@ end
 ```
 
 ### Getting a Value
+
 **Getting a value**: The syntax `my-row[col-name]` accesses a row at a particular column, resulting in a particular value. e.g. `my-row["age"]` → `20`.
 
 ```pyret
@@ -267,6 +281,7 @@ ______________________________________________________________________
 ## Function-Based Extraction (Alternative to Methods)
 
 ### get-row
+
 **get-row**(t :: Table, index :: Number) -> Row\
 Alternative to `t.row-n(index)`. Returns the \_index_th row, where row numbers start at 0.
 
@@ -280,6 +295,7 @@ ______________________________________________________________________
 ## Summarizing Columns
 
 ### sum
+
 **sum**(t :: Table, colname :: String) -> Number\
 Takes a table and the name of a column in that table. Returns the sum of values in the column. Note that the column must contain numbers.
 
@@ -288,6 +304,7 @@ total-points = sum(students, "points")
 ```
 
 ### mean
+
 **mean**(t :: Table, colname :: String) -> Number\
 Takes a table and the name of a column in that table. Returns the mean (average value) of values in the column. Note that the column must contain numbers.
 
@@ -297,6 +314,7 @@ avg-points = mean(students, "points")
 ```
 
 ### median
+
 **median**(t :: Table, colname :: String) -> Number\
 Takes a table and the name of a column in that table. Returns the median (middle value) of values in the column. Note that the column must contain numbers.
 
@@ -305,6 +323,7 @@ median-score = median(students, "score")
 ```
 
 ### modes
+
 **modes**(t :: Table, colname :: String) -> List\<A>\
 Takes a table and the name of a column in that table. Returns the modes (most common values) in the column, where _A_ is the type of data in the column.
 
@@ -313,6 +332,7 @@ most-common-grades = modes(students, "grade")
 ```
 
 ### stdev
+
 **stdev**(t :: Table, colname :: String) -> Number\
 Takes a table and the name of a column in that table. Returns the standard deviation (a measure of how spread out values are) of the values in the column. Note that the column must contain numbers.
 
@@ -325,6 +345,7 @@ ______________________________________________________________________
 ## Grouping and Counting
 
 ### group
+
 **group**(tab :: Table, col :: String) -> Table\
 Groups the table by unique values in the named column, producing a table with columns "value" and "subtable" where each subtable contains rows with that value.
 
@@ -333,6 +354,7 @@ grouped-by-grade = group(students, "grade")
 ```
 
 ### count
+
 **count**(tab :: Table, col :: String) -> Table\
 Produces a table that summarizes how many rows have each value in the named column. Returns a table with columns "value" and "count".
 
@@ -341,6 +363,7 @@ grade-counts = count(students, "grade")
 ```
 
 ### count-many
+
 **count-many**(tab :: Table, cols :: List\<String>) -> Table\
 Like count, but works on multiple columns. Returns a table with columns "col" and "subtable" containing count tables for each column.
 
@@ -353,6 +376,7 @@ ______________________________________________________________________
 ## Plots and Charts
 
 ### histogram
+
 **histogram**(t :: Table, colname :: String, bin-width :: Number) -> Image\
 Display a histogram of values in the named column, which must contain numeric data. Bin-width indicates the width of bins in the histogram.
 
@@ -361,6 +385,7 @@ score-histogram = histogram(students, "score", 10)
 ```
 
 ### scatter-plot
+
 **scatter-plot**(t :: Table, xs :: String, ys :: String) -> Image\
 Display a scatter plot from the given table. _xs_ names the column to use for x values, and _ys_ names the column to use for y values. Both columns must contain numeric data.
 
@@ -369,6 +394,7 @@ score-points-plot = scatter-plot(students, "score", "points")
 ```
 
 ### labeled-scatter-plot
+
 **labeled-scatter-plot**(t :: Table, ls :: String, xs :: String, ys :: String) -> Image\
 Like scatter-plot, but with labels from the _ls_ column for each point.
 
@@ -377,6 +403,7 @@ labeled-plot = labeled-scatter-plot(students, "name", "score", "points")
 ```
 
 ### lr-plot
+
 **lr-plot**(t :: Table, xs :: String, ys :: String) -> Image\
 Like a call to scatter-plot with the same inputs. The difference is that a linear regression will be attempted on the elements of the plot, and a regression line will be drawn over the data.
 
@@ -385,6 +412,7 @@ regression-plot = lr-plot(students, "score", "points")
 ```
 
 ### labeled-lr-plot
+
 **labeled-lr-plot**(t :: Table, ls :: String, xs :: String, ys :: String) -> Image\
 Like lr-plot, but with labels from the _ls_ column for each point.
 
@@ -393,6 +421,7 @@ labeled-regression = labeled-lr-plot(students, "name", "score", "points")
 ```
 
 ### box-plot
+
 **box-plot**(t :: Table, vs :: String) -> Image\
 Produces a box plot of the values in the column named _vs_ in the table. A box plot shows the minimum, maximum, and median values of a column, as well as the first (lowest) and third quartiles of the dataset; this is helpful for seeing the variation in a dataset.
 
@@ -401,6 +430,7 @@ score-distribution = box-plot(students, "score")
 ```
 
 ### freq-bar-chart
+
 **freq-bar-chart**(t :: Table, vs :: String) -> Image\
 Display a frequency bar-chart from the given table. There is one bar for each unique value of _vs_ (showing the number of occurrences of that value).
 
@@ -409,6 +439,7 @@ grade-chart = freq-bar-chart(students, "grade")
 ```
 
 ### function-plot
+
 **function-plot**(f :: (Number -> Number)) -> Image\
 Displays a plot of the given function.
 
