@@ -18,8 +18,8 @@ import styles from './index.module.css';
   <p>espertus@northeastern.edu</p>
   <div className={styles.officeHours}>
     <strong>Office Hours:</strong><br/>
-    Thursday 2-4 PM in CPM 200<br/>
-    <a href="https://calendly.com/espertusnu/new-meeting">By appointment</a>
+    Thu 2-4 PM in CPM 200<br/>
+    <a href="https://calendly.com/espertusnu/new-meeting" target="_blank" rel="noopener noreferrer">Make an Appointment</a>
   </div>
 </div>
 
@@ -29,7 +29,7 @@ import styles from './index.module.css';
   <p>a.monge@northeastern.edu</p>
   <div className={styles.officeHours}>
     <strong>Office Hours:</strong><br/>
-    MTW 3-4pm in CARN 201
+    Mon & Tue & Wed 3-4pm in CARN 201
   </div>
 </div>
 
@@ -40,7 +40,7 @@ import styles from './index.module.css';
   <div className={styles.officeHours}>
     <strong>Office Hours:</strong><br/>
     Wed & Thu 3-5pm in Meserve 309<br/>
-    <a href="http://tinyurl.com/office-hours-with-rush">Make an Appointment</a>
+    <a href="http://tinyurl.com/office-hours-with-rush" target="_blank" rel="noopener noreferrer">Make an Appointment</a>
   </div>
 </div>
 
