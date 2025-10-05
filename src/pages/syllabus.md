@@ -46,7 +46,7 @@ If you'd like to install VSCode on your computer earlier, you can use Pyret via 
 | -- | -- | -- | -- |
 | [Prof. Ellen Spertus](https://www.khoury.northeastern.edu/people/ellen-spertus/) | Oakland | CPM 201 | Thursday 2-4 PM in CPM 200 and [by appointment](https://calendly.com/espertusnu/new-meeting) |
 | [Prof. Alvaro Monge](https://www.khoury.northeastern.edu/people/alvaro-monge/) | Oakland | CARN 201 | MTW 3-4pm |
-| [Prof. Rush Sanghrajka](https://www.khoury.northeastern.edu/people/rush-sanghrajka/) | Boston | Meserve 309 | Wednesdays 4-6pm in Meserve 309 & Thursdays 4-5pm in Cahners 007 [Make an Appointment, Walk-ins Welcome](http://tinyurl.com/office-hours-with-rush) |
+| [Prof. Rush Sanghrajka](https://www.khoury.northeastern.edu/people/rush-sanghrajka/) | Boston | Meserve 309 | Wednesdays 4-6pm in Meserve 309 [Make an Appointment, Walk-ins Welcome](http://tinyurl.com/office-hours-with-rush) |
 | [Prof. Daniel Patterson](https://dbp.io) | Boston | Meserve 317 | Thursday 9:15-10:15am and Friday 1pm-3pm in Meserve 314 |
 | [Prof. John Park](#) | Boston | Meserve 318 | Mondays 4:30pm - 5:30pm drop-in w/signup |
 | [Prof. Jeongkyu Lee](https://www.khoury.northeastern.edu/people/jeongkyu-lee/) | NYC | Found Faculty Lounge | TBD |
