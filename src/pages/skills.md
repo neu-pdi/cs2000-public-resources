@@ -36,10 +36,7 @@ where:
   nm-square(2) is 4
 end
 ```
-
-```
 <p>Answer approaching expectations (docstring, insufficient tests):</p>
-```
 
 ```pyret
 fun nm-square(n :: Number) -> Number:
@@ -86,9 +83,7 @@ where:
 end
 ```
 
-```
 <p>Answer approaching expectations (missing docstring, incorrect row helper, no tests):</p>
-```
 
 ```pyret
 fun find-scholars(t :: Table) -> Table:
