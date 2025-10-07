@@ -107,7 +107,7 @@ end
     <p>Answer meeting expectations:</p>
 
 ```pyret
-fun list-of-squares(numbers :: List<Number>) -> List<String> block:
+fun list-of-squares(numbers :: List<Number>) -> List<Number> block:
   doc: "produce the squares of the numbers in the input"
 
   var result = [list: ]
@@ -127,7 +127,7 @@ end
 <p>Answer approaching expectations (doesn't use the final result properly):</p>
 
 ```pyret
-fun list-of-squares(numbers :: List<Number>) -> List<String> block:
+fun list-of-squares(numbers :: List<Number>) -> List<Number> block:
   doc: "produce the squares of the numbers in the input"
 
   var result = [list: ]
