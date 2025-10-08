@@ -88,7 +88,7 @@ end
 ```pyret
 fun find-scholars(t :: Table) -> Table:
   fun is-scholar(r :: Row) -> Boolean:
-    r["campus"] < "Boston"
+    r["campus"] <> "Boston"
   end
   
   filter-with(t, is-scholar)
