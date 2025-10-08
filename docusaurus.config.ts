@@ -129,13 +129,22 @@ const config: Config = {
         },
         {
           position: 'left',
-          to: '/schedule/',
-          label: 'Schedule',
-        },
-        {
-          position: 'left',
-          to: '/officehours/',
-          label: 'Office Hours / Recitations',
+          type: 'dropdown',
+          label: "Schedules",
+          items: [
+            {
+              to: '/schedule/',
+              label: 'Class Schedule',
+            },
+            {
+              to: '/officehours/',
+              label: 'Office Hours / Recitations',
+            },
+            {
+              to: '/skills/#skill-schedule',
+              label: 'Skills Schedule',
+            },
+          ]
         },
         {
           position: 'left',
@@ -143,10 +152,32 @@ const config: Config = {
           label: 'Staff',
         },
         {
-          type: 'docSidebar',
-          sidebarId: 'daysSidebar',
           position: 'left',
-          label: 'Days',
+          type: 'dropdown',
+          label: 'Notes',
+          items: [
+            {
+              type: 'docSidebar',
+              sidebarId: 'daysSidebar',
+              label: 'Days',
+            },
+            {
+              to: '/days/style/',
+              label: 'Style Guide',
+            },
+            {
+              to: '/tables/',
+              label: 'Tables',
+            },
+            {
+              label: 'Pyret Documentation',
+              href: 'https://pyret.org/docs/latest/index.html',
+            },
+            // {
+            //   label: 'Python Documentation',
+            //   href: 'https://docs.python.org/3/',
+            // },
+          ]
         },
         {
           type: 'doc',
@@ -173,11 +204,6 @@ const config: Config = {
           position: 'left',
           to: '/skills/',
           label: 'Skills',
-        },
-        {
-          position: 'left',
-          to: '/tables/',
-          label: 'Tables',
         },
       ],
     },
