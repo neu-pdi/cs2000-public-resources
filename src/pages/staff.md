@@ -262,7 +262,7 @@ import styles from './index.module.css';
 <div className={styles.staffCard}>
   <img src={require('@site/static/img/staff/giacomo-mantovanelli.jpg').default} alt="Giacomo Mantovanelli" className={styles.staffPhoto} />
   <h3>Giacomo Mantovanelli</h3>
-  <p></p>
+  <p>mantovanelli.g@northeastern.edu</p>
 </div>
 <div className={styles.staffCard}>
   <img src={require('@site/static/img/staff/ioanna-damianov.jpg').default} alt="Ioanna Damianov" className={styles.staffPhoto} />
@@ -297,7 +297,7 @@ import styles from './index.module.css';
 <div className={styles.staffCard}>
   <img src={require('@site/static/img/staff/madeleine-goncheroski.jpg').default} alt="Madeleine Goncheroski" className={styles.staffPhoto} />
   <h3>Madeleine Goncheroski</h3>
-  <p></p>
+  <p>goncheroski.m@northeastern.edu</p>
 </div>
 <div className={styles.staffCard}>
   <img src={require('@site/static/img/staff/ran-fukazawa.jpg').default} alt="Ran Fukazawa" className={styles.staffPhoto} />
