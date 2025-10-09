@@ -42,12 +42,15 @@ function currentLabNumber(): string {
   // Uses Friday as a start date, since the last lab of each week is hosted on Fridays
   const currWeek = currentWeekNumber(new Date(2025, 8, 5, 0, 0, 0));
 
-  // If the current week is less than or equal to 8, return the current week as is
-  if (currWeek <= 8) {
+  // If the current week is less than or equal to 6, return the current week as is
+  if (currWeek <= 6) {
     return currWeek.toString();
   } else if (currWeek <= 12) {
     // If the current week is between 9 and 12, offset to account for 1st skill bundle
     return (currWeek - 1).toString();
+  } else if (currWeek >= 10 && currWeek <= 12) {
+    // Accounts for holiday Friday-Tuesday swap
+    return '9';
   } else if (currWeek > 15) {
     // If the current week is greater than 15, reset to 1 since class is over
     return '1';
