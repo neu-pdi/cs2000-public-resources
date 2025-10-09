@@ -39,7 +39,7 @@ import styles from './index.module.css';
   <p>r.sanghrajka@northeastern.edu</p>
   <div className={styles.officeHours}>
     <strong>Office Hours:</strong><br/>
-    Wed & Thu 3-5pm in Meserve 309<br/>
+    Wed 4-6pm in Meserve 309<br/>
     <a href="http://tinyurl.com/office-hours-with-rush" target="_blank" rel="noopener noreferrer">Make an Appointment</a>
   </div>
 </div>
