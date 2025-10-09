@@ -108,7 +108,7 @@ This is captured by the following table -- the highest row that a student satisf
 <thead>
 <tr>
 <th></th>
-<th colspan="3" align="center">Skills Needed (out of 12 total)</th>
+<th colSpan="3" align="center">Skills Needed (out of 12 total)</th>
 <th></th>
 <th></th>
 </tr>

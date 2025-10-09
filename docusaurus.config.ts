@@ -141,6 +141,44 @@ function currentWeekNumber(startDate: Date): number {
   return currWeek;
 }
 
+/**
+ * Gets the items to show in the Notes dropdown based on today's date/what students may need to see
+ * 
+ * @returns The items to show in the Notes dropdown
+ * 
+ * @author Logan Gill
+ */
+function notesDropdownItems() {
+  var startingItems = [
+    {
+      type: 'doc',
+      docId: currentDayNumber(),
+      label: 'Days',
+    },
+    {
+      to: '/days/style/',
+      label: 'Style Guide',
+    },
+    {
+      to: '/tables/',
+      label: 'Tables',
+    },
+    {
+      label: 'Pyret Documentation',
+      href: 'https://pyret.org/docs/latest/index.html',
+    },
+  ]
+
+  if (new Date() >= new Date(2025, 10, 3)) {
+    startingItems.push({
+      label: 'Python Documentation',
+      href: 'https://docs.python.org/3/',
+    })
+  }
+
+  return startingItems;
+}
+
 const config: Config = {
   title: 'NEU CS 2000 Public Resources',
   tagline: 'Resources for CS 2000 (Public)',
@@ -182,6 +220,8 @@ const config: Config = {
       {
         docs: {
           path: 'days',
+          routeBasePath: 'days',
+          sidebarPath: './sidebars/days.ts',
           editUrl:
             'https://github.com/neu-pdi/cs2000-public-resources/edit/main/',
           remarkPlugins: [remarkMath, createVariableSubstitutionPlugin(dcicDomain)],
@@ -226,16 +266,6 @@ const config: Config = {
         path: 'recitation',
         sidebarPath: './sidebars/recitation.ts',
         routeBasePath: 'recitation',
-        remarkPlugins: [createVariableSubstitutionPlugin(dcicDomain)],
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'days',
-        path: 'days',
-        sidebarPath: './sidebars/days.ts',
-        routeBasePath: 'days',
         remarkPlugins: [createVariableSubstitutionPlugin(dcicDomain)],
       },
     ],
@@ -293,30 +323,7 @@ const config: Config = {
           position: 'left',
           type: 'dropdown',
           label: 'Notes',
-          items: [
-            {
-              type: 'doc',
-              docId: currentDayNumber(),
-              docsPluginId: 'days',
-              label: 'Days',
-            },
-            {
-              to: '/days/style/',
-              label: 'Style Guide',
-            },
-            {
-              to: '/tables/',
-              label: 'Tables',
-            },
-            {
-              label: 'Pyret Documentation',
-              href: 'https://pyret.org/docs/latest/index.html',
-            },
-            // {
-            //   label: 'Python Documentation',
-            //   href: 'https://docs.python.org/3/',
-            // },
-          ]
+          items: notesDropdownItems(),
         },
         {
           type: 'doc',
