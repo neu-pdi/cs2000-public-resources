@@ -85,30 +85,32 @@ export default function OfficeHours() {
   >([]);
   const [showOaklandTime, setShowOaklandTime] = useState(false);
 
+  const PROXY_URL = "http://metal.dbp.io:10321";
+
   // The Google Sheets CSV API URL for Online Office Hours
   const onlineOfficeHoursCsvUrl =
-    'https://docs.google.com/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Online+Office+Hours';
+    `${PROXY_URL}/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Online+Office+Hours`;
 
   const inPersonOfficeHoursCsvUrl =
-    'https://docs.google.com/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=In+Person+Office+Hours';
+    `${PROXY_URL}/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=In+Person+Office+Hours`;
 
   const oaklandInPersonOfficeHoursCsvUrl =
-    'https://docs.google.com/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Oakland+In+Person';
+    `${PROXY_URL}/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Oakland+In+Person`;
 
   const bostonRecitationsCsvUrl =
-    'https://docs.google.com/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Boston+Recitations';
+    `${PROXY_URL}/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Boston+Recitations`;
 
   const onlineRecitationsCsvUrl =
-    'https://docs.google.com/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Online+Recitations';
+    `${PROXY_URL}/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Online+Recitations`;
 
   const oaklandRecitationsCsvUrl =
-    'https://docs.google.com/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Oakland+Recitations';
+    `${PROXY_URL}/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Oakland+Recitations`;
 
   const bostonInstructorAssessmentsUrl =
-    'https://docs.google.com/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Boston+Instructor+Assessments';
+    `${PROXY_URL}/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Boston+Instructor+Assessments`;
 
   const oaklandInstructorAssessmentsUrl =
-    'https://docs.google.com/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Oakland+Instructor+Assessments';
+    `${PROXY_URL}/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Oakland+Instructor+Assessments`;
 
   const parseCsv = (csvText: string): string[][] => {
     const lines = csvText.trim().split('\n');
