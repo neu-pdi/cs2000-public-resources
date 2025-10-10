@@ -503,11 +503,13 @@ students-gpa = transform-column(students, "score", to-gpa-scale)
 ### Statistics and Analysis
 
 ```pyret
+# add at top
+import math as M
 # Basic statistics
 avg-score = mean(students, "score")
 total-points = sum(students, "points")
-highest-score = students.get-column("score").max()
-lowest-score = students.get-column("score").min()
+highest-score = M.max(students.get-column("score"))
+lowest-score = M.min(students.get-column("score"))
 
 # Get information about grades
 grade-distribution = count(students, "grade")
