@@ -85,7 +85,7 @@ export default function OfficeHours() {
   >([]);
   const [showOaklandTime, setShowOaklandTime] = useState(false);
 
-  const PROXY_URL = "http://metal.dbp.io:10321";
+  const PROXY_URL = "https://metal.dbp.io:10321";
 
   // The Google Sheets CSV API URL for Online Office Hours
   const onlineOfficeHoursCsvUrl =
