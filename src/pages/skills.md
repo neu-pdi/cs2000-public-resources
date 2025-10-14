@@ -105,6 +105,17 @@ end
 ```
 
 </details> 
+<details>
+ <summary>Practice Problem 1</summary>
+<p>Design a function `add-bad-year-column` that, given a table with columns for year, costs, and revenues,
+adds a new column called "bad-year" that contains true if the costs exceed revenues for that year,
+and false otherwise.</p>
+</details>
+<details>
+ <summary>Practice Problem 2</summary>
+<p>Design a function `find-drought-risks` that takes a table with "region", "rainfall-2023" and "rainfall-2024" columns
+and returns a new table containing only those regions where rainfall amounts decreased from 2023 to 2024.</p>
+</details>
 03. <a id="(3)" href="#(3)">Iteration: Lists (Pyret)</a>
     |  |  |
     | -- | -- |
@@ -216,7 +227,27 @@ end
 **Answer approaching expectations:** One unintended recipient would be students who don't work for the food service [incorrect] who could get private information [too vague]. Access to data could be minimized by keeping the data encrypted [does not address the privacy threat].
 
 </details>
+<details>
+<summary> Practice Problem</summary>
+<p>A city is considering hiring a company to run an automated license plate scanning service to cut down
+on parking violations (parking too long in a spot, no-parking zones, etc.). The company is planning to
+have vehicles constantly patrol the streets, transmitting video footage as well as location and time
+information back to their central server, where optical recognition systems will scan for license plate
+numbers, and record where and when cars were parked. The system would also automatically issue parking
+violation tickets when appropriate.
+The company plans to archive all of the data, including the raw video footage,
+in case people try to contest the ticket. All recorded data is also available to the Department of Motor Vehicles.</p>
 
+|  |  |
+|----------|---------|
+| What type of information is shared? |  Vehicle license plate numbers, location and timestamp, video footage |
+| Who is/are the subject of the information? | Vehicles on public roadways, and their owners |
+| Who is the sender of the information? | The vehicle scanning services company |
+| Who are the potential recipients of the information? | Intended: motor vehicle department, law enforcement<br>Unintended: **???** |
+| What principles govern the collection and transmission of this information? | Drivers implicitly consent by using public roadways, but may not be aware that their vehicle is being scanned. |
+
+<p>Please **list TWO unintended recipients**, and also **how access to the collected and processed data might be designed to minimize transmission to unexpected recipients?**</p>
+</details>
 
 12. <a id="(12)" href="#(12)">Identifying Stakeholders in Problem Formulation</a>
 
