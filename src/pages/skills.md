@@ -243,7 +243,7 @@ in case people try to contest the ticket. All recorded data is also available to
 | What type of information is shared? |  Vehicle license plate numbers, location and timestamp, video footage |
 | Who is/are the subject of the information? | Vehicles on public roadways, and their owners |
 | Who is the sender of the information? | The vehicle scanning services company |
-| Who are the potential recipients of the information? | Intended: motor vehicle department, law enforcement<br>Unintended: **???** |
+| <p>Who are the potential recipients of the information? | Intended: motor vehicle department, law enforcement<br>Unintended: **???** </p>|
 | What principles govern the collection and transmission of this information? | Drivers implicitly consent by using public roadways, but may not be aware that their vehicle is being scanned. |
 
 <p>Please **list TWO unintended recipients**, and also **how access to the collected and processed data might be designed to minimize transmission to unexpected recipients?**</p>
