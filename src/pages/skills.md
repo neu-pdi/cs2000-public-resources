@@ -48,6 +48,15 @@ end
 ```
 
 </details> 
+<details>
+ <summary>Practice Problem 1</summary>
+ <p>Design a function `check-age` that, given a number that is someone's age, returns true when the age is above or equal to 21.</p>
+</details>
+<details>
+ <summary>Practice Problem 2</summary>
+ <p>Design a function `check-year`, that takes a year as input, and returns "Past", "Current", or "Future" depending on the year.</p>
+</details>
+
 02. <a id="(2)" href="#(2)">Construct / Transform Tables (Pyret)</a>
     |  |  |
     | -- | -- |
@@ -207,6 +216,8 @@ end
 **Answer approaching expectations:** One unintended recipient would be students who don't work for the food service [incorrect] who could get private information [too vague]. Access to data could be minimized by keeping the data encrypted [does not address the privacy threat].
 
 </details>
+
+
 12. <a id="(12)" href="#(12)">Identifying Stakeholders in Problem Formulation</a>
 
 |  |  |
