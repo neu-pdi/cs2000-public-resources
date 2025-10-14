@@ -247,6 +247,21 @@ end
 <p>The interests of budget managers and vegetarians could come into conflict if they like the tastes of different types of soda.</p>
 
 </details>
+<details>
+ <summary>Practice Problems</summary>
+ <p>A rideshare company, Ryde, is developing an AI-powered rider usage prediction system. The system will analyze existing rideshare patterns and proactively adjust fares, increasing charges for customers based on predicted demand. Below is a stakeholder-value matrix.</p>
+
+| Stakeholder | Interest/Value |
+|-------------|---------------|
+| Customers on Ryde | |
+| Drivers on Ryde | |
+| Stakeholder 3 | Revenue Generation |
+
+<p>FIRST: Complete the stakeholder matrix for AI content moderation design by identifying, and filling in, unique values/interests for the stakeholders listed, and, in the third case, by supplying the stakeholder for the value/interest.</p>
+
+<p>SECOND: Explain in one or two sentences which (if any) stakeholder interests/values can **come into conflict**.</p>
+
+</details>
 
 ## Skill Introduction
 
