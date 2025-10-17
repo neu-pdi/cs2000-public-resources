@@ -845,6 +845,7 @@ export default function OfficeHours() {
     isOakland: boolean = false,
     skipLocationInfo: boolean = false,
     enableUrlRendering: boolean = false,
+    anchorId?: string,
   ) => {
     if (schedule.length === 0) return null;
 
@@ -862,7 +863,7 @@ export default function OfficeHours() {
     return (
       <Box mb={8}>
         <HStack justify="space-between" align="center" mb={4}>
-          <Heading size="md">
+          <Heading size="md" id={anchorId}>
             {title} {timezoneInfo}
           </Heading>
           {!isInPerson && (
@@ -1166,18 +1167,28 @@ export default function OfficeHours() {
                 onlineSchedule,
                 'ONLINE Office Hours Schedule',
                 false,
+                false,
+                false,
+                false,
+                'online-office-hours',
               )}
               {renderScheduleTable(
                 inPersonSchedule,
                 'IN-PERSON Office Hours Schedule',
                 true,
                 false,
+                false,
+                false,
+                'boston-office-hours',
               )}
               {renderScheduleTable(
                 oaklandInPersonSchedule,
                 'IN-PERSON Office Hours Schedule (Oakland)',
                 true,
                 true,
+                false,
+                false,
+                'oakland-office-hours',
               )}
               {renderScheduleTable(
                 onlineRecitationsSchedule,
@@ -1186,6 +1197,7 @@ export default function OfficeHours() {
                 false,
                 false,
                 true,
+                'online-recitations',
               )}
               {renderScheduleTable(
                 bostonRecitationsSchedule,
@@ -1193,12 +1205,17 @@ export default function OfficeHours() {
                 true,
                 false,
                 true,
+                false,
+                'boston-recitations',
               )}
               {renderScheduleTable(
                 oaklandRecitationsSchedule,
                 'RECITATIONS Schedule (Oakland)',
                 true,
                 true,
+                false,
+                false,
+                'oakland-recitations',
               )}
               {renderScheduleTable(
                 bostonInstructorAssessmentsSchedule,
@@ -1206,6 +1223,8 @@ export default function OfficeHours() {
                 true,
                 false,
                 true,
+                false,
+                'boston-assessablehours',
               )}
               {renderScheduleTable(
                 oaklandInstructorAssessmentsSchedule,
@@ -1213,6 +1232,8 @@ export default function OfficeHours() {
                 true,
                 true,
                 true,
+                false,
+                'oakland-assessablehours',
               )}
             </>
           )}
