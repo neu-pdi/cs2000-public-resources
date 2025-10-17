@@ -847,8 +847,6 @@ export default function OfficeHours() {
     enableUrlRendering: boolean = false,
     anchorId?: string,
   ) => {
-    if (schedule.length === 0) return null;
-
     // Get timezone info for display
     const timezoneInfo = skipLocationInfo
       ? ''
@@ -888,6 +886,17 @@ export default function OfficeHours() {
             </a>
           </Text>
         )}
+
+        {loading ? (
+          <Box textAlign="center" py={4}>
+            <Spinner size="md" />
+            <Text mt={2} fontSize="sm" color="gray.500">Loading...</Text>
+          </Box>
+        ) : schedule.length === 0 ? (
+          <Text fontSize="sm" color="gray.500">No schedule available</Text>
+        ) : null}
+
+        {!loading && schedule.length > 0 && (
 
         <Box
           overflowX="auto"
@@ -1074,6 +1083,7 @@ export default function OfficeHours() {
             </Table.Body>
           </Table.Root>
         </Box>
+        )}
       </Box>
     );
   };
@@ -1153,111 +1163,80 @@ export default function OfficeHours() {
             </Alert.Root>
           )}
 
-          {loading && (
-            <Box textAlign="center" py={8}>
-              <Spinner size="lg" />
-              <Text mt={2}>Loading office hours schedule...</Text>
-            </Box>
-          )}
-
           {/* Render online, in-person, and Oakland in-person schedules */}
-          {!loading && (
-            <>
-              {renderScheduleTable(
-                onlineSchedule,
-                'ONLINE Office Hours Schedule',
-                false,
-                false,
-                false,
-                false,
-                'online-office-hours',
-              )}
-              {renderScheduleTable(
-                inPersonSchedule,
-                'IN-PERSON Office Hours Schedule',
-                true,
-                false,
-                false,
-                false,
-                'boston-office-hours',
-              )}
-              {renderScheduleTable(
-                oaklandInPersonSchedule,
-                'IN-PERSON Office Hours Schedule (Oakland)',
-                true,
-                true,
-                false,
-                false,
-                'oakland-office-hours',
-              )}
-              {renderScheduleTable(
-                onlineRecitationsSchedule,
-                'ONLINE Recitations Schedule',
-                false,
-                false,
-                false,
-                true,
-                'online-recitations',
-              )}
-              {renderScheduleTable(
-                bostonRecitationsSchedule,
-                'RECITATIONS Schedule (Boston)',
-                true,
-                false,
-                true,
-                false,
-                'boston-recitations',
-              )}
-              {renderScheduleTable(
-                oaklandRecitationsSchedule,
-                'RECITATIONS Schedule (Oakland)',
-                true,
-                true,
-                false,
-                false,
-                'oakland-recitations',
-              )}
-              {renderScheduleTable(
-                bostonInstructorAssessmentsSchedule,
-                'INSTRUCTOR Assessable@Hours Schedule (Boston)',
-                true,
-                false,
-                true,
-                false,
-                'boston-assessablehours',
-              )}
-              {renderScheduleTable(
-                oaklandInstructorAssessmentsSchedule,
-                'INSTRUCTOR Assessable@Hours Schedule (Oakland)',
-                true,
-                true,
-                true,
-                false,
-                'oakland-assessablehours',
-              )}
-            </>
+          {renderScheduleTable(
+            onlineSchedule,
+            'ONLINE Office Hours Schedule',
+            false,
+            false,
+            false,
+            false,
+            'online-office-hours',
+          )}
+          {renderScheduleTable(
+            inPersonSchedule,
+            'IN-PERSON Office Hours Schedule',
+            true,
+            false,
+            false,
+            false,
+            'boston-office-hours',
+          )}
+          {renderScheduleTable(
+            oaklandInPersonSchedule,
+            'IN-PERSON Office Hours Schedule (Oakland)',
+            true,
+            true,
+            false,
+            false,
+            'oakland-office-hours',
+          )}
+          {renderScheduleTable(
+            onlineRecitationsSchedule,
+            'ONLINE Recitations Schedule',
+            false,
+            false,
+            false,
+            true,
+            'online-recitations',
+          )}
+          {renderScheduleTable(
+            bostonRecitationsSchedule,
+            'RECITATIONS Schedule (Boston)',
+            true,
+            false,
+            true,
+            false,
+            'boston-recitations',
+          )}
+          {renderScheduleTable(
+            oaklandRecitationsSchedule,
+            'RECITATIONS Schedule (Oakland)',
+            true,
+            true,
+            false,
+            false,
+            'oakland-recitations',
+          )}
+          {renderScheduleTable(
+            bostonInstructorAssessmentsSchedule,
+            'INSTRUCTOR Assessable@Hours Schedule (Boston)',
+            true,
+            false,
+            true,
+            false,
+            'boston-assessablehours',
+          )}
+          {renderScheduleTable(
+            oaklandInstructorAssessmentsSchedule,
+            'INSTRUCTOR Assessable@Hours Schedule (Oakland)',
+            true,
+            true,
+            true,
+            false,
+            'oakland-assessablehours',
           )}
 
-          {onlineSchedule.length === 0 &&
-            inPersonSchedule.length === 0 &&
-            oaklandInPersonSchedule.length === 0 &&
-            onlineRecitationsSchedule.length === 0 &&
-            bostonRecitationsSchedule.length === 0 &&
-            oaklandRecitationsSchedule.length === 0 &&
-            bostonInstructorAssessmentsSchedule.length === 0 &&
-            oaklandInstructorAssessmentsSchedule.length === 0 &&
-            !loading &&
-            !error && (
-              <Alert.Root status="info">
-                <Alert.Title>No schedule data</Alert.Title>
-                <Alert.Content>
-                  <Alert.Description>
-                    Click "Refresh Schedule" to load the latest office hours
-                    schedule
-                  </Alert.Description>
-                </Alert.Content>
-              </Alert.Root>
-            )}
         </VStack>
       </Box>
     </Layout>
