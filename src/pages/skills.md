@@ -170,6 +170,56 @@ end
     | -- | -- |
     | **Meets Expectations** | • Uses `data` with variants as needed, fields with appropriate type annotations<br/>• Function uses either field projection or `cases` as needed<br/>• Function has signature, doc string, and tests |
     | **Approaching Expectations** | • Uses `data` with variants as needed, fields if needed (possibly missing or incorrect annotations)<br/>• Function should use either field projection or cases, but may not do it correctly, or to match the problem |
+<details>
+    <summary>Examples</summary>
+    <p>Sample question: Design a data definition for Beverage that can be either coffee with number of shots of espresso, or tea with name and brew-time in minutes. Then, write a function <code>is-strong</code> that returns true if the beverage is a coffee with more than 2 shots, or a tea brewed for more than 5 minutes.</p>
+    <p>Answer meeting expectations:</p>
+
+```pyret
+data Beverage:
+  | coffee(shots :: Number)
+  | tea(name :: String, brew-time :: Number)
+end
+
+fun is-strong(b :: Beverage) -> Boolean:
+  doc: "determine if beverage is strong (coffee >2 shots or tea >5 minutes)"
+  cases (Beverage) b:
+    | coffee(shots) => shots > 2
+    | tea(name, brew-time) => brew-time > 5
+  end
+where:
+  regular = coffee(1)
+  strong-coffee = coffee(3)
+  weak-tea = tea("Green Tea", 3)
+  strong-tea = tea("Black Tea", 7)
+  
+  is-strong(regular) is false
+  is-strong(strong-coffee) is true
+  is-strong(weak-tea) is false
+  is-strong(strong-tea) is true
+end
+```
+
+<p>Answer approaching expectations (missing docstring, missing annotations, only one test):</p>
+
+```pyret
+data Beverage:
+  | coffee(shots)
+  | tea(name, brew-time)
+end
+
+fun is-strong(b):
+  cases (Beverage) b:
+    | coffee(shots) => shots > 2
+    | tea(name, brew-time) => brew-time > 5
+  end
+where:
+  regular = coffee(1)
+  is-strong(regular) is false
+end
+```
+
+</details> 
 05. <a id="(5)" href="#(5)">Recursion: Lists (Pyret)</a>
     |  |  |
     | -- | -- |
