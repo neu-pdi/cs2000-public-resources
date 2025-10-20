@@ -417,7 +417,7 @@ skip the bulk assessment entirely. The two bundles are:
 | 8 | Working with trees: recursive functions | [5](<#(5)>) | [3](<#(3)>), [4](<#(4)>), [11](<#(11)>), [12](<#(12)>) |  | [SkillBundle1](<#(bundle1)>) |
 | 9 | More with trees | [6](<#(6)>) | [3](<#(3)>), [4](<#(4)>), [5](<#(5)>), [11](<#(11)>), [12](<#(12)>) | [SkillDay2](<#(day2)>) |  |
 | 10 | Transition to Python: IDE, files, definitions, testing | [7](<#(7)>), [8](<#(8)>) | [4](<#(4)>), [5](<#(5)>), [6](<#(6)>) |  |  |
-| 11 | Transition to Python: more state & aliasing, loops, mutable data structures | [9](<#(9)>), [10](<#(10)>) | [5](<#(5)>), [6](<#(6)>), [7](<#(7)>), [8](<#(8)>) |  |  |
+| 11 | Transition to Python: more state & aliasing, loops, mutable data structures | [9](<#(9)>), [10](<#(10)>) | [4](<#(4)>), [5](<#(5)>), [6](<#(6)>), [7](<#(7)>), [8](<#(8)>) |  |  |
 | 12 | Tables in Python: pandas & matplotlib |  | [6](<#(6)>), [7](<#(7)>), [8](<#(8)>), [9](<#(9)>), [10](<#(10)>) |  | [SkillBundle2](<#(bundle2)>) |
 | 13 | File I/O: csv files, via pandas and manually |  | [7](<#(7)>), [8](<#(8)>), [9](<#(9)>), [10](<#(10)>) |  |  |
 | 14 | More with Python: catch up, bonus content, etc |  | [9](<#(9)>), [10](<#(10)>) | [SkillDay3](<#(day3)>) |  |
