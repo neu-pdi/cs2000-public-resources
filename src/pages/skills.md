@@ -123,7 +123,7 @@ and returns a new table containing only those regions where rainfall amounts dec
     | **Approaching Expectations** | • Uses `for each`, drawing elements from the list<br/>• Either: Mutates within the loop, but in such a way that doesn't produce the correct accumulated answer, or doesn't use the final result properly at the end of the loop |
 <details>
     <summary>Examples</summary>
-    <p>Design a function <code>list-of-squares</code> that takes a list of numbers, and returns a list where each element is the square of N where N is the element from the list. You must use for each, rather than a built in list function or recursion.</p>
+    <p>Design a function <code>list-of-squares</code> that takes a list of numbers, and returns a list where each element is the square of N where N is the element from the list. You must use <code>for each</code>, rather than a built in list function or recursion.</p>
     <p>Answer meeting expectations:</p>
 
 ```pyret
@@ -163,7 +163,14 @@ where:
   list-of-squares([list: -1, 0, 1]) is [list: 1, 0, 1]
 end
 ```
-
+</details>
+<details>
+   <summary>Practice Problem 1</summary>
+   <p>Design a function <code>has-positive</code> that takes a list of numbers, and returns <code>true</code> if at least one number in the list is positive, <code>false</code> if none are. You must use <code>for each</code>, rather than a built in list function or recursion.</p>
+</details> 
+<details>
+   <summary>Practice Problem 2</summary>
+   <p>Design a function <code>all-increasing</code> that takes a list of numbers, and returns <code>true</code> if each number is greater than the preceding number, <code>false</code> otherwise. It should return <code>true</code> for the empty list. You must use <code>for each</code>, rather than a built in list function or recursion.</p>
 </details> 
 04. <a id="(4)" href="#(4)">Structured & Conditional Data (Pyret)</a>
     |  |  |
