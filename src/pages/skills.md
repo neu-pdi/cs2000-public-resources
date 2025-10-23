@@ -179,7 +179,7 @@ end
     | **Approaching Expectations** | • Uses `data` with variants as needed, fields if needed (possibly missing or incorrect annotations)<br/>• Function should use either field projection or cases, but may not do it correctly, or to match the problem |
 <details>
     <summary>Examples</summary>
-    <p>Sample question: Design a data definition for Beverage that can be either coffee with number of shots of espresso, or tea with name and brew-time in minutes. Then, write a function <code>is-strong</code> that returns true if the beverage is a coffee with more than 2 shots, or a tea brewed for more than 5 minutes.</p>
+    <p>Sample question: Design a data definition for Beverage that can be either coffee with number of shots of espresso, or tea with name and brew-time in minutes. Then, write a function <code>is-strong</code> that returns <code>true</code> if the beverage is a coffee with more than 2 shots, or a tea brewed for more than 5 minutes.</p>
     <p>Answer meeting expectations:</p>
 
 ```pyret
@@ -227,6 +227,14 @@ end
 ```
 
 </details> 
+<details>
+ <summary>Practice Problem 1</summary>
+    <p>Design a data definition for Restaurant that can be either yahoo with name and stars, or health-score with name and score. Then, write a function <code>is-reputable</code> that returns <code>true</code> if the resturant is a yahoo with at least 4 stars, or a health-score with score at least 85.</p>
+</details>
+<details>
+ <summary>Practice Problem 2</summary>
+    <p>Design a data definition for Book that can be either rating with title, stars, and num-reviews, or sales-ranking with title and position. Then, write a function <code>is-popular</code> that returns <code>true</code> if the book is a rating with num-reviews of at least 500, or a sales-ranking with position less than 500.</p>
+</details>
 05. <a id="(5)" href="#(5)">Recursion: Lists (Pyret)</a>
     |  |  |
     | -- | -- |
