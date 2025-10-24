@@ -240,6 +240,55 @@ end
     | -- | -- |
     | **Meets Expectations** | • Function has appropriate type signature, doc string, and tests<br/>• Function uses `cases` to handle `empty` case and `link` case<br/>• In `link` case, calls function recursively on rest of list appropriately |
     | **Approaching Expectations** | • Uses `cases` to break apart list, and has recursive call to rest of list |
+<details>
+    <summary>Examples</summary>
+    <p>Sample question: Using recursion, design a function <code>make-positive</code> that takes a list of numbers and returns a new list where each number is replaced by its absolute value.</p>
+    <p>Answer meeting expectations:</p>
+   
+```pyret
+fun make-positive(lon :: List<Number>) -> List<Number>:
+  doc: "take the absolute value of each number in the list"
+  
+  cases (List) lon:
+    | empty => empty
+    | link(first, rest) => link(
+        if first > 0:
+          first
+        else:
+          0 - first
+        end,
+        make-positive(rest))
+  end
+where:
+  make-positive([list: ]) is [list: ]
+  make-positive([list: -1, 0, 2]) is [list: 1, 0, 2]
+end
+```
+
+<p>Answer approaching expectations (missing docstring, incorrect behavior, inadequate tests):</p>
+
+   
+```pyret
+fun make-positive(lon :: List<Number>) -> List<Number>:
+  cases (List) lon:
+    | empty => empty
+    | link(first, rest) => link(-first, make-positive(rest))
+  end
+where:
+  make-positive([list: ]) is [list: ]
+end
+```
+
+</details>
+<details>
+ <summary>Practice Problem 1</summary>
+    <p>Using recursion, design a function <code>count-warm</code> that takes a list of numbers and returns a count of numbers greater than 70.</p>
+</details>
+<details>
+ <summary>Practice Problem 2</summary>
+    <p>Using recursion, design a function <code>build-string</code> that takes a list of strings and returns a single large string containing the original strings concatenated together in order.</p>
+</details>
+
 06. <a id="(6)" href="#(6)">Recursion: Trees (Pyret)</a>
     |  |  |
     | -- | -- |
