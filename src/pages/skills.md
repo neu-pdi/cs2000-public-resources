@@ -428,9 +428,9 @@ skip the bulk assessment entirely. The two bundles are:
 | 4 | More on tables: transforming, filtering | [2](<#(2)>), [11](<#(11)>), [12](<#(12)>) | [1](<#(1)>), [11](<#(11)>), [12](<#(12)>) |  |  |
 | 5 | From tables to lists: extracting columns, performing operations on them, visualizing data |  | [1](<#(2)>), [2](<#(2)>), [11](<#(11)>), [12](<#(12)>) | [SkillDay1](<#(day1)>) |  |
 | 6 | Computing with lists: iteration & mutable local variables | [3](<#(3)>) | [2](<#(2)>), [11](<#(11)>), [12](<#(12)>) |  |  |
-| 7 | Structured & conditional data | [4](<#(3)>) | [2](<#(2)>), [3](<#(3)>), [11](<#(11)>), [12](<#(12)>) |  |  |
-| 8 | Working with trees: recursive functions | [5](<#(5)>) | [3](<#(3)>), [4](<#(4)>), [11](<#(11)>), [12](<#(12)>) |  | [SkillBundle1](<#(bundle1)>) |
-| 9 | More with trees | [6](<#(6)>) | [3](<#(3)>), [4](<#(4)>), [5](<#(5)>), [11](<#(11)>), [12](<#(12)>) | [SkillDay2](<#(day2)>) |  |
+| 7 | Structured data | [4](<#(3)>) | [2](<#(2)>), [3](<#(3)>), [11](<#(11)>), [12](<#(12)>) |  |  |
+| 8 | Conditional & recursive data | [5](<#(5)>) | [3](<#(3)>), [4](<#(4)>), [11](<#(11)>), [12](<#(12)>) |  | [SkillBundle1](<#(bundle1)>) |
+| 9 | Trees | [6](<#(6)>) | [3](<#(3)>), [4](<#(4)>), [5](<#(5)>), [11](<#(11)>), [12](<#(12)>) | [SkillDay2](<#(day2)>) |  |
 | 10 | Transition to Python: IDE, files, definitions, testing | [7](<#(7)>), [8](<#(8)>) | [4](<#(4)>), [5](<#(5)>), [6](<#(6)>) |  |  |
 | 11 | Transition to Python: more state & aliasing, loops, mutable data structures | [9](<#(9)>), [10](<#(10)>) | [4](<#(4)>), [5](<#(5)>), [6](<#(6)>), [7](<#(7)>), [8](<#(8)>) |  |  |
 | 12 | Tables in Python: pandas & matplotlib |  | [6](<#(6)>), [7](<#(7)>), [8](<#(8)>), [9](<#(9)>), [10](<#(10)>) |  | [SkillBundle2](<#(bundle2)>) |
