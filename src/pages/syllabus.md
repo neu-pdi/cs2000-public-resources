@@ -76,12 +76,12 @@ In addition to general purpose Office Hours held by TAs, there will be dedicated
 The calendar that has office hours also shows the recitation times, identified as RECITATION. Note that homework questions will _not_ be answered during recitations.
 
 ### Attendance
-
+sk
 Attendance is not required in CS2000. Please do not come to class when you're sick. We'd much rather you stay home and take care of yourself. If you need to stay home and miss class, no need to notify us in advance. You are still responsible for completing assigned work and keeping up with content that you may have missed due to an absence. The course website describes the classwork for each day, available for review. Feel free to stop by office hours with the instructors or TAs with any questions or help with the missed classwork.
 
 ### Skills
 
-The course will teach the following skills, grading of which will be performed by repeatable (with highest grade taken), on-paper, no-note, assessment that can be scored as "Doesn't meet expectations", "Approaching expectations", or "Meets expectations". See the [Skills](/skills) page for much more detail.
+The course will teach the following skills, grading of which will be performed by repeatable (with highest grade taken), on-paper, no-note, assessment that can be scored as "Doesn't meet expectations", "Approaching expectations", or "Meets expectations". Each student will have 5 opportunities (once in lab bundles, 4 according to the Skill Schedule). In the last three weeks of the semester, they may re-attempt 2 skills. See the [Skills](/skills) page for much more detail.
 
 01. Design basic functions (Pyret)
 02. Construct / Transform Tables (Pyret)
@@ -99,8 +99,10 @@ The course will teach the following skills, grading of which will be performed b
 ### Grading
 
 Grades will be primarily assigned by achievement levels of the course
-[Skills](/skills/), along with required grade thresholds on HW for each letter grade,
+[Skills](/skills/), along with required grade thresholds on HW (after dropping 2) for each letter grade,
 and + (other than A) given for participation in 8 or more out of 10 labs, - given for participating in fewer than 6 out of ten labs.
+
+Note: we drop your lowest two HW scores before calculating your average for the threshold.
 
 This is captured by the following table -- the highest row that a student satisfies all columns of will be their grade, and **if no rows are completely satisfied, the student will not pass the course.**
 
@@ -117,7 +119,7 @@ This is captured by the following table -- the highest row that a student satisf
 <th><strong>Meets Expectations</strong></th>
 <th><strong>Approaching Expectations</strong></th>
 <th><strong>Not Approaching</strong></th>
-<th>HW Average</th>
+<th>HW Average (AFTER DROPPING 2)</th>
 <th>Lab Participation</th>
 </tr>
 </thead>
@@ -140,49 +142,49 @@ This is captured by the following table -- the highest row that a student satisf
 </tr>
 <tr>
 <td><strong>B+</strong></td>
-<td>9+</td>
-<td>3 or fewer</td>
+<td>8+</td>
+<td>4 or fewer</td>
 <td>0</td>
 <td>70% or better</td>
 <td>8 or more</td>
 </tr>
 <tr>
 <td><strong>B</strong></td>
-<td>9+</td>
-<td>3 or fewer</td>
+<td>8+</td>
+<td>4 or fewer</td>
 <td>0</td>
 <td>70% or better</td>
 <td>6 or more</td>
 </tr>
 <tr>
 <td><strong>B-</strong></td>
-<td>9+</td>
-<td>3 or fewer</td>
+<td>8+</td>
+<td>4 or fewer</td>
 <td>0</td>
 <td>70% or better</td>
 <td>any</td>
 </tr>
 <tr>
 <td><strong>C+</strong></td>
-<td>7+</td>
+<td>6+</td>
 <td>5 or fewer</td>
-<td>0</td>
+<td>1 or fewer</td>
 <td>60% or better</td>
 <td>8 or more</td>
 </tr>
 <tr>
 <td><strong>C</strong></td>
-<td>7+</td>
+<td>6+</td>
 <td>5 or fewer</td>
-<td>0</td>
+<td>1 or fewer</td>
 <td>60% or better</td>
 <td>6 or more</td>
 </tr>
 <tr>
 <td><strong>C-</strong></td>
-<td>7+</td>
+<td>6+</td>
 <td>5 or fewer</td>
-<td>0</td>
+<td>1 or fewer</td>
 <td>60% or better</td>
 <td>any</td>
 </tr>
@@ -190,7 +192,7 @@ This is captured by the following table -- the highest row that a student satisf
 <td><strong>D+</strong></td>
 <td></td>
 <td></td>
-<td>3 or fewer</td>
+<td>4 or fewer</td>
 <td>50% or better</td>
 <td>8 or more</td>
 </tr>
@@ -198,7 +200,7 @@ This is captured by the following table -- the highest row that a student satisf
 <td><strong>D</strong></td>
 <td></td>
 <td></td>
-<td>3 or fewer</td>
+<td>4 or fewer</td>
 <td>50% or better</td>
 <td>6 or more</td>
 </tr>
@@ -206,7 +208,7 @@ This is captured by the following table -- the highest row that a student satisf
 <td><strong>D-</strong></td>
 <td></td>
 <td></td>
-<td>3 or fewer</td>
+<td>4 or fewer</td>
 <td>50% or better</td>
 <td>any</td>
 </tr>

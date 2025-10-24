@@ -418,6 +418,10 @@ skip the bulk assessment entirely. The two bundles are:
 - <a id="(bundle1)" href="#(bundle1)">Skill Bundle 1</a>: [1](<#(1)>), [2](<#(2)>), [3](<#(3)>), [4](<#(4)>), [11](<#(11)>), [12](<#(12)>)
 - <a id="(bundle2)" href="#(bundle2)">Skill Bundle 2</a>: [5](<#(5)>), [6](<#(6)>), [7](<#(7)>), [8](<#(8)>), [9](<#(9)>), [10](<#(10)>)
 
+## End of Semester Re-attempts
+
+While most skill assessments must take place during the schedule below, each student may make _two_ re-attempts during the last three weeks (Nov 17 to Dec 5) of the semester. They must contact tho course coordinator (Kayla McLaughlin) in order to do schedule these. These late semester retakes can be done regardless of how many attempts of a given skill the student has made previously.
+
 ## Skill Schedule
 
 | Week | Topic | Skill Introduced | Assessable@Hours | Skill Day | Skill Bundle |
