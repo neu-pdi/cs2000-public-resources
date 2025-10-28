@@ -50,8 +50,8 @@ import styles from './index.module.css';
   <p>d.patterson@northeastern.edu</p>
   <div className={styles.officeHours}>
     <strong>Office Hours:</strong><br/>
-    Thu 9:15-10:15am & Fri 1-3pm<br/>
-    in Meserve 314
+    Wed & Thu 3-4pm<br/>
+    in Meserve 317
   </div>
 </div>
 
