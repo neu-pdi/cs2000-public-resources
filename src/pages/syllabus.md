@@ -29,8 +29,8 @@ There are no quizzes or exams in this class.
 There are three primary sources of communication for this course:
 
 1. This website. This is where you will find policies, homework assignments, lab assignments, recitation contents, notes from each day of class.
-2. [Pawtograder](https://app.pawtograder.com/). This is the course grading platform. This is where you will submit homework assignments, and get feedback on them. This is also where you will see your grades for the on-paper skill assessments. It will have your gradebook. It is also the place where you will ask questions online about homework, and where you will do online office hours.
-3. Discord. Please join at https://discord.gg/HsKXgZXXKH. Note you must set your Display Name for the server to your full name before you will be given access to private course channels. This will be a place for any discussion that are not direct questions about homework (which should take place on Pawtograder). Discord will also be used for lab communication (each lab will have a private channel), for announcements about the course. For any questions that are _not_ specifically about homework.
+2. [Pawtograder](https://app.pawtograder.com/). This is the course grading platform. This is where you will submit homework assignments, and get feedback on them. This is also where you will see your grades for the on-paper skill assessments. It will have your gradebook. 
+3. Discord. Please join at https://discord.gg/HsKXgZXXKH. Note you must set your Display Name for the server to your full name before you will be given access to private course channels. This will be a place for any discussion that are not direct questions about homework (which should take place on Pawtograder). Discord will also be used for lab communication (each lab will have a private channel), for announcements about the course. For any questions that are _not_ specifically about homework. It is also the place where you will ask questions online about homework, and where you will do online office hours.
 
 Note that **we will not use Canvas for anything.**
 
