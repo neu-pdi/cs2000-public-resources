@@ -294,17 +294,60 @@ end
     | -- | -- |
     | **Meets Expectations** | • Function has appropriate type signature, doc string, and tests<br/>• Function uses `cases` to handle base case and recursive case<br/>• In recursive case, calls function recursively on subtrees appropriately |
     | **Approaching Expectations** | • Uses `cases` to break apart tree, and has recursive call on subtrees |
-07. <a id="(7)" href="#(7)">Variable Scope (Python)</a>
+<details>
+    <summary>Examples</summary>
+    <p>Design a function <code>count-internal-nodes</code> that, given the BinTree data definition below, takes a BinTree and returns the total number of internal nodes (non-leaf nodes) in the tree</p>
+ 
+```pyret
+data BinTree<a>:
+  | leaf(val :: a)
+  | node(left :: BinTree<a>, right :: BinTree<a>)
+end
+```
+    <p>Answer meeting expectations:</p>
+    
+```pyret
+fun count-internal-nodes(tree :: BinTree) -> Number:
+  doc: "counts the number of nodes that are not leafs"
+  cases (BinTree) tree:
+    | leaf(val) => 0
+    | node(left, right) => 1 + count-internal-nodes(left) + count-internal-nodes(right)
+  end
+where:
+  tree = node(node(leaf(0), leaf(0)), node(node(leaf(0), leaf(0)), leaf(0)))
+  count-internal-nodes(tree) is 4
+  count-internal-nodes(leaf(1)) is 0
+end
+```
+
+<p>Answer approaching expectations (lacking doc string, does not give correct result):</p>
+    
+```pyret
+fun count-internal-nodes(tree :: BinTree) -> Number:
+  cases (BinTree) tree:
+    | leaf(val) => 0
+    | node(left, right) => count-internal-nodes(left) + count-internal-nodes(right)
+  end
+where:
+  tree = node(node(leaf(0), leaf(0)), node(node(leaf(0), leaf(0)), leaf(0)))
+  count-internal-nodes(tree) is 4
+  count-internal-nodes(leaf(1)) is 0
+end
+```
+
+</details>
+
+7. <a id="(7)" href="#(7)">Variable Scope (Python)</a>
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Output of given code, that uses variables, defined locally, in functions, globally, etc, is correct<br/>• Explanation of behavior, including global keyword if needed, is correct |
     | **Approaching Expectations** | • Explanation mentions key idea, but does not use it to correctly characterize behavior |
-08. <a id="(8)" href="#(8)">Design basic functions (Python)</a>
+8. <a id="(8)" href="#(8)">Design basic functions (Python)</a>
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Correct type annotation<br/>• Docstring that describes behavior, doesn't repeat type annotation<br/>• A few (2+) correct, meaningfully different tests<br/>• Correct implementation |
     | **Approaching Expectations** | • Missing docstring, or long, includes redundant type information, etc.<br/>• 1+ correct tests<br/>• Correct implementation |
-09. <a id="(9)" href="#(9)">Iteration: Lists (Python)</a>
+9. <a id="(9)" href="#(9)">Iteration: Lists (Python)</a>
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Uses `for ... in ...` properly, drawing elements from the list<br/>• Mutates a single variable within the loop to correctly accumulate the result<br/>• Returns the final result after the loop |
