@@ -410,6 +410,12 @@ const config: Config = {
       darkTheme: oneDarkTheme,
     },
   } satisfies Preset.ThemeConfig,
+  future: {
+    experimental_storage: {
+      type: 'localStorage',
+      namespace: true,
+    },
+  },
 };
 
 export default config;
