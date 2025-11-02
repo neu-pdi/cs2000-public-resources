@@ -85,32 +85,24 @@ export default function OfficeHours() {
   >([]);
   const [showOaklandTime, setShowOaklandTime] = useState(false);
 
-  const PROXY_URL = "https://metal.dbp.io:10321";
+  const PROXY_URL = 'https://metal.dbp.io:10321';
 
   // The Google Sheets CSV API URL for Online Office Hours
-  const onlineOfficeHoursCsvUrl =
-    `${PROXY_URL}/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Online+Office+Hours`;
+  const onlineOfficeHoursCsvUrl = `${PROXY_URL}/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Online+Office+Hours`;
 
-  const inPersonOfficeHoursCsvUrl =
-    `${PROXY_URL}/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=In+Person+Office+Hours`;
+  const inPersonOfficeHoursCsvUrl = `${PROXY_URL}/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=In+Person+Office+Hours`;
 
-  const oaklandInPersonOfficeHoursCsvUrl =
-    `${PROXY_URL}/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Oakland+In+Person`;
+  const oaklandInPersonOfficeHoursCsvUrl = `${PROXY_URL}/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Oakland+In+Person`;
 
-  const bostonRecitationsCsvUrl =
-    `${PROXY_URL}/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Boston+Recitations`;
+  const bostonRecitationsCsvUrl = `${PROXY_URL}/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Boston+Recitations`;
 
-  const onlineRecitationsCsvUrl =
-    `${PROXY_URL}/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Online+Recitations`;
+  const onlineRecitationsCsvUrl = `${PROXY_URL}/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Online+Recitations`;
 
-  const oaklandRecitationsCsvUrl =
-    `${PROXY_URL}/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Oakland+Recitations`;
+  const oaklandRecitationsCsvUrl = `${PROXY_URL}/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Oakland+Recitations`;
 
-  const bostonInstructorAssessmentsUrl =
-    `${PROXY_URL}/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Boston+Instructor+Assessments`;
+  const bostonInstructorAssessmentsUrl = `${PROXY_URL}/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Boston+Instructor+Assessments`;
 
-  const oaklandInstructorAssessmentsUrl =
-    `${PROXY_URL}/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Oakland+Instructor+Assessments`;
+  const oaklandInstructorAssessmentsUrl = `${PROXY_URL}/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Oakland+Instructor+Assessments`;
 
   const parseCsv = (csvText: string): string[][] => {
     const lines = csvText.trim().split('\n');
@@ -890,199 +882,211 @@ export default function OfficeHours() {
         {loading ? (
           <Box textAlign="center" py={4}>
             <Spinner size="md" />
-            <Text mt={2} fontSize="sm" color="gray.500">Loading...</Text>
+            <Text mt={2} fontSize="sm" color="gray.500">
+              Loading...
+            </Text>
           </Box>
         ) : schedule.length === 0 ? (
-          <Text fontSize="sm" color="gray.500">No schedule available</Text>
+          <Text fontSize="sm" color="gray.500">
+            No schedule available
+          </Text>
         ) : null}
 
         {!loading && schedule.length > 0 && (
-
-        <Box
-          overflowX="auto"
-          border="1px"
-          borderColor="gray.200"
-          borderRadius="md"
-        >
-          <Table.Root size="sm">
-            <Table.Header>
-              <Table.Row>
-                <Table.ColumnHeader
-                  fontWeight="bold"
-                  bg={{ base: 'gray.100', _dark: 'gray.700' }}
-                  p={2}
-                >
-                  Time{' '}
-                  {isOakland
-                    ? '(PT)'
-                    : isInPerson
-                      ? '(ET)'
-                      : showOaklandTime
-                        ? '(PT)'
-                        : '(ET)'}
-                </Table.ColumnHeader>
-                {schedule.map((day, dayIndex) => (
+          <Box
+            overflowX="auto"
+            border="1px"
+            borderColor="gray.200"
+            borderRadius="md"
+          >
+            <Table.Root size="sm">
+              <Table.Header>
+                <Table.Row>
                   <Table.ColumnHeader
-                    key={dayIndex}
                     fontWeight="bold"
                     bg={{ base: 'gray.100', _dark: 'gray.700' }}
                     p={2}
-                    textAlign="center"
                   >
-                    {day.day}
+                    Time{' '}
+                    {isOakland
+                      ? '(PT)'
+                      : isInPerson
+                        ? '(ET)'
+                        : showOaklandTime
+                          ? '(PT)'
+                          : '(ET)'}
                   </Table.ColumnHeader>
-                ))}
-              </Table.Row>
-            </Table.Header>
-            <Table.Body>
-              {/* Get all unique time slots across all days */}
-              {Array.from(
-                new Set(
-                  schedule.flatMap((day) => day.slots.map((slot) => slot.time)),
-                ),
-              )
-                .sort((a, b) => {
-                  // Sort times chronologically (always sort by original ET times)
-                  const timeToMinutes = (time: string) => {
-                    // Handle both "11am-12pm" and "11:50am-12:50pm" formats
-                    const match = time.match(/(\d+)(?::(\d+))?([ap]m)/i);
-                    if (match) {
-                      let hours = parseInt(match[1]);
-                      const minutes = parseInt(match[2] || '0');
-                      const period = match[3].toLowerCase();
+                  {schedule.map((day, dayIndex) => (
+                    <Table.ColumnHeader
+                      key={dayIndex}
+                      fontWeight="bold"
+                      bg={{ base: 'gray.100', _dark: 'gray.700' }}
+                      p={2}
+                      textAlign="center"
+                    >
+                      {day.day}
+                    </Table.ColumnHeader>
+                  ))}
+                </Table.Row>
+              </Table.Header>
+              <Table.Body>
+                {/* Get all unique time slots across all days */}
+                {Array.from(
+                  new Set(
+                    schedule.flatMap((day) =>
+                      day.slots.map((slot) => slot.time),
+                    ),
+                  ),
+                )
+                  .sort((a, b) => {
+                    // Sort times chronologically (always sort by original ET times)
+                    const timeToMinutes = (time: string) => {
+                      // Handle both "11am-12pm" and "11:50am-12:50pm" formats
+                      const match = time.match(/(\d+)(?::(\d+))?([ap]m)/i);
+                      if (match) {
+                        let hours = parseInt(match[1]);
+                        const minutes = parseInt(match[2] || '0');
+                        const period = match[3].toLowerCase();
 
-                      if (period === 'pm' && hours !== 12) hours += 12;
-                      if (period === 'am' && hours === 12) hours = 0;
+                        if (period === 'pm' && hours !== 12) hours += 12;
+                        if (period === 'am' && hours === 12) hours = 0;
 
-                      return hours * 60 + minutes;
-                    }
-                    return 0;
-                  };
-                  return timeToMinutes(a) - timeToMinutes(b);
-                })
-                .map((timeSlot, timeIndex) => {
-                  // Convert time for display if needed
-                  const displayTime =
-                    !isInPerson && showOaklandTime
-                      ? convertTimeToOakland(timeSlot)
-                      : timeSlot;
+                        return hours * 60 + minutes;
+                      }
+                      return 0;
+                    };
+                    return timeToMinutes(a) - timeToMinutes(b);
+                  })
+                  .map((timeSlot, timeIndex) => {
+                    // Convert time for display if needed
+                    const displayTime =
+                      !isInPerson && showOaklandTime
+                        ? convertTimeToOakland(timeSlot)
+                        : timeSlot;
 
-                  return (
-                    <Table.Row key={timeIndex}>
-                      <Table.Cell
-                        fontWeight="bold"
-                        p={2}
-                        bg={{ base: 'gray.50', _dark: 'gray.600' }}
-                      >
-                        {displayTime}
-                      </Table.Cell>
-                      {schedule.map((day, dayIndex) => {
-                        const slot = day.slots.find((s) => s.time === timeSlot);
-                        return (
-                          <Table.Cell
-                            key={dayIndex}
-                            p={1}
-                            verticalAlign="top"
-                            fontSize="xs"
-                            lineHeight="1.1"
-                          >
-                            {slot ? (
-                              <>
-                                {(isInPerson || enableUrlRendering) &&
-                                slot.allTAs ? (
-                                  // For in-person, show all TAs
-                                  <>
-                                    {slot.allTAs.length > 0 ? (
-                                      <>
-                                        {slot.room && (
-                                          <>
-                                            {slot.room.startsWith('http') ? (
-                                              <>
-                                                <a
-                                                  href={slot.room.split(' ')[0]}
-                                                  target="_blank"
-                                                  rel="noopener noreferrer"
-                                                  style={{
-                                                    color: '#7c3aed',
-                                                    fontWeight: 'bold',
-                                                    fontSize: '10px',
-                                                    textDecoration: 'underline',
-                                                  }}
-                                                >
-                                                  ONLINE
-                                                </a>
-                                                {(() => {
-                                                  const passcodeMatch =
-                                                    slot.room.match(
-                                                      /Passcode:\s*(\d+)/i,
-                                                    );
-                                                  return passcodeMatch ? (
-                                                    <>
-                                                      <br />
-                                                      <Text
-                                                        as="span"
-                                                        fontSize="2xs"
-                                                        color="gray.600"
-                                                      >
-                                                        Passcode:{' '}
-                                                        {passcodeMatch[1]}
-                                                      </Text>
-                                                    </>
-                                                  ) : null;
-                                                })()}
+                    return (
+                      <Table.Row key={timeIndex}>
+                        <Table.Cell
+                          fontWeight="bold"
+                          p={2}
+                          bg={{ base: 'gray.50', _dark: 'gray.600' }}
+                        >
+                          {displayTime}
+                        </Table.Cell>
+                        {schedule.map((day, dayIndex) => {
+                          const slot = day.slots.find(
+                            (s) => s.time === timeSlot,
+                          );
+                          return (
+                            <Table.Cell
+                              key={dayIndex}
+                              p={1}
+                              verticalAlign="top"
+                              fontSize="xs"
+                              lineHeight="1.1"
+                            >
+                              {slot ? (
+                                <>
+                                  {(isInPerson || enableUrlRendering) &&
+                                  slot.allTAs ? (
+                                    // For in-person, show all TAs
+                                    <>
+                                      {slot.allTAs.length > 0 ? (
+                                        <>
+                                          {slot.room && (
+                                            <>
+                                              {slot.room.startsWith('http') ? (
+                                                <>
+                                                  <a
+                                                    href={
+                                                      slot.room.split(' ')[0]
+                                                    }
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    style={{
+                                                      color: '#7c3aed',
+                                                      fontWeight: 'bold',
+                                                      fontSize: '10px',
+                                                      textDecoration:
+                                                        'underline',
+                                                    }}
+                                                  >
+                                                    ONLINE
+                                                  </a>
+                                                  {(() => {
+                                                    const passcodeMatch =
+                                                      slot.room.match(
+                                                        /Passcode:\s*(\d+)/i,
+                                                      );
+                                                    return passcodeMatch ? (
+                                                      <>
+                                                        <br />
+                                                        <Text
+                                                          as="span"
+                                                          fontSize="2xs"
+                                                          color="gray.600"
+                                                        >
+                                                          Passcode:{' '}
+                                                          {passcodeMatch[1]}
+                                                        </Text>
+                                                      </>
+                                                    ) : null;
+                                                  })()}
+                                                  <br />
+                                                </>
+                                              ) : (
+                                                <>
+                                                  <Text
+                                                    as="span"
+                                                    fontWeight="bold"
+                                                    color="purple.600"
+                                                    fontSize="2xs"
+                                                  >
+                                                    {slot.room}
+                                                  </Text>
+                                                  <br />
+                                                </>
+                                              )}
+                                            </>
+                                          )}
+                                          {slot.allTAs.map((ta, taIndex) => (
+                                            <React.Fragment key={taIndex}>
+                                              {ta}
+                                              {taIndex <
+                                                slot.allTAs!.length - 1 && (
                                                 <br />
-                                              </>
-                                            ) : (
-                                              <>
-                                                <Text
-                                                  as="span"
-                                                  fontWeight="bold"
-                                                  color="purple.600"
-                                                  fontSize="2xs"
-                                                >
-                                                  {slot.room}
-                                                </Text>
-                                                <br />
-                                              </>
-                                            )}
-                                          </>
-                                        )}
-                                        {slot.allTAs.map((ta, taIndex) => (
-                                          <React.Fragment key={taIndex}>
-                                            {ta}
-                                            {taIndex <
-                                              slot.allTAs!.length - 1 && <br />}
-                                          </React.Fragment>
-                                        ))}
-                                      </>
-                                    ) : (
-                                      <span style={{ color: 'gray' }}>—</span>
-                                    )}
-                                  </>
-                                ) : (
-                                  // For online, show only first two TAs
-                                  <>
-                                    {slot.ta1 && <>{slot.ta1}</>}
-                                    {slot.ta1 && slot.ta2 && <br />}
-                                    {slot.ta2 && <>{slot.ta2}</>}
-                                    {!slot.ta1 && !slot.ta2 && (
-                                      <span style={{ color: 'gray' }}>—</span>
-                                    )}
-                                  </>
-                                )}
-                              </>
-                            ) : (
-                              <span style={{ color: 'gray' }}>—</span>
-                            )}
-                          </Table.Cell>
-                        );
-                      })}
-                    </Table.Row>
-                  );
-                })}
-            </Table.Body>
-          </Table.Root>
-        </Box>
+                                              )}
+                                            </React.Fragment>
+                                          ))}
+                                        </>
+                                      ) : (
+                                        <span style={{ color: 'gray' }}>—</span>
+                                      )}
+                                    </>
+                                  ) : (
+                                    // For online, show only first two TAs
+                                    <>
+                                      {slot.ta1 && <>{slot.ta1}</>}
+                                      {slot.ta1 && slot.ta2 && <br />}
+                                      {slot.ta2 && <>{slot.ta2}</>}
+                                      {!slot.ta1 && !slot.ta2 && (
+                                        <span style={{ color: 'gray' }}>—</span>
+                                      )}
+                                    </>
+                                  )}
+                                </>
+                              ) : (
+                                <span style={{ color: 'gray' }}>—</span>
+                              )}
+                            </Table.Cell>
+                          );
+                        })}
+                      </Table.Row>
+                    );
+                  })}
+              </Table.Body>
+            </Table.Root>
+          </Box>
         )}
       </Box>
     );
@@ -1236,7 +1240,6 @@ export default function OfficeHours() {
             false,
             'oakland-assessablehours',
           )}
-
         </VStack>
       </Box>
     </Layout>
