@@ -169,10 +169,14 @@ function notesDropdownItems() {
     {
       label: 'Pyret Documentation',
       href: 'https://pyret.org/docs/latest/index.html',
-    },
+    }
   ]
 
   if (new Date() >= new Date(2025, 10, 3)) {
+    startingItems.push({
+      to: '/pyret-cheatsheet-python/',
+      label: 'Python for Pyreteers',
+    });
     startingItems.push({
       label: 'Python Documentation',
       href: 'https://docs.python.org/3/',
