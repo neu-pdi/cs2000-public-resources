@@ -60,8 +60,8 @@ This should print something like `Python 3.11.9`. Any version 3.11 or higher is 
 **Windows & macOS**
 1. Go to https://code.visualstudio.com/ and download VSCode
 2. Your next step will depend on your operating sytem
-    * On Windows, run the installer and accept defaults
-    * On macOS, you may need to double-click on the downloaded file to uncompress it (if the filename ends with "zip"). Drag into the **Applications folder** or, if you don't see it, follow these steps:
+    * On **Windows**, run the installer and accept defaults
+    * On **macOS**, you may need to double-click on the downloaded file to uncompress it (if the filename ends with "zip"). Drag into the **Applications folder** or, if you don't see it, follow these steps:
         1. Open a new Finder window with `⌘N`
         2. In the new window, go to the Applications folder through the dropdown menu (`Go > Applications`) or with `⇧⌘A` (shift-command A)
         3. Drag `Visual Studio Code` from the Downloads folder to the Applications folder
@@ -144,7 +144,6 @@ git --version
     1) Start a VSCode Terminal (Terminal -> New Terminal)
     2) Type `git config --global user.name "YOUR_NAME"` and hit enter (putting your own name instead of ``YOUR_NAME``)
     3) Type `git config --global user.email "YOUR_EMAIL@northeastern.edu"` and hit enter (putting your own email instead of ``YOUR_EMAIL``)
-
 2) Whenever you want to commit & push, go to the Source Control panel as you did in GitHub.dev. You will be presented with a menu that defaults to Commit only. You will find the **Commit & Push** option in the menu activated via the small icon just to the right of the defeault Commit action 
 
 
@@ -183,7 +182,6 @@ Type "Environments Extension" in the search bar. Check the "Python: Use Environm
     - You may be prompted to choose a virtual environment, be sure to choose `Venv`
     - Be sure to select the appropriate Python version
 3. Once the operation completes, you’ll see the Python version displayed in the bottom-right corner of the window when a `.py` file is open, written as `.venv (3.XX)`
-
 4. If MyPy is set up properly, then add this code to our `scratch.py` file:
     ```python
     def add(num1: int, num2) -> int:
@@ -210,19 +208,17 @@ Windows machines sometimes restrict running scripts, which is what Python relies
 1. Use the keyboard shortcut Windows + X
 2. Click on **Terminal (Admin)**
 3. The system should ask if you want to make changes to your computer. Click **Yes**
-4. A window should pop up titled **Administrator: Windows PowerShell**
-
-***__WARNING: Do not execute random commands in this window.  This is an elevated command prompt and can do serious damage if used improperly.  The two commands in these instructions are safe to run__***
-
+4. A window should pop up titled **Administrator: Windows PowerShell** \
+***WARNING: Do not execute random commands in this window.  This is an elevated command prompt and can do serious damage if used improperly.  The two commands in these instructions are safe to run***
 5. Run `Get-ExecutionPolicy`
 6. If the output is **Restricted**, go to Step 7. If it is anything else, skip to Package Installation Process
 7. If not, run `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned`. This command will allow scripts downloaded from elsewhere to run if they are signed by the publisher. They will also allow all local scripts to run no matter what. For more information, read [this article](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.5)
 8. Close the Administrator Command Prompt window
 
 ### 5.2 Package Installation Process
-We will use [Pandas](https://pandas.pydata.org/), a popular library for data analysis, for work with tables and spreadsheets, and the [pytest](https://docs.pytest.org/en/stable/) library for writing tests
+We will use [Pandas](https://pandas.pydata.org/), a popular library for data analysis, for work with tables and spreadsheets, and the [Pytest](https://docs.pytest.org/en/stable/) library for writing tests
 
-You can add Pandas & Pytest to your virtual environment by clicking on the Python icon in the side bar (it may be hidden behind the three dots -- if you don't see this, please review [3.2](#32-check-python-environments-extension) above, and that you installed the Python Environments extension): \
+You can add Pandas & Pytest to your virtual environment by clicking on the Python icon in the side bar (it may be hidden behind the three dots -- if you don't see this, please review [3.2](#42-check-python-environments-extension) above, and that you installed the Python Environments extension): \
 ![VSCode Python Icon](/img/vscode-python-sidebar.png)
 
 Then, under Environment Managers, find your Venv as `.venv (3.XX)`, and click the little icon that says "Manage Packages" when you hover over it: \
@@ -300,7 +296,7 @@ And also search for and check "pytest", and now hit "OK": \
 2) On both: Quit and reopen VS Code
 3) If all else fails, post in the ``#python-installation`` channel with a screenshot of what is shown in the ``Output`` section of VS Code (click the ``Output`` button next to the ``Terminal`` button) and/or attend office hours for help
 
-### On Windows, I am getting an error about GitHub SSO
+### On **Windows**, I am getting an error about GitHub SSO
 1) Download GitHub CLI from [cli.github.com](https://cli.github.com/) and follow the instructions when prompted in the popup \
     ![GitHub CLI Download](/img/ghcli.png)
 2) Type in `gh auth login` in a VSCode Terminal (Terminal Menu -> New Terminal), pick “GitHub.com”, HTTPS, Y, “Login with a web browser”, then press Enter
