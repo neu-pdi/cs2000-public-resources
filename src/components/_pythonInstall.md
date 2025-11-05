@@ -3,6 +3,7 @@ title: Python Install
 description: Python Installation and Setup Instructions
 ---
 
+<!-- MARK: - Installing Python -->
 ## 1 Installing **Python 3.11 Or Newer**
 We will use Python version 3.11 or higher in this course. Please follow the below instructions to install a Python interpreter that works with VScode
 
@@ -53,6 +54,7 @@ python3 --version
 This should print something like `Python 3.11.9`. Any version 3.11 or higher is fine
 
 
+<!-- MARK: - VS Code Setup -->
 ## 2 VSCode Setup
 ### 2.1 Install VSCode
 **Windows & macOS**
@@ -108,6 +110,7 @@ We will use MyPy to report type errors in our programs
 Now, any missing or mismatched types will be reported in the "Problems" tab (bottom pane where there is also an Output tab) every time you save or open a file
 
 
+<!-- MARK: - Installing Git -->
 ## 3 Installing Git
 For homeworks and labs, we will use Git version control to keep track of changes, push, and pull from GitHub. Lets set that up
 
@@ -144,6 +147,7 @@ git --version
 2) Whenever you want to commit & push, go to the Source Control panel as you did in GitHub.dev. You will be presented with a menu that defaults to Commit only. You will find the **Commit & Push** option in the menu activated via the small icon just to the right of the defeault Commit action 
 
 
+<!-- MARK: - First Python Project -->
 ## 4 Your First Python Project
 Let's use VSCode to create a project folder, and set up **virtual environment**
   
@@ -196,9 +200,25 @@ Once we save, you should see three errors in red (there will also be warnings fr
     3. `result`'s value being an `int` when the variable type is `str`
 
 
+<!-- MARK: - Package Install -->
 ## 5 Install **pandas**, **pandas-stubs**, And **pytest**
 Each project we work in should have its own virtual environment, which means it will have its own set of packages; a package consists of existing pieces of software that allow us to work on particular tasks 
 
+### 5.1 Important Instructions for Windows Users
+Windows machines sometimes restrict running scripts, which is what Python relies on. If you are on a Windows machine, please check the following before installing Pandas and Pytest:
+1. Use the keyboard shortcut Windows + X
+2. Click on **Terminal (Admin)**
+3. The system should ask if you want to make changes to your computer. Click **Yes**
+4. A window should pop up titled **Administrator: Windows PowerShell**
+
+***__WARNING: Do not execute random commands in this window.  This is an elevated command prompt and can do serious damage if used improperly.  The two commands in these instructions are safe to run__***
+
+5. Run `Get-ExecutionPolicy`
+6. If the output is **Restricted**, go to Step 7. If it is anything else, skip to Package Installation Process
+7. If not, run `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned`. This command will allow scripts downloaded from elsewhere to run if they are signed by the publisher. They will also allow all local scripts to run no matter what. For more information, read [this article](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.5)
+8. Close the Administrator Command Prompt window
+
+### 5.2 Package Installation Process
 We will use [Pandas](https://pandas.pydata.org/), a popular library for data analysis, for work with tables and spreadsheets, and the [pytest](https://docs.pytest.org/en/stable/) library for writing tests
 
 You can add Pandas & Pytest to your virtual environment by clicking on the Python icon in the side bar (it may be hidden behind the three dots -- if you don't see this, please review [3.2](#32-check-python-environments-extension) above, and that you installed the Python Environments extension): \
@@ -214,6 +234,7 @@ And also search for and check "pytest", and now hit "OK": \
 ![VSCode Pytest Pkg](/img/vscodepytest.png)
 
 
+<!-- MARK: - Log Into **GitHub** In **VSCode** -->
 ## 6 Log Into **GitHub** In **VSCode**
 1. Click on the accounts icon in the bottom left of VSCode: 
   ![VSCode Login](/img/vscodesignin.png)
@@ -251,6 +272,14 @@ And also search for and check "pytest", and now hit "OK": \
     1. You’ll see the Python version displayed in the bottom-right corner once a `.py` file is open, written as `.venv (3.XX)`
 
 
+<!-- MARK: - Extras -->
+## Extras!
+### Autosave Setup
+1. At the top of the window, click **File**
+2. In the drop-down menu, find the **Auto Save** option. If it is not checked, click on it
+
+
+<!-- MARK: - FAQs -->
 ## FAQs
 ### I have installed Git, but I keep getting issues trying to push/pull/commit
 1) Make sure you have correctly [configured git](#32-git-configuration) with **your** name, and the email **you used to set up your GitHub account**, then quit and reopen VS Code
@@ -261,6 +290,7 @@ And also search for and check "pytest", and now hit "OK": \
 ### I installed Python, but I keep getting issues installing the packages or setting up the Virtual Environment
 1) Quit and reopen VS Code
 2) Delete the ``.venv`` file, quit and reopen VS Code, the resetup the [Virtual Environment](#43-now-set-up-the-virtual-environment)
+3) See [``Activate.ps1`` error FAQ](#on-windows-i-am-getting-an-error-where-activateps1-cannot-be-loadedunauthorized-access)
 3) If all else fails, post in the ``#python-installation`` channel with a screenshot of what is shown in the ``Output`` section of VS Code (click the ``Output`` button next to the ``Terminal`` button) and/or attend office hours for help
 <!-- On WINDOWS, there is a command version that can be run that will make the Environment and sometimes fix the issue. Once it appears, add it as step 3 and move step 3 to step 4 -->
 
@@ -277,10 +307,10 @@ And also search for and check "pytest", and now hit "OK": \
 4) Redo the “Clone repository” instructions and you should have access now
 
 ### On **Windows** I am getting an error where ``Activate.ps1`` cannot be loaded/Unauthorized access
-Your best bet it to go to office hours for help
-
-If you wish to try to resolve it on your own:
-- Open PowerShell
-- As admin, run ``Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser``
-
-You can try also try looking at [this article](https://stackoverflow.com/questions/77711479/how-to-fix-cant-load-file-activate-ps1-because-script-execution-is-disable) for more, but if it looks intimidating, then come to office hours for help
+1) Make sure to follow [Important Instructions for Windows Users](#51-important-instructions-for-windows-users)
+2) If you already installed Pandas and Pytest:
+    1) Expand the .venv (3.14.0) folder. You should see a list of packages
+    2) Find **pytest**, **pandas**, and **pandas-stubs**. Delete these three packages
+    3) Close and reopen VS Code
+    4) Do the in [Important Instructions for Windows Users](#51-important-instructions-for-windows-users)
+    4) Re-add the packages
