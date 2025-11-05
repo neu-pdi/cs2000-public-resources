@@ -1,3 +1,7 @@
+---
+title: Python Install
+description: Python Installation and Setup Instructions
+---
 
 ## 1 Installing **Python 3.11 Or Newer**
 We will use Python version 3.11 or higher in this course. Please follow the below instructions to install a Python interpreter that works with VScode
@@ -166,7 +170,6 @@ If it is **not there**, go to VSCode's Settings menu
       
 Type "Environments Extension" in the search bar. Check the "Python: Use Environments Extension" box. Exit and restart VSCode, and the Python symbol should appear \
     ![VSCode Enable Environments](/img/vscode-environments-enable.png)
-
 
 ### 4.3 Now Set Up The Virtual Environment
 > We will use a per‑project virtual environment named `.venv` so tools run consistently
