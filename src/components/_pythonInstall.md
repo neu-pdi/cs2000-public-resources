@@ -111,6 +111,7 @@ Now, any missing or mismatched types will be reported in the "Problems" tab (bot
 
 
 <!-- MARK: - Installing Git -->
+<!-- May be worth moving this before the VS Code setup (and updating instructions + references accordingly) to prevent the need for a VS Code restart -->
 ## 3 Installing Git
 For homeworks and labs, we will use Git version control to keep track of changes, push, and pull from GitHub. Lets set that up
 
