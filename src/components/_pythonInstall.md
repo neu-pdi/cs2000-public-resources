@@ -277,7 +277,7 @@ And also search for and check "pytest", and now hit "OK": \
 
 
 <!-- MARK: - FAQs -->
-## FAQs
+## Common Issues And FAQs
 ### I have installed Git, but I keep getting issues trying to push/pull/commit
 1) Make sure you have correctly [configured git](#32-git-configuration) with **your** name, and the email **you used to set up your GitHub account**, then quit and reopen VS Code
 2) Make sure you are [logged into GitHub in VS Code](#6-log-into-github-in-vscode)
