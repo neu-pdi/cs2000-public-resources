@@ -166,13 +166,13 @@ function notesDropdownItems() {
       to: '/tables/',
       label: 'Tables',
     },
-    {
-      label: 'Pyret Documentation',
-      href: 'https://pyret.org/docs/latest/index.html',
-    }
   ]
 
   if (new Date() >= new Date(2025, 10, 3)) {
+    startingItems.push({
+      to: '/python-setup/',
+      label: 'Python Setup + FAQs',
+    });
     startingItems.push({
       to: '/pyret-cheatsheet-python/',
       label: 'Python for Pyreteers',
@@ -182,6 +182,10 @@ function notesDropdownItems() {
       href: 'https://docs.python.org/3/',
     })
   }
+  startingItems.push({
+    label: 'Pyret Documentation',
+    href: 'https://pyret.org/docs/latest/index.html',
+  });
 
   return startingItems;
 }

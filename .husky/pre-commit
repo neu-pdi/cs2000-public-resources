@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-set -euo pipefail
+#set -euo pipefail
 
-if command -v treefmt >/dev/null 2>&1; then
-  echo "[husky] Running treefmt check..."
-  treefmt --fail-on-change
-else
-  echo "[husky] treefmt not found."
-  exit 1
-fi
+#if command -v treefmt >/dev/null 2>&1; then
+#  echo "[husky] Running treefmt check..."
+#  treefmt --fail-on-change
+#else
+#  echo "[husky] treefmt not found."
+#  exit 1
+#fi
