@@ -1,5 +1,5 @@
 ---
-title: Day λ
+title: Extra - λ
 ---
 
 For today, we are going back to foundations -- some of the **oldest**, and most **fundamental** and **fascinating** ideas in the entire field of computer science.
@@ -211,7 +211,21 @@ lam(x, y): x end
 
 Or, `TRUE` -- exactly as desired.
 
-Reading things this way can be pretty tricky. For the rest of this lecture and the next, we'll just use the constant definitions we define for fragments of the lambda calculus that we want to re-use. These definitions won't ever involve recursion, so they can always just be substituted (yielding programs that look like the above). This means we are still writing programs in the pure lambda calculus, but always using the constants makes things a lot easier to read. 
+Reading programs written in the pure lambda calculus can be pretty tricky (like the example we just had). 
+
+For the rest of this lecture and the next, in order to make them easier to read, we'll use constant definitions we define for fragments of the lambda calculus that we want to re-use, and to the extent we can leave them as constants, or do multiple steps at once, we'll do that. These definitions won't ever involve recursion, so they can always just be substituted (yielding programs that look like the above). This means we are still writing programs in the pure lambda calculus, but always using the constants makes things a lot easier to read. 
+
+So for the above, we would write:
+
+```pyret
+IF(TRUE,TRUE,FALSE)
+```
+
+And then would say that this steps to:
+
+```pyret
+TRUE
+```
 
 ### Testing in Pyret
 
@@ -235,49 +249,55 @@ check:
 end
 ```
 
-Clearly, `tobool(..)` is _not_ a term in the lambda calculus. But, we'll only use this for testing, in order to read results, or, in some cases (e.g., for numbers), to be able to more easily construct example inputs (converting normal Pyret numbers into ones in the lambda calculus).
+Clearly, `tobool(..)` is _not_ a term in the lambda calculus (it includes Pyret `true` and `false`, as well as a non-anonymous function). But, we'll only use this for testing, in order to read results, or, in some cases (e.g., for numbers), to be able to more easily construct example inputs (converting normal Pyret numbers into ones in the lambda calculus).
 
 ## And, Or, Not
 
-So how do we do `and`, `or`, and `not`? 
+So we've figured out `if`, `true`, and `false`, but the true test of our representation is if we can also come up with lambda calculus representations of `and`, `or`, and `not` that work with out representations of `true` and `false`. 
 
-Well, each should be a function, `and` and `or` both take two booleans and return one boolean. `not` takes a boolean and returns a boolean. 
+**What does that mean?**
 
-So,
+Well, each should be a function -- `and` and `or` both take two booleans and return one boolean; `not` takes a boolean and returns a boolean. 
+
+So:
 
 ```pyret
 AND = lam(b1, b2): ... end
 ```
 
-What should it do? Well, if `b1` is true, then it should return whatever `b2` is. If `b1` is false, it should return false. 
+What should go in the `...`? Well, if `b1` is true (our representation of true!), then this function should return whatever `b2` is (as if `b2` is true, then `b1 and b2` is true, and if `b2` is false, then `b1 and b2` is false). Whereas if `b1` is false, then `b1 and b2` is false no matter what `b2` is.
 
-If `b1` is true, we know it is a function that returns its first argument, so in that case, we'd want it to be:
+So let's translate that into code, thinking about how `TRUE` and `FALSE` work.
+
+If `b1` is `TRUE`, we know it is a function that returns its first argument, so in that case. In that case, we would want `AND` to be:
 
 ```pyret
 AND = lam(b1, b2): b1(b2, ...) end
 ```
 
-What should the second argument be? Well, if `b1` is true, it doesn't matter. But if `b1` is false, then it will ignore its first argument (so its fine if its `b2`), but it will return whatever its _second_ argument is. What do we want it to return? `false`! So let's make it:
+Since as we already figured out, if `b1` is true, then we want to just return `b2`.
+
+What should the second argument to `b1` be? Well, if `b1` is `TRUE`, it doesn't matter. But if `b1` is `FALSE`, then it will ignore its first argument (so its fine if its `b2`) and will instead return whatever its _second_ argument is. What do we want that to return? `FALSE`! So let's make `AND` be:
 
 ```pyret
 AND = lam(b1, b2): b1(b2, FALSE) end
 ```
 
-`or` is similar -- except now if `b1` is true, we want to return true, and if it is false want to return whatever `b2` is:
+`or` is similar -- except now if `b1` is `TRUE`, we want to return `TRUE`, and if it is `FALSE` want to return whatever `b2` is:
 
 ```pyret
 OR = lam(b1, b2): b1(TRUE, b2) end
 ```
 
-For `not`, we have a single boolean argument, and if we get true as input, want to return false, and if we get false, want to return true.
+For `not`, we have a single boolean argument, and if we get `TRUE` as input, want to return `FALSE`, and if we get `FALSE`, want to return `TRUE`.
 
-How can we do that? Well, we know that true will return its first argument, so:
+How can we do that? Well, we know that `TRUE` will return its first argument, so:
 
 ```pyret
 NOT = lam(b): b(FALSE, ...) end
 ```
 
-And if we get false, then we know it will return its second argument, so we can complete as:
+And if we get `FALSE`, then we know it will return its second argument, so we can complete as:
 
 
 ```pyret

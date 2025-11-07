@@ -1,5 +1,5 @@
 ---
-title: Day λY
+title: Extra - λY
 ---
 
 Today, we'll continue with the lambda calculus, and explore one of the most fascinating problems: how to construct recursive functions. This might seem initially easy, but when we think about it, it might actually seem impossible -- lambdas, indeed, have no name, and therefore have no way of "calling themselves". How, then, can we construct functions that call themselves? This is the puzzle we'll figure out today.

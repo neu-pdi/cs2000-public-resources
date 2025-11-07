@@ -23,4 +23,4 @@ hide_table_of_contents: true
 | Week 11 (Nov 10-14) HOLIDAY Nov 11 | Scoping, mutable state, equality | [D27](/days/27), [D28](/days/28), SLACK | [R10](/recitation/10) | [HW10](/homework/10) | [Lab9](/lab/9) (**Oakland Friday Only** -- Others No Lab) |
 | Week 12 (Nov 17-21) | Tables in Python: pandas & csvs | [D29](/days/29), [D30](/days/30), [D31](/days/31) | [R11](/recitation/11) | [HW11](/homework/11) | [SkillBundle2](</skills#(bundle2)>) |
 | Week 13 (Nov 24-25) HOLIDAY Nov 26-28 | | [SkillDay3](</skills/#(day3)>) | [R12](/recitation/12) | No HW | [Lab9](/lab/9) (Oakland Tuesday & Boston) |
-| Week 14 (Dec 1-5) | More with Python: catch up, bonus content, etc. May depend on section / instructor. | [D32](/days/32), [D33](/days/33), Bonus | No Recitation | [HW12](/homework/12) | [Lab10](/lab/10) |
+| Week 14 (Dec 1-5) | Catch up, bonus content, etc. Depends on section / instructor. | Maybe: [Dictionaries](/days/XDict), [Datavis](/days/XMatplotlib), [λ Calculus](/days/Xλ), [Y Combinator](/days/XλY) | No Recitation | [HW12](/homework/12) | [Lab10](/lab/10) |

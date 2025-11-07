@@ -1,7 +1,7 @@
 ---
 sidebar_position: 33
 day_number: 33
-title: Day 33 - Dictionaries
+title: Extra - Dictionaries
 ---
 
 ## Skills: None

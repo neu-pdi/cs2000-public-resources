@@ -1,7 +1,7 @@
 ---
 sidebar_position: 32
 day_number: 32
-title: Day 32 - Visualizing Data with Python
+title: Extra - Datavis in Python
 ---
 
 ## Skills: None
