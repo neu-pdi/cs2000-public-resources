@@ -212,7 +212,7 @@ Windows machines sometimes restrict running scripts, which is what Python relies
 ***WARNING: Do not execute random commands in this window.  This is an elevated command prompt and can do serious damage if used improperly.  The two commands in these instructions are safe to run***
 5. Run `Get-ExecutionPolicy`
 6. If the output is **Restricted**, go to Step 7. If it is anything else, skip to Package Installation Process
-7. If not, run `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned`. This command will allow scripts downloaded from elsewhere to run if they are signed by the publisher. They will also allow all local scripts to run no matter what. For more information, read [this article](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.5)
+7. Run `Set-ExecutionPolicy -ExecutionPolicy RemoteSigned`. This command will allow scripts downloaded from elsewhere to run if they are signed by the publisher. They will also allow all local scripts to run no matter what. For more information, read [this article](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.5)
 8. Close the Administrator Command Prompt window
 
 ### 5.2 Package Installation Process
