@@ -342,22 +342,100 @@ end
     | -- | -- |
     | **Meets Expectations** | • Output of given code, that uses variables, defined locally, in functions, globally, etc, is correct<br/>• Explanation of behavior, including global keyword if needed, is correct |
     | **Approaching Expectations** | • Explanation mentions key idea, but does not use it to correctly characterize behavior |
+
+<details>
+    <summary>Examples</summary>
+<p>What will be the outcome of the following code? Explain why.</p>
+   
+```python
+temperature = 72
+
+def adjust_temp():
+    temperature = 68
+    print("Room temp:", temperature)
+
+adjust_temp()
+print("House temp:", temperature)
+```
+
+<p>Answer meeting expectations:</p>
+
+```
+Room temp: 68
+House temp: 72
+
+The first temperature is a local variable within adjust_temp().
+The second temperature is the global variable, which is not
+affected by the function call. It is shadowed by the local variable.
+```
+
+<p>Answer approaching expectations (right idea, wrong result:</p>
+
+```
+Room temp: 68
+House temp: 68
+
+The first temperature is a local variable within adjust_temp().
+The second temperature is the global variable, which is not
+affected by the function call. It is shadowed by the local variable.
+```
+
+<details>
+   <summary>Practice Problem 1</summary>
+<p>What will be the outcome of the following code? Explain why.</p>
+
+```python
+clicks = 0
+
+def track_click():
+    global clicks
+    clicks = clicks + 1
+    return clicks
+
+print(track_click())
+print(track_click())
+```
+
+</details>
+
+<details>
+   <summary>Practice Problem 2</summary>
+<p>What will be the outcome of the following code? Explain why.</p>
+
+```python
+x = 5
+y = 10
+
+def f1():
+    global x, y
+    temp = x
+    x = y
+    y = temp
+    print("In f1: x = ", x, ", y = ", y)
+
+print("Before f1: x = ", x, ", y = ", y)
+f1()
+print("After f1: x = ", x, ", y = ", y)
+```
+
+</details>
+
 8. <a id="(8)" href="#(8)">Design basic functions (Python)</a>
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Correct type annotation<br/>• Docstring that describes behavior, doesn't repeat type annotation<br/>• A few (2+) correct, meaningfully different tests<br/>• Correct implementation |
     | **Approaching Expectations** | • Missing docstring, or long, includes redundant type information, etc.<br/>• 1+ correct tests<br/>• Correct implementation |
-9. <a id="(9)" href="#(9)">Iteration: Lists (Python)</a>
+10. <a id="(9)" href="#(9)">Iteration: Lists (Python)</a>
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Uses `for ... in ...` properly, drawing elements from the list<br/>• Mutates a single variable within the loop to correctly accumulate the result<br/>• Returns the final result after the loop |
     | **Approaching Expectations** | • Uses `for ... in ...`, drawing elements from the list<br/>• Either: Mutates within the loop, but in such a way that doesn't produce the correct accumulated answer, or doesn't use the final result properly at the end of the loop |
-10. <a id="(10)" href="#(10)">Aliasing & Mutation (Python)</a>
+11. <a id="(10)" href="#(10)">Aliasing & Mutation (Python)</a>
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Output of given code that uses mutation of values like lists, aliasing, etc, is correct<br/>• Explanation of behavior is correct |
     | **Approaching Expectations** | • Explanation mentions key idea, but does not use it to correctly characterize behavior |
-11. <a id="(11)" href="#(11)">Identifying Privacy Issues in Problem Formulation</a>
+12. <a id="(11)" href="#(11)">Identifying Privacy Issues in Problem Formulation</a>
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Privacy analysis chart is complete and each entry is correct<br/> • Identify named privacy issue in a new context<br/> • Proposed mitigation strategy is appropriate given context |
