@@ -457,7 +457,7 @@ def test_calculate_year():
     assert(calculate_year(100)) == "senior"
 ```
 
-<p>Answer meeting expectations (missing type annotation, missing docstring, only one test):</p>
+<p>Answer approaching expectations (missing type annotation, missing docstring, only one test):</p>
 
 ```python
 def calculate_year(credits):
