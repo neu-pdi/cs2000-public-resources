@@ -379,6 +379,7 @@ The first temperature is a local variable within adjust_temp().
 The second temperature is the global variable, which is not
 affected by the function call. It is shadowed by the local variable.
 ```
+</details>
 
 <details>
    <summary>Practice Problem 1</summary>
