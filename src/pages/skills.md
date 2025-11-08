@@ -426,6 +426,55 @@ print("After f1: x = ", x, ", y = ", y)
     | -- | -- |
     | **Meets Expectations** | • Correct type annotation<br/>• Docstring that describes behavior, doesn't repeat type annotation<br/>• A few (2+) correct, meaningfully different tests<br/>• Correct implementation |
     | **Approaching Expectations** | • Missing docstring, or long, includes redundant type information, etc.<br/>• 1+ correct tests<br/>• Correct implementation |
+<details>
+    <summary>Examples</summary>
+<p>What will be the outcome of the following code? Explain why.</p>
+Design a function `calculate_year` that takes a number of credits completed and returns the academic status
+based on these boundaries:
+   * credits < 32: freshman
+   * credits < 64: sophomore
+   * credits < 96: junior
+   * credits >= 96: senior
+
+<p>Answer meeting expectations:</p>
+
+```python
+def calculate_year(credits: int) -> str:
+    "determines NU year based on credits completed"
+    if credits < 32:
+        return "freshman"
+    elif credits < 64:
+        return "sophomore"
+    elif credits < 96:
+        return "junior"
+    else:
+        return "senior"
+
+def test_calculate_year():
+    assert(calculate_year(20)) == "freshman"
+    assert(calculate_year(32)) == "sophomore"
+    assert(calculate_year(64)) == "junior"
+    assert(calculate_year(100)) == "senior"
+```
+
+<p>Answer meeting expectations (missing type annotation, missing docstring, only one test):</p>
+
+```python
+def calculate_year(credits):
+    if credits < 32:
+        return "freshman"
+    elif credits < 64:
+        return "sophomore"
+    elif credits < 96:
+        return "junior"
+    else:
+        return "senior"
+
+def test_calculate_year():
+    assert(calculate_year(20)) == "freshman"
+```
+</details>
+
 10. <a id="(9)" href="#(9)">Iteration: Lists (Python)</a>
     |  |  |
     | -- | -- |
