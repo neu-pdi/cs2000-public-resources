@@ -476,6 +476,16 @@ def test_calculate_year():
 
 </details>
 
+<details>
+    <summary>Practice Problem</summary>
+<p>Design a function `convert_to_usd` that takes an amount of money and a currency (`"EUD"`, `"CAD"`, or `"INR"`)
+   and returns the equivalent amount of US dollars (USD). Assume:</p>
+   * 1 EUR is 1.15 USD
+   * 1 CAD is 0.70 USD
+   * 1 INR is 0.01 USD
+
+</details>
+
 9. <a id="(9)" href="#(9)">Iteration: Lists (Python)</a>
     |  |  |
     | -- | -- |
