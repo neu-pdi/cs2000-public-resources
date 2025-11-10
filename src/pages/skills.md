@@ -432,8 +432,8 @@ print("After f1: x = ", x, ", y = ", y)
 <p>Design a Python function `calculate_year` that takes a number of credits completed and returns the academic status
 based on these boundaries:</p>
    * credits < 32: freshman
-   * 32 <= credits < 64: sophomore
-   * 64 <= credits < 96: junior
+   * 32 ≤ credits < 64: sophomore
+   * 64 ≤ credits < 96: junior
    * credits >= 96: senior
 <p>Note: test `assert`s may be written without wrapping test functions.</p>
 <p>Answer meeting expectations:</p>
