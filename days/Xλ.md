@@ -21,16 +21,16 @@ However, it was these people, and the discoveries that they made, that enabled t
 ### Turing's accomplishments
 Turing did many things -- he's famous for at least three that are worth mentioning --
 
-1. From the very beginning, he was fascinated by the idea of **thinking machines**. He devised a test for whether a machine was intelligent. He was also interested in chess, and designed a **program to automatically play chess in 1948**; the extremely early computers that existed at that point were not capable enough for it, so it only existed on paper in his lifetime.
+1. From the very beginning, he was fascinated by the idea of **thinking machines**. He devised a test for whether a machine was intelligent. He was also interested in chess, and designed a **program to automatically play chess in 1948**; the extremely early computers that existed at that point were not capable enough for it, so he never saw it run.
 2. During WWII, he helped figure out how to use machines (essentially, pre-computers) to crack what was previously unbreakable Nazi encryption. These involved the first somewhat programmable computers.
 <figure>
      ![WWII Decryption Bombe](/img/bombe.jpg)
-<figcaption>1945, Bletchley Park Bombe</figcaption>
+<figcaption>1945, Bletchley Park Bombe, used to break Nazi Enigma encryption</figcaption>
 </figure>
 3. Relevant to our class today, Turing also established fundamental results related to what can be expressed by a computer program. A model of computation he came up with, which involves an infinite tape and a machine in the middle that can read and write to the tape, **is still used to model what we can express in computers**. While this machine cannot be constructed (as the tape must be infinite in length), other models, **including the topic of todays lecture**, can be.
 <figure>
    ![Turing Machine](/img/turingmachine.jpg)
-<figcaption>Approximation of Turing Machine, built in 2012</figcaption>
+<figcaption>Approximation of Turing Machine (with a finite tape), built in 2012</figcaption>
 </figure>
 
 ### Persecution
@@ -40,7 +40,7 @@ As a result of the conviction for homosexuality, Turing was prevented from being
 
 Just a few years later, at age 41, he took his own life. 
 
-It's worth reflecting on this, both to **remember the ugliness that exists within our society**, not so long ago, and to think about how much more a person like Turing may have done in a society that accepted him -- the astounding quantity he accomplished in essentially 20 years of work is such that the [highest award in computer science](https://en.wikipedia.org/wiki/Turing_Award) is named after him. Who knows what he would have done if he had continued to work into the 60s and 70s, as computers expanded from massive and extremely limited government projects to commercial and much more powerful devices.
+It's worth reflecting on this, both to **remember the ugliness that exists within our society**, not so long ago, and to think about how much more a person like Turing may have done in a society that accepted him -- the astounding quantity he accomplished in essentially 20 years of work is such that the [highest award in computer science](https://en.wikipedia.org/wiki/Turing_Award) is named after him. Who knows what he would have done if he had continued to work into the 60s and 70s, as computers expanded from massive and extremely limited government projects to powerful devices that began to resemble those we have today.
 
 It's also a good reminder for us to **reflect on how many people may have never entered the field** -- we are so lucky that Turing did, and gave us these brilliant ideas, even if the high profile that it gave him ultimately led to such prosecution.
 
@@ -63,7 +63,7 @@ What is so interesting about that proof (and it parallels work by logician Kurt 
 ### Computation is Complex
 Computation is, indeed, deep. From the same era -- 1937 -- mathematician Lothar Collatz presented this seemingly simple problem:
 
-**Is there an integer, when passed to the following function, which causes it to run forever?**
+**Is there an integer, when passed to the following function, that causes it to run forever?**
 
 ```pyret
 fun collatz(n :: Number) -> Number:
@@ -77,7 +77,7 @@ fun collatz(n :: Number) -> Number:
 end
 ```
 
-**It's a simple program**. You could have written it a couple weeks into this class. And yet, **we are 88 years later and we still don't know**. We've tried it on very large numbers ([all of them up to `2.36×10^21`](https://en.wikipedia.org/wiki/Collatz_conjecture)), and all that we have tried it has terminated for, but still have no idea if there might be some very large number for which it runs forever.
+**It's a simple program**. You could have written it a couple weeks into this class. And yet, **we are 88 years later and we still don't know**. We've tried it on very large numbers ([all of them up to `2.36×10^21`](https://en.wikipedia.org/wiki/Collatz_conjecture)), and all that we have tried it has terminated for, but still we have no idea if there might be some very large number for which it runs forever.
 
 ## Act 2. Models of Computation
 
@@ -231,7 +231,9 @@ TRUE
 
 As we come up with more and more sophisticated **encodings** (a fancy word for what we just did with booleans -- figure out representations in the lambda calculus for `true`, `false`, and `if`), it will be more likely that we make mistakes. It will be really helpful to be able to actually _run_ our examples -- indeed, part of the benefit of using the lambda calculus for this (instead of, e.g., a Turing Machine) is that what we are writing are real programs.
 
-However, one issue is that since our results will always be functions (the only value we have), Pyret will just print these out as `<function:anonymous>`, so we won't be able to tell if we what we got is what we wanted.
+However, one issue is that since our results will always be functions (the only value we have), Pyret will just print these out as `<function:anonymous>`, so we won't be able to tell if we what we got is what we wanted. 
+
+  And functions, in Pyret (and many languages) cannot be compared for equality (as usually you wouldn't want to be checking that the actual code was equal, you'd want to know that the _behavior_ was equal, but that'd require calling the two functions on potentially infinite arguments!).
 
 One way around this is to add a little bit of code to convert _back_ to ordinary Pyret values -- e.g., we can do this for our lambda calculus booleans (called **Church Booleans** after Alonzo Church) using the following function:
 
@@ -372,7 +374,7 @@ Addition takes two numbers and returns one, so we can start with:
 ADD = lam(n1, n2): ... end
 ```
 
-Now, what should the result be? Well, we want a function `lam(f,x): f(f(...f(x))) end` where there are `n1 + n2` copies of `f`. Now, we know that `n1` and `n2` have this form already, but if we are going to be able to do anything with them, we have to apply them, so somehow it seems like we will need a _new_ `f` and `x` to work with. So lets expand our solution to:
+Now, what should the result be? Well, we want a function `lam(f,x): f(f(...f(x))) end` where there are `n1 + n2` copies of `f`. Now, we know that `n1` and `n2` have this form already, but if we are going to be able to do anything with them, we have to apply them, so somehow it seems like we will need an `f` and `x` to pass to `n1` or `n2`. So lets expand our solution to:
 
 ```pyret
 ADD = lam(n1, n2): lam(f, x): ... end end
@@ -384,7 +386,7 @@ So how can we get the inner applications? Well, if we apply `n1(f,x)`, this shou
 ADD = lam(n1, n2): lam(f, x): n2(f, n1(f, x)) end end
 ```
 
-How do we do multiplication? There are multiple ways of doing it, but one is noticing that `n1 * n2` is the same as _adding_ `n2`, `n1` times, starting at 0.
+How do we do multiplication? There are multiple ways of doing it, but one is noticing that `n1 * n2` is the same as _adding_ `n2`, `n1` times, starting at 0. Note here that we are making particular choices for both `f` and `x`, knowing that our choice of `f` will be applied to our choice of `x` exactly `n1` times.
 
 i.e.,:
 
@@ -392,9 +394,11 @@ i.e.,:
 MUL = lam(n1, n2): n1(lam(y): ADD(n2, y) end, ZERO) end
 ```
 
-This would mean if we had 4 multiplied by 3, this is the same as:
+This would mean if we had 4 multiplied by 3, we get:
 
 ```pyret
+MUL(FOUR,THREE) # -->
+FOUR(lam(y): ADD(THREE, y) end, ZERO) # -->
 ADD(THREE, ADD(THREE, ADD(THREE, ADD(THREE, ZERO))))
 ```
 
@@ -414,7 +418,7 @@ MINUS1 = lam(n): ... end
 
 Somehow, this has to take a function `lam(f, x): f(f(...f(x))) end` and return `lam(f,x): f(...f(x)) end` -- i.e., apply the function one fewer time. 
 
-How can we do that? Well, the easiest way to do it is actually to take a slight detour, to define our first _structured_ data (which we can do, of course!) -- a pair of two values. 
+How can we do that? Well, the easiest way to do it is actually to take a slight detour, to define our first _structured_ data (which we can do, of course -- Church and Turing proved we can express _everything_) -- structured data with two values, which we'll call a pair.
 
 Essentially, we want to define three things:
 
@@ -478,3 +482,5 @@ check:
   tobool(EQUAL0(ofnum(10))) is false
 end
 ```
+
+(We can get to general equality by combining generalized subtraction with `EQUAL0`, but we won't today).
