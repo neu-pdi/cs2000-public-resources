@@ -429,13 +429,13 @@ print("After f1: x = ", x, ", y = ", y)
 
 <details>
     <summary>Examples</summary>
-<p>Design a function `calculate_year` that takes a number of credits completed and returns the academic status
+<p>Design a Python function `calculate_year` that takes a number of credits completed and returns the academic status
 based on these boundaries:</p>
    * credits < 32: freshman
-   * credits < 64: sophomore
-   * credits < 96: junior
+   * 32 <= credits < 64: sophomore
+   * 64 <= credits < 96: junior
    * credits >= 96: senior
-   
+<p>Note: test `assert`s may be written without wrapping test functions.</p>
 <p>Answer meeting expectations:</p>
 
 ```python
@@ -450,11 +450,10 @@ def calculate_year(credits: int) -> str:
     else:
         return "senior"
 
-def test_calculate_year():
-    assert(calculate_year(20)) == "freshman"
-    assert(calculate_year(32)) == "sophomore"
-    assert(calculate_year(64)) == "junior"
-    assert(calculate_year(100)) == "senior"
+assert(calculate_year(20)) == "freshman"
+assert(calculate_year(32)) == "sophomore"
+assert(calculate_year(64)) == "junior"
+assert(calculate_year(100)) == "senior"
 ```
 
 <p>Answer approaching expectations (missing type annotation, missing docstring, only one test):</p>
@@ -470,8 +469,7 @@ def calculate_year(credits):
     else:
         return "senior"
 
-def test_calculate_year():
-    assert(calculate_year(20)) == "freshman"
+assert(calculate_year(20)) == "freshman"
 ```
 
 </details>
@@ -483,7 +481,7 @@ def test_calculate_year():
    * 1 EUR is 1.15 USD
    * 1 CAD is 0.70 USD
    * 1 INR is 0.01 USD
-
+<p>Note: test `assert`s may be written without wrapping test functions.</p>
 </details>
 
 9. <a id="(9)" href="#(9)">Iteration: Lists (Python)</a>
