@@ -95,7 +95,9 @@ that it should call.
 
 This is our first attempt, which doesn't work, but gets us closer (as it eliminates the explicit recursion):
 ```pyret
-FACT0 = lam(rcall, n): IF(EQUAL0(n), ONE, MUL(n, rcall(MINUS1(n)))) end
+FACT0 = lam(rcall, n): 
+    IF(EQUAL0(n), ONE, MUL(n, rcall(MINUS1(n)))) 
+  end
 ```
 
 This almost works (and is valid, lambda calculus code), but to use it, we need something to pass as `rcall`. It seems like we'd already
@@ -109,7 +111,11 @@ iteration we wanted to call `rcall`, then we could pass `rcall` both itself (as 
 function to call recursively) and the argument. 
 
 ```pyret
-FACT1 = lam(rcall, n): IF(EQUAL0(n), lam(): ONE end, lam(): MUL(n, rcall(rcall, MINUS1(n))) end) end
+FACT1 = lam(rcall, n): 
+    IF(EQUAL0(n), 
+       lam(): ONE end, 
+       lam(): MUL(n, rcall(rcall, MINUS1(n))) end) 
+  end
 ```
 
 Now, the question is how can we use this? Well, what if we call `fact1` passing
