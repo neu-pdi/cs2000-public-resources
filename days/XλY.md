@@ -6,7 +6,7 @@ Today, we'll continue with the lambda calculus, and explore a fascinating and ch
 
 Let's recap the definitions we have (the ones in `ALLCAPS` are actual lambda calculus terms, the `of...(...)` and `to...(...)` are convenient helpers to make it easier to test our code in Pyret).
 
-Note that **we make a minor change from last time** -- since in Pyret, functions evaluate their arguments _before_ being called, if we use the implementations of booleans (and `IF`, `AND` and `OR`) that we saw before, we won't get the short-circuiting behavior that we expect -- `IF` will evaluate _both_ the then and the else branches, etc. This worked in the original lambda calculus because there was no defined order of evaluation, but it will make our concrete example today not work.
+Note that **we make a minor change from last time** -- since in Pyret, functions evaluate their arguments _before_ being called, if we use the implementations of booleans (and `IF`, `AND`, `OR`, and `NOT`) that we saw before, we won't get the short-circuiting behavior that we expect -- `IF` will evaluate _both_ the then and the else branches, etc. This worked in the original lambda calculus because there was no defined order of evaluation, but it will make our concrete example today not work.
 
 So we slightly tweak -- expecting the arguments to `TRUE` and `FALSE` to be zero argument functions that get _evaluated_ by `TRUE` and `FALSE` (note the parantheses after `x` and `y` in the definitions of `TRUE` and `FALSE`)
 
@@ -54,7 +54,7 @@ EQUAL0 = lam(n): n(lam(y): FALSE end, TRUE) end
 
 ## Omega
 
-To start, we take as inspiration a simple program in the lambda calculus that must involve recursion (or something close enough), since it runs forever!
+To start our journey towards Y, we take as inspiration a simple program in the lambda calculus that must involve recursion (or something close enough), since it runs forever!
 
 ```pyret
 (lam(x): x(x) end)(lam(x): x(x) end)
@@ -77,14 +77,23 @@ fun factorial(n :: Number) -> Number:
 end
 ```
 
-Importantly, we can now express all the pieces of this in the lambda calculus _except_ the recursive call. We have `IF`, `EQUAL0`, `ONE`, `MUL`, and `MINUS1`.
+Importantly, with what we did the previous lecture, can now express all the pieces of this in the lambda calculus _except_ the recursive call. We have `IF`, `EQUAL0`, `ONE`, `MUL`, and `MINUS1`. So a hybrid Pyret-LambdaCalculus version might be:
 
+```pyret
+fun factorial(n :: Number) -> Number:
+  IF(EQUAL0(N),
+     ONE,
+     MUL(N, factorial(MINUS1(N))))
+end
+```
+
+**But how do we handle the recursive call?**
 
 The key idea turns out to be: write a
 function that, rather than calling itself (how recursion normally works), expects to be passed the function
 that it should call.
 
-This is our first attempt, which doesn't work, but gets us closer:
+This is our first attempt, which doesn't work, but gets us closer (as it eliminates the explicit recursion):
 ```pyret
 FACT0 = lam(rcall, n): IF(EQUAL0(n), ONE, MUL(n, rcall(MINUS1(n)))) end
 ```
