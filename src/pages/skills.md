@@ -580,6 +580,51 @@ Equal objects? False
 Objects with different heap locations can be equal but are not the same object.
 ```
 </details>
+<details>
+   <summary>Practice Problem 1</summary>
+    <p>What will be the output of the following code? Please explain why.</p>
+
+```python
+@dataclass
+class Sensor:
+    name: str
+    temperature: float
+
+def reset_temperature(sensor):
+    sensor.temperature = 0.0
+    return sensor
+
+outdoor_sensor = Sensor("Outside", 25.5)
+result = reset_temperature(outdoor_sensor)
+
+print("outdoor_sensor:", outdoor_sensor)
+print("result:", result)
+print("Are they the same?", outdoor_sensor is result)
+```
+
+</details>
+<details>
+   <summary>Practice Problem 2</summary>
+    <p>What will be the output of the following code? Please explain why.</p>
+
+```python
+@dataclass
+class Player:
+    name: str
+    score: int
+
+def double_score(player):
+    player.score *= 2
+    return player
+
+player1 = Player("Alex", 100)
+player2 = double_score(player1)
+
+print("player1:", player1)
+print("player2:", player2)
+print("Same player object?", player1 is player2)
+```
+</details> 
     
 12. <a id="(11)" href="#(11)">Identifying Privacy Issues in Problem Formulation</a>
     |  |  |
