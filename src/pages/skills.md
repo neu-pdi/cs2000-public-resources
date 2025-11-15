@@ -526,10 +526,12 @@ assert list_of_squares([1, 2]) == [1, 4]
 <details>
    <summary>Practice Problem 1</summary>
    <p>Design a Python function <code>list_of_squares</code> that takes a list of number and returns<code>true</code> if at least one number in the list is positive, <code>false</code> if none are. You must use <code>for ... in ...</code> loop.</p>
+   <p>Note: test <code>assert</code>s may be written without wrapping test functions, for space.</p>
 </details> 
 <details>
    <summary>Practice Problem 2</summary>
    <p>Design a Python function <code>all_increasing</code> that takes a list of number and returns<code>True</code> if each number is greater than the preceding number, <code>False</code> otherwise. It should return <code>True</code> for the empty list.. You must use <code>for ... in ...</code> loop.</p>
+   <p>Note: test <code>assert</code>s may be written without wrapping test functions, for space.</p>
 </details> 
 
 10. <a id="(10)" href="#(10)">Aliasing & Mutation (Python)</a>
@@ -537,7 +539,49 @@ assert list_of_squares([1, 2]) == [1, 4]
     | -- | -- |
     | **Meets Expectations** | • Output of given code that uses mutation of values like lists, aliasing, etc, is correct<br/>• Explanation of behavior is correct |
     | **Approaching Expectations** | • Explanation mentions key idea, but does not use it to correctly characterize behavior |
-11. <a id="(11)" href="#(11)">Identifying Privacy Issues in Problem Formulation</a>
+<details>
+    <summary>Examples</summary>
+    <p>What will be the output of the following code? Please explain why.</p>
+```python
+from dataclasses import dataclass
+@dataclass
+class Account:
+    name: str
+    value: float
+
+account1 = Account("Daniel", 100)
+account2 = Account("Daniel", 100)
+
+print("Same objects?", account1 is account2)
+print("Equal objects?", account1 == account2)
+account1.value = 200
+print("Same objects?", account1 is account2)
+print("Equal objects?", account1 == account2)  
+```
+   <p>**Answer meeting expectations:**</p>
+```
+Same objects? False
+Equal objects? True
+Same objects? False
+Equal objects? False
+
+The two accounts have different heap locations, so they are never the same object.
+They are initially equal objects because they have the same data. After account1.value
+is changed, they are no longer equal.
+```
+
+   <p>**Answer meeting expectations:**</p>
+```
+Same objects? True
+Equal objects? True
+Same objects? False
+Equal objects? False
+
+Objects with different heap locations can be equal but are not the same object.
+```
+</details>
+    
+12. <a id="(11)" href="#(11)">Identifying Privacy Issues in Problem Formulation</a>
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Privacy analysis chart is complete and each entry is correct<br/> • Identify named privacy issue in a new context<br/> • Proposed mitigation strategy is appropriate given context |
