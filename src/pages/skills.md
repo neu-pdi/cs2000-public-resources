@@ -24,7 +24,7 @@ assessments, see below), with the best result being used for their grade.
 <details>
     <summary>Examples</summary>
     <p>Sample question: Design a function <code>nm-square</code> that, given a number, returns the result of multiplying the number by itself.</p>
-    <p>Answer meeting expectations:</p>
+    <p>**Answer meeting expectations:**</p>
 
 ```pyret
 fun nm-square(n :: Number) -> Number:
@@ -36,7 +36,7 @@ where:
   nm-square(2) is 4
 end
 ```
-<p>Answer approaching expectations (docstring, insufficient tests):</p>
+<p>**Answer approaching expectations (docstring, insufficient tests):**</p>
 
 ```pyret
 fun nm-square(n :: Number) -> Number:
@@ -65,7 +65,7 @@ end
 <details>
     <summary>Examples</summary>
     <p>Sample question: Design a function <code>find-scholars</code> that takes a table of students with "name" and "campus" columns and returns a new table containing only the students whose campus is **not** "Boston".</p>
-    <p>Answer meeting expectations:</p>
+    <p>**Answer meeting expectations:**</p>
 
 ```pyret
 fun find-scholars(t :: Table) -> Table:
@@ -92,7 +92,7 @@ where:
 end
 ```
 
-<p>Answer approaching expectations (missing docstring, incorrect row helper, no tests):</p>
+<p>**Answer approaching expectations (missing docstring, incorrect row helper, no tests):**</p>
 
 ```pyret
 fun find-scholars(t :: Table) -> Table:
@@ -124,7 +124,7 @@ and returns a new table containing only those regions where rainfall amounts dec
 <details>
     <summary>Examples</summary>
     <p>Design a function <code>list-of-squares</code> that takes a list of numbers, and returns a list where each element is the square of N where N is the element from the list. You must use <code>for each</code>, rather than a built in list function or recursion.</p>
-    <p>Answer meeting expectations:</p>
+    <p>**Answer meeting expectations:**</p>
 
 ```pyret
 fun list-of-squares(numbers :: List<Number>) -> List<Number> block:
@@ -144,7 +144,7 @@ where:
 end
 ```
 
-<p>Answer approaching expectations (doesn't use the final result properly):</p>
+<p>**Answer approaching expectations (doesn't use the final result properly):**</p>
 
 ```pyret
 fun list-of-squares(numbers :: List<Number>) -> List<Number> block:
@@ -180,7 +180,7 @@ end
 <details>
     <summary>Examples</summary>
     <p>Sample question: Design a data definition for Beverage that can be either coffee with number of shots of espresso, or tea with name and brew-time in minutes. Then, write a function <code>is-strong</code> that returns <code>true</code> if the beverage is a coffee with more than 2 shots, or a tea brewed for more than 5 minutes.</p>
-    <p>Answer meeting expectations:</p>
+    <p>**Answer meeting expectations:**</p>
 
 ```pyret
 data Beverage:
@@ -207,7 +207,7 @@ where:
 end
 ```
 
-<p>Answer approaching expectations (missing docstring, missing annotations, only one test):</p>
+<p>**Answer approaching expectations (missing docstring, missing annotations, only one test):**</p>
 
 ```pyret
 data Beverage:
@@ -243,7 +243,7 @@ end
 <details>
     <summary>Examples</summary>
     <p>Sample question: Using recursion, design a function <code>make-positive</code> that takes a list of numbers and returns a new list where each number is replaced by its absolute value.</p>
-    <p>Answer meeting expectations:</p>
+    <p>**Answer meeting expectations:**</p>
    
 ```pyret
 fun make-positive(lon :: List<Number>) -> List<Number>:
@@ -265,7 +265,7 @@ where:
 end
 ```
 
-<p>Answer approaching expectations (missing docstring, incorrect behavior, inadequate tests):</p>
+<p>**Answer approaching expectations (missing docstring, incorrect behavior, inadequate tests):**</p>
 
    
 ```pyret
@@ -304,7 +304,7 @@ data BinTree<a>:
   | node(left :: BinTree<a>, right :: BinTree<a>)
 end
 ```
-    <p>Answer meeting expectations:</p>
+    <p>**Answer meeting expectations:**</p>
     
 ```pyret
 fun count-internal-nodes(tree :: BinTree) -> Number:
@@ -320,7 +320,7 @@ where:
 end
 ```
 
-<p>Answer approaching expectations (lacking doc string, does not give correct result):</p>
+<p>**Answer approaching expectations (lacking doc string, does not give correct result):**</p>
     
 ```pyret
 fun count-internal-nodes(tree :: BinTree) -> Number:
@@ -358,7 +358,7 @@ adjust_temp()
 print("House temp:", temperature)
 ```
 
-<p>Answer meeting expectations:</p>
+<p>**Answer meeting expectations:**</p>
 
 ```
 Room temp: 68
@@ -369,7 +369,7 @@ The second temperature is the global variable, which is not
 affected by the function call. It is shadowed by the local variable.
 ```
 
-<p>Answer approaching expectations (right idea, wrong result:</p>
+<p>**Answer approaching expectations (right idea, wrong result)**:</p>
 
 ```
 Room temp: 68
@@ -436,7 +436,7 @@ based on these boundaries:</p>
    * 64 ≤ credits < 96: junior
    * credits >= 96: senior
 <p>Note: test `assert`s may be written without wrapping test functions.</p>
-<p>Answer meeting expectations:</p>
+<p>**Answer meeting expectations:**</p>
 
 ```python
 def calculate_year(credits: int) -> str:
@@ -456,7 +456,7 @@ assert(calculate_year(64)) == "junior"
 assert(calculate_year(100)) == "senior"
 ```
 
-<p>Answer approaching expectations (missing type annotation, missing docstring, only one test):</p>
+<p>**Answer approaching expectations (missing type annotation, missing docstring, only one test):**</p>
 
 ```python
 def calculate_year(credits):
