@@ -489,12 +489,55 @@ assert(calculate_year(20)) == "freshman"
     | -- | -- |
     | **Meets Expectations** | • Uses `for ... in ...` properly, drawing elements from the list<br/>• Mutates a single variable within the loop to correctly accumulate the result<br/>• Returns the final result after the loop |
     | **Approaching Expectations** | • Uses `for ... in ...`, drawing elements from the list<br/>• Either: Mutates within the loop, but in such a way that doesn't produce the correct accumulated answer, or doesn't use the final result properly at the end of the loop |
-11. <a id="(10)" href="#(10)">Aliasing & Mutation (Python)</a>
+<details>
+    <summary>Examples</summary>
+    <p>Design a Python function <code>list_of_squares</code> that takes a list of number and returns a list of the squares of the numbers. You must use <code>for ... in ...</code> loop.</p>
+   <p>Note: test <code>assert</code>s may be written without wrapping test functions, for space.</p>
+   <p>**Answer meeting expectations:**</p>
+
+```python
+def list_of_squares(numbers: list[float]) -> list[float]:
+    """returns the squares of the numbers"""
+    result = []
+    for number in numbers:
+        result = result + [number * number]
+    return result
+
+assert list_of_squares([]) == []
+assert list_of_squares([1, 2]) == [1, 4]
+```
+
+<p>**Answer approaching expectations (incorrect result):**</p>
+
+```python
+def list_of_squares(numbers: list[float]) -> list[float]:
+    """returns the squares of the numbers"""
+    result = []
+    for number in numbers:
+        result = result + number
+    return result
+
+assert list_of_squares([]) == []
+assert list_of_squares([1, 2]) == [1, 4]
+```
+
+</details>
+
+<details>
+   <summary>Practice Problem 1</summary>
+   <p>Design a Python function <code>list_of_squares</code> that takes a list of number and returns<code>true</code> if at least one number in the list is positive, <code>false</code> if none are. You must use <code>for ... in ...</code> loop.</p>
+</details> 
+<details>
+   <summary>Practice Problem 2</summary>
+   <p>Design a Python function <code>all_increasing</code> that takes a list of number and returns<code>True</code> if each number is greater than the preceding number, <code>False</code> otherwise. It should return <code>True</code> for the empty list.. You must use <code>for ... in ...</code> loop.</p>
+</details> 
+
+10. <a id="(10)" href="#(10)">Aliasing & Mutation (Python)</a>
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Output of given code that uses mutation of values like lists, aliasing, etc, is correct<br/>• Explanation of behavior is correct |
     | **Approaching Expectations** | • Explanation mentions key idea, but does not use it to correctly characterize behavior |
-12. <a id="(11)" href="#(11)">Identifying Privacy Issues in Problem Formulation</a>
+11. <a id="(11)" href="#(11)">Identifying Privacy Issues in Problem Formulation</a>
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Privacy analysis chart is complete and each entry is correct<br/> • Identify named privacy issue in a new context<br/> • Proposed mitigation strategy is appropriate given context |
