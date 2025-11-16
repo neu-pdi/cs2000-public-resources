@@ -570,7 +570,7 @@ They are initially equal objects because they have the same data. After account1
 is changed, they are no longer equal.
 ```
 
-   <p>**Answer meeting expectations:**</p>
+   <p>**Answer approaching expectations (key idea, but not correct):**</p>
 ```
 Same objects? True
 Equal objects? True
