@@ -2,11 +2,13 @@
 title: Extra - λY
 ---
 
-Today, we'll continue with the lambda calculus, and explore a fascinating and challenging problem: **how to construct recursive functions**. This might seem initially easy (at least, as much as recursion was easy in Pyret), but when we stop to think about it, it might instead seem impossible -- **lambdas, indeed, have no name, and therefore have no way of "calling themselves"**. How, then, can we construct functions that call themselves? **This is the puzzle we'll figure out today.**
+Today, we'll continue with the lambda calculus, and explore a fascinating and challenging problem: **how to construct recursive functions**. This is important, as recursion can be used to express iteration, and all sorts of other important computational patterns. It might seem initially easy, by just having functions call themselves (indeed, while recursion in Pyret may have been confusing, it wasn't hard to do), but when we stop to think about it, we run into a problem -- **lambdas have no name, and therefore have no way of "calling themselves"**. 
+
+How, then, can we construct functions that call themselves? **This is the puzzle we'll figure out today.**
 
 Let's recap the definitions we have (the ones in `ALLCAPS` are actual lambda calculus terms, the `of...(...)` and `to...(...)` are convenient helpers to make it easier to test our code in Pyret).
 
-Note that **we make a minor change from last time** -- since in Pyret, functions evaluate their arguments _before_ being called, if we use the implementations of booleans (and `IF`, `AND`, `OR`, and `NOT`) that we saw before, we won't get the short-circuiting behavior that we expect -- `IF` will evaluate _both_ the then and the else branches, etc. This worked in the original lambda calculus because there was no defined order of evaluation, but it will make our concrete example today not work.
+Note that **we make a minor change from last time** -- since in Pyret, functions evaluate their arguments _before_ being called, if we use the implementations of booleans (and `IF`, `AND`, `OR`, and `NOT`) that we came up with last time, we won't get the short-circuiting behavior that we expect -- `IF` will evaluate _both_ the then and the else branches, etc. This worked in the original lambda calculus because there was no defined order of evaluation, but it will make our concrete example today not work.
 
 So we slightly tweak -- expecting the arguments to `TRUE` and `FALSE` to be zero argument functions that get _evaluated_ by `TRUE` and `FALSE` (note the parantheses after `x` and `y` in the definitions of `TRUE` and `FALSE`)
 
