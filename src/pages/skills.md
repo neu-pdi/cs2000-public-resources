@@ -5,6 +5,8 @@ description: Skills
 hide_table_of_contents: true
 ---
 
+import CalendarHighlighter from '@site/src/components/CalendarHighlighter';
+
 # Skills
 
 This course will teach the following skills, repeated assessment of which will
@@ -789,6 +791,8 @@ While most skill assessments must take place during the schedule below, each stu
 
 **Colored stripes** at the bottom of each day indicate which skills are assessable during office hours on that day. On **Class** and **Lab** days, the skills available are listed inside the box.
 
+For **Class** and **Lab** days, we choose the most common day; some campuses may differ based on when class or labs are run, but the week will match.
+
 <div
   dangerouslySetInnerHTML={{
     __html: `
@@ -904,6 +908,15 @@ While most skill assessments must take place during the schedule below, each stu
 .holiday {
   background-color: #f9f9f9;
   color: #999;
+}
+.past-day {
+  opacity: 0.4;
+  background-color: #f5f5f5;
+}
+.current-day {
+  background-color: #e3f2fd;
+  border: 2px solid #2196f3;
+  border-radius: 4px;
 }
 </style>
 `,
@@ -1671,3 +1684,5 @@ While most skill assessments must take place during the schedule below, each stu
 </tr>
 </tbody>
 </table>
+
+<CalendarHighlighter />
