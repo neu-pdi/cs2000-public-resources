@@ -753,7 +753,7 @@ introduced, but require you to keep up with the material -- all assessments
 cannot be deferred to the end of the semester, since only the last few skills
 can be attempted at the end of the semester.
 
-### Skill Days
+### Skill Days (in Class)
 
 Several class days exist as gaps in our schedule, and some of the class may be
 used to catch up on material, but 30+ mins of class will be used for skill
@@ -766,7 +766,7 @@ during each one.
 - <a id="(day2)" href="#(day2)">Skill Day 2</a>: [3](</skills/#(3)>), [4](</skills/#(4)>), [5](</skills/#(5)>), [11](</skills/#(11)>), [12](</skills/#(12)>)
 - <a id="(day3)" href="#(day3)">Skill Day 3</a>: [6](</skills/#(6)>), [7](</skills/#(7)>), [8](</skills/#(8)>), [9](</skills/#(9)>), [10](</skills/#(10)>)
 
-### Skill Bundles
+### Skill Bundles (in Lab)
 
 Finally, there are two bulk assessment slots, which take place during normal lab
 time, during the semester. These collectively cover all of the skills for the
@@ -785,19 +785,889 @@ While most skill assessments must take place during the schedule below, each stu
 
 ## Skill Schedule
 
-| Week | Topic | Skill Introduced | Assessable@Hours | Skill Day | Skill Bundle |
-| -- | -- | -- | -- | -- | -- |
-| 1 | Programming with numbers, strings, images: IDE, interactions, operations on standard values |  |  |  |  |
-| 2 | Definitions, functions, conditionals: type annotations, test cases | [1](<#(1)>) |  |  |  |
-| 3 | Ethics, intro to tables: constructing, importing, extracting | [2](<#(2)>), [11](<#(11)>), [12](<#(12)>) | [1](<#(1)>) |  |  |
-| 4 | More on tables: transforming, filtering | [2](<#(2)>), [11](<#(11)>), [12](<#(12)>) | [1](<#(1)>), [11](<#(11)>), [12](<#(12)>) |  |  |
-| 5 | From tables to lists: extracting columns, performing operations on them, visualizing data |  | [1](<#(2)>), [2](<#(2)>), [11](<#(11)>), [12](<#(12)>) | [SkillDay1](<#(day1)>) |  |
-| 6 | Computing with lists: iteration & mutable local variables | [3](<#(3)>) | [2](<#(2)>), [11](<#(11)>), [12](<#(12)>) |  |  |
-| 7 | Structured data | [4](<#(3)>) | [2](<#(2)>), [3](<#(3)>), [11](<#(11)>), [12](<#(12)>) |  |  |
-| 8 | Conditional & recursive data | [5](<#(5)>) | [3](<#(3)>), [4](<#(4)>), [11](<#(11)>), [12](<#(12)>) |  | [SkillBundle1](<#(bundle1)>) |
-| 9 | Trees | [6](<#(6)>) | [3](<#(3)>), [4](<#(4)>), [5](<#(5)>), [11](<#(11)>), [12](<#(12)>) | [SkillDay2](<#(day2)>) |  |
-| 10 | Transition to Python: IDE, files, definitions, testing | [7](<#(7)>), [8](<#(8)>) | [4](<#(4)>), [5](<#(5)>), [6](<#(6)>) |  |  |
-| 11 | Transition to Python: more state & aliasing, loops, mutable data structures | [9](<#(9)>), [10](<#(10)>) | [4](<#(4)>), [5](<#(5)>), [6](<#(6)>), [7](<#(7)>), [8](<#(8)>) |  |  |
-| 12 | Tables in Python: pandas & matplotlib |  | [6](<#(6)>), [7](<#(7)>), [8](<#(8)>), [9](<#(9)>), [10](<#(10)>) |  | [SkillBundle2](<#(bundle2)>) |
-| 13 | File I/O: csv files, via pandas and manually |  | [7](<#(7)>), [8](<#(8)>), [9](<#(9)>), [10](<#(10)>) | [SkillDay3](<#(day3)>) |  |
-| 14 | More with Python: catch up, bonus content, etc |  | [7](<#(7)>), [8](<#(8)>), [9](<#(9)>), [10](<#(10)>) |  |  |
+
+
+**Colored stripes** at the bottom of each day indicate which skills are assessable during office hours on that day. On **Class** and **Lab** days, the skills available are listed inside the box.
+
+<div
+  dangerouslySetInnerHTML={{
+    __html: `
+<style>
+.skill-calendar {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+.skill-calendar th {
+  background-color: #f0f0f0;
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ddd;
+  font-weight: bold;
+}
+.skill-calendar td {
+  border: 1px solid #ddd;
+  padding: 0;
+  vertical-align: top;
+  width: 14.28%;
+  height: 100px;
+  position: relative;
+}
+.calendar-day {
+  padding: 4px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.day-number {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+.skill-stripes {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  padding: 2px;
+}
+.skill-stripe {
+  height: 18px;
+  flex: 1;
+  min-width: 24px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: bold;
+  color: #000;
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+}
+.month-header {
+  background-color: #e8e8e8;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+.month-header th {
+  background-color: #e8e8e8;
+}
+.skill-1 { background-color: #FF6B6B; }
+.skill-2 { background-color: #4ECDC4; }
+.skill-3 { background-color: #45B7D1; }
+.skill-4 { background-color: #FFA07A; }
+.skill-5 { background-color: #98D8C8; }
+.skill-6 { background-color: #F7DC6F; }
+.skill-7 { background-color: #BB8FCE; }
+.skill-8 { background-color: #85C1E2; }
+.skill-9 { background-color: #F8B739; }
+.skill-10 { background-color: #52BE80; }
+.skill-11 { background-color: #EC7063; }
+.skill-12 { background-color: #5DADE2; }
+.skill-day-indicator {
+  background-color: transparent;
+  color: #000;
+  font-size: 10px;
+  padding: 2px 4px;
+  border-radius: 3px;
+  margin-bottom: 2px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  border: 2px solid #000;
+}
+.skill-bundle-indicator {
+  background-color: transparent;
+  color: #000;
+  font-size: 10px;
+  padding: 2px 4px;
+  border-radius: 3px;
+  margin-bottom: 2px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  border: 2px solid #000;
+}
+.badge-skill-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  display: inline-block;
+  border: 2px solid #000;
+}
+.holiday {
+  background-color: #f9f9f9;
+  color: #999;
+}
+</style>
+`,
+  }}
+/>
+
+<table className="skill-calendar">
+<thead>
+<tr>
+<th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+</tr>
+</thead>
+<tbody>
+<!-- September -->
+<tr className="month-header">
+<th colSpan={7}>September 2025</th>
+</tr>
+<!-- Week 1: Sept 1-7 -->
+<tr>
+<td></td><td></td><td></td>
+<td>
+<div className="calendar-day">
+<span className="day-number">3</span>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">4</span>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">5</span>
+</div>
+</td>
+<td></td>
+</tr>
+<!-- Week 2: Sept 8-14 -->
+<tr>
+<td></td>
+<td>
+<div className="calendar-day">
+<span className="day-number">8</span>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">9</span>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">10</span>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">11</span>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">12</span>
+</div>
+</td>
+<td></td>
+</tr>
+<!-- Week 3: Sept 15-21 -->
+<tr>
+<td></td>
+<td>
+<div className="calendar-day">
+<span className="day-number">15</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-1">1</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">16</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-1">1</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">17</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-1">1</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">18</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-1">1</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">19</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-1">1</div>
+</div>
+</div>
+</td>
+<td></td>
+</tr>
+<!-- Week 4: Sept 22-28 -->
+<tr>
+<td></td>
+<td>
+<div className="calendar-day">
+<span className="day-number">22</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-1">1</div>
+<div className="skill-stripe skill-11">11</div>
+<div className="skill-stripe skill-12">12</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">23</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-1">1</div>
+<div className="skill-stripe skill-11">11</div>
+<div className="skill-stripe skill-12">12</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">24</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-1">1</div>
+<div className="skill-stripe skill-11">11</div>
+<div className="skill-stripe skill-12">12</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">25</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-1">1</div>
+<div className="skill-stripe skill-11">11</div>
+<div className="skill-stripe skill-12">12</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">26</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-1">1</div>
+<div className="skill-stripe skill-11">11</div>
+<div className="skill-stripe skill-12">12</div>
+</div>
+</div>
+</td>
+<td></td>
+</tr>
+<!-- October -->
+<tr className="month-header">
+<th colSpan={7}>October 2025</th>
+</tr>
+<!-- Week 5: Sept 29 - Oct 5 -->
+<tr>
+<td></td>
+<td>
+<div className="calendar-day">
+<span className="day-number">29</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-1">1</div>
+<div className="skill-stripe skill-2">2</div>
+<div className="skill-stripe skill-11">11</div>
+<div className="skill-stripe skill-12">12</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">30</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-1">1</div>
+<div className="skill-stripe skill-2">2</div>
+<div className="skill-stripe skill-11">11</div>
+<div className="skill-stripe skill-12">12</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">1</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-1">1</div>
+<div className="skill-stripe skill-2">2</div>
+<div className="skill-stripe skill-11">11</div>
+<div className="skill-stripe skill-12">12</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">2</span>
+<span className="skill-day-indicator">Class: <span className="badge-skill-color skill-1"></span>1 <span className="badge-skill-color skill-2"></span>2 <span className="badge-skill-color skill-11"></span>11 <span className="badge-skill-color skill-12"></span>12</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-1">1</div>
+<div className="skill-stripe skill-2">2</div>
+<div className="skill-stripe skill-11">11</div>
+<div className="skill-stripe skill-12">12</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">3</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-1">1</div>
+<div className="skill-stripe skill-2">2</div>
+<div className="skill-stripe skill-11">11</div>
+<div className="skill-stripe skill-12">12</div>
+</div>
+</div>
+</td>
+<td></td>
+</tr>
+<!-- Week 6: Oct 6-12 -->
+<tr>
+<td></td>
+<td>
+<div className="calendar-day">
+<span className="day-number">6</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-2">2</div>
+<div className="skill-stripe skill-11">11</div>
+<div className="skill-stripe skill-12">12</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">7</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-2">2</div>
+<div className="skill-stripe skill-11">11</div>
+<div className="skill-stripe skill-12">12</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">8</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-2">2</div>
+<div className="skill-stripe skill-11">11</div>
+<div className="skill-stripe skill-12">12</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">9</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-2">2</div>
+<div className="skill-stripe skill-11">11</div>
+<div className="skill-stripe skill-12">12</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">10</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-2">2</div>
+<div className="skill-stripe skill-11">11</div>
+<div className="skill-stripe skill-12">12</div>
+</div>
+</div>
+</td>
+<td></td>
+</tr>
+<!-- Week 7: Oct 13-19 -->
+<tr>
+<td></td>
+<td className="holiday">
+<div className="calendar-day">
+<span className="day-number">13</span>
+<span style={{fontSize: '10px', color: '#999'}}>Holiday</span>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">14</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-2">2</div>
+<div className="skill-stripe skill-3">3</div>
+<div className="skill-stripe skill-11">11</div>
+<div className="skill-stripe skill-12">12</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">15</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-2">2</div>
+<div className="skill-stripe skill-3">3</div>
+<div className="skill-stripe skill-11">11</div>
+<div className="skill-stripe skill-12">12</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">16</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-2">2</div>
+<div className="skill-stripe skill-3">3</div>
+<div className="skill-stripe skill-11">11</div>
+<div className="skill-stripe skill-12">12</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">17</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-2">2</div>
+<div className="skill-stripe skill-3">3</div>
+<div className="skill-stripe skill-11">11</div>
+<div className="skill-stripe skill-12">12</div>
+</div>
+</div>
+</td>
+<td></td>
+</tr>
+<!-- Week 8: Oct 20-26 -->
+<tr>
+<td></td>
+<td>
+<div className="calendar-day">
+<span className="day-number">20</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-3">3</div>
+<div className="skill-stripe skill-4">4</div>
+<div className="skill-stripe skill-11">11</div>
+<div className="skill-stripe skill-12">12</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">21</span>
+<span className="skill-bundle-indicator">Lab: <span className="badge-skill-color skill-1"></span>1 <span className="badge-skill-color skill-2"></span>2 <span className="badge-skill-color skill-3"></span>3 <span className="badge-skill-color skill-4"></span>4 <span className="badge-skill-color skill-11"></span>11 <span className="badge-skill-color skill-12"></span>12</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-1">1</div>
+<div className="skill-stripe skill-2">2</div>
+<div className="skill-stripe skill-3">3</div>
+<div className="skill-stripe skill-4">4</div>
+<div className="skill-stripe skill-11">11</div>
+<div className="skill-stripe skill-12">12</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">22</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-3">3</div>
+<div className="skill-stripe skill-4">4</div>
+<div className="skill-stripe skill-11">11</div>
+<div className="skill-stripe skill-12">12</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">23</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-3">3</div>
+<div className="skill-stripe skill-4">4</div>
+<div className="skill-stripe skill-11">11</div>
+<div className="skill-stripe skill-12">12</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">24</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-3">3</div>
+<div className="skill-stripe skill-4">4</div>
+<div className="skill-stripe skill-11">11</div>
+<div className="skill-stripe skill-12">12</div>
+</div>
+</div>
+</td>
+<td></td>
+</tr>
+<!-- Week 9: Oct 27 - Nov 2 -->
+<tr>
+<td></td>
+<td>
+<div className="calendar-day">
+<span className="day-number">27</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-3">3</div>
+<div className="skill-stripe skill-4">4</div>
+<div className="skill-stripe skill-5">5</div>
+<div className="skill-stripe skill-11">11</div>
+<div className="skill-stripe skill-12">12</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">28</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-3">3</div>
+<div className="skill-stripe skill-4">4</div>
+<div className="skill-stripe skill-5">5</div>
+<div className="skill-stripe skill-11">11</div>
+<div className="skill-stripe skill-12">12</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">29</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-3">3</div>
+<div className="skill-stripe skill-4">4</div>
+<div className="skill-stripe skill-5">5</div>
+<div className="skill-stripe skill-11">11</div>
+<div className="skill-stripe skill-12">12</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">30</span>
+<span className="skill-day-indicator">Class: <span className="badge-skill-color skill-3"></span>3 <span className="badge-skill-color skill-4"></span>4 <span className="badge-skill-color skill-5"></span>5 <span className="badge-skill-color skill-11"></span>11 <span className="badge-skill-color skill-12"></span>12</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-3">3</div>
+<div className="skill-stripe skill-4">4</div>
+<div className="skill-stripe skill-5">5</div>
+<div className="skill-stripe skill-11">11</div>
+<div className="skill-stripe skill-12">12</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">31</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-3">3</div>
+<div className="skill-stripe skill-4">4</div>
+<div className="skill-stripe skill-5">5</div>
+<div className="skill-stripe skill-11">11</div>
+<div className="skill-stripe skill-12">12</div>
+</div>
+</div>
+</td>
+<td></td>
+</tr>
+<!-- November -->
+<tr className="month-header">
+<th colSpan={7}>November 2025</th>
+</tr>
+<!-- Week 10: Nov 3-9 -->
+<tr>
+<td></td>
+<td>
+<div className="calendar-day">
+<span className="day-number">3</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-4">4</div>
+<div className="skill-stripe skill-5">5</div>
+<div className="skill-stripe skill-6">6</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">4</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-4">4</div>
+<div className="skill-stripe skill-5">5</div>
+<div className="skill-stripe skill-6">6</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">5</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-4">4</div>
+<div className="skill-stripe skill-5">5</div>
+<div className="skill-stripe skill-6">6</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">6</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-4">4</div>
+<div className="skill-stripe skill-5">5</div>
+<div className="skill-stripe skill-6">6</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">7</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-4">4</div>
+<div className="skill-stripe skill-5">5</div>
+<div className="skill-stripe skill-6">6</div>
+</div>
+</div>
+</td>
+<td></td>
+</tr>
+<!-- Week 11: Nov 10-16 -->
+<tr>
+<td></td>
+<td>
+<div className="calendar-day">
+<span className="day-number">10</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-4">4</div>
+<div className="skill-stripe skill-5">5</div>
+<div className="skill-stripe skill-6">6</div>
+<div className="skill-stripe skill-7">7</div>
+<div className="skill-stripe skill-8">8</div>
+</div>
+</div>
+</td>
+<td className="holiday">
+<div className="calendar-day">
+<span className="day-number">11</span>
+<span style={{fontSize: '10px', color: '#999'}}>Holiday</span>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">12</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-4">4</div>
+<div className="skill-stripe skill-5">5</div>
+<div className="skill-stripe skill-6">6</div>
+<div className="skill-stripe skill-7">7</div>
+<div className="skill-stripe skill-8">8</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">13</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-4">4</div>
+<div className="skill-stripe skill-5">5</div>
+<div className="skill-stripe skill-6">6</div>
+<div className="skill-stripe skill-7">7</div>
+<div className="skill-stripe skill-8">8</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">14</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-4">4</div>
+<div className="skill-stripe skill-5">5</div>
+<div className="skill-stripe skill-6">6</div>
+<div className="skill-stripe skill-7">7</div>
+<div className="skill-stripe skill-8">8</div>
+</div>
+</div>
+</td>
+<td></td>
+</tr>
+<!-- Week 12: Nov 17-23 -->
+<tr>
+<td></td>
+<td>
+<div className="calendar-day">
+<span className="day-number">17</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-6">6</div>
+<div className="skill-stripe skill-7">7</div>
+<div className="skill-stripe skill-8">8</div>
+<div className="skill-stripe skill-9">9</div>
+<div className="skill-stripe skill-10">10</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">18</span>
+<span className="skill-bundle-indicator">Lab: <span className="badge-skill-color skill-6"></span>6 <span className="badge-skill-color skill-7"></span>7 <span className="badge-skill-color skill-8"></span>8 <span className="badge-skill-color skill-9"></span>9 <span className="badge-skill-color skill-10"></span>10</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-6">6</div>
+<div className="skill-stripe skill-7">7</div>
+<div className="skill-stripe skill-8">8</div>
+<div className="skill-stripe skill-9">9</div>
+<div className="skill-stripe skill-10">10</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">19</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-6">6</div>
+<div className="skill-stripe skill-7">7</div>
+<div className="skill-stripe skill-8">8</div>
+<div className="skill-stripe skill-9">9</div>
+<div className="skill-stripe skill-10">10</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">20</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-6">6</div>
+<div className="skill-stripe skill-7">7</div>
+<div className="skill-stripe skill-8">8</div>
+<div className="skill-stripe skill-9">9</div>
+<div className="skill-stripe skill-10">10</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">21</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-6">6</div>
+<div className="skill-stripe skill-7">7</div>
+<div className="skill-stripe skill-8">8</div>
+<div className="skill-stripe skill-9">9</div>
+<div className="skill-stripe skill-10">10</div>
+</div>
+</div>
+</td>
+<td></td>
+</tr>
+<!-- Week 13: Nov 24-30 -->
+<tr>
+<td></td>
+<td>
+<div className="calendar-day">
+<span className="day-number">24</span>
+<span className="skill-day-indicator">Class: <span className="badge-skill-color skill-6"></span>6 <span className="badge-skill-color skill-7"></span>7 <span className="badge-skill-color skill-8"></span>8 <span className="badge-skill-color skill-9"></span>9 <span className="badge-skill-color skill-10"></span>10</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-7">7</div>
+<div className="skill-stripe skill-8">8</div>
+<div className="skill-stripe skill-9">9</div>
+<div className="skill-stripe skill-10">10</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">25</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-7">7</div>
+<div className="skill-stripe skill-8">8</div>
+<div className="skill-stripe skill-9">9</div>
+<div className="skill-stripe skill-10">10</div>
+</div>
+</div>
+</td>
+<td className="holiday">
+<div className="calendar-day">
+<span className="day-number">26</span>
+<span style={{fontSize: '10px', color: '#999'}}>Holiday</span>
+</div>
+</td>
+<td className="holiday">
+<div className="calendar-day">
+<span className="day-number">27</span>
+<span style={{fontSize: '10px', color: '#999'}}>Holiday</span>
+</div>
+</td>
+<td className="holiday">
+<div className="calendar-day">
+<span className="day-number">28</span>
+<span style={{fontSize: '10px', color: '#999'}}>Holiday</span>
+</div>
+</td>
+<td></td>
+</tr>
+<!-- December -->
+<tr className="month-header">
+<th colSpan={7}>December 2025</th>
+</tr>
+<!-- Week 14: Dec 1-7 -->
+<tr>
+<td></td>
+<td>
+<div className="calendar-day">
+<span className="day-number">1</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-7">7</div>
+<div className="skill-stripe skill-8">8</div>
+<div className="skill-stripe skill-9">9</div>
+<div className="skill-stripe skill-10">10</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">2</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-7">7</div>
+<div className="skill-stripe skill-8">8</div>
+<div className="skill-stripe skill-9">9</div>
+<div className="skill-stripe skill-10">10</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">3</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-7">7</div>
+<div className="skill-stripe skill-8">8</div>
+<div className="skill-stripe skill-9">9</div>
+<div className="skill-stripe skill-10">10</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">4</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-7">7</div>
+<div className="skill-stripe skill-8">8</div>
+<div className="skill-stripe skill-9">9</div>
+<div className="skill-stripe skill-10">10</div>
+</div>
+</div>
+</td>
+<td>
+<div className="calendar-day">
+<span className="day-number">5</span>
+<div className="skill-stripes">
+<div className="skill-stripe skill-7">7</div>
+<div className="skill-stripe skill-8">8</div>
+<div className="skill-stripe skill-9">9</div>
+<div className="skill-stripe skill-10">10</div>
+</div>
+</div>
+</td>
+<td></td>
+</tr>
+</tbody>
+</table>
