@@ -800,4 +800,4 @@ While most skill assessments must take place during the schedule below, each stu
 | 11 | Transition to Python: more state & aliasing, loops, mutable data structures | [9](<#(9)>), [10](<#(10)>) | [4](<#(4)>), [5](<#(5)>), [6](<#(6)>), [7](<#(7)>), [8](<#(8)>) |  |  |
 | 12 | Tables in Python: pandas & matplotlib |  | [6](<#(6)>), [7](<#(7)>), [8](<#(8)>), [9](<#(9)>), [10](<#(10)>) |  | [SkillBundle2](<#(bundle2)>) |
 | 13 | File I/O: csv files, via pandas and manually |  | [7](<#(7)>), [8](<#(8)>), [9](<#(9)>), [10](<#(10)>) | [SkillDay3](<#(day3)>) |  |
-| 14 | More with Python: catch up, bonus content, etc |  | [9](<#(9)>), [10](<#(10)>) |  |  |
+| 14 | More with Python: catch up, bonus content, etc |  | [7](<#(7)>), [8](<#(8)>), [9](<#(9)>), [10](<#(10)>) |  |  |
