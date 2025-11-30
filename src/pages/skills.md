@@ -483,6 +483,7 @@ assert(calculate_year(20)) == "freshman"
    * 1 EUR is 1.15 USD
    * 1 CAD is 0.70 USD
    * 1 INR is 0.01 USD
+
 <p>Note: test `assert`s may be written without wrapping test functions.</p>
 </details>
 
