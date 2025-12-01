@@ -81,7 +81,7 @@ title: Extra - Dictionaries
 1. Write a function that takes a dictionary of sessions and returns a list of all unique topics covered.
 1. Convert a list of `ConferenceSession` dataclass instances into a dictionary mapping session IDs to dataclass instances.
 1. Filter all sessions where the number of topics is greater than 1.
-1. Download the CSV file from (here)[https://raw.githubusercontent.com/neu-pdi/cs2000-public-resources/refs/heads/main/static/support/movies-data.csv] and read it in Python however you like. Create a dictionary to track each movie that is listed, and track the number of times a movie appears in the dataset.
+1. Download the CSV file from [here](https://raw.githubusercontent.com/neu-pdi/cs2000-public-resources/refs/heads/main/static/support/movies-data.csv) and read it in Python however you like. Create a dictionary to track each movie that is listed, and track the number of times a movie appears in the dataset.
 
 ## Wrap-up (5 mins)
 
