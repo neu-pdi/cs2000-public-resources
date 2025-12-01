@@ -2,6 +2,8 @@
 title: Extra - λ
 ---
 
+> Thanks to Chris Coombes for feedback on an earlier draft of this, and for doing so much with a much earlier presentation so as to inspire the work at all.
+
 For today, we are going back to foundations -- some of the **oldest**, and most **fundamental** and **fascinating** ideas in the entire field of computer science.
 
 To get there, we have to talk about a few people. 
@@ -194,13 +196,20 @@ IF(TRUE,TRUE,FALSE)
 Or, if we substitute for our constants:
 
 ```pyret
-(lam(c,t,e): c(t,e))(lam(x, y): x end,lam(x, y): x end,lam(x, y): y end)
+(lam(c,t,e): c(t,e))( # if
+  lam(x, y): x end,   # true
+  lam(x, y): x end,   # true
+  lam(x, y): y end    # false
+  )
 ```
 
 If we _run_ this, first we apply the `IF` lambda, substituting for the three arguments, yielding:
 
 ```pyret
-(lam(x, y): x end)(lam(x, y): x end, lam(x, y): y end)
+(lam(x, y): x end)( # true
+  lam(x, y): x end, # true
+  lam(x, y): y end  # false
+  )
 ```
 
 This is another application (of `TRUE` to `TRUE` and `FALSE`), so we now apply it -- in this case, the second argument is ignored, and the body is just the first argument, so the result is:
@@ -253,7 +262,7 @@ end
 
 Clearly, `tobool(..)` is _not_ a term in the lambda calculus (it includes Pyret `true` and `false`, as well as a non-anonymous function). But, we'll only use this for testing, in order to read results, or, in some cases (e.g., for numbers), to be able to more easily construct example inputs (converting normal Pyret numbers into ones in the lambda calculus).
 
-## And, Or, Not
+### And, Or, Not
 
 So we've figured out `if`, `true`, and `false`, but the true test of our representation is if we can also come up with lambda calculus representations of `and`, `or`, and `not` that work with out representations of `true` and `false`. 
 
@@ -377,21 +386,35 @@ ADD = lam(n1, n2): ... end
 Now, what should the result be? Well, we want a function `lam(f,x): f(f(...f(x))) end` where there are `n1 + n2` copies of `f`. Now, we know that `n1` and `n2` have this form already, but if we are going to be able to do anything with them, we have to apply them, so somehow it seems like we will need an `f` and `x` to pass to `n1` or `n2`. So lets expand our solution to:
 
 ```pyret
-ADD = lam(n1, n2): lam(f, x): ... end end
+ADD = lam(n1, n2): # ADD is a lambda taking two numbers
+  lam(f, x): # Returning a number -- numbers are represented as lam(f,x)
+    ... 
+  end 
+end
 ```
 
-So how can we get the inner applications? Well, if we apply `n1(f,x)`, this should give us back `f(f(...f(x)))` where there are `n1` copies (where we interpret `n1` as a number). If we want another `n2` applications of `f`, we can pass this as the starting value (the `x`) to `n2`, and we get:
+So how can we get the inner applications? Well, if we apply `n1(f,x)`, this should give us back `f(f(...f(x)))` where there are `n1` copies (where we interpret `n1` as a number). If we want another `n2` applications of `f`, we can pass this as the starting value (the `x`) to `n2`, and we get the following. We use local definitions to make it easier to understand, but like our constants, we can substitute them -- so they aren't breaking our rules of only using lambdas, variables, and application.
 
 ```pyret
-ADD = lam(n1, n2): lam(f, x): n2(f, n1(f, x)) end end
+ADD = lam(n1, n2): # ADD is a lambda taking two numbers
+  lam(f, x): # Returning a number -- numbers are represented as lam(f,x)
+    n2-applied = n2(f, x) # First we apply f n2 times to x
+    n1-then-n2-applied = n1(f, n2-applied) # Now we apply f n1 times to the prev result
+    n1-then-n2-applied # And this is what we return
+  end 
+end
 ```
 
-How do we do multiplication? There are multiple ways of doing it, but one is noticing that `n1 * n2` is the same as _adding_ `n2`, `n1` times, starting at 0. Note here that we are making particular choices for both `f` and `x`, knowing that our choice of `f` will be applied to our choice of `x` exactly `n1` times.
+How do we do multiplication? There are multiple ways of doing it, but one is noticing that `n1 * n2` is the same as _adding_ `n2`, `n1` times, starting at 0. Note here that we are making particular choices for both `f` and `x`, knowing that our choice of `f` will be applied to our choice of `x` exactly `n1` times. Like with `ADD`, we present this with local definitions to make it easier to read.
 
 i.e.,:
 
 ```pyret
-MUL = lam(n1, n2): n1(lam(y): ADD(n2, y) end, ZERO) end
+MUL = lam(n1, n2): # MUL is a lambda that takes two numbers
+  add-n2-to-y = lam(y): ADD(n2, y) end # We construct a function that adds n2 to its input
+  add-n2-n1-times = n1(add-n2-to-y, ZERO) # And then do that n1 times, starting with 0
+  add-n2-n1-times # This is what we return
+  end
 ```
 
 This would mean if we had 4 multiplied by 3, we get:

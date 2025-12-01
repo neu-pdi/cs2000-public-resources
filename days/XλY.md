@@ -20,7 +20,7 @@ fun tobool(cb):
 end
 
 IF = lam(c,t,e): c(t,e) end
-AND = lam(b1, b2): b1(lam(): b2 end, lam(): FALSE() end) end
+AND = lam(b1, b2): b1(lam(): b2 end, lam(): FALSE end) end
 OR = lam(b1, b2): b1(lam(): TRUE end, lam(): b2 end) end
 NOT = lam(b): b(lam(): FALSE end, lam(): TRUE end) end
 
@@ -52,6 +52,28 @@ MUL = lam(n1, n2): n1(lam(y): ADD(n2, y) end, ZERO) end
 MINUS1 = lam(n): lam(f,x): FIRST(n(lam(y): PAIR(SECOND(y), f(SECOND(y))) end, PAIR(x,x))) end end
 
 EQUAL0 = lam(n): n(lam(y): FALSE end, TRUE) end
+```
+
+Let's do a little review -- we'll use some normal Pyret features in these tests, and then we'll stick with pure lambda calculus for the rest of the lecture:
+
+```pyret
+check:
+  IF(TRUE, 1, 2) is 1
+  IF(FALSE, 1, 2) is 2
+  IF(AND(OR(FALSE, TRUE), NOT(FALSE)), "a", "b") is "a"
+  
+  FOUR = ofnum(4)
+  
+  FOUR(lam(y): y + 1 end, 0) is 4
+  FOUR(lam(y): y + 1 end, 3) is 7
+  FOUR(lam(y): y + 2 end, 1) is 9
+  
+  TWO(lam(s): "Hi! " + s end, "Bye!") is "Hi! Hi! Bye!"
+  
+  ZERO(not, true) is true
+  ONE(not, true) is false
+  TWO(not, true) is true
+end
 ```
 
 ## Omega

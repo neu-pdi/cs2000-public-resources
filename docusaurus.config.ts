@@ -123,7 +123,8 @@ function currentDayNumber(): string {
     currDay -= 1;
   }
 
-  return Math.max(Math.min(currDay, 33), 1).toString();
+  // Cap at 31 since that's the highest day number available
+  return Math.max(Math.min(currDay, 31), 1).toString();
 }
 
 /**
