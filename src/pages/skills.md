@@ -556,12 +556,17 @@ assert list_of_squares([1, 2]) == [1, 4]
 
 <details>
    <summary>Practice Problem 1</summary>
-   <p>Design a Python function <code>list_of_squares</code> that takes a list of number and returns<code>true</code> if at least one number in the list is positive, <code>false</code> if none are. You must use <code>for ... in ...</code> loop.</p>
+   <p>Design a Python function <code>all_increasing</code> that takes a list of number and returns <code>true</code> if at least one number in the list is positive, <code>false</code> if none are. You must use <code>for ... in ...</code> loop.</p>
    <p>Note: test <code>assert</code>s may be written without wrapping test functions, for space.</p>
 </details> 
 <details>
    <summary>Practice Problem 2</summary>
-   <p>Design a Python function <code>all_increasing</code> that takes a list of number and returns<code>True</code> if each number is greater than the preceding number, <code>False</code> otherwise. It should return <code>True</code> for the empty list.. You must use <code>for ... in ...</code> loop.</p>
+   <p>Design a Python function <code>all_increasing</code> that takes a list of number and returns<code>True</code> if each number is greater than the preceding number, <code>False</code> otherwise. It should return <code>True</code> for the empty list. You must use <code>for ... in ...</code> loop.</p>
+   <p>Note: test <code>assert</code>s may be written without wrapping test functions, for space.</p>
+</details> 
+<details>
+   <summary>Practice Problem 3</summary>
+   <p>Design a Python function <code>remove_consecutive</code> that takes a list and returns a new list with consecutive duplicate elements reduced to single occurrences. You must use <code>for ... in ...</code> loop.</p>
    <p>Note: test <code>assert</code>s may be written without wrapping test functions, for space.</p>
 </details> 
 
