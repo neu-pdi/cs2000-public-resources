@@ -588,6 +588,7 @@ Objects with different heap locations can be equal but are not the same object.
     <p>What will be the output of the following code? Please explain why.</p>
 
 ```python
+from dataclasses import dataclass
 @dataclass
 class Sensor:
     name: str
@@ -611,6 +612,7 @@ print("Are they the same?", outdoor_sensor is result)
     <p>What will be the output of the following code? Please explain why.</p>
 
 ```python
+from dataclasses import dataclass
 @dataclass
 class Player:
     name: str
@@ -628,8 +630,33 @@ print("player2:", player2)
 print("Same player object?", player1 is player2)
 ```
 </details> 
+<details>
+   <summary>Practice Problem 3</summary>
+    <p>What will be the output of the following code? Please explain why.</p>
+
+```python
+from dataclasses import dataclass
+
+@dataclass
+class Book:
+    title: str
+    pages: int
+
+def add_pages(book, extra_pages):
+    book.pages += extra_pages
+    return book
+
+my_book = Book("Python Guide", 200)
+updated_book = add_pages(my_book, 50)
+
+print("my_book:", my_book)
+print("updated_book:", updated_book)
+print("Same object?", my_book is updated_book)
+```
+
+</details>
     
-12. <a id="(11)" href="#(11)">Identifying Privacy Issues in Problem Formulation</a>
+11. <a id="(11)" href="#(11)">Identifying Privacy Issues in Problem Formulation</a>
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Privacy analysis chart is complete and each entry is correct<br/> • Identify named privacy issue in a new context<br/> • Proposed mitigation strategy is appropriate given context |
