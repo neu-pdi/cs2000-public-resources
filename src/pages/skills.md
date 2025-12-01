@@ -493,13 +493,25 @@ assert(calculate_year(20)) == "freshman"
 </details>
 
 <details>
-    <summary>Practice Problem</summary>
+    <summary>Practice Problem 1</summary>
 <p>Design a function `convert_to_usd` that takes an amount of money and a currency (`"EUD"`, `"CAD"`, or `"INR"`)
    and returns the equivalent amount of US dollars (USD). Assume:</p>
    * 1 EUR is 1.15 USD
    * 1 CAD is 0.70 USD
    * 1 INR is 0.01 USD
 
+<p>Note: test `assert`s may be written without wrapping test functions.</p>
+</details>
+<details>
+    <summary>Practice Problem 2</summary>
+<p>Design a Python function calculate_bonus that takes years of service and performance rating, and returns the bonus percentage (0-13):</p>
+
+* "excellent" rating: 10% base bonus
+* "good" rating: 5% base bonus
+* "satisfactory" rating: 2% base bonus
+* "needs improvement" rating: 0% bonus
+  
+<p>Employees with 5+ years of service get an additional 3% bonus (added to base bonus)</p>
 <p>Note: test `assert`s may be written without wrapping test functions.</p>
 </details>
 
