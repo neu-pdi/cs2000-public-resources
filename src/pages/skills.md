@@ -422,6 +422,22 @@ print("After f1: x = ", x, ", y = ", y)
 ```
 
 </details>
+<details>
+   <summary>Practice Problem 3</summary>
+<p>What will be the outcome of the following code? Explain why.</p>
+```python
+value = 10
+
+def process(value):
+    value = value * 2
+    print("Inside function:", value)
+    return value
+
+result = process(5)
+print("Result:", result)
+print("Global value:", value)
+```
+</details>
 
 8. <a id="(8)" href="#(8)">Design basic functions (Python)</a>
     |  |  |
