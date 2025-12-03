@@ -106,8 +106,8 @@ Importantly, with what we did the previous lecture, can now express all the piec
 ```pyret
 fun factorial(n :: Number) -> Number:
   IF(EQUAL0(N),
-     ONE,
-     MUL(N, factorial(MINUS1(N))))
+     lam(): ONE end,
+     lam(): MUL(N, factorial(MINUS1(N))) end)
 end
 ```
 
@@ -120,7 +120,7 @@ that it should call.
 This is our first attempt, which doesn't work, but gets us closer (as it eliminates the explicit recursion):
 ```pyret
 FACT0 = lam(rcall, n): 
-    IF(EQUAL0(n), ONE, MUL(n, rcall(MINUS1(n)))) 
+    IF(EQUAL0(n), lam(): ONE end, lam(): MUL(n, rcall(MINUS1(n))) end) 
   end
 ```
 

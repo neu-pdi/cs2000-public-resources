@@ -171,8 +171,8 @@ The answer to both of these questions ends up being the same:
 Let's make this concrete:
 
 ```pyret
-TRUE = lam(x y): x end
-FALSE = lam(x y): y end
+TRUE = lam(x, y): x end
+FALSE = lam(x, y): y end
 
 IF = lam(c,t,e): c(t,e) end
 ```
