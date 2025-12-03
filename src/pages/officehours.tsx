@@ -974,7 +974,7 @@ export default function OfficeHours() {
                           {displayTime}
                         </Table.Cell>
                         {schedule.map((day, dayIndex) => {
-                          const slot = day.slots.find(
+                          const slots = day.slots.filter(
                             (s) => s.time === timeSlot,
                           );
                           return (
@@ -985,95 +985,109 @@ export default function OfficeHours() {
                               fontSize="xs"
                               lineHeight="1.1"
                             >
-                              {slot ? (
+                              {slots.length > 0 ? (
                                 <>
-                                  {(isInPerson || enableUrlRendering) &&
-                                  slot.allTAs ? (
-                                    // For in-person, show all TAs
-                                    <>
-                                      {slot.allTAs.length > 0 ? (
+                                  {slots.map((slot, slotIndex) => (
+                                    <React.Fragment key={slotIndex}>
+                                      {slotIndex > 0 && (
                                         <>
-                                          {slot.room && (
+                                          <Box
+                                            borderTop="1px solid"
+                                            borderColor="gray.300"
+                                            my={1}
+                                            pt={1}
+                                          />
+                                        </>
+                                      )}
+                                      {(isInPerson || enableUrlRendering) &&
+                                      slot.allTAs ? (
+                                        // For in-person, show all TAs
+                                        <>
+                                          {slot.allTAs.length > 0 ? (
                                             <>
-                                              {slot.room.startsWith('http') ? (
+                                              {slot.room && (
                                                 <>
-                                                  <a
-                                                    href={
-                                                      slot.room.split(' ')[0]
-                                                    }
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    style={{
-                                                      color: '#7c3aed',
-                                                      fontWeight: 'bold',
-                                                      fontSize: '10px',
-                                                      textDecoration:
-                                                        'underline',
-                                                    }}
-                                                  >
-                                                    ONLINE
-                                                  </a>
-                                                  {(() => {
-                                                    const passcodeMatch =
-                                                      slot.room.match(
-                                                        /Passcode:\s*(\d+)/i,
-                                                      );
-                                                    return passcodeMatch ? (
-                                                      <>
-                                                        <br />
-                                                        <Text
-                                                          as="span"
-                                                          fontSize="2xs"
-                                                          color="gray.600"
-                                                        >
-                                                          Passcode:{' '}
-                                                          {passcodeMatch[1]}
-                                                        </Text>
-                                                      </>
-                                                    ) : null;
-                                                  })()}
-                                                  <br />
-                                                </>
-                                              ) : (
-                                                <>
-                                                  <Text
-                                                    as="span"
-                                                    fontWeight="bold"
-                                                    color="purple.600"
-                                                    fontSize="2xs"
-                                                  >
-                                                    {slot.room}
-                                                  </Text>
-                                                  <br />
+                                                  {slot.room.startsWith('http') ? (
+                                                    <>
+                                                      <a
+                                                        href={
+                                                          slot.room.split(' ')[0]
+                                                        }
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        style={{
+                                                          color: '#7c3aed',
+                                                          fontWeight: 'bold',
+                                                          fontSize: '10px',
+                                                          textDecoration:
+                                                            'underline',
+                                                        }}
+                                                      >
+                                                        ONLINE
+                                                      </a>
+                                                      {(() => {
+                                                        const passcodeMatch =
+                                                          slot.room.match(
+                                                            /Passcode:\s*(\d+)/i,
+                                                          );
+                                                        return passcodeMatch ? (
+                                                          <>
+                                                            <br />
+                                                            <Text
+                                                              as="span"
+                                                              fontSize="2xs"
+                                                              color="gray.600"
+                                                            >
+                                                              Passcode:{' '}
+                                                              {passcodeMatch[1]}
+                                                            </Text>
+                                                          </>
+                                                        ) : null;
+                                                      })()}
+                                                      <br />
+                                                    </>
+                                                  ) : (
+                                                    <>
+                                                      <Text
+                                                        as="span"
+                                                        fontWeight="bold"
+                                                        color="purple.600"
+                                                        fontSize="2xs"
+                                                      >
+                                                        {slot.room}
+                                                      </Text>
+                                                      <br />
+                                                    </>
+                                                  )}
                                                 </>
                                               )}
+                                              {slot.allTAs.map((ta, taIndex) => (
+                                                <React.Fragment key={taIndex}>
+                                                  {ta}
+                                                  {taIndex <
+                                                    slot.allTAs!.length - 1 && (
+                                                    <br />
+                                                  )}
+                                                </React.Fragment>
+                                              ))}
                                             </>
+                                          ) : (
+                                            <span style={{ color: 'gray' }}>—</span>
                                           )}
-                                          {slot.allTAs.map((ta, taIndex) => (
-                                            <React.Fragment key={taIndex}>
-                                              {ta}
-                                              {taIndex <
-                                                slot.allTAs!.length - 1 && (
-                                                <br />
-                                              )}
-                                            </React.Fragment>
-                                          ))}
                                         </>
                                       ) : (
-                                        <span style={{ color: 'gray' }}>—</span>
+                                        // For online, show only first two TAs
+                                        <>
+                                          {slot.ta1 && <>{slot.ta1}</>}
+                                          {slot.ta1 && slot.ta2 && <br />}
+                                          {slot.ta2 && <>{slot.ta2}</>}
+                                          {!slot.ta1 && !slot.ta2 && (
+                                            <span style={{ color: 'gray' }}>—</span>
+                                          )}
+                                        </>
                                       )}
-                                    </>
-                                  ) : (
-                                    // For online, show only first two TAs
-                                    <>
-                                      {slot.ta1 && <>{slot.ta1}</>}
-                                      {slot.ta1 && slot.ta2 && <br />}
-                                      {slot.ta2 && <>{slot.ta2}</>}
-                                      {!slot.ta1 && !slot.ta2 && (
-                                        <span style={{ color: 'gray' }}>—</span>
-                                      )}
-                                    </>
-                                  )}
+                                    </React.Fragment>
+                                  ))}
                                 </>
                               ) : (
                                 <span style={{ color: 'gray' }}>—</span>
