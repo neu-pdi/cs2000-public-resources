@@ -65,36 +65,29 @@ You'll build a recommendation system in several steps:
 1. Write a loop that iterates through `data_lst`. For each `row`, print the `Movie 1`.
 
 ## Part 2: Extracting Movies from a Row
-1. Write a function `get_movies` that takes a single row dictionary as input and returns a list of all non-NaN movie titles from that row. Use `pd.notna()` to check for NaN values. You can use the list you created in the above exercise here.
-1. Test your function with the first few rows. Do all students list the same number of movies?
+5. Write a function `get_movies` that takes a single row dictionary as input and returns a list of all non-NaN movie titles from that row. Use `pd.notna()` to check for NaN values. You can use the list you created in the above exercise here.
+6. Test your function with the first few rows. Do all students list the same number of movies?
 
 ## Part 3: Building the Co-occurrence Dictionary
-1. What does the dict.get() method do? What happens if you call .get(key, []) on a key that doesn't exist?
-1. Suppose one student listed these movies: ["Inception", "The Matrix", "Interstellar"]. We want to track that these three movies appeared together. For each movie in this list, we need to store ALL the movies (including itself) in a dictionary. Write a function `update_occurrences` that takes in the movies list and a dictionary. The function should loop through the movie list and updates the dictionary by adding all the movies for each movie in this list.
-1. Write a function build_cooccurrence_dict(df) that:
-- Converts the DataFrame to a list of dictionaries
-- Creates an (empty) dictionary for tracking cooccurrences,
-- For each row, uses your function from above to extract the list of movies,
-- Uses your function above to update the cooccurrence dictionary, and
-- Returns the dictionary
-1. Test your build_cooccurrence_dict() function. Pick a movie and examine what's stored in the dictionary for that movie. Does it make sense?
+7. What does the dict.get() method do? What happens if you call .get(key, []) on a key that doesn't exist?
+8. Suppose one student listed these movies: ["Inception", "The Matrix", "Interstellar"]. We want to track that these three movies appeared together. For each movie in this list, we need to store ALL the movies (including itself) in a dictionary. Write a function `update_occurrences` that takes in the movies list and a dictionary. The function should loop through the movie list and updates the dictionary by adding all the movies for each movie in this list.
+9. Write a function build_cooccurrence_dict(df) that:
+    - Converts the DataFrame to a list of dictionaries
+    - Creates an (empty) dictionary for tracking cooccurrences,
+    - For each row, uses your function from above to extract the list of movies,
+    - Uses your function above to update the cooccurrence dictionary, and
+    - Returns the dictionary
+10. Test your build_cooccurrence_dict() function. Pick a movie and examine what's stored in the dictionary for that movie. Does it make sense?
 
 ## Part 4: Making Recommendations
-1. Import `Counter` from `collections`. Given a list with duplicates, use `Counter()` to count occurrences. What type of object does it return?
-1. Write a function `recommend_v1(movie_name, cooccurrence_dct)` that:
-- Takes a movie name and the co-occurrence dictionary
-- Uses Counter on the list from the dictionary
-- Returns the top 10 most common items(look up `.most_common()` for counters)
+11. Import `Counter` from `collections`. Given a list with duplicates, use `Counter()` to count occurrences. What type of object does it return?
+12. Write a function `recommend_v1(movie_name, cooccurrence_dct)` that:
+    - Takes a movie name and the co-occurrence dictionary
+    - Uses Counter on the list from the dictionary
+    - Returns the top 10 most common items(look up `.most_common()` for counters)
 
 ## Part 5: Testing the System
-
-17. Call `build_cooccurrence_dict(movies_data)` and store the result in `cooccurrence`.
-
-18. Call `recommend_v1("The Shawshank Redemption", cooccurrence, top_n=10)` and store the result in `recommendations`.
-
-19. Write a loop to print each item in `recommendations`. Each item is a tuple like `("Movie Title", count)`.
-
-20. Format the output nicely: `print("If you liked " + test_movie + ", you might also like:\n")` and then loop through recommendations printing each one.
+13. Test your system! Connect your functions to the dataframe from step 1 and try a movie ("The Shawshank Redemption") to see the recommendations.
 
 ## Wrap-up (5 mins)
 - You can add more bells and whistles to your system (remove the movie itself, track student names, etc.)
