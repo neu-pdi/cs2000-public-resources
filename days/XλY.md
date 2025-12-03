@@ -58,9 +58,9 @@ Let's do a little review -- we'll use some normal Pyret features in these tests,
 
 ```pyret
 check:
-  IF(TRUE, 1, 2) is 1
-  IF(FALSE, 1, 2) is 2
-  IF(AND(OR(FALSE, TRUE), NOT(FALSE)), "a", "b") is "a"
+  IF(TRUE, lam(): 1 end, lam(): 2 end) is 1
+  IF(FALSE, lam(): 1 end, lam(): 2 end) is 2
+  IF(AND(OR(FALSE, TRUE), NOT(FALSE)), lam(): "a" end, lam(): "b" end) is "a"
   
   FOUR = ofnum(4)
   
