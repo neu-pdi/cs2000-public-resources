@@ -487,7 +487,7 @@ check:
 end
 ```
 
-Now we could implement general substraction using the same strategy as we did for multiplication -- by repeatedly subtracting 1, but let's move on, to one last task we'd like to be able to do: check for equality. 
+Now we could implement general subtraction using the same strategy as we did for multiplication -- by repeatedly subtracting 1, but let's move on, to one last task we'd like to be able to do: check for equality. 
 
 As before, we'll start with a small problem -- just checking if a number is equal to 0.
 
