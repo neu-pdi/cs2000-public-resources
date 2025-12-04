@@ -399,8 +399,8 @@ So how can we get the inner applications? Well, if we apply `n1(f,x)`, this shou
 ADD = lam(n1, n2): # ADD is a lambda taking two numbers
   lam(f, x): # Returning a number -- numbers are represented as lam(f,x)
     n2-applied = n2(f, x) # First we apply f n2 times to x
-    n1-then-n2-applied = n1(f, n2-applied) # Now we apply f n1 times to the prev result
-    n1-then-n2-applied # And this is what we return
+    n2-then-n1-applied = n1(f, n2-applied) # Now we apply f n1 times to the prev result
+    n2-then-n1-applied # And this is what we return
   end 
 end
 ```
@@ -414,7 +414,7 @@ MUL = lam(n1, n2): # MUL is a lambda that takes two numbers
   add-n2-to-y = lam(y): ADD(n2, y) end # We construct a function that adds n2 to its input
   add-n2-n1-times = n1(add-n2-to-y, ZERO) # And then do that n1 times, starting with 0
   add-n2-n1-times # This is what we return
-  end
+end
 ```
 
 This would mean if we had 4 multiplied by 3, we get:
