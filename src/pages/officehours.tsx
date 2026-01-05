@@ -1200,6 +1200,7 @@ export default function OfficeHours() {
             false,
             'boston-office-hours',
           )}
+          
           {renderScheduleTable(
             oaklandInPersonSchedule,
             'IN-PERSON Office Hours Schedule (Oakland)',

@@ -10,11 +10,11 @@ Introduces computer science and data science to students with no prior programmi
 
 ### Course Structure
 
-There will be three in-person **classes** (in Boston & Oakland) or two in-person **classes** (in NYC & London), one **lab**, and one _optional_ **recitation** per week. All content is directed around teaching a set of 12 **skills**, assessment of which will form the primary assessment of the class, and which are described in detail at [Skills](/skills).
+There will be three in-person **classes** and one **lab** per week. All content is directed around teaching a set of 12 **skills**, assessment of which will form the primary assessment of the class, and which are described in detail at [Skills](/skills).
 
 Each class period (of CS2000) has reading you are **expected to do _before_ class**. During the class we will briefly review the new material that was covered in the reading (but, in much less depth -- it is not a substitute for doing the reading), and then the majority of class will be dedicated to working with classmates, assisted by your instructor, on exercises related to the new material.
 
-The lab period (CS2001) will include a set of exercises to be done with a partner in your lab section, guided by those running the lab (TAs or instructors). Labs will be graded primarily by effort & attendance. The recitation is an _optional_ additional practice session with TAs, to allow students who want more practice on the topic of the week to work through exercises with guidance.
+The lab period (CS2001) will include a set of exercises to be done with a partner in your lab section, guided by those running the lab (TAs or instructors). Labs will be graded primarily by effort & attendance. 
 
 Students can register for any CS 2001 lab section on their campus.
 
@@ -29,10 +29,10 @@ There are no quizzes or exams in this class.
 There are three primary sources of communication for this course:
 
 1. This website. This is where you will find policies, homework assignments, lab assignments, recitation contents, notes from each day of class.
-2. [Pawtograder](https://app.pawtograder.com/). This is the course grading platform. This is where you will submit homework assignments, and get feedback on them. This is also where you will see your grades for the on-paper skill assessments. It will have your gradebook. 
-3. Discord. Please join at https://discord.gg/HsKXgZXXKH. Note you must set your Display Name for the server to your full name before you will be given access to private course channels. This will be a place for any discussion that are not direct questions about homework (which should take place on Pawtograder). Discord will also be used for lab communication (each lab will have a private channel), for announcements about the course. For any questions that are _not_ specifically about homework. It is also the place where you will ask questions online about homework, and where you will do online office hours.
+2. <!-- [Pawtograder](https://app.pawtograder.com/). This is the course grading platform. This is where you will submit homework assignments, and get feedback on them. This is also where you will see your grades for the on-paper skill assessments. It will have your gradebook. --> Your grading platform (will be updated soon!)
+3. Discord. Please join at https://discord.gg/UXzrCgXP. Note you must set your Display Name for the server to your full name before you will be given access to private course channels. This will be a place for any discussion that are not direct questions about homework (which should take place on Pawtograder). Discord will also be used for lab communication (each lab will have a private channel), for announcements about the course. For any questions that are _not_ specifically about homework. It is also the place where you will ask questions online about homework, and where you will do online office hours.
 
-Note that **we will not use Canvas for anything.**
+<!-- Note that **we will not use Canvas for anything.** -->
 
 ### Course Tools
 
@@ -44,39 +44,38 @@ If you'd like to install VSCode on your computer earlier, you can use Pyret via 
 
 | Instructor | Campus | Office | Office Hours |
 | -- | -- | -- | -- |
-| [Prof. Ellen Spertus](https://www.khoury.northeastern.edu/people/ellen-spertus/) | Oakland | CPM 201 | Thursday 2-3 PM in CPM 200 and [by appointment](https://calendly.com/espertusnu/new-meeting) |
-| [Prof. Alvaro Monge](https://www.khoury.northeastern.edu/people/alvaro-monge/) | Oakland | CARN 201 | MTW 3-4pm |
-| [Prof. Rush Sanghrajka](https://www.khoury.northeastern.edu/people/rush-sanghrajka/) | Boston | Meserve 309 | Wednesdays 4-6pm in Meserve 309 [Make an Appointment, Walk-ins Welcome](http://tinyurl.com/office-hours-with-rush) |
-| [Prof. Daniel Patterson](https://dbp.io) | Boston | Meserve 317 | Wednesday & Thursday 3-4pm |
 | [Prof. John Park](#) | Boston | Meserve 318 | Mondays 4:30pm - 5:30pm drop-in w/signup |
-| [Prof. Jeongkyu Lee](https://www.khoury.northeastern.edu/people/jeongkyu-lee/) | NYC | Found Faculty Lounge | TBD |
+| [Prof. Leena Razzaq](https://www.khoury.northeastern.edu/people/leena-razzaq/) | Boston | Meserve 329 | Thursdays 3:00pm - 4:30pm and by appointment (email for an appt.) |
 
 | Coordinator | Campus | Office | Office Hours |
 | -- | -- | -- | -- |
 | [Kayla McLaughlin](https://www.khoury.northeastern.edu/people/kayla-mclaughlin/) | Boston | WVH 316 | Mondays, 11-12pm & 2-3pm in WVH314 |
 
-### Due Dates, Late Tokens, Regrades
+### Due Dates, Late Days, Regrades
 
-All homework assignments will be due on Thursdays, at 6PM Pacific time / 9PM Eastern time (this is the same moment in time).
-
+All homework assignments will be due on Thursdays, at 9PM Eastern time.
+<!--
 Any assignment can have a "Late Token" applied (see https://docs.pawtograder.com/students/assignments/late-tokens), which gives you a 24hr extension on it. You have enough late tokens to use one on any assignment, but you _must_ apply it _before_ the assignment is due. No assignments will be accepted after the due date, or, if a late token has been applied, after the late due date. If there is an exceptional situation that makes you unable to do this, please reach out to your instructor.
 
 If you have an assignment on Pawtograder that you believe was graded in error, you can submit a request request within Pawtograder, explaining what you think the mistake was. If you have a skill assessment that you think was not graded correctly, reach out to a TA or your instructor so they can go over it with you. Note that you will not be able to see the assessment or your response within Pawtograder, but any TA can view it for you.
+--> Update coming soon! 
 
 ### Office Hours
 
-We hold extensive office hours -- both online, via [Pawtograder](https://app.pawtograder.com/) and, depending on campus, in person. These can be used for any questions you have about course content, not limited to: review about reading, questions about exercises from class, any questions about homework assignments, etc. The schedule for these are available here:
+We hold extensive office hours -- both online, via [Discord](https://discord.gg/UXzrCgXP) and in person. These can be used for any questions you have about course content, not limited to: review about reading, questions about exercises from class, any questions about homework assignments, etc. The schedule for these are available here:
 
 [Office Hours](/officehours)
 
+<!-- 
 ### Recitation Times
 
 In addition to general purpose Office Hours held by TAs, there will be dedicated Recitation Hours held by TAs. These optional sessions, scheduled throughout the day, held both in person and online, will have particular exercises and material that they go over, and will not assist with homework problems. Attendance will be limited for each session, but enough should be scheduled to allow students to attend if they want.
 
 The calendar that has office hours also shows the recitation times, identified as RECITATION. Note that homework questions will _not_ be answered during recitations.
+-->
 
 ### Attendance
-sk
+
 Attendance is not required in CS2000. Please do not come to class when you're sick. We'd much rather you stay home and take care of yourself. If you need to stay home and miss class, no need to notify us in advance. You are still responsible for completing assigned work and keeping up with content that you may have missed due to an absence. The course website describes the classwork for each day, available for review. Feel free to stop by office hours with the instructors or TAs with any questions or help with the missed classwork.
 
 ### Skills
@@ -233,7 +232,7 @@ Specifically:
 - Additionally, sharing solutions in forums (e.g., posting to public questions, posting code online, etc) constitutes an academic integrity violation, as it may make it harder for other students to do work on their own, harming their own learning.
 - Any sharing or receiving information about the content of skill assessments is an academic integrity violation, and may result in failing the class.
 
-We _strongly recommend_ that you _write_ all code yourself. Even if you discuss solutions, or approaches, with others, do the actual typing on your own! And avoid playing games or trying to find loopholes -- i.e., do not merely type what someone says, or type what you see on anothers screen. While we do not consider collaboration a violation, we still encourage following these recommendations-- relying on others for your solutions may result in you not learning the material, and in this class, not learning the material will result in not being able to pass the skill assessments. Even with perfect homework scores, failing to pass sufficient skill assessments will result in a failing grade in the course (consult the [grading table](#grading)), so take homework for what it is intended: extensive opportunity to practice the skills we are teaching, paired with high quality feedback about the solution you came up with.
+We _strongly recommend_ that you _write_ all code yourself. Even if you discuss solutions, or approaches, with others, do the actual typing on your own! And avoid playing games or trying to find loopholes -- i.e., do not merely type what someone says, or type what you see on another's screen. While we do not consider collaboration a violation, we still encourage following these recommendations -- relying on others for your solutions may result in you not learning the material, and in this class, not learning the material will result in not being able to pass the skill assessments. Even with perfect homework scores, failing to pass sufficient skill assessments will result in a failing grade in the course (consult the [grading table](#grading)), so take homework for what it is intended: extensive opportunity to practice the skills we are teaching, paired with high quality feedback about the solution you came up with.
 
 The minimum penalty for an academic integrity violation is a zero on the assignment and a report to the [Office of Student Conduct and Conflict Resolution (OSCCR)](https://osccr.sites.northeastern.edu/). Penalties are increased if there are aggravating factors, such as stealing another student's work or lying about cheating. Also, see the [Official University Academic Integrity Policy](https://osccr.sites.northeastern.edu/academic-integrity-policy/).
 
@@ -241,18 +240,19 @@ The minimum penalty for an academic integrity violation is a zero on the assignm
 
 AI coding assistants like Cursor, Windsurf, and Copilot should not be used in this course. We believe that using an AI assistant is an important skill that should be covered _after_ the basics (which is why there is a different policy in CS 3100). Until you have the ability to design, understand, and review code, using an AI assistant amounts to wandering around in the dark, with no ability to determine if you are getting closer to what you want. (Using these tools to get decent grades while learning nothing is pretty clearly shooting yourself in the foot: you are in college to learn; if you end up unable to do anything but prompt engineer, you will have essentially no skills, given these models are intentionally rendering whatever "skill" underlying prompt engineering obselete in every generation).
 
-The same is true of asking questions of chat models like ChatGPT, Claude, or Gemini. Putting in assignment instructions into such a model and getting out code or test cases amounts to getting the model to do the thinking for you -- and as a result, you will not learn. "Only look"ing at AI-generated solutions "before writing your own" undermines the learning just the same, as you will not be learning to actually solve problems, you will just be copying (and, importantly, never developing the ability to recognize when the AI generated solution isn't what you want).
+The same is true of asking questions of chat models like ChatGPT, Claude, Gemini, etc. Putting in assignment instructions into such a model and getting out code or test cases amounts to getting the model to do the thinking for you -- and as a result, you will not learn. "Only look"ing at AI-generated solutions "before writing your own" undermines the learning just the same, as you will not be learning to actually solve problems, you will just be copying (and, importantly, never developing the ability to recognize when the AI generated solution isn't what you need).
 
-Emerging research is beginning to show that substituting practice on fundamental skills by delegating that practice to LLMs can decreases learning. Whilst using an LLM might reduce the immediate strain of learning something new, it can also [diminish the development of critical thinking skills](https://doi.org/10.1016/j.chb.2024.108386) by decreasing engagement and [impeding independent problem-solving](https://doi.org/10.1186/s41239-024-00467-0). Moreover, even the [benefits of using LLMs for experienced developers](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) have been questioned. LLMs can be useful useful once you have gained competence in program design and are able to break down a problem and specify it precisely—which are the skills we are trying to develop in CS 2000 and CS 2100.
+Emerging research is beginning to show that substituting practice on fundamental skills by delegating that practice to LLMs can decrease learning. Whilst using an LLM might reduce the immediate strain of learning something new, it can also [diminish the development of critical thinking skills](https://doi.org/10.1016/j.chb.2024.108386) by decreasing engagement and [impeding independent problem-solving](https://doi.org/10.1186/s41239-024-00467-0). Moreover, even the [benefits of using LLMs for experienced developers](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) have been questioned. LLMs can be useful once you have gained competence in program design and are able to break down a problem and specify it precisely—which are the skills we are trying to develop in CS 2000 and CS 2100.
 
 Part of the reason for these being guidelines, rather than academic integrity policies, is that some interaction with LLMs is now unavoidable -- using a search engine now will give you an AI generated overview, and similar interactions with models (trying to understand concepts) is not necessarily discouraged, though we would always encourage you to bring larger questions to our course staff, who will likely be able to give you better answers, more suited to your background, to our curriculum, etc. Finally, if you do use LLMs for search, you are responsible for validating any information you find.
 
-Make sure to refer to sources of ground truth for reliable information such as the official language documentation, our course textbook, course staff, and the course website. Reading documentation can be challenging at first, but it is an important skill to develop in any technical field. Learning to navigate technical documents helps you develop a precise understanding of how something works—which is a valuable transferable skill that you can use to gain competence with new tools and help you solve problems independently.
+Make sure to refer to sources of ground truth for reliable information such as the official language documentation, our course textbook, course staff, and the course website. Reading documentation can be challenging at first, but it is an important skill to develop in any technical field. Learning to navigate technical documents helps you develop a precise understanding of how something works—which is a valuable, transferable skill that you can use to gain competence with new tools and help you solve problems independently.
 
 ### Inclusive Environment
 
-To create and preserve a classroom atmosphere that optimizes teaching and learning, all participants share a responsibility in creating a civil and non-disruptive forum for the discussion of ideas. Students are expected to conduct themselves at all times in a manner that does not disrupt teaching or learning. Your comments to others should be constructive and free from harassing statements. You are encouraged to disagree with other students and the instructor, but such disagreements need to respectful and be based upon facts and documentation (rather than prejudices and personalities). The instructor reserves the right to interrupt conversations that deviate from these expectations. Repeated unprofessional or disrespectful conduct may result in a lower grade or more severe consequences. Part of the learning process in this course is respectful engagement of ideas with others.
-We believe that diversity and inclusiveness are essential to excellence in academic discourse and innovation. In this class, the perspective of people of all races, ethnicities, gender expressions and gender identities, religions, sexual orientations, disabilities, socioeconomic backgrounds, and nationalities will be respected and viewed as a resource and benefit throughout the semester. Suggestions to further diversify class materials and assignments are encouraged. If any course meetings conflict with your religious events, please do not hesitate to reach out to Rush to make alternative arrangements.
+To create and preserve a classroom atmosphere that optimizes teaching and learning, all participants share a responsibility in creating a civil and non-disruptive forum for the discussion of ideas. Students are expected to conduct themselves at all times in a manner that does not disrupt teaching or learning. Your comments to others should be constructive and free from harassing statements. You are encouraged to disagree with other students and the instructor, but such disagreements need to be respectful and be based upon facts and documentation (rather than prejudices and personalities). The instructor reserves the right to interrupt conversations that deviate from these expectations. Repeated unprofessional or disrespectful conduct may result in a lower grade or more severe consequences. Part of the learning process in this course is respectful engagement of ideas with others.
+
+We believe that diversity and inclusiveness are essential to excellence in academic discourse and innovation. In this class, the perspective of people of all races, ethnicities, gender expressions and gender identities, religions, sexual orientations, disabilities, socioeconomic backgrounds, and nationalities will be respected and viewed as a resource and benefit throughout the semester. Suggestions to further diversify class materials and assignments are encouraged. If any course meetings conflict with your religious events, please do not hesitate to reach out to Kayla to make alternative arrangements.
 
 ### Name and Pronoun Usage
 
@@ -262,12 +262,13 @@ pronoun(s) and chosen name affirmed. If the class roster does not align with you
 ### Accommodations
 
 If you have a documented disability, please register with [Disability Access Services](https://disabilityaccessservices.northeastern.edu/) to get the accommodations that will
-help you succeed. Please do this even if you are unsure whether you will need accommodations, since there may be a delay if you decide you need them later. Please do not wait until it has seriously impacted your work, as accommodations are not retroactive. See [additional information
-for Oakland students](https://oakland.northeastern.edu/student-life/access-services/accommodations/#request).
+help you succeed. Please do this even if you are unsure whether you will need accommodations, since there may be a delay if you decide you need them later. Please do not wait until it has seriously impacted your work, as accommodations are not retroactive. 
+<!-- See [additional information
+for Oakland students](https://oakland.northeastern.edu/student-life/access-services/accommodations/#request). -->
 
 ### Policy on Recording
 
-Massachusetts and California laws prohibit students from recording classes without the consent of all participants, unless a disability accommodation is in place. We encourage you to seek accommodations to which you are legally entitled.
+Massachusetts <!-- and California --> laws prohibit students from recording classes without the consent of all participants, unless a disability accommodation is in place. We encourage you to seek accommodations to which you are legally entitled.
 
 ## University Resources
 

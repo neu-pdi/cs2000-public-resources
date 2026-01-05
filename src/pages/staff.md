@@ -13,66 +13,24 @@ import styles from './index.module.css';
 <div className={styles.staffGrid}>
 
 <div className={styles.staffCard}>
-  <img src={require('@site/static/img/staff/ellen-spertus.jpg').default} alt="Prof. Ellen Spertus" className={styles.staffPhoto} />
-  <h3>Prof. Ellen Spertus</h3>
-  <p>espertus@northeastern.edu</p>
-  <div className={styles.officeHours}>
-    <strong>Office Hours:</strong><br/>
-    Thu 2-4 PM in CPM 200<br/>
-    <a href="https://calendly.com/espertusnu/new-meeting" target="_blank" rel="noopener noreferrer">Make an Appointment</a>
-  </div>
-</div>
-
-<div className={styles.staffCard}>
-  <img src={require('@site/static/img/staff/alvaro-monge.jpg').default} alt="Prof. Alvaro Monge" className={styles.staffPhoto} />
-  <h3>Prof. Alvaro Monge</h3>
-  <p>a.monge@northeastern.edu</p>
-  <div className={styles.officeHours}>
-    <strong>Office Hours:</strong><br/>
-    Mon & Tue & Wed 3-4pm in CARN 201
-  </div>
-</div>
-
-<div className={styles.staffCard}>
-  <img src={require('@site/static/img/staff/rush-sanghrajka.jpg').default} alt="Prof. Rush Sanghrajka" className={styles.staffPhoto} />
-  <h3>Prof. Rush Sanghrajka</h3>
-  <p>r.sanghrajka@northeastern.edu</p>
-  <div className={styles.officeHours}>
-    <strong>Office Hours:</strong><br/>
-    Wed 4-6pm in Meserve 309<br/>
-    <a href="http://tinyurl.com/office-hours-with-rush" target="_blank" rel="noopener noreferrer">Make an Appointment</a>
-  </div>
-</div>
-
-<div className={styles.staffCard}>
-  <img src={require('@site/static/img/staff/daniel-patterson.jpg').default} alt="Prof. Daniel Patterson" className={styles.staffPhoto} />
-  <h3>Prof. Daniel Patterson</h3>
-  <p>d.patterson@northeastern.edu</p>
-  <div className={styles.officeHours}>
-    <strong>Office Hours:</strong><br/>
-    Wed & Thu 3-4pm (ending 12/3)<br/>
-    in Meserve 317
-  </div>
-</div>
-
-<div className={styles.staffCard}>
   <img src={require('@site/static/img/staff/john-park.jpg').default} alt="Prof. John Park" className={styles.staffPhoto} />
   <h3>Prof. John Park</h3>
   <p>jo.park@northeastern.edu</p>
   <div className={styles.officeHours}>
     <strong>Office Hours:</strong><br/>
-    Mon 4:30-5:30pm in Meserve 318<br/>
+    tbd in Meserve 318<br/>
     Drop-in w/signup
   </div>
 </div>
 
 <div className={styles.staffCard}>
-  <img src={require('@site/static/img/staff/jeongkyu-lee.jpg').default} alt="Prof. Jeongkyu Lee" className={styles.staffPhoto} />
-  <h3>Prof. Jeongkyu Lee</h3>
-  <p>j.lee@northeastern.edu</p>
+  <img src={require('@site/static/img/staff/leena_razzaq.jpg').default} alt="Prof. Leena Razzaq" className={styles.staffPhoto} />
+  <h3>Prof. Leena Razzaq</h3>
+  <p>l.razzaq@northeastern.edu</p>
   <div className={styles.officeHours}>
     <strong>Office Hours:</strong><br/>
-    TBD in Found Faculty Lounge
+    Thu 3-4:30pm in Meserve 329<br/>
+    or by appointment
   </div>
 </div>
 
@@ -88,7 +46,7 @@ import styles from './index.module.css';
   <p>k.mclaughlin@northeastern.edu</p>
   <div className={styles.officeHours}>
     <strong>Office Hours:</strong><br/>
-    Mon 11-12pm & 2-3pm in WVH314
+    tbd
   </div>
 </div>
 
