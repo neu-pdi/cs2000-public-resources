@@ -360,7 +360,7 @@ const config: Config = {
           type: 'doc',
           docId: currentAssignmentNumber(),
           position: 'left',
-          label: 'Recitations',
+          label: 'Extra Practice',
           docsPluginId: 'recitation',
         },
         {
