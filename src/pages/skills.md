@@ -5,7 +5,7 @@ description: Skills
 hide_table_of_contents: true
 ---
 
-import SkillCalendar from '@site/src/components/SkillCalendar';
+import SkillCalendarSp26 from '@site/src/components/SkillCalendarSp26';
 
 # Skills
 
@@ -854,4 +854,4 @@ While most skill assessments must take place during the schedule below, each stu
 
 For **Class** and **Lab** days, we choose the most common day; some campuses may differ based on when class or labs are run, but the week will match.
 
- <SkillCalendar />
+ <SkillCalendarSp26 />

@@ -8,24 +8,24 @@ export default function CalendarHighlighter() {
       const table = document.querySelector('.skill-calendar');
       if (!table) return;
       const rows = table.querySelectorAll('tbody tr');
-      let currentMonthIndex = 8;
+      let currentMonthIndex = 12;
       let currentYearIndex = 2025;
       rows.forEach(function(row) {
         const monthHeader = row.querySelector('.month-header th');
         if (monthHeader) {
           const text = monthHeader.textContent.trim();
-          if (text.includes('September')) {
-            currentMonthIndex = 8;
+          if (text.includes('January')) {
+            currentMonthIndex = 12;
             currentYearIndex = 2025;
-          } else if (text.includes('October')) {
-            currentMonthIndex = 9;
-            currentYearIndex = 2025;
-          } else if (text.includes('November')) {
-            currentMonthIndex = 10;
-            currentYearIndex = 2025;
-          } else if (text.includes('December')) {
-            currentMonthIndex = 11;
-            currentYearIndex = 2025;
+          } else if (text.includes('February')) {
+            currentMonthIndex = 1;
+            currentYearIndex = 2026;
+          } else if (text.includes('March')) {
+            currentMonthIndex = 2;
+            currentYearIndex = 2026;
+          } else if (text.includes('April')) {
+            currentMonthIndex = 3;
+            currentYearIndex = 2026;
           }
           return;
         }

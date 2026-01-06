@@ -30,7 +30,7 @@ There are three primary sources of communication for this course:
 
 1. This website. This is where you will find policies, homework assignments, lab assignments, recitation contents, notes from each day of class.
 2. <!-- [Pawtograder](https://app.pawtograder.com/). This is the course grading platform. This is where you will submit homework assignments, and get feedback on them. This is also where you will see your grades for the on-paper skill assessments. It will have your gradebook. --> Your grading platform (will be updated soon!)
-3. Discord. Please join at https://discord.gg/UXzrCgXP. Note you must set your Display Name for the server to your full name before you will be given access to private course channels. This will be a place for any discussion that are not direct questions about homework (which should take place on Pawtograder). Discord will also be used for lab communication (each lab will have a private channel), for announcements about the course. For any questions that are _not_ specifically about homework. It is also the place where you will ask questions online about homework, and where you will do online office hours.
+3. Discord. Please join at https://discord.gg/UXzrCgXP. Note you must set your Display Name for the server to your full name before you will be given access to private course channels. This will be a place for any discussion that are not direct questions about homework. Discord will also be used for lab communication (each lab will have a private channel), for announcements about the course. For any questions that are _not_ specifically about homework. It is also the place where you will ask questions online about homework, and where you will do online office hours.
 
 <!-- Note that **we will not use Canvas for anything.** -->
 
@@ -44,7 +44,7 @@ If you'd like to install VSCode on your computer earlier, you can use Pyret via 
 
 | Instructor | Campus | Office | Office Hours |
 | -- | -- | -- | -- |
-| [Prof. John Park](#) | Boston | Meserve 318 | Mondays 4:30pm - 5:30pm drop-in w/signup |
+| [Prof. John Park](#) | Boston | Meserve 318 | Wednesdays 3:00pm - 4:00pm |
 | [Prof. Leena Razzaq](https://www.khoury.northeastern.edu/people/leena-razzaq/) | Boston | Meserve 329 | Thursdays 3:00pm - 4:30pm and by appointment (email for an appt.) |
 
 | Coordinator | Campus | Office | Office Hours |
@@ -58,7 +58,7 @@ All homework assignments will be due on Thursdays, at 9PM Eastern time.
 Any assignment can have a "Late Token" applied (see https://docs.pawtograder.com/students/assignments/late-tokens), which gives you a 24hr extension on it. You have enough late tokens to use one on any assignment, but you _must_ apply it _before_ the assignment is due. No assignments will be accepted after the due date, or, if a late token has been applied, after the late due date. If there is an exceptional situation that makes you unable to do this, please reach out to your instructor.
 
 If you have an assignment on Pawtograder that you believe was graded in error, you can submit a request request within Pawtograder, explaining what you think the mistake was. If you have a skill assessment that you think was not graded correctly, reach out to a TA or your instructor so they can go over it with you. Note that you will not be able to see the assessment or your response within Pawtograder, but any TA can view it for you.
---> Update coming soon! 
+--> Info about late submissions coming soon! 
 
 ### Office Hours
 
@@ -213,6 +213,8 @@ This is captured by the following table -- the highest row that a student satisf
 </tr>
 </tbody>
 </table>
+
+**Note:** A lecture activity score of 70% or more will bump your score up one row in the grade table. Lecture activity will be assessed by interaction during class typically by submitting your solution to a designated class exercise or answering a poll question. These will be assessed for participation, not correctness.
 
 ### Textbook
 
