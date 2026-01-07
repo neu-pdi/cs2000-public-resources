@@ -49,7 +49,7 @@ If you'd like to install VSCode on your computer earlier, you can use Pyret via 
 
 | Coordinator | Campus | Office | Office Hours |
 | -- | -- | -- | -- |
-| [Kayla McLaughlin](https://www.khoury.northeastern.edu/people/kayla-mclaughlin/) | Boston | WVH 316 | Mondays, 11-12pm & 2-3pm in WVH314 |
+| [Kayla McLaughlin](https://www.khoury.northeastern.edu/people/kayla-mclaughlin/) | Boston | WVH 316 | tbd in WVH314 |
 
 ### Due Dates, Late Days, Regrades
 

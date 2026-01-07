@@ -1201,60 +1201,6 @@ export default function OfficeHours() {
             'boston-office-hours',
           )}
           
-          {renderScheduleTable(
-            oaklandInPersonSchedule,
-            'IN-PERSON Office Hours Schedule (Oakland)',
-            true,
-            true,
-            false,
-            false,
-            'oakland-office-hours',
-          )}
-          {renderScheduleTable(
-            onlineRecitationsSchedule,
-            'ONLINE Recitations Schedule',
-            false,
-            false,
-            false,
-            true,
-            'online-recitations',
-          )}
-          {renderScheduleTable(
-            bostonRecitationsSchedule,
-            'RECITATIONS Schedule (Boston)',
-            true,
-            false,
-            true,
-            false,
-            'boston-recitations',
-          )}
-          {renderScheduleTable(
-            oaklandRecitationsSchedule,
-            'RECITATIONS Schedule (Oakland)',
-            true,
-            true,
-            false,
-            false,
-            'oakland-recitations',
-          )}
-          {renderScheduleTable(
-            bostonInstructorAssessmentsSchedule,
-            'INSTRUCTOR Assessable@Hours Schedule (Boston)',
-            true,
-            false,
-            true,
-            false,
-            'boston-assessablehours',
-          )}
-          {renderScheduleTable(
-            oaklandInstructorAssessmentsSchedule,
-            'INSTRUCTOR Assessable@Hours Schedule (Oakland)',
-            true,
-            true,
-            true,
-            false,
-            'oakland-assessablehours',
-          )}
         </VStack>
       </Box>
     </Layout>
