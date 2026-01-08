@@ -98,10 +98,10 @@ The course will teach the following skills, grading of which will be performed b
 ### Grading
 
 Grades will be primarily assigned by achievement levels of the course
-[Skills](/skills/), along with required grade thresholds on HW (after dropping 2) for each letter grade,
+[Skills](/skills/), along with required grade thresholds on HW for each letter grade,
 and + (other than A) given for participation in 8 or more out of 10 labs, - given for participating in fewer than 6 out of ten labs.
 
-Note: we drop your lowest two HW scores before calculating your average for the threshold.
+<!-- Note: we drop your lowest two HW scores before calculating your average for the threshold. -->
 
 This is captured by the following table -- the highest row that a student satisfies all columns of will be their grade, and **if no rows are completely satisfied, the student will not pass the course.**
 
