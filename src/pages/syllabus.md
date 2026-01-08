@@ -118,7 +118,7 @@ This is captured by the following table -- the highest row that a student satisf
 <th><strong>Meets Expectations</strong></th>
 <th><strong>Approaching Expectations</strong></th>
 <th><strong>Not Approaching</strong></th>
-<th>HW Average (AFTER DROPPING 2)</th>
+<th>HW Average </th>
 <th>Lab Participation</th>
 </tr>
 </thead>
