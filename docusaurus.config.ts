@@ -321,10 +321,10 @@ const config: Config = {
               to: '/schedule/',
               label: 'Class Schedule',
             },
-            //{
-            //  to: '/officehours/',
-            //  label: 'Office Hours',
-            //},
+            {
+              to: '/ohtables/',
+              label: 'Office Hours',
+            },
             {
               to: '/skills/#skill-schedule',
               label: 'Skills Schedule',

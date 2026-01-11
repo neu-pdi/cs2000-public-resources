@@ -88,9 +88,11 @@ export default function OfficeHours() {
   const PROXY_URL = 'https://metal.dbp.io:10321';
 
   // The Google Sheets CSV API URL for Online Office Hours
-  const onlineOfficeHoursCsvUrl = `${PROXY_URL}/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Online+Office+Hours`;
+ // const onlineOfficeHoursCsvUrl = `${PROXY_URL}/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Online+Office+Hours`;
 
-  const inPersonOfficeHoursCsvUrl = `${PROXY_URL}/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=In+Person+Office+Hours`;
+  const onlineOfficeHoursCsvUrl = `${PROXY_URL}/spreadsheets/d/1LY5HDMvQl3vGGHJtSLrbsHXK23Oa_VPdnKHOw_xlDKE/gviz/tq?tqx=out:csv&sheet=Online+Office+Hours`;
+
+  const inPersonOfficeHoursCsvUrl = `${PROXY_URL}/spreadsheets/d/1LY5HDMvQl3vGGHJtSLrbsHXK23Oa_VPdnKHOw_xlDKE/gviz/tq?tqx=out:csv&sheet=In+Person+Office+Hours`;
 
   const oaklandInPersonOfficeHoursCsvUrl = `${PROXY_URL}/spreadsheets/d/19V2RxXUrOb0ORGk6eNzw_Qp0O3bAylI6adsw_qNxjUw/gviz/tq?tqx=out:csv&sheet=Oakland+In+Person`;
 
