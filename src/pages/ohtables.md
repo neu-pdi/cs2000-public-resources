@@ -11,7 +11,7 @@ To join online office hours: Make a post in the office hours text channel before
 
 ## Office Hours Schedules
 
-#### Note: All in-person hours on Monday the 12th will be online as we wait for our room reservations
+#### Note: All in-person hours will be online until further notice as we wait for our room reservations
 
 ### Online Office Hours
 
