@@ -71,7 +71,7 @@ To join online office hours: Make a post in the office hours text channel before
 
 The schedule for office hours are available here:
 
-[Office Hours](/officehours)
+[Office Hours](/ohtables)
 
 <!-- 
 ### Recitation Times
