@@ -28,12 +28,12 @@ To join online office hours: Make a post in the office hours text channel before
 ### In-Person Office Hours
 
 
-|       | Monday            | Tuesday                               | Wednesday          | Thursday                         | Friday            |
-| --    | --                | --                                    | --                 | --                               | --                |
-| --    | Room: Cahners 004 | Room: Snell Library 011               | Room: Cahners 002  | Room: Cahners 005                | Room: Cahners 002 |
-|4-5pm  |                   |                                       |                    |Achyut K., Josh T.                | Rida M.           |
-|5-6pm  |Ella C., Zoe G.    |Ellie B., Josh T.                      |Paula S., Isha H.   |Jasmine O., Josh T.               | Rida M.           |
-|6-7pm  |Zoe G.             |Ellie B., Josh T.                      |Jordi C., Umika B.  |Jordi C.                          | Sarah Jane G.     |
-|7-8pm  |Isha H., Rida M.   |                                       |Jordi C., Umika B.  |Umika B., Jordi C., Sarah Jane G. | Sarah Jane G.     |
-|8-9pm  |Rida M.            |Paula S., Isha H.                      |                    |Umika B., Rida M., Sarah Jane G.  |                   |
-|9-10pm |Rida M.            |Paula S., Umika B.                     |                    |Umika B., Rida M., Sarah Jane G.  |                   |
+|       | Monday            | Tuesday                               | Wednesday                  | Thursday                         | Friday            |
+| --    | --                | --                                    | --                         | --                               | --                |
+| --    | Room: Cahners 004 | Room: Snell Library 011               | Room: Cahners 002          | Room: Cahners 005                | Room: Cahners 002 |
+|4-5pm  |                   |                                       |                            |Achyut K., Josh T.                | Rida M.           |
+|5-6pm  |Ella C., Zoe G.    |Ellie B., Josh T.                      |Paula S., Isha H., Umika B. |Jasmine O., Josh T.               | Rida M.           |
+|6-7pm  |Zoe G.             |Ellie B., Josh T.                      |Jordi C., Umika B.          |Jordi C., Umika B.                | Sarah Jane G.     |
+|7-8pm  |Isha H., Rida M.   |                                       |Jordi C.                    |Umika B., Jordi C., Sarah Jane G. | Sarah Jane G.     |
+|8-9pm  |Rida M.            |Paula S., Isha H.                      |                            |Umika B., Rida M., Sarah Jane G.  |                   |
+|9-10pm |Rida M.            |Paula S., Umika B.                     |                            |  |                   |
