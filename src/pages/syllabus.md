@@ -57,7 +57,7 @@ All homework assignments will be due on Thursdays, at 9PM Eastern time.
 
 Any assignment can have a "Late Token" applied (see https://docs.pawtograder.com/students/assignments/late-tokens), which gives you a 24hr extension on it. You have enough late tokens to use one on any assignment, but you _must_ apply it _before_ the assignment is due. No assignments will be accepted after the due date, or, if a late token has been applied, after the late due date. If there is an exceptional situation that makes you unable to do this, please reach out to your instructor.
 
-If you have an assignment on Pawtograder that you believe was graded in error, you can submit a request request within Pawtograder, explaining what you think the mistake was. If you have a skill assessment that you think was not graded correctly, reach out to a TA or your instructor so they can go over it with you. Note that you will not be able to see the assessment or your response within Pawtograder, but any TA can view it for you.
+If you have an assignment on Pawtograder that you believe was graded in error, you can submit a request within Pawtograder, explaining what you think the mistake was. If you have a skill assessment that you think was not graded correctly, reach out to a TA or your instructor so they can go over it with you. Note that you will not be able to see the assessment or your response within Pawtograder, but any TA can view it for you. **You must reach out within 7 days of receiving feedback.**
  
 
 ### Office Hours
