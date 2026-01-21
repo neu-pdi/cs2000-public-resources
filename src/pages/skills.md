@@ -807,8 +807,8 @@ Assessment of skills can be done at many different opportunities.
 
 ### Assessable@Hours
 
-Every week, there will be several special hours held by instructors, course
-coordinators, or graduate TAs, that exist solely for the purpose of taking
+Every week, there will be several hours held by instructors, course
+coordinators, or graduate TAs, for the purpose of taking
 assessments. The skills assessable at these hours are those that were introduced
 the previous several weeks -- see the table below to see what skill is
 assessable in any given week via this mechanism.
@@ -817,6 +817,12 @@ This is intended to allow you several attempts at the skill after the content is
 introduced, but require you to keep up with the material -- all assessments
 cannot be deferred to the end of the semester, since only the last few skills
 can be attempted at the end of the semester.
+
+For spring 2026, these hours will coincide with lecture times (usually the second half):
+
+- 9:15 - 10:20am in Shillman 135
+- 10:30 - 11:35am in Shillman 135
+- 1:35 - 2:40pm in EV002
 
 ### Skill Days (in Class)
 

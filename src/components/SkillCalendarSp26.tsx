@@ -52,7 +52,7 @@ const calendarData: MonthData[] = [
     year: 2026,
     weeks: [
       [null, { day: 6, skills: [7, 8, 9, 10], classSkills: [6, 7, 8, 9, 10] }, { day: 7}, { day: 8, skills: [7, 8, 9, 10] }, { day: 9, skills: [7, 8, 9, 10] }, { day: 10}, null],
-      [null, { day: 13, skills: [7, 8, 9, 10], classSkills: [6, 7, 8, 9, 10] }, { day: 14}, { day: 15, skills: [7, 8, 9, 10] }, { day: 16, skills: [7, 8, 9, 10] }, { day: 17}, null],
+      [null, { day: 13, skills: [7, 8, 9, 10] }, { day: 14}, { day: 15, skills: [7, 8, 9, 10] }, { day: 16, skills: [7, 8, 9, 10] }, { day: 17}, null],
 
     ],
   },
