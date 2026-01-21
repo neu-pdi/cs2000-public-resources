@@ -818,7 +818,7 @@ introduced, but require you to keep up with the material -- all assessments
 cannot be deferred to the end of the semester, since only the last few skills
 can be attempted at the end of the semester.
 
-For spring 2026, these hours will coincide with lecture times (usually the second half):
+For spring 2026, these hours will coincide with lecture times (usually the second half of the period):
 
 - 9:15 - 10:20am in Shillman 135
 - 10:30 - 11:35am in Shillman 135
@@ -852,7 +852,7 @@ skip the bulk assessment entirely. The two bundles are:
 
 ## End of Semester Re-attempts
 
-While most skill assessments must take place during the schedule below, each student may make _two_ re-attempts during the last three weeks (Nov 17 to Dec 5) of the semester. They must contact the course coordinator (Kayla McLaughlin, k.mclaughlin@northeastern.edu) in order to do schedule these. These late semester retakes can be done regardless of how many attempts of a given skill the student has made previously.
+While most skill assessments must take place during the schedule below, each student may make _two_ re-attempts during the last three weeks of the semester. They must contact the course coordinator (Kayla McLaughlin, k.mclaughlin@northeastern.edu) in order to do schedule these. These late semester retakes can be done regardless of how many attempts of a given skill the student has made previously.
 
 ## Skill Schedule
 
