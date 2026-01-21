@@ -17,7 +17,7 @@ expectations", and "Meets expectations", and students may attempt any skill
 assessment up to five times (four independently, and once via the bulk
 assessments, see below), with the best result being used for their grade.
 
-Please use this [form](https://docs.google.com/forms/d/e/1FAIpQLSd8yya6eT7kVf-iljyYJQu14cfJ8PS3Z1pB5pmpsKbcQOG6OQ/viewform?ts=696169f2) to schedule a skill assessment.  
+**Please use this [form](https://docs.google.com/forms/d/e/1FAIpQLSd8yya6eT7kVf-iljyYJQu14cfJ8PS3Z1pB5pmpsKbcQOG6OQ/viewform?ts=696169f2) to schedule a skill assessment.** 
 
 1. <a id="(1)" href="#(1)">Design Basic Functions (Pyret)</a>
    |  |  |
