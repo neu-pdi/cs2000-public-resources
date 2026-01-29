@@ -820,8 +820,8 @@ can be attempted at the end of the semester.
 
 For spring 2026, these hours will coincide with lecture times (usually the second half of the period):
 
-- 9:15 - 10:20am in Shillman 135
-- 10:30 - 11:35am in Shillman 135
+- 9:15 - 10:20am in Shillman 135 (Lectures meet in Shillman 305)
+- 10:30 - 11:35am in Shillman 135 (Lectures meet in Shillman 305)
 - 1:35 - 2:40pm in EV002
 
 ### Skill Days (in Class)
