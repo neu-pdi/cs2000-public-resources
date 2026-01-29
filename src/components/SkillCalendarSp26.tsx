@@ -30,8 +30,8 @@ const calendarData: MonthData[] = [
     month: 'February',
     year: 2026,
     weeks: [
-      [null, { day: 2, skills: [1, 2, 11, 12] }, { day: 3}, { day: 4, skills: [1, 2, 11, 12] }, { day: 5, skills: [1, 2, 11, 12], classSkills: [1, 2, 11, 12] }, { day: 6}, null],
-      [null, { day: 9, skills: [2, 11, 12] }, { day: 10}, { day: 11, skills: [2, 11, 12] }, { day: 12, skills: [2, 11, 12] }, { day: 13}, null],
+      [null, { day: 2, skills: [1, 2, 11, 12] }, { day: 3}, { day: 4, skills: [1, 2, 11, 12] }, { day: 5, skills: [1, 2, 11, 12] }, { day: 6}, null],
+      [null, { day: 9, skills: [1, 2, 11, 12], classSkills: [1, 2, 11, 12] }, { day: 10}, { day: 11, skills: [2, 11, 12] }, { day: 12, skills: [2, 11, 12] }, { day: 13}, null],
       [null, { day: 16, isHoliday: true }, { day: 17}, { day: 18, skills: [2, 3, 11, 12] }, { day: 19, skills: [2, 3, 11, 12] }, { day: 20}, null],
       [null, { day: 23, skills: [3, 4, 11, 12] }, { day: 24}, { day: 25, skills: [3, 4, 11, 12] }, { day: 26, skills: [3, 4, 11, 12] }, { day: 27, labSkills: [1, 2, 3, 4, 11, 12]  }, null],
     ],
@@ -41,9 +41,9 @@ const calendarData: MonthData[] = [
     year: 2026,
     weeks: [
       [null, { day: 2, isHoliday: true }, { day: 3, isHoliday: true }, { day: 4, isHoliday: true }, { day: 5, isHoliday: true}, { day: 6, isHoliday: true}, null],
-      [null, { day: 9, skills: [3, 4, 5, 11, 12] }, { day: 10}, { day: 11, skills: [3, 4, 5, 11, 12] }, { day: 12, skills: [3, 4, 5, 11, 12], classSkills: [3, 4, 5, 11, 12] }, { day: 13}, null],
-      [null, { day: 16, skills: [4, 5, 6] }, { day: 17}, { day: 18, skills: [4, 5, 6] }, { day: 19, skills: [4, 5, 6] }, { day: 20}, null],
-      [null, { day: 23, skills: [4, 5, 6, 7, 8] }, { day: 24}, { day: 25, skills: [4, 5, 6, 7, 8] }, { day: 26, skills: [4, 5, 6, 7, 8] }, { day: 27}, null],
+      [null, { day: 9, skills: [3, 4, 5, 11, 12] }, { day: 10}, { day: 11, skills: [3, 4, 5, 11, 12] }, { day: 12, skills: [3, 4, 5, 11, 12] }, { day: 13}, null],
+      [null, { day: 16, skills: [3, 4, 5, 6], classSkills: [3, 4, 5, 11, 12] }, { day: 17}, { day: 18, skills: [4, 5, 6] }, { day: 19, skills: [4, 5, 6] }, { day: 20}, null],
+      [null, { day: 23, skills: [5, 6, 7, 8] }, { day: 24}, { day: 25, skills: [5, 6, 7, 8] }, { day: 26, skills: [5, 6, 7, 8] }, { day: 27}, null],
       [null, { day: 30, skills: [6, 7, 8, 9, 10] }, { day: 31}, { day: 1, skills: [6, 7, 8, 9, 10] }, { day: 2, skills: [6, 7, 8, 9, 10] }, { day: 3, labSkills: [6, 7, 8, 9, 10] }, null],
     ],
   },
@@ -51,7 +51,7 @@ const calendarData: MonthData[] = [
     month: 'April',
     year: 2026,
     weeks: [
-      [null, { day: 6, skills: [7, 8, 9, 10], classSkills: [6, 7, 8, 9, 10] }, { day: 7}, { day: 8, skills: [7, 8, 9, 10] }, { day: 9, skills: [7, 8, 9, 10] }, { day: 10}, null],
+      [null, { day: 6, skills: [7, 8, 9, 10] }, { day: 7}, { day: 8, skills: [7, 8, 9, 10], classSkills: [6, 7, 8, 9, 10] }, { day: 9, skills: [7, 8, 9, 10] }, { day: 10}, null],
       [null, { day: 13, skills: [7, 8, 9, 10] }, { day: 14}, { day: 15, skills: [7, 8, 9, 10] }, { day: 16, skills: [7, 8, 9, 10] }, { day: 17}, null],
 
     ],
