@@ -35,5 +35,5 @@ To join online office hours: Make a post in the office hours text channel before
 |5-6pm  |Ella C., Zoe G.    |Ellie B., Josh T.                      |Paula S., Isha H., Umika B. |Jasmine O., Josh T.               | Rida M.           |
 |6-7pm  |Zoe G.             |Ellie B., Josh T.                      |Jordi C., Umika B.          |Jordi C., Umika B.                | Sarah Jane G.     |
 |7-8pm  |Isha H., Rida M.   |                                       |Jordi C.                    |Umika B., Jordi C., Sarah Jane G. | Sarah Jane G.     |
-|8-9pm  |Rida M.            |Paula S., Isha H.                      |                            |Umika B., Rida M., Sarah Jane G.  |                   |
-|9-10pm |Rida M.            |Paula S., Umika B.                     |                            |  |                   |
+|8-9pm  |Rida M.            |Paula S., Isha H.                      |                            |Umika B., Sarah Jane G.           |                   |
+|9-10pm |Rida M.            |Paula S., Umika B.                     |                            |                                  |                   |
