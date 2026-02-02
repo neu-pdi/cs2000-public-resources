@@ -48,7 +48,7 @@ If you'd like to install VSCode on your computer earlier, you can use Pyret via 
 | [Prof. Leena Razzaq](https://www.khoury.northeastern.edu/people/leena-razzaq/) | Boston | Meserve 329 | Thursdays 3:00pm - 4:30pm and by appointment (email for an appt.) |
 
 | Coordinator | Campus | Office |
-| -- | -- | -- | -- |
+| -- | -- | -- |
 | [Kayla McLaughlin](https://www.khoury.northeastern.edu/people/kayla-mclaughlin/) | Boston | WVH 316 |
 
 ### Due Dates, Late Days, Regrades
