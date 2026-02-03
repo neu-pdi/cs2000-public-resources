@@ -65,7 +65,7 @@ If you have an assignment on Pawtograder that you believe was graded in error, y
 We hold extensive office hours -- both online, via [Discord](https://discord.gg/9Hytsc36) and in person. These can be used for any questions you have about course content, not limited to: review about reading, questions about exercises from class, any questions about homework assignments, etc. 
 
 **Rules and Procedures**
-Do NOT send any screenshots or snippets of your homework code in any channels. Screenshots of your environment setup (you may need help with your setup when we transition to Python) are ok as long as there isn't any homework code visible. Lecture code is fine.
+Do NOT send any screenshots or snippets of your homework code in any channels. Screenshots of your environment setup (you may need help with your setup when we transition to Python) are ok as long as there isn't any homework code visible. Lecture code is okay.
 
 To join online office hours: Make a post in the office hours text channel before joining the waiting room, so the TAs can better assist you. Once they move you into a private voice channel, you are free to screen share your hw code. Alternatively, you can send code privately to a TA over DMs (the TA will initiate the DM).
 
