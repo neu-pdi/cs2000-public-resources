@@ -10,7 +10,7 @@ Do NOT send any screenshots or snippets of your homework code in any channels. S
 To join online office hours: Make a post in the office hours text channel before joining the waiting room, so the TAs can better assist you. Once they move you into a private voice channel, you are free to screen share your hw code. Alternatively, you can send code privately to a TA over DMs (the TA will initiate the DM).
 
 ## Office Hours Schedules
-
+  
 ### Online Office Hours
 
 
