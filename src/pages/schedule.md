@@ -16,8 +16,8 @@ hide_table_of_contents: true
 | Week 4 (Jan 26-30) | More on tables: transforming, filtering | [D8](/days/8), [D9](/days/9), [D10](/days/10)| [HW3](/homework/3) | [Lab3](/lab/3) |
 | Week 5 (Feb 2-6) | From tables to lists: extracting columns, performing operations on them, visualizing data | [D11](/days/11), [D12](/days/12), [D13](/days/13) | [HW4](/homework/4) | [Lab4](/lab/4) |
 | Week 6 (Feb 9-13) | Computing with lists: iteration & mutable local variables | [SkillDay1](</skills/#(day1)>), [D14](/days/14), [D15](/days/15) | [HW5](/homework/5) | [Lab5](/lab/5) |
-| Week 7 (Feb 16-20) HOLIDAY Feb 16 | Structured data | [D16](/days/16), [D17](/days/17) | [HW6](/homework/6) | [Lab6](/lab/6) |
-| Week 8 (Feb 23-27) | Conditional and recursive data | [D18](/days/18), [D19](/days/19), [D20](/days/20) | [HW7](/homework/7) | [SkillBundle1](</skills#(bundle1)>) |
+| Week 7 (Feb 16-20) HOLIDAY Feb 16 | Structured data | [D16](/days/16), [D17](/days/18) | [HW6](/homework/6) | [Lab6](/lab/6) |
+| Week 8 (Feb 23-27) | Conditional and recursive data | [D18](/days/17), [D19](/days/19), [D20](/days/20) | [HW7](/homework/7) | [SkillBundle1](</skills#(bundle1)>) |
 | Week 9 (Mar 2-6) SPRING BREAK|  |  |  |  |
 | Week 10 (Mar 9-13) | Trees | [D21](/days/21), [D22](/days/22), [D23](/days/23) | [HW8](/homework/8) | [Lab7](/lab/7) |
 | Week 11 (Mar 16-20) | Transition to Python: IDE, files, definitions, testing | [SkillDay2](</skills/#(day2)>), [D24](/days/24), [D25](/days/25) | [HW9](/homework/9) | [Lab8](/lab/8) |
