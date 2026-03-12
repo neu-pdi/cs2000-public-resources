@@ -255,13 +255,12 @@ fun make-positive(lon :: List<Number>) -> List<Number>:
   
   cases (List) lon:
     | empty => empty
-    | link(first, rest) => link(
-        if first > 0:
-          first
-        else:
-          0 - first
-        end,
-        make-positive(rest))
+    | link(first, rest) =>
+      if first > 0:
+        link(first, make-positive(rest))
+      else:
+        link(0 - first, make-positive(rest))
+      end        
   end
 where:
   make-positive([list: ]) is [list: ]
