@@ -42,7 +42,7 @@ const calendarData: MonthData[] = [
     weeks: [
       [null, { day: 2, isHoliday: true }, { day: 3, isHoliday: true }, { day: 4, isHoliday: true }, { day: 5, isHoliday: true}, { day: 6, isHoliday: true}, null],
       [null, { day: 9, skills: [3, 4, 5, 11, 12] }, { day: 10}, { day: 11, skills: [3, 4, 5, 11, 12] }, { day: 12, skills: [3, 4, 5, 11, 12] }, { day: 13}, null],
-      [null, { day: 16, skills: [3, 4, 5, 6], classSkills: [3, 4, 5, 11, 12] }, { day: 17}, { day: 18, skills: [4, 5, 6] }, { day: 19, skills: [4, 5, 6] }, { day: 20}, null],
+      [null, { day: 16, skills: [3, 4, 5, 6], classSkills: [3, 4, 5, 11, 12] }, { day: 17}, { day: 18 }, { day: 19, skills: [4, 5, 6] }, { day: 20}, null],
       [null, { day: 23, skills: [4, 5, 6, 7, 8] }, { day: 24}, { day: 25, skills: [5, 6, 7, 8] }, { day: 26, skills: [5, 6, 7, 8] }, { day: 27}, null],
       [null, { day: 30, skills: [6, 7, 8, 9, 10] }, { day: 31}, { day: 1, skills: [6, 7, 8, 9, 10] }, { day: 2, skills: [6, 7, 8, 9, 10] }, { day: 3, labSkills: [5, 6, 7, 8, 9, 10] }, null],
     ],
