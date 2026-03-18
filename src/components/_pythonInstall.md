@@ -136,7 +136,7 @@ git --version
     - If the output looks something like ``git version 2.50.1`` (any version number should be fine), then you can skip this step and go to [Git Configuration](#32-git-configuration)
 2) If you get an error, visit [git-scm.com/install/](https://git-scm.com/install/windows), select Windows, and click where it says "Click here to download the latest" at the top
 3) Follow the installation instructions
-4) Quite VS Code, then reopen it
+4) Quit VS Code, then reopen it
 5) Confirm it worked by running the command above again
 
 ### 3.2 Git Configuration
@@ -144,7 +144,6 @@ git --version
     1) Start a VSCode Terminal (Terminal -> New Terminal)
     2) Type `git config --global user.name "YOUR_NAME"` and hit enter (putting your own name instead of ``YOUR_NAME``)
     3) Type `git config --global user.email "YOUR_EMAIL@northeastern.edu"` and hit enter (putting your own email instead of ``YOUR_EMAIL``)
-2) Whenever you want to commit & push, go to the Source Control panel as you did in GitHub.dev. You will be presented with a menu that defaults to Commit only. You will find the **Commit & Push** option in the menu activated via the small icon just to the right of the defeault Commit action 
 
 
 <!-- MARK: - First Python Project -->
