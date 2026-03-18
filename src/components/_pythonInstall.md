@@ -125,7 +125,7 @@ git --version
 2) If you get an error, the following popup should appear: \
 ![Command Line Developer Tools Popup](/img/Command-Line-Dev-Tools-Popup.png)
 3) Click install and wait for it to complete
-4) Quite VS Code, then reopen it
+4) Quit VS Code, then reopen it
 5) Confirm it worked by running the command above again
 
 #### Windows
