@@ -46,7 +46,7 @@ You should see something like `Python 3.11.9`. Any version 3.11 or higher is fin
   2. Download the **macOS 64-bit universal installer** for Python 3.11+.
   3. If the installer doesn't open automatically, go to the Downloads folder and open the `.pkg` file
   4. Follow the prompts
-  5. After installation, open a VSCode Terminal and verify by typing the following and hitting return:
+  5. After installation, open a Terminal and verify by typing the following and hitting return:
 ```bash
 python3 --version
 ```
