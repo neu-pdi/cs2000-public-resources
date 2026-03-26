@@ -459,7 +459,7 @@ based on these boundaries:</p>
 
 ```python
 def calculate_year(credits: int) -> str:
-    "determines NU year based on credits completed"
+    """determines NU year based on credits completed"""
     if credits < 32:
         return "freshman"
     elif credits < 64:
