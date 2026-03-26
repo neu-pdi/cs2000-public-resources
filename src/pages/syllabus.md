@@ -108,7 +108,7 @@ Grades will be primarily assigned by achievement levels of the course
 [Skills](/skills/), along with required grade thresholds on HW for each letter grade,
 and + (other than A) given for participation in 8 or more out of 10 labs, - given for participating in fewer than 6 out of ten labs.
 
-<!-- Note: we drop your lowest two HW scores before calculating your average for the threshold. -->
+Note: Although HW12 is not eligible to be dropped, we will drop your lowest two HW scores from HW1 to HW11 before calculating your average for the homework threshold.
 
 This is captured by the following table -- the highest row that a student satisfies all columns of will be their grade, and **if no rows are completely satisfied, the student will not pass the course.**
 
