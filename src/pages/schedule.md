@@ -22,6 +22,6 @@ hide_table_of_contents: true
 | Week 10 (Mar 9-13) | Trees | [D21](/days/21), [D22](/days/22), [D23](/days/23) | [HW8](/homework/8) | [Lab7](/lab/7) |
 | Week 11 (Mar 16-20) | Transition to Python: IDE, files, definitions, testing | [SkillDay2](</skills/#(day2)>), [D24](/days/24), [D25](/days/25) | [HW9](/homework/9) | [Lab8](/lab/8) |
 | Week 12 (Mar 23-27) | Scoping, mutable state, equality | [D26](/days/26), [D27](/days/27), [D28](/days/28) | [HW10](/homework/10) | [Lab9](/lab/9) |
-| Week 13 (Mar 30-Apr 3) | Tables in Python: pandas & csvs | [D29](/days/29), [D30](/days/30), SLACK | [HW11](/homework/11) | [SkillBundle2](</skills#(bundle2)>) |
+| Week 13 (Mar 30-Apr 3) | Tables in Python: pandas & csvs | [D29](/days/29), [D30](/days/30), SLACK (D30 continued) | [HW11](/homework/11) | [SkillBundle2](</skills#(bundle2)>) |
 | Week 14 (Apr 6-10) | Tables in Python: pandas & csvs | [D31](/days/31), [SkillDay3](</skills/#(day3)>), [Dictionaries](/days/XDict) | No HW | [Lab10](/lab/10) |
 | Week 15 (Apr 13-16) | Catch up, bonus content, etc. | Maybe: [Datavis](/days/XMatplotlib), [λ Calculus](/days/Xλ), [Y Combinator](/days/XλY) | [HW12](/homework/12) | No Lab |
