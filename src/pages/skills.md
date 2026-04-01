@@ -851,7 +851,7 @@ skip the bulk assessment entirely. The two bundles are:
 
 ## End of Semester Re-attempts
 
-While most skill assessments must take place during the schedule below, each student may make _two_ re-attempts during the last three weeks of the semester. They must contact the course coordinator (Kayla McLaughlin, k.mclaughlin@northeastern.edu) in order to do schedule these. These late semester retakes can be done regardless of how many attempts of a given skill the student has made previously.
+While most skill assessments must take place during the schedule below, each student may make _two_ re-attempts during the last ~~three~~ week of the semester and on the day of the final exam. (Note: there is no final exam, we will only use this time for the re-attempts.) They must contact the course coordinator (Kayla McLaughlin, k.mclaughlin@northeastern.edu) in order to do schedule these. These late semester retakes can be done regardless of how many attempts of a given skill the student has made previously.
 
 ## Skill Schedule
 
