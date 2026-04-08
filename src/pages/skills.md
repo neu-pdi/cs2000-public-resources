@@ -557,7 +557,7 @@ assert list_of_squares([1, 2]) == [1, 4]
 
 <details>
    <summary>Practice Problem 1</summary>
-   <p>Design a Python function <code>all_increasing</code> that takes a list of number and returns <code>true</code> if at least one number in the list is positive, <code>false</code> if none are. You must use <code>for ... in ...</code> loop.</p>
+   <p>Design a Python function <code>has_positive</code> that takes a list of number and returns <code>true</code> if at least one number in the list is positive, <code>false</code> if none are. You must use <code>for ... in ...</code> loop.</p>
    <p>Note: test <code>assert</code>s may be written without wrapping test functions, for space.</p>
 </details> 
 <details>
