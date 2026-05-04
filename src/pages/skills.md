@@ -9,15 +9,16 @@ import SkillCalendarSp26 from '@site/src/components/SkillCalendarSp26';
 
 # Skills
 
-This course will teach the following skills, repeated assessment of which will
+This course will teach the following skills, assessment of which will
 form the primary source of final grades.
 
 Each skill will be assessed as "Doesn't meet expectations", "Approaching
 expectations", and "Meets expectations", and students may attempt any skill
-assessment up to five times (four independently, and once via the bulk
-assessments, see below), with the best result being used for their grade.
+assessment up to two times with the best result being used for their grade.
 
+<!--
 **Please use this [form](https://docs.google.com/forms/d/e/1FAIpQLSd8yya6eT7kVf-iljyYJQu14cfJ8PS3Z1pB5pmpsKbcQOG6OQ/viewform?ts=696169f2) to schedule a skill assessment.** 
+-->
 
 1. <a id="(1)" href="#(1)">Design Basic Functions (Pyret)</a>
    |  |  |
@@ -795,6 +796,7 @@ in case people try to contest the ticket. All recorded data is also available to
 
 </details>
 
+<!--
 ## Skill Introduction
 
 Skills will be introduced in certain weeks (and may be re-inforced in later
@@ -862,3 +864,4 @@ While most skill assessments must take place during the schedule below, each stu
 For **Class** and **Lab** days, we choose the most common day; some campuses may differ based on when class or labs are run, but the week will match.
 
  <SkillCalendarSp26 />
+-->

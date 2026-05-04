@@ -10,19 +10,21 @@ Introduces computer science and data science to students with no prior programmi
 
 ### Course Structure
 
-There will be three in-person **classes** and one **lab** per week. All content is directed around teaching a set of 12 **skills**, assessment of which will form the primary assessment of the class, and which are described in detail at [Skills](/skills).
+There will be four in-person **classes** and two **lab** per week. All content is directed around teaching a set of 12 **skills**, assessment of which will form the primary assessment of the class, and which are described in detail at [Skills](/skills).
 
 Each class period (of CS2000) has reading you are **expected to do _before_ class**. During the class we will briefly review the new material that was covered in the reading (but, in much less depth -- it is not a substitute for doing the reading), and then the majority of class will be dedicated to working with classmates, assisted by your instructor, on exercises related to the new material.
 
-The lab period (CS2001) will include a set of exercises to be done with a partner in your lab section, guided by those running the lab (TAs or instructors). Labs will be graded primarily by effort & attendance. 
+The lab period (CS2001) will include a set of exercises to be done with a partner in your lab section, guided by those running the lab (TAs or instructors). Labs will be submitted in pawtograder and graded primarily by effort & attendance. 
 
-Students can register for any CS 2001 lab section on their campus.
+Students can register for either of the two CS 2001 lab sections.
 
-There will also be **weekly homework** assignments. The purpose of homework is to give you hands-on experience with the course material you learned in lecture, and to teach you the skills used for the **skill assessments**.
+There will also be **bi-weekly homework** assignments. The purpose of homework is to give you hands-on experience with the course material you learned in lecture, and to teach you the skills used for the **skill assessments**.
 
 There are also 12 **skills**, which have repeatable assessments (taken on paper without notes), and form the primary grading for the class.
 
-There are no quizzes or exams in this class.
+<!-- There are no quizzes or exams in this class. -->
+
+The skill assessments will be given in quizzes during the semester. 
 
 ### Communication
 
@@ -30,7 +32,7 @@ There are three primary sources of communication for this course:
 
 1. This website. This is where you will find policies, homework assignments, lab assignments, recitation contents, notes from each day of class.
 2. [Pawtograder](https://app.pawtograder.com/). This is the course grading platform. This is where you will submit homework assignments, and get feedback on them. This is also where you will see your grades for the on-paper skill assessments. It will have your gradebook. 
-3. Discord. Please join at https://discord.gg/9Hytsc36. Note you must set your Display Name for the server to your full name before you will be given access to private course channels. This will be a place for any discussion that are not direct questions about homework. Discord will also be used for lab communication (each lab will have a private channel), for announcements about the course. For any questions that are _not_ specifically about homework. It is also the place where you will ask questions online about homework, and where you will do online office hours.
+3. Discord. Please join at https://discord.gg/A3SQqJNP. Note you must set your Display Name for the server to your full name before you will be given access to private course channels. This will be a place for any discussion that are not direct questions about homework. Discord will also be used for lab communication (each lab will have a private channel), for announcements about the course. For any questions that are _not_ specifically about homework. It is also the place where you will ask questions online about homework, and where you will do online office hours.
 
 <!-- Note that **we will not use Canvas for anything.** -->
 
@@ -42,27 +44,26 @@ If you'd like to install VSCode on your computer earlier, you can use Pyret via 
 
 ### People
 
-| Instructor | Campus | Office | Office Hours |
-| -- | -- | -- | -- |
-| [Prof. John Park](#) | Boston | Meserve 318 | Wednesdays 3:00pm - 4:00pm |
-| [Prof. Leena Razzaq](https://www.khoury.northeastern.edu/people/leena-razzaq/) | Boston | Meserve 329 | Thursdays 3:00pm - 4:30pm and by appointment (email for an appt.) |
+| Instructor | Campus | Office | Office Hours | Email |
+| -- | -- | -- | -- | -- |
+| [Prof. Leena Razzaq](https://www.khoury.northeastern.edu/people/leena-razzaq/) | Boston | Meserve 329 | Mondays 2:00pm - 3:30pm and by appointment (email for an appt.) | l.razzaq@northeastern.edu |
 
-| Coordinator | Campus | Office |
+| Coordinator | Campus | Email |
 | -- | -- | -- |
-| [Kayla McLaughlin](https://www.khoury.northeastern.edu/people/kayla-mclaughlin/) | Boston | WVH 316 |
+| [Elizabeth O'Reilly](https://www.khoury.northeastern.edu/people/elizabeth-oreilly/) | Boston | e.oreilly@northeastern.edu |
 
 ### Due Dates, Late Days, Regrades
 
-All homework assignments will be due on Thursdays, at 9PM Eastern time.
+All homework assignments will be due at 9PM Eastern time.
 
 Any assignment can have a "Late Token" applied (see https://docs.pawtograder.com/students/assignments/late-tokens), which gives you a 24hr extension on it. You have enough late tokens to use one on any assignment, but you _must_ apply it _before_ the assignment is due. No assignments will be accepted after the due date, or, if a late token has been applied, after the late due date. If there is an exceptional situation that makes you unable to do this, please reach out to your instructor.
 
-If you have an assignment on Pawtograder that you believe was graded in error, you can submit a request within Pawtograder, explaining what you think the mistake was. If you have a skill assessment that you think was not graded correctly, reach out to a TA or your instructor so they can go over it with you. Note that you will not be able to see the assessment or your response within Pawtograder, but any TA can view it for you. **You must reach out within 7 days of receiving feedback.**
+If you have an assignment on Pawtograder that you believe was graded in error, you can submit a request within Pawtograder, explaining what you think the mistake was. If you have a skill assessment that you think was not graded correctly, reach out to a TA or your instructor so they can go over it with you. Note that you will not be able to see the assessment or your response within Pawtograder, but any TA can view it for you. **You must reach out within 3 days of receiving feedback.**
  
 
 ### Office Hours
 
-We hold extensive office hours -- both online, via [Discord](https://discord.gg/9Hytsc36) and in person. These can be used for any questions you have about course content, not limited to: review about reading, questions about exercises from class, any questions about homework assignments, etc. 
+We hold extensive office hours -- both online, via [Discord](https://discord.gg/A3SQqJNP) and in person. These can be used for any questions you have about course content, not limited to: review about reading, questions about exercises from class, any questions about homework assignments, etc. 
 
 **Rules and Procedures**
 Do NOT send any screenshots or snippets of your homework code in any channels. Screenshots of your environment setup (you may need help with your setup when we transition to Python) are ok as long as there isn't any homework code visible. Lecture code is okay.
@@ -85,9 +86,14 @@ The calendar that has office hours also shows the recitation times, identified a
 
 Attendance is not required in CS2000. Please do not come to class when you're sick. We'd much rather you stay home and take care of yourself. If you need to stay home and miss class, no need to notify us in advance. You are still responsible for completing assigned work and keeping up with content that you may have missed due to an absence. The course website describes the classwork for each day, available for review. Feel free to stop by office hours with the instructors or TAs with any questions or help with the missed classwork.
 
+Although attendance is not required, you can get a grade bump by coming to lecture and participating (see the Grade table below).
+
 ### Skills
 
-The course will teach the following skills, grading of which will be performed by repeatable (with highest grade taken), on-paper, no-note, assessment that can be scored as "Doesn't meet expectations", "Approaching expectations", or "Meets expectations". Each student will have 5 opportunities (once in lab bundles, 4 according to the Skill Schedule). In the last three weeks of the semester, they may re-attempt 2 skills. See the [Skills](/skills) page for much more detail.
+The course will teach the following skills, grading of which will be performed by repeatable (with highest grade taken), on-paper, no-note, assessment that can be scored as "Doesn't meet expectations", "Approaching expectations", or "Meets expectations". Each student will have 2 opportunities to master each skill. See the [Skills](/skills) page for much more detail.
+
+<!-- (once in lab bundles, 4 according to the Skill Schedule). In the last three weeks of the semester, they may re-attempt 2 skills. -->
+ 
 
 01. Design basic functions (Pyret)
 02. Construct / Transform Tables (Pyret)
@@ -221,7 +227,7 @@ This is captured by the following table -- the highest row that a student satisf
 </tbody>
 </table>
 
-**Note:** A lecture activity score of 70% or more will bump your score up one row in the grade table. Lecture activity will be assessed by interaction during class typically by submitting your solution to a designated class exercise or answering a poll question. These will be assessed for participation, not correctness.
+**Note:** A lecture activity score of 70% or more will bump your score up one row in the grade table. Lecture activity will be assessed by interaction during class typically by submitting your solution to a designated class exercise or answering a poll question. These will be assessed for participation, not correctness. You **must** be present in lecture to submit the lecture activity.
 
 ### Textbook
 
@@ -237,11 +243,11 @@ Computer science, both academically and professionally, is a collaborative disci
 Specifically:
 
 - You are responsible for any material you turn in.The professor reserves the right to ask you to verbally explain the reasoning behind any answer or code that you turn in and to modify your grade based on your answers. It is vitally important that you turn in work that you understand.
-- Copying material from another person without their knowledge is not allowed.
+- Copying material from another person with or without their knowledge is not allowed.
 - Additionally, sharing solutions in forums (e.g., posting to public questions, posting code online, etc) constitutes an academic integrity violation, as it may make it harder for other students to do work on their own, harming their own learning.
 - Any sharing or receiving information about the content of skill assessments is an academic integrity violation, and may result in failing the class.
 
-We _strongly recommend_ that you _write_ all code yourself. Even if you discuss solutions, or approaches, with others, do the actual typing on your own! And avoid playing games or trying to find loopholes -- i.e., do not merely type what someone says, or type what you see on another's screen. While we do not consider collaboration a violation, we still encourage following these recommendations -- relying on others for your solutions may result in you not learning the material, and in this class, not learning the material will result in not being able to pass the skill assessments. Even with perfect homework scores, failing to pass sufficient skill assessments will result in a failing grade in the course (consult the [grading table](#grading)), so take homework for what it is intended: extensive opportunity to practice the skills we are teaching, paired with high quality feedback about the solution you came up with.
+You _must_ _write_ all code for assignments yourself. Even if you discuss solutions, or approaches, with others, do the actual typing on your own! And avoid playing games or trying to find loopholes -- i.e., do not merely type what someone says, or type what you see on another's screen. While we do not consider collaboration a violation, relying on others for your solutions may result in you not learning the material, and in this class, not learning the material will result in not being able to pass the skill assessments. Even with perfect homework scores, failing to pass sufficient skill assessments will result in a failing grade in the course (consult the [grading table](#grading)), so take homework for what it is intended: extensive opportunity to practice the skills we are teaching, paired with high quality feedback about the solution you came up with.
 
 The minimum penalty for an academic integrity violation is a zero on the assignment and a report to the [Office of Student Conduct and Conflict Resolution (OSCCR)](https://osccr.sites.northeastern.edu/). Penalties are increased if there are aggravating factors, such as stealing another student's work or lying about cheating. Also, see the [Official University Academic Integrity Policy](https://osccr.sites.northeastern.edu/academic-integrity-policy/).
 

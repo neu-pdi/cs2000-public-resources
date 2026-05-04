@@ -325,10 +325,10 @@ const config: Config = {
               to: '/ohtables/',
               label: 'Office Hours',
             },
-            {
-              to: '/skills/#skill-schedule',
-              label: 'Skills Schedule',
-            },
+          //  {
+          //    to: '/skills/#skill-schedule',
+          //    label: 'Skills Schedule',
+          //  },
           ]
         },
         {
