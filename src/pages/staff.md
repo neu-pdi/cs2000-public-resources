@@ -18,7 +18,7 @@ import styles from './index.module.css';
   <p>l.razzaq@northeastern.edu</p>
   <div className={styles.officeHours}>
     <strong>Office Hours:</strong><br/>
-    Thursdays 3-4:30pm in Meserve 329<br/>
+    Mondays 2-3:30pm in Meserve 329<br/>
     or by appointment
   </div>
 </div>
