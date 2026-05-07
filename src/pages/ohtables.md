@@ -9,10 +9,14 @@ Do NOT send any screenshots or snippets of your homework code in any channels. S
 
 To join online office hours: Make a post in the office hours text channel before joining the waiting room, so the TAs can better assist you. Once they move you into a private voice channel, you are free to screen share your hw code. Alternatively, you can send code privately to a TA over DMs (the TA will initiate the DM).
 
-## Office Hours Schedules
+## Office Hours Schedule
   
-### Online Office Hours
 
+
+<iframe src="https://calendar.google.com/calendar/u/0/embed?src=c_addf181c06c5392537070e4c3f80ab7723b6f1ae84b72af4155bec06dbbc907b@group.calendar.google.com&ctz=America/New_York" width="1000" height="900"></iframe> 
+
+<!--
+### Online Office Hours
 
 |       | Monday     | Tuesday      | Wednesday            | Thursday               | Friday |
 | --    | --         | --           | --                   | --                     | --      |
@@ -31,10 +35,11 @@ To join online office hours: Make a post in the office hours text channel before
 
 |       | Monday            | Tuesday                               | Wednesday                  | Thursday                         | Friday            |
 | --    | --                | --                                    | --                         | --                               | --                |
-| --    | Room: tbd         | Room: tbd                             | Room: tbd                  | Room: tbd                        | Room: tbd         |
+| --    | Room: tbd         | Room: tbd                             | Room: tbd                  | Room: tbd                        | Room: Ryder 283   |
 |4-5pm  |                   |                                       |                            |                                  |                   |
 |5-6pm  |                   |                                       |                            |                                  |                   |
 |6-7pm  |                   |                                       |                            |                                  |                   |
 |7-8pm  |                   |                                       |                            |                                  |                   |
 |8-9pm  |                   |                                       |                            |                                  |                   |
 |9-10pm |                   |                                       |                            |                                  |                   |
+-->
