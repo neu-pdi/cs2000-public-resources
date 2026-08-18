@@ -4,6 +4,9 @@ description: Schedule
 hide_table_of_contents: true
 ---
 
+import SkillCalendar from '@site/src/components/SkillCalendar';
+
+
 ### Schedule of Topics & Assignments (Boston & Oakland)
 
 (Dates used are for Fall 2026, Boston & Oakland Campuses; will differ for other semesters or other campuses)
@@ -25,3 +28,13 @@ hide_table_of_contents: true
 | Week 13 (Nov 30-Dec 4) HOLIDAY Nov 26-28 | | [SkillDay3](</skills/#(day3)>) | No HW | [Lab9](/lab/9) (Oakland Tuesday & Boston) |
 | Week 14 (Dec 7-Dec 11) | Catch up, bonus content, etc. Depends on section / instructor. | Maybe: [Dictionaries](/days/XDict), [Datavis](/days/XMatplotlib), [λ Calculus](/days/Xλ), [Y Combinator](/days/XλY) | [HW12](/homework/12) | [Lab10](/lab/10) |
 | Week 15 (Dec 14-Dec 18) | Finals Period | | | |
+
+
+
+## Skill Assessment Schedule
+
+**Colored stripes** at the bottom of each day indicate which skills are assessable during office hours on that day. On **Class** and **Lab** days, the skills available are listed inside the box.
+
+For **Class** and **Lab** days, we choose the most common day; some campuses may differ based on when class or labs are run, but the week will match.
+
+ <SkillCalendar />

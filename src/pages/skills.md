@@ -5,8 +5,6 @@ description: Skills
 hide_table_of_contents: true
 ---
 
-import SkillCalendarSp26 from '@site/src/components/SkillCalendarSp26';
-
 # Skills
 
 This course will teach the following skills, assessment of which will
@@ -16,25 +14,21 @@ Each skill will be assessed as "Doesn't meet expectations", "Approaching
 expectations", and "Meets expectations", and students may attempt any skill
 assessment up to two times with the best result being used for their grade.
 
-<!--
-**Please use this [form](https://docs.google.com/forms/d/e/1FAIpQLSd8yya6eT7kVf-iljyYJQu14cfJ8PS3Z1pB5pmpsKbcQOG6OQ/viewform?ts=696169f2) to schedule a skill assessment.** 
--->
-
-1. <a id="(1)" href="#(1)">Design Basic Functions (Pyret)</a>
+0. <a id="(1)" href="#(1)">Design Function Types, Docs, Tests (Pyret)</a>
    |  |  |
    | -- | -- |
-   | **Meets Expectations** | • Correct type annotation<br/>• Docstring that describes behavior, doesn't repeat type annotation.<br/>• A few (2+) correct, meaningfully different tests<br/>• Well-formatted, correct implementation:<br/>    • may include numbers, strings, `if` (NOT images)<br/>    • minor typos are okay |
-   | **Approaching Expectations** | • Missing docstring, or long, includes redundant type information, etc.<br/>• 1+ correct tests.<br/>• Correct implementation. |
+   | **Meets Expectations** | • Correct type annotation<br/>• Docstring that describes behavior, doesn't repeat type annotation.<br/>• A few (2+) correct, meaningfully different tests<br/>• minor typos are okay |
+   | **Approaching Expectations** | • Missing docstring, or long, includes redundant type information, etc.<br/>• 1+ correct tests.|
 
 <details>
     <summary>Examples</summary>
-    <p>Sample question: Design a function <code>nm-square</code> that, given a number, returns the result of multiplying the number by itself.</p>
+    <p>Sample question: Design types, docstring, and tests for a function <code>nm-square</code> that, given a number, returns the result of multiplying the number by itself. NOTE: you should not implement the function!</p>
     <p>**Answer meeting expectations:**</p>
 
 ```pyret
 fun nm-square(n :: Number) -> Number:
   doc: "Multiplies the input by itself"
-  n * n
+
 where:
   nm-square(-1) is 1
   nm-square(0) is 0
@@ -46,7 +40,7 @@ end
 ```pyret
 fun nm-square(n :: Number) -> Number:
   doc: "Takes a number as an argument and returns a number. The result is what you get when multiplying the first number by itself."
-  n * n
+
 where:
   nm-square(1) is 1
 end
@@ -55,18 +49,83 @@ end
 </details> 
 <details>
  <summary>Practice Problem 1</summary>
- <p>Design a function `check-age` that, given a number that is someone's age, returns true when the age is above or equal to 21.</p>
+ <p>Design types, docstring, and tests for a function `check-age` that, given a number that is someone's age, returns true when the age is above or equal to 21. NOTE: you should not implement the function!</p>
 </details>
 <details>
  <summary>Practice Problem 2</summary>
- <p>Design a function `check-year`, that takes a year as input, and returns "Past", "Current", or "Future" depending on the year.</p>
+ <p>Design types, docstring, and tests for a function `check-year`, that takes a year as input, and returns "Past", "Current", or "Future" depending on the year. NOTE: you should not implement the function!</p>
+</details>
+
+1. <a id="(1)" href="#(1)">Implement Basic Functions (Pyret)</a>
+   |  |  |
+   | -- | -- |
+   | **Meets Expectations** | • Well-formatted, correct implementation:<br/>    • may include numbers, strings, `if` (NOT images)<br/>    • minor typos errors are okay |
+   | **Approaching Expectations** | • Functioning code, but not matching problem.<br/>    • minor typos errors are okay |
+
+<details>
+    <summary>Examples</summary>
+    <p>Sample question: Implement the function <code>nm-square</code> given the following type annotation, docstring, and tests:</p>
+```pyret
+fun nm-square(n :: Number) -> Number:
+  doc: "Multiplies the input by itself"
+
+where:
+  nm-square(-1) is 1
+  nm-square(0) is 0
+  nm-square(2) is 4
+end
+```
+
+    <p>**Answer meeting expectations:**</p>
+
+```pyret
+  n * n
+```
+<p>**Answer approaching expectations (wrong problem):**</p>
+
+```pyret
+  n * 2
+```
+
+</details> 
+<details>
+ <summary>Practice Problem 1</summary>
+ <p>Implement the function `check-age` given the following type annotation, docstring, and tests:</p>
+
+```pyret
+fun check-age(age :: Number) -> Boolean:
+  doc: "Returns true when the age is above or equal to 21"
+
+where:
+  check-age(20) is false
+  check-age(21) is true
+  check-age(45) is true
+end
+```
+
+</details>
+<details>
+ <summary>Practice Problem 2</summary>
+ <p>Implement the function `check-year` given the following type annotation, docstring, and tests:</p>
+
+```pyret
+fun check-year(year :: Number) -> String:
+  doc: "Returns 'Past', 'Current', or 'Future' depending on whether the year is before, equal to, or after 2026"
+
+where:
+  check-year(2020) is "Past"
+  check-year(2026) is "Current"
+  check-year(2030) is "Future"
+end
+```
+
 </details>
 
 02. <a id="(2)" href="#(2)">Construct / Transform Tables (Pyret)</a>
     |  |  |
     | -- | -- |
-    | **Meets Expectations** | • Function designed has signature, docstring, and at least one test<br/>• Function uses correct table function (filter-with, build-column, etc)<br/>• Row helper does what is expected, whether defined with `lam` or named |
-    | **Approaching Expectations** | • Function uses correct table function (filter-with, build-column, etc)<br/>• Row helper accesses fields from row, but not in a way that solves the problem |
+    | **Meets Expectations** | • Function designed has signature, docstring, and at least one test<br/>• Function uses correct table function (skill covers `filter-with`, `build-column`, and `transform-column`)<br/>• Row helper does what is expected, whether defined with `lam` or named |
+    | **Approaching Expectations** | • Function uses correct table function (`filter-with`, `build-column`, or `transform-column`)<br/>• Row helper accesses fields from row, but not in a way that solves the problem |
 <details>
     <summary>Examples</summary>
     <p>Sample question: Design a function <code>find-scholars</code> that takes a table of students with "name" and "campus" columns and returns a new table containing only the students whose campus is **not** "Boston".</p>
