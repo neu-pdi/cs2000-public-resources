@@ -10,37 +10,33 @@ Introduces computer science and data science to students with no prior programmi
 
 ### Course Structure
 
-There will be four in-person **classes** and two **lab** per week. All content is directed around teaching a set of 12 **skills**, assessment of which will form the primary assessment of the class, and which are described in detail at [Skills](/skills).
+There will be three in-person **classes** and one **lab** per week. All content is directed around teaching a set of 13 **skills**, assessment of which will form the primary assessment of the class, and which are described in detail at [Skills](/skills).
 
 Each class period (of CS2000) has reading you are **expected to do _before_ class**. During the class we will briefly review the new material that was covered in the reading (but, in much less depth -- it is not a substitute for doing the reading), and then the majority of class will be dedicated to working with classmates, assisted by your instructor, on exercises related to the new material.
 
-The lab period (CS2001) will include a set of exercises to be done with a partner in your lab section, guided by those running the lab (TAs or instructors). Labs will be submitted in pawtograder and graded primarily by effort & attendance. 
+There will also be **weekly homework** assignments. The purpose of these assignments, which are half programming practice and half open ended projects, is to give you hands-on experience with the course material. They will both teach you the skills used for the **skill assessments**, and are the subject of [Code Walks](/codewalks) during lab, which are the only assessment that is done on them. 
 
-Students can register for either of the two CS 2001 lab sections.
+The lab period (CS2001) will include a set of exercises to be done with a partner in your lab section, guided by those running the lab (TAs or instructors). In addition to working through the lab exercises, you will also do [Code Walks](/codewalks) each week, where you individually will present work done at home to TAs. Grading of Code Walks forms part of your final grade, and lab attendance is required to do them. 
 
-There will also be **bi-weekly homework** assignments. The purpose of homework is to give you hands-on experience with the course material you learned in lecture, and to teach you the skills used for the **skill assessments**.
+Students can register for any CS 2001 lab section that is on their campus!
 
-There are also 12 **skills**, which have repeatable assessments (taken on paper without notes), and form the primary grading for the class.
+There are 13 **skills**, which have repeatable assessments (taken on paper without notes over the course of the semester), and form the primary grading for the class.
 
-<!-- There are no quizzes or exams in this class. -->
-
-The skill assessments will be given in quizzes during the semester. 
+There are no formal quizzes or exams in this class, though the skill assessments are similar in form, though allow you to work an your own pace, and repeat as you need.
 
 ### Communication
 
 There are three primary sources of communication for this course:
 
-1. This website. This is where you will find policies, homework assignments, lab assignments, recitation contents, notes from each day of class.
-2. [Pawtograder](https://app.pawtograder.com/). This is the course grading platform. This is where you will submit homework assignments, and get feedback on them. This is also where you will see your grades for the on-paper skill assessments. It will have your gradebook. 
-3. Discord. Please join at https://discord.gg/A3SQqJNP. Note you must set your Display Name for the server to your full name before you will be given access to private course channels. This will be a place for any discussion that are not direct questions about homework. Discord will also be used for lab communication (each lab will have a private channel), for announcements about the course. For any questions that are _not_ specifically about homework. It is also the place where you will ask questions online about homework, and where you will do online office hours.
+1. This website. This is where you will find policies, homework assignments, lab assignments, practice material, notes from each day of class.
+2. [Pawtograder](https://app.pawtograder.com/). This is the course grading platform. This is where you will submit homework assignments and project checkpoints. This is also where you will see your grades for the on-paper skill assessments. It will have your gradebook. 
+3. Discord. Please join at FIXME. Note you must set your Display Name for the server to your full name before you will be given access to private course channels. This will be a place for any discussion that are not direct questions about homework. Discord will also be used for lab communication (each lab will have a private channel), for announcements about the course. For any questions that are _not_ specifically about homework. It is also the place where you will ask questions online about homework, and where you will do online office hours.
 
 <!-- Note that **we will not use Canvas for anything.** -->
 
 ### Course Tools
 
-For the first two thirds of the course, the only software you will need is a web browser. All programming will be done via the online programming environment provided by Github, which we will refer to as github.dev (as this is the website for it). This provides an online version of the programming editor VSCode, and allows you to program using the programming language Pyret. For the last section of the course, you will install VSCode on your computer, and install Python.
-
-If you'd like to install VSCode on your computer earlier, you can use Pyret via the same extension, with the same environment. However, this will involve some setup to push your work to Github, where assignment submissions are drawn from, so if you are interested in doing this earlier than Week 10 (when all will do it), come to office hours and ask a TA to help.
+The only software you will need is a web browser. All programming will be done via the online programming environment provided by Github, which we will refer to as github.dev (as this is the website for it). This provides an online version of the programming editor VSCode, and allows you to program using the programming language Pyret. For the last section of the course, we will switch to using Python, but will again use VSCode via the browser.
 
 ### People
 
@@ -111,10 +107,7 @@ The course will teach the following skills, grading of which will be performed b
 ### Grading
 
 Grades will be primarily assigned by achievement levels of the course
-[Skills](/skills/), along with required grade thresholds on HW for each letter grade,
-and + (other than A) given for participation in 8 or more out of 10 labs, - given for participating in fewer than 6 out of ten labs.
-
-Note: Although HW12 is not eligible to be dropped, we will drop your lowest two HW scores from HW1 to HW11 before calculating your average for the homework threshold.
+[Skills](/skills/), along with required grade thresholds on the other assessed parts of the class: [Code Walks](/codewalks) that occur during labs, pair programming sessions with TAs, and lab attendance. 
 
 This is captured by the following table -- the highest row that a student satisfies all columns of will be their grade, and **if no rows are completely satisfied, the student will not pass the course.**
 
@@ -122,7 +115,7 @@ This is captured by the following table -- the highest row that a student satisf
 <thead>
 <tr>
 <th></th>
-<th colSpan="3" align="center">Skills Needed (out of 12 total)</th>
+<th colSpan="3" align="center">Skills Needed (out of 13 total)</th>
 <th></th>
 <th></th>
 </tr>
@@ -131,103 +124,102 @@ This is captured by the following table -- the highest row that a student satisf
 <th><strong>Meets Expectations</strong></th>
 <th><strong>Approaching Expectations</strong></th>
 <th><strong>Not Approaching</strong></th>
-<th>HW Average </th>
-<th>Lab Participation</th>
+<th>Code Walk Average </th>
+<th>Pairing Session Average</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>A</strong></td>
-<td>11+</td>
+<td>12+</td>
 <td>1 or fewer</td>
 <td>0</td>
 <td>80% or better</td>
-<td>6 or more</td>
+<td>80% or better</td>
 </tr>
 <tr>
 <td><strong>A-</strong></td>
-<td>11+</td>
+<td>12+</td>
 <td>1 or fewer</td>
 <td>0</td>
 <td>80% or better</td>
-<td>any</td>
+<td>80% or better</td>
 </tr>
 <tr>
 <td><strong>B+</strong></td>
-<td>8+</td>
+<td>9+</td>
 <td>4 or fewer</td>
 <td>0</td>
 <td>70% or better</td>
-<td>8 or more</td>
+<td>70% or better</td>
 </tr>
 <tr>
 <td><strong>B</strong></td>
-<td>8+</td>
+<td>9+</td>
 <td>4 or fewer</td>
 <td>0</td>
 <td>70% or better</td>
-<td>6 or more</td>
+<td>70% or better</td>
 </tr>
 <tr>
 <td><strong>B-</strong></td>
-<td>8+</td>
+<td>9+</td>
 <td>4 or fewer</td>
 <td>0</td>
 <td>70% or better</td>
-<td>any</td>
+<td>70% or better</td>
 </tr>
 <tr>
 <td><strong>C+</strong></td>
-<td>6+</td>
+<td>7+</td>
 <td>5 or fewer</td>
 <td>1 or fewer</td>
 <td>60% or better</td>
-<td>8 or more</td>
+<td>60% or better</td>
 </tr>
 <tr>
 <td><strong>C</strong></td>
-<td>6+</td>
+<td>7+</td>
 <td>5 or fewer</td>
 <td>1 or fewer</td>
 <td>60% or better</td>
-<td>6 or more</td>
+<td>60% or better</td>
 </tr>
 <tr>
 <td><strong>C-</strong></td>
-<td>6+</td>
+<td>7+</td>
 <td>5 or fewer</td>
 <td>1 or fewer</td>
 <td>60% or better</td>
-<td>any</td>
+<td>60% or better</td>
 </tr>
 <tr>
 <td><strong>D+</strong></td>
 <td></td>
 <td></td>
-<td>4 or fewer</td>
+<td>5 or fewer</td>
 <td>50% or better</td>
-<td>8 or more</td>
+<td>any</td>
 </tr>
 <tr>
 <td><strong>D</strong></td>
 <td></td>
 <td></td>
-<td>4 or fewer</td>
+<td>5 or fewer</td>
 <td>50% or better</td>
-<td>6 or more</td>
+<td>any</td>
 </tr>
 <tr>
 <td><strong>D-</strong></td>
 <td></td>
 <td></td>
-<td>4 or fewer</td>
-<td>50% or better</td>
+<td>5 or fewer</td>
+<td>any</td>
 <td>any</td>
 </tr>
 </tbody>
 </table>
 
-**Note:** A lecture activity score of 70% or more will bump your score up one row in the grade table. Lecture activity will be assessed by interaction during class typically by submitting your solution to a designated class exercise or answering a poll question. These will be assessed for participation, not correctness. You **must** be present in lecture to submit the lecture activity.
 
 ### Textbook
 
