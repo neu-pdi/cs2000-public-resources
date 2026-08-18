@@ -39,22 +39,23 @@ There are three primary sources of communication for this course:
 The only software you will need is a web browser. All programming will be done via the online programming environment provided by Github, which we will refer to as github.dev (as this is the website for it). This provides an online version of the programming editor VSCode, and allows you to program using the programming language Pyret. For the last section of the course, we will switch to using Python, but will again use VSCode via the browser.
 
 ### People
+| Instructor | Campus | Office | Office Hours |
+| -- | -- | -- | -- |
+| [Prof. Ellen Spertus](https://www.khoury.northeastern.edu/people/ellen-spertus/) | Oakland | CPM 201 | tbd |
+| [Prof. Alvaro Monge](https://www.khoury.northeastern.edu/people/alvaro-monge/) | Oakland | CARN 201 | tbd |
+| [Prof. Rush Sanghrajka](https://www.khoury.northeastern.edu/people/rush-sanghrajka/) | Boston | Meserve 309 | tbd |
+| [Prof. Daniel Patterson](https://dbp.io) | Boston | Meserve 317 | tbd |
 
-| Instructor | Campus | Office | Office Hours | Email |
-| -- | -- | -- | -- | -- |
-| [Prof. Leena Razzaq](https://www.khoury.northeastern.edu/people/leena-razzaq/) | Boston | Meserve 329 | Mondays 2:00pm - 3:30pm and by appointment (email for an appt.) | l.razzaq@northeastern.edu |
+| Coordinator | Campus | Office | Office Hours |
+| -- | -- | -- | -- |
+| [Kayla McLaughlin](https://www.khoury.northeastern.edu/people/kayla-mclaughlin/) | Boston | WVH 316 | tbd |
 
-| Coordinator | Campus | Email |
-| -- | -- | -- |
-| [Elizabeth O'Reilly](https://www.khoury.northeastern.edu/people/elizabeth-oreilly/) | Boston | e.oreilly@northeastern.edu |
 
 ### Due Dates, Late Days, Regrades
 
-All homework assignments will be due at 9PM Eastern time.
+All homework assignments will be due Anywhere-on-earth on Sunday.
 
-Any assignment can have a "Late Token" applied (see https://docs.pawtograder.com/students/assignments/late-tokens), which gives you a 24hr extension on it. You have enough late tokens to use one on any assignment, but you _must_ apply it _before_ the assignment is due. No assignments will be accepted after the due date, or, if a late token has been applied, after the late due date. If there is an exceptional situation that makes you unable to do this, please reach out to your instructor.
-
-If you have an assignment on Pawtograder that you believe was graded in error, you can submit a request within Pawtograder, explaining what you think the mistake was. If you have a skill assessment that you think was not graded correctly, reach out to a TA or your instructor so they can go over it with you. Note that you will not be able to see the assessment or your response within Pawtograder, but any TA can view it for you. **You must reach out within 3 days of receiving feedback.**
+These form the material that is used for the [Code Walk](/codewalks) that occur during the next lab; the only assessment that will be done is via that conversation. No grading will take place via Pawtograder. 
  
 
 ### Office Hours
