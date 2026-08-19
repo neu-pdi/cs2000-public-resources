@@ -5,8 +5,6 @@ description: Skills
 hide_table_of_contents: true
 ---
 
-import SkillCalendar from '@site/src/components/SkillCalendar';
-
 # Skills
 
 This course will teach the following skills, repeated assessment of which will

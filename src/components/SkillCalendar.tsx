@@ -1,60 +1,40 @@
 import React from 'react';
+import Link from '@docusaurus/Link';
 import CalendarHighlighter from './CalendarHighlighter';
 
-interface DayData {
+export interface CalLink {
+  label: string;
+  href: string;
+}
+
+export interface DayData {
   day: number;
   skills?: number[];
   isHoliday?: boolean;
+  holidayName?: string;
+  lectures?: (CalLink | string)[];
+  lab?: { label: string; href: string; note?: string };
+  homework?: CalLink;
 }
 
-interface MonthData {
+export interface WeekData {
+  label?: string;
+  topic?: string;
+  days: (DayData | null)[];
+}
+
+export interface MonthData {
   month: string;
   year: number;
-  weeks: (DayData | null)[][];
+  weeks: WeekData[];
 }
 
-const calendarData: MonthData[] = [
-  {
-    month: 'September',
-    year: 2026,
-    weeks: [
-      [null, { day: 7 }, { day: 8 }, { day: 9 }, { day: 10 }, { day: 11 }, null],
-      [null, { day: 14 }, { day: 15 }, { day: 16 }, { day: 17 }, { day: 18 }, null],
-      [null, { day: 21, skills: [1] }, { day: 22, skills: [1] }, { day: 23, skills: [1] }, { day: 24, skills: [1] }, { day: 25, skills: [1] }, null],
-      [null, { day: 28, skills: [1, 11, 12] }, { day: 29, skills: [1, 11, 12] }, { day: 30, skills: [1, 11, 12] }, { day: 1, skills: [1, 11, 12] }, { day: 2, skills: [1, 11, 12] }, null],
-    ],
-  },
-  {
-    month: 'October',
-    year: 2026,
-    weeks: [
-      [null, { day: 5, skills: [1, 2, 11, 12] }, { day: 6, skills: [1, 2, 11, 12] }, { day: 7, skills: [1, 2, 11, 12] }, { day: 8, skills: [1, 2, 11, 12] }, { day: 9, skills: [1, 2, 11, 12] }, null],
-      [null, { day: 12, isHoliday: true }, { day: 13, skills: [2, 11, 12] }, { day: 14, skills: [2, 11, 12] }, { day: 15, skills: [2, 11, 12] }, { day: 16, skills: [2, 11, 12] }, null],
-      [null, { day: 19, skills: [2, 3, 11, 12] }, { day: 20, skills: [2, 3, 11, 12] }, { day: 21, skills: [2, 3, 11, 12] }, { day: 22, skills: [2, 3, 11, 12] }, { day: 23, skills: [2, 3, 11, 12] }, null],
-      [null, { day: 26, skills: [3, 4, 11, 12] }, { day: 27, skills: [3, 4, 11, 12] }, { day: 28, skills: [3, 4, 11, 12] }, { day: 29, skills: [3, 4, 11, 12] }, { day: 30, skills: [3, 4, 11, 12] }, null],
-    ],
-  },
-  {
-    month: 'November',
-    year: 2026,
-    weeks: [
-      [null, { day: 2, skills: [3, 4, 5, 11, 12] }, { day: 3, skills: [3, 4, 5, 11, 12] }, { day: 4, skills: [3, 4, 5, 11, 12] }, { day: 5, skills: [3, 4, 5, 11, 12] }, { day: 6, skills: [3, 4, 5, 11, 12] }, null],
-      [null, { day: 9, skills: [4, 5, 6] }, { day: 10, skills: [4, 5, 6] }, { day: 11, isHoliday: true }, { day: 12, skills: [4, 5, 6] }, { day: 13, skills: [4, 5, 6] }, null],
-      [null, { day: 16, skills: [4, 5, 6, 7, 8] }, { day: 17, skills: [4, 5, 6, 7, 8] }, { day: 18, skills: [4, 5, 6, 7, 8] }, { day: 19, skills: [4, 5, 6, 7, 8] }, { day: 20, skills: [4, 5, 6, 7, 8] }, null],
-      [null, { day: 23, skills: [6, 7, 8, 9, 10] }, { day: 24, skills: [6, 7, 8, 9, 10] }, { day: 25, isHoliday: true }, { day: 26, isHoliday: true }, { day: 27, isHoliday: true }, null],
-      [null, { day: 30, skills: [7, 8, 9, 10] }, { day: 1, skills: [7, 8, 9, 10] }, { day: 2, skills: [7, 8, 9, 10] }, { day: 3, skills: [7, 8, 9, 10] }, { day: 4, skills: [7, 8, 9, 10] }, null],
-    ],
-  },
-  {
-    month: 'December',
-    year: 2026,
-    weeks: [
-      [null, { day: 7, skills: [7, 8, 9, 10] }, { day: 8, skills: [7, 8, 9, 10] }, { day: 9, skills: [7, 8, 9, 10] }, { day: 10, skills: [7, 8, 9, 10] }, { day: 11, skills: [7, 8, 9, 10] }, null],
-    ],
-  },
-];
 
-export default function SkillCalendar() {
+function isCalLink(item: CalLink | string): item is CalLink {
+  return typeof item === 'object';
+}
+
+export default function SkillCalendar({ data }: { data: MonthData[] }) {
   return (
     <>
       <div
@@ -65,38 +45,77 @@ export default function SkillCalendar() {
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
+  table-layout: fixed;
+  color: var(--ifm-font-color-base);
 }
 .skill-calendar th {
-  background-color: #f0f0f0;
+  background-color: var(--ifm-color-emphasis-200);
+  color: var(--ifm-font-color-base);
   padding: 8px;
   text-align: center;
-  border: 1px solid #ddd;
+  border: 1px solid var(--ifm-color-emphasis-300);
   font-weight: bold;
 }
 .skill-calendar td {
-  border: 1px solid #ddd;
+  border: 1px solid var(--ifm-color-emphasis-300);
   padding: 0;
   vertical-align: top;
   width: 14.28%;
-  height: 100px;
+  min-height: 110px;
   position: relative;
+  background-color: var(--ifm-background-color);
 }
 .calendar-day {
-  padding: 4px;
-  height: 100%;
+  padding: 4px 5px 6px;
+  min-height: 110px;
   display: flex;
   flex-direction: column;
+  gap: 3px;
 }
 .day-number {
   font-weight: bold;
-  margin-bottom: 4px;
+  margin-bottom: 1px;
+}
+.day-holiday-name {
+  font-size: 10px;
+  color: var(--ifm-color-emphasis-600);
+  line-height: 1.2;
+}
+.day-items {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 11px;
+  line-height: 1.25;
+}
+.day-items a {
+  text-decoration: none;
+}
+.day-items a:hover {
+  text-decoration: underline;
+}
+.day-lecture a {
+  color: inherit;
+}
+.day-lab a {
+  color: inherit;
+  font-weight: 600;
+}
+.day-hw a {
+  color: inherit;
+  font-weight: 600;
+}
+.day-note {
+  font-size: 10px;
+  color: var(--ifm-color-emphasis-600);
+  font-weight: normal;
 }
 .skill-stripes {
   margin-top: auto;
   display: flex;
   flex-wrap: wrap;
   gap: 2px;
-  padding: 2px;
+  padding-top: 4px;
 }
 .skill-stripe {
   height: 18px;
@@ -112,28 +131,43 @@ export default function SkillCalendar() {
   text-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
 }
 .month-header {
-  background-color: #e8e8e8;
   font-weight: bold;
   font-size: 14px;
   padding: 8px;
   text-align: center;
-  border: 1px solid #ddd;
+  border: 1px solid var(--ifm-color-emphasis-300);
 }
 .month-header th {
-  background-color: #e8e8e8;
+  background-color: var(--ifm-color-emphasis-300);
+  color: var(--ifm-font-color-base);
+}
+.week-topic-row td {
+  border: 1px solid var(--ifm-color-emphasis-300);
+  padding: 0;
+  min-height: 0;
+  background-color: var(--ifm-color-emphasis-200);
+}
+.week-topic-bar {
+  background: var(--ifm-color-emphasis-200);
+  color: var(--ifm-font-color-base);
+  border-left: 4px solid var(--ifm-color-primary);
+  padding: 5px 10px;
+  font-size: 13px;
+  line-height: 1.35;
+}
+.week-topic-bar strong {
+  margin-right: 0.35em;
 }
 .holiday {
-  background-color: #f9f9f9;
-  color: #999;
+  background-color: var(--ifm-color-emphasis-100);
+  color: var(--ifm-color-emphasis-700);
 }
 .past-day {
-  opacity: 0.4;
-  background-color: #f5f5f5;
+  opacity: 0.45;
 }
 .current-day {
-  background-color: #e3f2fd;
-  border: 2px solid #2196f3;
-  border-radius: 4px;
+  background-color: color-mix(in srgb, var(--ifm-color-primary) 18%, var(--ifm-background-color));
+  box-shadow: inset 0 0 0 2px var(--ifm-color-primary);
 }
 .skill-1 { background-color: #FF6B6B; }
 .skill-2 { background-color: #4ECDC4; }
@@ -164,7 +198,7 @@ export default function SkillCalendar() {
           </tr>
         </thead>
         <tbody>
-          {calendarData.map((month, monthIdx) => (
+          {data.map((month, monthIdx) => (
             <React.Fragment key={monthIdx}>
               <tr className="month-header">
                 <th colSpan={7}>
@@ -172,39 +206,80 @@ export default function SkillCalendar() {
                 </th>
               </tr>
               {month.weeks.map((week, weekIdx) => (
-                <tr key={weekIdx}>
-                  {week.map((day, dayIdx) => {
-                    if (day === null) {
-                      return <td key={dayIdx}></td>;
-                    }
-                    const skills = day.skills || [];
-                    return (
-                      <td
-                        key={dayIdx}
-                        className={day.isHoliday ? 'holiday' : ''}
-                        data-year={month.year}
-                        data-month={month.month}
-                        data-day={day.day}
-                      >
-                        <div className="calendar-day">
-                          <span className="day-number">{day.day}</span>
-                          {day.isHoliday && (
-                            <span style={{ fontSize: '10px', color: '#999' }}>Holiday</span>
-                          )}
-                          {skills.length > 0 && (
-                            <div className="skill-stripes">
-                              {skills.map((skill) => (
-                                <div key={skill} className={`skill-stripe skill-${skill}`}>
-                                  {skill}
-                                </div>
-                              ))}
-                            </div>
-                          )}
+                <React.Fragment key={weekIdx}>
+                  {(week.label || week.topic) && (
+                    <tr className="week-topic-row">
+                      <td colSpan={7}>
+                        <div className="week-topic-bar">
+                          {week.label && <strong>{week.label}</strong>}
+                          {week.topic}
                         </div>
                       </td>
-                    );
-                  })}
-                </tr>
+                    </tr>
+                  )}
+                  <tr>
+                    {week.days.map((day, dayIdx) => {
+                      if (day === null) {
+                        return <td key={dayIdx}></td>;
+                      }
+                      const skills = day.skills || [];
+                      return (
+                        <td
+                          key={dayIdx}
+                          className={day.isHoliday ? 'holiday' : ''}
+                          data-year={month.year}
+                          data-month={month.month}
+                          data-day={day.day}
+                        >
+                          <div className="calendar-day">
+                            <span className="day-number">{day.day}</span>
+                            {day.isHoliday && (
+                              <span className="day-holiday-name">
+                                {day.holidayName || 'Holiday'}
+                              </span>
+                            )}
+                            <div className="day-items">
+                              {day.homework && (
+                                <div className="day-hw">
+                                  <Link to={day.homework.href}>{day.homework.label}</Link>
+                                </div>
+                              )}
+                              {day.lectures &&
+                                day.lectures.map((item, i) =>
+                                  isCalLink(item) ? (
+                                    <div className="day-lecture" key={item.href}>
+                                      <Link to={item.href}>{item.label}</Link>
+                                    </div>
+                                  ) : (
+                                    <div className="day-lecture" key={`plain-${i}`}>
+                                      {item}
+                                    </div>
+                                  )
+                                )}
+                              {day.lab && (
+                                <div className="day-lab">
+                                  <Link to={day.lab.href}>{day.lab.label}</Link>
+                                  {day.lab.note && (
+                                    <div className="day-note">{day.lab.note}</div>
+                                  )}
+                                </div>
+                              )}
+                            </div>
+                            {skills.length > 0 && (
+                              <div className="skill-stripes">
+                                {skills.map((skill) => (
+                                  <div key={skill} className={`skill-stripe skill-${skill}`}>
+                                    {skill}
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        </td>
+                      );
+                    })}
+                  </tr>
+                </React.Fragment>
               ))}
             </React.Fragment>
           ))}
@@ -214,4 +289,3 @@ export default function SkillCalendar() {
     </>
   );
 }
-

@@ -855,7 +855,7 @@ in case people try to contest the ticket. All recorded data is also available to
 
 </details>
 
-<!--
+
 ## Skill Introduction
 
 Skills will be introduced in certain weeks (and may be re-inforced in later
@@ -865,62 +865,24 @@ weeks), via class, recitation, labs, and HW. Each of these will be marked with w
 
 Assessment of skills can be done at many different opportunities.
 
-### Assessable@Hours
+### Assessment Hours
 
 Every week, there will be several hours held by instructors, course
 coordinators, or graduate TAs, for the purpose of taking
 assessments. The skills assessable at these hours are those that were introduced
-the previous several weeks -- see the table below to see what skill is
-assessable in any given week via this mechanism.
+the previous several weeks -- see the [Calendar](/schedule/) to see what skill is
+assessable in any given day via this mechanism.
 
 This is intended to allow you several attempts at the skill after the content is
 introduced, but require you to keep up with the material -- all assessments
 cannot be deferred to the end of the semester, since only the last few skills
 can be attempted at the end of the semester.
 
-For spring 2026, these hours will coincide with lecture times (usually the second half of the period):
-
-- 9:15 - 10:20am in Shillman 135 (Lectures meet in Shillman 305)
-- 10:30 - 11:35am in Shillman 135 (Lectures meet in Shillman 305)
-- 1:35 - 2:40pm in EV002
-
 ### Skill Days (in Class)
 
-Several class days exist as gaps in our schedule, and some of the class may be
-used to catch up on material, but 30+ mins of class will be used for skill
-assessments. Instructors will bring a set of assessments -- students are able to
-attempt any of those available (likely, due to time, 1-2 of them). See the
-schedule below to see what weeks these occur in, and what skills are assessable
-during each one.
-
-- <a id="(day1)" href="#(day1)">Skill Day 1</a>: [1](</skills/#(1)>), [2](</skills/#(2)>), [11](</skills/#(11)>), [12](</skills/#(12)>)
-- <a id="(day2)" href="#(day2)">Skill Day 2</a>: [3](</skills/#(3)>), [4](</skills/#(4)>), [5](</skills/#(5)>), [11](</skills/#(11)>), [12](</skills/#(12)>)
-- <a id="(day3)" href="#(day3)">Skill Day 3</a>: [6](</skills/#(6)>), [7](</skills/#(7)>), [8](</skills/#(8)>), [9](</skills/#(9)>), [10](</skills/#(10)>)
-
-### Skill Bundles (in Lab)
-
-Finally, there are two bulk assessment slots, which take place during normal lab
-time, during the semester. These collectively cover all of the skills for the
-semester, and students are welcome to attempt all of the assessments available
--- every student will be given a packet with a set of assessments when they come
-to the lab session. If they have already completed a given skill, they can skip
-that one, and if they have already completed all the skills, they are welcome to
-skip the bulk assessment entirely. The two bundles are:
-
-- <a id="(bundle1)" href="#(bundle1)">Skill Bundle 1</a>: [1](<#(1)>), [2](<#(2)>), [3](<#(3)>), [4](<#(4)>), [11](<#(11)>), [12](<#(12)>)
-- <a id="(bundle2)" href="#(bundle2)">Skill Bundle 2</a>: [5](<#(5)>), [6](<#(6)>), [7](<#(7)>), [8](<#(8)>), [9](<#(9)>), [10](<#(10)>)
+Several class days will be dedicated to skill assessments. These will function identically to the Assessment Hours, except that they are during classtime, in your normal classroom. Instructors will bring a set of assessments -- students are able to
+attempt any of those available (likely, due to time, a couple of them). The assessments available will be the same as what are available during assessment hours on the day that the class occurs.
 
 ## End of Semester Re-attempts
 
 While most skill assessments must take place during the schedule below, each student may make _two_ re-attempts during the last ~~three~~ week of the semester and on the day of the final exam. (Note: there is no final exam, we will only use this time for the re-attempts.) They must contact the course coordinator (Kayla McLaughlin, k.mclaughlin@northeastern.edu) in order to do schedule these. These late semester retakes can be done regardless of how many attempts of a given skill the student has made previously.
-
-## Skill Schedule
-
-
-
-**Colored stripes** at the bottom of each day indicate which skills are assessable during office hours on that day. On **Class** and **Lab** days, the skills available are listed inside the box.
-
-For **Class** and **Lab** days, we choose the most common day; some campuses may differ based on when class or labs are run, but the week will match.
-
- <SkillCalendarSp26 />
--->
