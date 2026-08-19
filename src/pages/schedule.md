@@ -33,8 +33,6 @@ import SkillCalendar from '@site/src/components/SkillCalendar';
 
 ## Skill Assessment Schedule
 
-**Colored stripes** at the bottom of each day indicate which skills are assessable during office hours on that day. On **Class** and **Lab** days, the skills available are listed inside the box.
-
-For **Class** and **Lab** days, we choose the most common day; some campuses may differ based on when class or labs are run, but the week will match.
+**Colored stripes** at the bottom of each day indicate which skills are assessable during office hours on that day.
 
  <SkillCalendar />

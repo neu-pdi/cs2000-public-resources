@@ -4,8 +4,6 @@ import CalendarHighlighter from './CalendarHighlighter';
 interface DayData {
   day: number;
   skills?: number[];
-  classSkills?: number[];
-  labSkills?: number[];
   isHoliday?: boolean;
 }
 
@@ -30,21 +28,21 @@ const calendarData: MonthData[] = [
     month: 'October',
     year: 2026,
     weeks: [
-      [null, { day: 5, skills: [1, 2, 11, 12] }, { day: 6, skills: [1, 2, 11, 12] }, { day: 7, skills: [1, 2, 11, 12] }, { day: 8, skills: [1, 2, 11, 12], classSkills: [1, 2, 11, 12] }, { day: 9, skills: [1, 2, 11, 12] }, null],
+      [null, { day: 5, skills: [1, 2, 11, 12] }, { day: 6, skills: [1, 2, 11, 12] }, { day: 7, skills: [1, 2, 11, 12] }, { day: 8, skills: [1, 2, 11, 12] }, { day: 9, skills: [1, 2, 11, 12] }, null],
       [null, { day: 12, isHoliday: true }, { day: 13, skills: [2, 11, 12] }, { day: 14, skills: [2, 11, 12] }, { day: 15, skills: [2, 11, 12] }, { day: 16, skills: [2, 11, 12] }, null],
       [null, { day: 19, skills: [2, 3, 11, 12] }, { day: 20, skills: [2, 3, 11, 12] }, { day: 21, skills: [2, 3, 11, 12] }, { day: 22, skills: [2, 3, 11, 12] }, { day: 23, skills: [2, 3, 11, 12] }, null],
-      [null, { day: 26, skills: [3, 4, 11, 12] }, { day: 27, skills: [3, 4, 11, 12], labSkills: [1, 2, 3, 4, 11, 12] }, { day: 28, skills: [3, 4, 11, 12] }, { day: 29, skills: [3, 4, 11, 12] }, { day: 30, skills: [3, 4, 11, 12] }, null],
+      [null, { day: 26, skills: [3, 4, 11, 12] }, { day: 27, skills: [3, 4, 11, 12] }, { day: 28, skills: [3, 4, 11, 12] }, { day: 29, skills: [3, 4, 11, 12] }, { day: 30, skills: [3, 4, 11, 12] }, null],
     ],
   },
   {
     month: 'November',
     year: 2026,
     weeks: [
-      [null, { day: 2, skills: [3, 4, 5, 11, 12] }, { day: 3, skills: [3, 4, 5, 11, 12] }, { day: 4, skills: [3, 4, 5, 11, 12] }, { day: 5, skills: [3, 4, 5, 11, 12], classSkills: [3, 4, 5, 11, 12] }, { day: 6, skills: [3, 4, 5, 11, 12] }, null],
+      [null, { day: 2, skills: [3, 4, 5, 11, 12] }, { day: 3, skills: [3, 4, 5, 11, 12] }, { day: 4, skills: [3, 4, 5, 11, 12] }, { day: 5, skills: [3, 4, 5, 11, 12] }, { day: 6, skills: [3, 4, 5, 11, 12] }, null],
       [null, { day: 9, skills: [4, 5, 6] }, { day: 10, skills: [4, 5, 6] }, { day: 11, isHoliday: true }, { day: 12, skills: [4, 5, 6] }, { day: 13, skills: [4, 5, 6] }, null],
       [null, { day: 16, skills: [4, 5, 6, 7, 8] }, { day: 17, skills: [4, 5, 6, 7, 8] }, { day: 18, skills: [4, 5, 6, 7, 8] }, { day: 19, skills: [4, 5, 6, 7, 8] }, { day: 20, skills: [4, 5, 6, 7, 8] }, null],
-      [null, { day: 23, skills: [6, 7, 8, 9, 10] }, { day: 24, skills: [6, 7, 8, 9, 10], labSkills: [6, 7, 8, 9, 10] }, { day: 25, isHoliday: true }, { day: 26, isHoliday: true }, { day: 27, isHoliday: true }, null],
-      [null, { day: 30, skills: [7, 8, 9, 10] }, { day: 1, skills: [7, 8, 9, 10] }, { day: 2, skills: [7, 8, 9, 10] }, { day: 3, skills: [7, 8, 9, 10], classSkills: [6, 7, 8, 9, 10] }, { day: 4, skills: [7, 8, 9, 10] }, null],
+      [null, { day: 23, skills: [6, 7, 8, 9, 10] }, { day: 24, skills: [6, 7, 8, 9, 10] }, { day: 25, isHoliday: true }, { day: 26, isHoliday: true }, { day: 27, isHoliday: true }, null],
+      [null, { day: 30, skills: [7, 8, 9, 10] }, { day: 1, skills: [7, 8, 9, 10] }, { day: 2, skills: [7, 8, 9, 10] }, { day: 3, skills: [7, 8, 9, 10] }, { day: 4, skills: [7, 8, 9, 10] }, null],
     ],
   },
   {
@@ -124,41 +122,6 @@ export default function SkillCalendar() {
 .month-header th {
   background-color: #e8e8e8;
 }
-.skill-day-indicator {
-  background-color: transparent;
-  color: #000;
-  font-size: 10px;
-  padding: 2px 4px;
-  border-radius: 3px;
-  margin-bottom: 2px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  flex-wrap: wrap;
-  border: 2px solid #000;
-}
-.skill-bundle-indicator {
-  background-color: transparent;
-  color: #000;
-  font-size: 10px;
-  padding: 2px 4px;
-  border-radius: 3px;
-  margin-bottom: 2px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  flex-wrap: wrap;
-  border: 2px solid #000;
-}
-.badge-skill-color {
-  width: 12px;
-  height: 12px;
-  border-radius: 2px;
-  display: inline-block;
-  border: 2px solid #000;
-}
 .holiday {
   background-color: #f9f9f9;
   color: #999;
@@ -215,9 +178,6 @@ export default function SkillCalendar() {
                       return <td key={dayIdx}></td>;
                     }
                     const skills = day.skills || [];
-                    const classSkills = day.classSkills;
-                    const labSkills = day.labSkills;
-                    const displaySkills = classSkills || labSkills || skills;
                     return (
                       <td
                         key={dayIdx}
@@ -230,28 +190,6 @@ export default function SkillCalendar() {
                           <span className="day-number">{day.day}</span>
                           {day.isHoliday && (
                             <span style={{ fontSize: '10px', color: '#999' }}>Holiday</span>
-                          )}
-                          {classSkills && (
-                            <span className="skill-day-indicator">
-                              Class:{' '}
-                              {classSkills.map((skill) => (
-                                <React.Fragment key={skill}>
-                                  <span className={`badge-skill-color skill-${skill}`}></span>
-                                  {skill}{' '}
-                                </React.Fragment>
-                              ))}
-                            </span>
-                          )}
-                          {labSkills && (
-                            <span className="skill-bundle-indicator">
-                              Lab:{' '}
-                              {labSkills.map((skill) => (
-                                <React.Fragment key={skill}>
-                                  <span className={`badge-skill-color skill-${skill}`}></span>
-                                  {skill}{' '}
-                                </React.Fragment>
-                              ))}
-                            </span>
                           )}
                           {skills.length > 0 && (
                             <div className="skill-stripes">
