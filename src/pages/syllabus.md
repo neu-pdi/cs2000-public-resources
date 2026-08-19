@@ -51,12 +51,17 @@ The only software you will need is a web browser. All programming will be done v
 | [Kayla McLaughlin](https://www.khoury.northeastern.edu/people/kayla-mclaughlin/) | Boston | WVH 316 | tbd |
 
 
-### Due Dates, Late Days, Regrades
+### Due Dates
 
 All homework assignments will be due Anywhere-on-earth on Sunday (i.e., if it's still Sunday in some timezone, you are good).
 
-These form the material that is used for the [Code Walk](/codewalks) that occur during the next lab; the only assessment that will be done is via that conversation. While you will see grades in the Pawtograder gradebook, you will not get any written feedback on assignments there, and the results of any autograders that occur are just to help you improve your programs; they do not count towards your grade. 
- 
+These form the material that is used for the [Code Walk](#code-walks) that occur during the next lab; the only assessment that will be done is via that conversation. While you will see grades in the Pawtograder gradebook, you will not get any written feedback on assignments there, and the results of any autograders that occur are just to help you improve your programs; they do not count towards your grade. 
+
+If you turn in work late, it can contribute to a later code walk (in the case of project), and may have improved your understanding, but the actual material used for the [Code Walk](#code-walk) will be whatever was turned in by the deadline. **If you did not turn anything in by the deadline, you wil receive no credit for the Code Walk.**
+
+### Regrade Requests
+
+If you believe a mistake was made in the grading of a Skill Assessment, a Code Walk, or a Pairing Session, you have 7 days from when the grade was released to bring this to the attention of a TA or your instructor. You can also ask, in person, for explanations of why something was graded a certain way without requesting a formal regrade. Abuse of of the regrade request mechanism may result in less of an ability to request regrades. 
 
 ### Office Hours
 
@@ -100,7 +105,7 @@ Each week, Lab sessions will have two purposes. One of them will be working with
 
 A pair of TAs will walk around the room, stopping a pair of students from working on the lab exercises, and asking them to pull up the work they submitted for the previous weeks Homework assignment. Each TA will talk to one of the students, separately -- students will each be talking about their own assignment, one-on-one, with a TA. The TA will move to particular parts of the work, asking questions, asking the student to describe what they did, why they did it, other alternate approaches they could have taken, etc. This conversation will not be long -- approximately 5 minutes long -- but will be in enough detail to cover parts (but not all, of course) of the assignment in depth. Afterwards, both the TA and the student will fill out an assessment of the conversation -- the student's will be a self-assessment, the TAs will be an assessment for record, where the assessment covers both the students demonstrated familiarity with their own material, with the course material, their ability to engage with the questions posed to them, etc. 
 
-The first two code walks will be practice, so will be graded on completion only -- the rest will be graded based the results of those assessments.
+The first two code walks will be practice, so will be graded on completion only -- the rest will be graded based the results of those assessments. Two will be dropped (to account for missing labs due to being sick, using wellness days, etc), and the rest weighted evenly.
 
 ### Pair Programming Sessions
 
