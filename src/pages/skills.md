@@ -500,7 +500,7 @@ print("Global value:", value)
 ```
 </details>
 
-8. <a id="(8)" href="#(8)">Design basic functions (Python)</a>
+8. <a id="(8)" href="#(8)">Basic functions (Python)</a>
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Correct type annotation<br/>• Docstring that describes behavior, doesn't repeat type annotation<br/>• A few (2+) correct, meaningfully different tests<br/>• Correct implementation |

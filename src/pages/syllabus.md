@@ -30,7 +30,7 @@ There are three primary sources of communication for this course:
 
 1. This website. This is where you will find policies, homework assignments, lab assignments, practice material, notes from each day of class.
 2. [Pawtograder](https://app.pawtograder.com/). This is the course grading platform. This is where you will submit homework assignments and project checkpoints. This is also where you will see your grades for the on-paper skill assessments. It will have your gradebook. 
-3. Discord. Please join at FIXME. Note you must set your Display Name for the server to your full name before you will be given access to private course channels. This will be a place for any discussion that are not direct questions about homework. Discord will also be used for lab communication (each lab will have a private channel), for announcements about the course. For any questions that are _not_ specifically about homework. It is also the place where you will ask questions online about homework, and where you will do online office hours.
+3. Discord. Please join at [https://discord.gg/YxuCh5P5kn](https://discord.gg/YxuCh5P5kn). Note you must set your Display Name for the server to your full name before you will be given access to private course channels. This will be a place for any discussion that are not direct questions about homework. Discord will also be used for lab communication (each lab will have a private channel), for announcements about the course. For any questions that are _not_ specifically about homework. It is also the place where you will ask questions online about homework, and where you will do online office hours.
 
 <!-- Note that **we will not use Canvas for anything.** -->
 
@@ -53,17 +53,17 @@ The only software you will need is a web browser. All programming will be done v
 
 ### Due Dates, Late Days, Regrades
 
-All homework assignments will be due Anywhere-on-earth on Sunday.
+All homework assignments will be due Anywhere-on-earth on Sunday (i.e., if it's still Sunday in some timezone, you are good).
 
-These form the material that is used for the [Code Walk](/codewalks) that occur during the next lab; the only assessment that will be done is via that conversation. No grading will take place via Pawtograder. 
+These form the material that is used for the [Code Walk](/codewalks) that occur during the next lab; the only assessment that will be done is via that conversation. While you will see grades in the Pawtograder gradebook, you will not get any written feedback on assignments there, and the results of any autograders that occur are just to help you improve your programs; they do not count towards your grade. 
  
 
 ### Office Hours
 
-We hold extensive office hours -- both online, via [Discord](https://discord.gg/A3SQqJNP) and in person. These can be used for any questions you have about course content, not limited to: review about reading, questions about exercises from class, any questions about homework assignments, etc. 
+This course has extensive availability for questions and discussion via [Discord](https://discord.gg/YxuCh5P5kn), and more limited dedicated online office hours via one-on-one video chat via the same platform. 
 
 **Rules and Procedures**
-Do NOT send any screenshots or snippets of your homework code in any channels. Screenshots of your environment setup (you may need help with your setup when we transition to Python) are ok as long as there isn't any homework code visible. Lecture code is okay.
+Do NOT send any screenshots or snippets of your homework programming exercises in any channels (you are welcome to discuss your projects!). Screenshots of your environment setup are ok as long as there isn't any homework programming exercises visible, and of course lecture or practice code is okay.
 
 To join online office hours: Make a post in the office hours text channel before joining the waiting room, so the TAs can better assist you. Once they move you into a private voice channel, you are free to screen share your hw code. Alternatively, you can send code privately to a TA over DMs (the TA will initiate the DM).
 
@@ -71,62 +71,62 @@ The schedule for office hours are available here:
 
 [Office Hours](/ohtables)
 
-<!-- 
-### Recitation Times
-
-In addition to general purpose Office Hours held by TAs, there will be dedicated Recitation Hours held by TAs. These optional sessions, scheduled throughout the day, held both in person and online, will have particular exercises and material that they go over, and will not assist with homework problems. Attendance will be limited for each session, but enough should be scheduled to allow students to attend if they want.
-
-The calendar that has office hours also shows the recitation times, identified as RECITATION. Note that homework questions will _not_ be answered during recitations.
--->
 
 ### Attendance
 
 Attendance is not required in CS2000. Please do not come to class when you're sick. We'd much rather you stay home and take care of yourself. If you need to stay home and miss class, no need to notify us in advance. You are still responsible for completing assigned work and keeping up with content that you may have missed due to an absence. The course website describes the classwork for each day, available for review. Feel free to stop by office hours with the instructors or TAs with any questions or help with the missed classwork.
 
-Although attendance is not required, you can get a grade bump by coming to lecture and participating (see the Grade table below).
-
 ### Skills
 
-The course will teach the following skills, grading of which will be performed by repeatable (with highest grade taken), on-paper, no-note, assessment that can be scored as "Doesn't meet expectations", "Approaching expectations", or "Meets expectations". Each student will have 2 opportunities to master each skill. See the [Skills](/skills) page for much more detail.
+The course will teach the following 13 skills, grading of which will be performed by repeatable (with highest grade taken), on-paper, no-note, assessment that can be scored as "Doesn't meet expectations", "Approaching expectations", or "Meets expectations". Each student will have at least 4 opportunities to master each skill. In the last three weeks of the semester, they may re-attempt 2 skills. See the [Skills](/skills) page for much more detail.
 
-<!-- (once in lab bundles, 4 according to the Skill Schedule). In the last three weeks of the semester, they may re-attempt 2 skills. -->
- 
-
-01. Design basic functions (Pyret)
+00. Design function types, docs, tests (Pyret)
+01. Implement basic functions (Pyret)
 02. Construct / Transform Tables (Pyret)
 03. Iteration: Lists (Pyret)
 04. Structured & Conditional Data (Pyret)
 05. Recursion: Lists (Pyret)
 06. Recursion: Trees (Pyret)
 07. Variable Scope (Python)
-08. Design basic functions (Python)
+08. Basic functions (Python)
 09. Iteration: Lists (Python)
 10. Aliasing & Mutation (Python)
 11. Identifying Privacy Issues in Problem Formulation
 12. Identifying Stakeholders in Problem Formulation
 
+### Code Walks
+
+Each week, Lab sessions will have two purposes. One of them will be working with a student partner (different each week) to complete the exercises described in the lab, assisted by TAs. The second purpose will be to present work that you have submitted the previous Sunday to a TA. The latter is called a Code Walk, and is described here:
+
+A pair of TAs will walk around the room, stopping a pair of students from working on the lab exercises, and asking them to pull up the work they submitted for the previous weeks Homework assignment. Each TA will talk to one of the students, separately -- students will each be talking about their own assignment, one-on-one, with a TA. The TA will move to particular parts of the work, asking questions, asking the student to describe what they did, why they did it, other alternate approaches they could have taken, etc. This conversation will not be long -- approximately 5 minutes long -- but will be in enough detail to cover parts (but not all, of course) of the assignment in depth. Afterwards, both the TA and the student will fill out an assessment of the conversation -- the student's will be a self-assessment, the TAs will be an assessment for record, where the assessment covers both the students demonstrated familiarity with their own material, with the course material, their ability to engage with the questions posed to them, etc. 
+
+The first two code walks will be practice, so will be graded on completion only -- the rest will be graded based the results of those assessments.
+
+### Pair Programming Sessions
+
+Working with others is a fundamentally important skill, and one of the best ways to learn is to work with someone who is more experienced than you. As a result, over the course of the semester you will have three 1hr pair programming sessions with a TA. These will be scheduled in the first, middle, and last third of the class, beginning a few weeks into the semester. You will have the opportunity to pick a time that is convenience to you within a week assigned to you, and will work with whatever TA is available.
+
+The sessions will take place in rooms with multiple TA / student pairs, and each will be given a problem that is new to them from a pool of problems appropriate to the point in the semester. The two will work together, with the students computer the only one that is open -- they are the driver/pilot, whereas the TA serves as the copilot, helping to brainstorm, point out typos, etc. While the problems are intended to take roughly an hour to complete, grading of these sessions is not based on functional completeness of the solution, but rather, based on the quality of interaction -- working together, coming up with ideas, demonstrating familiarity with the course material, etc. Like with the Code Walks, after the session is over, both the TA and the student will fill out an assessment. The TAs assessment will be used for the grade, with the assessment on the first session being worth 10% of the Pairing Session grade, and the second and third each being worth 45% of the grade. 
+
 ### Grading
 
-Grades will be primarily assigned by achievement levels of the course
-[Skills](/skills/), along with required grade thresholds on the other assessed parts of the class: [Code Walks](/codewalks) that occur during labs, pair programming sessions with TAs, and lab attendance. 
-
-This is captured by the following table -- the highest row that a student satisfies all columns of will be their grade, and **if no rows are completely satisfied, the student will not pass the course.**
+Your final grade will be calculated by your results in the **Skill Assessments**, **Code Walks**, and **Pair Programming** sessions, as described above. The exact grade to performance in each of those categories calculation is captured by the following table -- the highest row that a student satisfies all columns of will be their grade, and **if no rows are completely satisfied, the student will not pass the course.**
 
 <table>
 <thead>
 <tr>
-<th></th>
+<th>Grade</th>
 <th colSpan="3" align="center">Skills Needed (out of 13 total)</th>
-<th></th>
-<th></th>
+<th>Code Walk Average</th>
+<th>Pairing Session Average</th>
 </tr>
 <tr>
-<th>Grade</th>
+<th></th>
 <th><strong>Meets Expectations</strong></th>
 <th><strong>Approaching Expectations</strong></th>
 <th><strong>Not Approaching</strong></th>
-<th>Code Walk Average </th>
-<th>Pairing Session Average</th>
+<th></th>
+<th></th>
 </tr>
 </thead>
 <tbody>
