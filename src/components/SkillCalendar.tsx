@@ -169,6 +169,7 @@ export default function SkillCalendar({ data }: { data: MonthData[] }) {
   background-color: color-mix(in srgb, var(--ifm-color-primary) 18%, var(--ifm-background-color));
   box-shadow: inset 0 0 0 2px var(--ifm-color-primary);
 }
+.skill-0 { background-color: #D946EF; }
 .skill-1 { background-color: #FF6B6B; }
 .skill-2 { background-color: #4ECDC4; }
 .skill-3 { background-color: #45B7D1; }
