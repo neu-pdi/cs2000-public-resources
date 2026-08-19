@@ -243,7 +243,7 @@ export const calendarData = [
         label: 'Week 14',
         topic: 'Catch up, bonus content, etc. Depends on section / instructor.',
         days: [
-          { day: 6 },
+          { day: 6, homework: { label: 'HW 12 due', href: '/homework/12' } },
           {
             day: 7,
             skills: [7, 8, 9, 10],
@@ -272,7 +272,7 @@ export const calendarData = [
         label: 'Week 15',
         topic: 'Finals Period',
         days: [
-          { day: 13, homework: { label: 'HW 12 due', href: '/homework/12' } },
+          { day: 13 },
           { day: 14 },
           { day: 15 },
           { day: 16 },
