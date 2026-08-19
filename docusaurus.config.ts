@@ -174,7 +174,7 @@ function notesDropdownItems() {
     },
   ]
 
-  if (new Date() >= new Date(2025, 10, 3)) {
+  if (new Date() >= new Date(2026, 10, 3)) {
     startingItems.push({
       to: '/python-setup/',
       label: 'Python Setup + FAQs',
