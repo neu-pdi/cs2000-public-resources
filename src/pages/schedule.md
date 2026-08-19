@@ -97,7 +97,7 @@ export const calendarData = [
         topic: 'Computing with lists: iteration & mutable local variables',
         days: [
           { day: 11, homework: { label: 'HW 4 due', href: '/homework/4' } },
-          { day: 12, isHoliday: true, holidayName: "Indigenous Peoples' Day" },
+          { day: 12, isHoliday: true, holidayName: "Indg. People's Day" },
           { day: 13, skills: [1, 2, 11, 12], lab: { label: 'Lab 5', href: '/lab/5' } },
           { day: 14, skills: [1, 2, 11, 12], lectures: [{ label: 'Class 14', href: '/days/14' }] },
           { day: 15, skills: [1, 2, 11, 12], lectures: [{ label: 'Class 15', href: '/days/15' }] },
@@ -206,9 +206,9 @@ export const calendarData = [
             skills: [6, 7, 8, 9, 10],
             isHoliday: true, holidayName: 'No Lab'
           },
-          { day: 25, isHoliday: true, holidayName: 'Thanksgiving' },
-          { day: 26, isHoliday: true, holidayName: 'Thanksgiving' },
-          { day: 27, isHoliday: true, holidayName: 'Thanksgiving' },
+          { day: 25, isHoliday: true, holidayName: 'Thanks. Break' },
+          { day: 26, isHoliday: true, holidayName: 'Thanks. Break' },
+          { day: 27, isHoliday: true, holidayName: 'Thanks. Break' },
           { day: 28 },
         ],
       },

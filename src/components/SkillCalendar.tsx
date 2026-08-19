@@ -41,20 +41,34 @@ export default function SkillCalendar({ data }: { data: MonthData[] }) {
         dangerouslySetInnerHTML={{
           __html: `
 <style>
+.skill-calendar-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
 .skill-calendar {
   width: 100%;
+  max-width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
   table-layout: fixed;
   color: var(--ifm-font-color-base);
 }
+.skill-calendar th,
+.skill-calendar td {
+  min-width: 0;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
 .skill-calendar th {
   background-color: var(--ifm-color-emphasis-200);
   color: var(--ifm-font-color-base);
-  padding: 8px;
+  padding: 6px 2px;
   text-align: center;
   border: 1px solid var(--ifm-color-emphasis-300);
   font-weight: bold;
+  font-size: 12px;
 }
 .skill-calendar td {
   border: 1px solid var(--ifm-color-emphasis-300);
@@ -66,8 +80,9 @@ export default function SkillCalendar({ data }: { data: MonthData[] }) {
   background-color: var(--ifm-background-color);
 }
 .calendar-day {
-  padding: 4px 5px 6px;
+  padding: 3px 3px 5px;
   min-height: 110px;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 3px;
@@ -87,6 +102,7 @@ export default function SkillCalendar({ data }: { data: MonthData[] }) {
   gap: 2px;
   font-size: 11px;
   line-height: 1.25;
+  min-width: 0;
 }
 .day-items a {
   text-decoration: none;
@@ -116,10 +132,11 @@ export default function SkillCalendar({ data }: { data: MonthData[] }) {
   flex-wrap: wrap;
   gap: 2px;
   padding-top: 4px;
+  min-width: 0;
 }
 .skill-stripe {
   height: 18px;
-  flex: 1;
+  flex: 1 1 24px;
   min-width: 24px;
   border-radius: 3px;
   display: flex;
@@ -182,10 +199,40 @@ export default function SkillCalendar({ data }: { data: MonthData[] }) {
 .skill-10 { background-color: #52BE80; }
 .skill-11 { background-color: #EC7063; }
 .skill-12 { background-color: #5DADE2; }
+@media (max-width: 600px) {
+  .skill-calendar th {
+    padding: 4px 1px;
+    font-size: 10px;
+  }
+  .calendar-day {
+    padding: 2px 2px 4px;
+    min-height: 90px;
+    gap: 2px;
+  }
+  .day-items {
+    font-size: 10px;
+  }
+  .day-holiday-name,
+  .day-note {
+    font-size: 9px;
+  }
+  .skill-stripe {
+    height: 16px;
+    font-size: 10px;
+    flex: 1 1 calc(50% - 2px);
+    min-width: calc(50% - 2px);
+  }
+  .week-topic-bar {
+    padding: 4px 6px;
+    font-size: 11px;
+    border-left-width: 3px;
+  }
+}
 </style>
 `,
         }}
       />
+      <div className="skill-calendar-wrap">
       <table className="skill-calendar">
         <thead>
           <tr>
@@ -286,6 +333,7 @@ export default function SkillCalendar({ data }: { data: MonthData[] }) {
           ))}
         </tbody>
       </table>
+      </div>
       <CalendarHighlighter />
     </>
   );
