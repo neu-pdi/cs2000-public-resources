@@ -79,7 +79,7 @@ The schedule for office hours are available here:
 
 ### Attendance
 
-Attendance is strongli encouraged, but required in CS2000. Please do not come to class when you're sick. We'd much rather you stay home and take care of yourself. If you need to stay home and miss class, no need to notify us in advance. You are still responsible for completing assigned work and keeping up with content that you may have missed due to an absence. The course website describes the classwork for each day, available for review. Feel free to stop by instructor office hours with any questions or help with the missed classwork, or post questions on Discord.
+Attendance is strongly encouraged, but required in CS2000. Please do not come to class when you're sick. We'd much rather you stay home and take care of yourself. If you need to stay home and miss class, no need to notify us in advance. You are still responsible for completing assigned work and keeping up with content that you may have missed due to an absence. The course website describes the classwork for each day, available for review. Feel free to stop by instructor office hours with any questions or help with the missed classwork, or post questions on Discord.
 
 ### Skills
 
@@ -246,7 +246,9 @@ Specifically:
 - Any sharing or receiving information about the content of skill assessments is an academic integrity violation, and may result in failing the class.
 - Trying to access any electronics during skill assessments is an academic integrity violation and will result in a 0 on the assessments. This includes having a phone in your lap, no matter what is accessed on the phone. You will also be prohibited from re-attempting said skill assessments.
 
-You _must_ _write_ all code for assignments yourself. Even if you discuss solutions, or approaches, with others, do the actual typing on your own! And avoid playing games or trying to find loopholes -- i.e., do not merely type what someone says, or type what you see on another's screen. While we do not consider collaboration a violation, relying on others for your solutions may result in you not learning the material, and in this class, not learning the material will result in not being able to pass the skill assessments. Even with perfect homework scores, failing to pass sufficient skill assessments will result in a failing grade in the course (consult the [grading table](#grading)), so take homework for what it is intended: extensive opportunity to practice the skills we are teaching, paired with high quality feedback about the solution you came up with.
+You _must_ _write_ all code for assignments yourself. Even if you discuss solutions, or approaches, with others, do the actual typing on your own! And avoid playing games or trying to find loopholes -- i.e., do not merely type what someone says, or type what you see on another's screen. While we do not consider collaboration a violation, relying on others for your solutions may result in you not learning the material, and in this class, not learning the material will result in not being able to pass the skill assessments. 
+
+Remember, what you turn in as homework is not graded directly, rather, it is the basis of a conversation with a TA -- if you do not understand what you submitted, you will fail that assessment, nevermind that without the practice of homework, you will find it difficult to pass the skill assessments that form the core of you grade in the course (consult the [grading table](#grading)), so take homework for what it is intended: extensive opportunity to practice what we are teaching, plus the opportunity to practice talking about your work.
 
 The minimum penalty for an academic integrity violation is a zero on the assignment and a report to the [Office of Student Conduct and Conflict Resolution (OSCCR)](https://osccr.sites.northeastern.edu/). Penalties are increased if there are aggravating factors, such as stealing another student's work or lying about cheating. Also, see the [Official University Academic Integrity Policy](https://osccr.sites.northeastern.edu/academic-integrity-policy/).
 
@@ -254,7 +256,7 @@ The minimum penalty for an academic integrity violation is a zero on the assignm
 
 AI coding assistants like Cursor, Windsurf, and Copilot should not be used in this course. We believe that using an AI assistant is an important skill that should be covered _after_ the basics (which is why there is a different policy in CS 3100). Until you have the ability to design, understand, and review code, using an AI assistant amounts to wandering around in the dark, with no ability to determine if you are getting closer to what you want. (Using these tools to get decent grades while learning nothing is pretty clearly shooting yourself in the foot: you are in college to learn; if you end up unable to do anything but prompt engineer, you will have essentially no skills, given these models are intentionally rendering whatever "skill" underlying prompt engineering obselete in every generation).
 
-The same is true of asking questions of chat models like ChatGPT, Claude, Gemini, etc. Putting in assignment instructions into such a model and getting out code or test cases amounts to getting the model to do the thinking for you -- and as a result, you will not learn. "Only look"ing at AI-generated solutions "before writing your own" undermines the learning just the same, as you will not be learning to actually solve problems, you will just be copying (and, importantly, never developing the ability to recognize when the AI generated solution isn't what you need).
+The same is true of asking questions of chat models like ChatGPT, Claude, Gemini, etc. Putting in assignment instructions into such a model and getting out code or test cases amounts to getting the model to do the thinking for you -- and as a result, you will not learn. "Only look"ing at AI-generated solutions "before writing your own" undermines the learning just the same, as you will not be learning to actually solve problems, you will just be copying (and, importantly, never developing the ability to recognize when the AI generated solution isn't what you need). It will also backfire, as if you do this, you will find yourself unable to have to conversations that form the grade for these assignments. 
 
 Emerging research is beginning to show that substituting practice on fundamental skills by delegating that practice to LLMs can decrease learning. Whilst using an LLM might reduce the immediate strain of learning something new, it can also [diminish the development of critical thinking skills](https://doi.org/10.1016/j.chb.2024.108386) by decreasing engagement and [impeding independent problem-solving](https://doi.org/10.1186/s41239-024-00467-0). Moreover, even the [benefits of using LLMs for experienced developers](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) have been questioned. LLMs can be useful once you have gained competence in program design and are able to break down a problem and specify it precisely—which are the skills we are trying to develop in CS 2000 and CS 2100.
 
@@ -270,19 +272,19 @@ We believe that diversity and inclusiveness are essential to excellence in acade
 
 ### Name and Pronoun Usage
 
-As this course includes some discussion, it is vitally important for us to create an educational environment of inclusion and mutual respect. This includes the ability for all students to have their chosen gender
+As this course includes discussion and conversation, it is vitally important for us to create an educational environment of inclusion and mutual respect. This includes the ability for all students to have their chosen gender
 pronoun(s) and chosen name affirmed. If the class roster does not align with your name and/or pronouns, please inform us of the necessary changes.
 
 ### Accommodations
 
 If you have a documented disability, please register with [Disability Access Services](https://disabilityaccessservices.northeastern.edu/) to get the accommodations that will
 help you succeed. Please do this even if you are unsure whether you will need accommodations, since there may be a delay if you decide you need them later. Please do not wait until it has seriously impacted your work, as accommodations are not retroactive. 
-<!-- See [additional information
-for Oakland students](https://oakland.northeastern.edu/student-life/access-services/accommodations/#request). -->
+See [additional information
+for Oakland students](https://oakland.northeastern.edu/student-life/access-services/accommodations/#request).
 
 ### Policy on Recording
 
-Massachusetts <!-- and California --> laws prohibit students from recording classes without the consent of all participants, unless a disability accommodation is in place. We encourage you to seek accommodations to which you are legally entitled.
+Massachusetts and California laws prohibit students from recording classes without the consent of all participants, unless a disability accommodation is in place. We encourage you to seek accommodations to which you are legally entitled.
 
 ## University Resources
 
