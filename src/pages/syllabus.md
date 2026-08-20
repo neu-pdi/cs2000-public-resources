@@ -14,9 +14,9 @@ There will be three in-person **classes** and one **lab** per week. All content 
 
 Each class period (of CS2000) has reading you are **expected to do _before_ class**. During the class we will briefly review the new material that was covered in the reading (but, in much less depth -- it is not a substitute for doing the reading), and then the majority of class will be dedicated to working with classmates, assisted by your instructor, on exercises related to the new material.
 
-There will also be **weekly homework** assignments. The purpose of these assignments, which are half programming practice and half open ended projects, is to give you hands-on experience with the course material. They will both teach you the skills used for the **skill assessments**, and are the subject of [Code Walks](/codewalks) during lab, which are the only assessment that is done on them. 
+There will also be **weekly homework** assignments. The purpose of these assignments, which are half programming practice and half open ended projects, is to give you hands-on experience with the course material. They will both teach you the skills used for the **skill assessments**, and are the subject of [Code Walks](/syllabus#code-walks) during lab, which are the only assessment that is done on them. 
 
-The lab period (CS2001) will include a set of exercises to be done with a partner in your lab section, guided by those running the lab (TAs or instructors). In addition to working through the lab exercises, you will also do [Code Walks](/codewalks) each week, where you individually will present work done at home to TAs. Grading of Code Walks forms part of your final grade, and lab attendance is required to do them. 
+The lab period (CS2001) will include a set of exercises to be done with a partner in your lab section, guided by those running the lab (TAs or instructors). In addition to working through the lab exercises, you will also do [Code Walks](/syllabus#code-walks) each week, where you individually will present work done at home to TAs. Grading of Code Walks forms part of your final grade, and lab attendance is required to do them. 
 
 Students can register for any CS 2001 lab section that is on their campus!
 
@@ -57,7 +57,7 @@ All homework assignments / project checkpoints will be due Anywhere-on-earth on 
 
 These form the material that is used for the [Code Walk](#code-walks) that occur during the next lab; the only grading of homework assignments is via that conversation. While you will see grades in the Pawtograder gradebook, you will not get any written feedback on assignments there, and the results of any autograders that occur are just to help you improve your programs; they do not count towards any part of your grade. 
 
-If you turn in work late, it can contribute to a later code walk (in the case of project), and may have improved your understanding, but the actual material used for the [Code Walk](#code-walk) will be whatever was turned in by the deadline. **If you did not turn anything in by the deadline, you wil receive no credit for the Code Walk.**
+If you turn in work late, it can contribute to a later code walk (in the case of project), and may have improved your understanding, but the actual material used for the [Code Walk](#code-walks) will be whatever was turned in by the deadline. **If you did not turn anything in by the deadline, you wil receive no credit for the Code Walk.**
 
 ### Regrade Requests
 
