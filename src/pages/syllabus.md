@@ -22,21 +22,21 @@ Students can register for any CS 2001 lab section that is on their campus!
 
 There are 13 **skills**, which have repeatable assessments (taken on paper without notes over the course of the semester), and form the primary grading for the class.
 
-There are no formal quizzes or exams in this class, though the skill assessments are similar in form, though allow you to work an your own pace, and repeat as you need.
+There are no formal quizzes or exams in this class, though the skill assessments are similar in form to quizzes, though allow you to work an your own pace, and repeat as you need.
 
 ### Communication
 
 There are three primary sources of communication for this course:
 
 1. This website. This is where you will find policies, homework assignments, lab assignments, practice material, notes from each day of class.
-2. [Pawtograder](https://app.pawtograder.com/). This is the course grading platform. This is where you will submit homework assignments and project checkpoints. This is also where you will see your grades for the on-paper skill assessments. It will have your gradebook. 
+2. [Pawtograder](https://pawtograder.khoury.northeastern.edu/). This is where you will find links to start your homework assignments / projects, and where you will see all grades (including for the on-paper skill assessments). 
 3. Discord. Please join at [https://discord.gg/YxuCh5P5kn](https://discord.gg/YxuCh5P5kn). Note you must set your Display Name for the server to your full name before you will be given access to private course channels. This will be a place for any discussion that are not direct questions about homework. Discord will also be used for lab communication (each lab will have a private channel), for announcements about the course. For any questions that are _not_ specifically about homework. It is also the place where you will ask questions online about homework, and where you will do online office hours.
 
 <!-- Note that **we will not use Canvas for anything.** -->
 
 ### Course Tools
 
-The only software you will need is a web browser. All programming will be done via the online programming environment provided by Github, which we will refer to as github.dev (as this is the website for it). This provides an online version of the programming editor VSCode, and allows you to program using the programming language Pyret. For the last section of the course, we will switch to using Python, but will again use VSCode via the browser.
+The only software you will need is a web browser (and a computer or tablet that can run a relatively up-to-date one). All programming will be done via the online programming environment VSCode (note that VSCode exists also as a program installed on your computer, but we won't use that), which we will refer to as vscode.dev (as this is the website for it).
 
 ### People
 | Instructor | Campus | Office | Office Hours |
@@ -53,9 +53,9 @@ The only software you will need is a web browser. All programming will be done v
 
 ### Due Dates
 
-All homework assignments will be due Anywhere-on-earth on Sunday (i.e., if it's still Sunday in some timezone, you are good).
+All homework assignments / project checkpoints will be due Anywhere-on-earth on Sunday (i.e., if it's still Sunday in some timezone, you are good).
 
-These form the material that is used for the [Code Walk](#code-walks) that occur during the next lab; the only assessment that will be done is via that conversation. While you will see grades in the Pawtograder gradebook, you will not get any written feedback on assignments there, and the results of any autograders that occur are just to help you improve your programs; they do not count towards your grade. 
+These form the material that is used for the [Code Walk](#code-walks) that occur during the next lab; the only grading of homework assignments is via that conversation. While you will see grades in the Pawtograder gradebook, you will not get any written feedback on assignments there, and the results of any autograders that occur are just to help you improve your programs; they do not count towards any part of your grade. 
 
 If you turn in work late, it can contribute to a later code walk (in the case of project), and may have improved your understanding, but the actual material used for the [Code Walk](#code-walk) will be whatever was turned in by the deadline. **If you did not turn anything in by the deadline, you wil receive no credit for the Code Walk.**
 
@@ -79,7 +79,7 @@ The schedule for office hours are available here:
 
 ### Attendance
 
-Attendance is not required in CS2000. Please do not come to class when you're sick. We'd much rather you stay home and take care of yourself. If you need to stay home and miss class, no need to notify us in advance. You are still responsible for completing assigned work and keeping up with content that you may have missed due to an absence. The course website describes the classwork for each day, available for review. Feel free to stop by office hours with the instructors or TAs with any questions or help with the missed classwork.
+Attendance is strongli encouraged, but required in CS2000. Please do not come to class when you're sick. We'd much rather you stay home and take care of yourself. If you need to stay home and miss class, no need to notify us in advance. You are still responsible for completing assigned work and keeping up with content that you may have missed due to an absence. The course website describes the classwork for each day, available for review. Feel free to stop by instructor office hours with any questions or help with the missed classwork, or post questions on Discord.
 
 ### Skills
 
@@ -103,15 +103,15 @@ The course will teach the following 13 skills, grading of which will be performe
 
 Each week, Lab sessions will have two purposes. One of them will be working with a student partner (different each week) to complete the exercises described in the lab, assisted by TAs. The second purpose will be to present work that you have submitted the previous Sunday to a TA. The latter is called a Code Walk, and is described here:
 
-A pair of TAs will walk around the room, stopping a pair of students from working on the lab exercises, and asking them to pull up the work they submitted for the previous weeks Homework assignment. Each TA will talk to one of the students, separately -- students will each be talking about their own assignment, one-on-one, with a TA. The TA will move to particular parts of the work, asking questions, asking the student to describe what they did, why they did it, other alternate approaches they could have taken, etc. This conversation will not be long -- approximately 5 minutes long -- but will be in enough detail to cover parts (but not all, of course) of the assignment in depth. Afterwards, both the TA and the student will fill out an assessment of the conversation -- the student's will be a self-assessment, the TAs will be an assessment for record, where the assessment covers both the students demonstrated familiarity with their own material, with the course material, their ability to engage with the questions posed to them, etc. 
+A pair of TAs will walk around the room, stopping a pair of students from working on the lab exercises, and pulling up the work they submitted for the previous weeks Homework assignment. Each TA will talk to one of the students, separately -- students will each be talking about their own assignment, one-on-one, with a TA. The TA will move to particular parts of the work, asking questions, asking the student to describe what they did, why they did it, other alternate approaches they could have taken, etc. This conversation will not be long -- approximately 5 minutes long -- but will be in enough detail to cover parts (but not all, of course) of the assignment in depth. Afterwards, both the TA and the student will fill out an assessment of the conversation -- the student's will be a self-assessment, the TAs will be an assessment for record, where the assessment covers both the students demonstrated familiarity with their own material, with the course material, their ability to engage with the questions posed to them, etc. 
 
-The first two code walks will be practice, so will be graded on completion only -- the rest will be graded based the results of those assessments. Two will be dropped (to account for missing labs due to being sick, using wellness days, etc), and the rest weighted evenly.
+The first two code walks will be practice, so will be graded on completion only (i.e., you will get full credit if you are there are participate) -- the rest will be graded based the TA assessment. Two total will be dropped (to account for missing labs due to being sick, using wellness days, etc), and the rest weighted evenly.
 
 ### Pair Programming Sessions
 
-Working with others is a fundamentally important skill, and one of the best ways to learn is to work with someone who is more experienced than you. As a result, over the course of the semester you will have three 1hr pair programming sessions with a TA. These will be scheduled in the first, middle, and last third of the class, beginning a few weeks into the semester. You will have the opportunity to pick a time that is convenience to you within a week assigned to you, and will work with whatever TA is available.
+Working with others is a fundamentally important skill, and one of the best ways to learn is to work with someone who is more experienced than you. As a result, over the course of the semester you will have three 1hr pair programming sessions with a TA. These will be scheduled in the first, middle, and last third of the class, beginning a few weeks into the semester. You will have the opportunity to pick a time that is convenience to you, and will work with whatever TA is available.
 
-The sessions will take place in rooms with multiple TA / student pairs, and each will be given a problem that is new to them from a pool of problems appropriate to the point in the semester. The two will work together, with the students computer the only one that is open -- they are the driver/pilot, whereas the TA serves as the copilot, helping to brainstorm, point out typos, etc. While the problems are intended to take roughly an hour to complete, grading of these sessions is not based on functional completeness of the solution, but rather, based on the quality of interaction -- working together, coming up with ideas, demonstrating familiarity with the course material, etc. Like with the Code Walks, after the session is over, both the TA and the student will fill out an assessment. The TAs assessment will be used for the grade, with the assessment on the first session being worth 10% of the Pairing Session grade, and the second and third each being worth 45% of the grade. 
+The sessions will take place in rooms with multiple TA / student pairs, and each will be given a problem that is new to them from a pool of problems appropriate to the point in the semester (beginning, middle, end). The two will work together, with the students computer the only one that is open -- they are the driver/pilot, whereas the TA serves as the copilot, helping to brainstorm, point out typos, etc. While the problems are intended to take roughly an hour to complete, grading of these sessions is not based on functional completeness of the solution, but rather, based on the quality of interaction -- working together, coming up with ideas, demonstrating familiarity with the course material, etc. Like with the Code Walks, after the session is over, both the TA and the student will fill out an assessment. The TAs assessment will be used for the grade, with the assessment on the first session being worth 10% of the overall Pairing Session grade, and the second and third each being worth 45% of the grade. 
 
 ### Grading
 
