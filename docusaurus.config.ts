@@ -314,25 +314,6 @@ const config: Config = {
         },
         {
           position: 'left',
-          type: 'dropdown',
-          label: "Schedules",
-          items: [
-            {
-              to: '/schedule/',
-              label: 'Class Schedule',
-            },
-            {
-              to: '/ohtables/',
-              label: 'Office Hours',
-            },
-          //  {
-          //    to: '/skills/#skill-schedule',
-          //    label: 'Skills Schedule',
-          //  },
-          ]
-        },
-        {
-          position: 'left',
           to: '/staff/',
           label: 'Staff',
         },

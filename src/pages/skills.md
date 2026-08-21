@@ -870,7 +870,7 @@ Assessment of skills can be done at many different opportunities.
 Every week, there will be several hours held by instructors, course
 coordinators, or graduate TAs, for the purpose of taking
 assessments. The skills assessable at these hours are those that were introduced
-the previous several weeks -- see the [Calendar](/schedule/) to see what skill is
+the previous several weeks -- see the [Calendar](/#schedule) to see what skill is
 assessable in any given day via this mechanism.
 
 This is intended to allow you several attempts at the skill after the content is
