@@ -195,7 +195,7 @@ export const calendarData = [
         label: 'Week 12',
         topic: 'Python: mutable data structures',
         days: [
-          { day: 22, homework: { label: 'HW 10 due', href: '/homework/10' } },
+          { day: 22,  isHoliday: true, holidayName: 'No HW Due' },
           {
             day: 23,
             skills: [6, 7, 8, 9, 10],
@@ -216,7 +216,7 @@ export const calendarData = [
         label: 'Week 13',
         topic: 'Tables in Python: pandas & csvs',
         days: [
-          { day: 29, homework: { label: 'HW 11 due', href: '/homework/11' } },
+          { day: 29, homework: { label: 'HW 10 due', href: '/homework/10' } },
           { day: 30, skills: [7, 8, 9, 10], lectures: [{ label: 'Class 29', href: '/days/29' }] },
           {
             day: 1,
@@ -243,7 +243,7 @@ export const calendarData = [
         label: 'Week 14',
         topic: 'Catch up, bonus content, etc. Depends on section / instructor.',
         days: [
-          { day: 6, homework: { label: 'HW 12 due', href: '/homework/12' } },
+          { day: 6, homework: { label: 'HW 11 due', href: '/homework/11' } },
           {
             day: 7,
             skills: [7, 8, 9, 10],
