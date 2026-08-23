@@ -12,7 +12,7 @@ import { oneDarkTheme, oneLightTheme } from './src/theme/one-dark-themes';
 const dcicDomain = 'https://dcic.pdi.run';
 
 /**
- * Calculates the current assignment number based on today's date. Assignments include recitations.
+ * Calculates the current assignment number based on today's date. Assignments include practice.
  * After week 15, the assignment number resets to 1
  *
  * @returns The current assignment number, with a minimum of 1 and a max of 12
@@ -279,10 +279,10 @@ const config: Config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'recitation',
-        path: 'recitation',
-        sidebarPath: './sidebars/recitation.ts',
-        routeBasePath: 'recitation',
+        id: 'practice',
+        path: 'practice',
+        sidebarPath: './sidebars/practice.ts',
+        routeBasePath: 'practice',
         remarkPlugins: [createVariableSubstitutionPlugin(dcicDomain)],
       },
     ],
@@ -342,7 +342,7 @@ const config: Config = {
           docId: currentAssignmentNumber(),
           position: 'left',
           label: 'Extra Practice',
-          docsPluginId: 'recitation',
+          docsPluginId: 'practice',
         },
         {
           position: 'left',

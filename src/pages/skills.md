@@ -859,7 +859,7 @@ in case people try to contest the ticket. All recorded data is also available to
 ## Skill Introduction
 
 Skills will be introduced in certain weeks (and may be re-inforced in later
-weeks), via class, recitation, labs, and HW. Each of these will be marked with what skill is being introduced or reinforced by the material.
+weeks), via class, practice, labs, and HW. Each of these will be marked with what skill is being introduced or reinforced by the material.
 
 ## Skill Assessment
 
