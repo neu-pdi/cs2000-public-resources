@@ -136,7 +136,7 @@ fun find-scholars(t :: Table) -> Table:
   doc: "Find students not in Boston"
 
   fun is-scholar(r :: Row) -> Boolean:
-    r["campus"] <> "Boston"
+    get-column(r, "campus") <> "Boston"
   end
 
   filter-with(t, is-scholar)
@@ -161,7 +161,7 @@ end
 ```pyret
 fun find-scholars(t :: Table) -> Table:
   fun is-scholar(r :: Row) -> Boolean:
-    r["campus"] <> "Boston"
+    get-column(r, "campus") <> "Boston"
   end
   
   filter-with(t, is-scholar)

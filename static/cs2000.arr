@@ -21,14 +21,17 @@ import global as G
 provide: 
   get-row,
   get-column,
+  table-length,
   filter-with,
   order-by,
   build-column,
   add-row,
   add-col,
   select-columns,
+  drop-column,
   transform-column,
   create-table-with-col,
+  empty-table,
   mean,
   median,
   modes,
@@ -64,6 +67,10 @@ provide from G:
 end
 
 # ----------- TABLE FUNCTIONS -----------
+
+fun table-length(t :: Table) -> Number:
+    t.length()
+end
 
 fun get-row(t :: Table, index :: Number) -> Row:
   t.row-n(index)
@@ -106,6 +113,8 @@ fun add-col(t :: Table, name :: String, c :: List) -> Table: t.add-column(name, 
 
 fun select-columns(t :: Table, names :: List<String>) -> Table: t.select-columns(names) end
 
+fun drop-column(t :: Table, name :: String) -> Table: t.drop(name) end
+
 fun transform-column<A,B>(t :: Table, name :: String, f :: (A -> B)) -> Table:
   t.transform-column(name, f)
 end
@@ -116,6 +125,8 @@ fun create-table-with-col(colname :: String, colvals :: List) -> Table:
   fold(lam(t, cval): t.add-row([raw-row: {colname ; cval}]) end,
     mt-table, colvals)
 end
+
+fun empty-table(t :: Table) -> Table: t.empty() end
 
 # ------ AGGREGATING --------------------
 fun mean(  t :: Table, col :: String) -> Number: S.mean(t.column(col)) end
@@ -168,13 +179,13 @@ end
 
 fun dot-plot(t :: Table, vs :: String) -> Image:
   xs = t.column(vs)
-  ys = repeat(xs.length(), 0)
+  ys = repeat(length(xs), 0)
   render-chart(from-list.scatter-plot(xs, ys)).x-axis(vs).display()
 end
 
 fun labeled-dot-plot(t, ls, vs):
   xs = t.column(vs)
-  ys = repeat(xs.length(), 0)
+  ys = repeat(length(xs), 0)
   render-chart(from-list.labeled-scatter-plot(t.column(ls).map(to-string), xs, ys)).x-axis(vs).display()
 end
 
@@ -235,7 +246,7 @@ fun group(tab, col):
 end
 
 fun count(tab, col):
-  group(tab, col).build-column("count", {(r): r["subtable"].length()}).drop("subtable")
+  drop-column(build-column(group(tab, col), "count", {(r): table-length(get-column(r, "subtable"))}), "subtable")
 end
 
 fun count-many(tab, cols):

@@ -14,10 +14,14 @@ Pyret has three different notations for manipulating tables. The version we are 
 Always make sure the beginning of your file looks like (in gray):
 
 ```pyret
-use context dcic2024
+use context url-file("https://raw.githubusercontent.com/neu-pdi/cs2000-public-resources/refs/heads/main/static/","cs2000.arr")
 ```
 
-If it isn't, click the Pyret logo above the top left corner of the Definitions window and click Choose Context and type `dcic2024` into the field.
+If it isn't, click the Pyret logo above the top left corner of the Definitions window and click Choose Context and paste this into the field:
+
+```
+url-file("https://raw.githubusercontent.com/neu-pdi/cs2000-public-resources/refs/heads/main/static/","cs2000.arr")
+```
 
 ______________________________________________________________________
 
@@ -99,7 +103,7 @@ end
 The functions described below all use this student table:
 
 ```pyret
-use context dcic2024
+use context url-file("https://raw.githubusercontent.com/neu-pdi/cs2000-public-resources/refs/heads/main/static/","cs2000.arr")
 
 students = table: name :: String, score :: Number, grade :: String, points :: Number
   row: "Alex", 92, "A", 185
@@ -122,7 +126,7 @@ Given a table and a predicate on rows, returns a table with only the rows for wh
 
 ```pyret
 fun is-high-score(r :: Row) -> Boolean:
-  r["score"] >= 90
+  get-column(r, "score") >= 90
 end
 high-scorers = filter-with(students, is-high-score)
 ```
@@ -148,7 +152,7 @@ Here, A is the type of the new column, determined by the type of value the build
 
 ```pyret
 fun calc-total(r :: Row) -> Number:
-  r["quantity"] * r["price"]
+  get-column(r, "quantity") * get-column(r, "price")
 end
 orders-with-total = build-column(orders, "total", calc-total)
 ```
@@ -183,6 +187,15 @@ Consumes a table and a list of column names, and produces a new table containing
 basic-info = select-columns(students, [list: "name", "score"])
 ```
 
+### drop-column
+
+**drop-column**(t :: Table, colname :: String) -> Table\
+Returns a table that is the same as table _t_, except with the column whose name is _colname_ removed.
+
+```pyret
+students-no-points = drop-column(students, "points")
+```
+
 ### transform-column
 
 **transform-column**(t :: Table, colname :: String, f :: (A -> B)) -> Table\
@@ -205,89 +218,59 @@ names-list = [list: "Alice", "Bob", "Carol"]
 names-table = create-table-with-col("student-name", names-list)
 ```
 
-______________________________________________________________________
+### empty-table
 
-## Table Methods: Extracting Data and Other
-
-Table methods are how we extract data from a table. Methods are similar in spirit to functions, but their notation (_table.operation(args)_) is more suggestive of going inside a table to extract data.
-
-### .row-n
-
-**t.row-n**(n :: Number) -> Row\
-For a table _t_, returns the \_n_th row, where row numbers start at 0
-
-```pyret
-first-student = students.row-n(0)
-third-student = students.row-n(2)
-```
-
-### .length
-
-**t.length()** -> Number\
-For a table _t_, returns the number of rows in the table
-
-```pyret
-num-students = students.length()
-```
-
-### .get-column
-
-**t.get-column**(colname :: String) -> List\<A>\
-Returns a list of the values in the named column in table _t_. _A_ is the type of the data in the named column
-
-```pyret
-all-scores = students.get-column("score")
-all-names = students.get-column("name")
-```
-
-### .drop
-
-**t.drop**(colname :: String) -> Table\
-Returns a table that is the same as table _t_, except with the column whose name is _colname_ removed.
-
-```pyret
-students-no-points = students.drop("points")
-```
-
-### .empty
-
-**t.empty()** -> Table\
+**empty-table**(t :: Table) -> Table\
 Returns a new table with the same columns as table _t_, but with all rows removed.
 
 ```pyret
-empty-students = students.empty()
+empty-students = empty-table(students)
 # Creates a table with same column structure but no data rows
 check:
   t1 = table: city, pop
     row: "Houston", 2400000
     row: "NYC", 8400000
   end
-  t1.empty() is table: city, pop end
+  empty-table(t1) is table: city, pop end
 end
-```
-
-### Getting a Value
-
-**Getting a value**: The syntax `my-row[col-name]` accesses a row at a particular column, resulting in a particular value. e.g. `my-row["age"]` → `20`.
-
-```pyret
-first-student = students.row-n(0)
-alex-score = first-student["score"]
-alex-grade = first-student["grade"]
 ```
 
 ______________________________________________________________________
 
-## Function-Based Extraction (Alternative to Methods)
+## Extracting Data
 
 ### get-row
 
 **get-row**(t :: Table, index :: Number) -> Row\
-Alternative to `t.row-n(index)`. Returns the \_index_th row, where row numbers start at 0.
+Returns the \_index_th row of table _t_, where row numbers start at 0.
 
 ```pyret
 first-student = get-row(students, 0)
-# Same as: first-student = students.row-n(0)
+third-student = get-row(students, 2)
+```
+
+### get-column
+
+**get-column**(x :: Row, colname :: String) -> A\
+**get-column**(t :: Table, colname :: String) -> List\<A>\
+On a _row_, returns the value in the named column. On a _table_, returns a list of all values in that column.
+
+```pyret
+first-student = get-row(students, 0)
+alex-score = get-column(first-student, "score")
+alex-grade = get-column(first-student, "grade")
+
+all-scores = get-column(students, "score")
+all-names = get-column(students, "name")
+```
+
+### table-length
+
+**table-length**(t :: Table) -> Number\
+Returns the number of rows in table _t_.
+
+```pyret
+num-students = table-length(students)
 ```
 
 ______________________________________________________________________
@@ -461,7 +444,7 @@ Here are some examples that combine multiple functions:
 ```pyret
 # Filter for high scores
 fun is-high-score(r :: Row) -> Boolean:
-  r["score"] >= 90
+  get-column(r, "score") >= 90
 end
 high-scorers = filter-with(students, is-high-score)
 
@@ -477,7 +460,7 @@ alphabetical = order-by(students, "name", true)
 ```pyret
 # Add a letter grade column based on score
 fun calc-letter-grade(r :: Row) -> String:
-  score = r["score"]
+  score = get-column(r, "score")
   if score >= 90: "A"
   else if score >= 80: "B"
   else if score >= 70: "C"
@@ -489,7 +472,7 @@ students-with-grades = build-column(students, "letter-grade", calc-letter-grade)
 
 # Add a pass/fail column
 fun calc-pass-fail(r :: Row) -> String:
-  if r["score"] >= 70: "Pass" else: "Fail" end
+  if get-column(r, "score") >= 70: "Pass" else: "Fail" end
 end
 students-with-pf = build-column(students, "pass-fail", calc-pass-fail)
 
@@ -508,8 +491,8 @@ import math as M
 # Basic statistics
 avg-score = mean(students, "score")
 total-points = sum(students, "points")
-highest-score = M.max(students.get-column("score"))
-lowest-score = M.min(students.get-column("score"))
+highest-score = M.max(get-column(students, "score"))
+lowest-score = M.min(get-column(students, "score"))
 
 # Get information about grades
 grade-distribution = count(students, "grade")
@@ -520,15 +503,15 @@ unique-grades = modes(students, "grade")
 
 ```pyret
 # Get specific rows and values
-first-student = students.row-n(0)
-alex-score = first-student["score"]
+first-student = get-row(students, 0)
+alex-score = get-column(first-student, "score")
 
 # Extract columns as lists
-all-scores = students.get-column("score")
-all-names = students.get-column("name")
+all-scores = get-column(students, "score")
+all-names = get-column(students, "name")
 
 # Get number of students
-num-students = students.length()
+num-students = table-length(students)
 ```
 
 ### Working with Restaurant Data
@@ -544,13 +527,13 @@ end
 
 # Calculate total cost per order
 fun calc-total(r :: Row) -> Number:
-  r["price"] * r["quantity"]
+  get-column(r, "price") * get-column(r, "quantity")
 end
 orders-with-total = build-column(orders, "total", calc-total)
 
 # Filter for large orders (quantity >= 2)
 fun is-large-order(r :: Row) -> Boolean:
-  r["quantity"] >= 2
+  get-column(r, "quantity") >= 2
 end
 large-orders = filter-with(orders, is-large-order)
 
