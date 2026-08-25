@@ -32,6 +32,8 @@ provide:
   transform-column,
   create-table-with-col,
   empty-table,
+  string-to-number-default,
+  string-to-number-unsafe,
   mean,
   median,
   modes,
@@ -64,6 +66,24 @@ provide from G:
   string-find-opt,
   string-find,
   string-get-index,
+end
+
+# ---------- STRING FUNCTIONS -----------
+
+fun string-to-number-default(def :: Number) -> (String -> Number):
+  lam(s :: String) -> Number:
+    cases (Option) string-to-number(s):
+      | none => def
+      | some(v) => v
+    end
+  end
+end
+
+fun string-to-number-unsafe(s :: String) -> Number:
+  cases (Option) string-to-number(s):
+    | none => raise("string-to-number-unsafe: got a non-numeric string: " + s)
+    | some(v) => v
+  end
 end
 
 # ----------- TABLE FUNCTIONS -----------

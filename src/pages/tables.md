@@ -68,34 +68,31 @@ Load a table from a CSV file at the given URL. Use `default-options` for the opt
 **csv-table-file**(filename :: String, options) -> Table\
 Load a table from a CSV file in your project. Use `default-options` for the options parameter.
 
-Since CSVs read all data as strings, you probably want to include `sanitize` clauses as we do below to convert numeric columns to numbers. This will fail if any values aren't indeed numbers, in which case you need to do more sophisticated cleaning using `transform-column`.
-
-Be sure to **include data-source** at the top of the file, or else `num-sanitizer` will be unbound.
+Since CSVs read all data as strings, convert numeric columns with `transform-column` after loading. Use `string-to-number-default(0)` when missing or invalid values should become a default (here, `0`), or `string-to-number-unsafe` when a non-numeric value should be an error.
 
 Example:
 
 ```pyret
 include csv
-include data-source
 
 # From URL
-recipes = load-table:
+recipes-raw = load-table:
   title :: String,
-  servings :: Number,
-  prep-time :: Number
+  servings :: String,
+  prep-time :: String
   source: csv-table-url("https://pdi.run/f25-2000-recipes.csv", default-options)
-  sanitize servings using num-sanitizer
-  sanitize prep-time using num-sanitizer
 end
+recipes-with-servings = transform-column(recipes-raw, "servings", string-to-number-default(0))
+recipes = transform-column(recipes-with-servings, "prep-time", string-to-number-default(0))
 
 # From file that exists inside the github repository, so you see 
 # it in the left side
-dat = load-table:
+dat-raw = load-table:
   name :: String,
-  value :: Number
+  value :: String
   source: csv-table-file("mydata.csv", default-options)
-  sanitize value using num-sanitizer
 end
+dat = transform-column(dat-raw, "value", string-to-number-unsafe)
 ```
 
 ## Sample Table for Examples
