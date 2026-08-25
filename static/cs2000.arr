@@ -1,3 +1,4 @@
+use context empty-context
 
 import essentials2024 as BASIC
 provide from BASIC: *, type *, data * end
