@@ -11,7 +11,7 @@ include from BASIC: *, type *, data * end
 # This is a customized version of the DCIC context.
 
 include tables
-include chart 
+include charts
 import statistics as S 
 #  import lists as L
 import sets as ST
