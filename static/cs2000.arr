@@ -31,7 +31,7 @@ provide:
   drop-column,
   transform-column,
   create-table-with-col,
-  empty-table,
+  make-empty-table,
   string-to-number-default,
   string-to-number-unsafe,
   mean,
@@ -146,7 +146,7 @@ fun create-table-with-col(colname :: String, colvals :: List) -> Table:
     mt-table, colvals)
 end
 
-fun empty-table(t :: Table) -> Table: t.empty() end
+fun make-empty-table(t :: Table) -> Table: t.empty() end
 
 # ------ AGGREGATING --------------------
 fun mean(  t :: Table, col :: String) -> Number: S.mean(t.column(col)) end

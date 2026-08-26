@@ -215,20 +215,20 @@ names-list = [list: "Alice", "Bob", "Carol"]
 names-table = create-table-with-col("student-name", names-list)
 ```
 
-### empty-table
+### make-empty-table
 
-**empty-table**(t :: Table) -> Table\
+**make-empty-table**(t :: Table) -> Table\
 Returns a new table with the same columns as table _t_, but with all rows removed.
 
 ```pyret
-empty-students = empty-table(students)
+empty-students = make-empty-table(students)
 # Creates a table with same column structure but no data rows
 check:
   t1 = table: city, pop
     row: "Houston", 2400000
     row: "NYC", 8400000
   end
-  empty-table(t1) is table: city, pop end
+  make-empty-table(t1) is table: city, pop end
 end
 ```
 
