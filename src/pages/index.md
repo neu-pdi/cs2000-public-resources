@@ -177,7 +177,7 @@ export const calendarData = [
       },
       {
         label: 'Week 11',
-        topic: 'Python: scoping & iteration',
+        topic: 'Python: iteration & scoping',
         days: [
           { day: 15, homework: { label: 'HW 9 due', href: '/homework/9' } },
           { day: 16, skills: [4, 5, 6, 7, 8], lectures: [{ label: 'Class 26', href: '/days/26' }] },
