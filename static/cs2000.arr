@@ -21,6 +21,7 @@ import global as G
 provide: 
   get-row,
   get-column,
+  all-rows,
   table-length,
   filter-with,
   order-by,
@@ -94,6 +95,10 @@ end
 
 fun get-row(t :: Table, index :: Number) -> Row:
   t.row-n(index)
+end
+
+fun all-rows(t :: Table) -> List<Row>:
+  t.all-rows()
 end
 
 fun is-row-or-table(x): is-row(x) or is-table(x) end

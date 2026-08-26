@@ -246,6 +246,15 @@ first-student = get-row(students, 0)
 third-student = get-row(students, 2)
 ```
 
+### all-rows
+
+**all-rows**(t :: Table) -> List\<Row>\
+Returns a list of all rows in table _t_.
+
+```pyret
+student-rows = all-rows(students)
+```
+
 ### get-column
 
 **get-column**(x :: Row, colname :: String) -> A\
@@ -502,6 +511,9 @@ unique-grades = modes(students, "grade")
 # Get specific rows and values
 first-student = get-row(students, 0)
 alex-score = get-column(first-student, "score")
+
+# Get all rows as a list
+student-rows = all-rows(students)
 
 # Extract columns as lists
 all-scores = get-column(students, "score")
