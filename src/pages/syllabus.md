@@ -148,8 +148,8 @@ Your final grade will be calculated by your results in the **Skill Assessments**
 <td>12+</td>
 <td>1 or fewer</td>
 <td>0</td>
-<td>80% or better</td>
-<td>80% or better</td>
+<td>70% or better</td>
+<td>70% or better</td>
 </tr>
 <tr>
 <td><strong>B+</strong></td>
@@ -164,16 +164,16 @@ Your final grade will be calculated by your results in the **Skill Assessments**
 <td>9+</td>
 <td>4 or fewer</td>
 <td>0</td>
-<td>70% or better</td>
-<td>70% or better</td>
+<td>60% or better</td>
+<td>60% or better</td>
 </tr>
 <tr>
 <td><strong>B-</strong></td>
 <td>9+</td>
 <td>4 or fewer</td>
 <td>0</td>
-<td>70% or better</td>
-<td>70% or better</td>
+<td>50% or better</td>
+<td>50% or better</td>
 </tr>
 <tr>
 <td><strong>C+</strong></td>
@@ -188,16 +188,16 @@ Your final grade will be calculated by your results in the **Skill Assessments**
 <td>7+</td>
 <td>5 or fewer</td>
 <td>1 or fewer</td>
-<td>60% or better</td>
-<td>60% or better</td>
+<td>50% or better</td>
+<td>50% or better</td>
 </tr>
 <tr>
 <td><strong>C-</strong></td>
 <td>7+</td>
 <td>5 or fewer</td>
 <td>1 or fewer</td>
-<td>60% or better</td>
-<td>60% or better</td>
+<td>40% or better</td>
+<td>40% or better</td>
 </tr>
 <tr>
 <td><strong>D+</strong></td>
@@ -212,7 +212,7 @@ Your final grade will be calculated by your results in the **Skill Assessments**
 <td></td>
 <td></td>
 <td>5 or fewer</td>
-<td>50% or better</td>
+<td>40% or better</td>
 <td>any</td>
 </tr>
 <tr>
