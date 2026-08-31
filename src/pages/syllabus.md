@@ -57,7 +57,7 @@ All homework assignments / project checkpoints will be due Anywhere-on-earth on 
 
 Each homework assignment forms the material used for the [Assignment Chat](#assignment-chats) that occurs during the lab following the deadline of that assignment; the only grading of homework assignments is via that conversation. While you will see grades in the Pawtograder gradebook, you will not get any written feedback on assignments there, and the results of any autograders that occur are just to help you improve your programs; they do not count towards any part of your grade. 
 
-If you turn in work late, it can contribute to a later assignment chat (in the case of project), and may have improved your understanding, but the actual material used for the [Assignment Chat](#assignment-chats) will be whatever was turned in by the deadline. **If you did not turn anything in by the deadline, you wil receive no credit for the Assignment Chat.**
+If you turn in work late, it can contribute to a later assignment chat in the case of the project. While this late work on a homework assignment may have improved your understanding, the actual material used for the [Assignment Chat](#assignment-chats) will be whatever was turned in by the deadline. **If you did not turn anything in by the deadline, you wil receive no credit for the Assignment Chat.**
 
 ### Regrade Requests
 
