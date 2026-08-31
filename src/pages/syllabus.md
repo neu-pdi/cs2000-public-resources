@@ -22,7 +22,7 @@ Students can register for any CS 2001 lab section that is on their campus!
 
 There are 13 **skills**, which have repeatable assessments (taken on paper without notes over the course of the semester), and form the primary grading for the class.
 
-There are no formal quizzes or exams in this class, though the skill assessments are similar in form to quizzes, though allow you to work an your own pace, and repeat as you need.
+There are no formal quizzes or exams in this class, though the skill assessments are similar in form to quizzes; unlike traditional quizzes, skill assessments allow you to be assessed at your own pace, and repeat as you need.
 
 ### Communication
 
@@ -30,7 +30,7 @@ There are three primary sources of communication for this course:
 
 1. This website. This is where you will find policies, homework assignments, lab assignments, practice material, notes from each day of class.
 2. [Pawtograder](https://pawtograder.khoury.northeastern.edu/). This is where you will find links to start your homework assignments / projects, and where you will see all grades (including for the on-paper skill assessments). 
-3. Discord. Please join at [https://discord.gg/YxuCh5P5kn](https://discord.gg/YxuCh5P5kn). Note you must set your Display Name for the server to your full name before you will be given access to private course channels. This will be a place for any discussion that are not direct questions about homework. Discord will also be used for lab communication (each lab will have a private channel), for announcements about the course. For any questions that are _not_ specifically about homework. It is also the place where you will ask questions online about homework, and where you will do online office hours.
+3. Discord. Please join at [https://discord.gg/YxuCh5P5kn](https://discord.gg/YxuCh5P5kn). Note you must set your Display Name for the server to your full name before you will be given access to private course channels. This will be a place for any discussion that are not direct questions about homework. Discord will also be used for lab communication (each lab section will have a private channel), for announcements about the course. For any questions that are _not_ specifically about homework. It is also the place where you will ask questions online about homework, and where you will do online office hours.
 
 <!-- Note that **we will not use Canvas for anything.** -->
 
@@ -55,7 +55,7 @@ The only software you will need is a web browser (and a computer or tablet that 
 
 All homework assignments / project checkpoints will be due Anywhere-on-earth on Sunday (i.e., if it's still Sunday in some timezone, you are good).
 
-These form the material that is used for the [Assignment Chat](#assignment-chats) that occurs during the next lab; the only grading of homework assignments is via that conversation. While you will see grades in the Pawtograder gradebook, you will not get any written feedback on assignments there, and the results of any autograders that occur are just to help you improve your programs; they do not count towards any part of your grade. 
+Each homework assignment forms the material used for the [Assignment Chat](#assignment-chats) that occurs during the lab following the deadline of that assignment; the only grading of homework assignments is via that conversation. While you will see grades in the Pawtograder gradebook, you will not get any written feedback on assignments there, and the results of any autograders that occur are just to help you improve your programs; they do not count towards any part of your grade. 
 
 If you turn in work late, it can contribute to a later assignment chat (in the case of project), and may have improved your understanding, but the actual material used for the [Assignment Chat](#assignment-chats) will be whatever was turned in by the deadline. **If you did not turn anything in by the deadline, you wil receive no credit for the Assignment Chat.**
 
@@ -103,9 +103,9 @@ The course will teach the following 13 skills, grading of which will be performe
 
 Each week, Lab sessions will have two purposes. One of them will be working with a student partner (different each week) to complete the exercises described in the lab, assisted by TAs. The second purpose will be to present work that you have submitted the previous Sunday to a TA. The latter is called an Assignment Chat, and is described here:
 
-A pair of TAs will walk around the room, stopping a pair of students from working on the lab exercises, and pulling up the work they submitted for the previous weeks Homework assignment. Each TA will talk to one of the students, separately -- students will each be talking about their own assignment, one-on-one, with a TA. The TA will move to particular parts of the work, asking questions, asking the student to describe what they did, why they did it, other alternate approaches they could have taken, etc. This conversation will not be long -- approximately 5 minutes long -- but will be in enough detail to cover parts (but not all, of course) of the assignment in depth. Afterwards, both the TA and the student will fill out an assessment of the conversation -- the student's will be a self-assessment, the TAs will be an assessment for record, where the assessment covers both the students demonstrated familiarity with their own material, with the course material, their ability to engage with the questions posed to them, etc. 
+A pair of TAs will walk around the room, stopping a pair of students from working on the lab exercises, and pulling up the work they submitted for the previous weeks Homework assignment. Each TA will talk to one of the students, separately -- students will each be talking about their own assignment, one-on-one, with a TA. The TA will move to particular parts of the work, asking questions, asking the student to describe what they did, why they did it, other alternate approaches they could have taken, etc. This conversation will not be long -- approximately 5 minutes long -- but will be in enough detail to cover parts (but not all, of course) of the assignment in depth. Afterwards, both the TA and the student will fill out an assessment of the conversation -- the student's will be a self-assessment, the TA's will be an assessment for record, where the assessment covers both the students demonstrated familiarity with their own material, with the course material, their ability to engage with the questions posed to them, etc. 
 
-The first two assignment chats will be practice, so will be graded on completion only (i.e., you will get full credit if you are there are participate) -- the rest will be graded based the TA assessment. Two total will be dropped (to account for missing labs due to being sick, using wellness days, etc), and the rest weighted evenly.
+The first two assignment chats will be practice, so will be graded on completion only (i.e., you will get full credit if you are there are participate) -- the rest will be graded based on the TA assessment. Two total will be dropped (to account for missing labs due to being sick, using wellness days, etc), and the rest weighted evenly.
 
 ### Pair Programming Sessions
 
