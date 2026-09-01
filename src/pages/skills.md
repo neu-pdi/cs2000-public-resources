@@ -885,4 +885,4 @@ attempt any of those available (likely, due to time, a couple of them). The asse
 
 ## End of Semester Re-attempts
 
-While most skill assessments must take place during the schedule below, each student may make _two_ re-attempts during the last ~~three~~ week of the semester and on the day of the final exam. (Note: there is no final exam, we will only use this time for the re-attempts.) They must contact the course coordinator (Kayla McLaughlin, k.mclaughlin@northeastern.edu) in order to do schedule these. These late semester retakes can be done regardless of how many attempts of a given skill the student has made previously.
+While most skill assessments must take place during the schedule below, each student may re-attempt 2 skills; such re-attempts can be scheduled in the last two weeks of classes or on the day of the final exam. (Note: there is no final exam, we will only use this time for the re-attempts.) They must contact the course coordinator (Kayla McLaughlin, k.mclaughlin@northeastern.edu) in order to do schedule these. These late semester retakes can be done regardless of how many attempts of a given skill the student has made previously.

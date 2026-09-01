@@ -30,9 +30,7 @@ There are three primary sources of communication for this course:
 
 1. This website. This is where you will find policies, homework assignments, lab assignments, practice material, notes from each day of class.
 2. [Pawtograder](https://pawtograder.khoury.northeastern.edu/). This is where you will find links to start your homework assignments / projects, and where you will see all grades (including for the on-paper skill assessments). 
-3. Discord. Please join at [https://discord.gg/YxuCh5P5kn](https://discord.gg/YxuCh5P5kn). Note you must set your Display Name for the server to your full name before you will be given access to private course channels. This will be a place for any discussion that are not direct questions about homework. Discord will also be used for lab communication (each lab section will have a private channel), for announcements about the course. For any questions that are _not_ specifically about homework. It is also the place where you will ask questions online about homework, and where you will do online office hours.
-
-<!-- Note that **we will not use Canvas for anything.** -->
+3. Discord. Please join at [https://discord.gg/YxuCh5P5kn](https://discord.gg/YxuCh5P5kn). Note you must set your Display Name for the server to your full name before you will be given access to private course channels. This will be a place for any discussion that are not direct questions about homework. Discord will also be used for lab communication, for announcements about the course. For any questions that are _not_ specifically about homework. It is also the place where you will ask questions online about homework, and where you will do online office hours.
 
 ### Course Tools
 
@@ -83,7 +81,7 @@ Attendance is strongly encouraged, but not required in CS2000. Please do not com
 
 ### Skills
 
-The course will teach the following 13 skills, grading of which will be performed by repeatable (with highest grade taken), on-paper, no-note, assessment that can be scored as "Doesn't meet expectations", "Approaching expectations", or "Meets expectations". Each student will have at least 4 opportunities to master each skill. In the last three weeks of the semester, they may re-attempt 2 skills. See the [Skills](/skills) page for much more detail.
+The course will teach the following 13 skills, grading of which will be performed by repeatable (with highest grade taken), on-paper, no-note, assessment that can be scored as "Doesn't meet expectations", "Approaching expectations", or "Meets expectations". Each student will have at least 4 opportunities to master each skill. Beyond the regular 4 opportunities which occur during the semester, as the topics are covered, student may re-attempt 2 skills; such re-attempts can be scheduled in the last two weeks of classes or on the day of the final exam. See the [Skills](/skills) page for much more detail.
 
 00. Design function types, docs, tests (Pyret)
 01. Implement basic functions (Pyret)
