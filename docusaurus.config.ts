@@ -5,149 +5,133 @@ import remarkMath from 'remark-math';
 import { getChakraThemeSyncPlugin } from './src/plugins/chakra-theme-sync';
 import { createVariableSubstitutionPlugin } from './src/plugins/variable-substitution';
 import { oneDarkTheme, oneLightTheme } from './src/theme/one-dark-themes';
+import { calendarData, type CalendarDay } from './src/data/calendar-data';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 // Configuration variables
 const dcicDomain = 'https://dcic.pdi.run';
 
+type CalendarItem = keyof Pick<CalendarDay, 'lectures' | 'lab' | 'homework'>;
+
 /**
- * Calculates the current assignment number based on today's date. Assignments include practice.
- * After week 15, the assignment number resets to 1
+ * Gets the latest document ID for the given calendar item
+ * 
+ * @param item The item to get the latest document ID for (lectures, lab, homework)
+ * @returns The latest document ID
+ * 
+ * @author Logan Gill
+ */
+function getDocumentId(item: CalendarItem): string {
+  const href = getLatestCalendarHref(item);
+  const fallback = item === 'lectures' ? 'l0-summary' : '1';
+  if (isCalendarExpired()) {
+    return fallback;
+  }
+  return getDocumentIdFromHref(href, fallback);
+}
+
+/**
+ * Checks whether the calendar is more than one month past its final date
  *
- * @returns The current assignment number, with a minimum of 1 and a max of 12
- * 
+ * @returns Whether the calendar has expired
+ *
  * @author Logan Gill
  */
-function currentAssignmentNumber(): string {
-  // Uses Thursday as a start date, since assignments are due Thursdays
-  const currWeek = currentWeekNumber(new Date(2025, 8, 4, 0, 0, 0));
+function isCalendarExpired(): boolean {
+  const calendarDays = calendarData.flatMap((month) =>
+    month.weeks.flatMap((week) =>
+      week.days.map((calendarDay) =>
+        new Date(`${month.month} ${calendarDay.day}, ${month.year}`)
+      )
+    )
+  );
 
-  // If the current week is greater than 15, reset to 1 since class is over
-  if (currWeek > 15) {
-    return '1';
+  if (calendarDays.length === 0) {
+    return false;
   }
-  // Return the current week number, up to 12, since there are only 12 assignments
-  return (currWeek > 12 ? 12 : currWeek).toString();
+
+  const lastCalendarDate = new Date(Math.max(...calendarDays.map((date) => date.getTime())));
+  lastCalendarDate.setMonth(lastCalendarDate.getMonth() + 1);
+
+  return new Date() >= lastCalendarDate;
 }
 
 /**
- * Calculates the current lab number based on today's date. After week 15, the lab number resets to 1
+ * Gets the document ID from a given href
  * 
- * @returns The current lab number, with a minimum of 1 and a maximum of 10
+ * @param href The href to extract the document ID from
+ * @param fallback The fallback value to use if the href is undefined or invalid
+ * @returns The document ID
  * 
  * @author Logan Gill
  */
-function currentLabNumber(): string {
-  // Uses Friday as a start date, since the last lab of each week is hosted on Fridays
-  const currWeek = currentWeekNumber(new Date(2025, 8, 5, 0, 0, 0));
-
-  // If the current week is greater than 15, reset to 1 since class is over
-  if (currWeek > 15) {
-    return '1';
-  }
-
-  // If the current week is less than or equal to 6, return the current week as is
-  if (currWeek <= 6) {
-    return currWeek.toString();
-  }
-  
-  // If the current week is between 7 and 12, offset to account for 1st skill bundle
-  // Cap at 10 since there are only 10 labs
-  if (currWeek <= 12) {
-    const labNum = currWeek - 1;
-    return (labNum > 10 ? 10 : labNum).toString();
-  }
-  
-  // If the current week is between 13 and 15, offset to account for both skill bundles, max at 10
-  const labNum = currWeek - 2;
-  return (labNum > 10 ? 10 : labNum).toString();
+function getDocumentIdFromHref(href: string | undefined, fallback: string): string {
+  return href?.split('/').pop() ?? fallback;
 }
 
 /**
- * Calculates the current lecture day number based on today's date. After week 15, shows the summery page
+ * Gets the latest href for the given calendar item
  * 
- * @returns Gets the current lecture day number to show
+ * @param item The item to get the latest href for (lectures, lab, homework)
+ * @returns The latest href, or undefined if not found
  * 
  * @author Logan Gill
  */
-function currentDayNumber(): string {
-  // Uses Saturday as a start date, so that Monday is the start of the new week (since ``currentWeekNumber`` rounds up)
-  const currWeek = currentWeekNumber(new Date(2025, 7, 31, 0, 0, 0));
+function getLatestCalendarHref(item: CalendarItem): string | undefined {
+  const calendarDay = getLatestCalendarDay(item);
 
-  // If the current week is greater than 15, show the summary page
-  if (currWeek > 15) {
-    return 'l0-summary';
+  if (!calendarDay) {
+    return undefined;
   }
 
-  var currDay = 3 * currWeek;
-  const currDayOfWeek = new Date().getDay();
-  // Offset based on the current day of the week
-  if (currDayOfWeek >= 4 || currDayOfWeek === 0) {
-    // Offset by 1 for days after Thursday and when it is Sunday
-    currDay -= 1;
-  } else if (currDayOfWeek >= 3) {
-    // Offset by 2 for Wednesday
-    currDay -= 2;
-  } else {
-    // Offset by 3 for days before Wednesday
-    currDay -= 3;
+  if (item === 'lectures') {
+    return calendarDay.lectures?.find(({ href }) => href.startsWith('/days/'))?.href;
   }
 
-  // Offset to account for skill day 1 (on a Thursday)
-  if (currWeek > 5 || (currWeek === 5 && currDay >= 4)) {
-    currDay -= 1;
-  }
-
-  // Offset to account for holiday (on a Monday)
-  if (currWeek >= 7) {
-    currDay -= 1;
-  }
-
-  // Offset to account for skill day 2 (on a Thursday)
-  if (currWeek > 9 || (currWeek === 9 && currDay >= 4)) {
-    currDay -= 1;
-  }
-
-  // Offset to account for holiday
-  // Note: Unsure which day (Mon, Wed, Thu) is skipped since holiday is Tuesday
-  if (currWeek >= 11) {
-    currDay -= 1;
-  }
-
-  // Offset to account for holiday (Wednesday + Thursday)
-  if (currWeek > 13 || (currWeek === 13 && currDay >= 4)) {
-    currDay -= 2;
-  } else if (currWeek === 13 && currDay >= 3) {
-    // Offset to account for holiday (Wednesday only)
-    currDay -= 1;
-  }
-
-  // Cap at 31 since that's the highest day number available
-  return Math.max(Math.min(currDay, 31), 1).toString();
+  return item === 'lab' ? calendarDay.lab?.href : calendarDay.homework?.href;
 }
 
 /**
- * Calculates the current week number based on a start date, with a minimum of 1
+ * Gets the latest calendar day for the given calendar item
  * 
- * @param startDate The date to use as a starting point (week 0)
- * 
- * @returns The current week number
+ * @param item The item to get the latest calendar day for (lectures, lab, homework)
+ * @returns The latest calendar day, or undefined if not found
  * 
  * @author Logan Gill
  */
-function currentWeekNumber(startDate: Date): number {
+function getLatestCalendarDay(item: CalendarItem): CalendarDay | undefined {
   // Today's date
   const today = new Date();
-  // Reset time to midnight since we do not care about hours
-  today.setHours(0, 0, 0, 0);
-  // Get the difference between the two times (in milliseconds)
-  const msDiff = today.getTime() - startDate.getTime();
-  // Convert day days
-  const dayDiff = msDiff / (1000 * 60 * 60 * 24);
-  // Calculate the current week number
-  const currWeek = Math.max(Math.ceil(dayDiff / 7), 1);
-  return currWeek;
+  // Set time to max since we do not care for it
+  today.setHours(23, 59, 59, 999);
+
+  const calendarDays = calendarData
+    // Formats the calendar data into a flat array of {calendarDay, date} objects
+    .flatMap((month) =>
+      month.weeks.flatMap((week) =>
+        week.days.map((calendarDay) => ({
+          calendarDay,
+          date: new Date(`${month.month} ${calendarDay.day}, ${month.year}`),
+        }))
+      )
+    );
+
+  return calendarDays
+    // Reverses since we want the last valid item
+    .reverse()
+    .find(({ calendarDay, date }) => {
+      if (date > today) {
+        return false;
+      }
+
+      // We only show lectures that have days, since we do not want to show skill days or summary days
+      if (item === 'lectures') {
+        return calendarDay.lectures?.some(({ href }) => href.startsWith('/days/')) ?? false;
+      }
+
+      return item === 'lab' ? calendarDay.lab !== undefined : calendarDay.homework !== undefined;
+    })?.calendarDay;
 }
 
 /**
@@ -161,7 +145,7 @@ function notesDropdownItems() {
   var startingItems = [
     {
       type: 'doc',
-      docId: currentDayNumber(),
+      docId: getDocumentId('lectures'),
       label: 'Days',
     },
     {
@@ -325,21 +309,21 @@ const config: Config = {
         },
         {
           type: 'doc',
-          docId: currentAssignmentNumber(),
+          docId: getDocumentId('homework'),
           position: 'left',
           label: 'Homework',
           docsPluginId: 'homework',
         },
         {
           type: 'doc',
-          docId: currentLabNumber(),
+          docId: getDocumentId('lab'),
           position: 'left',
           label: 'Labs',
           docsPluginId: 'lab',
         },
         {
           type: 'doc',
-          docId: currentAssignmentNumber(),
+          docId: getDocumentId('homework'),
           position: 'left',
           label: 'Extra Practice',
           docsPluginId: 'practice',
