@@ -243,17 +243,18 @@ export default function SkillCalendar({ data }: { data: CalendarMonth[] }) {
                       if (day === null) {
                         return <td key={dayIdx}></td>;
                       }
+                      const displayDate = new Date(`${day.date}T00:00:00`);
                       const skills = day.skills || [];
                       return (
                         <td
                           key={dayIdx}
                           className={day.isHoliday ? 'holiday' : ''}
-                          data-year={month.year}
-                          data-month={month.month}
-                          data-day={day.day}
+                          data-year={displayDate.getFullYear()}
+                          data-month={displayDate.toLocaleString('en-US', { month: 'long' })}
+                          data-day={displayDate.getDate()}
                         >
                           <div className="calendar-day">
-                            <span className="day-number">{day.day}</span>
+                            <span className="day-number">{displayDate.getDate()}</span>
                             {day.isHoliday && (
                               <span className="day-holiday-name">
                                 {day.holidayName || 'Holiday'}

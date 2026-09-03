@@ -41,8 +41,9 @@ function getDocumentId(item: CalendarItem): string {
 function isCalendarExpired(): boolean {
   const calendarDays = calendarData.flatMap((month) =>
     month.weeks.flatMap((week) =>
-      week.days.map((calendarDay) =>
-        new Date(`${month.month} ${calendarDay.day}, ${month.year}`)
+      week.days.map(
+        (calendarDay) =>
+          new Date(`${calendarDay.date}T00:00:00`)
       )
     )
   );
@@ -112,7 +113,7 @@ function getLatestCalendarDay(item: CalendarItem): CalendarDay | undefined {
       month.weeks.flatMap((week) =>
         week.days.map((calendarDay) => ({
           calendarDay,
-          date: new Date(`${month.month} ${calendarDay.day}, ${month.year}`),
+            date: new Date(`${calendarDay.date}T00:00:00`),
         }))
       )
     );
