@@ -14,7 +14,7 @@ Each skill will be assessed as "Doesn't meet expectations", "Approaching
 expectations", and "Meets expectations", and students may attempt any skill
 assessment up to two times with the best result being used for their grade.
 
-0. <a id="(1)" href="#(1)">Design Function Types, Docs, Tests (Pyret)</a>
+0. <a id="0" href="#0">Design Function Types, Docs, Tests (Pyret)</a>
    |  |  |
    | -- | -- |
    | **Meets Expectations** | • Correct type annotation<br/>• Docstring that describes behavior, doesn't repeat type annotation.<br/>• A few (2+) correct, meaningfully different tests<br/>• minor typos are okay |
@@ -56,7 +56,7 @@ end
  <p>Design types, docstring, and tests for a function `check-year`, that takes a year as input, and returns "Past", "Current", or "Future" depending on the year. NOTE: you should not implement the function!</p>
 </details>
 
-1. <a id="(1)" href="#(1)">Implement Basic Functions (Pyret)</a>
+1. <a id="1" href="#1">Implement Basic Functions (Pyret)</a>
    |  |  |
    | -- | -- |
    | **Meets Expectations** | • Well-formatted, correct implementation:<br/>    • may include numbers, strings, `if` (NOT images)<br/>    • minor typos errors are okay |
@@ -121,7 +121,7 @@ end
 
 </details>
 
-02. <a id="(2)" href="#(2)">Construct / Transform Tables (Pyret)</a>
+02. <a id="2" href="#2">Construct / Transform Tables (Pyret)</a>
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Function designed has signature, docstring, and at least one test<br/>• Function uses correct table function (skill covers `filter-with`, `build-column`, and `transform-column`)<br/>• Row helper does what is expected, whether defined with `lam` or named |
@@ -180,7 +180,7 @@ and false otherwise.</p>
 <p>Design a function `find-drought-risks` that takes a table with "region", "rainfall-2023" and "rainfall-2024" columns
 and returns a new table containing only those regions where rainfall amounts decreased from 2023 to 2024.</p>
 </details>
-03. <a id="(3)" href="#(3)">Iteration: Lists (Pyret)</a>
+03. <a id="3" href="#3">Iteration: Lists (Pyret)</a>
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Uses `for each` properly, drawing elements from the list<br/>• Mutates a single variable within the loop to correctly accumulate the result<br/>• Returns the final result after the loop |
@@ -236,7 +236,7 @@ end
    <summary>Practice Problem 2</summary>
    <p>Design a function <code>all-increasing</code> that takes a list of numbers, and returns <code>true</code> if each number is greater than the preceding number, <code>false</code> otherwise. It should return <code>true</code> for the empty list. You must use <code>for each</code>, rather than a built in list function or recursion.</p>
 </details> 
-04. <a id="(4)" href="#(4)">Structured & Conditional Data (Pyret)</a>
+04. <a id="4" href="#4">Structured & Conditional Data (Pyret)</a>
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Uses `data` with variants as needed, fields with appropriate type annotations<br/>• Function uses either field projection or `cases` as needed<br/>• Function has signature, doc string, and tests |
@@ -299,7 +299,7 @@ end
  <summary>Practice Problem 2</summary>
     <p>Design a data definition for Book that can be either rating with title, stars, and num-reviews, or sales-ranking with title and position. Then, write a function <code>is-popular</code> that returns <code>true</code> if the book is a rating with num-reviews of at least 500, or a sales-ranking with position less than 500.</p>
 </details>
-05. <a id="(5)" href="#(5)">Recursion: Lists (Pyret)</a>
+05. <a id="5" href="#5">Recursion: Lists (Pyret)</a>
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Function has appropriate type signature, doc string, and tests<br/>• Function uses `cases` to handle `empty` case and `link` case<br/>• In `link` case, calls function recursively on rest of list appropriately |
@@ -352,7 +352,7 @@ end
     <p>Using recursion, design a function <code>build-string</code> that takes a list of strings and returns a single large string containing the original strings concatenated together in order.</p>
 </details>
 
-06. <a id="(6)" href="#(6)">Recursion: Trees (Pyret)</a>
+06. <a id="6" href="#6">Recursion: Trees (Pyret)</a>
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Function has appropriate type signature, doc string, and tests<br/>• Function uses `cases` to handle base case and recursive case<br/>• In recursive case, calls function recursively on subtrees appropriately |
@@ -400,7 +400,7 @@ end
 
 </details>
 
-7. <a id="(7)" href="#(7)">Variable Scope (Python)</a>
+7. <a id="7" href="#7">Variable Scope (Python)</a>
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Output of given code, that uses variables, defined locally, in functions, globally, etc, is correct<br/>• Explanation of behavior, including global keyword if needed, is correct |
@@ -486,6 +486,7 @@ print("After f1: x = ", x, ", y = ", y)
 <details>
    <summary>Practice Problem 3</summary>
 <p>What will be the outcome of the following code? Explain why.</p>
+
 ```python
 value = 10
 
@@ -500,7 +501,7 @@ print("Global value:", value)
 ```
 </details>
 
-8. <a id="(8)" href="#(8)">Basic functions (Python)</a>
+8. <a id="8" href="#8">Basic functions (Python)</a>
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Correct type annotation<br/>• Docstring that describes behavior, doesn't repeat type annotation<br/>• A few (2+) correct, meaningfully different tests<br/>• Correct implementation |
@@ -576,7 +577,7 @@ assert(calculate_year(20)) == "freshman"
 <p>Note: test `assert`s may be written without wrapping test functions.</p>
 </details>
 
-9. <a id="(9)" href="#(9)">Iteration: Lists (Python)</a>
+9. <a id="9" href="#9">Iteration: Lists (Python)</a>
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Uses `for ... in ...` properly, drawing elements from the list<br/>• Mutates a single variable within the loop to correctly accumulate the result<br/>• Returns the final result after the loop |
@@ -631,7 +632,7 @@ assert list_of_squares([1, 2]) == [1, 4]
    <p>Note: test <code>assert</code>s may be written without wrapping test functions, for space.</p>
 </details> 
 
-10. <a id="(10)" href="#(10)">Aliasing & Mutation (Python)</a>
+10. <a id="10" href="#10">Aliasing & Mutation (Python)</a>
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Output of given code that uses mutation of values like lists, aliasing, etc, is correct<br/>• Explanation of behavior is correct |
@@ -750,7 +751,7 @@ print("Same object?", my_book is updated_book)
 
 </details>
     
-11. <a id="(11)" href="#(11)">Identifying Privacy Issues in Problem Formulation</a>
+11. <a id="11" href="#11">Identifying Privacy Issues in Problem Formulation</a>
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Privacy analysis chart is complete and each entry is correct<br/> • Identify named privacy issue in a new context<br/> • Proposed mitigation strategy is appropriate given context |
@@ -799,7 +800,7 @@ in case people try to contest the ticket. All recorded data is also available to
 <p>Please **list TWO unintended recipients**, and also **how access to the collected and processed data might be designed to minimize transmission to unexpected recipients?**</p>
 </details>
 
-12. <a id="(12)" href="#(12)">Identifying Stakeholders in Problem Formulation</a>
+12. <a id="12" href="#12">Identifying Stakeholders in Problem Formulation</a>
 
 |  |  |
 | -- | -- |
