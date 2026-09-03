@@ -1,16 +1,16 @@
-export type CalendarMonth = {
+export interface CalendarMonth {
   month: string;
   year: number;
   weeks: CalendarWeek[];
 };
 
-export type CalendarWeek = {
+export interface CalendarWeek {
   label: string;
   topic: string;
   days: CalendarDay[];
 };
 
-export type CalendarDay = {
+export interface CalendarDay {
   day: number;
   isHoliday?: boolean;
   holidayName?: string;
@@ -20,18 +20,18 @@ export type CalendarDay = {
   skills?: Skill[];
 };
 
-export type Lecture = {
+export interface Lecture {
   label: string;
   href: string;
 };
 
-export type Lab = {
+export interface Lab {
   label: string;
   href: string;
   note?: string;
 };
 
-export type Homework = {
+export interface Homework {
   label: string;
   href: string;
 };

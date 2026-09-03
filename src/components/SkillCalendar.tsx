@@ -1,40 +1,13 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 import CalendarHighlighter from './CalendarHighlighter';
+import type { CalendarMonth, Lecture } from '../data/calendar-data';
 
-export interface CalLink {
-  label: string;
-  href: string;
-}
-
-export interface DayData {
-  day: number;
-  skills?: number[];
-  isHoliday?: boolean;
-  holidayName?: string;
-  lectures?: (CalLink | string)[];
-  lab?: { label: string; href: string; note?: string };
-  homework?: CalLink;
-}
-
-export interface WeekData {
-  label?: string;
-  topic?: string;
-  days: (DayData | null)[];
-}
-
-export interface MonthData {
-  month: string;
-  year: number;
-  weeks: WeekData[];
-}
-
-
-function isCalLink(item: CalLink | string): item is CalLink {
+function isCalLink(item: Lecture | string): item is Lecture {
   return typeof item === 'object';
 }
 
-export default function SkillCalendar({ data }: { data: MonthData[] }) {
+export default function SkillCalendar({ data }: { data: CalendarMonth[] }) {
   return (
     <>
       <div
