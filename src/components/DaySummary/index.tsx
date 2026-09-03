@@ -15,6 +15,7 @@ import {
   Alert,
 } from '@chakra-ui/react';
 import { decode } from 'html-entities';
+import DateView from '../DateView/DateView';
 
 export default function DaySummary({ version }: { version: string }) {
   const pluginData = usePluginData(
@@ -51,13 +52,16 @@ export default function DaySummary({ version }: { version: string }) {
         return (
           <Card.Root key={doc.id} m={4} size="sm">
             <Card.Header>
-              <HStack justifyContent="space-between">
-                <Link to={doc.path}>
-                  <Heading as="h3" m={0}>
-                    {docContent.frontMatter?.day_number}.{' '}
-                    {docContent.metadata?.title}
-                  </Heading>
-                </Link>
+              <HStack justifyContent="space-between" alignItems="baseline">
+                <HStack alignItems="baseline" separator={<Text>-</Text>}>
+                  <Link to={doc.path}>
+                    <Heading as="h3" m={0}>
+                      {docContent.frontMatter?.day_number}.{' '}
+                      {docContent.metadata?.title}
+                    </Heading>
+                  </Link>
+                  <DateView id={doc.id} item="lectures" />
+                </HStack>
                 <Text fontSize="sm" color="text.muted">
                   Est {totalMinutes} minutes
                 </Text>
