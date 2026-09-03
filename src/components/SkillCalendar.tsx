@@ -146,6 +146,13 @@ export default function SkillCalendar({ data }: { data: MonthData[] }) {
   font-weight: bold;
   color: #000;
   text-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.skill-stripe:hover {
+  transform: scale(1.05);
+  color: #000;
+  box-shadow: 0 0 5px light-dark(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.5));
 }
 .month-header {
   font-weight: bold;
@@ -316,9 +323,9 @@ export default function SkillCalendar({ data }: { data: MonthData[] }) {
                             {skills.length > 0 && (
                               <div className="skill-stripes">
                                 {skills.map((skill) => (
-                                  <div key={skill} className={`skill-stripe skill-${skill}`}>
+                                  <Link key={skill} to={`/skills/#${skill}`} className={`skill-stripe skill-${skill}`}>
                                     {skill}
-                                  </div>
+                                  </Link>
                                 ))}
                               </div>
                             )}
