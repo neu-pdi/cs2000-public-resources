@@ -18,7 +18,7 @@ Today we learn Python data visualization, which is more complex than Pyret but o
 # Alternative: Load from CSV
 # include csv
 # orders = load-table: dish, quantity, total_price
-#   source: csv-table-url("https://pdi.run/f25-restaurant-orders.csv", default-options)
+#   source: csv-table-url("https://raw.githubusercontent.com/neu-pdi/cs2000-public-resources/refs/heads/main/static/support/restaurant_orders.csv", default-options)
 # end
 
 # Create table manually
