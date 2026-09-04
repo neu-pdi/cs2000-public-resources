@@ -272,8 +272,9 @@ We believe that diversity and inclusiveness are essential to excellence in acade
 
 ### Name and Pronoun Usage
 
-As this course includes discussion and conversation, it is vitally important for us to create an educational environment of inclusion and mutual respect. This includes the ability for all students to have their chosen gender
-pronoun(s) and chosen name affirmed. If the class roster does not align with your name and/or pronouns, please inform us of the necessary changes.
+As this course includes discussion and conversation, it is vitally important for us to create an educational environment of inclusion and mutual respect. This includes the ability for all students to have their gender
+pronoun(s) and preferred name used and correctly pronounced. If the class roster does not align with your name and/or pronouns or if we mispronounce
+your name, please inform us.
 
 ### Accommodations
 
