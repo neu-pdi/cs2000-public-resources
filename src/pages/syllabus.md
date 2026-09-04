@@ -12,17 +12,23 @@ Introduces computer science and data science to students with no prior programmi
 
 There will be three in-person **classes** and one **lab** per week. All content is directed around teaching a set of 13 **skills**, assessment of which will form the primary assessment of the class, and which are described in detail at [Skills](/skills).
 
+There are [13 **skills**](/syllabus#skills), which have repeatable assessments (taken on paper without notes over the course of the semester), and form the primary grading for the class. 
+
+There are no formal quizzes or exams in this class, though the skill assessments are similar in form to quizzes; unlike traditional quizzes, skill assessments allow you to be assessed at your own pace, and repeat as you need.
+
+#### Classes
+
 Each class period (of CS2000) has reading you are **expected to do _before_ class**. During the class we will briefly review the new material that was covered in the reading (but, in much less depth -- it is not a substitute for doing the reading), and then the majority of class will be dedicated to working with classmates, assisted by your instructor, on exercises related to the new material.
+
+#### Homeworks
 
 There will also be **weekly homework** assignments. The purpose of these assignments, which are half programming practice and half open ended projects, is to give you hands-on experience with the course material. They will both teach you the skills used for the **skill assessments**, and are the subject of [Assignment Chats](/syllabus#assignment-chats) during lab, which are the only assessment that is done on them. 
 
+#### Labs
+
 The lab period (CS2001) will include a set of exercises to be done with a partner in your lab section, guided by those running the lab (TAs or instructors). In addition to working through the lab exercises, you will also do [Assignment Chats](/syllabus#assignment-chats) each week, where you individually will present work done at home to TAs. Grading of Assignment Chats forms part of your final grade, and lab attendance is required to do them. 
 
-Students can register for any CS 2001 lab section that is on their campus!
-
-There are 13 **skills**, which have repeatable assessments (taken on paper without notes over the course of the semester), and form the primary grading for the class.
-
-There are no formal quizzes or exams in this class, though the skill assessments are similar in form to quizzes; unlike traditional quizzes, skill assessments allow you to be assessed at your own pace, and repeat as you need.
+Students can register for any CS 2001 lab section that is on their campus with available seats! Students must stick to the lab they registered for during the registeration, and cannot go to other labs that they are not schduled for should they miss one.
 
 ### Communication
 
