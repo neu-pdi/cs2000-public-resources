@@ -28,7 +28,7 @@ There will also be **weekly homework** assignments. The purpose of these assignm
 
 The lab period (CS2001) will include a set of exercises to be done with a partner in your lab section, guided by those running the lab (TAs or instructors). In addition to working through the lab exercises, you will also do [Assignment Chats](/syllabus#assignment-chats) each week, where you individually will present work done at home to TAs. Grading of Assignment Chats forms part of your final grade, and lab attendance is required to do them. 
 
-Students can register for any CS 2001 lab section that is on their campus with available seats! Students must stick to the lab they registered for during the registeration, and cannot go to other labs that they are not schduled for should they miss one.
+Students can register for any CS 2001 lab section that is on their campus with available seats! Students must stick to the lab they registered for during the registeration, and cannot go to other labs that they are not scheduled for should they miss one.
 
 ### Communication
 
