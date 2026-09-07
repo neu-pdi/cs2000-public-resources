@@ -38,6 +38,8 @@ There are three primary sources of communication for this course:
 2. [Pawtograder](https://pawtograder.khoury.northeastern.edu/). This is where you will find links to start your homework assignments / projects, and where you will see all grades (including for the on-paper skill assessments). 
 3. Discord. Please join at [https://discord.gg/GaXQSPDyYz](https://discord.gg/GaXQSPDyYz). Note you must set your Display Name for the server to your full name before you will be given access to private course channels. This will be a place for any discussions that are not direct questions about homework. Discord will also be used for lab communication and for announcements about the course. It is also the place where you will ask questions online about homework, and where you will do online office hours.
 
+Individual instructors might use other communication channels (such as Canvas announcements and email), which students are expected to monitor and respond to as needed.
+
 ### Course Tools
 
 The only software you will need is a web browser (and a computer or tablet that can run a relatively up-to-date one). All programming will be done via the online programming environment VSCode (note that VSCode exists also as a program installed on your computer, but we won't use that), which we will refer to as vscode.dev (as this is the website for it).
@@ -65,7 +67,11 @@ If you turn in work late, it can contribute to a later assignment chat in the ca
 
 ### Regrade Requests
 
-If you believe a mistake was made in the grading of a Skill Assessment, an Assignment Chat, or a Pairing Session, you have 7 days from when the grade was released to bring this to the attention of a TA or your instructor. You can also ask, in person, for explanations of why something was graded a certain way without requesting a formal regrade. Abuse of of the regrade request mechanism may result in less of an ability to request regrades. 
+If you believe a mistake was made in the grading of a Skill Assessment, or if you'd like to understand better what you got wrong,
+you should request an in-person meeting to go over it.
+
+If you think an Assignment Chat or Pairing Session was misgraded, you have 7 days from when the grade was released to make a regrade request on Pawtograder.
+Abuse of the regrade request mechanism may result in less of an ability to request regrades.
 
 ### Office Hours
 
