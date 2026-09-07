@@ -67,7 +67,7 @@ If you turn in work late, it can contribute to a later assignment chat in the ca
 
 ### Regrade Requests
 
-If you believe a mistake was made in the grading of a Skill Assessment, an Assignment Chat, or a Pairing Session, you have 7 days from when the grade was released to make a regrade request in Pawtograder. You can also ask, in person, for explanations of why something was graded a certain way without requesting a formal regrade. Abuse of of the regrade request mechanism may result in less of an ability to request regrades. 
+If you believe a mistake was made in the grading of a Skill Assessment, an Assignment Chat, or a Pairing Session, you have 7 days from when the grade was released to make a regrade request in Pawtograder. You can also ask, in person, for explanations of why something was graded a certain way without requesting a formal regrade. Abuse of the regrade request mechanism may result in less of an ability to request regrades.
 
 ### Office Hours
 
