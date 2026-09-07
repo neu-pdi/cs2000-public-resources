@@ -36,7 +36,7 @@ There are three primary sources of communication for this course:
 
 1. This website. This is where you will find policies, homework assignments, lab assignments, practice material, notes from each day of class.
 2. [Pawtograder](https://pawtograder.khoury.northeastern.edu/). This is where you will find links to start your homework assignments / projects, and where you will see all grades (including for the on-paper skill assessments). 
-3. Discord. Please join at [https://discord.gg/YxuCh5P5kn](https://discord.gg/YxuCh5P5kn). Note you must set your Display Name for the server to your full name before you will be given access to private course channels. This will be a place for any discussion that are not direct questions about homework. Discord will also be used for lab communication, for announcements about the course. For any questions that are _not_ specifically about homework. It is also the place where you will ask questions online about homework, and where you will do online office hours.
+3. Discord. Please join at [https://discord.gg/GaXQSPDyYz](https://discord.gg/GaXQSPDyYz). Note you must set your Display Name for the server to your full name before you will be given access to private course channels. This will be a place for any discussion that are not direct questions about homework. Discord will also be used for lab communication, for announcements about the course. For any questions that are _not_ specifically about homework. It is also the place where you will ask questions online about homework, and where you will do online office hours.
 
 ### Course Tools
 
@@ -69,7 +69,7 @@ If you believe a mistake was made in the grading of a Skill Assessment, an Assig
 
 ### Office Hours
 
-This course has extensive availability for questions and discussion via [Discord](https://discord.gg/YxuCh5P5kn), and more limited dedicated online office hours via one-on-one video chat via the same platform. 
+This course has extensive availability for questions and discussion via [Discord](https://discord.gg/GaXQSPDyYz), and more limited dedicated online office hours via one-on-one video chat via the same platform. 
 
 **Rules and Procedures**
 Do NOT send any screenshots or snippets of your homework programming exercises in any channels (you are welcome to discuss your projects!). Screenshots of your environment setup are ok as long as there isn't any homework programming exercises visible, and of course lecture or practice code is okay.
