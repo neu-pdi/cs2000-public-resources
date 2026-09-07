@@ -36,7 +36,7 @@ import styles from './index.module.css';
   <p>r.sanghrajka@northeastern.edu</p>
   <div className={styles.officeHours}>
     <strong>Office Hours:</strong><br/>
-    TBD
+    Wednesdays 4-6pm, [Appointments Preferred](https://tinyurl.com/office-hours-with-rush)
   </div>
 </div>
 
