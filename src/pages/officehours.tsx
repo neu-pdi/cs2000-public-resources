@@ -1147,7 +1147,7 @@ export default function OfficeHours() {
                   _dark={{ color: 'blue.300' }}
                 >
                   <a
-                    href="https://discord.gg/UXzrCgXP"
+                    href="https://discord.gg/GaXQSPDyYz"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
