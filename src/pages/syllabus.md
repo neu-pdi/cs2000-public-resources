@@ -36,7 +36,7 @@ There are three primary sources of communication for this course:
 
 1. This website. This is where you will find policies, homework assignments, lab assignments, practice material, notes from each day of class.
 2. [Pawtograder](https://pawtograder.khoury.northeastern.edu/). This is where you will find links to start your homework assignments / projects, and where you will see all grades (including for the on-paper skill assessments). 
-3. Discord. Please join at [https://discord.gg/YxuCh5P5kn](https://discord.gg/YxuCh5P5kn). Note you must set your Display Name for the server to your full name before you will be given access to private course channels. This will be a place for any discussion that are not direct questions about homework. Discord will also be used for lab communication, for announcements about the course. For any questions that are _not_ specifically about homework. It is also the place where you will ask questions online about homework, and where you will do online office hours.
+3. Discord. Please join at [https://discord.gg/YxuCh5P5kn](https://discord.gg/YxuCh5P5kn). Note you must set your Display Name for the server to your full name before you will be given access to private course channels. This will be a place for any discussion that are not direct questions about homework. Discord will also be used for lab communication and for announcements about the course. It is also the place where you will ask questions online about homework, and where you will do online office hours.
 
 ### Course Tools
 
@@ -105,11 +105,11 @@ The course will teach the following 13 skills, grading of which will be performe
 
 ### Assignment Chats {#assignment-chats}
 
-Each week, Lab sessions will have two purposes. One of them will be working with a student partner (different each week) to complete the exercises described in the lab, assisted by TAs. The second purpose will be to present work that you have submitted the previous Sunday to a TA. The latter is called an Assignment Chat, and is described below
+Each week, Lab sessions will have two purposes. One of them will be working with a student partner (different each week) to complete the exercises described in the lab, assisted by TAs. The second purpose will be to present work that you have submitted the previous Sunday to a TA. The latter is called an Assignment Chat, and is described below.
 
 A pair of TAs will walk around the room, stopping a pair of students from working on the lab exercises, and pulling up the work they submitted for the previous week's Homework assignment. Each TA will talk to one of the students, separately -- students will each be talking about their own assignment, one-on-one, with a TA. The TA will move to particular parts of the work, asking questions, asking the student to describe what they did, why they did it, other alternate approaches they could have taken, etc. This conversation will not be long -- approximately 5 minutes long -- but will be in enough detail to cover parts (but not all, of course) of the assignment in depth. Afterwards, both the TA and the student will fill out an assessment of the conversation -- the student's will be a self-assessment, the TA's will be an assessment recorded on Pawtograder. The TA's assessment covers both the student's demonstrated familiarity with their own material, with the course material, their ability to engage with the questions posed to them, etc. 
 
-The first two assignment chats will be practice, so will be graded on completion only (i.e., you will get full credit if you are there and participate) -- the rest will be graded based on the TA assessment. Two total will be dropped (to account for missing labs due to being sick, using wellness days, etc), and the rest weighted evenly.
+The first two assignment chats will be practice, so will be graded on completion only (i.e., you will get full credit if you are there and participate) -- the rest will be graded based on the TA assessment. Two total will be dropped (to account for missing labs due to being sick, using wellness days, etc.), and the rest weighted evenly.
 
 ### Pair Programming Sessions
 
@@ -246,9 +246,9 @@ Computer science, both academically and professionally, is a collaborative disci
 
 Specifically:
 
-- You are responsible for any material you turn in.The professor reserves the right to ask you to verbally explain the reasoning behind any answer or code that you turn in and to modify your grade based on your answers. It is vitally important that you turn in work that you understand.
+- You are responsible for any material you turn in. The professor reserves the right to ask you to verbally explain the reasoning behind any answer or code that you turn in and to modify your grade based on your answers. It is vitally important that you turn in work that you understand.
 - Copying material from another person with or without their knowledge is not allowed.
-- Additionally, sharing solutions in forums (e.g., posting to public questions, posting code online, etc) constitutes an academic integrity violation, as it may make it harder for other students to do work on their own, harming their own learning.
+- Additionally, sharing solutions in forums (e.g., posting to public questions, posting code online, etc.) constitutes an academic integrity violation, as it may make it harder for other students to do work on their own, harming their own learning.
 - Any sharing or receiving information about the content of skill assessments is an academic integrity violation, and may result in failing the class.
 - Trying to access any electronics during skill assessments is an academic integrity violation and will result in a 0 on the assessments. This includes having a phone in your lap, no matter what is accessed on the phone. You will also be prohibited from re-attempting said skill assessments.
 
