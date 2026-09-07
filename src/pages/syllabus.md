@@ -69,7 +69,7 @@ If you believe a mistake was made in the grading of a Skill Assessment, an Assig
 
 ### Office Hours
 
-This course has extensive availability for questions and discussion via [Discord](https://discord.gg/GaXQSPDyYz), and more limited dedicated online office hours via one-on-one video chat via the same platform. 
+This course has extensive availability for questions and discussion via [Discord](https://discord.gg/GaXQSPDyYz), and more limited dedicated online office hours via one-on-one video chat via the same platform.
 
 **Rules and Procedures**
 Do NOT send any screenshots or snippets of your homework programming exercises in any channels (you are welcome to discuss your projects!). Screenshots of your environment setup are ok as long as there isn't any homework programming exercises visible, and of course lecture or practice code is okay.
