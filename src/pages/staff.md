@@ -98,6 +98,12 @@ import styles from './index.module.css';
 </div>
 
 <div className={styles.staffCard}>
+  <img src={require('@site/static/img/staff/brianna-marshall.jpg').default} alt="Brianna Marshall" className={styles.staffPhoto} />
+  <h3>Brianna Marshall</h3>
+  <p>marshall.br@northeastern.edu</p>
+</div>
+
+<div className={styles.staffCard}>
   <img src={require('@site/static/img/staff/jasmine-obrien.jpeg').default} alt="Jasmine O'Brien" className={styles.staffPhoto} />
   <h3>Jasmine O'Brien</h3>
   <p>obrien.jasm@northeastern.edu</p>
@@ -107,6 +113,12 @@ import styles from './index.module.css';
   <img src={require('@site/static/img/staff/xiaole-su.jpg').default} alt="Xiaole Su" className={styles.staffPhoto} />
   <h3>Xiaole Su</h3>
   <p>su.xiaol@northeastern.edu</p>
+</div>
+
+<div className={styles.staffCard}>
+  <img src={require('@site/static/img/staff/joshua-torre.jpeg').default} alt="Joshua Torre" className={styles.staffPhoto} />
+  <h3>Joshua Torre</h3>
+  <p>torre.jo@northeastern.edu</p>
 </div>
 
 <div className={styles.staffCard}>
@@ -135,21 +147,9 @@ import styles from './index.module.css';
 </div>
 
 <div className={styles.staffCard}>
-  <img src={require('@site/static/img/staff/sage-batchelor.jpg').default} alt="Sage Batchelor" className={styles.staffPhoto} />
-  <h3>Sage Batchelor</h3>
-  <p>batchelor.sa@northeastern.edu</p>
-</div>
-
-<div className={styles.staffCard}>
   <img src={require('@site/static/img/staff/jiya-bhan.jpg').default} alt="Jiya Bhan" className={styles.staffPhoto} />
   <h3>Jiya Bhan</h3>
   <p>bhan.j@northeastern.edu</p>
-</div>
-
-<div className={styles.staffCard}>
-  <img src={require('@site/static/img/staff/jack-carroll.jpg').default} alt="Jack Carroll" className={styles.staffPhoto} />
-  <h3>Jack Carroll</h3>
-  <p>carroll.jac@northeastern.edu</p>
 </div>
 
 <div className={styles.staffCard}>
@@ -209,6 +209,18 @@ import styles from './index.module.css';
 </div>
 
 <div className={styles.staffCard}>
+  <img src={require('@site/static/img/staff/parvathi-gottumukkala.jpg').default} alt="Parvathi Gottumukkala" className={styles.staffPhoto} />
+  <h3>Parvathi Gottumukkala</h3>
+  <p>gottumukkala.pa@northeastern.edu</p>
+</div>
+
+<div className={styles.staffCard}>
+  <img src={require('@site/static/img/staff/gauransh-gupta.jpg').default} alt="Gauransh Gupta" className={styles.staffPhoto} />
+  <h3>Gauransh Gupta</h3>
+  <p>gupta.gaura@northeastern.edu</p>
+</div>
+
+<div className={styles.staffCard}>
   <img src={require('@site/static/img/staff/isha-hassan.jpeg').default} alt="Isha Hassan" className={styles.staffPhoto} />
   <h3>Isha Hassan</h3>
   <p>hassan.is@northeastern.edu</p>
@@ -233,12 +245,6 @@ import styles from './index.module.css';
 </div>
 
 <div className={styles.staffCard}>
-  <img src={require('@site/static/img/staff/brianna-marshall.jpg').default} alt="Brianna Marshall" className={styles.staffPhoto} />
-  <h3>Brianna Marshall</h3>
-  <p>marshall.br@northeastern.edu</p>
-</div>
-
-<div className={styles.staffCard}>
   <img src={require('@site/static/img/staff/michelle-muddasu.jpg').default} alt="Michelle Muddasu" className={styles.staffPhoto} />
   <h3>Michelle Muddasu</h3>
   <p>muddasu.m@northeastern.edu</p>
@@ -257,6 +263,12 @@ import styles from './index.module.css';
 </div>
 
 <div className={styles.staffCard}>
+  <img src={require('@site/static/img/staff/maya-tabora.jpg').default} alt="Maya Tabora" className={styles.staffPhoto} />
+  <h3>Maya Tabora</h3>
+  <p>tabora.m@northeastern.edu</p>
+</div>
+
+<div className={styles.staffCard}>
   <img src={require('@site/static/img/staff/alan-tai.png').default} alt="Alan Tai" className={styles.staffPhoto} />
   <h3>Alan Tai</h3>
   <p>tai.a@northeastern.edu</p>
@@ -272,12 +284,6 @@ import styles from './index.module.css';
   <img src={require('@site/static/img/staff/supriya-tiwari.jpg').default} alt="Supriya Ashok Kumar Tiwari" className={styles.staffPhoto} />
   <h3>Supriya Ashok Kumar Tiwari</h3>
   <p>tiwari.sup@northeastern.edu</p>
-</div>
-
-<div className={styles.staffCard}>
-  <img src={require('@site/static/img/staff/joshua-torre.jpeg').default} alt="Joshua Torre" className={styles.staffPhoto} />
-  <h3>Joshua Torre</h3>
-  <p>torre.jo@northeastern.edu</p>
 </div>
 
 <div className={styles.staffCard}>
