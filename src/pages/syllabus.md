@@ -75,17 +75,12 @@ Abuse of the regrade request mechanism may result in less of an ability to reque
 
 ### Office Hours
 
-This course has extensive availability for questions and discussion via [Discord](https://discord.gg/GaXQSPDyYz), and more limited dedicated online office hours via one-on-one video chat via the same platform.
+There are online office hours provided via one-on-one video chat on [Discord](https://discord.gg/GaXQSPDyYz). 
 
 **Rules and Procedures**
 Do NOT send any screenshots or snippets of your homework programming exercises in any channels (you are welcome to discuss your projects!). Screenshots of your environment setup are ok as long as there isn't any homework programming exercises visible, and of course lecture or practice code is okay.
 
 **To join online office hours**: Make a post in the office hours text channel before joining the waiting room, so the TAs can better assist you. Once they move you into a private voice channel, you are free to screen share your hw code. Alternatively, you can send code privately to a TA over DMs (the TA will initiate the DM).
-
-The schedule for office hours are available here:
-
-[Office Hours](/ohtables)
-
 
 ### Attendance
 

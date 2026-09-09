@@ -99,6 +99,13 @@ export default function SkillCalendar({ data }: { data: CalendarMonth[] }) {
   color: var(--ifm-color-emphasis-600);
   font-weight: normal;
 }
+.day-oh {
+  font-size: 10px;
+  line-height: 1.2;
+}
+.day-oh a {
+  color: var(--ifm-color-emphasis-700);
+}
 .skill-stripes {
   margin-top: auto;
   display: flex;
@@ -193,7 +200,8 @@ export default function SkillCalendar({ data }: { data: CalendarMonth[] }) {
     font-size: 10px;
   }
   .day-holiday-name,
-  .day-note {
+  .day-note,
+  .day-oh {
     font-size: 9px;
   }
   .skill-stripe {
@@ -291,6 +299,13 @@ export default function SkillCalendar({ data }: { data: CalendarMonth[] }) {
                                   {day.lab.note && (
                                     <div className="day-note">{day.lab.note}</div>
                                   )}
+                                </div>
+                              )}
+                              {day.discordOH && (
+                                <div className="day-oh">
+                                  <Link to="/syllabus/#office-hours">
+                                    Discord OH: {day.discordOH}
+                                  </Link>
                                 </div>
                               )}
                             </div>
