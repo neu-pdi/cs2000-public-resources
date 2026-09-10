@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkinstructor_resources=self.webpackChunkinstructor_resources||[]).push([[5510],{17070:s=>{s.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"recitation"}')}}]);

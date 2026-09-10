@@ -1,0 +1,6 @@
+date,dish,quantity,order_type
+2023-07-01,Pasta,2,dine-in
+2023-07-01,Salad,1,takeout
+2023-07-02,Burger,3,dine-in
+2023-07-02,Pasta,2,dine-in
+2023-07-03,Steak,1,takeout
