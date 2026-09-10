@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkinstructor_resources=self.webpackChunkinstructor_resources||[]).push([[8188],{38188:(e,r,s)=>{s.d(r,{createPieServices:()=>c.f});var c=s(19786);s(58198)}}]);

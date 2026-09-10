@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkinstructor_resources=self.webpackChunkinstructor_resources||[]).push([[2068],{32068:(e,r,s)=>{s.d(r,{createInfoServices:()=>c.v});var c=s(41366);s(58198)}}]);
