@@ -190,7 +190,8 @@ const config: Config = {
   url: 'https://neu-pdi.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/cs2000-public-resources/',
+  // Overridable so past semesters can be built into a subpath; see scripts/archive-semester.sh
+  baseUrl: process.env.BASE_URL ?? '/cs2000-public-resources/',
 
   // Custom fields for reusable variables
   customFields: {
