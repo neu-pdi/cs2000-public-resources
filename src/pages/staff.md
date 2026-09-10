@@ -46,7 +46,7 @@ import styles from './index.module.css';
   <p>d.patterson@northeastern.edu</p>
   <div className={styles.officeHours}>
     <strong>Office Hours:</strong> (all in Meserve 314)<br/>
-    Monday 9-10 starting 9/14, Wednesday 3-4:00 starting 9/23, or by appointment
+    Monday 9-10 starting 9/14, Wednesday 3-4 starting 9/23, or by appointment
   </div>
 </div>
 
