@@ -7,6 +7,10 @@ function isCalLink(item: Lecture | string): item is Lecture {
   return typeof item === 'object';
 }
 
+// Shortened from "Discord OH" so the ET/PT time pair fits a day cell; the linked
+// syllabus section explains that office hours are held on Discord.
+const OH_LABEL = 'OH';
+
 export default function SkillCalendar({ data }: { data: CalendarMonth[] }) {
   return (
     <>
@@ -304,7 +308,7 @@ export default function SkillCalendar({ data }: { data: CalendarMonth[] }) {
                               {day.discordOH && (
                                 <div className="day-oh">
                                   <Link to="/syllabus/#office-hours">
-                                    Discord OH: {day.discordOH}
+                                    {OH_LABEL}: {day.discordOH}
                                   </Link>
                                 </div>
                               )}
