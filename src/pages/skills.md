@@ -20,7 +20,7 @@ assessment up to two times with the best result being used for their grade.
    |  |  |
    | -- | -- |
    | **Meets Expectations** | • Correct type annotation<br/>• Docstring that describes behavior, doesn't repeat type annotation.<br/>• A few (2+) correct, meaningfully different tests<br/>• minor typos are okay |
-   | **Approaching Expectations** | • Missing docstring, or long, includes redundant type information, etc.<br/>• 1+ correct tests.|
+   | **Approaching Expectations** | • Missing docstring, or long, includes redundant type information, etc.<br/>• 1+ correct tests|
 
 <details>
     <summary>Examples</summary>
