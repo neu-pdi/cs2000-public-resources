@@ -317,8 +317,8 @@ const config: Config = {
           docsPluginId: 'homework',
         },
         {
-          type: 'doc',
-          docId: getDocumentId('lab'),
+          to: '/current-lab/',
+          activeBasePath: '/lab',
           position: 'left',
           label: 'Labs',
           docsPluginId: 'lab',
