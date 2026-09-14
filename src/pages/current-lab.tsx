@@ -7,7 +7,7 @@ import { getDocumentId } from '../utils/calendar';
 /**
  * Redirects to the latest lab, or shows a fallback if the redirect takes too long
  */
-export default function CurrentDayRedirect() {
+export default function CurrentLabRedirect() {
     const [showFallback, setShowFallback] = useState(false);
     const history = useHistory();
     const labsUrl = useBaseUrl(`/lab/${getDocumentId('lab')}`);

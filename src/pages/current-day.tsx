@@ -5,6 +5,9 @@ import Layout from '@theme/Layout';
 import { getDocumentId } from '../utils/calendar';
 import DaySummary from '../components/DaySummary';
 
+/**
+ * Redirects to the latest lecture day, or shows a fallback if the redirect takes too long
+ */
 export default function CurrentDayRedirect() {
     const [showFallback, setShowFallback] = useState(false);
     const history = useHistory();
