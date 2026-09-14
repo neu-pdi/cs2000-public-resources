@@ -23,6 +23,7 @@ Reviews of skills you have already took must be done **in person**, not online. 
 Check out our [regrade request policy](/syllabus/#regrade-requests) for info on how to submit a regrade request for a skill. You will have 7 days to do so
 
 
+---
 ## Assignments
 ### When are assignments due?
 Assignments are due on Sunday at mindnight, specifically Sundays at 11:59 UTC-12
@@ -37,10 +38,12 @@ No! Your grade for an assignment is based on the Assignment chat, *not the Autog
 Check out our [regrade request policy](/syllabus/#regrade-requests) for info on how to submit a regrade request for an assignment. You will have 7 days to do so. Keep in mind abusing the regrade request system may result in you loosing the privilege, so please only submit a regrade if you genuinly believe there was a mistake and *NOT* just because you think you deserve a better score or get more points
 
 
+<!-- --- -->
 <!-- ## Pair Programming -->
 <!-- TODO -->
 
 
+---
 ## VS Code
 ### When trying to exit a file, no run button is showing
 Try the following to fix the issue:
