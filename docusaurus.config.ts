@@ -310,8 +310,8 @@ const config: Config = {
           items: notesDropdownItems(),
         },
         {
-          type: 'doc',
-          docId: getDocumentId('homework'),
+          to: '/current-homework/',
+          activeBasePath: '/homework',
           position: 'left',
           label: 'Homework',
           docsPluginId: 'homework',
