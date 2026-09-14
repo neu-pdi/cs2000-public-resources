@@ -145,8 +145,8 @@ function getLatestCalendarDay(item: CalendarItem): CalendarDay | undefined {
 function notesDropdownItems() {
   var startingItems = [
     {
-      type: 'doc',
-      docId: getDocumentId('lectures'),
+      to: '/current-day/',
+      activeBasePath: '/days',
       label: 'Days',
     },
     {
