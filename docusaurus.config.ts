@@ -164,7 +164,7 @@ const config: Config = {
     // Replace with your project's social card
     // image: 'img/qwan-social-card.png',
     navbar: {
-      title: 'CS 2000 Public Resources',
+      title: 'CS 2000',
       logo: {
         alt: 'Pawtograder Logo',
         src: 'img/logo.svg',
@@ -211,6 +211,11 @@ const config: Config = {
           position: 'left',
           to: '/skills/',
           label: 'Skills',
+        },
+        {
+          position: 'left',
+          to: '/faqs/',
+          label: 'FAQs',
         },
       ],
     },
