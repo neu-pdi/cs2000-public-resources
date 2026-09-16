@@ -22,6 +22,36 @@
   justify-content: center;
 }
 
+/* Assessment hours grid: one row per campus, one column per weekday. Tightened
+   from the default table styling so six columns of times fit without the whole
+   thing towering over the calendar below it. */
+.assessmentHours table {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+  margin: 0 0 1rem;
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.assessmentHours th,
+.assessmentHours td {
+  padding: 4px 6px;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+.assessmentHours th {
+  font-size: 0.8rem;
+}
+
+/* Campus column needs less room than the five day columns. */
+.assessmentHours th:first-child,
+.assessmentHours td:first-child {
+  width: 8%;
+  white-space: nowrap;
+}
+
 /* Staff page styles */
 .staffGrid {
   display: grid;
