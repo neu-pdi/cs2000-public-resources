@@ -74,7 +74,7 @@ import styles from './index.module.css';
 
 <div className={styles.staffCard}>
   <img src={require('@site/static/img/staff/angelina-el-moucary.jpg').default} alt="Angelina El Moucary" className={styles.staffPhoto} />
-  <h3>Angelina El Moucary</h3>
+  <h3>Angel El Moucary</h3>
   <p>elmoucary.a@northeastern.edu</p>
 </div>
 
