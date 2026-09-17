@@ -20,7 +20,7 @@ In-person hours where you can attempt [skill](/skills) assessments, by campus.
 
 | Campus | Monday | Tuesday | Wednesday | Thursday | Friday |
 | -- | -- | -- | -- | -- | -- |
-| **Boston** | **10am-12pm**<br/>Kariotis 005 (Kayla) | — | **3-4pm**<br/>Kariotis 104 (Rush) | **3-5pm**<br/>Kariotis 202 (Rush) | **12-2pm**<br/>Ryder 245 (Daniel)<br/>**1-3pm**<br/>Ryder 245 (Brianna) |
+| **Boston** | **10:30am-12pm**<br/>Kariotis 005 (Kayla) | — | **3-4pm**<br/>Kariotis 104 (Rush) | **3-5pm**<br/>Kariotis 202 (Rush) | **12-2pm**<br/>Ryder 245 (Daniel)<br/>**1-3pm**<br/>Ryder 245 (Brianna) |
 | **Oakland** | **3:30-4:30pm**<br/>CPM 101 (Ellen) | **9-10am**<br/>GSB 125 (Alvaro) | **12:15-1:15pm**<br/>CPM 101 (Ellen) | **3:30-4:30pm**<br/>GSB 125 (Alvaro) | — |
 | **NYC** | — | — | **11-11:45am**<br/>OS2 FOUND Study Turtlebay (Jeongkyu Lee) | — | — |
 
