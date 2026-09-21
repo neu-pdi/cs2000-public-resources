@@ -4,6 +4,7 @@ description: Introduction to Program Design and Implementation
 hide_table_of_contents: true
 ---
 
+import AssessmentHours from '@site/src/components/AssessmentHours';
 import SkillCalendar from '@site/src/components/SkillCalendar';
 import { calendarData } from '../data/calendar-data';
 import styles from './index.module.css';
@@ -17,13 +18,7 @@ Introduces computer science and data science to students with no programming exp
 In-person hours where you can attempt [skill](/skills) assessments, by campus.
 
 <div className={styles.assessmentHours}>
-
-| Campus | Monday | Tuesday | Wednesday | Thursday | Friday |
-| -- | -- | -- | -- | -- | -- |
-| **Boston** | **10:30am-12pm**<br/>Kariotis 005 (Kayla) | — | **3-4pm**<br/>Kariotis 104 (Rush) | **3-5pm**<br/>Kariotis 202 (Rush) | **12-2pm**<br/>Ryder 245 (Daniel)<br/>**1-3pm**<br/>Ryder 245 (Brianna) |
-| **Oakland** | **3:30-4:30pm**<br/>CPM 101 (Ellen) | **9-10am**<br/>GSB 125 (Alvaro) | **12:15-1:15pm**<br/>CPM 101 (Ellen) | **3:30-4:30pm**<br/>GSB 125 (Alvaro) | — |
-| **NYC** | — | — | **11-11:45am**<br/>OS2 FOUND Study Turtlebay (Jeongkyu Lee) | — | — |
-
+  <AssessmentHours />
 </div>
 
 ## Schedule (Boston & Oakland) {#schedule}
