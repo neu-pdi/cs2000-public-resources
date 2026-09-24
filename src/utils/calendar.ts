@@ -122,3 +122,62 @@ function getLatestCalendarDay(item: CalendarItem): CalendarDay | undefined {
       return item === 'lab' ? calendarDay.lab !== undefined : calendarDay.homework !== undefined;
     })?.calendarDay;
 }
+
+export type DateItem = keyof Pick<CalendarDay, 'lectures' | 'lab' | 'homework' | 'skills'>;
+
+export interface SkillDateRange {
+    start: Date;
+    end: Date;
+}
+
+export function DateFor(
+    id: string,
+    item: Exclude<DateItem, 'skills'>,
+): Date | null {
+    const matchingDay = calendarData
+        .flatMap((month) => month.weeks.flatMap((week) => week.days))
+        .find((day) => {
+            if (item === 'lectures') {
+                return day.lectures?.some((lecture) => lecture.href.split('/').pop() === id) ?? false;
+            }
+
+            return day[item]?.href.split('/').pop() === id;
+        });
+
+    return matchingDay ? new Date(`${matchingDay.date}T00:00:00`) : null;
+}
+
+export function FormatDate(date: Date): string {
+    return date.toLocaleDateString(undefined, {
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric',
+    });
+}
+
+export function isWeekend(date: Date): boolean {
+    return date.getDay() === 0 || date.getDay() === 6;
+}
+
+export function isNextInstructionalDate(previousDate: Date, currentDate: Date): boolean {
+    const nextDate = new Date(previousDate);
+    nextDate.setDate(nextDate.getDate() + 1);
+
+    while (isWeekend(nextDate) || isHoliday(nextDate)) {
+        nextDate.setDate(nextDate.getDate() + 1);
+    }
+
+    return nextDate.getTime() === currentDate.getTime();
+}
+
+function isHoliday(date: Date): boolean {
+    return calendarData
+        .flatMap((month) => month.weeks.flatMap((week) => week.days))
+        .some((day) => day.isHoliday && day.date === toIsoDate(date));
+}
+
+function toIsoDate(date: Date): string {
+    return [date.getFullYear(), date.getMonth() + 1, date.getDate()]
+        .map((part, index) => index === 0 ? part.toString() : part.toString().padStart(2, '0'))
+        .join('-');
+}
