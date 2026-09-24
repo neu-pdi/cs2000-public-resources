@@ -137,6 +137,7 @@ export function DayDate() {
     const { day_number } = frontMatter as DatePageFrontMatter;
     return (<>
         <DateView id={String(day_number)} item="lectures" />
+        
         <UpcomingAnnotation id={String(day_number)} />
     </>);
 }
