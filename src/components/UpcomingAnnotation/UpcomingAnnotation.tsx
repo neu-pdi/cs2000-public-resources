@@ -69,7 +69,7 @@ export default function UpcomingAnnotation({ id }: UpcomingAnnotationProps) {
     return (
         <>
             {skillAnnotationInfo.endingSkills.length > 0 && (
-            <Admonition type="warning" title="Ending Skills">
+            <Admonition type="danger" icon="‼️" title="Ending Skills">
                 <Text as="span" className="text-sm text-gray-500">
                 Last week for skills: {skillAnnotationInfo.endingSkills.map((skill) => skill).join(', ')}
                 </Text>
@@ -77,7 +77,7 @@ export default function UpcomingAnnotation({ id }: UpcomingAnnotationProps) {
             )}
 
             {skillAnnotationInfo.newSkills.length > 0 && (
-            <Admonition type="tip" title="New Skills">
+            <Admonition type="tip" icon="🆕" title="New Skills">
                 <Text as="span" className="text-sm text-gray-500">
                 First week for skills: {skillAnnotationInfo.newSkills.map((skill) => skill).join(', ')}
                 </Text>
