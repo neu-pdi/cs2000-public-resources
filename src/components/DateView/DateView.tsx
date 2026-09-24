@@ -1,9 +1,8 @@
-import { calendarData, type CalendarDay, type Skill } from '../../data/calendar-data';
+import { calendarData, type Skill } from '../../data/calendar-data';
 import { Text } from '@chakra-ui/react';
 import { useDoc } from '@docusaurus/plugin-content-docs/client';
+import { DateItem, DateFor, FormatDate, SkillDateRange, isWeekend, isNextInstructionalDate } from '../../utils/calendar';
 import UpcomingAnnotation from '../UpcomingAnnotation/UpcomingAnnotation';
-
-type DateItem = keyof Pick<CalendarDay, 'lectures' | 'lab' | 'homework' | 'skills'>;
 
 interface CalendarPageFrontMatter {
     day_number?: number;
@@ -13,53 +12,9 @@ interface CalendarPageFrontMatter {
 
 type DatePageFrontMatter = CalendarPageFrontMatter & Record<string, unknown>;
 
-export interface SkillDateRange {
-    start: Date;
-    end: Date;
-}
-
 export interface DateViewProps {
     id: string;
     item: DateItem;
-}
-
-export function FormattedDate(id: string, item: DateItem): string {
-    if (item === 'skills') {
-        const skill = Number(id);
-        const ranges = Number.isInteger(skill) ? SkillDateRanges(skill) : [];
-
-        return ranges.length > 0
-            ? ranges.map(({ start, end }) => `${FormatDate(start)} - ${FormatDate(end)}`).join(', ')
-            : 'Date unavailable';
-    }
-
-    const date = DateFor(id, item);
-    return date ? FormatDate(date) : 'Date unavailable';
-}
-
-export function DateFor(
-    id: string,
-    item: Exclude<DateItem, 'skills'>,
-): Date | null {
-    const matchingDay = calendarData
-        .flatMap((month) => month.weeks.flatMap((week) => week.days))
-        .find((day) => {
-            if (item === 'lectures') {
-                return day.lectures?.some((lecture) => lecture.href.split('/').pop() === id) ?? false;
-            }
-
-            return day[item]?.href.split('/').pop() === id;
-        });
-
-    return matchingDay ? new Date(`${matchingDay.date}T00:00:00`) : null;
-}
-
-export function FormatDate(date: Date): string {
-    return date.toLocaleDateString(undefined, {
-        month: 'long',
-        day: 'numeric',
-        year: 'numeric',
-    });
 }
 
 /**
@@ -71,7 +26,7 @@ export function FormatDate(date: Date): string {
  * 
  * @author Logan Gill
  */
-export function SkillDateRanges(skill: Skill): SkillDateRange[] {
+function SkillDateRanges(skill: Skill): SkillDateRange[] {
     const days = calendarData
         .flatMap((month) => month.weeks.flatMap((week) => week.days))
         .filter((day) => day.skills?.includes(skill) && !day.isHoliday)
@@ -96,31 +51,18 @@ export function SkillDateRanges(skill: Skill): SkillDateRange[] {
     return ranges;
 }
 
-export function isWeekend(date: Date): boolean {
-    return date.getDay() === 0 || date.getDay() === 6;
-}
+function FormattedDate(id: string, item: DateItem): string {
+    if (item === 'skills') {
+        const skill = Number(id);
+        const ranges = Number.isInteger(skill) ? SkillDateRanges(skill) : [];
 
-export function isNextInstructionalDate(previousDate: Date, currentDate: Date): boolean {
-    const nextDate = new Date(previousDate);
-    nextDate.setDate(nextDate.getDate() + 1);
-
-    while (isWeekend(nextDate) || isHoliday(nextDate)) {
-        nextDate.setDate(nextDate.getDate() + 1);
+        return ranges.length > 0
+            ? ranges.map(({ start, end }) => `${FormatDate(start)} - ${FormatDate(end)}`).join(', ')
+            : 'Date unavailable';
     }
 
-    return nextDate.getTime() === currentDate.getTime();
-}
-
-function isHoliday(date: Date): boolean {
-    return calendarData
-        .flatMap((month) => month.weeks.flatMap((week) => week.days))
-        .some((day) => day.isHoliday && day.date === toIsoDate(date));
-}
-
-function toIsoDate(date: Date): string {
-    return [date.getFullYear(), date.getMonth() + 1, date.getDate()]
-        .map((part, index) => index === 0 ? part.toString() : part.toString().padStart(2, '0'))
-        .join('-');
+    const date = DateFor(id, item);
+    return date ? FormatDate(date) : 'Date unavailable';
 }
 
 export default function DateView({ id, item }: DateViewProps) {
@@ -137,7 +79,7 @@ export function DayDate() {
     const { day_number } = frontMatter as DatePageFrontMatter;
     return (<>
         <DateView id={String(day_number)} item="lectures" />
-        
+
         <UpcomingAnnotation id={String(day_number)} />
     </>);
 }

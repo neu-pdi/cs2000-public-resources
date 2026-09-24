@@ -1,6 +1,6 @@
 import { Text } from "@chakra-ui/react";
-import { calendarData, type CalendarDay, type Skill } from '../../data/calendar-data';
-import { FormatDate, DateFor, SkillDateRange, isWeekend, isNextInstructionalDate } from "../DateView/DateView";
+import { calendarData, type Skill } from '../../data/calendar-data';
+import { FormatDate, DateFor, SkillDateRange, isWeekend, isNextInstructionalDate } from '../../utils/calendar';
 import Admonition from '@theme/Admonition';
 
 const ANNOTATION_EXCLUSION_DAYS: String[] = ["1", "2"]
@@ -25,7 +25,7 @@ interface SkillAnnotationInfo {
  * 
  * @author Logan Gill
  */
-export function SkillAnnotationInfo(lectureDate: Date): SkillAnnotationInfo {
+function SkillAnnotationInfo(lectureDate: Date): SkillAnnotationInfo {
     const days = calendarData
         .flatMap((month) => month.weeks.flatMap((week) => week.days))
         .filter((day) => day.skills && !day.isHoliday)
