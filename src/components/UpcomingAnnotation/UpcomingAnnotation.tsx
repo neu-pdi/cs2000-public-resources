@@ -3,6 +3,8 @@ import { calendarData, type CalendarDay, type Skill } from '../../data/calendar-
 import { FormatDate, DateFor, SkillDateRange, isWeekend, isNextInstructionalDate } from "../DateView/DateView";
 import Admonition from '@theme/Admonition';
 
+const ANNOTATION_EXCLUSION_DAYS: String[] = ["1", "2"]
+
 const ONE_WEEK_MS = 7 * 24 * 60 * 60 * 1000; // 604,800,000 ms
 const TWO_DAYS_MS = 2 * 24 * 60 * 60 * 1000;
 
@@ -85,6 +87,10 @@ function NextHomeworkDate(lectureDate: Date) : [number, Date] | null {
 }
 
 export default function UpcomingAnnotation({ id }: UpcomingAnnotationProps) {
+    if (ANNOTATION_EXCLUSION_DAYS.includes(id)) {
+        return null;
+    }
+
     const lectureDate = DateFor(id, "lectures");
     const skillAnnotationInfo = SkillAnnotationInfo(lectureDate ? lectureDate : new Date());
     const upcomingHomework = NextHomeworkDate(lectureDate ? lectureDate : new Date());
