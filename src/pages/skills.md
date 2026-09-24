@@ -126,7 +126,7 @@ end
 02. <a id="2" href="#2">Construct / Transform Tables (Pyret)</a> - **Available:** <DateView id="2" item="skills" />
     |  |  |
     | -- | -- |
-    | **Meets Expectations** | • Function designed has signature, docstring, and at least one test<br/>• Function uses correct table function (skill covers `filter-with`, `build-column`, and `transform-column`)<br/>• Row helper does what is expected, whether defined with `lam` or named |
+    | **Meets Expectations** | • Function designed has type annotation, docstring, and at least one test<br/>• Function uses correct table function (skill covers `filter-with`, `build-column`, and `transform-column`)<br/>• Row helper does what is expected, whether defined with `lam` or named |
     | **Approaching Expectations** | • Function uses correct table function (`filter-with`, `build-column`, or `transform-column`)<br/>• Row helper accesses fields from row, but not in a way that solves the problem |
 <details>
     <summary>Examples</summary>
@@ -241,7 +241,7 @@ end
 04. <a id="4" href="#4">Structured & Conditional Data (Pyret)</a> - **Available:** <DateView id="4" item="skills" />
     |  |  |
     | -- | -- |
-    | **Meets Expectations** | • Uses `data` with variants as needed, fields with appropriate type annotations<br/>• Function uses either field projection or `cases` as needed<br/>• Function has signature, doc string, and tests |
+    | **Meets Expectations** | • Uses `data` with variants as needed, fields with appropriate type annotations<br/>• Function uses either field projection or `cases` as needed<br/>• Function has type annotation, doc string, and tests |
     | **Approaching Expectations** | • Uses `data` with variants as needed, fields if needed (possibly missing or incorrect annotations)<br/>• Function should use either field projection or cases, but may not do it correctly, or to match the problem |
 <details>
     <summary>Examples</summary>
@@ -304,7 +304,7 @@ end
 05. <a id="5" href="#5">Recursion: Lists (Pyret)</a> - **Available:** <DateView id="5" item="skills" />
     |  |  |
     | -- | -- |
-    | **Meets Expectations** | • Function has appropriate type signature, doc string, and tests<br/>• Function uses `cases` to handle `empty` case and `link` case<br/>• In `link` case, calls function recursively on rest of list appropriately |
+    | **Meets Expectations** | • Function has appropriate type annotation, doc string, and tests<br/>• Function uses `cases` to handle `empty` case and `link` case<br/>• In `link` case, calls function recursively on rest of list appropriately |
     | **Approaching Expectations** | • Uses `cases` to break apart list, and has recursive call to rest of list |
 <details>
     <summary>Examples</summary>
@@ -357,7 +357,7 @@ end
 06. <a id="6" href="#6">Recursion: Trees (Pyret)</a> - **Available:** <DateView id="6" item="skills" />
     |  |  |
     | -- | -- |
-    | **Meets Expectations** | • Function has appropriate type signature, doc string, and tests<br/>• Function uses `cases` to handle base case and recursive case<br/>• In recursive case, calls function recursively on subtrees appropriately |
+    | **Meets Expectations** | • Function has appropriate type annotation, doc string, and tests<br/>• Function uses `cases` to handle base case and recursive case<br/>• In recursive case, calls function recursively on subtrees appropriately |
     | **Approaching Expectations** | • Uses `cases` to break apart tree, and has recursive call on subtrees |
 <details>
     <summary>Examples</summary>
