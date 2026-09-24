@@ -1,6 +1,7 @@
 import { calendarData, type CalendarDay, type Skill } from '../../data/calendar-data';
 import { Text } from '@chakra-ui/react';
 import { useDoc } from '@docusaurus/plugin-content-docs/client';
+import UpcomingAnnotation from '../UpcomingAnnotation/UpcomingAnnotation';
 
 type DateItem = keyof Pick<CalendarDay, 'lectures' | 'lab' | 'homework' | 'skills'>;
 
@@ -28,12 +29,12 @@ export function FormattedDate(id: string, item: DateItem): string {
         const ranges = Number.isInteger(skill) ? SkillDateRanges(skill) : [];
 
         return ranges.length > 0
-            ? ranges.map(({ start, end }) => `${formatDate(start)} - ${formatDate(end)}`).join(', ')
+            ? ranges.map(({ start, end }) => `${FormatDate(start)} - ${FormatDate(end)}`).join(', ')
             : 'Date unavailable';
     }
 
     const date = DateFor(id, item);
-    return date ? formatDate(date) : 'Date unavailable';
+    return date ? FormatDate(date) : 'Date unavailable';
 }
 
 export function DateFor(
@@ -53,7 +54,7 @@ export function DateFor(
     return matchingDay ? new Date(`${matchingDay.date}T00:00:00`) : null;
 }
 
-function formatDate(date: Date): string {
+export function FormatDate(date: Date): string {
     return date.toLocaleDateString(undefined, {
         month: 'long',
         day: 'numeric',
@@ -95,11 +96,11 @@ export function SkillDateRanges(skill: Skill): SkillDateRange[] {
     return ranges;
 }
 
-function isWeekend(date: Date): boolean {
+export function isWeekend(date: Date): boolean {
     return date.getDay() === 0 || date.getDay() === 6;
 }
 
-function isNextInstructionalDate(previousDate: Date, currentDate: Date): boolean {
+export function isNextInstructionalDate(previousDate: Date, currentDate: Date): boolean {
     const nextDate = new Date(previousDate);
     nextDate.setDate(nextDate.getDate() + 1);
 
@@ -134,7 +135,10 @@ export default function DateView({ id, item }: DateViewProps) {
 export function DayDate() {
     const { frontMatter } = useDoc();
     const { day_number } = frontMatter as DatePageFrontMatter;
-    return <DateView id={String(day_number)} item="lectures" />;
+    return (<>
+        <DateView id={String(day_number)} item="lectures" />
+        <UpcomingAnnotation id={String(day_number)} />
+    </>);
 }
 
 export function LabDate() {
