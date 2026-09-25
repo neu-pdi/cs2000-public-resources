@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from '@docusaurus/Link';
 import CalendarHighlighter from './CalendarHighlighter';
 import type { CalendarMonth, Lecture } from '../data/calendar-data';
+import {
+  ONLINE_OH_CSV_URL,
+  parseOnlineOfficeHours,
+} from '../data/online-office-hours';
+import { fetchSheetCsv } from '../utils/sheets';
 
 function isCalLink(item: Lecture | string): item is Lecture {
   return typeof item === 'object';
@@ -11,7 +16,40 @@ function isCalLink(item: Lecture | string): item is Lecture {
 // syllabus section explains that office hours are held on Discord.
 const OH_LABEL = 'OH';
 
+/**
+ * Online office hours times, keyed by weekday, read from the scheduling sheet.
+ *
+ * Which days hold them comes from the calendar data (`onlineOH`, which encodes the
+ * holiday and finals-period skips); only the times come from the sheet. Fetched on
+ * mount rather than at build time so a change to the sheet shows up without a
+ * redeploy -- so day cells render without their OH line until this resolves.
+ */
+function useOnlineOfficeHours(): Record<number, string> {
+  const [byWeekday, setByWeekday] = useState<Record<number, string>>({});
+
+  useEffect(() => {
+    const controller = new AbortController();
+    fetchSheetCsv(ONLINE_OH_CSV_URL, controller.signal, (rows) => {
+      if (Object.keys(parseOnlineOfficeHours(rows)).length === 0) {
+        throw new Error('no office hours found in sheet');
+      }
+    })
+      .then((rows) => setByWeekday(parseOnlineOfficeHours(rows)))
+      .catch((err) => {
+        if (err.name !== 'AbortError') {
+          // Leave the cells without an OH line rather than showing a stale or broken
+          // time; the syllabus still documents how office hours work.
+          console.error('Could not load online office hours:', err);
+        }
+      });
+    return () => controller.abort();
+  }, []);
+
+  return byWeekday;
+}
+
 export default function SkillCalendar({ data }: { data: CalendarMonth[] }) {
+  const onlineOH = useOnlineOfficeHours();
   return (
     <>
       <div
@@ -305,10 +343,10 @@ export default function SkillCalendar({ data }: { data: CalendarMonth[] }) {
                                   )}
                                 </div>
                               )}
-                              {day.discordOH && (
+                              {day.onlineOH && onlineOH[displayDate.getDay()] && (
                                 <div className="day-oh">
                                   <Link to="/syllabus/#office-hours">
-                                    {OH_LABEL}: {day.discordOH}
+                                    {OH_LABEL}: {onlineOH[displayDate.getDay()]}
                                   </Link>
                                 </div>
                               )}
