@@ -15,8 +15,8 @@ import styles from './index.module.css';
   <h3>Prof. Ellen Spertus</h3>
   <p>espertus@northeastern.edu</p>
   <div className={styles.officeHours}>
-    <strong>Office Hours:</strong><br/>
-    Tuesdays 11:00-11:30 AM, 4:00-4:45 PM, and Fridays 11:00-11:45 AM [by appointment](https://calendly.com/espertusnu/new-meeting)
+    <strong>Office Hours (in Oakland CPM 200/201):</strong><br/>
+    Mondays 9:30-10:30, Thursdays 2:45-3:45, and [by appointment online](https://tinyurl.com/meet-with-ellen)
   </div>
 </div>
 
