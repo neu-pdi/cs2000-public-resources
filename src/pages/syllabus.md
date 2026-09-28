@@ -47,10 +47,10 @@ The only software you will need is a web browser (and a computer or tablet that 
 ### People
 | Instructor | Campus | Office | Office Hours |
 | -- | -- | -- | -- |
-| [Prof. Ellen Spertus](https://www.khoury.northeastern.edu/people/ellen-spertus/) | Oakland | CPM 200/201 | Mondays 9:30-10:30, Thursdays 2:45-3:45, and [by appointment](https://tinyurl.com/meet-with-ellen) |
-| [Prof. Alvaro Monge](https://www.khoury.northeastern.edu/people/alvaro-monge/) | Oakland | CARN 201 | tbd |
+| [Prof. Ellen Spertus](https://www.khoury.northeastern.edu/people/ellen-spertus/) | Oakland | CPM 200/201 | Mondays 9:30-10:30, Thursdays 2:45-3:45, or [by appointment](https://tinyurl.com/meet-with-ellen) |
+| [Prof. Alvaro Monge](https://www.khoury.northeastern.edu/people/alvaro-monge/) | Oakland | CARN 201 | Tuesdays 10:15-11:15am PT and Wednesdays 3-4pm PT, or by appointment (send email request at least 1 day prior) |
 | [Prof. Rush Sanghrajka](https://www.khoury.northeastern.edu/people/rush-sanghrajka/) | Boston | Meserve 309 | Wednesdays 4-6pm, [Appointments Preferred](https://tinyurl.com/office-hours-with-rush) |
-| [Prof. Daniel Patterson](https://dbp.io) | Boston | Meserve 317 | tbd |
+| [Prof. Daniel Patterson](https://dbp.io) | Boston | Meserve 317 | Monday 9-10, Wednesday 3-4, or by appointment |
 
 | Coordinator | Campus | Office | Office Hours |
 | -- | -- | -- | -- |
