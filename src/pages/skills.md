@@ -6,6 +6,8 @@ hide_table_of_contents: true
 ---
 
 import DateView from '@site/src/components/DateView/DateView';
+import AssessmentHours from '@site/src/components/AssessmentHours';
+import styles from './index.module.css';
 
 # Skills
 
@@ -15,6 +17,13 @@ form the primary source of final grades.
 Each skill will be assessed as "Doesn't meet expectations", "Approaching
 expectations", and "Meets expectations", and students may attempt any skill
 assessment up to four times with the best result being used for their grade.
+
+To take a skill, you must go to Assessment Hours. Assessment Hours are available at the following times:
+<div className={styles.assessmentHours}>
+  <AssessmentHours />
+</div>
+
+For more info on Assessment Hours, as well as see what skills available each week, check out the [home page](/#assessment-hours)
 
 0. <a id="0" href="#0">Design Function Types, Docs, Tests (Pyret)</a> - **Available:** <DateView id="0" item="skills" />
    |  |  |
