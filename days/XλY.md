@@ -1,4 +1,5 @@
 ---
+pll_level: intermediate
 title: Extra - λY
 ---
 
@@ -139,7 +140,7 @@ def test_review():
 
 To start our journey towards Y, we take as inspiration a simple program in the lambda calculus that must involve recursion (or something close enough), since it runs forever!
 
-```python
+```python error
 (lambda x: x(x))(lambda x: x(x))
 ```
 
@@ -272,15 +273,15 @@ FACT5 = lambda m: (lambda fact2: fact2(fact2)(m))(
 ```
 
 
-At this point, if we squint, we see in the middle the part that we want to write -- I renamed `rcall` to `factorial` -- and this is pretty ideal!:
+At this point, if we squint, we see in the middle the part that we want to write -- I renamed `rcall` to `fact` -- and this is pretty ideal!:
 
 ```python
-FACT = lambda factorial: lambda n: IF(EQUAL0(n),
-                                      lambda: ONE,
-                                      lambda: MUL(n, factorial(MINUS1(n))))
+FACT = lambda fact: lambda n: IF(EQUAL0(n),
+                                 lambda: ONE,
+                                 lambda: MUL(n, fact(MINUS1(n))))
 ```
 
-If we rename `rcall` to `fact`, this is exactly the code we want to write. So let's extract all of that out as, say `F`, leaving us with the remainder of the code (the code we don't really want to write):
+With `rcall` renamed to `fact`, this is exactly the code we want to write. So let's extract all of that out as, say `F`, leaving us with the remainder of the code (the code we don't really want to write):
 
 ```python
 Y1 = lambda F: lambda m: (lambda fact2: (fact2(fact2))(m))(

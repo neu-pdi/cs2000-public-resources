@@ -32,6 +32,12 @@ that one aren't checked until you fix it.
 
 To check that a function returns `True` or `False`, `assert` its result directly, or use `assert not`:
 
+<!-- python setup
+# (a function to test)
+def is_even(n: int) -> bool:
+    return n % 2 == 0
+-->
+
 ```python
 def test_is_even():
     assert is_even(4)
@@ -57,7 +63,7 @@ def test_cost():
 You can also say how close it has to be, with `abs=`. This checks that the
 answer is between `0.9` and `1.1`:
 
-```python
+```python skip
     assert distance(...) == pytest.approx(1, abs=0.1)
 ```
 
@@ -65,6 +71,12 @@ answer is between `0.9` and `1.1`:
 
 To test that some code causes an error, put it under `with pytest.raises(...)`,
 giving the kind of error you expect:
+
+<!-- python setup
+# (a function to test)
+def first_letter(s: str) -> str:
+    return s[0]
+-->
 
 ```python
 import pytest

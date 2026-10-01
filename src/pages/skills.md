@@ -86,12 +86,12 @@ def test_nm_square():
 
     <p>**Answer meeting expectations:**</p>
 
-```python
+```python skip
     return n * n
 ```
 <p>**Answer approaching expectations (wrong problem):**</p>
 
-```python
+```python skip
     return n * 2
 ```
 
@@ -199,6 +199,10 @@ and returns a new table containing only those regions where rainfall amounts dec
     <p>Design a function <code>list_of_squares</code> that takes a list of numbers, and returns a list where each element is the square of N where N is the element from the list. You must use a <code>for</code> loop, rather than a built in list function or recursion.</p>
     <p>**Answer meeting expectations:**</p>
 
+<!-- python setup
+#level intermediate
+-->
+
 ```python
 def list_of_squares(numbers: list[float]) -> list[float]:
     """produce the squares of the numbers in the input"""
@@ -218,7 +222,7 @@ def test_list_of_squares():
 
 <p>**Answer approaching expectations (doesn't use the final result properly):**</p>
 
-```python
+```python error
 def list_of_squares(numbers: list[float]) -> list[float]:
     """produce the squares of the numbers in the input"""
 
@@ -289,7 +293,7 @@ def test_is_strong():
 
 <p>**Answer approaching expectations (missing docstring, missing or incorrect annotations, only one test):**</p>
 
-```python
+```python error
 from dataclasses import dataclass
 
 @dataclass
@@ -419,7 +423,7 @@ def test_count_internal_nodes():
 
 <p>**Answer approaching expectations (lacking doc string, does not give correct result):**</p>
     
-```python
+```python error
 def count_internal_nodes(tree: BinTree) -> int:
     match tree:
         case Leaf(val):
@@ -445,6 +449,10 @@ def test_count_internal_nodes():
     <summary>Examples</summary>
 <p>What will be the outcome of the following code? Explain why.</p>
    
+<!-- python setup
+#level advanced
+-->
+
 ```python
 temperature = 72
 

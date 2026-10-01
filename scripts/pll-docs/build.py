@@ -110,7 +110,8 @@ def build(page):
     last = 0
     for n, (m, (expect_error, code), result) in enumerate(zip(matches, examples, results)):
         pieces.append(source[last:m.start()])
-        pieces.append("```python\n" + code + "```\n")
+        # (marked for scripts/check-examples.py, which checks these pages too)
+        pieces.append("```python%s\n" % (" error" if expect_error else "") + code + "```\n")
         out = output_block(page, n, code, result, expect_error)
         if out:
             pieces.append("\n" + out)

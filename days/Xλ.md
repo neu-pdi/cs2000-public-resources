@@ -1,4 +1,5 @@
 ---
+pll_level: intermediate
 title: Extra - λ
 ---
 
@@ -134,7 +135,7 @@ In order to do that, we need a way of expressing, using just our three tools (la
 
 If we focus on `True` and `False`, these are _values_. i.e., they don't evaluate. Our only _value_ in the lambda calculus is... lambda (i.e., a function). So it must be that:
 
-```python
+```python skip
 def TRUE(...):
     return ...
 
@@ -150,7 +151,7 @@ Clearly, these two values should be _different_ (true is not false).
 
 Since there are lots of different lambda functions, just picking two different ones probably isn't enough -- let's think about we will want to use them `if`, and see if that helps us narrow down what they should be. Specifically, we want to be able to express:
 
-```python
+```python skip
 if COND:
     THEN
 else:
@@ -341,7 +342,7 @@ Again we have task of representing values, this time things like:
 
 Let's focus on the numbers. Again, they are values, so we need to figure out a way to represent them with lambda, i.e.:
 
-```python
+```python skip
 def ZERO(...):
     return ...
 
@@ -434,6 +435,15 @@ def MUL(n1, n2):  # MUL is a function that takes two numbers
 ```
 
 This would mean if we had 4 multiplied by 3, we get:
+
+<!-- python setup
+# (like ONE and TWO)
+def THREE(f, x):
+    return f(f(f(x)))
+
+def FOUR(f, x):
+    return f(f(f(f(x))))
+-->
 
 ```python
 MUL(FOUR, THREE)  # -->

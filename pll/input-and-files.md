@@ -12,7 +12,7 @@ description: input(), and files next to your program
 you give it is shown first, then you type a reply and press Enter, and `input`
 returns what you typed, as a string:
 
-```python
+```python skip
 name = input("What is your name? ")
 print("Hello,", name)
 ```

@@ -33,7 +33,7 @@ which level to use.
 If you write type annotations, PLL checks them while the program runs, and stops
 with an explanation the moment a value does not match:
 
-```python
+```python error
 #level beginner
 
 def book_cost(num_books: int, hardcover: bool) -> float:

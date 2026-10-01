@@ -225,7 +225,7 @@ workouts.row(1)
 
 </div>
 
-```python
+```python error
 workouts.row(5)
 ```
 
@@ -251,7 +251,7 @@ workouts.row(1)["activity"]
 
 </div>
 
-```python
+```python error
 workouts.row(1)["time"]
 ```
 

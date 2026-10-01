@@ -1,6 +1,7 @@
 ---
 sidebar_position: 33
 day_number: 33
+pll_level: intermediate
 title: Extra - Recommendation Systems
 ---
 
@@ -211,7 +212,12 @@ cooccurrence = {
 
 ### The `.get()` Method: Safely Adding to Dictionary Values
 When building up our dictionary, we need to handle keys that might not exist yet:
-```python
+
+<!-- python setup
+movies_dict = {}
+-->
+
+```python error
 # Without .get() - causes KeyError if key doesn't exist
 movies_dict["Inception"] = movies_dict["Inception"] + ["The Matrix"]  # Error if "Inception" not in dict!
 
