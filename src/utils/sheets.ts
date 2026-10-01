@@ -14,11 +14,15 @@ export function sheetCsvUrl(gid: string, id: string = SCHEDULE_SHEET_ID): string
  * accounts, which breaks the direct fetch for exactly the students who need these
  * schedules. Swapping the origin and keeping the path reaches the same CSV.
  *
- * NOTE: as of 2026-09-17 this fallback cannot succeed yet. The proxy's TLS certificate
- * expired 2026-01-08 (so browsers refuse the connection), and it allowlists sheets by
- * id -- this sheet returns 403 while the older scheduling sheet returns 200. Renew the
- * certificate and allowlist this sheet id to activate the fallback; set to '' to stop
- * attempting it.
+ * Verified working 2026-10-01: valid certificate, `Access-Control-Allow-Origin: *` on
+ * both the redirect and the preflight, and any sheet id accepted (paths outside
+ * /spreadsheets/ are refused). Set to '' to stop attempting the fallback.
+ *
+ * Caveat: the proxy passes Google's 307 through rather than following it, so the CSV
+ * body itself is fetched from doc-*.googleusercontent.com. That shields the
+ * docs.google.com hop only -- a policy blocking *.googleusercontent.com as well would
+ * still break this. Having the proxy follow the redirect server-side and return the
+ * body would close that gap.
  */
 const PROXY_ORIGIN = 'https://metal.dbp.io:10321';
 
