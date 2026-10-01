@@ -3,6 +3,7 @@ import type { Config } from '@docusaurus/types';
 import rehypeKatex from 'rehype-katex';
 import remarkMath from 'remark-math';
 import { getChakraThemeSyncPlugin } from './src/plugins/chakra-theme-sync';
+import { createCollapsibleSectionsPlugin } from './src/plugins/collapsible-sections';
 import { createVariableSubstitutionPlugin } from './src/plugins/variable-substitution';
 import { oneDarkTheme, oneLightTheme } from './src/theme/one-dark-themes';
 import { getDocumentId } from './src/utils/calendar';
@@ -22,12 +23,12 @@ const dcicDomain = 'https://dcic.pdi.run';
 function notesDropdownItems() {
   var startingItems = [
     {
-      to: '/current-day/',
-      activeBasePath: '/days',
-      label: 'Days',
+      to: '/current-class/',
+      activeBasePath: '/class',
+      label: 'Classes',
     },
     {
-      to: '/days/style/',
+      to: '/class/style/',
       label: 'Style Guide',
     },
     {
@@ -89,12 +90,16 @@ const config: Config = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          path: 'days',
-          routeBasePath: 'days',
-          sidebarPath: './sidebars/days.ts',
+          path: 'class',
+          routeBasePath: 'class',
+          sidebarPath: './sidebars/class.ts',
           editUrl:
             'https://github.com/neu-pdi/cs2000-public-resources/edit/main/',
-          remarkPlugins: [remarkMath, createVariableSubstitutionPlugin(dcicDomain)],
+          remarkPlugins: [
+            remarkMath,
+            createVariableSubstitutionPlugin(dcicDomain),
+            createCollapsibleSectionsPlugin(),
+          ],
           rehypePlugins: [rehypeKatex],
         },
         pages: {},

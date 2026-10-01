@@ -5,7 +5,7 @@ import { DateItem, DateFor, FormatDate, SkillDateRange, isWeekend, isNextInstruc
 import UpcomingAnnotation from '../UpcomingAnnotation/UpcomingAnnotation';
 
 interface CalendarPageFrontMatter {
-    day_number?: number;
+    class_number?: number;
     lab_number?: number;
     homework_number?: number;
 }
@@ -74,13 +74,13 @@ export default function DateView({ id, item }: DateViewProps) {
     );
 }
 
-export function DayDate() {
+export function ClassDate() {
     const { frontMatter } = useDoc();
-    const { day_number } = frontMatter as DatePageFrontMatter;
+    const { class_number } = frontMatter as DatePageFrontMatter;
     return (<>
-        <DateView id={String(day_number)} item="lectures" />
+        <DateView id={String(class_number)} item="lectures" />
 
-        <UpcomingAnnotation id={String(day_number)} />
+        <UpcomingAnnotation id={String(class_number)} />
     </>);
 }
 

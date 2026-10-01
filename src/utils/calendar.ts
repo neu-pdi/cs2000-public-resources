@@ -75,7 +75,7 @@ function getLatestCalendarHref(item: CalendarItem): string | undefined {
   }
 
   if (item === 'lectures') {
-    return calendarDay.lectures?.find(({ href }) => href.startsWith('/days/'))?.href;
+    return calendarDay.lectures?.find(({ href }) => href.startsWith('/class/'))?.href;
   }
 
   return item === 'lab' ? calendarDay.lab?.href : calendarDay.homework?.href;
@@ -116,7 +116,7 @@ function getLatestCalendarDay(item: CalendarItem): CalendarDay | undefined {
 
       // We only show lectures that have days, since we do not want to show skill days or summary days
       if (item === 'lectures') {
-        return calendarDay.lectures?.some(({ href }) => href.startsWith('/days/')) ?? false;
+        return calendarDay.lectures?.some(({ href }) => href.startsWith('/class/')) ?? false;
       }
 
       return item === 'lab' ? calendarDay.lab !== undefined : calendarDay.homework !== undefined;
