@@ -31,29 +31,19 @@ function notesDropdownItems() {
       label: 'Style Guide',
     },
     {
-      to: '/tables/',
+      to: '/pll/',
+      activeBasePath: '/pll',
+      label: 'PLL Reference',
+    },
+    {
+      to: '/pll/tables/',
       label: 'Tables',
     },
-  ]
-
-  if (new Date() >= new Date(2026, 10, 3)) {
-    startingItems.push({
-      to: '/python-setup/',
-      label: 'Python Setup + FAQs',
-    });
-    startingItems.push({
-      to: '/pyret-cheatsheet-python/',
-      label: 'Python for Pyreteers',
-    });
-    startingItems.push({
+    {
       label: 'Python Documentation',
       href: 'https://docs.python.org/3/',
-    })
-  }
-  startingItems.push({
-    label: 'Pyret Documentation',
-    href: 'https://pyret.org/docs/latest/index.html',
-  });
+    },
+  ]
 
   return startingItems;
 }
@@ -147,6 +137,15 @@ const config: Config = {
         sidebarPath: './sidebars/practice.ts',
         routeBasePath: 'practice',
         remarkPlugins: [createVariableSubstitutionPlugin(dcicDomain)],
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'pll',
+        path: 'pll',
+        sidebarPath: './sidebars/pll.ts',
+        routeBasePath: 'pll',
       },
     ],
   ],

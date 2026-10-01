@@ -10,15 +10,15 @@ Introduces computer science and data science to students with no prior programmi
 
 ### Course Structure
 
-There will be three in-person **classes** and one **lab** per week. All content is directed around teaching a set of 13 **skills**, assessment of which will form the primary assessment of the class, and which are described in detail at [Skills](/skills).
+There will be three in-person **classes** and one **lab** per week. All content is directed around teaching a set of 11 **skills**, assessment of which will form the primary assessment of the class, and which are described in detail at [Skills](/skills).
 
-There are [13 **skills**](/syllabus#skills), which have repeatable assessments (taken on paper without notes over the course of the semester), and form the primary grading for the class. 
+There are [11 **skills**](/syllabus#skills), which have repeatable assessments (taken on paper without notes over the course of the semester), and form the primary grading for the class. 
 
 There are no formal quizzes or exams in this class, though the skill assessments are similar in form to quizzes; unlike traditional quizzes, skill assessments allow you to be assessed at your own pace, and repeat as you need.
 
 #### Classes
 
-Each class period (of CS2000) has reading you are **expected to do _before_ class**. During the class we will briefly review the new material that was covered in the reading (but, in much less depth — it is not a substitute for doing the reading), and then the majority of class will be dedicated to working with classmates, assisted by your instructor, on exercises related to the new material.
+Each class period (of CS2000) has a **Reading** section, at the top of that day's page, that you are **expected to read _before_ class**. During the class we will briefly review the new material that was covered in the reading (but, in much less depth — it is not a substitute for doing the reading), and then the majority of class will be dedicated to working with classmates, assisted by your instructor, on exercises related to the new material.
 
 #### Homeworks
 
@@ -88,21 +88,19 @@ Attendance is strongly encouraged, but not required in CS2000. Please do not com
 
 ### Skills
 
-The course will teach the following 13 skills, grading of which will be performed by repeatable (with highest grade taken), on-paper, no-note, assessment that can be scored as "Doesn't meet expectations", "Approaching expectations", or "Meets expectations". Each student will have at least 4 opportunities to master each skill. Beyond the regular 4 opportunities which occur during the semester, as the topics are covered, student may re-attempt 2 skills; such re-attempts can be scheduled in the last two weeks of classes or on the day of the final exam. See the [Skills](/skills) page for much more detail.
+The course will teach the following 11 skills, grading of which will be performed by repeatable (with highest grade taken), on-paper, no-note, assessment that can be scored as "Doesn't meet expectations", "Approaching expectations", or "Meets expectations". Each student will have at least 4 opportunities to master each skill. Beyond the regular 4 opportunities which occur during the semester, as the topics are covered, student may re-attempt 2 skills; such re-attempts can be scheduled in the last two weeks of classes or on the day of the final exam. See the [Skills](/skills) page for much more detail.
 
-00. Design function types, docs, tests (Pyret)
-01. Implement basic functions (Pyret)
-02. Construct / Transform Tables (Pyret)
-03. Iteration: Lists (Pyret)
-04. Structured & Conditional Data (Pyret)
-05. Recursion: Lists (Pyret)
-06. Recursion: Trees (Pyret)
-07. Variable Scope (Python)
-08. Basic functions (Python)
-09. Iteration: Lists (Python)
-10. Aliasing & Mutation (Python)
-11. Identifying Privacy Issues in Problem Formulation
-12. Identifying Stakeholders in Problem Formulation
+00. Design function types, docs, tests
+01. Implement basic functions
+02. Construct / Transform Tables
+03. Iteration: Lists
+04. Structured & Conditional Data
+05. Recursion: Lists
+06. Recursion: Trees
+07. Variable Scope
+08. Aliasing & Mutation
+09. Identifying Privacy Issues in Problem Formulation
+10. Identifying Stakeholders in Problem Formulation
 
 ### Assignment Chats {#assignment-chats}
 
@@ -132,7 +130,7 @@ Your final grade will be calculated by your results in the **Skill Assessments**
 <thead>
 <tr>
 <th>Grade</th>
-<th colSpan="3" align="center">Skills Needed (out of 13 total)</th>
+<th colSpan="3" align="center">Skills Needed (out of 11 total)</th>
 <th>Assignment Chat Average</th>
 <th>Pairing Session Average</th>
 </tr>
@@ -148,7 +146,7 @@ Your final grade will be calculated by your results in the **Skill Assessments**
 <tbody>
 <tr>
 <td><strong>A</strong></td>
-<td>12+</td>
+<td>10+</td>
 <td>1 or fewer</td>
 <td>0</td>
 <td>80% or better</td>
@@ -156,7 +154,7 @@ Your final grade will be calculated by your results in the **Skill Assessments**
 </tr>
 <tr>
 <td><strong>A-</strong></td>
-<td>12+</td>
+<td>10+</td>
 <td>1 or fewer</td>
 <td>0</td>
 <td>70% or better</td>
@@ -164,48 +162,48 @@ Your final grade will be calculated by your results in the **Skill Assessments**
 </tr>
 <tr>
 <td><strong>B+</strong></td>
-<td>9+</td>
-<td>4 or fewer</td>
+<td>8+</td>
+<td>3 or fewer</td>
 <td>0</td>
 <td>70% or better</td>
 <td>70% or better</td>
 </tr>
 <tr>
 <td><strong>B</strong></td>
-<td>9+</td>
-<td>4 or fewer</td>
+<td>8+</td>
+<td>3 or fewer</td>
 <td>0</td>
 <td>60% or better</td>
 <td>60% or better</td>
 </tr>
 <tr>
 <td><strong>B-</strong></td>
-<td>9+</td>
-<td>4 or fewer</td>
+<td>8+</td>
+<td>3 or fewer</td>
 <td>0</td>
 <td>50% or better</td>
 <td>50% or better</td>
 </tr>
 <tr>
 <td><strong>C+</strong></td>
-<td>7+</td>
-<td>5 or fewer</td>
+<td>6+</td>
+<td>4 or fewer</td>
 <td>1 or fewer</td>
 <td>60% or better</td>
 <td>60% or better</td>
 </tr>
 <tr>
 <td><strong>C</strong></td>
-<td>7+</td>
-<td>5 or fewer</td>
+<td>6+</td>
+<td>4 or fewer</td>
 <td>1 or fewer</td>
 <td>50% or better</td>
 <td>50% or better</td>
 </tr>
 <tr>
 <td><strong>C-</strong></td>
-<td>7+</td>
-<td>5 or fewer</td>
+<td>6+</td>
+<td>4 or fewer</td>
 <td>1 or fewer</td>
 <td>40% or better</td>
 <td>40% or better</td>
@@ -214,7 +212,7 @@ Your final grade will be calculated by your results in the **Skill Assessments**
 <td><strong>D+</strong></td>
 <td></td>
 <td></td>
-<td>5 or fewer</td>
+<td>4 or fewer</td>
 <td>50% or better</td>
 <td>any</td>
 </tr>
@@ -222,7 +220,7 @@ Your final grade will be calculated by your results in the **Skill Assessments**
 <td><strong>D</strong></td>
 <td></td>
 <td></td>
-<td>5 or fewer</td>
+<td>4 or fewer</td>
 <td>40% or better</td>
 <td>any</td>
 </tr>
@@ -230,7 +228,7 @@ Your final grade will be calculated by your results in the **Skill Assessments**
 <td><strong>D-</strong></td>
 <td></td>
 <td></td>
-<td>5 or fewer</td>
+<td>4 or fewer</td>
 <td>any</td>
 <td>any</td>
 </tr>
@@ -240,10 +238,9 @@ Your final grade will be calculated by your results in the **Skill Assessments**
 
 ### Textbook
 
-We will follow the textbook "A Data-Centric Introduction to Computing",
-by Fisler, Krishnamurthi, Lerner, and Politz. However, we have made a few **MINOR** changes, so you should use our version of it, available freely online at
-https://dcic.pdi.run (you should see a banner at the top that says it is our version, and the menus should always be yellow) and all readings will be linked to from appropriate parts of
-this site.
+The **Reading** section of each class page is adapted, and rewritten for Python, from the textbook "A Data-Centric Introduction to Computing",
+by Fisler, Krishnamurthi, Lerner, and Politz. You do not need the textbook itself, but if you want to read further, our version of it is available freely online at
+https://dcic.pdi.run (you should see a banner at the top that says it is our version, and the menus should always be yellow). Note that most of its early chapters use the programming language Pyret, rather than Python.
 
 ### Collaboration and Academic Honesty
 

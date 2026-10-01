@@ -45,11 +45,11 @@ Check out our [regrade request policy](/syllabus/#regrade-requests) for info on 
 
 ---
 ## VS Code
-### When trying to exit a file, no run button is showing
-Try the following to fix the issue:
-1) Uninstall the Pyret extension
+### When trying to edit a file, no run button is showing
+The **PLL: Run Python File** button only appears for files whose names end in `.py`. If you are editing a `.py` file and still don't see it, you can run it from the Command Palette (`Ctrl+Shift+P` on Windows, `Cmd+Shift+P` on a Mac) with **PLL: Run Python File**. If that doesn't work either, try the following to fix the issue:
+1) Uninstall the Python Language Levels (PLL) extension
 2) Restart the browser and/or clear website cache
-3) Re-install the Pyret extension
+3) Re-install the Python Language Levels (PLL) extension
 
 If the issue continues, try using another browser if you can and let us know in the Discord
 

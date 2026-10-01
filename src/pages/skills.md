@@ -25,7 +25,7 @@ To take a skill, you must go to Assessment Hours. Assessment Hours are available
 
 For more info on Assessment Hours, as well as see what skills available each week, check out the [home page](/#assessment-hours)
 
-0. <a id="0" href="#0">Design Function Types, Docs, Tests (Pyret)</a> - **Available:** <DateView id="0" item="skills" />
+0. <a id="0" href="#0">Design Function Types, Docs, Tests</a> - **Available:** <DateView id="0" item="skills" />
    |  |  |
    | -- | -- |
    | **Meets Expectations** | • Correct type annotation<br/>• Docstring that describes behavior, doesn't repeat type annotation.<br/>• A few (2+) correct, meaningfully different tests<br/>• minor typos are okay |
@@ -33,41 +33,39 @@ For more info on Assessment Hours, as well as see what skills available each wee
 
 <details>
     <summary>Examples</summary>
-    <p>Sample question: Design types, docstring, and tests for a function <code>nm-square</code> that, given a number, returns the result of multiplying the number by itself. NOTE: you should not implement the function!</p>
+    <p>Sample question: Design types, docstring, and tests for a function <code>nm_square</code> that, given a number, returns the result of multiplying the number by itself. NOTE: you should not implement the function!</p>
     <p>**Answer meeting expectations:**</p>
 
-```pyret
-fun nm-square(n :: Number) -> Number:
-  doc: "Multiplies the input by itself"
+```python
+def nm_square(n: float) -> float:
+    """Multiplies the input by itself"""
 
-where:
-  nm-square(-1) is 1
-  nm-square(0) is 0
-  nm-square(2) is 4
-end
+def test_nm_square():
+    assert nm_square(-1) == 1
+    assert nm_square(0) == 0
+    assert nm_square(2) == 4
 ```
 <p>**Answer approaching expectations (docstring, insufficient tests):**</p>
 
-```pyret
-fun nm-square(n :: Number) -> Number:
-  doc: "Takes a number as an argument and returns a number. The result is what you get when multiplying the first number by itself."
+```python
+def nm_square(n: float) -> float:
+    """Takes a number as an argument and returns a number. The result is what you get when multiplying the first number by itself."""
 
-where:
-  nm-square(1) is 1
-end
+def test_nm_square():
+    assert nm_square(1) == 1
 ```
 
 </details> 
 <details>
  <summary>Practice Problem 1</summary>
- <p>Design types, docstring, and tests for a function `check-age` that, given a number that is someone's age, returns true when the age is above or equal to 21. NOTE: you should not implement the function!</p>
+ <p>Design types, docstring, and tests for a function `check_age` that, given a number that is someone's age, returns `True` when the age is above or equal to 21. NOTE: you should not implement the function!</p>
 </details>
 <details>
  <summary>Practice Problem 2</summary>
- <p>Design types, docstring, and tests for a function `check-year`, that takes a year as input, and returns "Past", "Current", or "Future" depending on the year. NOTE: you should not implement the function!</p>
+ <p>Design types, docstring, and tests for a function `check_year`, that takes a year as input, and returns "Past", "Current", or "Future" depending on the year. NOTE: you should not implement the function!</p>
 </details>
 
-1. <a id="1" href="#1">Implement Basic Functions (Pyret)</a> - **Available:** <DateView id="1" item="skills" />
+1. <a id="1" href="#1">Implement Basic Functions</a> - **Available:** <DateView id="1" item="skills" />
    |  |  |
    | -- | -- |
    | **Meets Expectations** | • Well-formatted, correct implementation:<br/>    • may include numbers, strings, `if` (NOT images)<br/>    • minor typos errors are okay |
@@ -75,343 +73,369 @@ end
 
 <details>
     <summary>Examples</summary>
-    <p>Sample question: Implement the function <code>nm-square</code> given the following type annotation, docstring, and tests:</p>
-```pyret
-fun nm-square(n :: Number) -> Number:
-  doc: "Multiplies the input by itself"
+    <p>Sample question: Implement the function <code>nm_square</code> given the following type annotation, docstring, and tests:</p>
+```python
+def nm_square(n: float) -> float:
+    """Multiplies the input by itself"""
 
-where:
-  nm-square(-1) is 1
-  nm-square(0) is 0
-  nm-square(2) is 4
-end
+def test_nm_square():
+    assert nm_square(-1) == 1
+    assert nm_square(0) == 0
+    assert nm_square(2) == 4
 ```
 
     <p>**Answer meeting expectations:**</p>
 
-```pyret
-  n * n
+```python
+    return n * n
 ```
 <p>**Answer approaching expectations (wrong problem):**</p>
 
-```pyret
-  n * 2
+```python
+    return n * 2
 ```
 
 </details> 
 <details>
  <summary>Practice Problem 1</summary>
- <p>Implement the function `check-age` given the following type annotation, docstring, and tests:</p>
+ <p>Implement the function `check_age` given the following type annotation, docstring, and tests:</p>
 
-```pyret
-fun check-age(age :: Number) -> Boolean:
-  doc: "Returns true when the age is above or equal to 21"
+```python
+def check_age(age: int) -> bool:
+    """Returns True when the age is above or equal to 21"""
 
-where:
-  check-age(20) is false
-  check-age(21) is true
-  check-age(45) is true
-end
+def test_check_age():
+    assert not check_age(20)
+    assert check_age(21)
+    assert check_age(45)
 ```
 
 </details>
 <details>
  <summary>Practice Problem 2</summary>
- <p>Implement the function `check-year` given the following type annotation, docstring, and tests:</p>
+ <p>Implement the function `check_year` given the following type annotation, docstring, and tests:</p>
 
-```pyret
-fun check-year(year :: Number) -> String:
-  doc: "Returns 'Past', 'Current', or 'Future' depending on whether the year is before, equal to, or after 2026"
+```python
+def check_year(year: int) -> str:
+    """Returns 'Past', 'Current', or 'Future' depending on whether the year is before, equal to, or after 2026"""
 
-where:
-  check-year(2020) is "Past"
-  check-year(2026) is "Current"
-  check-year(2030) is "Future"
-end
+def test_check_year():
+    assert check_year(2020) == "Past"
+    assert check_year(2026) == "Current"
+    assert check_year(2030) == "Future"
 ```
 
 </details>
 
-02. <a id="2" href="#2">Construct / Transform Tables (Pyret)</a> - **Available:** <DateView id="2" item="skills" />
+02. <a id="2" href="#2">Construct / Transform Tables</a> - **Available:** <DateView id="2" item="skills" />
     |  |  |
     | -- | -- |
-    | **Meets Expectations** | • Function designed has type annotation, docstring, and at least one test<br/>• Function uses correct table function (skill covers `filter-with`, `build-column`, and `transform-column`)<br/>• Row helper does what is expected, whether defined with `lam` or named |
-    | **Approaching Expectations** | • Function uses correct table function (`filter-with`, `build-column`, or `transform-column`)<br/>• Row helper accesses fields from row, but not in a way that solves the problem |
+    | **Meets Expectations** | • Function designed has type annotation, docstring, and at least one test<br/>• Function uses correct table function (skill covers `filter`, `add_column`, and `transform_column`)<br/>• Row helper does what is expected, whether defined with `lambda` or named |
+    | **Approaching Expectations** | • Function uses correct table function (`filter`, `add_column`, or `transform_column`)<br/>• Row helper accesses fields from row, but not in a way that solves the problem |
 <details>
     <summary>Examples</summary>
-    <p>Sample question: Design a function <code>find-scholars</code> that takes a table of students with "name" and "campus" columns and returns a new table containing only the students whose campus is **not** "Boston".</p>
+    <p>Sample question: Design a function <code>find_scholars</code> that takes a table of students with "name" and "campus" columns and returns a new table containing only the students whose campus is **not** "Boston".</p>
     <p>**Answer meeting expectations:**</p>
 
-```pyret
-fun find-scholars(t :: Table) -> Table:
-  doc: "Find students not in Boston"
+```python
+def find_scholars(t: Table) -> Table:
+    """Find students not in Boston"""
 
-  fun is-scholar(r :: Row) -> Boolean:
-    get-column(r, "campus") <> "Boston"
-  end
+    def is_scholar(r: dict) -> bool:
+        return r["campus"] != "Boston"
 
-  filter-with(t, is-scholar)
-where:
-  students = table: name, campus
-    row: "Ajay", "Oakland"
-    row: "Jason", "Boston"
-    row: "Lauren", "London"
-  end
+    return t.filter(is_scholar)
 
-  result = table: name, campus
-    row: "Ajay", "Oakland"
-    row: "Lauren", "London"
-  end
+def test_find_scholars():
+    students = table(
+        ["name", "campus"],
+        [
+            ["Ajay", "Oakland"],
+            ["Jason", "Boston"],
+            ["Lauren", "London"],
+        ],
+    )
 
-  find-scholars(students) is result
-end
+    result = table(
+        ["name", "campus"],
+        [
+            ["Ajay", "Oakland"],
+            ["Lauren", "London"],
+        ],
+    )
+
+    assert find_scholars(students) == result
 ```
 
 <p>**Answer approaching expectations (missing docstring, incorrect row helper, no tests):**</p>
 
-```pyret
-fun find-scholars(t :: Table) -> Table:
-  fun is-scholar(r :: Row) -> Boolean:
-    get-column(r, "campus") <> "Boston"
-  end
-  
-  filter-with(t, is-scholar)
-end
+```python
+def find_scholars(t: Table) -> Table:
+    def is_scholar(r: dict) -> bool:
+        return r["campus"] != "Boston"
+
+    return t.filter(is_scholar)
 ```
 
 </details> 
 <details>
  <summary>Practice Problem 1</summary>
-<p>Design a function `add-bad-year-column` that, given a table with columns for year, costs, and revenues,
+<p>Design a function `add_bad_year_column` that, given a table with columns for year, costs, and revenues,
 adds a new column called "bad-year" that contains true if the costs exceed revenues for that year,
 and false otherwise.</p>
 </details>
 <details>
  <summary>Practice Problem 2</summary>
-<p>Design a function `find-drought-risks` that takes a table with "region", "rainfall-2023" and "rainfall-2024" columns
+<p>Design a function `find_drought_risks` that takes a table with "region", "rainfall-2023" and "rainfall-2024" columns
 and returns a new table containing only those regions where rainfall amounts decreased from 2023 to 2024.</p>
 </details>
-03. <a id="3" href="#3">Iteration: Lists (Pyret)</a> - **Available:** <DateView id="3" item="skills" />
+03. <a id="3" href="#3">Iteration: Lists</a> - **Available:** <DateView id="3" item="skills" />
     |  |  |
     | -- | -- |
-    | **Meets Expectations** | • Uses `for each` properly, drawing elements from the list<br/>• Mutates a single variable within the loop to correctly accumulate the result<br/>• Returns the final result after the loop |
-    | **Approaching Expectations** | • Uses `for each`, drawing elements from the list<br/>• Either: Mutates within the loop, but in such a way that doesn't produce the correct accumulated answer, or doesn't use the final result properly at the end of the loop |
+    | **Meets Expectations** | • Uses a `for` loop properly, drawing elements from the list<br/>• Mutates a single variable within the loop to correctly accumulate the result<br/>• Returns the final result after the loop |
+    | **Approaching Expectations** | • Uses a `for` loop, drawing elements from the list<br/>• Either: Mutates within the loop, but in such a way that doesn't produce the correct accumulated answer, or doesn't use the final result properly at the end of the loop |
 <details>
     <summary>Examples</summary>
-    <p>Design a function <code>list-of-squares</code> that takes a list of numbers, and returns a list where each element is the square of N where N is the element from the list. You must use <code>for each</code>, rather than a built in list function or recursion.</p>
+    <p>Design a function <code>list_of_squares</code> that takes a list of numbers, and returns a list where each element is the square of N where N is the element from the list. You must use a <code>for</code> loop, rather than a built in list function or recursion.</p>
     <p>**Answer meeting expectations:**</p>
 
-```pyret
-fun list-of-squares(numbers :: List<Number>) -> List<Number> block:
-  doc: "produce the squares of the numbers in the input"
+```python
+def list_of_squares(numbers: list[float]) -> list[float]:
+    """produce the squares of the numbers in the input"""
 
-  var result = [list: ]
-  
-  for each(n from numbers):
-    result := result + [list: n * n]
-  end
-  
-  result
-where:
-  list-of-squares([list: ]) is [list: ]
-  list-of-squares([list: 5, 6]) is [list: 25, 36]
-  list-of-squares([list: -1, 0, 1]) is [list: 1, 0, 1]
-end
+    result = []
+
+    for n in numbers:
+        result = result + [n * n]
+
+    return result
+
+def test_list_of_squares():
+    assert list_of_squares([]) == []
+    assert list_of_squares([5, 6]) == [25, 36]
+    assert list_of_squares([-1, 0, 1]) == [1, 0, 1]
 ```
 
 <p>**Answer approaching expectations (doesn't use the final result properly):**</p>
 
-```pyret
-fun list-of-squares(numbers :: List<Number>) -> List<Number> block:
-  doc: "produce the squares of the numbers in the input"
+```python
+def list_of_squares(numbers: list[float]) -> list[float]:
+    """produce the squares of the numbers in the input"""
 
-  var result = [list: ]
-  
-  for each(n from numbers):
-    result := result + [list: n * n]
-  end
-  
-  numbers
-where:
-  list-of-squares([list: ]) is [list: ]
-  list-of-squares([list: 5, 6]) is [list: 25, 36]
-  list-of-squares([list: -1, 0, 1]) is [list: 1, 0, 1]
-end
+    result = []
+
+    for n in numbers:
+        result = result + [n * n]
+
+    return numbers
+
+def test_list_of_squares():
+    assert list_of_squares([]) == []
+    assert list_of_squares([5, 6]) == [25, 36]
+    assert list_of_squares([-1, 0, 1]) == [1, 0, 1]
 ```
 </details>
 <details>
    <summary>Practice Problem 1</summary>
-   <p>Design a function <code>has-positive</code> that takes a list of numbers, and returns <code>true</code> if at least one number in the list is positive, <code>false</code> if none are. You must use <code>for each</code>, rather than a built in list function or recursion.</p>
+   <p>Design a function <code>has_positive</code> that takes a list of numbers, and returns <code>True</code> if at least one number in the list is positive, <code>False</code> if none are. You must use a <code>for</code> loop, rather than a built in list function or recursion.</p>
 </details> 
 <details>
    <summary>Practice Problem 2</summary>
-   <p>Design a function <code>all-increasing</code> that takes a list of numbers, and returns <code>true</code> if each number is greater than the preceding number, <code>false</code> otherwise. It should return <code>true</code> for the empty list. You must use <code>for each</code>, rather than a built in list function or recursion.</p>
+   <p>Design a function <code>all_increasing</code> that takes a list of numbers, and returns <code>True</code> if each number is greater than the preceding number, <code>False</code> otherwise. It should return <code>True</code> for the empty list. You must use a <code>for</code> loop, rather than a built in list function or recursion.</p>
 </details> 
-04. <a id="4" href="#4">Structured & Conditional Data (Pyret)</a> - **Available:** <DateView id="4" item="skills" />
+04. <a id="4" href="#4">Structured & Conditional Data</a> - **Available:** <DateView id="4" item="skills" />
     |  |  |
     | -- | -- |
-    | **Meets Expectations** | • Uses `data` with variants as needed, fields with appropriate type annotations<br/>• Function uses either field projection or `cases` as needed<br/>• Function has type annotation, doc string, and tests |
-    | **Approaching Expectations** | • Uses `data` with variants as needed, fields if needed (possibly missing or incorrect annotations)<br/>• Function should use either field projection or cases, but may not do it correctly, or to match the problem |
+    | **Meets Expectations** | • Uses `@dataclass` classes for the variants as needed, fields with appropriate type annotations<br/>• Function uses either field access or `match` as needed<br/>• Function has type annotation, doc string, and tests |
+    | **Approaching Expectations** | • Uses `@dataclass` classes for the variants as needed, fields if needed (possibly missing or incorrect annotations)<br/>• Function should use either field access or `match`, but may not do it correctly, or to match the problem |
 <details>
     <summary>Examples</summary>
-    <p>Sample question: Design a data definition for Beverage that can be either coffee with number of shots of espresso, or tea with name and brew-time in minutes. Then, write a function <code>is-strong</code> that returns <code>true</code> if the beverage is a coffee with more than 2 shots, or a tea brewed for more than 5 minutes.</p>
+    <p>Sample question: Design a data definition for Beverage that can be either coffee with number of shots of espresso, or tea with name and brew time in minutes. Then, write a function <code>is_strong</code> that returns <code>True</code> if the beverage is a coffee with more than 2 shots, or a tea brewed for more than 5 minutes.</p>
     <p>**Answer meeting expectations:**</p>
 
-```pyret
-data Beverage:
-  | coffee(shots :: Number)
-  | tea(name :: String, brew-time :: Number)
-end
+```python
+from dataclasses import dataclass
 
-fun is-strong(b :: Beverage) -> Boolean:
-  doc: "determine if beverage is strong (coffee >2 shots or tea >5 minutes)"
-  cases (Beverage) b:
-    | coffee(shots) => shots > 2
-    | tea(name, brew-time) => brew-time > 5
-  end
-where:
-  regular = coffee(1)
-  strong-coffee = coffee(3)
-  weak-tea = tea("Green Tea", 3)
-  strong-tea = tea("Black Tea", 7)
-  
-  is-strong(regular) is false
-  is-strong(strong-coffee) is true
-  is-strong(weak-tea) is false
-  is-strong(strong-tea) is true
-end
+@dataclass
+class Coffee:
+    shots: int
+
+@dataclass
+class Tea:
+    name: str
+    brew_time: float
+
+Beverage = Coffee | Tea
+
+def is_strong(b: Beverage) -> bool:
+    """determine if beverage is strong (coffee >2 shots or tea >5 minutes)"""
+    match b:
+        case Coffee(shots):
+            return shots > 2
+        case Tea(name, brew_time):
+            return brew_time > 5
+
+def test_is_strong():
+    regular = Coffee(1)
+    strong_coffee = Coffee(3)
+    weak_tea = Tea("Green Tea", 3)
+    strong_tea = Tea("Black Tea", 7)
+
+    assert not is_strong(regular)
+    assert is_strong(strong_coffee)
+    assert not is_strong(weak_tea)
+    assert is_strong(strong_tea)
 ```
 
-<p>**Answer approaching expectations (missing docstring, missing annotations, only one test):**</p>
+<p>**Answer approaching expectations (missing docstring, missing or incorrect annotations, only one test):**</p>
 
-```pyret
-data Beverage:
-  | coffee(shots)
-  | tea(name, brew-time)
-end
+```python
+from dataclasses import dataclass
 
-fun is-strong(b):
-  cases (Beverage) b:
-    | coffee(shots) => shots > 2
-    | tea(name, brew-time) => brew-time > 5
-  end
-where:
-  regular = coffee(1)
-  is-strong(regular) is false
-end
+@dataclass
+class Coffee:
+    shots: str
+
+@dataclass
+class Tea:
+    name: str
+    brew_time: str
+
+Beverage = Coffee | Tea
+
+def is_strong(b):
+    match b:
+        case Coffee(shots):
+            return shots > 2
+        case Tea(name, brew_time):
+            return brew_time > 5
+
+def test_is_strong():
+    regular = Coffee(1)
+    assert not is_strong(regular)
 ```
 
 </details> 
 <details>
  <summary>Practice Problem 1</summary>
-    <p>Design a data definition for Restaurant that can be either yahoo with name and stars, or health-score with name and score. Then, write a function <code>is-reputable</code> that returns <code>true</code> if the resturant is a yahoo with at least 4 stars, or a health-score with score at least 85.</p>
+    <p>Design a data definition for Restaurant that can be either yahoo with name and stars, or health score with name and score. Then, write a function <code>is_reputable</code> that returns <code>True</code> if the resturant is a yahoo with at least 4 stars, or a health score with score at least 85.</p>
 </details>
 <details>
  <summary>Practice Problem 2</summary>
-    <p>Design a data definition for Book that can be either rating with title, stars, and num-reviews, or sales-ranking with title and position. Then, write a function <code>is-popular</code> that returns <code>true</code> if the book is a rating with num-reviews of at least 500, or a sales-ranking with position less than 500.</p>
+    <p>Design a data definition for Book that can be either rating with title, stars, and number of reviews, or sales ranking with title and position. Then, write a function <code>is_popular</code> that returns <code>True</code> if the book is a rating with at least 500 reviews, or a sales ranking with position less than 500.</p>
 </details>
-05. <a id="5" href="#5">Recursion: Lists (Pyret)</a> - **Available:** <DateView id="5" item="skills" />
+05. <a id="5" href="#5">Recursion: Lists</a> - **Available:** <DateView id="5" item="skills" />
     |  |  |
     | -- | -- |
-    | **Meets Expectations** | • Function has appropriate type annotation, doc string, and tests<br/>• Function uses `cases` to handle `empty` case and `link` case<br/>• In `link` case, calls function recursively on rest of list appropriately |
-    | **Approaching Expectations** | • Uses `cases` to break apart list, and has recursive call to rest of list |
+    | **Meets Expectations** | • Function has appropriate type annotation, doc string, and tests<br/>• Function uses `match` to handle the empty (`[]`) case and the first-and-rest (`[first, *rest]`) case<br/>• In the first-and-rest case, calls function recursively on rest of list appropriately |
+    | **Approaching Expectations** | • Uses `match` to break apart list, and has recursive call to rest of list |
 <details>
     <summary>Examples</summary>
-    <p>Sample question: Using recursion, design a function <code>make-positive</code> that takes a list of numbers and returns a new list where each number is replaced by its absolute value.</p>
+    <p>Sample question: Using recursion, design a function <code>make_positive</code> that takes a list of numbers and returns a new list where each number is replaced by its absolute value.</p>
     <p>**Answer meeting expectations:**</p>
    
-```pyret
-fun make-positive(lon :: List<Number>) -> List<Number>:
-  doc: "take the absolute value of each number in the list"
-  
-  cases (List) lon:
-    | empty => empty
-    | link(first, rest) =>
-      if first > 0:
-        link(first, make-positive(rest))
-      else:
-        link(0 - first, make-positive(rest))
-      end        
-  end
-where:
-  make-positive([list: ]) is [list: ]
-  make-positive([list: -1, 0, 2]) is [list: 1, 0, 2]
-end
+```python
+def make_positive(lon: list[float]) -> list[float]:
+    """take the absolute value of each number in the list"""
+
+    match lon:
+        case []:
+            return []
+        case [first, *rest]:
+            if first > 0:
+                return [first] + make_positive(rest)
+            else:
+                return [0 - first] + make_positive(rest)
+
+def test_make_positive():
+    assert make_positive([]) == []
+    assert make_positive([-1, 0, 2]) == [1, 0, 2]
 ```
 
 <p>**Answer approaching expectations (missing docstring, incorrect behavior, inadequate tests):**</p>
 
    
-```pyret
-fun make-positive(lon :: List<Number>) -> List<Number>:
-  cases (List) lon:
-    | empty => empty
-    | link(first, rest) => link(-first, make-positive(rest))
-  end
-where:
-  make-positive([list: ]) is [list: ]
-end
+```python
+def make_positive(lon: list[float]) -> list[float]:
+    match lon:
+        case []:
+            return []
+        case [first, *rest]:
+            return [-first] + make_positive(rest)
+
+def test_make_positive():
+    assert make_positive([]) == []
 ```
 
 </details>
 <details>
  <summary>Practice Problem 1</summary>
-    <p>Using recursion, design a function <code>count-warm</code> that takes a list of numbers and returns a count of numbers greater than 70.</p>
+    <p>Using recursion, design a function <code>count_warm</code> that takes a list of numbers and returns a count of numbers greater than 70.</p>
 </details>
 <details>
  <summary>Practice Problem 2</summary>
-    <p>Using recursion, design a function <code>build-string</code> that takes a list of strings and returns a single large string containing the original strings concatenated together in order.</p>
+    <p>Using recursion, design a function <code>build_string</code> that takes a list of strings and returns a single large string containing the original strings concatenated together in order.</p>
 </details>
 
-06. <a id="6" href="#6">Recursion: Trees (Pyret)</a> - **Available:** <DateView id="6" item="skills" />
+06. <a id="6" href="#6">Recursion: Trees</a> - **Available:** <DateView id="6" item="skills" />
     |  |  |
     | -- | -- |
-    | **Meets Expectations** | • Function has appropriate type annotation, doc string, and tests<br/>• Function uses `cases` to handle base case and recursive case<br/>• In recursive case, calls function recursively on subtrees appropriately |
-    | **Approaching Expectations** | • Uses `cases` to break apart tree, and has recursive call on subtrees |
+    | **Meets Expectations** | • Function has appropriate type annotation, doc string, and tests<br/>• Function uses `match` to handle base case and recursive case<br/>• In recursive case, calls function recursively on subtrees appropriately |
+    | **Approaching Expectations** | • Uses `match` to break apart tree, and has recursive call on subtrees |
 <details>
     <summary>Examples</summary>
-    <p>Design a function <code>count-internal-nodes</code> that, given the BinTree data definition below, takes a BinTree and returns the total number of internal nodes (non-leaf nodes) in the tree</p>
+    <p>Design a function <code>count_internal_nodes</code> that, given the BinTree data definition below, takes a BinTree and returns the total number of internal nodes (non-leaf nodes) in the tree</p>
  
-```pyret
-data BinTree<a>:
-  | leaf(val :: a)
-  | node(left :: BinTree<a>, right :: BinTree<a>)
-end
+```python
+from dataclasses import dataclass
+
+@dataclass
+class Leaf[T]:
+    val: T
+
+@dataclass
+class Node[T]:
+    left: "BinTree[T]"
+    right: "BinTree[T]"
+
+type BinTree[T] = Leaf[T] | Node[T]
 ```
     <p>**Answer meeting expectations:**</p>
     
-```pyret
-fun count-internal-nodes(tree :: BinTree) -> Number:
-  doc: "counts the number of nodes that are not leafs"
-  cases (BinTree) tree:
-    | leaf(val) => 0
-    | node(left, right) => 1 + count-internal-nodes(left) + count-internal-nodes(right)
-  end
-where:
-  tree = node(node(leaf(0), leaf(0)), node(node(leaf(0), leaf(0)), leaf(0)))
-  count-internal-nodes(tree) is 4
-  count-internal-nodes(leaf(1)) is 0
-end
+```python
+def count_internal_nodes(tree: BinTree) -> int:
+    """counts the number of nodes that are not leafs"""
+    match tree:
+        case Leaf(val):
+            return 0
+        case Node(left, right):
+            return 1 + count_internal_nodes(left) + count_internal_nodes(right)
+
+def test_count_internal_nodes():
+    tree = Node(Node(Leaf(0), Leaf(0)), Node(Node(Leaf(0), Leaf(0)), Leaf(0)))
+    assert count_internal_nodes(tree) == 4
+    assert count_internal_nodes(Leaf(1)) == 0
 ```
 
 <p>**Answer approaching expectations (lacking doc string, does not give correct result):**</p>
     
-```pyret
-fun count-internal-nodes(tree :: BinTree) -> Number:
-  cases (BinTree) tree:
-    | leaf(val) => 0
-    | node(left, right) => count-internal-nodes(left) + count-internal-nodes(right)
-  end
-where:
-  tree = node(node(leaf(0), leaf(0)), node(node(leaf(0), leaf(0)), leaf(0)))
-  count-internal-nodes(tree) is 4
-  count-internal-nodes(leaf(1)) is 0
-end
+```python
+def count_internal_nodes(tree: BinTree) -> int:
+    match tree:
+        case Leaf(val):
+            return 0
+        case Node(left, right):
+            return count_internal_nodes(left) + count_internal_nodes(right)
+
+def test_count_internal_nodes():
+    tree = Node(Node(Leaf(0), Leaf(0)), Node(Node(Leaf(0), Leaf(0)), Leaf(0)))
+    assert count_internal_nodes(tree) == 4
+    assert count_internal_nodes(Leaf(1)) == 0
 ```
 
 </details>
 
-7. <a id="7" href="#7">Variable Scope (Python)</a> - **Available:** <DateView id="7" item="skills" />
+7. <a id="7" href="#7">Variable Scope</a> - **Available:** <DateView id="7" item="skills" />
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Output of given code, that uses variables, defined locally, in functions, globally, etc, is correct<br/>• Explanation of behavior, including global keyword if needed, is correct |
@@ -512,138 +536,7 @@ print("Global value:", value)
 ```
 </details>
 
-8. <a id="8" href="#8">Basic functions (Python)</a> - **Available:** <DateView id="8" item="skills" />
-    |  |  |
-    | -- | -- |
-    | **Meets Expectations** | • Correct type annotation<br/>• Docstring that describes behavior, doesn't repeat type annotation<br/>• A few (2+) correct, meaningfully different tests<br/>• Correct implementation |
-    | **Approaching Expectations** | • Missing docstring, or long, includes redundant type information, etc.<br/>• 1+ correct tests<br/>• Correct implementation |
-
-<details>
-    <summary>Examples</summary>
-<p>Design a Python function `calculate_year` that takes a number of credits completed and returns the academic status
-based on these boundaries:</p>
-   * credits < 32: freshman
-   * 32 ≤ credits < 64: sophomore
-   * 64 ≤ credits < 96: junior
-   * credits >= 96: senior
-<p>Note: test `assert`s may be written without wrapping test functions.</p>
-<p>**Answer meeting expectations:**</p>
-
-```python
-def calculate_year(credits: int) -> str:
-    """determines NU year based on credits completed"""
-    if credits < 32:
-        return "freshman"
-    elif credits < 64:
-        return "sophomore"
-    elif credits < 96:
-        return "junior"
-    else:
-        return "senior"
-
-assert(calculate_year(20)) == "freshman"
-assert(calculate_year(32)) == "sophomore"
-assert(calculate_year(64)) == "junior"
-assert(calculate_year(100)) == "senior"
-```
-
-<p>**Answer approaching expectations (missing type annotation, missing docstring, only one test):**</p>
-
-```python
-def calculate_year(credits):
-    if credits < 32:
-        return "freshman"
-    elif credits < 64:
-        return "sophomore"
-    elif credits < 96:
-        return "junior"
-    else:
-        return "senior"
-
-assert(calculate_year(20)) == "freshman"
-```
-
-</details>
-
-<details>
-    <summary>Practice Problem 1</summary>
-<p>Design a function `convert_to_usd` that takes an amount of money and a currency (`"EUD"`, `"CAD"`, or `"INR"`)
-   and returns the equivalent amount of US dollars (USD). Assume:</p>
-   * 1 EUR is 1.15 USD
-   * 1 CAD is 0.70 USD
-   * 1 INR is 0.01 USD
-
-<p>Note: test `assert`s may be written without wrapping test functions.</p>
-</details>
-<details>
-    <summary>Practice Problem 2</summary>
-<p>Design a Python function calculate_bonus that takes years of service and performance rating, and returns the bonus percentage (0-13):</p>
-
-* "excellent" rating: 10% base bonus
-* "good" rating: 5% base bonus
-* "satisfactory" rating: 2% base bonus
-* "needs improvement" rating: 0% bonus
-  
-<p>Employees with 5+ years of service get an additional 3% bonus (added to base bonus)</p>
-<p>Note: test `assert`s may be written without wrapping test functions.</p>
-</details>
-
-9. <a id="9" href="#9">Iteration: Lists (Python)</a> - **Available:** <DateView id="9" item="skills" />
-    |  |  |
-    | -- | -- |
-    | **Meets Expectations** | • Uses `for ... in ...` properly, drawing elements from the list<br/>• Mutates a single variable within the loop to correctly accumulate the result<br/>• Returns the final result after the loop |
-    | **Approaching Expectations** | • Uses `for ... in ...`, drawing elements from the list<br/>• Either: Mutates within the loop, but in such a way that doesn't produce the correct accumulated answer, or doesn't use the final result properly at the end of the loop |
-<details>
-    <summary>Examples</summary>
-    <p>Design a Python function <code>list_of_squares</code> that takes a list of number and returns a list of the squares of the numbers. You must use <code>for ... in ...</code> loop.</p>
-   <p>Note: test <code>assert</code>s may be written without wrapping test functions, for space.</p>
-   <p>**Answer meeting expectations:**</p>
-
-```python
-def list_of_squares(numbers: list[float]) -> list[float]:
-    """returns the squares of the numbers"""
-    result = []
-    for number in numbers:
-        result = result + [number * number]
-    return result
-
-assert list_of_squares([]) == []
-assert list_of_squares([1, 2]) == [1, 4]
-```
-
-<p>**Answer approaching expectations (incorrect result):**</p>
-
-```python
-def list_of_squares(numbers: list[float]) -> list[float]:
-    """returns the squares of the numbers"""
-    result = []
-    for number in numbers:
-        result = result + number
-    return result
-
-assert list_of_squares([]) == []
-assert list_of_squares([1, 2]) == [1, 4]
-```
-
-</details>
-
-<details>
-   <summary>Practice Problem 1</summary>
-   <p>Design a Python function <code>has_positive</code> that takes a list of number and returns <code>true</code> if at least one number in the list is positive, <code>false</code> if none are. You must use <code>for ... in ...</code> loop.</p>
-   <p>Note: test <code>assert</code>s may be written without wrapping test functions, for space.</p>
-</details> 
-<details>
-   <summary>Practice Problem 2</summary>
-   <p>Design a Python function <code>all_increasing</code> that takes a list of number and returns<code>True</code> if each number is greater than the preceding number, <code>False</code> otherwise. It should return <code>True</code> for the empty list. You must use <code>for ... in ...</code> loop.</p>
-   <p>Note: test <code>assert</code>s may be written without wrapping test functions, for space.</p>
-</details> 
-<details>
-   <summary>Practice Problem 3</summary>
-   <p>Design a Python function <code>remove_consecutive</code> that takes a list and returns a new list with consecutive duplicate elements reduced to single occurrences. You must use <code>for ... in ...</code> loop.</p>
-   <p>Note: test <code>assert</code>s may be written without wrapping test functions, for space.</p>
-</details> 
-
-10. <a id="10" href="#10">Aliasing & Mutation (Python)</a> - **Available:** <DateView id="10" item="skills" />
+8. <a id="8" href="#8">Aliasing & Mutation</a> - **Available:** <DateView id="8" item="skills" />
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Output of given code that uses mutation of values like lists, aliasing, etc, is correct<br/>• Explanation of behavior is correct |
@@ -762,7 +655,7 @@ print("Same object?", my_book is updated_book)
 
 </details>
     
-11. <a id="11" href="#11">Identifying Privacy Issues in Problem Formulation</a> - **Available:** <DateView id="11" item="skills" />
+9. <a id="9" href="#9">Identifying Privacy Issues in Problem Formulation</a> - **Available:** <DateView id="9" item="skills" />
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Privacy analysis chart is complete and each entry is correct<br/> • Identify named privacy issue in a new context<br/> • Proposed mitigation strategy is appropriate given context |
@@ -811,7 +704,7 @@ in case people try to contest the ticket. All recorded data is also available to
 <p>Please **list TWO unintended recipients**, and also **how access to the collected and processed data might be designed to minimize transmission to unexpected recipients?**</p>
 </details>
 
-12. <a id="12" href="#12">Identifying Stakeholders in Problem Formulation</a> - **Available:** <DateView id="12" item="skills" />
+10. <a id="10" href="#10">Identifying Stakeholders in Problem Formulation</a> - **Available:** <DateView id="10" item="skills" />
 
 |  |  |
 | -- | -- |

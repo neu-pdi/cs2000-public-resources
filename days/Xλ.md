@@ -67,16 +67,14 @@ Computation is, indeed, deep. From the same era -- 1937 -- mathematician Lothar 
 
 **Is there an integer, when passed to the following function, that causes it to run forever?**
 
-```pyret
-fun collatz(n :: Number) -> Number:
-  if n <= 1:
-    n
-  else if num-modulo(n,2) == 0:
-    collatz(n / 2)
-  else:
-    collatz((n * 3) + 1)
-  end
-end
+```python
+def collatz(n: int) -> int:
+    if n <= 1:
+        return n
+    elif n % 2 == 0:
+        return collatz(n // 2)  # // divides, producing an int
+    else:
+        return collatz(n*3 + 1)
 ```
 
 **It's a simple program**. You could have written it a couple weeks into this class. And yet, **we are 88 years later and we still don't know**. We've tried it on very large numbers ([all of them up to `2.36×10^21`](https://en.wikipedia.org/wiki/Collatz_conjecture)), and all that we have tried it has terminated for, but still we have no idea if there might be some very large number for which it runs forever.
@@ -90,9 +88,9 @@ This is a deep idea on its own -- that _anything_ that _any_ computer could expr
 But, perhaps even more fascinating, that era involved **many different universal models of computation**, and one of Turings other results was showing that his Turing machine was equivalent to another -- the **Lambda Calculus** of his PhD advisor, Alonzo Church. 
 
 ### Moving towards the Lambda Calculus
-The lambda calculus, unlike a Turing machine, can and has been used in real programs -- indeed, most languages can express it. It involves three things, all of which you have used in Pyret:
+The lambda calculus, unlike a Turing machine, can and has been used in real programs -- indeed, most languages can express it. It involves three things, all of which you have used in Python:
 
-- lambda (anonymous functions) -- `lam(...): ... end`
+- lambda (anonymous functions) -- `lambda ...: ...`
 - variables (necessary for lambda, really) -- `x`, `y`, etc.
 - function application (to use the lambdas)  -- `f(x)`, etc.
 
@@ -116,47 +114,49 @@ While we started class back in September with numbers, booleans are simpler data
 
 We want to be able to write programs like:
 
-```pyret
-true
+```python
+True
 
-true and false
+True and False
 
-if true:
-  true
+if True:
+    True
 else:
-  false
-end
+    False
 
-if not(true) or false:
-  false
-else: 
-  true
-end
+if not True or False:
+    False
+else:
+    True
 ```
 
-In order to do that, we need a way of expressing, using just our three tools (lambda, variables, application), `true`, `false`, `and`, `or`, `not`, and `if`.
+In order to do that, we need a way of expressing, using just our three tools (lambda, variables, application), `True`, `False`, `and`, `or`, `not`, and `if`.
 
-If we focus on `true` and `false`, these are _values_. i.e., they don't evaluate. Our only _value_ in the lambda calculus is... lambda. So it must be that:
+If we focus on `True` and `False`, these are _values_. i.e., they don't evaluate. Our only _value_ in the lambda calculus is... lambda (i.e., a function). So it must be that:
 
-```pyret
-true = lam(...): ... end
-false = lam(...): ... end
+```python
+def TRUE(...):
+    return ...
+
+def FALSE(...):
+    return ...
 ```
 
-I write `=` here -- what I mean is that we are going to have a value (a `lam`) that _represents_ `true` and `false`. We won't have `true` and `false` in our language, but we can use these particular forms of `lam` to write programs that express boolean logic. i.e., all the examples above should be expressible with whatever choice we make.
+I write `def TRUE` and `def FALSE` here -- what I mean is that we are going to have a value (a function) that _represents_ `True` and `False`. We won't have Python's `True` and `False` in our language, but we can use these particular functions to write programs that express boolean logic. i.e., all the examples above should be expressible with whatever choice we make.
+
+Note that each `def` is just a convenient way of writing a lambda and giving it a name, so we can refer to it later. Python's own `lambda` can only contain a single expression, which makes longer lambda calculus programs hard to read, so we'll write all of our code with `def`. When we show, step by step, how a program runs, we'll write the functions with `lambda`, since at that point they have no names.
 
 Clearly, these two values should be _different_ (true is not false). 
 
 Since there are lots of different lambda functions, just picking two different ones probably isn't enough -- let's think about we will want to use them `if`, and see if that helps us narrow down what they should be. Specifically, we want to be able to express:
 
-```pyret
+```python
 if COND:
-  THEN
+    THEN
 else:
-  ELSE
-end
+    ELSE
 ```
-Where `COND`, `THEN`, and `ELSE` are expressions -- `COND` should be a boolean (one of our `lam` booleans! As in, whatever we choose to represent true and false, that, or a program that evaluates to that, will be here), `THEN` and `ELSE` can be arbitrary. 
+Where `COND`, `THEN`, and `ELSE` are expressions -- `COND` should be a boolean (one of our lambda booleans! As in, whatever we choose to represent true and false, that, or a program that evaluates to that, will be here), `THEN` and `ELSE` can be arbitrary. 
 
 What `if` is doing, fundamentally, is using `COND` (our lambda calculus boolean) to decide whether to evaluate to `THEN` or to `ELSE`. 
 
@@ -166,105 +166,106 @@ What `if` is doing, fundamentally, is using `COND` (our lambda calculus boolean)
 
 The answer to both of these questions ends up being the same:
 
-> **A boolean is a function of _two_ arguments that returns only _one_ of them**. Then the `true` version can return one, and the `false` version can return the other. If we do this, `if` can work by _applying_ the boolean it gets. Essentially, the boolean encodes the choice, rather than `if`.
+> **A boolean is a function of _two_ arguments that returns only _one_ of them**. Then the `TRUE` version can return one, and the `FALSE` version can return the other. If we do this, `if` can work by _applying_ the boolean it gets. Essentially, the boolean encodes the choice, rather than `if`.
 
 Let's make this concrete:
 
-```pyret
-TRUE = lam(x, y): x end
-FALSE = lam(x, y): y end
+```python
+def TRUE(x, y):
+    return x
 
-IF = lam(c,t,e): c(t,e) end
+def FALSE(x, y):
+    return y
+
+def IF(c, t, e):
+    return c(t, e)
 ```
 
 If we apply this to a concrete example, like one of the ones we wanted to be able to express:
 
-```pyret
-if true:
-  true
+```python
+if True:
+    True
 else:
-  false
-end
+    False
 ```
 
 We can translate that to our lambda calculus representation as:
 
-```pyret
-IF(TRUE,TRUE,FALSE)
+```python
+IF(TRUE, TRUE, FALSE)
 ```
 
 Or, if we substitute for our constants:
 
-```pyret
-(lam(c,t,e): c(t,e))( # if
-  lam(x, y): x end,   # true
-  lam(x, y): x end,   # true
-  lam(x, y): y end    # false
-  )
+```python
+(lambda c, t, e: c(t, e))(  # if
+    lambda x, y: x,         # true
+    lambda x, y: x,         # true
+    lambda x, y: y          # false
+)
 ```
 
 If we _run_ this, first we apply the `IF` lambda, substituting for the three arguments, yielding:
 
-```pyret
-(lam(x, y): x end)( # true
-  lam(x, y): x end, # true
-  lam(x, y): y end  # false
-  )
+```python
+(lambda x, y: x)(  # true
+    lambda x, y: x,  # true
+    lambda x, y: y   # false
+)
 ```
 
 This is another application (of `TRUE` to `TRUE` and `FALSE`), so we now apply it -- in this case, the second argument is ignored, and the body is just the first argument, so the result is:
 
-```pyret
-lam(x, y): x end
+```python
+lambda x, y: x
 ```
 
 Or, `TRUE` -- exactly as desired.
 
 Reading programs written in the pure lambda calculus can be pretty tricky (like the example we just had). 
 
-For the rest of this lecture and the next, in order to make them easier to read, we'll use constant definitions we define for fragments of the lambda calculus that we want to re-use, and to the extent we can leave them as constants, or do multiple steps at once, we'll do that. These definitions won't ever involve recursion, so they can always just be substituted (yielding programs that look like the above). This means we are still writing programs in the pure lambda calculus, but always using the constants makes things a lot easier to read. 
+For the rest of this lecture and the next, in order to make them easier to read, we'll use the named definitions we define for fragments of the lambda calculus that we want to re-use, and to the extent we can leave them as names, or do multiple steps at once, we'll do that. These definitions won't ever involve recursion, so they can always just be substituted (yielding programs that look like the above). This means we are still writing programs in the pure lambda calculus, but always using the names makes things a lot easier to read. 
 
 So for the above, we would write:
 
-```pyret
-IF(TRUE,TRUE,FALSE)
+```python
+IF(TRUE, TRUE, FALSE)
 ```
 
 And then would say that this steps to:
 
-```pyret
+```python
 TRUE
 ```
 
-### Testing in Pyret
+### Testing in Python
 
 As we come up with more and more sophisticated **encodings** (a fancy word for what we just did with booleans -- figure out representations in the lambda calculus for `true`, `false`, and `if`), it will be more likely that we make mistakes. It will be really helpful to be able to actually _run_ our examples -- indeed, part of the benefit of using the lambda calculus for this (instead of, e.g., a Turing Machine) is that what we are writing are real programs.
 
-However, one issue is that since our results will always be functions (the only value we have), Pyret will just print these out as `<function:anonymous>`, so we won't be able to tell if we what we got is what we wanted. 
+However, one issue is that since our results will always be functions (the only value we have), Python will just print these out as something like `<function TRUE at 0x10b0e2340>`, so we won't be able to tell if we what we got is what we wanted. 
 
-  And functions, in Pyret (and many languages) cannot be compared for equality (as usually you wouldn't want to be checking that the actual code was equal, you'd want to know that the _behavior_ was equal, but that'd require calling the two functions on potentially infinite arguments!).
+  And functions, in Python (and many languages) cannot be usefully compared for equality: `==` only checks whether two functions are the very same function (as usually you wouldn't want to be checking that the actual code was equal, you'd want to know that the _behavior_ was equal, but that'd require calling the two functions on potentially infinite arguments!).
 
-One way around this is to add a little bit of code to convert _back_ to ordinary Pyret values -- e.g., we can do this for our lambda calculus booleans (called **Church Booleans** after Alonzo Church) using the following function:
+One way around this is to add a little bit of code to convert _back_ to ordinary Python values -- e.g., we can do this for our lambda calculus booleans (called **Church Booleans** after Alonzo Church) using the following function:
 
-```pyret
-fun tobool(cb):
-  cb(true, false)
-end
+```python
+def tobool(cb):
+    return cb(True, False)
 ```
 
-If we call `tobool(...)` on one of our lambda calculus booleans, we will get back a normal Pyret boolean. This means we can, for example, take our previous example and wrap it appropriately, and write a test:
+If we call `tobool(...)` on one of our lambda calculus booleans, we will get back a normal Python boolean. This means we can, for example, take our previous example and wrap it appropriately, and write a test:
 
-```pyret
-check:
-  tobool(IF(TRUE,TRUE,FALSE)) is true
-end
+```python
+def test_if():
+    assert tobool(IF(TRUE, TRUE, FALSE))
 ```
 
-Clearly, `tobool(..)` is _not_ a term in the lambda calculus (it includes Pyret `true` and `false`, as well as a non-anonymous function). But, we'll only use this for testing, in order to read results, or, in some cases (e.g., for numbers), to be able to more easily construct example inputs (converting normal Pyret numbers into ones in the lambda calculus).
+Clearly, `tobool(..)` is _not_ a term in the lambda calculus (it includes Python's `True` and `False`). But, we'll only use this for testing, in order to read results, or, in some cases (e.g., for numbers), to be able to more easily construct example inputs (converting normal Python numbers into ones in the lambda calculus).
 
 ### And, Or, Not
 
-So we've figured out `if`, `true`, and `false`, but the true test of our representation is if we can also come up with lambda calculus representations of `and`, `or`, and `not` that work with out representations of `true` and `false`. 
+So we've figured out `if`, `True`, and `False`, but the true test of our representation is if we can also come up with lambda calculus representations of `and`, `or`, and `not` that work with out representations of `True` and `False`. 
 
 **What does that mean?**
 
@@ -272,8 +273,9 @@ Well, each should be a function -- `and` and `or` both take two booleans and ret
 
 So:
 
-```pyret
-AND = lam(b1, b2): ... end
+```python
+def AND(b1, b2):
+    return ...
 ```
 
 What should go in the `...`? Well, if `b1` is true (our representation of true!), then this function should return whatever `b2` is (as if `b2` is true, then `b1 and b2` is true, and if `b2` is false, then `b1 and b2` is false). Whereas if `b1` is false, then `b1 and b2` is false no matter what `b2` is.
@@ -282,37 +284,42 @@ So let's translate that into code, thinking about how `TRUE` and `FALSE` work.
 
 If `b1` is `TRUE`, we know it is a function that returns its first argument, so in that case. In that case, we would want `AND` to be:
 
-```pyret
-AND = lam(b1, b2): b1(b2, ...) end
+```python
+def AND(b1, b2):
+    return b1(b2, ...)
 ```
 
 Since as we already figured out, if `b1` is true, then we want to just return `b2`.
 
 What should the second argument to `b1` be? Well, if `b1` is `TRUE`, it doesn't matter. But if `b1` is `FALSE`, then it will ignore its first argument (so its fine if its `b2`) and will instead return whatever its _second_ argument is. What do we want that to return? `FALSE`! So let's make `AND` be:
 
-```pyret
-AND = lam(b1, b2): b1(b2, FALSE) end
+```python
+def AND(b1, b2):
+    return b1(b2, FALSE)
 ```
 
 `or` is similar -- except now if `b1` is `TRUE`, we want to return `TRUE`, and if it is `FALSE` want to return whatever `b2` is:
 
-```pyret
-OR = lam(b1, b2): b1(TRUE, b2) end
+```python
+def OR(b1, b2):
+    return b1(TRUE, b2)
 ```
 
 For `not`, we have a single boolean argument, and if we get `TRUE` as input, want to return `FALSE`, and if we get `FALSE`, want to return `TRUE`.
 
 How can we do that? Well, we know that `TRUE` will return its first argument, so:
 
-```pyret
-NOT = lam(b): b(FALSE, ...) end
+```python
+def NOT(b):
+    return b(FALSE, ...)
 ```
 
 And if we get `FALSE`, then we know it will return its second argument, so we can complete as:
 
 
-```pyret
-NOT = lam(b): b(FALSE, TRUE) end
+```python
+def NOT(b):
+    return b(FALSE, TRUE)
 ```
 
 So, we can express booleans. Let's move on to numbers -- specifically, we'll stick to natural numbers (0,1,2,...).
@@ -321,7 +328,7 @@ So, we can express booleans. Let's move on to numbers -- specifically, we'll sti
 
 Again we have task of representing values, this time things like:
 
-```pyret
+```python
 0
 1
 2
@@ -334,10 +341,16 @@ Again we have task of representing values, this time things like:
 
 Let's focus on the numbers. Again, they are values, so we need to figure out a way to represent them with lambda, i.e.:
 
-```pyret
-ZERO = lam(...): ... end
-ONE = lam(...): ... end
-TWO = lam(...): ... end
+```python
+def ZERO(...):
+    return ...
+
+def ONE(...):
+    return ...
+
+def TWO(...):
+    return ...
+
 ...
 ```
 
@@ -345,165 +358,190 @@ And it should work for any natural number! How can we do that? One idea would be
 
 A better idea is to have each be a function with two arguments: a function and a value and have the function be _applied_ a certain number of times to the value. Not in a row (since, until we implement mutation, running a function once and then running it again will produce the same result), but _nested_. i.e.,
 
-```pyret
-ZERO = lam(f, x): x end
-ONE = lam(f, x): f(x) end
-TWO = lam(f, x): f(f(x)) end
+```python
+def ZERO(f, x):
+    return x
+
+def ONE(f, x):
+    return f(x)
+
+def TWO(f, x):
+    return f(f(x))
+
 ...
 ```
 
 Now, clearly we can construct any natural number this way -- pick a number and nest the calls the right number of times. 
 
-We can even create a helper `ofnum(..)` that takes a Pyret natural number and produces one of these (essentially -- it's not technically the exact same code, but it behaves the same way, and is extremely convenient for our understanding), and a corresponding `tonum(..)` that goes the other way:
+We can even create a helper `ofnum(..)` that takes a Python natural number (an `int` that is 0 or more) and produces one of these (essentially -- it's not technically the exact same code, but it behaves the same way, and is extremely convenient for our understanding), and a corresponding `tonum(..)` that goes the other way:
 
-```pyret
-fun ofnum(n :: Number):
-  lam(f, x):
-    fun r(m):
-      if m == 0:
-        x
-      else:
-        f(r(m - 1))
-      end
-    end
-    r(n)
-  end
-end
+```python
+def ofnum(n: int):
+    def church_numeral(f, x):
+        def r(m):
+            if m == 0:
+                return x
+            else:
+                return f(r(m - 1))
+        return r(n)
+    return church_numeral
 
-fun tonum(cn) -> Number:
-  cn(lam(y): y + 1 end, 0)
-end
+def tonum(cn) -> int:
+    def add1(y):
+        return y + 1
+    return cn(add1, 0)
 ```
 
 Now, of course, in order for these to be useful, we need to be able to express `+` and `*` (and others!), so lets do that, starting with `+`.
 
 Addition takes two numbers and returns one, so we can start with:
 
-```pyret
-ADD = lam(n1, n2): ... end
+```python
+def ADD(n1, n2):
+    return ...
 ```
 
-Now, what should the result be? Well, we want a function `lam(f,x): f(f(...f(x))) end` where there are `n1 + n2` copies of `f`. Now, we know that `n1` and `n2` have this form already, but if we are going to be able to do anything with them, we have to apply them, so somehow it seems like we will need an `f` and `x` to pass to `n1` or `n2`. So lets expand our solution to:
+Now, what should the result be? Well, we want a function `lambda f, x: f(f(...f(x)))` where there are `n1 + n2` copies of `f`. Now, we know that `n1` and `n2` have this form already, but if we are going to be able to do anything with them, we have to apply them, so somehow it seems like we will need an `f` and `x` to pass to `n1` or `n2`. So lets expand our solution to:
 
-```pyret
-ADD = lam(n1, n2): # ADD is a lambda taking two numbers
-  lam(f, x): # Returning a number -- numbers are represented as lam(f,x)
-    ... 
-  end 
-end
+```python
+def ADD(n1, n2):  # ADD is a function taking two numbers
+    def sum_of_n1_n2(f, x):  # Returning a number -- numbers are functions of f and x
+        ...
+    return sum_of_n1_n2
 ```
 
-So how can we get the inner applications? Well, if we apply `n1(f,x)`, this should give us back `f(f(...f(x)))` where there are `n1` copies (where we interpret `n1` as a number). If we want another `n2` applications of `f`, we can pass this as the starting value (the `x`) to `n2`, and we get the following. We use local definitions to make it easier to understand, but like our constants, we can substitute them -- so they aren't breaking our rules of only using lambdas, variables, and application.
+So how can we get the inner applications? Well, if we apply `n1(f,x)`, this should give us back `f(f(...f(x)))` where there are `n1` copies (where we interpret `n1` as a number). If we want another `n2` applications of `f`, we can pass this as the starting value (the `x`) to `n2`, and we get the following. We use local definitions to make it easier to understand, but like our other named definitions, we can substitute them -- so they aren't breaking our rules of only using lambdas, variables, and application.
 
-```pyret
-ADD = lam(n1, n2): # ADD is a lambda taking two numbers
-  lam(f, x): # Returning a number -- numbers are represented as lam(f,x)
-    n2-applied = n2(f, x) # First we apply f n2 times to x
-    n2-then-n1-applied = n1(f, n2-applied) # Now we apply f n1 times to the prev result
-    n2-then-n1-applied # And this is what we return
-  end 
-end
+```python
+def ADD(n1, n2):  # ADD is a function taking two numbers
+    def sum_of_n1_n2(f, x):  # Returning a number -- numbers are functions of f and x
+        n2_applied = n2(f, x)  # First we apply f n2 times to x
+        n2_then_n1_applied = n1(f, n2_applied)  # Now we apply f n1 times to the prev result
+        return n2_then_n1_applied  # And this is what we return
+    return sum_of_n1_n2
 ```
 
 How do we do multiplication? There are multiple ways of doing it, but one is noticing that `n1 * n2` is the same as _adding_ `n2`, `n1` times, starting at 0. Note here that we are making particular choices for both `f` and `x`, knowing that our choice of `f` will be applied to our choice of `x` exactly `n1` times. Like with `ADD`, we present this with local definitions to make it easier to read.
 
 i.e.,:
 
-```pyret
-MUL = lam(n1, n2): # MUL is a lambda that takes two numbers
-  add-n2-to-y = lam(y): ADD(n2, y) end # We construct a function that adds n2 to its input
-  add-n2-n1-times = n1(add-n2-to-y, ZERO) # And then do that n1 times, starting with 0
-  add-n2-n1-times # This is what we return
-end
+```python
+def MUL(n1, n2):  # MUL is a function that takes two numbers
+    def add_n2_to_y(y):  # We construct a function that adds n2 to its input
+        return ADD(n2, y)
+    add_n2_n1_times = n1(add_n2_to_y, ZERO)  # And then do that n1 times, starting with 0
+    return add_n2_n1_times  # This is what we return
 ```
 
 This would mean if we had 4 multiplied by 3, we get:
 
-```pyret
-MUL(FOUR,THREE) # -->
-FOUR(lam(y): ADD(THREE, y) end, ZERO) # -->
+```python
+MUL(FOUR, THREE)  # -->
+FOUR(lambda y: ADD(THREE, y), ZERO)  # -->
 ADD(THREE, ADD(THREE, ADD(THREE, ADD(THREE, ZERO))))
 ```
 
 To confirm, we can use our conversions:
 
-```pyret
-check:
-  tonum(MUL(ofnum(5), ofnum(6))) is 30
-end
+```python
+def test_mul():
+    assert tonum(MUL(ofnum(5), ofnum(6))) == 30
 ```
 
 What about subtraction? Before we try to do `n - m`, let's do a simpler thing -- implement `n - 1`. 
 
-```pyret
-MINUS1 = lam(n): ... end
+```python
+def MINUS1(n):
+    return ...
 ```
 
-Somehow, this has to take a function `lam(f, x): f(f(...f(x))) end` and return `lam(f,x): f(...f(x)) end` -- i.e., apply the function one fewer time. 
+Somehow, this has to take a function `lambda f, x: f(f(...f(x)))` and return `lambda f, x: f(...f(x))` -- i.e., apply the function one fewer time. 
 
 How can we do that? Well, the easiest way to do it is actually to take a slight detour, to define our first _structured_ data (which we can do, of course -- Church and Turing proved we can express _everything_) -- structured data with two values, which we'll call a pair.
 
 Essentially, we want to define three things:
 
-```pyret
-PAIR = lam(a,b): ... end
-FIRST = lam(p): ... end
-SECOND = lam(p): ... end
+```python
+def PAIR(a, b):
+    return ...
+
+def FIRST(p):
+    return ...
+
+def SECOND(p):
+    return ...
 ```
 
 Where the ideas is that pairs are _created_ with `PAIR`, and then one of the two values that was stored in the pair can be gotten out with `FIRST` or `SECOND` respectively. 
 
 How do we do that? Well, the idea is similar to how booleans work -- `PAIR` will create a lambda function, and then `FIRST` and `SECOND` will apply it in the right way (in this case by passing in functions that cause the right value to be passed back). Let's see:
 
-```pyret
-PAIR = lam(a,b): lam(z): z(a,b) end end
-FIRST = lam(p): p(lam(a,b): a end) end
-SECOND = lam(p): p(lam(a,b): b end) end
+```python
+def PAIR(a, b):
+    def pair(z):
+        return z(a, b)
+    return pair
+
+def FIRST(p):
+    def first_of_two(a, b):
+        return a
+    return p(first_of_two)
+
+def SECOND(p):
+    def second_of_two(a, b):
+        return b
+    return p(second_of_two)
 ```
 
 We can confirm this is working using some of our other helpers, i.e.,:
 
-```pyret
-check:
-  tonum(FIRST(PAIR(ofnum(10), ofnum(5)))) is 10
-end
+```python
+def test_pair():
+    assert tonum(FIRST(PAIR(ofnum(10), ofnum(5)))) == 10
 ```
 
 Why do we want pairs anyway? Well, the trouble with trying to subtract one is that, with church numerals, that amounts to applying a function _one fewer time_. 
 
-i.e., if the input is `lam(f,x): f(f(f(x)) end`, we want the output to be `lam(f,x): f(f(x)) end`. 
+i.e., if the input is `lambda f, x: f(f(f(x)))`, we want the output to be `lambda f, x: f(f(x))`. 
 
 A very clever idea (due to another logician working around the same time, Stephen Kleene) was to construct, at each step, a _pair_ of the current step and the next step. Then getting the previous step amounts to extracting the first part of the pair. 
 
 Let's see:
 
-```pyret
-MINUS1 = lam(n): lam(f,x): FIRST(n(lam(y): PAIR(SECOND(y), f(SECOND(y))) end, PAIR(x,x))) end end
+```python
+def MINUS1(n):
+    def one_less(f, x):
+        def step(y):
+            return PAIR(SECOND(y), f(SECOND(y)))
+        return FIRST(n(step, PAIR(x, x)))
+    return one_less
 ```
 
-```pyret
-check:
-  tonum(MINUS1(tonum(10))) is 9
-end
+```python
+def test_minus1():
+    assert tonum(MINUS1(ofnum(10))) == 9
 ```
 
 Now we could implement general subtraction using the same strategy as we did for multiplication -- by repeatedly subtracting 1, but let's move on, to one last task we'd like to be able to do: check for equality. 
 
 As before, we'll start with a small problem -- just checking if a number is equal to 0.
 
-```pyret
-EQUAL0 = lam(n): ... end
+```python
+def EQUAL0(n):
+    return ...
 ```
 
 How can we do that? Well, we want to return a boolean -- true if it is 0 and false in all other cases. In this case, we can use the fact that numbers are composed of `f(f(...f(x)))`, i.e., if it is 0, then it is just whatever `x` is, and if it is non-zero, it is some number of applications of `f`:
 
-```pyret
-EQUAL0 = lam(n): n(lam(y): FALSE end, TRUE) end
+```python
+def EQUAL0(n):
+    def always_false(y):
+        return FALSE
+    return n(always_false, TRUE)
 
-check:
-  tobool(EQUAL0(ZERO)) is true
-  tobool(EQUAL0(ofnum(10))) is false
-end
+def test_equal0():
+    assert tobool(EQUAL0(ZERO))
+    assert not tobool(EQUAL0(ofnum(10)))
 ```
 
 (We can get to general equality by combining generalized subtraction with `EQUAL0`, but we won't today).
