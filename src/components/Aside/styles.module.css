@@ -1,0 +1,25 @@
+.aside {
+  margin: 1.25rem 0;
+  padding: 0.75rem 1rem 0.1rem;
+  border-left: 4px solid var(--ifm-color-emphasis-400);
+  background: var(--ifm-color-emphasis-100);
+  border-radius: 0 4px 4px 0;
+}
+
+.title {
+  margin: 0 0 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* Slightly tighter than body copy, to read as a step aside from the main thread. */
+.body {
+  font-size: 0.95em;
+}
+
+.body > :last-child {
+  margin-bottom: 0.75rem;
+}
