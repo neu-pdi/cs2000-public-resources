@@ -18,12 +18,14 @@ Each skill will be assessed as "Doesn't meet expectations", "Approaching
 expectations", and "Meets expectations", and students may attempt any skill
 assessment up to four times with the best result being used for their grade.
 
-To take a skill, you must go to Assessment Hours. Assessment Hours are available at the following times:
+Skills can be attempted in class on Skill Days (Oct. 8, Nov. 5, Nov. 19, and Dec. 3) and
+during Assessment Hours. Assessment Hours are held at the following times
+(except on holidays and Skill Days):
 <div className={styles.assessmentHours}>
   <AssessmentHours />
 </div>
 
-For more info on Assessment Hours, as well as see what skills available each week, check out the [home page](/#assessment-hours)
+For more info on Assessment Hours, and to see what skills are available each week, check out the [home page](/#assessment-hours).
 
 0. <a id="0" href="#0">Design Function Types, Docs, Tests (Pyret)</a> - **Available:** <DateView id="0" item="skills" />
    |  |  |
