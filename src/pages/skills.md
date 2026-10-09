@@ -25,7 +25,7 @@ during Assessment Hours. Assessment Hours are held at the following times
   <AssessmentHours />
 </div>
 
-For more info on Assessment Hours, as well as see what skills available each week, check out the [home page](/#assessment-hours).
+For more info on Assessment Hours, and to see what skills are available each week, check out the [home page](/#assessment-hours).
 
 0. <a id="0" href="#0">Design Function Types, Docs, Tests (Pyret)</a> - **Available:** <DateView id="0" item="skills" />
    |  |  |
