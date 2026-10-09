@@ -15,7 +15,7 @@ Introduces computer science and data science to students with no programming exp
 
 ## Assessment Hours {#assessment-hours}
 
-In-person hours where you can attempt [skill](/skills) assessments, by campus.
+In-person hours where you can attempt [skill](/skills) assessments, by campus. Assessment Hours are not held on holidays or on Skill Days (Oct. 8, Nov. 5, Nov. 19, and Dec. 3).
 
 <div className={styles.assessmentHours}>
   <AssessmentHours />
