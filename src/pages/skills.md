@@ -19,7 +19,7 @@ expectations", and "Meets expectations", and students may attempt any skill
 assessment up to four times with the best result being used for their grade.
 
 Skills can be attempted in class on Skill Days (Oct. 8, Nov. 5, Nov. 19, and Dec. 3) and
-during Assessment Hours. Assessment Hours are available at the following dates and times
+during Assessment Hours. Assessment Hours are held at the following times
 (except on holidays and Skill Days):
 <div className={styles.assessmentHours}>
   <AssessmentHours />
