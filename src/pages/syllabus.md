@@ -10,9 +10,9 @@ Introduces computer science and data science to students with no prior programmi
 
 ### Course Structure
 
-There will be three in-person **classes** and one **lab** per week. All content is directed around teaching a set of 11 **skills**, assessment of which will form the primary assessment of the class, and which are described in detail at [Skills](/skills).
+There will be three in-person **classes** and one **lab** per week. All content is directed around teaching a set of 12 **skills**, assessment of which will form the primary assessment of the class, and which are described in detail at [Skills](/skills).
 
-There are [11 **skills**](/syllabus#skills), which have repeatable assessments (taken on paper without notes over the course of the semester), and form the primary grading for the class. 
+There are [12 **skills**](/syllabus#skills), which have repeatable assessments (taken on paper without notes over the course of the semester), and form the primary grading for the class. 
 
 There are no formal quizzes or exams in this class, though the skill assessments are similar in form to quizzes; unlike traditional quizzes, skill assessments allow you to be assessed at your own pace, and repeat as you need.
 
@@ -88,19 +88,20 @@ Attendance is strongly encouraged, but not required in CS2000. Please do not com
 
 ### Skills
 
-The course will teach the following 11 skills, grading of which will be performed by repeatable (with highest grade taken), on-paper, no-note, assessment that can be scored as "Doesn't meet expectations", "Approaching expectations", or "Meets expectations". Each student will have at least 4 opportunities to master each skill. Beyond the regular 4 opportunities which occur during the semester, as the topics are covered, student may re-attempt 2 skills; such re-attempts can be scheduled in the last two weeks of classes or on the day of the final exam. See the [Skills](/skills) page for much more detail.
+The course will teach the following 12 skills, grading of which will be performed by repeatable (with highest grade taken), on-paper, no-note, assessment that can be scored as "Doesn't meet expectations", "Approaching expectations", or "Meets expectations". Each student will have at least 4 opportunities to master each skill. Beyond the regular 4 opportunities which occur during the semester, as the topics are covered, student may re-attempt 2 skills; such re-attempts can be scheduled in the last two weeks of classes or on the day of the final exam. See the [Skills](/skills) page for much more detail.
 
 00. Design function types, docs, tests
 01. Implement basic functions
-02. Construct / Transform Tables
-03. Iteration: Lists
-04. Structured & Conditional Data
-05. Recursion: Lists
-06. Recursion: Trees
-07. Variable Scope
-08. Aliasing & Mutation
-09. Identifying Privacy Issues in Problem Formulation
-10. Identifying Stakeholders in Problem Formulation
+02. Function composition
+03. Construct / Transform Tables
+04. Iteration: Lists
+05. Structured & Conditional Data
+06. Recursion: Lists
+07. Recursion: Trees
+08. Variable Scope
+09. Aliasing & Mutation
+10. Identifying Privacy Issues in Problem Formulation
+11. Identifying Stakeholders in Problem Formulation
 
 ### Assignment Chats {#assignment-chats}
 
@@ -130,7 +131,7 @@ Your final grade will be calculated by your results in the **Skill Assessments**
 <thead>
 <tr>
 <th>Grade</th>
-<th colSpan="3" align="center">Skills Needed (out of 11 total)</th>
+<th colSpan="3" align="center">Skills Needed (out of 12 total)</th>
 <th>Assignment Chat Average</th>
 <th>Pairing Session Average</th>
 </tr>

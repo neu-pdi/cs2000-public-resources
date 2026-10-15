@@ -127,7 +127,60 @@ def test_check_year():
 
 </details>
 
-02. <a id="2" href="#2">Construct / Transform Tables</a> - **Available:** <DateView id="2" item="skills" />
+2. <a id="2" href="#2">Function Composition</a> - **Available:** <DateView id="2" item="skills" />
+   |  |  |
+   | -- | -- |
+   | **Meets Expectations** | • Helper function and main function each have a type annotation, docstring, and at least one test<br/>• Helper correctly performs its one task<br/>• Main function calls the helper (rather than repeating its logic), passing appropriate arguments and using the result to solve the problem<br/>• minor typos are okay |
+   | **Approaching Expectations** | • Helper function is defined and does roughly what is expected<br/>• Main function calls the helper, but with incorrect arguments, or doesn't use the result in a way that solves the problem<br/>• May be missing type annotations, docstrings, or tests (or have incorrect tests) |
+
+<details>
+    <summary>Examples</summary>
+    <p>Sample question: Design a helper function <code>wall_area</code> that takes the width and height of a rectangular wall and returns its area. Then, design a function <code>room_wall_area</code> that takes the length, width, and height of a rectangular room and returns the total area of its four walls. <code>room_wall_area</code> must use <code>wall_area</code>.</p>
+    <p>**Answer meeting expectations:**</p>
+
+```python
+def wall_area(width: float, height: float) -> float:
+    """area of a rectangular wall"""
+    return width * height
+
+def test_wall_area():
+    assert wall_area(2, 3) == 6
+    assert wall_area(10, 8) == 80
+
+def room_wall_area(length: float, width: float, height: float) -> float:
+    """total area of the four walls of a rectangular room"""
+    return 2 * wall_area(length, height) + 2 * wall_area(width, height)
+
+def test_room_wall_area():
+    assert room_wall_area(1, 1, 1) == 4
+    assert room_wall_area(10, 12, 8) == 352
+```
+
+<p>**Answer approaching expectations (missing docstring and test for helper, calls helper with incorrect arguments):**</p>
+
+```python error
+def wall_area(width: float, height: float) -> float:
+    return width * height
+
+def room_wall_area(length: float, width: float, height: float) -> float:
+    """total area of the four walls of a rectangular room"""
+    return 4 * wall_area(length, width)
+
+def test_room_wall_area():
+    assert room_wall_area(10, 12, 8) == 352
+```
+
+</details>
+<details>
+ <summary>Practice Problem 1</summary>
+ <p>Design a helper function <code>is_weekend</code> that takes the name of a day (e.g., <code>"Monday"</code>) and returns <code>True</code> if it is <code>"Saturday"</code> or <code>"Sunday"</code>. Then, design a function <code>alarm_time</code> that takes the name of a day and returns <code>10</code> if it is a weekend and <code>7</code> otherwise. <code>alarm_time</code> must use <code>is_weekend</code>.</p>
+</details>
+<details>
+ <summary>Practice Problem 2</summary>
+ <p>Design a helper function <code>letter_grade</code> that takes a numeric score and returns <code>"A"</code> for scores of 90 or above, <code>"B"</code> for 80 to 89, <code>"C"</code> for 70 to 79, and <code>"F"</code> otherwise. Then, design a function <code>grade_report</code> that takes a student's name and score and returns a string like <code>"Ana: B"</code>. <code>grade_report</code> must use <code>letter_grade</code>.</p>
+</details>
+
+03. <a id="3" href="#3">Construct / Transform Tables</a> - **Available:** <DateView id="3" item="skills" />
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Function designed has type annotation, docstring, and at least one test<br/>• Function uses correct table function (skill covers `filter`, `add_column`, and `transform_column`)<br/>• Row helper does what is expected, whether defined with `lambda` or named |
@@ -189,7 +242,7 @@ and false otherwise.</p>
 <p>Design a function `find_drought_risks` that takes a table with "region", "rainfall-2023" and "rainfall-2024" columns
 and returns a new table containing only those regions where rainfall amounts decreased from 2023 to 2024.</p>
 </details>
-03. <a id="3" href="#3">Iteration: Lists</a> - **Available:** <DateView id="3" item="skills" />
+04. <a id="4" href="#4">Iteration: Lists</a> - **Available:** <DateView id="4" item="skills" />
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Uses a `for` loop properly, drawing elements from the list<br/>• Mutates a single variable within the loop to correctly accumulate the result<br/>• Returns the final result after the loop |
@@ -247,7 +300,7 @@ def test_list_of_squares():
    <summary>Practice Problem 2</summary>
    <p>Design a function <code>all_increasing</code> that takes a list of numbers, and returns <code>True</code> if each number is greater than the preceding number, <code>False</code> otherwise. It should return <code>True</code> for the empty list. You must use a <code>for</code> loop, rather than a built in list function or recursion.</p>
 </details> 
-04. <a id="4" href="#4">Structured & Conditional Data</a> - **Available:** <DateView id="4" item="skills" />
+05. <a id="5" href="#5">Structured & Conditional Data</a> - **Available:** <DateView id="5" item="skills" />
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Uses `@dataclass` classes for the variants as needed, fields with appropriate type annotations<br/>• Function uses either field access or `match` as needed<br/>• Function has type annotation, doc string, and tests |
@@ -328,7 +381,7 @@ def test_is_strong():
  <summary>Practice Problem 2</summary>
     <p>Design a data definition for Book that can be either rating with title, stars, and number of reviews, or sales ranking with title and position. Then, write a function <code>is_popular</code> that returns <code>True</code> if the book is a rating with at least 500 reviews, or a sales ranking with position less than 500.</p>
 </details>
-05. <a id="5" href="#5">Recursion: Lists</a> - **Available:** <DateView id="5" item="skills" />
+06. <a id="6" href="#6">Recursion: Lists</a> - **Available:** <DateView id="6" item="skills" />
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Function has appropriate type annotation, doc string, and tests<br/>• Function uses `match` to handle the empty (`[]`) case and the first-and-rest (`[first, *rest]`) case<br/>• In the first-and-rest case, calls function recursively on rest of list appropriately |
@@ -381,7 +434,7 @@ def test_make_positive():
     <p>Using recursion, design a function <code>build_string</code> that takes a list of strings and returns a single large string containing the original strings concatenated together in order.</p>
 </details>
 
-06. <a id="6" href="#6">Recursion: Trees</a> - **Available:** <DateView id="6" item="skills" />
+07. <a id="7" href="#7">Recursion: Trees</a> - **Available:** <DateView id="7" item="skills" />
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Function has appropriate type annotation, doc string, and tests<br/>• Function uses `match` to handle base case and recursive case<br/>• In recursive case, calls function recursively on subtrees appropriately |
@@ -439,7 +492,7 @@ def test_count_internal_nodes():
 
 </details>
 
-7. <a id="7" href="#7">Variable Scope</a> - **Available:** <DateView id="7" item="skills" />
+8. <a id="8" href="#8">Variable Scope</a> - **Available:** <DateView id="8" item="skills" />
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Output of given code, that uses variables, defined locally, in functions, globally, etc, is correct<br/>• Explanation of behavior, including global keyword if needed, is correct |
@@ -544,7 +597,7 @@ print("Global value:", value)
 ```
 </details>
 
-8. <a id="8" href="#8">Aliasing & Mutation</a> - **Available:** <DateView id="8" item="skills" />
+9. <a id="9" href="#9">Aliasing & Mutation</a> - **Available:** <DateView id="9" item="skills" />
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Output of given code that uses mutation of values like lists, aliasing, etc, is correct<br/>• Explanation of behavior is correct |
@@ -663,7 +716,7 @@ print("Same object?", my_book is updated_book)
 
 </details>
     
-9. <a id="9" href="#9">Identifying Privacy Issues in Problem Formulation</a> - **Available:** <DateView id="9" item="skills" />
+10. <a id="10" href="#10">Identifying Privacy Issues in Problem Formulation</a> - **Available:** <DateView id="10" item="skills" />
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Privacy analysis chart is complete and each entry is correct<br/> • Identify named privacy issue in a new context<br/> • Proposed mitigation strategy is appropriate given context |
@@ -712,7 +765,7 @@ in case people try to contest the ticket. All recorded data is also available to
 <p>Please **list TWO unintended recipients**, and also **how access to the collected and processed data might be designed to minimize transmission to unexpected recipients?**</p>
 </details>
 
-10. <a id="10" href="#10">Identifying Stakeholders in Problem Formulation</a> - **Available:** <DateView id="10" item="skills" />
+11. <a id="11" href="#11">Identifying Stakeholders in Problem Formulation</a> - **Available:** <DateView id="11" item="skills" />
 
 |  |  |
 | -- | -- |
