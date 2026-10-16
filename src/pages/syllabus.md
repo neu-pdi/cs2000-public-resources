@@ -18,7 +18,7 @@ There are no formal quizzes or exams in this class, though the skill assessments
 
 #### Classes
 
-Each class period (of CS2000) has a **Reading** section, at the top of that day's page, that you are **expected to read _before_ class**. During the class we will briefly review the new material that was covered in the reading (but, in much less depth — it is not a substitute for doing the reading), and then the majority of class will be dedicated to working with classmates, assisted by your instructor, on exercises related to the new material.
+Each class period (of CS2000) has a **Notes** section, at the top of that day's page, that you are **expected to review _before_ class**. During the class we will briefly review the new material that was covered in the notes (but, in much less depth — it is not a substitute for reviewing the notes), and then the majority of class will be dedicated to working with classmates, assisted by your instructor, on exercises related to the new material.
 
 #### Homeworks
 
@@ -239,7 +239,7 @@ Your final grade will be calculated by your results in the **Skill Assessments**
 
 ### Textbook
 
-The **Reading** section of each class page is adapted, and rewritten for Python, from the textbook "A Data-Centric Introduction to Computing",
+The **Notes** section of each class page is adapted, and rewritten for Python, from the textbook "A Data-Centric Introduction to Computing",
 by Fisler, Krishnamurthi, Lerner, and Politz. You do not need the textbook itself, but if you want to read further, our version of it is available freely online at
 https://dcic.pdi.run (you should see a banner at the top that says it is our version, and the menus should always be yellow). Note that most of its early chapters use the programming language Pyret, rather than Python.
 

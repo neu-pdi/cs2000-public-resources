@@ -7,12 +7,12 @@ title: Extra - Dictionaries
 
 ## Skills: None
 
-## Reading (Done Before Class)
-We could write every `filter` and `map` task as a `for` loop, but the named
-operations make it easier for readers to see what our code does. Are there
-other common patterns that would benefit from special handling? As an example,
-here is a dataclass for airline flights, and functions to look up the
-destination and the number of seats of a flight:
+## Notes (review before class)
+### Why Dictionaries
+
+Like `filter` and `map`, some patterns are common enough to get their own
+support. One is searching a list for the element with a given piece of
+information:
 
 ```python
 from dataclasses import dataclass
@@ -29,47 +29,23 @@ schedule = [Flight("NYC", "PVD", "CSA-342", 50),
             Flight("ORD", "DEN", "CSA-145", 175),
             Flight("BOS", "ORD", "CSA-647", 80)]
 
-def destination1(for_code: str, flights: list[Flight]) -> str | None:
-    """returns the destination of the flight with the given code"""
-    for fl in flights:
-        if fl.code == for_code:
-            return fl.to_city
-    return None
-
-def capacity1(for_code: str, flights: list[Flight]) -> int | None:
-    """returns the number of seats on the flight with the given code"""
-    for fl in flights:
-        if fl.code == for_code:
-            return fl.seats
-    return None
-```
-
-Both functions go through the list looking for the flight with the given code,
-then extract a piece of information from it. The loop does nothing but find the
-flight, which suggests a helper:
-
-```python
 def find_flight(for_code: str, flights: list[Flight]) -> Flight | None:
     """returns the flight with the given code"""
     for fl in flights:
         if fl.code == for_code:
             return fl
     return None
-
-def destination2(for_code: str, flights: list[Flight]) -> str:
-    """returns the destination of the flight with the given code"""
-    return find_flight(for_code, flights).to_city
 ```
 
-(and `capacity2` is the same, with `.seats`). Searching a list for the element
-with a specific piece of information is so common that languages provide a data
-structure just for it: in Python, a _dictionary_ (other languages have similar
-_hashmaps_, _hash tables_, or _associative arrays_).
+- Looking up a flight's destination, seats, etc. all need this loop, so it is a
+  helper: e.g., `find_flight(code, schedule).to_city`.
+- For this pattern, Python has the **dictionary** (other languages have
+  _hashmaps_, _hash tables_, or _associative arrays_).
 
 ### Creating and Using a Dictionary
 
-A dictionary maps unique _keys_ to a _value_ for each key. Here is our schedule
-as a dictionary:
+A dictionary maps unique **keys** to a **value** for each, written
+`{key1: value1, key2: value2, ...}`:
 
 ```python
 sched_dict = {"CSA-342": Flight("NYC", "PVD", "CSA-342", 50),
@@ -78,30 +54,21 @@ sched_dict = {"CSA-342": Flight("NYC", "PVD", "CSA-342", 50),
               "CSA-647": Flight("BOS", "ORD", "CSA-647", 80)}
 ```
 
-In general, a dictionary is written `{key1: value1, key2: value2, ...}`. To get
-the `Flight` with key `"CSA-145"`, we write `sched_dict["CSA-145"]`, and for its
-number of seats, `sched_dict["CSA-145"].seats`. The lookup finds the `Flight`
-for us, without looking at all the other values (or even any of them), so you
-can assume it is much faster than searching a list.
-
-A dictionary allows only one value per key. For example, here are the
-occupants of some offices, keyed by room number:
+- `sched_dict["CSA-145"]` is the `Flight` with that key, and
+  `sched_dict["CSA-145"].seats` its seats.
+- The lookup goes straight to the value, without looking at others: assume it
+  is much faster than searching a list.
+- One value per key: assigning to a key replaces its value (or adds the key):
 
 ```python
 office_dict = {410: "Farhan", 411: "Pauline", 412: "Marisol", 413: "Saleh"}
+office_dict[412] = "Zeynep"     # office_dict[412] is now "Zeynep"
 ```
 
-If someone new moves into office 412, we change the value for that key, and
-`office_dict[412]` then evaluates to `"Zeynep"` instead of `"Marisol"`:
+### Looping Over a Dictionary
 
-```python
-office_dict[412] = "Zeynep"
-```
-
-### Searching Through the Values in a Dictionary
-
-To find all the flights with more than 100 seats, we have to check every
-key-value pair. A `for` loop over a dictionary looks much like one over a list:
+A `for` loop over a dictionary goes through its keys, e.g. to check every
+flight for more than 100 seats:
 
 ```python
 above_100 = []
@@ -110,29 +77,23 @@ for flight_code in sched_dict:
         above_100.append(sched_dict[flight_code])
 ```
 
-The loop goes through the keys, using each one to retrieve its `Flight`; if it
-has enough seats, `append` adds it to the end of our list.
-
-Try making a dictionary that maps names of classrooms to their numbers of seats.
-Then write expressions to look up the seats in one room, to give one room 10
-more seats, and to find all rooms that seat at least 50.
+- `for v in d.values()` goes through just the values, and
+  `for k, v in d.items()` through each key `k` with its value `v`.
+- Try: make a dictionary from classroom names to seats; look up a room's seats,
+  give one room 10 more, and find all rooms that seat at least 50.
 
 ### Dictionaries with More Complex Values
 
-A track-and-field tournament needs the players on each team: "Team Red" has
-Shaoming and Lijin, "Team Green" has Obi and Chinara, and so on. The team name
-is a natural key, but what does this dictionary contain after running this
-code? Try it!
+A second player stored under the same key replaces the first:
 
 ```python
 players = {}
 players["Team Red"] = "Shaoming"
-players["Team Red"] = "Lijin"
+players["Team Red"] = "Lijin"      # players is now {"Team Red": "Lijin"}
 ```
 
-With one value per key, the second player replaced the first. It's the
-_collection_ of players we want to associate with the team name, so we store a
-list under each key:
+To associate a _collection_ with a key, store a list (values can be anything:
+lists, tables, other dictionaries):
 
 ```python
 rosters = {}
@@ -140,12 +101,34 @@ rosters["Team Red"] = ["Shaoming", "Lijin"]
 rosters["Team Green"] = ["Obi", "Chinara"]
 ```
 
-The values in a dictionary can be arbitrarily complex, including lists, tables,
-or other dictionaries; there is still only one value per key.
+### More Dictionary Operations
+
+```python
+rosters.get("Team Blue", [])   # [], since rosters has no "Team Blue" key
+del office_dict[413]           # removes key 413, and its value
+```
+
+- `rosters["Team Blue"]` is a `KeyError`; `d.get(key, default)` is `d[key]` if
+  `d` has `key`, else `default`.
+- Also handy when searching: `s.startswith(t)` is whether string `s` begins
+  with `t`.
+
+A **`Counter`** maps each value in a list to how many times it appears:
+
+```python
+from collections import Counter
+
+counts = Counter(["PVD", "ORD", "DEN", "ORD"])   # the destinations in schedule
+counts["ORD"]                                     # 2
+counts.most_common(1)                             # [("ORD", 2)]
+```
+
+- `most_common(n)`: the `n` most common values, each with its count.
 
 ### Dictionaries versus Dataclasses
 
-Here is a dataclass for to-do items, and an example item:
+With field names as keys, a to-do item can be a dataclass or a dictionary (like
+a PLL table row):
 
 ```python
 @dataclass
@@ -155,102 +138,78 @@ class ToDoItem:
     tags: list[str]
 
 milk = ToDoItem("buy milk", "2020-07-27", ["shopping", "home"])
-```
-
-Viewing the field names as keys, we could also write the item as a dictionary
-(just as each row of a PLL table is a `dict` from column names to values):
-
-```python
 milk_dict = {"descr": "buy milk", "due": "2020-07-27", "tags": ["shopping", "home"]}
 ```
 
-Try writing a to-do list of three items both ways. What are the benefits and
-drawbacks of each? Dataclasses have a fixed number of fields, while
-dictionaries allow any number of keys. Each dataclass field has its own type,
-while a dictionary's type gives one type for its keys and one for its values
-(e.g., `dict[str, Flight]`), which is restrictive when the "fields" have
-different types. And a dataclass comes with a function for creating new data;
-with dictionaries, you'd write your own.
-
-Overall, dataclasses give more support for catching errors: you can't give data
-for the wrong number of fields, and each field's type says what belongs in it.
-Dictionaries are more flexible: optional fields are easier, and new keys can be
-added as a program runs. Try writing a function `todo_item_dict` that takes a
-description, due date, and list of tags, and returns a dictionary with a key
-for each field.
-
-#### Summary
-
-We have seen two uses of dictionaries: keys that identify individuals in a
-group, with the same kind of information about each one (like `sched_dict`);
-and keys that name the fields of compound data about one individual (like
-`milk_dict`). For the second, dataclasses are usually better when the fields
-are fixed (using dictionaries for it is common in Python, but less so in other
-languages). The first is common in nearly all languages, since dictionaries
-give fast access to the value for a key.
+- **Dataclass**: a fixed number of fields, each with its own type, and a
+  constructor. Catches more errors (the wrong number of fields, a value of the
+  wrong type).
+- **Dictionary**: any number of keys, added as the program runs, so optional
+  fields are easier. But its type has one type for keys and one for values
+  (e.g., `dict[str, Flight]`), restrictive when "fields" differ in type; and you
+  write your own function to create one. (Try: `todo_item_dict`, from a
+  description, due date, and tags.)
+- Two uses of dictionaries:
+  - keys that identify individuals in a group, with the same information about
+    each (`sched_dict`): common in nearly all languages, for fast lookup;
+  - keys that name the fields of one individual (`milk_dict`): common in
+    Python, less so elsewhere; when the fields are fixed, a dataclass is
+    usually better.
 
 ## Recap (15 mins)
 
-- Today we explore **dictionaries** in Python, a data structure that maps unique keys to values.
-- Dictionaries are useful for fast lookups and flexible data storage, while dataclasses provide a fixed, type-checked structure.
-- Example: Conference session data, where each session has a unique session ID, a title, a speaker, and a list of topics.
-  ```python
-  # Dictionary mapping session IDs to session details (as dictionaries)
-  sessions = {
-      "CS101": {"title": "Introduction to AI", "speaker": "Dr. Martinez", "topics": ["AI", "Machine Learning"]},
-      "CS102": {"title": "Deep Learning Techniques", "speaker": "Prof. Nguyen", "topics": ["Neural Networks", "Deep Learning"]},
-      "CS103": {"title": "Quantum Computing Basics", "speaker": "Dr. Patel", "topics": ["Quantum", "Computing"]},
-      "CS104": {"title": "Cybersecurity Trends", "speaker": "Ms. Lee", "topics": ["Security", "Networking"]}
-  }
-  print(sessions["CS101"]["speaker"])  # Dr. Martinez
-  ```
-- You can update values, add new keys, or remove keys:
-  ```python
-  sessions["CS103"]["speaker"] = "Dr. Singh"
-  sessions["CS105"] = {"title": "Data Ethics", "speaker": "Dr. Kim", "topics": ["Ethics", "Data"]}
-  del sessions["CS104"]
-  ```
-- If you try to access a key that doesn't exist, you'll get a `KeyError`. You can use `.get()` to avoid this:
-  ```python
-  print(sessions.get("CS999", "Not found"))  # Not found
-  ```
-- You can iterate through a dictionary to search or filter:
-  ```python
-  # Print all session IDs for sessions covering "AI"
-  for session_id, details in sessions.items():
-      if "AI" in details["topics"]:
-          print(session_id)
+A conference keeps its sessions in a dictionary, keyed by session ID, where
+each session's details are themselves a dictionary. Read through the program:
 
-  # Count how many sessions have a speaker whose name starts with "Dr."
-  count = 0
-  for details in sessions.values():
-      if details["speaker"].startswith("Dr."):
-          count += 1
-  print(count)
-  ```
-- You can collect all unique topics (using a list and checking for duplicates):
-  ```python
-  unique_topics = []
-  for details in sessions.values():
-      for topic in details["topics"]:
-          if topic not in unique_topics:
-              unique_topics.append(topic)
-  print(unique_topics)
-  ```
-- Dictionaries vs. dataclasses:
-  ```python
-  from dataclasses import dataclass
+```python
+from dataclasses import dataclass
 
-  @dataclass
-  class ConferenceSession:
-      session_id: str
-      title: str
-      speaker: str
-      topics: list
+sessions = {
+    "CS101": {"title": "Introduction to AI", "speaker": "Dr. Martinez", "topics": ["AI", "Machine Learning"]},
+    "CS102": {"title": "Deep Learning Techniques", "speaker": "Prof. Nguyen", "topics": ["Neural Networks", "Deep Learning"]},
+    "CS103": {"title": "Quantum Computing Basics", "speaker": "Dr. Patel", "topics": ["Quantum", "Computing"]},
+    "CS104": {"title": "Cybersecurity Trends", "speaker": "Ms. Lee", "topics": ["Security", "Networking"]},
+}
 
-  session1 = ConferenceSession("CS101", "Introduction to AI", "Dr. Martinez", ["AI", "Machine Learning"])
-  ```
-- Dictionaries are flexible and dynamic; dataclasses are fixed and type-checked.
+def sessions_by_speaker(by_id: dict[str, dict]) -> dict[str, list[str]]:
+    """maps each speaker in by_id to the IDs of their sessions"""
+    result = {}
+    for session_id, details in by_id.items():
+        speaker = details["speaker"]
+        result[speaker] = result.get(speaker, []) + [session_id]
+    return result
+
+def test_sessions_by_speaker():
+    two_talks = {"A1": {"title": "Graphs", "speaker": "Dr. Kim", "topics": []},
+                 "A2": {"title": "Trees", "speaker": "Dr. Kim", "topics": []}}
+    assert sessions_by_speaker(two_talks) == {"Dr. Kim": ["A1", "A2"]}
+    assert sessions_by_speaker({}) == {}
+
+# the schedule changes: a new speaker, a new session, and a cancellation
+sessions["CS103"]["speaker"] = "Dr. Singh"
+sessions["CS105"] = {"title": "Data Ethics", "speaker": "Dr. Kim", "topics": ["Ethics", "Data"]}
+del sessions["CS104"]
+
+# one session's information, as a dataclass instead
+@dataclass
+class ConferenceSession:
+    session_id: str
+    title: str
+    speaker: str
+    topics: list[str]
+
+session1 = ConferenceSession("CS101", "Introduction to AI", "Dr. Martinez", ["AI", "Machine Learning"])
+```
+
+- What is `sessions["CS102"]["topics"][1]`? After the schedule changes, what is
+  `sessions_by_speaker(sessions)["Dr. Kim"]`, and is `"Ms. Lee"` still a key?
+- Which test would fail if `sessions_by_speaker` wrote
+  `result[speaker] = [session_id]`? What would go wrong with
+  `result[speaker] + [session_id]`?
+- `session1` holds the same information as `sessions["CS101"]`. If a new session
+  were added with its `"speaker"` key misspelled `"speakr"`, which line would
+  fail, and when? What type annotation would describe one session's details
+  dictionary?
 
 ## Class Exercises (40 mins)
 

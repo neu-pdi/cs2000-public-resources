@@ -5,9 +5,9 @@ Run from the repository root, with the PLL command line available:
     PLL="npx pll-python" python3 scripts/check-examples.py [options] [PAGE ...]
 
 (PLL defaults to `npx pll-python`.) With no PAGEs, every page is checked:
-the ones in days/, lab/, homework/, practice/, pll/, and src/pages/. Each problem is reported at its line in the page, e.g.
+the ones in class/, lab/, homework/, practice/, pll/, and src/pages/. Each problem is reported at its line in the page, e.g.
 
-    days/5.md:212: Reassignment: `pens` is already assigned ...
+    class/5.md:212: Reassignment: `pens` is already assigned ...
 
 and the exit status is 1 if there were any.
 
@@ -59,8 +59,8 @@ In the page's front matter:
                                      default is beginner); a block whose
                                      first line is a `#level` line changes it
                                      from there on
-    pll_continues: days/13.md        start from what that page built (for
-                                     "we continue with ... from Day 13")
+    pll_continues: class/13.md       start from what that page built (for
+                                     "we continue with ... from Class 13")
     pll_files: voters.csv=static/support/10-voters.csv, ...
                                      files its programs load by name, rather
                                      than by URL, and the file to use for each
@@ -85,7 +85,7 @@ import tempfile
 import textwrap
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SECTIONS = ["days", "lab", "homework", "practice", "pll", os.path.join("src", "pages")]
+SECTIONS = ["class", "lab", "homework", "practice", "pll", os.path.join("src", "pages")]
 PLL = shlex.split(os.environ.get("PLL", "npx pll-python"))
 TIMEOUT = 180
 
@@ -471,7 +471,7 @@ def indent(text):
 
 
 def page_order(page):
-    """for sorting pages, with days/9.md before days/10.md"""
+    """for sorting pages, with class/9.md before class/10.md"""
     stem = os.path.splitext(os.path.basename(page))[0]
     section = os.path.dirname(page)
     return (SECTIONS.index(section) if section in SECTIONS else len(SECTIONS), section,

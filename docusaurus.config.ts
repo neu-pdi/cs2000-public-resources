@@ -23,11 +23,6 @@ const dcicDomain = 'https://dcic.pdi.run';
 function notesDropdownItems() {
   var startingItems = [
     {
-      to: '/current-class/',
-      activeBasePath: '/class',
-      label: 'Classes',
-    },
-    {
       to: '/class/style/',
       label: 'Style Guide',
     },
@@ -189,6 +184,12 @@ const config: Config = {
           type: 'dropdown',
           label: 'Notes',
           items: notesDropdownItems(),
+        },
+        {
+          to: '/current-class/',
+          activeBasePath: '/class',
+          position: 'left',
+          label: 'Classes',
         },
         {
           to: '/current-homework/',
