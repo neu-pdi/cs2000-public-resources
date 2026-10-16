@@ -13,6 +13,8 @@ import styles from './index.module.css';
 
 Introduces computer science and data science to students with no programming experience. Starts by building programs with numbers, text, and images, then moves to exploring real, complex data sets both interactively and through coding. Students then practice coding using a popular industrial language with a professional programmer's interface to the code. Students learn to identify and respond to ethical challenges in program design.
 
+This course owes a great debt to two texts, which each had courses based on them. The first is [How to Design Programs](https://htdp.org/) by Felleisen et al, which originated the Design Recipe that still forms the core of our course, as well as inspiring countless other aspects. The second is [A Data-Centric Introduction to Computing](https://dcic-world.org/) by Fisler et al, which created the combined computer science and data science curriculum that we follow quite closely, though our language and tooling is distinct. Past versions of this course followed DCIC directly.
+
 ## Assessment Hours {#assessment-hours}
 
 In-person hours where you can attempt [skill](/skills) assessments, by campus.
