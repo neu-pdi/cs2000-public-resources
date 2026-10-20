@@ -153,7 +153,7 @@ export const calendarData: CalendarMonth[] = [
       },
       {
         label: 'Week 7',
-        topic: 'Structured data',
+        topic: 'Lists, variables that change & scope',
         days: [
           { date: '2026-10-18', homework: { label: 'HW 5 due', href: '/homework/5' } },
           { date: '2026-10-19', onlineOH: true, skills: [3, 4, 10, 11], lectures: [{ label: 'Class 16', href: '/class/16' }] },
@@ -166,7 +166,7 @@ export const calendarData: CalendarMonth[] = [
       },
       {
         label: 'Week 8',
-        topic: 'Conditional and recursive data',
+        topic: 'Structured, conditional & recursive data',
         days: [
           { date: '2026-10-25', homework: { label: 'HW 6 due', href: '/homework/6' } },
           { date: '2026-10-26', onlineOH: true, skills: [4, 5, 10, 11], lectures: [{ label: 'Class 19', href: '/class/19' }] },
@@ -190,25 +190,25 @@ export const calendarData: CalendarMonth[] = [
     weeks: [
       {
         label: 'Week 9',
-        topic: 'Trees',
+        topic: 'Recursion on lists; trees',
         days: [
           { date: '2026-11-01', homework: { label: 'HW 7 due', href: '/homework/7' } },
-          { date: '2026-11-02', onlineOH: true, skills: [4, 5, 6, 10, 11], lectures: [{ label: 'Class 22', href: '/class/22' }] },
-          { date: '2026-11-03', onlineOH: true, skills: [4, 5, 6, 10, 11], lab: { label: 'Lab 8', href: '/lab/8' } },
-          { date: '2026-11-04', onlineOH: true, skills: [4, 5, 6, 10, 11], lectures: [{ label: 'Class 23', href: '/class/23' }] },
+          { date: '2026-11-02', onlineOH: true, skills: [4, 5, 6, 7], lectures: [{ label: 'Class 22', href: '/class/22' }] },
+          { date: '2026-11-03', onlineOH: true, skills: [4, 5, 6, 7], lab: { label: 'Lab 8', href: '/lab/8' } },
+          { date: '2026-11-04', onlineOH: true, skills: [4, 5, 6, 7], lectures: [{ label: 'Class 23', href: '/class/23' }] },
           {
             date: '2026-11-05',
             onlineOH: true,
-            skills: [4, 5, 6, 10, 11],
+            skills: [4, 5, 6, 7],
             lectures: [{ label: 'Skill Day', href: '/skills/#skill-days-in-class' }],
           },
-          { date: '2026-11-06', onlineOH: true, skills: [4, 5, 6, 10, 11] },
+          { date: '2026-11-06', onlineOH: true, skills: [4, 5, 6, 7] },
           { date: '2026-11-07' },
         ],
       },
       {
         label: 'Week 10',
-        topic: 'Variable scope, mutable data & the heap',
+        topic: 'More trees; mutable data & the heap',
         days: [
           { date: '2026-11-08', homework: { label: 'HW 8 due', href: '/homework/8' } },
           { date: '2026-11-09', onlineOH: true, skills: [5, 6, 7, 8], lectures: [{ label: 'Class 24', href: '/class/24' }] },
@@ -217,10 +217,10 @@ export const calendarData: CalendarMonth[] = [
           {
             date: '2026-11-12',
             onlineOH: true,
-            skills: [5, 6, 7, 8, 9],
+            skills: [5, 6, 7, 8],
             lectures: [{ label: 'Class 25', href: '/class/25' }],
           },
-          { date: '2026-11-13', onlineOH: true, skills: [5, 6, 7, 8, 9] },
+          { date: '2026-11-13', onlineOH: true, skills: [5, 6, 7, 8] },
           { date: '2026-11-14' },
         ],
       },
@@ -249,11 +249,11 @@ export const calendarData: CalendarMonth[] = [
           {
             date: '2026-11-23',
             onlineOH: true,
-            skills: [7, 8, 9],
+            skills: [5, 8, 9],
           },
           {
             date: '2026-11-24',
-            skills: [7, 8, 9],
+            skills: [5, 8, 9],
             isHoliday: true, holidayName: 'No Lab'
           },
           { date: '2026-11-25', isHoliday: true, holidayName: 'Thanks. Break' },
@@ -267,21 +267,21 @@ export const calendarData: CalendarMonth[] = [
         topic: 'To be determined',
         days: [
           { date: '2026-11-29', homework: { label: 'HW 10 due', href: '/homework/10' } },
-          { date: '2026-11-30', onlineOH: true, skills: [8, 9] },
+          { date: '2026-11-30', onlineOH: true, skills: [5, 9] },
           {
             date: '2026-12-01',
             onlineOH: true,
-            skills: [8, 9],
+            skills: [5, 9],
             lab: { label: 'Lab 11', href: '/lab/11' }
           },
-          { date: '2026-12-02', onlineOH: true, skills: [8, 9] },
+          { date: '2026-12-02', onlineOH: true, skills: [5, 9] },
           {
             date: '2026-12-03',
             onlineOH: true,
-            skills: [8, 9],
+            skills: [5, 9],
             lectures: [{ label: 'Skill Day', href: '/skills/#skill-days-in-class' }],
           },
-          { date: '2026-12-04', onlineOH: true, skills: [8, 9] },
+          { date: '2026-12-04', onlineOH: true, skills: [5, 9] },
           { date: '2026-12-05' },
         ],
       },
@@ -299,26 +299,26 @@ export const calendarData: CalendarMonth[] = [
           {
             date: '2026-12-07',
             onlineOH: true,
-            skills: [8, 9],
+            skills: [5, 9],
             lectures: [
               { label: 'Dictionaries', href: '/class/XDict' },
               { label: 'λ Calculus', href: '/class/Xλ' },
               { label: 'Y Combinator', href: '/class/XλY' },],
           },
-          { date: '2026-12-08', onlineOH: true, skills: [8, 9] },
+          { date: '2026-12-08', onlineOH: true, skills: [5, 9] },
           {
             date: '2026-12-09',
             onlineOH: true,
-            skills: [8, 9],
+            skills: [5, 9],
             lectures: [
             ],
           },
           {
             date: '2026-12-10',
             onlineOH: true,
-            skills: [8, 9],
+            skills: [5, 9],
           },
-          { date: '2026-12-11', onlineOH: true, skills: [8, 9] },
+          { date: '2026-12-11', onlineOH: true, skills: [5, 9] },
           { date: '2026-12-12' },
         ],
       },

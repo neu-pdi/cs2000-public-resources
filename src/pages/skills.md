@@ -300,199 +300,7 @@ def test_list_of_squares():
    <summary>Practice Problem 2</summary>
    <p>Design a function <code>all_increasing</code> that takes a list of numbers, and returns <code>True</code> if each number is greater than the preceding number, <code>False</code> otherwise. It should return <code>True</code> for the empty list. You must use a <code>for</code> loop, rather than a built in list function or recursion.</p>
 </details> 
-05. <a id="5" href="#5">Structured & Conditional Data</a> - **Available:** <DateView id="5" item="skills" />
-    |  |  |
-    | -- | -- |
-    | **Meets Expectations** | • Uses `@dataclass` classes for the variants as needed, fields with appropriate type annotations<br/>• Function uses either field access or `match` as needed<br/>• Function has type annotation, doc string, and tests |
-    | **Approaching Expectations** | • Uses `@dataclass` classes for the variants as needed, fields if needed (possibly missing or incorrect annotations)<br/>• Function should use either field access or `match`, but may not do it correctly, or to match the problem |
-<details>
-    <summary>Examples</summary>
-    <p>Sample question: Design a data definition for Beverage that can be either coffee with number of shots of espresso, or tea with name and brew time in minutes. Then, write a function <code>is_strong</code> that returns <code>True</code> if the beverage is a coffee with more than 2 shots, or a tea brewed for more than 5 minutes.</p>
-    <p>**Answer meeting expectations:**</p>
-
-```python
-from dataclasses import dataclass
-
-@dataclass
-class Coffee:
-    shots: int
-
-@dataclass
-class Tea:
-    name: str
-    brew_time: float
-
-Beverage = Coffee | Tea
-
-def is_strong(b: Beverage) -> bool:
-    """determine if beverage is strong (coffee >2 shots or tea >5 minutes)"""
-    match b:
-        case Coffee(shots):
-            return shots > 2
-        case Tea(name, brew_time):
-            return brew_time > 5
-
-def test_is_strong():
-    regular = Coffee(1)
-    strong_coffee = Coffee(3)
-    weak_tea = Tea("Green Tea", 3)
-    strong_tea = Tea("Black Tea", 7)
-
-    assert not is_strong(regular)
-    assert is_strong(strong_coffee)
-    assert not is_strong(weak_tea)
-    assert is_strong(strong_tea)
-```
-
-<p>**Answer approaching expectations (missing docstring, missing or incorrect annotations, only one test):**</p>
-
-```python error
-from dataclasses import dataclass
-
-@dataclass
-class Coffee:
-    shots: str
-
-@dataclass
-class Tea:
-    name: str
-    brew_time: str
-
-Beverage = Coffee | Tea
-
-def is_strong(b):
-    match b:
-        case Coffee(shots):
-            return shots > 2
-        case Tea(name, brew_time):
-            return brew_time > 5
-
-def test_is_strong():
-    regular = Coffee(1)
-    assert not is_strong(regular)
-```
-
-</details> 
-<details>
- <summary>Practice Problem 1</summary>
-    <p>Design a data definition for Restaurant that can be either yahoo with name and stars, or health score with name and score. Then, write a function <code>is_reputable</code> that returns <code>True</code> if the resturant is a yahoo with at least 4 stars, or a health score with score at least 85.</p>
-</details>
-<details>
- <summary>Practice Problem 2</summary>
-    <p>Design a data definition for Book that can be either rating with title, stars, and number of reviews, or sales ranking with title and position. Then, write a function <code>is_popular</code> that returns <code>True</code> if the book is a rating with at least 500 reviews, or a sales ranking with position less than 500.</p>
-</details>
-06. <a id="6" href="#6">Recursion: Lists</a> - **Available:** <DateView id="6" item="skills" />
-    |  |  |
-    | -- | -- |
-    | **Meets Expectations** | • Function has appropriate type annotation, doc string, and tests<br/>• Function uses `match` to handle the empty (`[]`) case and the first-and-rest (`[first, *rest]`) case<br/>• In the first-and-rest case, calls function recursively on rest of list appropriately |
-    | **Approaching Expectations** | • Uses `match` to break apart list, and has recursive call to rest of list |
-<details>
-    <summary>Examples</summary>
-    <p>Sample question: Using recursion, design a function <code>make_positive</code> that takes a list of numbers and returns a new list where each number is replaced by its absolute value.</p>
-    <p>**Answer meeting expectations:**</p>
-   
-```python
-def make_positive(lon: list[float]) -> list[float]:
-    """take the absolute value of each number in the list"""
-
-    match lon:
-        case []:
-            return []
-        case [first, *rest]:
-            if first > 0:
-                return [first] + make_positive(rest)
-            else:
-                return [0 - first] + make_positive(rest)
-
-def test_make_positive():
-    assert make_positive([]) == []
-    assert make_positive([-1, 0, 2]) == [1, 0, 2]
-```
-
-<p>**Answer approaching expectations (missing docstring, incorrect behavior, inadequate tests):**</p>
-
-   
-```python
-def make_positive(lon: list[float]) -> list[float]:
-    match lon:
-        case []:
-            return []
-        case [first, *rest]:
-            return [-first] + make_positive(rest)
-
-def test_make_positive():
-    assert make_positive([]) == []
-```
-
-</details>
-<details>
- <summary>Practice Problem 1</summary>
-    <p>Using recursion, design a function <code>count_warm</code> that takes a list of numbers and returns a count of numbers greater than 70.</p>
-</details>
-<details>
- <summary>Practice Problem 2</summary>
-    <p>Using recursion, design a function <code>build_string</code> that takes a list of strings and returns a single large string containing the original strings concatenated together in order.</p>
-</details>
-
-07. <a id="7" href="#7">Recursion: Trees</a> - **Available:** <DateView id="7" item="skills" />
-    |  |  |
-    | -- | -- |
-    | **Meets Expectations** | • Function has appropriate type annotation, doc string, and tests<br/>• Function uses `match` to handle base case and recursive case<br/>• In recursive case, calls function recursively on subtrees appropriately |
-    | **Approaching Expectations** | • Uses `match` to break apart tree, and has recursive call on subtrees |
-<details>
-    <summary>Examples</summary>
-    <p>Design a function <code>count_internal_nodes</code> that, given the BinTree data definition below, takes a BinTree and returns the total number of internal nodes (non-leaf nodes) in the tree</p>
- 
-```python
-from dataclasses import dataclass
-
-@dataclass
-class Leaf[T]:
-    val: T
-
-@dataclass
-class Node[T]:
-    left: "BinTree[T]"
-    right: "BinTree[T]"
-
-type BinTree[T] = Leaf[T] | Node[T]
-```
-    <p>**Answer meeting expectations:**</p>
-    
-```python
-def count_internal_nodes(tree: BinTree) -> int:
-    """counts the number of nodes that are not leafs"""
-    match tree:
-        case Leaf(val):
-            return 0
-        case Node(left, right):
-            return 1 + count_internal_nodes(left) + count_internal_nodes(right)
-
-def test_count_internal_nodes():
-    tree = Node(Node(Leaf(0), Leaf(0)), Node(Node(Leaf(0), Leaf(0)), Leaf(0)))
-    assert count_internal_nodes(tree) == 4
-    assert count_internal_nodes(Leaf(1)) == 0
-```
-
-<p>**Answer approaching expectations (lacking doc string, does not give correct result):**</p>
-    
-```python error
-def count_internal_nodes(tree: BinTree) -> int:
-    match tree:
-        case Leaf(val):
-            return 0
-        case Node(left, right):
-            return count_internal_nodes(left) + count_internal_nodes(right)
-
-def test_count_internal_nodes():
-    tree = Node(Node(Leaf(0), Leaf(0)), Node(Node(Leaf(0), Leaf(0)), Leaf(0)))
-    assert count_internal_nodes(tree) == 4
-    assert count_internal_nodes(Leaf(1)) == 0
-```
-
-</details>
-
-8. <a id="8" href="#8">Variable Scope</a> - **Available:** <DateView id="8" item="skills" />
+05. <a id="5" href="#5">Variable Scope</a> - **Available:** <DateView id="5" item="skills" />
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Output of given code, that uses variables, defined locally, in functions, globally, etc, is correct<br/>• Explanation of behavior, including global keyword if needed, is correct |
@@ -595,6 +403,198 @@ result = process(5)
 print("Result:", result)
 print("Global value:", value)
 ```
+</details>
+
+06. <a id="6" href="#6">Structured & Conditional Data</a> - **Available:** <DateView id="6" item="skills" />
+    |  |  |
+    | -- | -- |
+    | **Meets Expectations** | • Uses `@dataclass` classes for the variants as needed, fields with appropriate type annotations<br/>• Function uses either field access or `match` as needed<br/>• Function has type annotation, doc string, and tests |
+    | **Approaching Expectations** | • Uses `@dataclass` classes for the variants as needed, fields if needed (possibly missing or incorrect annotations)<br/>• Function should use either field access or `match`, but may not do it correctly, or to match the problem |
+<details>
+    <summary>Examples</summary>
+    <p>Sample question: Design a data definition for Beverage that can be either coffee with number of shots of espresso, or tea with name and brew time in minutes. Then, write a function <code>is_strong</code> that returns <code>True</code> if the beverage is a coffee with more than 2 shots, or a tea brewed for more than 5 minutes.</p>
+    <p>**Answer meeting expectations:**</p>
+
+```python
+from dataclasses import dataclass
+
+@dataclass
+class Coffee:
+    shots: int
+
+@dataclass
+class Tea:
+    name: str
+    brew_time: float
+
+Beverage = Coffee | Tea
+
+def is_strong(b: Beverage) -> bool:
+    """determine if beverage is strong (coffee >2 shots or tea >5 minutes)"""
+    match b:
+        case Coffee(shots):
+            return shots > 2
+        case Tea(name, brew_time):
+            return brew_time > 5
+
+def test_is_strong():
+    regular = Coffee(1)
+    strong_coffee = Coffee(3)
+    weak_tea = Tea("Green Tea", 3)
+    strong_tea = Tea("Black Tea", 7)
+
+    assert not is_strong(regular)
+    assert is_strong(strong_coffee)
+    assert not is_strong(weak_tea)
+    assert is_strong(strong_tea)
+```
+
+<p>**Answer approaching expectations (missing docstring, missing or incorrect annotations, only one test):**</p>
+
+```python error
+from dataclasses import dataclass
+
+@dataclass
+class Coffee:
+    shots: str
+
+@dataclass
+class Tea:
+    name: str
+    brew_time: str
+
+Beverage = Coffee | Tea
+
+def is_strong(b):
+    match b:
+        case Coffee(shots):
+            return shots > 2
+        case Tea(name, brew_time):
+            return brew_time > 5
+
+def test_is_strong():
+    regular = Coffee(1)
+    assert not is_strong(regular)
+```
+
+</details> 
+<details>
+ <summary>Practice Problem 1</summary>
+    <p>Design a data definition for Restaurant that can be either yahoo with name and stars, or health score with name and score. Then, write a function <code>is_reputable</code> that returns <code>True</code> if the resturant is a yahoo with at least 4 stars, or a health score with score at least 85.</p>
+</details>
+<details>
+ <summary>Practice Problem 2</summary>
+    <p>Design a data definition for Book that can be either rating with title, stars, and number of reviews, or sales ranking with title and position. Then, write a function <code>is_popular</code> that returns <code>True</code> if the book is a rating with at least 500 reviews, or a sales ranking with position less than 500.</p>
+</details>
+07. <a id="7" href="#7">Recursion: Lists</a> - **Available:** <DateView id="7" item="skills" />
+    |  |  |
+    | -- | -- |
+    | **Meets Expectations** | • Function has appropriate type annotation, doc string, and tests<br/>• Function uses `match` to handle the empty (`[]`) case and the first-and-rest (`[first, *rest]`) case<br/>• In the first-and-rest case, calls function recursively on rest of list appropriately |
+    | **Approaching Expectations** | • Uses `match` to break apart list, and has recursive call to rest of list |
+<details>
+    <summary>Examples</summary>
+    <p>Sample question: Using recursion, design a function <code>make_positive</code> that takes a list of numbers and returns a new list where each number is replaced by its absolute value.</p>
+    <p>**Answer meeting expectations:**</p>
+   
+```python
+def make_positive(lon: list[float]) -> list[float]:
+    """take the absolute value of each number in the list"""
+
+    match lon:
+        case []:
+            return []
+        case [first, *rest]:
+            if first > 0:
+                return [first] + make_positive(rest)
+            else:
+                return [0 - first] + make_positive(rest)
+
+def test_make_positive():
+    assert make_positive([]) == []
+    assert make_positive([-1, 0, 2]) == [1, 0, 2]
+```
+
+<p>**Answer approaching expectations (missing docstring, incorrect behavior, inadequate tests):**</p>
+
+   
+```python
+def make_positive(lon: list[float]) -> list[float]:
+    match lon:
+        case []:
+            return []
+        case [first, *rest]:
+            return [-first] + make_positive(rest)
+
+def test_make_positive():
+    assert make_positive([]) == []
+```
+
+</details>
+<details>
+ <summary>Practice Problem 1</summary>
+    <p>Using recursion, design a function <code>count_warm</code> that takes a list of numbers and returns a count of numbers greater than 70.</p>
+</details>
+<details>
+ <summary>Practice Problem 2</summary>
+    <p>Using recursion, design a function <code>build_string</code> that takes a list of strings and returns a single large string containing the original strings concatenated together in order.</p>
+</details>
+
+08. <a id="8" href="#8">Recursion: Trees</a> - **Available:** <DateView id="8" item="skills" />
+    |  |  |
+    | -- | -- |
+    | **Meets Expectations** | • Function has appropriate type annotation, doc string, and tests<br/>• Function uses `match` to handle base case and recursive case<br/>• In recursive case, calls function recursively on subtrees appropriately |
+    | **Approaching Expectations** | • Uses `match` to break apart tree, and has recursive call on subtrees |
+<details>
+    <summary>Examples</summary>
+    <p>Design a function <code>count_internal_nodes</code> that, given the BinTree data definition below, takes a BinTree and returns the total number of internal nodes (non-leaf nodes) in the tree</p>
+ 
+```python
+from dataclasses import dataclass
+
+@dataclass
+class Leaf[T]:
+    val: T
+
+@dataclass
+class Node[T]:
+    left: "BinTree[T]"
+    right: "BinTree[T]"
+
+type BinTree[T] = Leaf[T] | Node[T]
+```
+    <p>**Answer meeting expectations:**</p>
+    
+```python
+def count_internal_nodes(tree: BinTree) -> int:
+    """counts the number of nodes that are not leafs"""
+    match tree:
+        case Leaf(val):
+            return 0
+        case Node(left, right):
+            return 1 + count_internal_nodes(left) + count_internal_nodes(right)
+
+def test_count_internal_nodes():
+    tree = Node(Node(Leaf(0), Leaf(0)), Node(Node(Leaf(0), Leaf(0)), Leaf(0)))
+    assert count_internal_nodes(tree) == 4
+    assert count_internal_nodes(Leaf(1)) == 0
+```
+
+<p>**Answer approaching expectations (lacking doc string, does not give correct result):**</p>
+    
+```python error
+def count_internal_nodes(tree: BinTree) -> int:
+    match tree:
+        case Leaf(val):
+            return 0
+        case Node(left, right):
+            return count_internal_nodes(left) + count_internal_nodes(right)
+
+def test_count_internal_nodes():
+    tree = Node(Node(Leaf(0), Leaf(0)), Node(Node(Leaf(0), Leaf(0)), Leaf(0)))
+    assert count_internal_nodes(tree) == 4
+    assert count_internal_nodes(Leaf(1)) == 0
+```
+
 </details>
 
 9. <a id="9" href="#9">Aliasing & Mutation</a> - **Available:** <DateView id="9" item="skills" />

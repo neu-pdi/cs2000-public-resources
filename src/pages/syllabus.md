@@ -95,10 +95,10 @@ The course will teach the following 12 skills, grading of which will be performe
 02. Function composition
 03. Construct / Transform Tables
 04. Iteration: Lists
-05. Structured & Conditional Data
-06. Recursion: Lists
-07. Recursion: Trees
-08. Variable Scope
+05. Variable Scope
+06. Structured & Conditional Data
+07. Recursion: Lists
+08. Recursion: Trees
 09. Aliasing & Mutation
 10. Identifying Privacy Issues in Problem Formulation
 11. Identifying Stakeholders in Problem Formulation
