@@ -18,14 +18,14 @@ at the bottom of the interactions panel uses the same level as the last run.
 
 | Line in your file | What it does |
 | --- | --- |
-| `#level beginner` | Strictest. PLL reports reassigning a variable (giving a name that already has a value a new one), reusing a name that hides another name (a built-in like `list` or `sum`, one of PLL's own like `circle`, or one of your own), and the `global` / `nonlocal` keywords. If it finds a problem, it **does not run** the file. Type annotations are checked as the program runs. |
+| `#level beginner` | Strictest. PLL reports reassigning a variable (giving a name that already has a value a new one), reusing a name that hides another name (a built-in like `list` or `sum`, one of PLL's own like `circle`, or one of your own), the `global` / `nonlocal` keywords, and removing a name with `del` (as in `del x`; taking an item out of a list or dictionary, as in `del items[0]` or `del d[key]`, is fine). If it finds a problem, it **does not run** the file. Type annotations are checked as the program runs. |
 | `#level intermediate` | The same, except that you **may** change the value of a variable _inside a function_ — which is what you need for `for` loops. Reassigning a variable at the top level of the file is still reported. Type annotations are checked. |
-| `#level advanced` | No extra checks before the file runs, so `global`, `nonlocal`, and reassigning anything are allowed. Type annotations are still checked as the program runs, but by Python's own rules (so `True` counts as `1`). |
+| `#level advanced` | No extra checks before the file runs, so `global`, `nonlocal`, removing a name with `del`, and reassigning anything are allowed. Type annotations are still checked as the program runs, but by Python's own rules (so `True` counts as `1`). |
 | `#level raw` | Nothing is checked: your program runs exactly as plain Python would. **This is what you get if you leave the line out.** |
 
 In this class, we use `#level beginner` at first, then `#level intermediate`
 once we start writing `for` loops, and `#level advanced` when we need `global`
-or want to experiment with how Python's variables work. Each day's notes say
+or want to experiment with how Python's variables work. Each class's notes say
 which level to use.
 
 ## Type annotations are checked as your program runs
