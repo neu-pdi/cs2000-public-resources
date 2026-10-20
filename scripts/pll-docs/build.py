@@ -42,6 +42,9 @@ def run_examples(examples):
         imports = sorted({m.group(0).strip() for _, code in examples
                           for m in re.finditer(r"^\s*(import \w+|from \w+ import)", code, re.M)
                           if m.group(0).strip().startswith("import ")})
+        # (PLL loads pandas for a file that calls to_pandas, as it does for an import)
+        if any("to_pandas" in code for _, code in examples) and "import pandas" not in imports:
+            imports.append("import pandas")
         with open(os.path.join(HERE, "harness.py")) as f:
             harness = f.read()
         level, rest = harness.split("\n", 1)
@@ -58,7 +61,8 @@ def run_examples(examples):
 
 
 def markdown_table(columns, rows):
-    def cell(text):
+    def cell(value):
+        text = str(value)  # (as PLL shows a cell: a number as Python prints it)
         return html.escape(text).replace("|", "\\|") if text != "" else "&nbsp;"
     lines = ["| " + " | ".join(cell(c) for c in columns) + " |",
              "| " + " | ".join("---" for _ in columns) + " |"]

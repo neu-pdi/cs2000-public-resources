@@ -10,13 +10,32 @@ description: Creating, loading, transforming, and charting tables
 
 PLL adds tables to Python: you do not need to `import` anything to use them. A
 table shows up in the interactions panel as a card you can scroll, with a
-**Save CSV** button. Each operation below is shown with its contract (the types
-of its inputs and output), followed by some examples and what they produce.
+**Save CSV** button, which saves the whole table. A number is shown as Python
+prints it (`2.0`, `12999.99`), and a column of numbers lines up on the right, so a
+column of numbers that is still text (from a CSV) stands out by lining up on the
+left. Each operation below is shown with its contract (the types of its inputs and
+output), followed by some examples and what they produce.
 
 Tables never change: every operation on a table produces a **new** table, and
 leaves the original as it was. Operations on tables are _methods_, written after
 the table with a dot, like `workouts.filter(is_long)`. For type annotations, the
 type of a table is `Table`, and the type of a row is `dict`.
+
+A table is not a list or a dictionary: its rows and columns are taken out with
+its methods, [`row`](#row) and [`column`](#column), and a mistake like this one
+says which to use:
+
+```python error
+table(["name"], [["Ada"]])["name"]
+```
+
+<div className="pll-output">
+
+```text
+TypeError: a table's columns are not taken out with square brackets: write t.column("name") for the values in it.
+```
+
+</div>
 
 ## Creating tables
 
@@ -155,8 +174,13 @@ recipes.row(0)
 </div>
 
 If some values in a column aren't numbers (e.g., `""`, or `"1,234"`), `int` and
-`float` cause an error, so you'll need to write a function that handles those
-values, and use that with `transform_column` instead. In the browser, an address
+`float` cause an error that names the row, so you'll need to write a function that
+handles those values, and use that with `transform_column` instead.
+
+A CSV saved by Excel loads either way it can be saved ("CSV UTF-8", or a plain
+"CSV"). An address that gives back a web page rather than a CSV, such as a file's
+page on GitHub, is said to be one, with the fix (use the address of its **Raw**
+button). A file next to your program can be up to 50 MB. In the browser, an address
 on the web only works if its site allows other sites to read it: if
 `load_table` reports that it could not reach an address, download the CSV, add
 it to your repository (next to your program), and load it by its file name
@@ -232,7 +256,7 @@ workouts.row(5)
 <div className="pll-output">
 
 ```text
-IndexError: row index 5 out of range (table has 5 rows)
+IndexError: there is no row 5: this table's rows are numbered 0 to 4.
 ```
 
 </div>
@@ -258,7 +282,7 @@ workouts.row(1)["time"]
 <div className="pll-output">
 
 ```text
-KeyError: 'time'
+KeyError: this row has no column "time" (it has: date, activity, duration).
 ```
 
 </div>
@@ -368,9 +392,9 @@ workouts.transform_column("duration", lambda minutes: minutes / 60)
 | --- | --- | --- |
 | 2025-04-01 | Running | 0.5 |
 | 2025-04-02 | Yoga | 0.75 |
-| 2025-04-03 | Cycling | 1 |
-| 2025-04-04 | Running | 0.416667 |
-| 2025-04-05 | Yoga | 0.833333 |
+| 2025-04-03 | Cycling | 1.0 |
+| 2025-04-04 | Running | 0.4166666666666667 |
+| 2025-04-05 | Yoga | 0.8333333333333334 |
 
 </div>
 
@@ -434,6 +458,49 @@ workouts.add_column("rating", [4, 5, 3, 4, 5])
 | 2025-04-03 | Cycling | 60 | 3 |
 | 2025-04-04 | Running | 25 | 4 |
 | 2025-04-05 | Yoga | 50 | 5 |
+
+</div>
+
+### add_row
+
+```
+t.add_row(row: list | dict) -> Table
+```
+
+A table with one more row, at the end: either a list with one value for each
+column, in order, or a `dict` from column names to values.
+
+```python
+workouts.add_row(["2025-04-06", "Swimming", 40])
+```
+
+<div className="pll-output">
+
+| date | activity | duration |
+| --- | --- | --- |
+| 2025-04-01 | Running | 30 |
+| 2025-04-02 | Yoga | 45 |
+| 2025-04-03 | Cycling | 60 |
+| 2025-04-04 | Running | 25 |
+| 2025-04-05 | Yoga | 50 |
+| 2025-04-06 | Swimming | 40 |
+
+</div>
+
+```python
+workouts.add_row({"date": "2025-04-06", "activity": "Swimming", "duration": 40})
+```
+
+<div className="pll-output">
+
+| date | activity | duration |
+| --- | --- | --- |
+| 2025-04-01 | Running | 30 |
+| 2025-04-02 | Yoga | 45 |
+| 2025-04-03 | Cycling | 60 |
+| 2025-04-04 | Running | 25 |
+| 2025-04-05 | Yoga | 50 |
+| 2025-04-06 | Swimming | 40 |
 
 </div>
 
@@ -545,15 +612,33 @@ workouts.tail(2)
 ### sum, mean, min, and max
 
 ```
-t.sum(name: str) -> float
+t.sum(name: str) -> int | float
 t.mean(name: str) -> float
 t.min(name: str)
 t.max(name: str)
 ```
 
 The total, average, smallest value, and largest value of a column. `sum` and
-`mean` need a column of numbers; `min` and `max` also work on strings
-(dictionary order).
+`mean` need a column of numbers (the `sum` of whole numbers is a whole number);
+`min` and `max` also work on strings (dictionary order). At `#level beginner` and
+`#level intermediate`, `True` and `False` are not numbers to a table: `sum`,
+`mean` and the charts refuse them.
+
+`min`, `max` and [`order_by`](#order_by) refuse a column of numbers that is still
+text, when comparing it as text would give a different answer (as text, `"9"`
+comes after `"100"`), and say to convert it first:
+
+```python error
+recipes_raw.max("servings")
+```
+
+<div className="pll-output">
+
+```text
+TypeError: max compares column "servings" as text, and as text "12" comes before "2": the values were read from a CSV and never converted to numbers. Convert the column first: transform_column("servings", int).
+```
+
+</div>
 
 ```python
 workouts.sum("duration")
@@ -562,7 +647,7 @@ workouts.sum("duration")
 <div className="pll-output">
 
 ```text
-210.0
+210
 ```
 
 </div>
@@ -686,11 +771,16 @@ def test_long_workouts():
     )
 ```
 
+When a test like this fails, PLL says where the two tables differ: the first row
+that does, or the columns, or the number of rows.
+
 ## Charts
 
-Charts are made by methods on tables, and produce images, which show up in the
-interactions panel. Every chart can also be given a `title=`. The examples use
-this table:
+Charts are made by methods on tables, and produce [images](/pll/images), which
+show up in the interactions panel. Since a chart is an image, `beside`, `above`
+and the rest work on it, and a function that returns one is annotated `-> Image`.
+Every chart can also be given a `title=`, and needs a table with at least one
+row. The examples use this table:
 
 ```python
 study = table(
@@ -739,7 +829,7 @@ study.bar_chart("name", "score")
 
 <div className="pll-output">
 
-![Result of study.bar_chart('name', 'score')](/img/pll/tables/35.svg)
+![Result of study.bar_chart('name', 'score')](/img/pll/tables/39.svg)
 
 </div>
 
@@ -758,7 +848,7 @@ study.freq_bar_chart("year")
 
 <div className="pll-output">
 
-![Result of study.freq_bar_chart('year')](/img/pll/tables/36.svg)
+![Result of study.freq_bar_chart('year')](/img/pll/tables/40.svg)
 
 </div>
 
@@ -777,7 +867,7 @@ study.pie_chart("name", "hours", title="Hours studied")
 
 <div className="pll-output">
 
-![Result of study.pie_chart('name', 'hours', title='Hours studied')](/img/pll/tables/37.svg)
+![Result of study.pie_chart('name', 'hours', title='Hours studied')](/img/pll/tables/41.svg)
 
 </div>
 
@@ -789,7 +879,7 @@ t.histogram(name: str, bins: int = 10, bin_width: float = None) -> Image
 
 How many rows have values in each range (or _bin_) of the column `name`. Give it
 `bins=` to choose how many bins there are, or `bin_width=` to choose how wide
-each one is.
+each one is (a histogram can have at most 1,000 bins).
 
 ```python
 study.histogram("score", bin_width=5)
@@ -797,7 +887,7 @@ study.histogram("score", bin_width=5)
 
 <div className="pll-output">
 
-![Result of study.histogram('score', bin_width=5)](/img/pll/tables/38.svg)
+![Result of study.histogram('score', bin_width=5)](/img/pll/tables/42.svg)
 
 </div>
 
@@ -807,7 +897,7 @@ study.histogram("score", bins=3)
 
 <div className="pll-output">
 
-![Result of study.histogram('score', bins=3)](/img/pll/tables/39.svg)
+![Result of study.histogram('score', bins=3)](/img/pll/tables/43.svg)
 
 </div>
 
@@ -825,7 +915,7 @@ study.scatter_plot("hours", "score")
 
 <div className="pll-output">
 
-![Result of study.scatter_plot('hours', 'score')](/img/pll/tables/40.svg)
+![Result of study.scatter_plot('hours', 'score')](/img/pll/tables/44.svg)
 
 </div>
 
@@ -843,7 +933,7 @@ study.line_chart("hours", "score")
 
 <div className="pll-output">
 
-![Result of study.line_chart('hours', 'score')](/img/pll/tables/41.svg)
+![Result of study.line_chart('hours', 'score')](/img/pll/tables/45.svg)
 
 </div>
 
@@ -862,7 +952,7 @@ study.dot_plot("hours")
 
 <div className="pll-output">
 
-![Result of study.dot_plot('hours')](/img/pll/tables/42.svg)
+![Result of study.dot_plot('hours')](/img/pll/tables/46.svg)
 
 </div>
 
@@ -881,7 +971,7 @@ study.box_plot("score")
 
 <div className="pll-output">
 
-![Result of study.box_plot('score')](/img/pll/tables/43.svg)
+![Result of study.box_plot('score')](/img/pll/tables/47.svg)
 
 </div>
 
@@ -900,7 +990,7 @@ study.lr_plot("hours", "score")
 
 <div className="pll-output">
 
-![Result of study.lr_plot('hours', 'score')](/img/pll/tables/44.svg)
+![Result of study.lr_plot('hours', 'score')](/img/pll/tables/48.svg)
 
 </div>
 
@@ -921,7 +1011,7 @@ study.labeled_scatter_plot("year", "hours", "score")
 
 <div className="pll-output">
 
-![Result of study.labeled_scatter_plot('year', 'hours', 'score')](/img/pll/tables/45.svg)
+![Result of study.labeled_scatter_plot('year', 'hours', 'score')](/img/pll/tables/49.svg)
 
 </div>
 
@@ -961,7 +1051,7 @@ function_plot(lambda x: x * x, -3, 3)
 
 <div className="pll-output">
 
-![Result of function_plot(lambda x: x * x, -3, 3)](/img/pll/tables/47.svg)
+![Result of function_plot(lambda x: x * x, -3, 3)](/img/pll/tables/51.svg)
 
 </div>
 
@@ -969,11 +1059,9 @@ function_plot(lambda x: x * x, -3, 3)
 
 Later in the semester, we'll learn [pandas](https://pandas.pydata.org/), a widely
 used Python library for working with tables. `t.to_pandas()` turns a PLL table
-into a pandas DataFrame (your file needs to `import pandas` for it to work).
+into a pandas DataFrame:
 
 ```python
-import pandas
-
 workouts.to_pandas()
 ```
 
@@ -989,3 +1077,21 @@ workouts.to_pandas()
 ```
 
 </div>
+
+## Charts with matplotlib
+
+[matplotlib](https://matplotlib.org/), the most widely used Python library for
+charts, works too: `plt.show()` shows each figure in the interactions panel, as a
+picture.
+
+```python
+import matplotlib.pyplot as plt
+
+plt.plot([1, 2, 3, 4], [1, 4, 9, 16])
+plt.title("Squares")
+plt.show()
+```
+
+Any other package that Pyodide (the Python PLL runs on) has can be imported too:
+numpy, scipy, requests, and many more. The first time, it is downloaded, which
+needs the network.

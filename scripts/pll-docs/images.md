@@ -28,6 +28,19 @@ In all of the functions below, a `mode` is either `"solid"` or `"outline"`, and 
 `color` is a string naming a color, like `"red"` (see [Colors](#colors) for the
 other ways to write colors). Sizes are in pixels, and can be `int`s or `float`s.
 
+The pictures are drawn the way Racket's 2htdp/image library draws them: an
+outline is a 1-pixel pen just inside the shape, so a shape is the same size
+whether it is solid or outlined.
+
+Every function checks what it is given, when it is called. A size that is text
+or negative, a misspelled mode or color, a list where the images themselves
+belong, or arguments in the wrong order each stop the program with a message
+that names the argument:
+
+```python example error
+rectangle(40, "solid", 20, "red")
+```
+
 ## Basic shapes
 
 ### circle
@@ -112,8 +125,8 @@ triangle(40, "solid", "tan")
 right_triangle(width: float, height: float, mode: str, color: str) -> Image
 ```
 
-A triangle with a right angle at the bottom right, whose bottom side is `width`
-long, and whose right side is `height` tall.
+A triangle with a right angle at the bottom left, whose bottom side is `width`
+long, and whose left side is `height` tall.
 
 ```python example
 right_triangle(36, 48, "solid", "black")
@@ -193,7 +206,9 @@ line(-30, 20, "red")
 text(string: str, size: float, color: str) -> Image
 ```
 
-The string, written in letters `size` pixels tall.
+The string, written in letters `size` pixels tall. It is set in a monospace
+font (every letter is the same width), so its width is exact, and its spaces are
+kept.
 
 ```python example
 text("Hello", 24, "olive")
@@ -508,7 +523,12 @@ rotate(angle: float, image: Image) -> Image
 ```
 
 `image`, turned `angle` degrees counter-clockwise (or clockwise, if `angle` is
-negative). The result is as big as it needs to be to hold the turned image.
+negative). The result is as big as it needs to be to hold the turned shapes, so a
+circle turned is as wide as it was. The angle comes first:
+
+```python example error
+rotate(square(20, "solid", "red"), 45)
+```
 
 ```python example
 rotate(45, ellipse(60, 20, "solid", "olivedrab"))
@@ -599,6 +619,33 @@ image_height(ellipse(30, 40, "solid", "orange"))
 image_height(overlay(circle(20, "solid", "orange"), circle(30, "solid", "purple")))
 ```
 
+## Comparing images
+
+Two images are `==` when they draw the same shapes, in the same places, in the
+same colors, however they were made, so `"red"` and `(255, 0, 0)` are the same
+color:
+
+```python example
+circle(20, "solid", "red") == circle(20, "solid", (255, 0, 0))
+```
+
+```python example
+beside(square(10, "solid", "red"), square(10, "solid", "blue")) == beside(square(10, "solid", "blue"), square(10, "solid", "red"))
+```
+
+So you can test a function that draws something by comparing what it draws with
+the image it should draw:
+
+```python example
+def dot(r: float) -> Image:
+    """a red dot of radius r"""
+    return circle(r, "solid", "red")
+
+def test_dot():
+    assert dot(3) == circle(3, "solid", "red")
+    assert image_width(dot(5)) == 10
+```
+
 ## Loading pictures
 
 ### load_image
@@ -610,7 +657,8 @@ load_image(source: str) -> Image
 A picture, read from a file in the same folder as your program (when `source` is
 a file name, like `"cat.png"`), or from an address on the web (when `source`
 starts with `https://`). It gives you an ordinary image, so everything above
-works on it. PNG, JPEG, GIF, WebP, and SVG files are understood.
+works on it. PNG, JPEG, GIF, WebP, and SVG files are understood, up to 2 MB each:
+these are for the graphics a program draws with, not for photographs.
 
 ```python example
 doghouse = load_image("https://raw.githubusercontent.com/neu-pdi/cs2000-public-resources/refs/heads/main/static/img/lab5-doghouse.png")
@@ -630,11 +678,23 @@ to read it. If loading fails, download the picture, add it to your repository
 A color can be:
 
 - the name of a color, like `"red"`, `"navy"`, or `"gold"` (any [CSS color
-  name](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color) works);
-- a hex code, like `"#ff8800"`;
+  name](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color) works,
+  and so does `"transparent"`);
+- a hex code, like `"#ff8800"` or `"#f80"`;
+- `"rgb(255, 136, 0)"` or `"hsl(32, 100%, 50%)"`, or `"rgba(...)"` and
+  `"hsla(...)"` with a fourth number from `0.0` to `1.0` saying how solid it is;
 - a tuple `(red, green, blue)`, with each from 0 to 255, like `(255, 136, 0)`;
-- a tuple `(red, green, blue, alpha)`, where `alpha` says how see-through the
-  color is: `0` is invisible, and `1` (or `255`) is solid.
+- a tuple `(red, green, blue, alpha)`, where `alpha` says how solid the color is:
+  a whole number from `0` (invisible) to `255` (solid), or a fraction from `0.0`
+  to `1.0`, so `(255, 0, 0, 128)` and `(255, 0, 0, 0.5)` are both half
+  see-through.
+
+A color name is checked against the CSS names, so a misspelled one stops the
+program and suggests the name you meant, rather than drawing nothing:
+
+```python example error
+circle(20, "solid", "bleu")
+```
 
 ```python example
 beside(circle(20, "solid", "darkorange"),

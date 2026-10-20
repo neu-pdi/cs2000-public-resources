@@ -19,13 +19,13 @@ def describe(value, n):
     """what to show for the value of an example's last expression"""
     if value is None:
         return None
-    if hasattr(value, "_pll_table_data"):
-        data = value._pll_table_data()
-        return {"kind": "table", "columns": data["columns"], "rows": data["rows"]}
-    if hasattr(value, "_pll_image_data"):
-        data = value._pll_image_data()
-        return {"kind": "image", "svg": data["data"],
-                "width": data["width"], "height": data["height"]}
+    if isinstance(value, Table):
+        columns = value.columns()
+        return {"kind": "table", "columns": columns,
+                "rows": [[row[c] for c in columns] for row in value.rows()]}
+    if hasattr(value, "to_svg"):  # an image (charts are images too)
+        return {"kind": "image", "svg": value.to_svg(),
+                "width": image_width(value), "height": image_height(value)}
     return {"kind": "text", "text": pprint.pformat(value, width=80, sort_dicts=False)}
 
 
@@ -43,7 +43,9 @@ for n, example in enumerate(examples):
                 value = eval(compile(ast.Expression(last.value), "<example>", "eval"), env)
                 result["value"] = describe(value, n)
     except Exception as e:
-        result["error"] = "%s: %s" % (type(e).__name__, e)
+        # (a KeyError's str() is the repr of its message, quotes and all)
+        message = e.args[0] if isinstance(e, KeyError) and e.args and isinstance(e.args[0], str) else e
+        result["error"] = "%s: %s" % (type(e).__name__, message)
     result["printed"] = printed.getvalue()
     results.append(result)
 

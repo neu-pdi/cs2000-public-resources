@@ -76,19 +76,26 @@ husky_reactor.interact()
 | `tick_rate` | the number of seconds between ticks (about 1/28 if you leave it out) | — |
 | `title` | a string to show at the top of the card | — |
 
-Each handler returns the **new state**; it doesn't change the old one.
+Each handler returns the **new state**; it doesn't change the old one. A mistake
+in a handler is explained like any other error, and anything a handler prints
+appears in the interactions panel.
 
 **Click the picture before using the keyboard**, so the keys go to the reactor,
 and not to the interactions prompt.
 
 `big_bang(init, to_draw=..., ...)` is another way of writing
-`reactor(init=init, to_draw=..., ...).interact()`.
+`reactor(init=init, to_draw=..., ...).interact()`. A reactor that is made but
+never started (with no `.interact()`) is pointed out at the end of the run.
 
 ## Playing, pausing, and rewinding
 
-The card has play / pause, a single-step button, and a slider. Every state the
-reactor passes through is recorded, so you can drag the slider back to watch
-what happened, and then play forward again from there.
+The card has play / pause, buttons to step one frame back or forward, and a
+slider. Every state the reactor passes through is recorded, so you can drag the
+slider back to watch what happened, and then play forward again from there.
+
+A reactor only runs while its card is on screen: while the interactions panel is
+hidden, or shows another file, it waits where it is, and carries on when it is
+shown again. Closing the file ends it.
 
 ## Testing a reactor without watching it
 

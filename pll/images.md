@@ -36,6 +36,27 @@ In all of the functions below, a `mode` is either `"solid"` or `"outline"`, and 
 `color` is a string naming a color, like `"red"` (see [Colors](#colors) for the
 other ways to write colors). Sizes are in pixels, and can be `int`s or `float`s.
 
+The pictures are drawn the way Racket's 2htdp/image library draws them: an
+outline is a 1-pixel pen just inside the shape, so a shape is the same size
+whether it is solid or outlined.
+
+Every function checks what it is given, when it is called. A size that is text
+or negative, a misspelled mode or color, a list where the images themselves
+belong, or arguments in the wrong order each stop the program with a message
+that names the argument:
+
+```python error
+rectangle(40, "solid", 20, "red")
+```
+
+<div className="pll-output">
+
+```text
+TypeError: rectangle's `height` (the 2nd argument) must be a number, but it is the string "solid". The arguments are: rectangle(width, height, mode, color).
+```
+
+</div>
+
 ## Basic shapes
 
 ### circle
@@ -52,7 +73,7 @@ circle(30, "outline", "red")
 
 <div className="pll-output">
 
-![Result of circle(30, 'outline', 'red')](/img/pll/images/1.svg)
+![Result of circle(30, 'outline', 'red')](/img/pll/images/2.svg)
 
 </div>
 
@@ -62,7 +83,7 @@ circle(20, "solid", "blue")
 
 <div className="pll-output">
 
-![Result of circle(20, 'solid', 'blue')](/img/pll/images/2.svg)
+![Result of circle(20, 'solid', 'blue')](/img/pll/images/3.svg)
 
 </div>
 
@@ -80,7 +101,7 @@ square(40, "solid", "slateblue")
 
 <div className="pll-output">
 
-![Result of square(40, 'solid', 'slateblue')](/img/pll/images/3.svg)
+![Result of square(40, 'solid', 'slateblue')](/img/pll/images/4.svg)
 
 </div>
 
@@ -90,7 +111,7 @@ square(50, "outline", "darkmagenta")
 
 <div className="pll-output">
 
-![Result of square(50, 'outline', 'darkmagenta')](/img/pll/images/4.svg)
+![Result of square(50, 'outline', 'darkmagenta')](/img/pll/images/5.svg)
 
 </div>
 
@@ -108,7 +129,7 @@ rectangle(40, 20, "outline", "black")
 
 <div className="pll-output">
 
-![Result of rectangle(40, 20, 'outline', 'black')](/img/pll/images/5.svg)
+![Result of rectangle(40, 20, 'outline', 'black')](/img/pll/images/6.svg)
 
 </div>
 
@@ -118,7 +139,7 @@ rectangle(20, 40, "solid", "blue")
 
 <div className="pll-output">
 
-![Result of rectangle(20, 40, 'solid', 'blue')](/img/pll/images/6.svg)
+![Result of rectangle(20, 40, 'solid', 'blue')](/img/pll/images/7.svg)
 
 </div>
 
@@ -136,7 +157,7 @@ ellipse(60, 30, "outline", "black")
 
 <div className="pll-output">
 
-![Result of ellipse(60, 30, 'outline', 'black')](/img/pll/images/7.svg)
+![Result of ellipse(60, 30, 'outline', 'black')](/img/pll/images/8.svg)
 
 </div>
 
@@ -146,7 +167,7 @@ ellipse(30, 60, "solid", "blue")
 
 <div className="pll-output">
 
-![Result of ellipse(30, 60, 'solid', 'blue')](/img/pll/images/8.svg)
+![Result of ellipse(30, 60, 'solid', 'blue')](/img/pll/images/9.svg)
 
 </div>
 
@@ -164,7 +185,7 @@ triangle(40, "solid", "tan")
 
 <div className="pll-output">
 
-![Result of triangle(40, 'solid', 'tan')](/img/pll/images/9.svg)
+![Result of triangle(40, 'solid', 'tan')](/img/pll/images/10.svg)
 
 </div>
 
@@ -174,8 +195,8 @@ triangle(40, "solid", "tan")
 right_triangle(width: float, height: float, mode: str, color: str) -> Image
 ```
 
-A triangle with a right angle at the bottom right, whose bottom side is `width`
-long, and whose right side is `height` tall.
+A triangle with a right angle at the bottom left, whose bottom side is `width`
+long, and whose left side is `height` tall.
 
 ```python
 right_triangle(36, 48, "solid", "black")
@@ -183,7 +204,7 @@ right_triangle(36, 48, "solid", "black")
 
 <div className="pll-output">
 
-![Result of right_triangle(36, 48, 'solid', 'black')](/img/pll/images/10.svg)
+![Result of right_triangle(36, 48, 'solid', 'black')](/img/pll/images/11.svg)
 
 </div>
 
@@ -201,7 +222,7 @@ regular_polygon(50, 3, "outline", "red")
 
 <div className="pll-output">
 
-![Result of regular_polygon(50, 3, 'outline', 'red')](/img/pll/images/11.svg)
+![Result of regular_polygon(50, 3, 'outline', 'red')](/img/pll/images/12.svg)
 
 </div>
 
@@ -211,7 +232,7 @@ regular_polygon(40, 4, "outline", "blue")
 
 <div className="pll-output">
 
-![Result of regular_polygon(40, 4, 'outline', 'blue')](/img/pll/images/12.svg)
+![Result of regular_polygon(40, 4, 'outline', 'blue')](/img/pll/images/13.svg)
 
 </div>
 
@@ -221,7 +242,7 @@ regular_polygon(20, 8, "solid", "red")
 
 <div className="pll-output">
 
-![Result of regular_polygon(20, 8, 'solid', 'red')](/img/pll/images/13.svg)
+![Result of regular_polygon(20, 8, 'solid', 'red')](/img/pll/images/14.svg)
 
 </div>
 
@@ -240,7 +261,7 @@ star(40, "solid", "firebrick")
 
 <div className="pll-output">
 
-![Result of star(40, 'solid', 'firebrick')](/img/pll/images/14.svg)
+![Result of star(40, 'solid', 'firebrick')](/img/pll/images/15.svg)
 
 </div>
 
@@ -260,7 +281,7 @@ star_polygon(40, 5, 2, "solid", "seagreen")
 
 <div className="pll-output">
 
-![Result of star_polygon(40, 5, 2, 'solid', 'seagreen')](/img/pll/images/15.svg)
+![Result of star_polygon(40, 5, 2, 'solid', 'seagreen')](/img/pll/images/16.svg)
 
 </div>
 
@@ -270,7 +291,7 @@ star_polygon(40, 7, 3, "outline", "darkred")
 
 <div className="pll-output">
 
-![Result of star_polygon(40, 7, 3, 'outline', 'darkred')](/img/pll/images/16.svg)
+![Result of star_polygon(40, 7, 3, 'outline', 'darkred')](/img/pll/images/17.svg)
 
 </div>
 
@@ -289,7 +310,7 @@ line(30, 30, "black")
 
 <div className="pll-output">
 
-![Result of line(30, 30, 'black')](/img/pll/images/17.svg)
+![Result of line(30, 30, 'black')](/img/pll/images/18.svg)
 
 </div>
 
@@ -299,7 +320,7 @@ line(-30, 20, "red")
 
 <div className="pll-output">
 
-![Result of line(-30, 20, 'red')](/img/pll/images/18.svg)
+![Result of line(-30, 20, 'red')](/img/pll/images/19.svg)
 
 </div>
 
@@ -309,7 +330,9 @@ line(-30, 20, "red")
 text(string: str, size: float, color: str) -> Image
 ```
 
-The string, written in letters `size` pixels tall.
+The string, written in letters `size` pixels tall. It is set in a monospace
+font (every letter is the same width), so its width is exact, and its spaces are
+kept.
 
 ```python
 text("Hello", 24, "olive")
@@ -317,7 +340,7 @@ text("Hello", 24, "olive")
 
 <div className="pll-output">
 
-![Result of text('Hello', 24, 'olive')](/img/pll/images/19.svg)
+![Result of text('Hello', 24, 'olive')](/img/pll/images/20.svg)
 
 </div>
 
@@ -327,7 +350,7 @@ text("Goodbye", 36, "indigo")
 
 <div className="pll-output">
 
-![Result of text('Goodbye', 36, 'indigo')](/img/pll/images/20.svg)
+![Result of text('Goodbye', 36, 'indigo')](/img/pll/images/21.svg)
 
 </div>
 
@@ -373,7 +396,7 @@ beside(ellipse(20, 70, "solid", "gray"),
 
 <div className="pll-output">
 
-![Result of beside(ellipse(20, 70, 'solid', 'gray'), ellipse(20, 50, 'solid', 'darkgray'), ellipse(20, 30, 'solid', 'dimgray'), ellipse(20, 10, 'solid', 'black'))](/img/pll/images/22.svg)
+![Result of beside(ellipse(20, 70, 'solid', 'gray'), ellipse(20, 50, 'solid', 'darkgray'), ellipse(20, 30, 'solid', 'dimgray'), ellipse(20, 10, 'solid', 'black'))](/img/pll/images/23.svg)
 
 </div>
 
@@ -395,7 +418,7 @@ above(ellipse(70, 20, "solid", "gray"),
 
 <div className="pll-output">
 
-![Result of above(ellipse(70, 20, 'solid', 'gray'), ellipse(50, 20, 'solid', 'darkgray'), ellipse(30, 20, 'solid', 'dimgray'), ellipse(10, 20, 'solid', 'black'))](/img/pll/images/23.svg)
+![Result of above(ellipse(70, 20, 'solid', 'gray'), ellipse(50, 20, 'solid', 'darkgray'), ellipse(30, 20, 'solid', 'dimgray'), ellipse(10, 20, 'solid', 'black'))](/img/pll/images/24.svg)
 
 </div>
 
@@ -416,7 +439,7 @@ overlay(rectangle(30, 60, "solid", "orange"),
 
 <div className="pll-output">
 
-![Result of overlay(rectangle(30, 60, 'solid', 'orange'), ellipse(60, 30, 'solid', 'purple'))](/img/pll/images/24.svg)
+![Result of overlay(rectangle(30, 60, 'solid', 'orange'), ellipse(60, 30, 'solid', 'purple'))](/img/pll/images/25.svg)
 
 </div>
 
@@ -431,7 +454,7 @@ overlay(ellipse(10, 10, "solid", "red"),
 
 <div className="pll-output">
 
-![Result of ellipse(60, 60, 'solid', 'black'))](/img/pll/images/25.svg)
+![Result of ellipse(60, 60, 'solid', 'black'))](/img/pll/images/26.svg)
 
 </div>
 
@@ -450,7 +473,7 @@ underlay(rectangle(30, 60, "solid", "orange"),
 
 <div className="pll-output">
 
-![Result of underlay(rectangle(30, 60, 'solid', 'orange'), ellipse(60, 30, 'solid', 'purple'))](/img/pll/images/26.svg)
+![Result of underlay(rectangle(30, 60, 'solid', 'orange'), ellipse(60, 30, 'solid', 'purple'))](/img/pll/images/27.svg)
 
 </div>
 
@@ -479,7 +502,7 @@ beside_align("bottom",
 
 <div className="pll-output">
 
-![Result of ellipse(20, 10, 'solid', 'navy'))](/img/pll/images/27.svg)
+![Result of ellipse(20, 10, 'solid', 'navy'))](/img/pll/images/28.svg)
 
 </div>
 
@@ -493,7 +516,7 @@ beside_align("top",
 
 <div className="pll-output">
 
-![Result of ellipse(20, 10, 'solid', 'indigo'))](/img/pll/images/28.svg)
+![Result of ellipse(20, 10, 'solid', 'indigo'))](/img/pll/images/29.svg)
 
 </div>
 
@@ -515,7 +538,7 @@ above_align("right",
 
 <div className="pll-output">
 
-![Result of ellipse(10, 20, 'solid', 'sienna'))](/img/pll/images/29.svg)
+![Result of ellipse(10, 20, 'solid', 'sienna'))](/img/pll/images/30.svg)
 
 </div>
 
@@ -529,7 +552,7 @@ above_align("left",
 
 <div className="pll-output">
 
-![Result of ellipse(10, 20, 'solid', 'darkgreen'))](/img/pll/images/30.svg)
+![Result of ellipse(10, 20, 'solid', 'darkgreen'))](/img/pll/images/31.svg)
 
 </div>
 
@@ -550,7 +573,7 @@ overlay_align("left", "center",
 
 <div className="pll-output">
 
-![Result of overlay_align('left', 'center', rectangle(30, 60, 'solid', 'orange'), ellipse(60, 30, 'solid', 'purple'))](/img/pll/images/31.svg)
+![Result of overlay_align('left', 'center', rectangle(30, 60, 'solid', 'orange'), ellipse(60, 30, 'solid', 'purple'))](/img/pll/images/32.svg)
 
 </div>
 
@@ -564,7 +587,7 @@ overlay_align("right", "bottom",
 
 <div className="pll-output">
 
-![Result of rectangle(50, 50, 'solid', 'seagreen'))](/img/pll/images/32.svg)
+![Result of rectangle(50, 50, 'solid', 'seagreen'))](/img/pll/images/33.svg)
 
 </div>
 
@@ -586,7 +609,7 @@ underlay_align("right", "top",
 
 <div className="pll-output">
 
-![Result of rectangle(20, 20, 'solid', 'silver'))](/img/pll/images/33.svg)
+![Result of rectangle(20, 20, 'solid', 'silver'))](/img/pll/images/34.svg)
 
 </div>
 
@@ -610,7 +633,7 @@ overlay_xy(rectangle(20, 20, "outline", "black"),
 
 <div className="pll-output">
 
-![Result of overlay_xy(rectangle(20, 20, 'outline', 'black'), 20, 0, rectangle(20, 20, 'outline', 'black'))](/img/pll/images/34.svg)
+![Result of overlay_xy(rectangle(20, 20, 'outline', 'black'), 20, 0, rectangle(20, 20, 'outline', 'black'))](/img/pll/images/35.svg)
 
 </div>
 
@@ -622,7 +645,7 @@ overlay_xy(rectangle(20, 20, "solid", "red"),
 
 <div className="pll-output">
 
-![Result of overlay_xy(rectangle(20, 20, 'solid', 'red'), 10, 10, rectangle(20, 20, 'solid', 'black'))](/img/pll/images/35.svg)
+![Result of overlay_xy(rectangle(20, 20, 'solid', 'red'), 10, 10, rectangle(20, 20, 'solid', 'black'))](/img/pll/images/36.svg)
 
 </div>
 
@@ -634,7 +657,7 @@ overlay_xy(rectangle(20, 20, "solid", "red"),
 
 <div className="pll-output">
 
-![Result of overlay_xy(rectangle(20, 20, 'solid', 'red'), -10, -10, rectangle(20, 20, 'solid', 'black'))](/img/pll/images/36.svg)
+![Result of overlay_xy(rectangle(20, 20, 'solid', 'red'), -10, -10, rectangle(20, 20, 'solid', 'black'))](/img/pll/images/37.svg)
 
 </div>
 
@@ -654,7 +677,7 @@ underlay_xy(rectangle(20, 20, "solid", "red"),
 
 <div className="pll-output">
 
-![Result of underlay_xy(rectangle(20, 20, 'solid', 'red'), 10, 10, rectangle(20, 20, 'solid', 'black'))](/img/pll/images/37.svg)
+![Result of underlay_xy(rectangle(20, 20, 'solid', 'red'), 10, 10, rectangle(20, 20, 'solid', 'black'))](/img/pll/images/38.svg)
 
 </div>
 
@@ -680,7 +703,7 @@ empty_scene(160, 90)
 
 <div className="pll-output">
 
-![Result of empty_scene(160, 90)](/img/pll/images/38.svg)
+![Result of empty_scene(160, 90)](/img/pll/images/39.svg)
 
 </div>
 
@@ -700,7 +723,7 @@ place_image(triangle(32, "solid", "red"), 24, 24, empty_scene(48, 48))
 
 <div className="pll-output">
 
-![Result of place_image(triangle(32, 'solid', 'red'), 24, 24, empty_scene(48, 48))](/img/pll/images/39.svg)
+![Result of place_image(triangle(32, 'solid', 'red'), 24, 24, empty_scene(48, 48))](/img/pll/images/40.svg)
 
 </div>
 
@@ -710,7 +733,7 @@ place_image(circle(8, "solid", "tomato"), 0, 0, empty_scene(48, 48))
 
 <div className="pll-output">
 
-![Result of place_image(circle(8, 'solid', 'tomato'), 0, 0, empty_scene(48, 48))](/img/pll/images/40.svg)
+![Result of place_image(circle(8, 'solid', 'tomato'), 0, 0, empty_scene(48, 48))](/img/pll/images/41.svg)
 
 </div>
 
@@ -723,7 +746,7 @@ place_image(circle(4, "solid", "white"), 18, 6,
 
 <div className="pll-output">
 
-![Result of place_image(circle(4, 'solid', 'white'), 18, 6, place_image(circle(4, 'solid', 'white'), 0, 6, place_image(circle(4, 'solid', 'white'), 14, 32, rectangle(48, 48, 'solid', 'navy'))))](/img/pll/images/41.svg)
+![Result of place_image(circle(4, 'solid', 'white'), 18, 6, place_image(circle(4, 'solid', 'white'), 0, 6, place_image(circle(4, 'solid', 'white'), 14, 32, rectangle(48, 48, 'solid', 'navy'))))](/img/pll/images/42.svg)
 
 </div>
 
@@ -741,7 +764,7 @@ crop(0, 0, 40, 40, circle(40, "solid", "chocolate"))
 
 <div className="pll-output">
 
-![Result of crop(0, 0, 40, 40, circle(40, 'solid', 'chocolate'))](/img/pll/images/42.svg)
+![Result of crop(0, 0, 40, 40, circle(40, 'solid', 'chocolate'))](/img/pll/images/43.svg)
 
 </div>
 
@@ -751,7 +774,7 @@ crop(40, 60, 40, 60, ellipse(80, 120, "solid", "dodgerblue"))
 
 <div className="pll-output">
 
-![Result of crop(40, 60, 40, 60, ellipse(80, 120, 'solid', 'dodgerblue'))](/img/pll/images/43.svg)
+![Result of crop(40, 60, 40, 60, ellipse(80, 120, 'solid', 'dodgerblue'))](/img/pll/images/44.svg)
 
 </div>
 
@@ -769,7 +792,7 @@ frame(ellipse(40, 40, "solid", "gray"))
 
 <div className="pll-output">
 
-![Result of frame(ellipse(40, 40, 'solid', 'gray'))](/img/pll/images/44.svg)
+![Result of frame(ellipse(40, 40, 'solid', 'gray'))](/img/pll/images/45.svg)
 
 </div>
 
@@ -782,7 +805,20 @@ rotate(angle: float, image: Image) -> Image
 ```
 
 `image`, turned `angle` degrees counter-clockwise (or clockwise, if `angle` is
-negative). The result is as big as it needs to be to hold the turned image.
+negative). The result is as big as it needs to be to hold the turned shapes, so a
+circle turned is as wide as it was. The angle comes first:
+
+```python error
+rotate(square(20, "solid", "red"), 45)
+```
+
+<div className="pll-output">
+
+```text
+TypeError: rotate takes the `angle` first, then the image: write rotate(45, image).
+```
+
+</div>
 
 ```python
 rotate(45, ellipse(60, 20, "solid", "olivedrab"))
@@ -790,7 +826,7 @@ rotate(45, ellipse(60, 20, "solid", "olivedrab"))
 
 <div className="pll-output">
 
-![Result of rotate(45, ellipse(60, 20, 'solid', 'olivedrab'))](/img/pll/images/45.svg)
+![Result of rotate(45, ellipse(60, 20, 'solid', 'olivedrab'))](/img/pll/images/47.svg)
 
 </div>
 
@@ -800,7 +836,7 @@ rotate(5, rectangle(50, 50, "outline", "black"))
 
 <div className="pll-output">
 
-![Result of rotate(5, rectangle(50, 50, 'outline', 'black'))](/img/pll/images/46.svg)
+![Result of rotate(5, rectangle(50, 50, 'outline', 'black'))](/img/pll/images/48.svg)
 
 </div>
 
@@ -810,7 +846,7 @@ rotate(-90, triangle(40, "solid", "seagreen"))
 
 <div className="pll-output">
 
-![Result of rotate(-90, triangle(40, 'solid', 'seagreen'))](/img/pll/images/47.svg)
+![Result of rotate(-90, triangle(40, 'solid', 'seagreen'))](/img/pll/images/49.svg)
 
 </div>
 
@@ -829,7 +865,7 @@ scale(2, ellipse(20, 30, "solid", "blue"))
 
 <div className="pll-output">
 
-![Result of scale(2, ellipse(20, 30, 'solid', 'blue'))](/img/pll/images/48.svg)
+![Result of scale(2, ellipse(20, 30, 'solid', 'blue'))](/img/pll/images/50.svg)
 
 </div>
 
@@ -839,7 +875,7 @@ scale(0.5, ellipse(20, 30, "solid", "blue"))
 
 <div className="pll-output">
 
-![Result of scale(0.5, ellipse(20, 30, 'solid', 'blue'))](/img/pll/images/49.svg)
+![Result of scale(0.5, ellipse(20, 30, 'solid', 'blue'))](/img/pll/images/51.svg)
 
 </div>
 
@@ -858,7 +894,7 @@ beside(rotate(30, square(50, "solid", "red")),
 
 <div className="pll-output">
 
-![Result of beside(rotate(30, square(50, 'solid', 'red')), flip_horizontal(rotate(30, square(50, 'solid', 'blue'))))](/img/pll/images/50.svg)
+![Result of beside(rotate(30, square(50, 'solid', 'red')), flip_horizontal(rotate(30, square(50, 'solid', 'blue'))))](/img/pll/images/52.svg)
 
 </div>
 
@@ -877,7 +913,7 @@ above(star(40, "solid", "firebrick"),
 
 <div className="pll-output">
 
-![Result of above(star(40, 'solid', 'firebrick'), scale(0.5, flip_vertical(star(40, 'solid', 'gray'))))](/img/pll/images/51.svg)
+![Result of above(star(40, 'solid', 'firebrick'), scale(0.5, flip_vertical(star(40, 'solid', 'gray'))))](/img/pll/images/53.svg)
 
 </div>
 
@@ -947,6 +983,49 @@ image_height(overlay(circle(20, "solid", "orange"), circle(30, "solid", "purple"
 
 </div>
 
+## Comparing images
+
+Two images are `==` when they draw the same shapes, in the same places, in the
+same colors, however they were made, so `"red"` and `(255, 0, 0)` are the same
+color:
+
+```python
+circle(20, "solid", "red") == circle(20, "solid", (255, 0, 0))
+```
+
+<div className="pll-output">
+
+```text
+True
+```
+
+</div>
+
+```python
+beside(square(10, "solid", "red"), square(10, "solid", "blue")) == beside(square(10, "solid", "blue"), square(10, "solid", "red"))
+```
+
+<div className="pll-output">
+
+```text
+False
+```
+
+</div>
+
+So you can test a function that draws something by comparing what it draws with
+the image it should draw:
+
+```python
+def dot(r: float) -> Image:
+    """a red dot of radius r"""
+    return circle(r, "solid", "red")
+
+def test_dot():
+    assert dot(3) == circle(3, "solid", "red")
+    assert image_width(dot(5)) == 10
+```
+
 ## Loading pictures
 
 ### load_image
@@ -958,7 +1037,8 @@ load_image(source: str) -> Image
 A picture, read from a file in the same folder as your program (when `source` is
 a file name, like `"cat.png"`), or from an address on the web (when `source`
 starts with `https://`). It gives you an ordinary image, so everything above
-works on it. PNG, JPEG, GIF, WebP, and SVG files are understood.
+works on it. PNG, JPEG, GIF, WebP, and SVG files are understood, up to 2 MB each:
+these are for the graphics a program draws with, not for photographs.
 
 ```python
 doghouse = load_image("https://raw.githubusercontent.com/neu-pdi/cs2000-public-resources/refs/heads/main/static/img/lab5-doghouse.png")
@@ -967,7 +1047,7 @@ scale(0.25, doghouse)
 
 <div className="pll-output">
 
-![Result of doghouse = load_image('https://raw.githubusercontent.com/neu-pdi/cs2000-public-resources/refs/heads/main/static/img/lab5-doghouse.png') scale(0.25, doghouse)](/img/pll/images/56.svg)
+![Result of doghouse = load_image('https://raw.githubusercontent.com/neu-pdi/cs2000-public-resources/refs/heads/main/static/img/lab5-doghouse.png') scale(0.25, doghouse)](/img/pll/images/61.svg)
 
 </div>
 
@@ -977,7 +1057,7 @@ beside(scale(0.2, doghouse), scale(0.2, flip_horizontal(doghouse)))
 
 <div className="pll-output">
 
-![Result of beside(scale(0.2, doghouse), scale(0.2, flip_horizontal(doghouse)))](/img/pll/images/57.svg)
+![Result of beside(scale(0.2, doghouse), scale(0.2, flip_horizontal(doghouse)))](/img/pll/images/62.svg)
 
 </div>
 
@@ -990,11 +1070,31 @@ to read it. If loading fails, download the picture, add it to your repository
 A color can be:
 
 - the name of a color, like `"red"`, `"navy"`, or `"gold"` (any [CSS color
-  name](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color) works);
-- a hex code, like `"#ff8800"`;
+  name](https://developer.mozilla.org/en-US/docs/Web/CSS/named-color) works,
+  and so does `"transparent"`);
+- a hex code, like `"#ff8800"` or `"#f80"`;
+- `"rgb(255, 136, 0)"` or `"hsl(32, 100%, 50%)"`, or `"rgba(...)"` and
+  `"hsla(...)"` with a fourth number from `0.0` to `1.0` saying how solid it is;
 - a tuple `(red, green, blue)`, with each from 0 to 255, like `(255, 136, 0)`;
-- a tuple `(red, green, blue, alpha)`, where `alpha` says how see-through the
-  color is: `0` is invisible, and `1` (or `255`) is solid.
+- a tuple `(red, green, blue, alpha)`, where `alpha` says how solid the color is:
+  a whole number from `0` (invisible) to `255` (solid), or a fraction from `0.0`
+  to `1.0`, so `(255, 0, 0, 128)` and `(255, 0, 0, 0.5)` are both half
+  see-through.
+
+A color name is checked against the CSS names, so a misspelled one stops the
+program and suggests the name you meant, rather than drawing nothing:
+
+```python error
+circle(20, "solid", "bleu")
+```
+
+<div className="pll-output">
+
+```text
+ValueError: circle's `color` (the 3rd argument) is the string "bleu", which is not a color name PLL knows. Did you mean "blue"?
+```
+
+</div>
 
 ```python
 beside(circle(20, "solid", "darkorange"),
@@ -1004,7 +1104,7 @@ beside(circle(20, "solid", "darkorange"),
 
 <div className="pll-output">
 
-![Result of beside(circle(20, 'solid', 'darkorange'), circle(20, 'solid', '#ff8800'), circle(20, 'solid', (255, 136, 0)))](/img/pll/images/58.svg)
+![Result of beside(circle(20, 'solid', 'darkorange'), circle(20, 'solid', '#ff8800'), circle(20, 'solid', (255, 136, 0)))](/img/pll/images/64.svg)
 
 </div>
 
@@ -1015,6 +1115,6 @@ overlay(circle(20, "solid", (0, 0, 255, 0.5)),
 
 <div className="pll-output">
 
-![Result of overlay(circle(20, 'solid', (0, 0, 255, 0.5)), rectangle(60, 20, 'solid', 'gold'))](/img/pll/images/59.svg)
+![Result of overlay(circle(20, 'solid', (0, 0, 255, 0.5)), rectangle(60, 20, 'solid', 'gold'))](/img/pll/images/65.svg)
 
 </div>

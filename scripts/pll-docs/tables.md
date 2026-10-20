@@ -8,13 +8,24 @@ description: Creating, loading, transforming, and charting tables
 
 PLL adds tables to Python: you do not need to `import` anything to use them. A
 table shows up in the interactions panel as a card you can scroll, with a
-**Save CSV** button. Each operation below is shown with its contract (the types
-of its inputs and output), followed by some examples and what they produce.
+**Save CSV** button, which saves the whole table. A number is shown as Python
+prints it (`2.0`, `12999.99`), and a column of numbers lines up on the right, so a
+column of numbers that is still text (from a CSV) stands out by lining up on the
+left. Each operation below is shown with its contract (the types of its inputs and
+output), followed by some examples and what they produce.
 
 Tables never change: every operation on a table produces a **new** table, and
 leaves the original as it was. Operations on tables are _methods_, written after
 the table with a dot, like `workouts.filter(is_long)`. For type annotations, the
 type of a table is `Table`, and the type of a row is `dict`.
+
+A table is not a list or a dictionary: its rows and columns are taken out with
+its methods, [`row`](#row) and [`column`](#column), and a mistake like this one
+says which to use:
+
+```python example error
+table(["name"], [["Ada"]])["name"]
+```
 
 ## Creating tables
 
@@ -96,8 +107,13 @@ recipes.row(0)
 ```
 
 If some values in a column aren't numbers (e.g., `""`, or `"1,234"`), `int` and
-`float` cause an error, so you'll need to write a function that handles those
-values, and use that with `transform_column` instead. In the browser, an address
+`float` cause an error that names the row, so you'll need to write a function that
+handles those values, and use that with `transform_column` instead.
+
+A CSV saved by Excel loads either way it can be saved ("CSV UTF-8", or a plain
+"CSV"). An address that gives back a web page rather than a CSV, such as a file's
+page on GitHub, is said to be one, with the fix (use the address of its **Raw**
+button). A file next to your program can be up to 50 MB. In the browser, an address
 on the web only works if its site allows other sites to read it: if
 `load_table` reports that it could not reach an address, download the CSV, add
 it to your repository (next to your program), and load it by its file name
@@ -243,6 +259,23 @@ workouts.add_column("calories", calories)
 workouts.add_column("rating", [4, 5, 3, 4, 5])
 ```
 
+### add_row
+
+```
+t.add_row(row: list | dict) -> Table
+```
+
+A table with one more row, at the end: either a list with one value for each
+column, in order, or a `dict` from column names to values.
+
+```python example
+workouts.add_row(["2025-04-06", "Swimming", 40])
+```
+
+```python example
+workouts.add_row({"date": "2025-04-06", "activity": "Swimming", "duration": 40})
+```
+
 ### select_columns
 
 ```
@@ -297,15 +330,25 @@ workouts.tail(2)
 ### sum, mean, min, and max
 
 ```
-t.sum(name: str) -> float
+t.sum(name: str) -> int | float
 t.mean(name: str) -> float
 t.min(name: str)
 t.max(name: str)
 ```
 
 The total, average, smallest value, and largest value of a column. `sum` and
-`mean` need a column of numbers; `min` and `max` also work on strings
-(dictionary order).
+`mean` need a column of numbers (the `sum` of whole numbers is a whole number);
+`min` and `max` also work on strings (dictionary order). At `#level beginner` and
+`#level intermediate`, `True` and `False` are not numbers to a table: `sum`,
+`mean` and the charts refuse them.
+
+`min`, `max` and [`order_by`](#order_by) refuse a column of numbers that is still
+text, when comparing it as text would give a different answer (as text, `"9"`
+comes after `"100"`), and say to convert it first:
+
+```python example error
+recipes_raw.max("servings")
+```
 
 ```python example
 workouts.sum("duration")
@@ -374,11 +417,16 @@ def test_long_workouts():
     )
 ```
 
+When a test like this fails, PLL says where the two tables differ: the first row
+that does, or the columns, or the number of rows.
+
 ## Charts
 
-Charts are made by methods on tables, and produce images, which show up in the
-interactions panel. Every chart can also be given a `title=`. The examples use
-this table:
+Charts are made by methods on tables, and produce [images](/pll/images), which
+show up in the interactions panel. Since a chart is an image, `beside`, `above`
+and the rest work on it, and a function that returns one is annotated `-> Image`.
+Every chart can also be given a `title=`, and needs a table with at least one
+row. The examples use this table:
 
 ```python example
 study = table(
@@ -444,7 +492,7 @@ t.histogram(name: str, bins: int = 10, bin_width: float = None) -> Image
 
 How many rows have values in each range (or _bin_) of the column `name`. Give it
 `bins=` to choose how many bins there are, or `bin_width=` to choose how wide
-each one is.
+each one is (a histogram can have at most 1,000 bins).
 
 ```python example
 study.histogram("score", bin_width=5)
@@ -562,10 +610,26 @@ function_plot(lambda x: x * x, -3, 3)
 
 Later in the semester, we'll learn [pandas](https://pandas.pydata.org/), a widely
 used Python library for working with tables. `t.to_pandas()` turns a PLL table
-into a pandas DataFrame (your file needs to `import pandas` for it to work).
+into a pandas DataFrame:
 
 ```python example
-import pandas
-
 workouts.to_pandas()
 ```
+
+## Charts with matplotlib
+
+[matplotlib](https://matplotlib.org/), the most widely used Python library for
+charts, works too: `plt.show()` shows each figure in the interactions panel, as a
+picture.
+
+```python
+import matplotlib.pyplot as plt
+
+plt.plot([1, 2, 3, 4], [1, 4, 9, 16])
+plt.title("Squares")
+plt.show()
+```
+
+Any other package that Pyodide (the Python PLL runs on) has can be imported too:
+numpy, scipy, requests, and many more. The first time, it is downloaded, which
+needs the network.
