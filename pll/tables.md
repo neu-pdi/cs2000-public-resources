@@ -635,7 +635,7 @@ recipes_raw.max("servings")
 <div className="pll-output">
 
 ```text
-TypeError: max compares column "servings" as text, and as text "12" comes before "2": the values were read from a CSV and never converted to numbers. Convert the column first: transform_column("servings", int).
+TypeError: max compares column "servings" as text, and as text "12" comes before "2": the column holds numbers written as text, like those in quotes or read from a CSV. Convert the column first: transform_column("servings", int).
 ```
 
 </div>
