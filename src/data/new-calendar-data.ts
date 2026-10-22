@@ -31,10 +31,13 @@ export interface CalendarInfo {
 }
 
 export interface TopicInfo {
+    /** 1-based week number, counted from CalendarInfo.startDate */
+    week: number;
+    /** Last week this topic covers (inclusive). Defaults to `week` (one week) */
+    endWeek?: number;
+    /** Defaults to 'Week N' (or 'Weeks N–M') */
     label?: string;
     topic: string;
-    startDate: IsoDate;
-    endDate?: IsoDate;
 }
 
 export interface LectureInfo {
