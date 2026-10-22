@@ -106,6 +106,27 @@ function getLatestCalendarDay(item: CalendarItem): CalendarDay | undefined {
       )
     );
 
+  if (item === 'homework') {
+    const nextHomework = calendarDays
+      .find(({ calendarDay, date }) => {
+        if (date < today) {
+          return false;
+        }
+
+        return calendarDay.homework !== undefined;
+    })?.calendarDay;
+    
+    // If there is no next homework, return first homework
+    if (!nextHomework) {
+      return calendarDays
+      .find(({ calendarDay, date }) => {
+        // Gets the first valid homework item
+        return calendarDay.homework !== undefined;
+      })?.calendarDay;
+    }
+    return nextHomework;
+  }
+
   return calendarDays
     // Reverses since we want the last valid item
     .reverse()
