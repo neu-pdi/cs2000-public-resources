@@ -87,17 +87,35 @@ export interface HolidayInfo {
     endDate?: IsoDate;
 }
 
-export interface OfficeHourInfo {
-    date: IsoDate;
-    type?: OfficeHourType;
+export type OfficeHourInfo = WeeklyOfficeHours | DateOfficeHours;
+export type Weekday = 'sun' | 'mon' | 'tue' | 'wed' | 'thu' | 'fri' | 'sat';
+export type OfficeHourType = 'online' | 'in-person' | 'both';
+
+
+export interface WeeklyOfficeHours {
+    kind: 'weekly';
+    weekdays: Weekday[];
+    startDate: IsoDate;
+    endDate: IsoDate;
+    skipDates?: IsoDate[]; // no-class holidays are skipped automatically
     times?: OfficeHourTime[];
 }
 
-export type OfficeHourType = 'online' | 'in-person' | 'both';
+export interface DateOfficeHours {
+    kind: 'date';
+    date: IsoDate; // replaces any weekly hours on this date
+    times?: OfficeHourTime[];
+}
+
+/**
+ * A time of day written as 'HH:MM' in 24-hour Eastern time (e.g. '19:00')
+ */
+export type IsoTime = `${number}:${number}`;
 
 export interface OfficeHourTime {
-    startTime: string;
-    endTime: string;
+    startTime: IsoTime;
+    endTime: IsoTime;
+    type?: OfficeHourType;
 }
 
 export const calendarData: CalendarInfo = {
