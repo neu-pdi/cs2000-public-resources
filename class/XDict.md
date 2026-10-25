@@ -15,8 +15,6 @@ support. One is searching a list for the element with a given piece of
 information:
 
 ```python
-from dataclasses import dataclass
-
 @dataclass
 class Flight:
     from_city: str
@@ -162,8 +160,6 @@ A conference keeps its sessions in a dictionary, keyed by session ID, where
 each session's details are themselves a dictionary. Read through the program:
 
 ```python
-from dataclasses import dataclass
-
 sessions = {
     "CS101": {"title": "Introduction to AI", "speaker": "Dr. Martinez", "topics": ["AI", "Machine Learning"]},
     "CS102": {"title": "Deep Learning Techniques", "speaker": "Prof. Nguyen", "topics": ["Neural Networks", "Deep Learning"]},

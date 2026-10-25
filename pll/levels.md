@@ -23,15 +23,21 @@ as the last run, or, before the file has run, the level its `#level` line names.
 
 | Line in your file | What it does |
 | --- | --- |
-| `#level beginner` | Strictest. PLL reports reassigning a variable (giving a name that already has a value a new one), reusing a name that hides another name (a built-in like `list` or `sum`, one of PLL's own like `circle`, or one of your own), the `global` / `nonlocal` keywords, removing a name with `del` (as in `del x`; taking an item out of a list or dictionary, as in `del items[0]` or `del d[key]`, is fine), and the [mistakes listed below](#mistakes-found-before-the-file-runs). If it finds a problem, it **does not run** the file. Type annotations are checked as the program runs. Bitwise operators on numbers (`^`, `&`, `\|`, `<<`, `>>`, `~`) are not allowed: the program stops where one is used (`^` is not a power; that is `**`). |
-| `#level intermediate` | The same, except that you **may** change the value of a variable _inside a function_ — which is what you need for `for` loops. Reassigning a variable at the top level of the file is still reported. Type annotations are checked. |
-| `#level advanced` | Reassigning, hiding names, `global`, `nonlocal`, `del` and bitwise operators are all allowed. PLL still looks, before the file runs, for a [name used where it has no value](#names-without-a-value). Type annotations are still checked as the program runs, but by Python's own rules (so `True` counts as `1`). |
+| `#level beginner` | Strictest. PLL reports reassigning a variable (giving a name that already has a value a new one), reusing a name that hides another name (a built-in like `list` or `sum`, one of PLL's own like `circle`, or one of your own), the `global` / `nonlocal` keywords, removing a name with `del`, and the [mistakes listed below](#mistakes-found-before-the-file-runs). If it finds a problem, it **does not run** the file. Type annotations are checked as the program runs. Bitwise operators on numbers (`^`, `&`, `\|`, `<<`, `>>`, `~`) are not allowed: the program stops where one is used (`^` is not a power; that is `**`). Nor is changing a list, a dictionary, a set or a dataclass in place: `xs.append(4)`, `xs.sort()`, `random.shuffle(xs)`, `d[key] = value`, `del xs[0]` and `p.age = 5` each stop the program, and the message shows what to write instead, which makes a new value (`xs + [4]`, `sorted(xs)`, `random.sample(xs, len(xs))`). |
+| `#level intermediate` | The same, except that you **may** change the value of a variable _inside a function_ — which is what you need for `for` loops (`total = total + n`, or `found = found + [n]` for a list). Reassigning a variable at the top level of the file is still reported. Type annotations are checked. |
+| `#level advanced` | Reassigning, hiding names, `global`, `nonlocal`, `del`, bitwise operators and changing a value in place are all allowed. PLL still looks, before the file runs, for a [name used where it has no value](#names-without-a-value). Type annotations are still checked as the program runs, but by Python's own rules (so `True` counts as `1`). |
 | `#level raw` | Nothing is checked, and a value on a line of its own is not shown: your program runs exactly as plain Python would, with PLL's images and tables still available. **This is what you get if you leave the line out.** |
 
+At `beginner`, `intermediate` and `advanced`, every file starts with
+`dataclass` and `Callable`, as it does with PLL's image and table functions, so
+neither needs an import. At `beginner` and `intermediate`, importing one anyway
+is reported, as hiding one of PLL's own names is.
+
 In this class, we use `#level beginner` at first, then `#level intermediate`
-once we start writing `for` loops, and `#level advanced` when we need `global`
-or want to experiment with how Python's variables work. Each class's notes say
-which level to use.
+once we start writing `for` loops, and `#level advanced` once we change values
+in place (a list, a dictionary, a pandas DataFrame), need `global`, or want to
+experiment with how Python's variables work. Each class's notes say which level
+to use.
 
 ## The `#level` line in the editor
 
@@ -75,7 +81,8 @@ and does not run the file:
 
 - a value worked out and then thrown away, like a line `x + 1` on its own inside
   a function (did you mean `return x + 1`?), or a comparison in a test written
-  without `assert`;
+  without `assert`. That includes `sorted(xs)` or `name.upper()` on a line of
+  its own, which make a new value and leave `xs` and `name` as they were;
 - `assert(x, 1)`, which checks a pair, and a pair is always true;
 - a function annotated to return something, with no `return` in it;
 - `is` used to compare with a number or a string (`x is 60.5`), where `==` is

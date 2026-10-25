@@ -416,8 +416,6 @@ print("Global value:", value)
     <p>**Answer meeting expectations:**</p>
 
 ```python
-from dataclasses import dataclass
-
 @dataclass
 class Coffee:
     shots: int
@@ -452,8 +450,6 @@ def test_is_strong():
 <p>**Answer approaching expectations (missing docstring, missing or incorrect annotations, only one test):**</p>
 
 ```python error
-from dataclasses import dataclass
-
 @dataclass
 class Coffee:
     shots: str
@@ -549,8 +545,6 @@ def test_make_positive():
     <p>Design a function <code>count_internal_nodes</code> that, given the BinTree data definition below, takes a BinTree and returns the total number of internal nodes (non-leaf nodes) in the tree</p>
  
 ```python
-from dataclasses import dataclass
-
 @dataclass
 class Leaf[T]:
     val: T
@@ -606,7 +600,6 @@ def test_count_internal_nodes():
     <summary>Examples</summary>
     <p>What will be the output of the following code? Please explain why.</p>
 ```python
-from dataclasses import dataclass
 @dataclass
 class Account:
     name: str
@@ -648,7 +641,6 @@ Objects with different heap locations can be equal but are not the same object.
     <p>What will be the output of the following code? Please explain why.</p>
 
 ```python
-from dataclasses import dataclass
 @dataclass
 class Sensor:
     name: str
@@ -672,7 +664,6 @@ print("Are they the same?", outdoor_sensor is result)
     <p>What will be the output of the following code? Please explain why.</p>
 
 ```python
-from dataclasses import dataclass
 @dataclass
 class Player:
     name: str
@@ -695,8 +686,6 @@ print("Same player object?", player1 is player2)
     <p>What will be the output of the following code? Please explain why.</p>
 
 ```python
-from dataclasses import dataclass
-
 @dataclass
 class Book:
     title: str

@@ -1,7 +1,7 @@
 ---
 sidebar_position: 33
 class_number: 33
-pll_level: intermediate
+pll_level: advanced
 title: Extra - Recommendation Systems
 ---
 
@@ -15,8 +15,6 @@ support. One is searching a list for the element with a given piece of
 information:
 
 ```python
-from dataclasses import dataclass
-
 @dataclass
 class Flight:
     from_city: str
