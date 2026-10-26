@@ -6,7 +6,6 @@ hide_table_of_contents: true
 
 import AssessmentHours from '@site/src/components/AssessmentHours';
 import SkillCalendar from '@site/src/components/SkillCalendar';
-import { calendarData } from '../data/calendar-data';
 import styles from './index.module.css';
 
 # CS 2000: Introduction to Program Design and Implementation
@@ -29,4 +28,4 @@ Lectures meet **Monday, Wednesday, and Thursday**. Labs meet **Tuesday**. Homewo
 
 **Colored stripes** at the bottom of each day indicate which skills are assessable during office hours on that day. Past days are faded.
 
-<SkillCalendar data={calendarData} />
+<SkillCalendar />
