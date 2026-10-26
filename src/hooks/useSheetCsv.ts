@@ -17,6 +17,15 @@ export function useSheetCsv(
     const [rows, setRows] = useState<string[][] | null>(() => memoryCache.get(url) ?? null);
     const [failed, setFailed] = useState(false);
 
+    // localStorage is read after hydration to avoid a server/client mismatch, but still before paint
+    useLayoutEffect(() => {
+        if (memoryCache.has(url)) return;
+        const stored = readStored(url);
+        if (stored) {
+        memoryCache.set(url, stored);
+        setRows(stored);
+        }
+    }, [url]);
 
     useEffect(() => {
         const controller = new AbortController();
