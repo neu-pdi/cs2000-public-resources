@@ -83,6 +83,11 @@ export interface HolidayInfo {
     label?: string;
     /** Defaults to 'no-class' */
     kind?: HolidayKind;
+    /**
+     * Only applies to 'no-class' holidays. When true, skills are still available (and shown)
+     * on these days, so they count toward skill ranges. Defaults to false
+     */
+    skillsAvailable?: boolean;
     startDate: IsoDate;
     endDate?: IsoDate;
 }
@@ -222,7 +227,7 @@ export const calendarData: CalendarInfo = {
         { label: "Indg. People's Day", startDate: '2026-10-12' },
         { label: 'Veterans Day', startDate: '2026-11-11' },
         { label: 'No HW Due', kind: 'note', startDate: '2026-11-22' },
-        { label: 'No Lab', startDate: '2026-11-24' },
+        { label: 'No Lab', skillsAvailable: true, startDate: '2026-11-24' },
         { label: 'Thanks. Break', startDate: '2026-11-25', endDate: '2026-11-27' },
     ],
     officeHours: [
