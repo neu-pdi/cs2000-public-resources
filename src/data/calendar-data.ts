@@ -1,7 +1,5 @@
 /**
- * A calendar date written as 'YYYY-MM-DD'. Dates are kept as strings rather than
- * `Date`s because `new Date('2026-09-06')` is parsed as midnight UTC, which is the
- * previous evening in Boston. Use {@link parseIsoDate} to get a local `Date`.
+ * A calendar date written as 'YYYY-MM-DD'
  */
 export type IsoDate = `${number}-${number}-${number}`;
 
