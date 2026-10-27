@@ -90,7 +90,7 @@ Attendance is strongly encouraged, but not required in CS2000. Please do not com
 
 The course will teach the following 12 skills, grading of which will be performed by repeatable (with highest grade taken), on-paper, no-note, assessment that can be scored as "Doesn't meet expectations", "Approaching expectations", or "Meets expectations". Each student will have at least 4 opportunities to master each skill. Beyond the regular 4 opportunities which occur during the semester, as the topics are covered, student may re-attempt 2 skills; such re-attempts can be scheduled on the day of the final exam. See the [Skills](/skills) page for much more detail.
 
-00. Design function types, docs, tests
+00. Design function signatures, docs, tests
 01. Implement basic functions
 02. Function composition
 03. Construct / Transform Tables

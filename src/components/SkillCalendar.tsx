@@ -306,9 +306,7 @@ export default function SkillCalendar({ data }: { data: CalendarMonth[] }) {
                         <td
                           key={dayIdx}
                           className={day.isHoliday ? 'holiday' : ''}
-                          data-year={displayDate.getFullYear()}
-                          data-month={displayDate.toLocaleString('en-US', { month: 'long' })}
-                          data-day={displayDate.getDate()}
+                          data-date={day.date}
                         >
                           <div className="calendar-day">
                             <span className="day-number">{displayDate.getDate()}</span>

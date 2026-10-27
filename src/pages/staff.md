@@ -251,6 +251,12 @@ import styles from './index.module.css';
 </div>
 
 <div className={styles.staffCard}>
+  <img src={require('@site/static/img/staff/srijita-nath.jpg').default} alt="Srijita Nath" className={styles.staffPhoto} />
+  <h3>Srijita Nath</h3>
+  <p>nath.sr@northeastern.edu</p>
+</div>
+
+<div className={styles.staffCard}>
   <img src={require('@site/static/img/staff/gillian-palmer.jpg').default} alt="Gillian Palmer" className={styles.staffPhoto} />
   <h3>Gillian Palmer</h3>
   <p>palmer.gi@northeastern.edu</p>
