@@ -1,6 +1,6 @@
 import { Text } from "@chakra-ui/react";
-import { calendarData, type Skill } from '../../data/calendar-data';
-import { FormatDate, DateFor, SkillDateRange, isWeekend, isNextInstructionalDate } from '../../utils/calendar';
+import { calendarData, parseIsoDate } from '../../data/calendar-data';
+import { FormatDate, DateFor, getSkillDateRanges } from '../../utils/calendar';
 import Admonition from '@theme/Admonition';
 
 const ANNOTATION_EXCLUSION_DAYS: String[] = ["1", "2"]
@@ -13,8 +13,8 @@ export interface UpcomingAnnotationProps {
 }
 
 interface SkillAnnotationInfo {
-    newSkills: Skill[];
-    endingSkills: Skill[];
+    newSkills: number[];
+    endingSkills: number[];
 }
 
 /**
@@ -26,34 +26,18 @@ interface SkillAnnotationInfo {
  * @author Logan Gill
  */
 function SkillAnnotationInfo(lectureDate: Date): SkillAnnotationInfo {
-    const days = calendarData
-        .flatMap((month) => month.weeks.flatMap((week) => week.days))
-        .filter((day) => day.skills && !day.isHoliday)
-        .map((day) => ({
-            day,
-            date: new Date(`${day.date}T00:00:00`),
-        }))
-        .filter(({ date }) => date && !isWeekend(date))
-        .sort(({ date: firstDate }, { date: secondDate }) => firstDate.getTime() - secondDate.getTime());
+    // Every range of every skill, ordered by when it starts
+    const skillRanges = [...new Set(calendarData.skills.map(({ number }) => number))]
+        .flatMap((skill) => getSkillDateRanges(skill).map((range) => ({ skill, range })))
+        .sort((first, second) =>
+            first.range.start.getTime() - second.range.start.getTime() || first.skill - second.skill
+        );
 
-    const skillRanges: Map<Skill, SkillDateRange> = new Map();
-
-    for (const { day, date } of days) {
-        day.skills?.forEach((skill) => {
-            const previousRange = skillRanges.get(skill);
-            if (!previousRange || !isNextInstructionalDate(previousRange.end, date)) {
-                skillRanges.set(skill, { start: date, end: date });
-            } else {
-                previousRange.end = date;
-            }
-        });
-    }
-
-    const newSkills: Skill[] = [];
-    const endingSkills: Skill[] = [];
+    const newSkills: number[] = [];
+    const endingSkills: number[] = [];
     const lectureDateTime = lectureDate.getTime();
 
-    skillRanges.forEach((range, skill) => {
+    skillRanges.forEach(({ skill, range }) => {
         const startDiff = lectureDateTime - range.start.getTime();
         const endDiff = range.end.getTime() - lectureDateTime;
         if (startDiff >= 0 && startDiff <= TWO_DAYS_MS) {
@@ -75,15 +59,15 @@ function SkillAnnotationInfo(lectureDate: Date): SkillAnnotationInfo {
  * @author Logan Gill
  */
 function NextHomeworkDate(lectureDate: Date) : [number, Date] | null {
-    const homeworkDate = calendarData
-        .flatMap((month) => month.weeks.flatMap((week) => week.days))
-        .find((day) => day.homework && !day.isHoliday && new Date(`${day.date}T00:00:00`) >= lectureDate);
-    
-    if (!homeworkDate) {
+    const nextHomework = [...calendarData.homework]
+        .sort((first, second) => first.dueDate.localeCompare(second.dueDate))
+        .find(({ dueDate }) => parseIsoDate(dueDate) >= lectureDate);
+
+    if (!nextHomework) {
         return null;
     }
 
-    return [parseInt(homeworkDate.homework!.href.split('/').pop()!), new Date(`${homeworkDate.date}T00:00:00`)];
+    return [nextHomework.number, parseIsoDate(nextHomework.dueDate)];
 }
 
 export default function UpcomingAnnotation({ id }: UpcomingAnnotationProps) {

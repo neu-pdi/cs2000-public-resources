@@ -1,15 +1,30 @@
 import React, { useEffect, useState } from 'react';
 import Link from '@docusaurus/Link';
 import CalendarHighlighter from './CalendarHighlighter';
-import type { CalendarMonth, Lecture } from '../data/calendar-data';
+import type { OfficeHourTime } from '../data/calendar-data';
 import {
   ONLINE_OH_CSV_URL,
+  formatDualZone,
+  mergeRanges,
   parseOnlineOfficeHours,
 } from '../data/online-office-hours';
+import { getCalendarMonths } from '../utils/calendar';
 import { fetchSheetCsv } from '../utils/sheets';
 
-function isCalLink(item: Lecture | string): item is Lecture {
-  return typeof item === 'object';
+/**
+ * Formats hard-coded online office hour times the same way as the sheet's, or undefined if
+ * there are none. Used until the sheet loads, since the sheet is more up to date
+ */
+function formatOfficeHourTimes(times: OfficeHourTime[] | undefined): string | undefined {
+  const toMinutes = (time: string) => {
+    const [hours, minutes] = time.split(':').map(Number);
+    return hours * 60 + minutes;
+  };
+  const ranges = (times ?? [])
+    .filter(({ type }) => type !== 'in-person')
+    .map(({ startTime, endTime }) => ({ start: toMinutes(startTime), end: toMinutes(endTime) }));
+
+  return ranges.length > 0 ? formatDualZone(mergeRanges(ranges)) : undefined;
 }
 
 // Shortened from "Discord OH" so the ET/PT time pair fits a day cell; the linked
@@ -19,8 +34,8 @@ const OH_LABEL = 'OH';
 /**
  * Online office hours times, keyed by weekday, read from the scheduling sheet.
  *
- * Which days hold them comes from the calendar data (`onlineOH`, which encodes the
- * holiday and finals-period skips); only the times come from the sheet. Fetched on
+ * Which days hold them comes from the calendar data (its office hours rules, which skip
+ * no-class holidays and the finals period); only the times come from the sheet. Fetched on
  * mount rather than at build time so a change to the sheet shows up without a
  * redeploy -- so day cells render without their OH line until this resolves.
  */
@@ -48,8 +63,9 @@ function useOnlineOfficeHours(): Record<number, string> {
   return byWeekday;
 }
 
-export default function SkillCalendar({ data }: { data: CalendarMonth[] }) {
+export default function SkillCalendar() {
   const onlineOH = useOnlineOfficeHours();
+  const data = getCalendarMonths();
   return (
     <>
       <div
@@ -297,11 +313,10 @@ export default function SkillCalendar({ data }: { data: CalendarMonth[] }) {
                   )}
                   <tr>
                     {week.days.map((day, dayIdx) => {
-                      if (day === null) {
-                        return <td key={dayIdx}></td>;
-                      }
                       const displayDate = new Date(`${day.date}T00:00:00`);
-                      const skills = day.skills || [];
+                      const skills = day.skills;
+                      const ohTimes =
+                        onlineOH[displayDate.getDay()] ?? formatOfficeHourTimes(day.officeHourTimes);
                       return (
                         <td
                           key={dayIdx}
@@ -321,18 +336,11 @@ export default function SkillCalendar({ data }: { data: CalendarMonth[] }) {
                                   <Link to={day.homework.href}>{day.homework.label}</Link>
                                 </div>
                               )}
-                              {day.lectures &&
-                                day.lectures.map((item, i) =>
-                                  isCalLink(item) ? (
-                                    <div className="day-lecture" key={item.href}>
-                                      <Link to={item.href}>{item.label}</Link>
-                                    </div>
-                                  ) : (
-                                    <div className="day-lecture" key={`plain-${i}`}>
-                                      {item}
-                                    </div>
-                                  )
-                                )}
+                              {day.lectures.map((item) => (
+                                <div className="day-lecture" key={item.href}>
+                                  <Link to={item.href}>{item.label}</Link>
+                                </div>
+                              ))}
                               {day.lab && (
                                 <div className="day-lab">
                                   <Link to={day.lab.href}>{day.lab.label}</Link>
@@ -341,10 +349,10 @@ export default function SkillCalendar({ data }: { data: CalendarMonth[] }) {
                                   )}
                                 </div>
                               )}
-                              {day.onlineOH && onlineOH[displayDate.getDay()] && (
+                              {day.onlineOH && ohTimes && (
                                 <div className="day-oh">
                                   <Link to="/syllabus/#office-hours">
-                                    {OH_LABEL}: {onlineOH[displayDate.getDay()]}
+                                    {OH_LABEL}: {ohTimes}
                                   </Link>
                                 </div>
                               )}
