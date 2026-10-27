@@ -25,15 +25,15 @@ To take a skill, you must go to Assessment Hours. Assessment Hours are available
 
 For more info on Assessment Hours, as well as see what skills available each week, check out the [home page](/#assessment-hours)
 
-0. <a id="0" href="#0">Design Function Types, Docs, Tests</a> - **Available:** <DateView id="0" item="skills" />
+0. <a id="0" href="#0">Design Function Signatures, Docs, Tests</a> - **Available:** <DateView id="0" item="skills" />
    |  |  |
    | -- | -- |
-   | **Meets Expectations** | • Correct type annotation<br/>• Docstring that describes behavior, doesn't repeat type annotation.<br/>• A few (2+) correct, meaningfully different tests<br/>• minor typos are okay |
+   | **Meets Expectations** | • Correct signature, with types<br/>• Docstring that describes behavior, doesn't repeat the signature's types.<br/>• A few (2+) correct, meaningfully different tests<br/>• minor typos are okay |
    | **Approaching Expectations** | • Missing docstring, or long, includes redundant type information, etc.<br/>• 1+ correct tests|
 
 <details>
     <summary>Examples</summary>
-    <p>Sample question: Design types, docstring, and tests for a function <code>nm_square</code> that, given a number, returns the result of multiplying the number by itself. NOTE: you should not implement the function!</p>
+    <p>Sample question: Design the signature, docstring, and tests for a function <code>nm_square</code> that, given a number, returns the result of multiplying the number by itself. NOTE: you should not implement the function!</p>
     <p>**Answer meeting expectations:**</p>
 
 ```python
@@ -58,11 +58,11 @@ def test_nm_square():
 </details> 
 <details>
  <summary>Practice Problem 1</summary>
- <p>Design types, docstring, and tests for a function `check_age` that, given a number that is someone's age, returns `True` when the age is above or equal to 21. NOTE: you should not implement the function!</p>
+ <p>Design the signature, docstring, and tests for a function `check_age` that, given a number that is someone's age, returns `True` when the age is above or equal to 21. NOTE: you should not implement the function!</p>
 </details>
 <details>
  <summary>Practice Problem 2</summary>
- <p>Design types, docstring, and tests for a function `check_year`, that takes a year as input, and returns "Past", "Current", or "Future" depending on the year. NOTE: you should not implement the function!</p>
+ <p>Design the signature, docstring, and tests for a function `check_year`, that takes a year as input, and returns "Past", "Current", or "Future" depending on the year. NOTE: you should not implement the function!</p>
 </details>
 
 1. <a id="1" href="#1">Implement Basic Functions</a> - **Available:** <DateView id="1" item="skills" />
@@ -73,7 +73,7 @@ def test_nm_square():
 
 <details>
     <summary>Examples</summary>
-    <p>Sample question: Implement the function <code>nm_square</code> given the following type annotation, docstring, and tests:</p>
+    <p>Sample question: Implement the function <code>nm_square</code> given the following signature, docstring, and tests:</p>
 ```python
 def nm_square(n: float) -> float:
     """Multiplies the input by itself"""
@@ -98,7 +98,7 @@ def test_nm_square():
 </details> 
 <details>
  <summary>Practice Problem 1</summary>
- <p>Implement the function `check_age` given the following type annotation, docstring, and tests:</p>
+ <p>Implement the function `check_age` given the following signature, docstring, and tests:</p>
 
 ```python
 def check_age(age: int) -> bool:
@@ -113,7 +113,7 @@ def test_check_age():
 </details>
 <details>
  <summary>Practice Problem 2</summary>
- <p>Implement the function `check_year` given the following type annotation, docstring, and tests:</p>
+ <p>Implement the function `check_year` given the following signature, docstring, and tests:</p>
 
 ```python
 def check_year(year: int) -> str:
@@ -130,8 +130,8 @@ def test_check_year():
 2. <a id="2" href="#2">Function Composition</a> - **Available:** <DateView id="2" item="skills" />
    |  |  |
    | -- | -- |
-   | **Meets Expectations** | • Helper function and main function each have a type annotation, docstring, and at least one test<br/>• Helper correctly performs its one task<br/>• Main function calls the helper (rather than repeating its logic), passing appropriate arguments and using the result to solve the problem<br/>• minor typos are okay |
-   | **Approaching Expectations** | • Helper function is defined and does roughly what is expected<br/>• Main function calls the helper, but with incorrect arguments, or doesn't use the result in a way that solves the problem<br/>• May be missing type annotations, docstrings, or tests (or have incorrect tests) |
+   | **Meets Expectations** | • Helper function and main function each have a signature (with types), docstring, and at least one test<br/>• Helper correctly performs its one task<br/>• Main function calls the helper (rather than repeating its logic), passing appropriate arguments and using the result to solve the problem<br/>• minor typos are okay |
+   | **Approaching Expectations** | • Helper function is defined and does roughly what is expected<br/>• Main function calls the helper, but with incorrect arguments, or doesn't use the result in a way that solves the problem<br/>• May be missing types in signatures, docstrings, or tests (or have incorrect tests) |
 
 <details>
     <summary>Examples</summary>
@@ -183,7 +183,7 @@ def test_room_wall_area():
 03. <a id="3" href="#3">Construct / Transform Tables</a> - **Available:** <DateView id="3" item="skills" />
     |  |  |
     | -- | -- |
-    | **Meets Expectations** | • Function designed has type annotation, docstring, and at least one test<br/>• Function uses correct table function (skill covers `filter`, `add_column`, and `transform_column`)<br/>• Row helper does what is expected, whether defined with `lambda` or named |
+    | **Meets Expectations** | • Function designed has signature (with types), docstring, and at least one test<br/>• Function uses correct table function (skill covers `filter`, `add_column`, and `transform_column`)<br/>• Row helper does what is expected, whether defined with `lambda` or named |
     | **Approaching Expectations** | • Function uses correct table function (`filter`, `add_column`, or `transform_column`)<br/>• Row helper accesses fields from row, but not in a way that solves the problem |
 <details>
     <summary>Examples</summary>
@@ -408,7 +408,7 @@ print("Global value:", value)
 06. <a id="6" href="#6">Structured & Conditional Data</a> - **Available:** <DateView id="6" item="skills" />
     |  |  |
     | -- | -- |
-    | **Meets Expectations** | • Uses `@dataclass` classes for the variants as needed, fields with appropriate type annotations<br/>• Function uses either field access or `match` as needed<br/>• Function has type annotation, doc string, and tests |
+    | **Meets Expectations** | • Uses `@dataclass` classes for the variants as needed, fields with appropriate type annotations<br/>• Function uses either field access or `match` as needed<br/>• Function has signature (with types), doc string, and tests |
     | **Approaching Expectations** | • Uses `@dataclass` classes for the variants as needed, fields if needed (possibly missing or incorrect annotations)<br/>• Function should use either field access or `match`, but may not do it correctly, or to match the problem |
 <details>
     <summary>Examples</summary>
@@ -447,7 +447,7 @@ def test_is_strong():
     assert is_strong(strong_tea)
 ```
 
-<p>**Answer approaching expectations (missing docstring, missing or incorrect annotations, only one test):**</p>
+<p>**Answer approaching expectations (missing docstring, signature without types, incorrect field types, only one test):**</p>
 
 ```python error
 @dataclass
@@ -485,7 +485,7 @@ def test_is_strong():
 07. <a id="7" href="#7">Recursion: Lists</a> - **Available:** <DateView id="7" item="skills" />
     |  |  |
     | -- | -- |
-    | **Meets Expectations** | • Function has appropriate type annotation, doc string, and tests<br/>• Function uses `match` to handle the empty (`[]`) case and the first-and-rest (`[first, *rest]`) case<br/>• In the first-and-rest case, calls function recursively on rest of list appropriately |
+    | **Meets Expectations** | • Function has appropriate signature (with types), doc string, and tests<br/>• Function uses `match` to handle the empty (`[]`) case and the first-and-rest (`[first, *rest]`) case<br/>• In the first-and-rest case, calls function recursively on rest of list appropriately |
     | **Approaching Expectations** | • Uses `match` to break apart list, and has recursive call to rest of list |
 <details>
     <summary>Examples</summary>
@@ -538,7 +538,7 @@ def test_make_positive():
 08. <a id="8" href="#8">Recursion: Trees</a> - **Available:** <DateView id="8" item="skills" />
     |  |  |
     | -- | -- |
-    | **Meets Expectations** | • Function has appropriate type annotation, doc string, and tests<br/>• Function uses `match` to handle base case and recursive case<br/>• In recursive case, calls function recursively on subtrees appropriately |
+    | **Meets Expectations** | • Function has appropriate signature (with types), doc string, and tests<br/>• Function uses `match` to handle base case and recursive case<br/>• In recursive case, calls function recursively on subtrees appropriately |
     | **Approaching Expectations** | • Uses `match` to break apart tree, and has recursive call on subtrees |
 <details>
     <summary>Examples</summary>

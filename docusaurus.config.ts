@@ -27,6 +27,10 @@ function notesDropdownItems() {
       label: 'Style Guide',
     },
     {
+      to: '/class/recipe/',
+      label: 'Design Recipe',
+    },
+    {
       to: '/pll/',
       activeBasePath: '/pll',
       label: 'PLL Reference',
