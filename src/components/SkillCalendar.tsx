@@ -10,6 +10,7 @@ import {
 } from '../data/online-office-hours';
 import { getCalendarMonths } from '../utils/calendar';
 import { fetchSheetCsv } from '../utils/sheets';
+import { useSheetCsv } from '../hooks/useSheetCsv';
 
 /**
  * Formats hard-coded online office hour times the same way as the sheet's, or undefined if
@@ -40,27 +41,12 @@ const OH_LABEL = 'OH';
  * redeploy -- so day cells render without their OH line until this resolves.
  */
 function useOnlineOfficeHours(): Record<number, string> {
-  const [byWeekday, setByWeekday] = useState<Record<number, string>>({});
-
-  useEffect(() => {
-    const controller = new AbortController();
-    fetchSheetCsv(ONLINE_OH_CSV_URL, controller.signal, (rows) => {
-      if (Object.keys(parseOnlineOfficeHours(rows)).length === 0) {
-        throw new Error('no office hours found in sheet');
-      }
-    })
-      .then((rows) => setByWeekday(parseOnlineOfficeHours(rows)))
-      .catch((err) => {
-        if (err.name !== 'AbortError') {
-          // Leave the cells without an OH line rather than showing a stale or broken
-          // time; the syllabus still documents how office hours work.
-          console.error('Could not load online office hours:', err);
-        }
-      });
-    return () => controller.abort();
-  }, []);
-
-  return byWeekday;
+  const { rows } = useSheetCsv(ONLINE_OH_CSV_URL, (rows) => {
+    if (Object.keys(parseOnlineOfficeHours(rows)).length === 0) {
+      throw new Error('no office hours found in sheet');
+    }
+  });
+  return rows ? parseOnlineOfficeHours(rows) : {};
 }
 
 export default function SkillCalendar() {

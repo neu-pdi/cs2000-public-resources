@@ -3,6 +3,11 @@ import { parseCsv } from './csv';
 /** Spreadsheet holding the staff scheduling tabs. */
 export const SCHEDULE_SHEET_ID = '1kDfzuVIM3s-NDJVf6rdgna06Cl1MGMQAVSqm1XEHFyY';
 
+/** Bump to discard cached rows when the sheet layout or parsing changes */
+const CACHE_VERSION = 1;
+/** Cached rows older than this are ignored rather than shown */
+const CACHE_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
+
 /** CSV export URL for one tab (`gid`) of the scheduling sheet. */
 export function sheetCsvUrl(gid: string, id: string = SCHEDULE_SHEET_ID): string {
   return `https://docs.google.com/spreadsheets/d/${id}/export?format=csv&gid=${gid}`;
@@ -66,4 +71,30 @@ export async function fetchSheetCsv(
     }
   }
   throw new AggregateError(errors, `could not load ${url}`);
+}
+
+function storageKey(url: string): string {
+  return `sheet-cache:v${CACHE_VERSION}:${url}`;
+}
+
+/** Read cached rows from localStorage, if available and not expired */
+export function readStored(url: string): string[][] | null {
+  try {
+    const raw = localStorage.getItem(storageKey(url));
+    if (!raw) return null;
+    const { savedAt, rows } = JSON.parse(raw);
+    return Date.now() - savedAt < CACHE_MAX_AGE_MS ? rows : null;
+  } catch {
+    // Storage blocked (private mode, disabled cookies) or corrupt entry
+    return null;
+  }
+}
+
+/** Write rows to localStorage, if possible */
+export function writeStored(url: string, rows: string[][]): void {
+  try {
+    localStorage.setItem(storageKey(url), JSON.stringify({ savedAt: Date.now(), rows }));
+  } catch {
+    // Quota or blocked storage
+  }
 }

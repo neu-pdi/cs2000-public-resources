@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import { parseCsv } from '@site/src/utils/csv';
+import { useSheetCsv } from '../hooks/useSheetCsv';
 
 /**
  * CSV export of the assessment-hours tab of the staff scheduling sheet.
@@ -70,47 +71,13 @@ function CellLines({ text }: { text: string }) {
 }
 
 export default function AssessmentHours({ csvUrl = CSV_URL }: { csvUrl?: string }) {
-  const [rows, setRows] = useState<string[][] | null>(null);
-  const [failed, setFailed] = useState(false);
+  const { rows: raw, failed } = useSheetCsv(csvUrl, (rows) => {
+    if (tableRows(rows).length < 2) throw new Error('unexpected sheet contents');
+  });
+  const rows = raw && tableRows(raw);
 
-  // Fetched on mount rather than at build time so edits to the sheet show up without
-  // a redeploy. Server-rendered output is therefore empty, and the table appears once
-  // this resolves.
-  useEffect(() => {
-    const controller = new AbortController();
-
-    async function load(url: string) {
-      const res = await fetch(url, { signal: controller.signal });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const kept = tableRows(parseCsv(await res.text()));
-      // A header plus at least one campus; anything less means we got something other
-      // than the expected sheet (e.g. a sign-in page after a sharing change, or an
-      // interstitial from a network that filters Google Docs).
-      if (kept.length < 2) throw new Error('unexpected sheet contents');
-      return kept;
-    }
-
-    (async () => {
-      // Try Google directly first -- it is fastest and works for most people. Only if
-      // that fails (e.g. a Workspace policy blocking docs.google.com) fall back to the
-      // proxy, so the common case never pays for the extra hop.
-      const sources = [csvUrl, viaProxy(csvUrl)].filter(Boolean) as string[];
-      const errors: unknown[] = [];
-      for (const url of sources) {
-        try {
-          setRows(await load(url));
-          return;
-        } catch (err) {
-          if ((err as Error).name === 'AbortError') return;
-          errors.push(err);
-        }
-      }
-      console.error('Could not load assessment hours:', errors);
-      setFailed(true);
-    })();
-
-    return () => controller.abort();
-  }, [csvUrl]);
+  if (failed) return <p><em>Could not load the assessment hours schedule. …</em></p>;
+  if (!rows) return null;
 
   if (failed) {
     return (
