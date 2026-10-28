@@ -32,7 +32,7 @@ animate(draw_ball)
 `reactor` is given each part of the reactor by name, and `.interact()` starts it:
 
 <!-- python setup
-# (stand-ins for the functions that Lab 5 asks you to write)
+# (stand-ins for the functions that Lab 4 asks you to write)
 def draw_husky(x: float) -> Image:
     return empty_scene(400, 200)
 

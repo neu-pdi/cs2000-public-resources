@@ -11,7 +11,7 @@ export default function CurrentLabRedirect() {
     const [showFallback, setShowFallback] = useState(false);
     const history = useHistory();
     const labsUrl = useBaseUrl(`/lab/${getDocumentId('lab')}`);
-    const labOneUrl = useBaseUrl(`/lab/1`);
+    const firstLabUrl = useBaseUrl(`/lab/0`);
     useEffect(() => {
         // Redirects to the latest lab
         history.replace(labsUrl);
@@ -35,7 +35,7 @@ export default function CurrentLabRedirect() {
             <p>
                 The redirect is taking longer than expected
             </p>
-            <a href={labOneUrl}>Continue to Lab 1</a>
+            <a href={firstLabUrl}>Continue to Lab 0</a>
             </main>
         </Layout>
     );

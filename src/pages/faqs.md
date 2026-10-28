@@ -26,7 +26,7 @@ Check out our [regrade request policy](/syllabus/#regrade-requests) for info on 
 ---
 ## Assignments
 ### When are assignments due?
-Assignments are due on Sunday at midnight, specifically Sundays at 11:59 UTC-12
+Assignments are due on Wednesday at midnight, specifically Wednesdays at 11:59 UTC-12
 
 ### How are assignments graded?
 Assignments are graded based on the Assignment Chats, which occur during lab with a TA

@@ -59,7 +59,7 @@ The only software you will need is a web browser (and a computer or tablet that 
 
 ### Due Dates
 
-All homework assignments / project checkpoints will be due Anywhere-on-earth on Sunday (i.e., if it's still Sunday in some timezone, you are good).
+All homework assignments / project checkpoints will be due Anywhere-on-earth on Wednesday (i.e., if it's still Wednesday in some timezone, you are good).
 
 Each homework assignment forms the material used for the [Assignment Chat](#assignment-chats) that occurs during the lab following the deadline of that assignment; the only grading of homework assignments is via that conversation. While you will see grades in the Pawtograder gradebook, you will not get any written feedback on assignments there, and the results of any autograders that occur are just to help you improve your programs; they do not count towards any part of your grade. 
 
@@ -105,7 +105,7 @@ The course will teach the following 12 skills, grading of which will be performe
 
 ### Assignment Chats {#assignment-chats}
 
-Each week, Lab sessions will have two purposes. One of them will be working with a student partner (different each week) to complete the exercises described in the lab, assisted by TAs. The second purpose will be to present work that you have submitted the previous Sunday to a TA. The latter is called an Assignment Chat, and is described below.
+Each week, Lab sessions will have two purposes. One of them will be working with a student partner (different each week) to complete the exercises described in the lab, assisted by TAs. The second purpose will be to present work that you have submitted the previous Wednesday to a TA. The latter is called an Assignment Chat, and is described below.
 
 A pair of TAs will walk around the room, stopping a pair of students from working on the lab exercises, and pulling up the work they submitted for the previous week's Homework assignment. Each TA will talk to one of the students, separately — students will each be talking about their own assignment, one-on-one, with a TA. The TA will move to particular parts of the work, asking questions, asking the student to describe what they did, why they did it, other alternate approaches they could have taken, etc. This conversation will not be long — approximately 5 minutes long — but will be in enough detail to cover parts (but not all, of course) of the assignment in depth. Afterwards, both the TA and the student will fill out an assessment of the conversation — the student's will be a self-assessment (DONE AFTER, VIA THIS LINK: [https://forms.gle/9s6YbANjnNTo51jo7](https://forms.gle/9s6YbANjnNTo51jo7)), the TA's will be an assessment recorded on Pawtograder. The TA's assessment covers both the student's demonstrated familiarity with their own material, with the course material, their ability to engage with the questions posed to them, etc. 
 

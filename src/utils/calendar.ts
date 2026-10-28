@@ -12,7 +12,7 @@ type CalendarItem = keyof Pick<CalendarDay, 'lectures' | 'lab' | 'homework'>;
  */
 export function getDocumentId(item: CalendarItem): string {
   const href = getLatestCalendarHref(item);
-  const fallback = item === 'lectures' ? 'l0-summary' : '1';
+  const fallback = item === 'lectures' ? 'l0-summary' : item === 'lab' ? '0' : '1';
   if (isCalendarExpired()) {
     return fallback;
   }

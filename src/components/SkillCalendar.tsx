@@ -315,6 +315,7 @@ export default function SkillCalendar({ data }: { data: CalendarMonth[] }) {
                                 {day.holidayName || 'Holiday'}
                               </span>
                             )}
+                            {day.note && <span className="day-holiday-name">{day.note}</span>}
                             <div className="day-items">
                               {day.homework && (
                                 <div className="day-hw">
