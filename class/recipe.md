@@ -220,26 +220,47 @@ def _shuttle_row_temp(r: dict) -> ...:
 
 _From [Classes 8 to 10](/class/8)._ A function that makes a new table from a table
 does one of three things: keeps some of the rows, adds a column, or changes a
-column. So there are three templates, one for each, and each needs a helper
-function in place of a `...`:
+column. So there are three templates, one for each. Each needs a helper, whose
+input the template already knows, so it's written in the template, as a local
+function (a `def` inside the `def`):
 
 ```python
 def _keep_rows_temp(t: Table) -> Table:
-    return t.filter(...)
+    def keep(r: dict) -> bool:
+        ...
+        r
+        ...
+        return ...
+    return t.filter(keep)
 
 def _add_column_temp(t: Table) -> Table:
-    return t.add_column(..., ...)
+    def compute(r: dict) -> ...:
+        ...
+        r
+        ...
+        return ...
+    return t.add_column(..., compute)
 
 def _change_column_temp(t: Table) -> Table:
-    return t.transform_column(..., ...)
+    def change(v: ...) -> ...:
+        ...
+        v
+        ...
+        return ...
+    return t.transform_column(..., change)
 ```
 
-- `_keep_rows_temp`'s helper takes a row (a `dict`) and gives a `bool`: whether
-  to keep it.
-- `_add_column_temp` needs the new column's name, and a helper that takes a row
-  and gives the new column's value.
-- `_change_column_temp` needs the column's name, and a helper that takes one of
-  its values and gives the new value.
+- `keep` takes a row (a `dict`) and gives a `bool`: whether to keep it.
+- `compute` takes a row and gives the new column's value; the `...` before it is
+  the new column's name.
+- `change` takes one of the column's values (of that column's type) and gives
+  the new value; the `...` before it is the column's name.
+- Each helper's body is the template for its input: for a row, a line for each
+  of the table's columns, as in the [row template](#template-rows), in place of
+  `r`.
+- Fill in the helper where it is, or, when it deserves tests of its own, move it
+  out to the top level as a function of its own (designed with the recipe), and
+  pass that instead.
 
 The question that picks one: does the answer have fewer rows, a new column, or a
 changed column? A function that answers a question about a table, rather than
@@ -272,18 +293,28 @@ _From [Classes 13 and 14](/class/14)._ The same three ways as tables: keep some 
 the elements (as `filter` does for rows), change each one (as `transform_column`
 does for a column), or combine them into one value (with `sum`, `len`, `max` or
 `min`, as a table's column is summarized). The first two have templates, each
-with a helper in place of the `...`:
+with its helper written as a local function, as for tables:
 
 ```python
 def _keep_elements_temp(lst: list) -> list:
-    return list(filter(..., lst))
+    def keep(x: ...) -> bool:
+        ...
+        x
+        ...
+        return ...
+    return list(filter(keep, lst))
 
 def _change_elements_temp(lst: list) -> list:
-    return list(map(..., lst))
+    def change(x: ...) -> ...:
+        ...
+        x
+        ...
+        return ...
+    return list(map(change, lst))
 ```
 
-`_keep_elements_temp`'s helper takes an element and gives a `bool`;
-`_change_elements_temp`'s takes an element and gives its new value.
+`keep` takes an element (of the list's element type) and gives a `bool`; `change`
+takes an element and gives its new value.
 
 ### `for` loops {#template-loops}
 
