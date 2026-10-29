@@ -162,9 +162,9 @@ as though it had caught them. Your program itself does not run during the check
 (only its definitions are loaded), files next to your program are not available
 during it, and a test that takes more than 2 seconds is stopped.
 
-You can write the tests before the functions: one whose body is still `...`, or
-only its docstring, is not written yet, and your tests are run against your own
-functions once you have written all of them.
+You can write the tests before the functions: one whose body is still `...` is
+not written yet, and your tests are run against your own functions once you have
+written all of them.
 
 None of this is a grade: it shows you where your tests are thin, while you still
 have time to do something about it.

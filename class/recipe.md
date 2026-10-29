@@ -1,6 +1,7 @@
 ---
 sidebar_position: 0
 class_number: 0
+pll_level: intermediate
 title: Design Recipe
 ---
 
@@ -94,21 +95,36 @@ The outline that the kind of input data gives the body, before solving this
 particular problem. It follows one rule: **the body has one part for each part of
 the data**. A number has one part; a number split into intervals has one part per
 interval; a row has its columns; a dataclass has its fields; a union has its
-variants. We write the template as a comment, then fill it in, so the
-[templates below](#templates) all look like this:
+variants. A template is a function named for its kind of data, starting with
+`_`, which marks it as an outline, not a function to call. Each part of the data
+is on a line of its own, with `...` before and after it, since the body's code
+can go around each part, and `return ...` at the end. So the
+[templates below](#templates) all look like this one, for an order amount (\$10
+or less, or more):
 
 ```python
-# def add_shipping(order_amt: float) -> float:
-#     if order_amt <= 10:
-#         ... order_amt ...
-#     else:
-#         ... order_amt ...
+def _order_amount_temp(order_amt: float) -> ...:
+    if order_amt <= 10:
+        ...
+        order_amt
+        ...
+        return ...
+    else:
+        ...
+        order_amt
+        ...
+        return ...
 ```
+
+The template is written once for each kind of data, next to its data definition,
+and then used for every function on that kind of data.
 
 ### Body {#body}
 
-Replace the `...` with the body: fill in the template, using the examples to
-decide what each gap becomes.
+Copy the template's body into the function, in place of its `...`, and fill
+in each `...`, using the examples to decide what it becomes. A line that only
+names a part is a reminder: use the part, or delete the line. Any `...` left in
+the function stops it with "not written yet" when it runs.
 
 ```python
 def add_shipping(order_amt: float) -> float:
@@ -129,7 +145,9 @@ and the Template may all need to change before the Body does.
 ## Templates {#templates}
 
 A template is the outline of _any_ function on one kind of data. Each kind of data
-we meet has one, and each is the rule above, applied to that kind.
+we meet has one, and each is the rule above, applied to that kind. Its name is the
+kind of data's, with `_` in front and `_temp` at the end: `_book_record_temp` is
+the template for a `BookRecord`.
 
 ### Numbers, strings, and images {#template-numbers}
 
@@ -137,31 +155,44 @@ _From [Class 4](/class/4)._ A number (or string, or image) has one part, so the
 template is just the parameter: the body combines it with that kind's operations.
 
 ```python
-# def moon_weight(earth_weight: float) -> float:
-#     ... earth_weight ...
+def _earth_weight_temp(earth_weight: float) -> ...:
+    ...
+    earth_weight
+    ...
+    return ...
 ```
 
 ### Booleans and intervals {#template-intervals}
 
 _From [Class 5](/class/5)._ A boolean is `True` or `False`, so its template is an
-`if` with two branches. A number split into intervals (up to \$10, above \$10)
-has one branch per interval, with the conditions taken from the intervals' edges.
-The Examples step has a test in each interval, and at each edge.
+`if` with two branches. A number split into intervals has one branch per
+interval, with the conditions taken from the intervals' edges: with the third
+charge from Class 5 (\$10 or less, up to \$30, and more), an order amount has
+three. The Examples step has a test in each interval, and at each edge.
 
 ```python
-# def bool_fun(b: bool) -> ...:
-#     if b:
-#         ...
-#     else:
-#         ...
+def _bool_temp(b: bool) -> ...:
+    if b:
+        return ...
+    else:
+        return ...
 
-# def shipping_fun(order_amt: float) -> ...:
-#     if order_amt <= 10:
-#         ... order_amt ...
-#     elif order_amt <= 30:
-#         ... order_amt ...
-#     else:
-#         ... order_amt ...
+def _order_amount_temp(order_amt: float) -> ...:
+    if order_amt <= 10:
+        ...
+        order_amt
+        ...
+        return ...
+    elif order_amt <= 30:
+        ...
+        order_amt
+        ...
+        return ...
+    else:
+        ...
+        order_amt
+        ...
+        return ...
 ```
 
 The question that picks it: what are the cases of this input, and where are their
@@ -169,29 +200,45 @@ edges?
 
 ### Rows {#template-rows}
 
-_From [Class 8](/class/8)._ A row's parts are its columns, so the template lists
-the columns the function can use:
+_From [Class 8](/class/8)._ A row's parts are its columns, so the template has a
+line for each column the function can use:
 
 ```python
-# def row_fun(r: dict) -> ...:
-#     ... r["month"] ... r["riders"] ...
+def _shuttle_row_temp(r: dict) -> ...:
+    ...
+    r["month"]
+    ...
+    r["riders"]
+    ...
+    return ...
 ```
 
 ### Tables {#template-tables}
 
 _From [Classes 8 to 10](/class/8)._ A function that makes a new table from a table
 does one of three things: keeps some of the rows, adds a column, or changes a
-column. Each one needs a helper function, and which one it is decides the helper's
-signature:
+column. So there are three templates, one for each, and each needs a helper
+function in place of a `...`:
 
 ```python
-# def table_fun(t: Table) -> Table:
-#     return t.filter(keep)                     # fewer rows: keep(r: dict) -> bool
-#     return t.add_column("new", compute)       # a new column: compute(r: dict) -> ...
-#     return t.transform_column("col", change)  # a changed column: change(v) -> ...
+def _keep_rows_temp(t: Table) -> Table:
+    return t.filter(...)
+
+def _add_column_temp(t: Table) -> Table:
+    return t.add_column(..., ...)
+
+def _change_column_temp(t: Table) -> Table:
+    return t.transform_column(..., ...)
 ```
 
-The question that picks it: does the answer have fewer rows, a new column, or a
+- `_keep_rows_temp`'s helper takes a row (a `dict`) and gives a `bool`: whether
+  to keep it.
+- `_add_column_temp` needs the new column's name, and a helper that takes a row
+  and gives the new column's value.
+- `_change_column_temp` needs the column's name, and a helper that takes one of
+  its values and gives the new value.
+
+The question that picks one: does the answer have fewer rows, a new column, or a
 changed column? A function that answers a question about a table, rather than
 making a new one, summarizes a column instead (`t.sum`, `t.mean`, a chart), and
 `t.order_by` puts the rows in order. A longer task is a sequence of these (a
@@ -204,39 +251,53 @@ discount code, a kind of delivery) has one branch per value, and an `else` for
 anything else, which is what cleaning data needs:
 
 ```python
-# def code_fun(code: str) -> ...:
-#     if code == "":
-#         ...
-#     elif code == "none":
-#         ...
-#     else:
-#         ... code ...
+def _discount_code_temp(s: str) -> ...:
+    if s == "":
+        return ...
+    elif s == "none":
+        return ...
+    else:
+        ...
+        s
+        ...
+        return ...
 ```
 
 ### Lists {#template-lists}
 
 _From [Classes 13 and 14](/class/14)._ The same three ways as tables: keep some of
 the elements (as `filter` does for rows), change each one (as `transform_column`
-does for a column), or combine them into one value:
+does for a column), or combine them into one value (with `sum`, `len`, `max` or
+`min`, as a table's column is summarized). The first two have templates, each
+with a helper in place of the `...`:
 
 ```python
-# def list_fun(lst: list) -> ...:
-#     return list(filter(keep, lst))   # fewer elements: keep(x) -> bool
-#     return list(map(f, lst))         # each one changed: f(x) -> ...
-#     return sum(lst)                  # one value (also len, max, min)
+def _keep_elements_temp(lst: list) -> list:
+    return list(filter(..., lst))
+
+def _change_elements_temp(lst: list) -> list:
+    return list(map(..., lst))
 ```
+
+`_keep_elements_temp`'s helper takes an element and gives a `bool`;
+`_change_elements_temp`'s takes an element and gives its new value.
 
 ### `for` loops {#template-loops}
 
 _From [Class 15](/class/15)._ A loop visits each element of a list, and builds the
-answer as it goes:
+answer as it goes, starting from the answer for an empty list:
 
 ```python
-# def list_fun(lst: list) -> ...:
-#     result = ...            # the answer for an empty list
-#     for item in lst:
-#         result = ... item ... result
-#     return result
+def _list_loop_temp(lst: list) -> ...:
+    result = ...
+    for item in lst:
+        ...
+        item
+        ...
+        result
+        ...
+        result = ...
+    return result
 ```
 
 It is filled in in three usual ways: **combining** the elements into one value (a
@@ -247,11 +308,18 @@ negative, whether all are short).
 ### Structured data {#template-fields}
 
 _From [Class 19](/class/19)._ A dataclass's parts are its fields, so the template
-lists them:
+has a line for each:
 
 ```python
-# def book_fun(b: BookRecord) -> ...:
-#     ... b.title ... b.author ... b.pages ...
+def _book_record_temp(b: BookRecord) -> ...:
+    ...
+    b.title
+    ...
+    b.author
+    ...
+    b.pages
+    ...
+    return ...
 ```
 
 ### Conditional data {#template-variants}
@@ -260,13 +328,56 @@ _From [Class 20](/class/20)._ A union's parts are its variants, so the template 
 a `match` with one `case` per variant, naming each variant's fields. It is the
 interval template again, with the cases taken from the data definition:
 
+<!-- python setup
+@dataclass
+class Boa:
+    name: str
+    length: float
+
+@dataclass
+class Armadillo:
+    name: str
+    liveness: bool
+
+Animal = Boa | Armadillo
+
+@dataclass
+class NoInfo:
+    pass
+
+@dataclass
+class Person:
+    name: str
+    birthyear: int
+    eye: str
+    mother: "AncTree"
+    father: "AncTree"
+
+AncTree = NoInfo | Person
+
+@dataclass
+class Account:
+    id: int
+    balance: float
+-->
+
 ```python
-# def animal_fun(a: Animal) -> ...:
-#     match a:
-#         case Boa(n, l):
-#             ... n ... l ...
-#         case Armadillo(n, live):
-#             ... n ... live ...
+def _animal_temp(a: Animal) -> ...:
+    match a:
+        case Boa(n, l):
+            ...
+            n
+            ...
+            l
+            ...
+            return ...
+        case Armadillo(n, live):
+            ...
+            n
+            ...
+            live
+            ...
+            return ...
 ```
 
 ### Recursive data {#template-recursive}
@@ -277,30 +388,54 @@ recursive call on each field of the same type. For a list (first and rest), a
 changes:
 
 ```python
-# def list_fun(lst: list) -> ...:
-#     match lst:
-#         case []:
-#             ...
-#         case [first, *rest]:
-#             ... first ... list_fun(rest) ...
+def _list_temp(lst: list) -> ...:
+    match lst:
+        case []:
+            return ...
+        case [first, *rest]:
+            ...
+            first
+            ...
+            _list_temp(rest)
+            ...
+            return ...
 
-# def tree_fun(t: AncTree) -> ...:
-#     match t:
-#         case NoInfo():
-#             ...
-#         case Person(n, y, e, m, f):
-#             ... n ... y ... e ... tree_fun(m) ... tree_fun(f) ...
+def _anc_tree_temp(t: AncTree) -> ...:
+    match t:
+        case NoInfo():
+            return ...
+        case Person(n, y, e, m, f):
+            ...
+            n
+            ...
+            y
+            ...
+            e
+            ...
+            _anc_tree_temp(m)
+            ...
+            _anc_tree_temp(f)
+            ...
+            return ...
 ```
+
+When you copy one into a function, rename the recursive calls too.
 
 ### Data that changes {#template-mutation}
 
 _From [Class 25](/class/25)._ A function that changes its input, rather than making
 a new value: its result type is `None`, its docstring says what changes, its
-examples are Setup, Call, and Check, and its template updates the fields:
+examples are Setup, Call, and Check, and its template ends by setting the fields
+it changes, rather than with `return ...`:
 
 ```python
-# def account_fun(ac: Account) -> None:
-#     ac.balance = ... ac.balance ...
+def _account_temp(ac: Account) -> None:
+    ...
+    ac.id
+    ...
+    ac.balance
+    ...
+    ac.balance = ...
 ```
 
 ### Pandas and PLL tables {#pandas}

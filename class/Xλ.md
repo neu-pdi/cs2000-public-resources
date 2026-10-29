@@ -329,7 +329,7 @@ So, we can express booleans. Let's move on to numbers -- specifically, we'll sti
 
 Again we have task of representing values, this time things like:
 
-```python
+```python skip
 0
 1
 2
@@ -369,7 +369,7 @@ def ONE(f, x):
 def TWO(f, x):
     return f(f(x))
 
-...
+# ...
 ```
 
 Now, clearly we can construct any natural number this way -- pick a number and nest the calls the right number of times. 

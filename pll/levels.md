@@ -33,6 +33,10 @@ At `beginner`, `intermediate` and `advanced`, every file starts with
 neither needs an import. At `beginner` and `intermediate`, importing one anyway
 is reported, as hiding one of PLL's own names is.
 
+At the same three levels, a `...` stops the program when it runs: it holds the
+place of code still to be written, such as the body of a function whose tests
+come first. In Python, and at `#level raw`, `...` is a value that does nothing.
+
 In this class, we use `#level beginner` at first, then `#level intermediate`
 once we start writing `for` loops, and `#level advanced` once we change values
 in place (a list, a dictionary, a pandas DataFrame), need `global`, or want to
@@ -82,7 +86,9 @@ and does not run the file:
 - a value worked out and then thrown away, like a line `x + 1` on its own inside
   a function (did you mean `return x + 1`?), or a comparison in a test written
   without `assert`. That includes `sorted(xs)` or `name.upper()` on a line of
-  its own, which make a new value and leave `xs` and `name` as they were;
+  its own, which make a new value and leave `xs` and `name` as they were. A
+  template, a function whose name starts with `_`, is the exception: each part
+  of its data is on a line of its own;
 - `assert(x, 1)`, which checks a pair, and a pair is always true;
 - a function annotated to return something, with no `return` in it;
 - `is` used to compare with a number or a string (`x is 60.5`), where `==` is

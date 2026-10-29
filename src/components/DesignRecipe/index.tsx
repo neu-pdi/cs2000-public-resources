@@ -50,14 +50,20 @@ const STEPS: { name: string; id: string; text: React.ReactNode }[] = [
   {
     name: 'Template',
     id: 'template',
-    text: <>the outline that the kind of input data gives the body</>,
+    text: (
+      <>
+        the outline of any function on the kind of input data: a{' '}
+        <code>_..._temp</code> function, with a line for each part of the data
+      </>
+    ),
   },
   {
     name: 'Body',
     id: 'body',
     text: (
       <>
-        replace the <code>...</code> by filling in the template, using the examples
+        copy the template's body in place of the <code>...</code>, and fill it in,
+        using the examples
       </>
     ),
   },

@@ -41,6 +41,7 @@ For more info on Assessment Hours, and to see what skills are available each wee
 ```python
 def nm_square(n: float) -> float:
     """Multiplies the input by itself"""
+    ...
 
 def test_nm_square():
     assert nm_square(-1) == 1
@@ -52,6 +53,7 @@ def test_nm_square():
 ```python
 def nm_square(n: float) -> float:
     """Takes a number as an argument and returns a number. The result is what you get when multiplying the first number by itself."""
+    ...
 
 def test_nm_square():
     assert nm_square(1) == 1
@@ -79,6 +81,7 @@ def test_nm_square():
 ```python
 def nm_square(n: float) -> float:
     """Multiplies the input by itself"""
+    ...
 
 def test_nm_square():
     assert nm_square(-1) == 1
@@ -105,6 +108,7 @@ def test_nm_square():
 ```python
 def check_age(age: int) -> bool:
     """Returns True when the age is above or equal to 21"""
+    ...
 
 def test_check_age():
     assert not check_age(20)
@@ -120,6 +124,7 @@ def test_check_age():
 ```python
 def check_year(year: int) -> str:
     """Returns 'Past', 'Current', or 'Future' depending on whether the year is before, equal to, or after 2026"""
+    ...
 
 def test_check_year():
     assert check_year(2020) == "Past"
