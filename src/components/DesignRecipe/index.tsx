@@ -23,6 +23,16 @@ const STEPS: { name: string; id: string; text: React.ReactNode }[] = [
     text: <>what kind of data the function works on, with examples of it</>,
   },
   {
+    name: 'Template',
+    id: 'template',
+    text: (
+      <>
+        the outline of any function on the kind of input data: a{' '}
+        <code>_..._temp</code> function, with a line for each part of the data
+      </>
+    ),
+  },
+  {
     name: 'Signature',
     id: 'signature',
     text: (
@@ -44,16 +54,6 @@ const STEPS: { name: string; id: string; text: React.ReactNode }[] = [
       <>
         a <code>test_</code> function: concrete inputs, and what each should give,
         written before the body
-      </>
-    ),
-  },
-  {
-    name: 'Template',
-    id: 'template',
-    text: (
-      <>
-        the outline of any function on the kind of input data: a{' '}
-        <code>_..._temp</code> function, with a line for each part of the data
       </>
     ),
   },

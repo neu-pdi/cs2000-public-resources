@@ -13,12 +13,13 @@ about them ("back to Examples"), and the classes add to them as the course goes 
 
 <DesignRecipe />
 
-Each step makes the next one easier. The types and the docstring say what the
-function is for; the examples check that you understand the problem before you
-solve it; the template gives the body its shape; and by then, the body is usually
-a matter of filling in the template's gaps. Doing the steps in order is faster
-than starting with the body, even though the body is the part that feels like
-programming.
+Each step makes the next one easier. The data definition says what the data is,
+and its template gives every function on that data its shape, so both are
+written once, before any one function. Then, for each function, the types and
+the docstring say what it is for; the examples check that you understand the
+problem before you solve it; and by then, the body is usually a matter of
+filling in the template's gaps. Doing the steps in order is faster than starting
+with the body, even though the body is the part that feels like programming.
 
 ### Data definition {#data-definition}
 
@@ -41,12 +42,43 @@ to_the_lighthouse = BookRecord("To the Lighthouse", "Virginia Woolf", 209)
 The examples are used again in the Examples step, and the data definition decides
 the Template.
 
+### Template {#template}
+
+The outline that a kind of data gives the body of any function on it, before
+solving any particular problem. It follows one rule: **the body has one part for
+each part of the data**. A number has one part; a number split into intervals has one part per
+interval; a row has its columns; a dataclass has its fields; a union has its
+variants. A template is a function named for its kind of data, starting with
+`_`, which marks it as an outline, not a function to call. Each part of the data
+is on a line of its own, with `...` before and after it, since the body's code
+can go around each part, and `return ...` at the end. So the
+[templates below](#templates) all look like this one, for an order amount (\$10
+or less, or more):
+
+```python
+def _order_amount_temp(order_amt: float) -> ...:
+    if order_amt <= 10:
+        ...
+        order_amt
+        ...
+        return ...
+    else:
+        ...
+        order_amt
+        ...
+        return ...
+```
+
+The template is written once for each kind of data, next to its data definition,
+and then used for every function on that kind of data.
+
 ### Signature {#signature}
 
-The `def` line: the function's name, the type of each parameter, and the type of
-its result. Work out the types first: every later step depends on them. The body
-is `...` for now, so that the file runs, and the function can already be called
-(it gives back `None`):
+Now for one function on the data: here, `add_shipping`, on order amounts. Its
+`def` line: the function's name, the type of each parameter, and the type of its
+result. Work out the types first: the rest of the function depends on them. The
+body is `...` for now, so that the file runs, and the function can already be
+called (PLL says it isn't written yet):
 
 ```python
 def add_shipping(order_amt: float) -> float:
@@ -89,36 +121,6 @@ def test_add_shipping():
   right?) and some known to have a bug (are they thorough?). See
   [Tests](/pll/testing#checking-your-tests-against-the-courses-code).
 
-### Template {#template}
-
-The outline that the kind of input data gives the body, before solving this
-particular problem. It follows one rule: **the body has one part for each part of
-the data**. A number has one part; a number split into intervals has one part per
-interval; a row has its columns; a dataclass has its fields; a union has its
-variants. A template is a function named for its kind of data, starting with
-`_`, which marks it as an outline, not a function to call. Each part of the data
-is on a line of its own, with `...` before and after it, since the body's code
-can go around each part, and `return ...` at the end. So the
-[templates below](#templates) all look like this one, for an order amount (\$10
-or less, or more):
-
-```python
-def _order_amount_temp(order_amt: float) -> ...:
-    if order_amt <= 10:
-        ...
-        order_amt
-        ...
-        return ...
-    else:
-        ...
-        order_amt
-        ...
-        return ...
-```
-
-The template is written once for each kind of data, next to its data definition,
-and then used for every function on that kind of data.
-
 ### Body {#body}
 
 Copy the template's body into the function, in place of its `...`, and fill
@@ -139,8 +141,9 @@ def add_shipping(order_amt: float) -> float:
 
 Run the tests. If one fails, decide which is wrong, the example or the body,
 before changing either. When anything changes (a new case, a new requirement),
-go back through the steps in order: the Signature, the Docstring, the Examples,
-and the Template may all need to change before the Body does.
+go back through the steps in order: the Data definition and its Template, the
+Signature, the Docstring, and the Examples may all need to change before the Body
+does.
 
 ## Templates {#templates}
 
