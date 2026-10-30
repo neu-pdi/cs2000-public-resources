@@ -47,10 +47,8 @@ The only software you will need is a web browser (and a computer or tablet that 
 ### People
 | Instructor | Campus | Office | Office Hours |
 | -- | -- | -- | -- |
-| [Prof. Ellen Spertus](https://www.khoury.northeastern.edu/people/ellen-spertus/) | Oakland | CPM 200/201 | Mondays 9:30-10:30, Thursdays 2:45-3:45, or [by appointment](https://tinyurl.com/meet-with-ellen) |
-| [Prof. Alvaro Monge](https://www.khoury.northeastern.edu/people/alvaro-monge/) | Oakland | CARN 201 | Tuesdays 10:15-11:15am PT and Wednesdays 3-4pm PT, or by appointment (send email request at least 1 day prior) |
-| [Prof. Rush Sanghrajka](https://www.khoury.northeastern.edu/people/rush-sanghrajka/) | Boston | Meserve 309 | Wednesdays 4-6pm, [Appointments Preferred](https://tinyurl.com/office-hours-with-rush) |
-| [Prof. Daniel Patterson](https://dbp.io) | Boston | Meserve 317 | Monday 9-10, Wednesday 3-4, or by appointment |
+| [Prof. Nate Derbinsky](https://derbinsky.info/) | Boston | ?? | TBD |
+| [Prof. Daniel Patterson](https://dbp.io) | Boston | Meserve 317 | TBD |
 
 | Coordinator | Campus | Office | Office Hours |
 | -- | -- | -- | -- |
@@ -70,8 +68,11 @@ If you turn in work late, it can contribute to a later crit in the case of the p
 If you believe a mistake was made in the grading of a Skill Assessment, or if you'd like to understand better what you got wrong,
 you should request an in-person meeting to go over it.
 
-If you think an Assignment Crit or Pairing Session was misgraded, you have 7 days from when the grade was released to make a regrade request on Pawtograder.
+If you think a Pairing Session was misgraded, you have 7 days from when the grade was released to make a regrade request on Pawtograder.
+
 Abuse of the regrade request mechanism may result in less of an ability to request regrades.
+
+Assignment Crits are graded based on peer feedback, calibrated based on TA (and occasional Professor) presence; no regrades are available, though we drop several of the least reliable scores.
 
 ### Office Hours
 
@@ -235,12 +236,6 @@ Your final grade will be calculated by your results in the **Skill Assessments**
 </table>
 
 
-### Textbook
-
-The **Notes** section of each class page is adapted, and rewritten for Python, from the textbook "A Data-Centric Introduction to Computing",
-by Fisler, Krishnamurthi, Lerner, and Politz. You do not need the textbook itself, but if you want to read further, our version of it is available freely online at
-https://dcic.pdi.run (you should see a banner at the top that says it is our version, and the menus should always be yellow). Note that most of its early chapters use the programming language Pyret, rather than Python.
-
 ### Collaboration and Academic Honesty
 
 Computer science, both academically and professionally, is a collaborative discipline. In any collaboration, however, all parties are expected to make their own contributions and to generously credit the contributions of others. In our class, therefore, collaboration on assignments is encouraged, but you as an individual are responsible for understanding all the material in the assignment and doing your own work. Always strive to do your best, give generous credit to others, start early, and seek help early from both your professors and classmates.
@@ -251,9 +246,9 @@ Specifically:
 - Copying material from another person with or without their knowledge is not allowed.
 - Additionally, sharing solutions in forums (e.g., posting to public questions, posting code online, etc.) constitutes an academic integrity violation, as it may make it harder for other students to do work on their own, harming their own learning.
 - Any sharing or receiving information about the content of skill assessments is an academic integrity violation, and may result in failing the class.
-- Trying to access any electronics during skill assessments is an academic integrity violation and will result in a 0 on the assessments. This includes having a phone in your lap, no matter what is accessed on the phone. You will also be prohibited from re-attempting said skill assessments.
+- Trying to access any electronics during skill assessments is an academic integrity violation and will result in a 0 on that skill. This includes having a phone in your lap, no matter what is accessed on the phone. You will also be prohibited from re-attempting said skill.
 
-You _must_ _write_ all code for assignments yourself. Even if you discuss solutions, or approaches, with others, do the actual typing on your own! And avoid playing games or trying to find loopholes — i.e., do not merely type what someone says, or type what you see on another's screen. While we do not consider collaboration a violation, relying on others for your solutions may result in you not learning the material, and in this class, not learning the material will result in not being able to pass the skill assessments. 
+You _should_ _write_ all code for assignments yourself. Even if you discuss solutions, or approaches, with others, do the actual typing on your own! And avoid playing games or trying to find loopholes — i.e., do not merely type what someone says, or type what you see on another's screen. While we do not consider collaboration a violation, relying on others for your solutions may result in you not learning the material, and in this class, not learning the material will result in not being able to pass the skill assessments. 
 
 Remember, what you turn in as homework is not graded directly, rather, it is the basis of your crit, where you present it and answer questions about it — if you do not understand what you submitted, you will fail that assessment, nevermind that without the practice of homework, you will find it difficult to pass the skill assessments that form the core of your grade in the course (consult the [grading table](#grading)), so take homework for what it is intended: extensive opportunity to practice what we are teaching, plus the opportunity to practice talking about your work.
 
@@ -261,7 +256,7 @@ The minimum penalty for an academic integrity violation is a zero on the assignm
 
 ### The AI Policy
 
-AI coding assistants like Cursor, Windsurf, and Copilot should not be used in this course. We believe that using an AI assistant is an important skill that should be covered _after_ the basics (which is why there is a different policy in CS 3100). Until you have the ability to design, understand, and review code, using an AI assistant amounts to wandering around in the dark, with no ability to determine if you are getting closer to what you want. (Using these tools to get decent grades while learning nothing is pretty clearly shooting yourself in the foot: you are in college to learn; if you end up unable to do anything but prompt engineer, you will have essentially no skills, given these models are intentionally rendering whatever "skill" underlying prompt engineering obsolete in every generation.)
+AI coding assistants like Claude, Copilot, or Cursor should not be used in this course. We believe that using these kind of tools an important skill that should be covered _after_ the basics (which is why there is a different policy in later courses). Until you have the ability to design, understand, and review code, using an AI assistant amounts to wandering around in the dark, with no ability to determine if you are getting closer to what you want. (Using these tools to get decent grades while learning nothing is pretty clearly shooting yourself in the foot: you are in college to learn; if you end up unable to do anything but prompt engineer, you will have essentially no skills, given these models are intentionally rendering whatever "skill" underlying prompt engineering obsolete in every generation.)
 
 The same is true of asking questions of chat models like ChatGPT, Claude, Gemini, etc. Putting assignment instructions into such a model and getting out code or test cases amounts to getting the model to do the thinking for you — and as a result, you will not learn. "Only looking" at AI-generated solutions "before writing your own" undermines the learning just the same, as you will not be learning to actually solve problems, you will just be copying (and, importantly, never developing the ability to recognize when the AI-generated solution isn't what you need). It will also backfire, as if you do this, you will find yourself unable to present your work, and answer questions about it, in the crits that form the grade for these assignments. 
 
