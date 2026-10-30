@@ -2,6 +2,7 @@ import { Text } from "@chakra-ui/react";
 import { calendarData, type Skill } from '../../data/calendar-data';
 import { FormatDate, DateFor, SkillDateRange, isWeekend, isNextInstructionalDate } from '../../utils/calendar';
 import Admonition from '@theme/Admonition';
+import SkillBadge from '../SkillBadge';
 
 const ANNOTATION_EXCLUSION_DAYS: String[] = ["1", "2"]
 
@@ -107,7 +108,7 @@ export default function UpcomingAnnotation({ id }: UpcomingAnnotationProps) {
             {skillAnnotationInfo.endingSkills.length > 0 && (
             <Admonition type="danger" icon="‼️" title="Ending Skills">
                 <Text as="span" className="text-sm text-gray-500">
-                Last week for skills: {skillAnnotationInfo.endingSkills.map((skill) => skill).join(', ')}
+                Last week for skills: {skillAnnotationInfo.endingSkills.map((skill) => <SkillBadge key={skill} skill={skill} link />)}
                 </Text>
             </Admonition>
             )}
@@ -115,7 +116,7 @@ export default function UpcomingAnnotation({ id }: UpcomingAnnotationProps) {
             {skillAnnotationInfo.newSkills.length > 0 && (
             <Admonition type="tip" icon="🆕" title="New Skills">
                 <Text as="span" className="text-sm text-gray-500">
-                First week for skills: {skillAnnotationInfo.newSkills.map((skill) => skill).join(', ')}
+                First week for skills: {skillAnnotationInfo.newSkills.map((skill) => <SkillBadge key={skill} skill={skill} link />)}
                 </Text>
             </Admonition>
             )}

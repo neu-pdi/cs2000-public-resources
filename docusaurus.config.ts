@@ -102,7 +102,9 @@ const config: Config = {
           ],
           rehypePlugins: [rehypeKatex],
         },
-        pages: {},
+        pages: {
+          remarkPlugins: [createCollapsibleSectionsPlugin({ only: /\/src\/pages\/skills\.md$/ })],
+        },
 
         blog: false,
         theme: {

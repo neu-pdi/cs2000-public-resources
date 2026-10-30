@@ -5,7 +5,6 @@ description: Skills
 hide_table_of_contents: true
 ---
 
-import Link from '@docusaurus/Link';
 import DateView from '@site/src/components/DateView/DateView';
 import AssessmentHours from '@site/src/components/AssessmentHours';
 import styles from './index.module.css';
@@ -28,11 +27,14 @@ during Assessment Hours. Assessment Hours are held at the following times
 
 For more info on Assessment Hours, and to see what skills are available each week, check out the [home page](/#assessment-hours).
 
-0. <Link id="0" to="#0">Design Function Signatures, Docs, Tests</Link> - **Available:** <DateView id="0" item="skills" />
-   |  |  |
-   | -- | -- |
-   | **Meets Expectations** | • Correct signature, with types<br/>• Docstring that describes behavior, doesn't repeat the signature's types.<br/>• A few (2+) correct, meaningfully different tests<br/>• minor typos are okay |
-   | **Approaching Expectations** | • Missing docstring, or long, includes redundant type information, etc.<br/>• 1+ correct tests|
+## <SkillBadge skill={0} /> Design Function Signatures, Docs, Tests {#0}
+
+**Available:** <DateView id="0" item="skills" />
+
+|  |  |
+| -- | -- |
+| **Meets Expectations** | • Correct signature, with types<br/>• Docstring that describes behavior, doesn't repeat the signature's types.<br/>• A few (2+) correct, meaningfully different tests<br/>• minor typos are okay |
+| **Approaching Expectations** | • Missing docstring, or long, includes redundant type information, etc.<br/>• 1+ correct tests|
 
 <details>
     <summary>Examples</summary>
@@ -70,13 +72,18 @@ def test_nm_square():
  <p>Design the signature, docstring, and tests for a function `check_year`, that takes a year as input, and returns "Past", "Current", or "Future" depending on the year. NOTE: you should not implement the function!</p>
 </details>
 
-**More practice:** the Practice sections of [Class 4](/class/4#practice), [Class 5](/class/5#practice), [Class 8](/class/8#practice), [Class 9](/class/9#practice), [Class 10](/class/10#practice), [Class 15](/class/15#practice).
+**More practice:** the Practice sections of [Class 4](/class/4#practice), [Class 5](/class/5#practice), [Class 8](/class/8#practice), [Class 9](/class/9#practice), [Class 10](/class/10#practice).
 
-1. <Link id="1" to="#1">Implement Basic Functions</Link> - **Available:** <DateView id="1" item="skills" />
-   |  |  |
-   | -- | -- |
-   | **Meets Expectations** | • Well-formatted, correct implementation:<br/>    • may include numbers, strings, `if` (NOT images)<br/>    • minor typos errors are okay |
-   | **Approaching Expectations** | • Functioning code, but not matching problem.<br/>    • minor typos errors are okay |
+---
+
+## <SkillBadge skill={1} /> Implement Basic Functions {#1}
+
+**Available:** <DateView id="1" item="skills" />
+
+|  |  |
+| -- | -- |
+| **Meets Expectations** | • Well-formatted, correct implementation:<br/>    • may include numbers, strings, `if` (NOT images)<br/>    • minor typos errors are okay |
+| **Approaching Expectations** | • Functioning code, but not matching problem.<br/>    • minor typos errors are okay |
 
 <details>
     <summary>Examples</summary>
@@ -137,13 +144,137 @@ def test_check_year():
 
 </details>
 
-**More practice:** the Practice sections of [Class 4](/class/4#practice), [Class 5](/class/5#practice), [Class 8](/class/8#practice), [Class 9](/class/9#practice), [Class 10](/class/10#practice), [Class 15](/class/15#practice).
+**More practice:** the Practice sections of [Class 4](/class/4#practice), [Class 5](/class/5#practice), [Class 8](/class/8#practice), [Class 9](/class/9#practice), [Class 10](/class/10#practice).
 
-2. <Link id="2" to="#2">Function Composition</Link> - **Available:** <DateView id="2" item="skills" />
-   |  |  |
-   | -- | -- |
-   | **Meets Expectations** | • Helper function and main function each have a signature (with types), docstring, and at least one test<br/>• Helper correctly performs its one task<br/>• Main function calls the helper (rather than repeating its logic), passing appropriate arguments and using the result to solve the problem<br/>• minor typos are okay |
-   | **Approaching Expectations** | • Helper function is defined and does roughly what is expected<br/>• Main function calls the helper, but with incorrect arguments, or doesn't use the result in a way that solves the problem<br/>• May be missing types in signatures, docstrings, or tests (or have incorrect tests) |
+---
+
+## <SkillBadge skill={2} /> Identifying Privacy Issues in Problem Formulation {#2}
+
+**Available:** <DateView id="2" item="skills" />
+
+|  |  |
+| -- | -- |
+| **Meets Expectations** | • Privacy analysis chart is complete and each entry is correct<br/> • Identify named privacy issue in a new context<br/> • Proposed mitigation strategy is appropriate given context |
+| **Approaching Expectations** | • Chart is complete but at least one entry is not correct<br/> • Attempts to identify named privacy issue but mis-identifies, or explanation is unclear<br/> • Proposed mitigation of known privacy issue would not address the privacy threat |
+
+<details>
+    <summary>Examples</summary>
+    <p>**Sample question**: You are designing a system for a campus food service. Students can specify their dietary restrictions through a website that requires their student id, which is used to create a record containing other personal information. The resulting record can be accessed by any food service employee (full-time staff and student workers) and is searchable by all fields.</p>
+   <p>Here is an analysis of the flow of information in the context:</p>
+
+|  |  |
+| -- | -- |
+| What type of information is shared? | Personal information, including legal name, photo, phone number, address, and dietary restrictions |
+| Who is/are the subject(s) of the information? | The student |
+| Who is the sender of the information? | The student and the university |
+| Who are the potential recipients of the information? | Food service workers<br/>intended: meal planners/preparers and managers<br/>unintended: ??? |
+| What principles govern the collection and transmission of this information? | Students provide their dietary restrictions freely while logged in with their student id, although they do not have a choice about what linked information is accessed |
+
+<p>The principle of data minimization suggests that we limit the collection, storage, and transmission of personal data to only the data absolutely necessary to perform the task.</p>
+
+<p>Using our privacy analysis, identify **one unintended recipient**, and also **how access to data might be designed to minimize transmission**.</p>
+
+**Answer meeting expectations:** One unintended recipient would be student workers, who should not be allowed to retrieve other students' photos, addresses, or phone numbers. Access to data could be minimized by making contact information available only to the manager, in case a student needs to be notified that food was mislabeled.
+
+**Answer approaching expectations:** One unintended recipient would be students who don't work for the food service [incorrect] who could get private information [too vague]. Access to data could be minimized by keeping the data encrypted [does not address the privacy threat].
+
+</details>
+<details>
+<summary> Practice Problem</summary>
+<p>A city is considering hiring a company to run an automated license plate scanning service to cut down
+on parking violations (parking too long in a spot, no-parking zones, etc.). The company is planning to
+have vehicles constantly patrol the streets, transmitting video footage as well as location and time
+information back to their central server, where optical recognition systems will scan for license plate
+numbers, and record where and when cars were parked. The system would also automatically issue parking
+violation tickets when appropriate.
+The company plans to archive all of the data, including the raw video footage,
+in case people try to contest the ticket. All recorded data is also available to the Department of Motor Vehicles.</p>
+
+|  |  |
+|----------|---------|
+| What type of information is shared? |  Vehicle license plate numbers, location and timestamp, video footage |
+| Who is/are the subject of the information? | Vehicles on public roadways, and their owners |
+| Who is the sender of the information? | The vehicle scanning services company |
+| Who are the potential recipients of the information? | <p> Intended: motor vehicle department, law enforcement. Unintended: **???** </p>|
+| What principles govern the collection and transmission of this information? | Drivers implicitly consent by using public roadways, but may not be aware that their vehicle is being scanned. |
+
+<p>Please **list TWO unintended recipients**, and also **how access to the collected and processed data might be designed to minimize transmission to unexpected recipients?**</p>
+</details>
+
+**More practice:** the Practice section of [Class 10](/class/10#practice).
+
+---
+
+## <SkillBadge skill={3} /> Identifying Stakeholders in Problem Formulation {#3}
+
+**Available:** <DateView id="3" item="skills" />
+
+|  |  |
+| -- | -- |
+| **Meets Expectations** | • Complete stakeholder matrix that lists all relevant stakeholders and at least one relevant interest at stake for each stakeholder<br/> • Answer identifies the specified number of conflicts between stakeholder interests/values (e.g., if the task is to identify 2 values conflicts, the answer identifies 2 values conflicts) |
+| **Approaching Expectations** | • If prompted to provide a complete chart, chart fails to identify relevant stakeholders OR fails to identify their relevant interests/values<br/> • Chart does not identify relevant interests<br/> • Identifies some, but fewer than specified number of conflicts between stakeholder interests/values (e.g., if the task is to identify 2 values conflicts, the answer identifies 1 values conflict) |
+
+<details>
+    <summary>Examples</summary>
+    <p>**Sample question**: A university has a cafeteria and collects information about students' dietary restrictions, which may be due to students' health requirements or strongly-held beliefs. Below is a stakeholder matrix:</p>
+
+| Stakeholder | Interest/Value |
+| -- | -- |
+| University budget managers |  |
+| Vegetarians |  |
+|  |  |
+
+<p>FIRST: Complete the stakeholder matrix for cafeteria system design by identifying, and filling in, interests/values that correspond to the listed stakeholders, and, in the third case, by supplying both the stakeholder and the listed interest/value. SECOND: Explain in one or two sentences which (if any) stakeholder interests/values can come into conflict.</p>
+
+<p>**Answer meeting expectations**</p>
+
+| Stakeholder | Interest/Value |
+| -- | -- |
+| University budget managers | minimizing food waste |
+| Vegetarians | having healthy and tasty food options |
+| Meat eaters | having non-vegetarian food options |
+
+<p>The interests of vegetarians and meat eaters could come into conflict because each group wants multiple options of their preferred food type, but the cafeteria can only offer a limited number of options.</p>
+
+<p>**Answer approaching expectations** (incomplete chart, incorrect conflict)</p>
+
+| Stakeholder | Interest/Value |
+| -- | -- |
+| University budget managers | minimizing food waste |
+| Vegetarians | having soda |
+|  |  |
+
+<p>The interests of budget managers and vegetarians could come into conflict if they like the tastes of different types of soda.</p>
+
+</details>
+<details>
+ <summary>Practice Problems</summary>
+ <p>A rideshare company, Ryde, is developing an AI-powered rider usage prediction system. The system will analyze existing rideshare patterns and proactively adjust fares, increasing charges for customers based on predicted demand. Below is a stakeholder-value matrix.</p>
+
+| Stakeholder | Interest/Value |
+|-------------|---------------|
+| Customers on Ryde | |
+| Drivers on Ryde | |
+| Stakeholder 3 | Revenue Generation |
+
+<p>FIRST: Complete the stakeholder matrix for AI content moderation design by identifying, and filling in, unique values/interests for the stakeholders listed, and, in the third case, by supplying the stakeholder for the value/interest.</p>
+
+<p>SECOND: Explain in one or two sentences which (if any) stakeholder interests/values can **come into conflict**.</p>
+
+</details>
+
+**More practice:** the Practice section of [Class 6](/class/6#practice).
+
+---
+
+## <SkillBadge skill={4} /> Function Composition {#4}
+
+**Available:** <DateView id="4" item="skills" />
+
+|  |  |
+| -- | -- |
+| **Meets Expectations** | • Helper function and main function each have a signature (with types), docstring, and at least one test<br/>• Helper correctly performs its one task<br/>• Main function calls the helper (rather than repeating its logic), passing appropriate arguments and using the result to solve the problem<br/>• minor typos are okay |
+| **Approaching Expectations** | • Helper function is defined and does roughly what is expected<br/>• Main function calls the helper, but with incorrect arguments, or doesn't use the result in a way that solves the problem<br/>• May be missing types in signatures, docstrings, or tests (or have incorrect tests) |
 
 <details>
     <summary>Examples</summary>
@@ -194,11 +325,17 @@ def test_room_wall_area():
 
 **More practice:** the Practice sections of [Class 5](/class/5#practice), [Class 9](/class/9#practice), [Class 10](/class/10#practice).
 
-03. <Link id="3" to="#3">Construct / Transform Tables</Link> - **Available:** <DateView id="3" item="skills" />
-    |  |  |
-    | -- | -- |
-    | **Meets Expectations** | • Function designed has signature (with types), docstring, and at least one test<br/>• Function uses correct table function (skill covers `filter`, `add_column`, and `transform_column`)<br/>• Row helper does what is expected, whether defined with `lambda` or named |
-    | **Approaching Expectations** | • Function uses correct table function (`filter`, `add_column`, or `transform_column`)<br/>• Row helper accesses fields from row, but not in a way that solves the problem |
+---
+
+## <SkillBadge skill={5} /> Construct / Transform Tables {#5}
+
+**Available:** <DateView id="5" item="skills" />
+
+|  |  |
+| -- | -- |
+| **Meets Expectations** | • Function designed has signature (with types), docstring, and at least one test<br/>• Function uses correct table function (skill covers `filter`, `add_column`, and `transform_column`)<br/>• Row helper does what is expected, whether defined with `lambda` or named |
+| **Approaching Expectations** | • Function uses correct table function (`filter`, `add_column`, or `transform_column`)<br/>• Row helper accesses fields from row, but not in a way that solves the problem |
+
 <details>
     <summary>Examples</summary>
     <p>Sample question: Design a function <code>find_scholars</code> that takes a table of students with "name" and "campus" columns and returns a new table containing only the students whose campus is **not** "Boston".</p>
@@ -259,11 +396,17 @@ and returns a new table containing only those regions where rainfall amounts dec
 
 **More practice:** the Practice sections of [Class 7](/class/7#practice), [Class 8](/class/8#practice), [Class 9](/class/9#practice), [Class 10](/class/10#practice), [Class 11](/class/11#practice), [Class 12](/class/12#practice), [Class 13](/class/13#practice).
 
-04. <Link id="4" to="#4">Iteration: Lists</Link> - **Available:** <DateView id="4" item="skills" />
-    |  |  |
-    | -- | -- |
-    | **Meets Expectations** | • Uses a `for` loop properly, drawing elements from the list<br/>• Mutates a single variable within the loop to correctly accumulate the result<br/>• Returns the final result after the loop |
-    | **Approaching Expectations** | • Uses a `for` loop, drawing elements from the list<br/>• Either: Mutates within the loop, but in such a way that doesn't produce the correct accumulated answer, or doesn't use the final result properly at the end of the loop |
+---
+
+## <SkillBadge skill={6} /> Iteration: Lists {#6}
+
+**Available:** <DateView id="6" item="skills" />
+
+|  |  |
+| -- | -- |
+| **Meets Expectations** | • Uses a `for` loop properly, drawing elements from the list<br/>• Mutates a single variable within the loop to correctly accumulate the result<br/>• Returns the final result after the loop |
+| **Approaching Expectations** | • Uses a `for` loop, drawing elements from the list<br/>• Either: Mutates within the loop, but in such a way that doesn't produce the correct accumulated answer, or doesn't use the final result properly at the end of the loop |
+
 <details>
     <summary>Examples</summary>
     <p>Design a function <code>list_of_squares</code> that takes a list of numbers, and returns a list where each element is the square of N where N is the element from the list. You must use a <code>for</code> loop, rather than a built in list function or recursion.</p>
@@ -320,11 +463,16 @@ def test_list_of_squares():
 
 **More practice:** the Practice sections of [Class 16](/class/16#practice), [Class 17](/class/17#practice).
 
-05. <Link id="5" to="#5">Variable Scope</Link> - **Available:** <DateView id="5" item="skills" />
-    |  |  |
-    | -- | -- |
-    | **Meets Expectations** | • Output of given code, that uses variables, defined locally, in functions, globally, etc, is correct<br/>• Explanation of behavior, including global keyword if needed, is correct |
-    | **Approaching Expectations** | • Explanation mentions key idea, but does not use it to correctly characterize behavior |
+---
+
+## <SkillBadge skill={7} /> Variable Scope {#7}
+
+**Available:** <DateView id="7" item="skills" />
+
+|  |  |
+| -- | -- |
+| **Meets Expectations** | • Output of given code, that uses variables, defined locally, in functions, globally, etc, is correct<br/>• Explanation of behavior, including global keyword if needed, is correct |
+| **Approaching Expectations** | • Explanation mentions key idea, but does not use it to correctly characterize behavior |
 
 <details>
     <summary>Examples</summary>
@@ -427,11 +575,17 @@ print("Global value:", value)
 
 **More practice:** the Practice sections of [Class 18](/class/18#practice), [Class 19](/class/19#practice).
 
-06. <Link id="6" to="#6">Structured & Conditional Data</Link> - **Available:** <DateView id="6" item="skills" />
-    |  |  |
-    | -- | -- |
-    | **Meets Expectations** | • Uses `@dataclass` classes for the variants as needed, fields with appropriate type annotations<br/>• Function uses either field access or `match` as needed<br/>• Function has signature (with types), doc string, and tests |
-    | **Approaching Expectations** | • Uses `@dataclass` classes for the variants as needed, fields if needed (possibly missing or incorrect annotations)<br/>• Function should use either field access or `match`, but may not do it correctly, or to match the problem |
+---
+
+## <SkillBadge skill={8} /> Structured & Conditional Data {#8}
+
+**Available:** <DateView id="8" item="skills" />
+
+|  |  |
+| -- | -- |
+| **Meets Expectations** | • Uses `@dataclass` classes for the variants as needed, fields with appropriate type annotations<br/>• Function uses either field access or `match` as needed<br/>• Function has signature (with types), doc string, and tests |
+| **Approaching Expectations** | • Uses `@dataclass` classes for the variants as needed, fields if needed (possibly missing or incorrect annotations)<br/>• Function should use either field access or `match`, but may not do it correctly, or to match the problem |
+
 <details>
     <summary>Examples</summary>
     <p>Sample question: Design a data definition for Beverage that can be either coffee with number of shots of espresso, or tea with name and brew time in minutes. Then, write a function <code>is_strong</code> that returns <code>True</code> if the beverage is a coffee with more than 2 shots, or a tea brewed for more than 5 minutes.</p>
@@ -507,11 +661,17 @@ def test_is_strong():
 
 **More practice:** the Practice sections of [Class 20](/class/20#practice), [Class 21](/class/21#practice).
 
-07. <Link id="7" to="#7">Recursion: Lists</Link> - **Available:** <DateView id="7" item="skills" />
-    |  |  |
-    | -- | -- |
-    | **Meets Expectations** | • Function has appropriate signature (with types), doc string, and tests<br/>• Function uses `match` to handle the empty (`[]`) case and the first-and-rest (`[first, *rest]`) case<br/>• In the first-and-rest case, calls function recursively on rest of list appropriately |
-    | **Approaching Expectations** | • Uses `match` to break apart list, and has recursive call to rest of list |
+---
+
+## <SkillBadge skill={9} /> Recursion: Lists {#9}
+
+**Available:** <DateView id="9" item="skills" />
+
+|  |  |
+| -- | -- |
+| **Meets Expectations** | • Function has appropriate signature (with types), doc string, and tests<br/>• Function uses `match` to handle the empty (`[]`) case and the first-and-rest (`[first, *rest]`) case<br/>• In the first-and-rest case, calls function recursively on rest of list appropriately |
+| **Approaching Expectations** | • Uses `match` to break apart list, and has recursive call to rest of list |
+
 <details>
     <summary>Examples</summary>
     <p>Sample question: Using recursion, design a function <code>make_positive</code> that takes a list of numbers and returns a new list where each number is replaced by its absolute value.</p>
@@ -562,11 +722,17 @@ def test_make_positive():
 
 **More practice:** the Practice sections of [Class 22](/class/22#practice), [Class 23](/class/23#practice).
 
-08. <Link id="8" to="#8">Recursion: Trees</Link> - **Available:** <DateView id="8" item="skills" />
-    |  |  |
-    | -- | -- |
-    | **Meets Expectations** | • Function has appropriate signature (with types), doc string, and tests<br/>• Function uses `match` to handle base case and recursive case<br/>• In recursive case, calls function recursively on subtrees appropriately |
-    | **Approaching Expectations** | • Uses `match` to break apart tree, and has recursive call on subtrees |
+---
+
+## <SkillBadge skill={10} /> Recursion: Trees {#10}
+
+**Available:** <DateView id="10" item="skills" />
+
+|  |  |
+| -- | -- |
+| **Meets Expectations** | • Function has appropriate signature (with types), doc string, and tests<br/>• Function uses `match` to handle base case and recursive case<br/>• In recursive case, calls function recursively on subtrees appropriately |
+| **Approaching Expectations** | • Uses `match` to break apart tree, and has recursive call on subtrees |
+
 <details>
     <summary>Examples</summary>
     <p>Design a function <code>count_internal_nodes</code> that, given the BinTree data definition below, takes a BinTree and returns the total number of internal nodes (non-leaf nodes) in the tree</p>
@@ -620,11 +786,17 @@ def test_count_internal_nodes():
 
 **More practice:** the Practice sections of [Class 24](/class/24#practice), [Class 25](/class/25#practice).
 
-9. <Link id="9" to="#9">Aliasing & Mutation</Link> - **Available:** <DateView id="9" item="skills" />
-    |  |  |
-    | -- | -- |
-    | **Meets Expectations** | • Output of given code that uses mutation of values like lists, aliasing, etc, is correct<br/>• Explanation of behavior is correct |
-    | **Approaching Expectations** | • Explanation mentions key idea, but does not use it to correctly characterize behavior |
+---
+
+## <SkillBadge skill={11} /> Aliasing & Mutation {#11}
+
+**Available:** <DateView id="11" item="skills" />
+
+|  |  |
+| -- | -- |
+| **Meets Expectations** | • Output of given code that uses mutation of values like lists, aliasing, etc, is correct<br/>• Explanation of behavior is correct |
+| **Approaching Expectations** | • Explanation mentions key idea, but does not use it to correctly characterize behavior |
+
 <details>
     <summary>Examples</summary>
     <p>What will be the output of the following code? Please explain why.</p>
@@ -737,114 +909,7 @@ print("Same object?", my_book is updated_book)
 
 **More practice:** the Practice section of [Class 26](/class/26#practice).
 
-10. <Link id="10" to="#10">Identifying Privacy Issues in Problem Formulation</Link> - **Available:** <DateView id="10" item="skills" />
-    |  |  |
-    | -- | -- |
-    | **Meets Expectations** | • Privacy analysis chart is complete and each entry is correct<br/> • Identify named privacy issue in a new context<br/> • Proposed mitigation strategy is appropriate given context |
-    | **Approaching Expectations** | • Chart is complete but at least one entry is not correct<br/> • Attempts to identify named privacy issue but mis-identifies, or explanation is unclear<br/> • Proposed mitigation of known privacy issue would not address the privacy threat |
-<details>
-    <summary>Examples</summary>
-    <p>**Sample question**: You are designing a system for a campus food service. Students can specify their dietary restrictions through a website that requires their student id, which is used to create a record containing other personal information. The resulting record can be accessed by any food service employee (full-time staff and student workers) and is searchable by all fields.</p>
-   <p>Here is an analysis of the flow of information in the context:</p>
-
-|  |  |
-| -- | -- |
-| What type of information is shared? | Personal information, including legal name, photo, phone number, address, and dietary restrictions |
-| Who is/are the subject(s) of the information? | The student |
-| Who is the sender of the information? | The student and the university |
-| Who are the potential recipients of the information? | Food service workers<br/>intended: meal planners/preparers and managers<br/>unintended: ??? |
-| What principles govern the collection and transmission of this information? | Students provide their dietary restrictions freely while logged in with their student id, although they do not have a choice about what linked information is accessed |
-
-<p>The principle of data minimization suggests that we limit the collection, storage, and transmission of personal data to only the data absolutely necessary to perform the task.</p>
-
-<p>Using our privacy analysis, identify **one unintended recipient**, and also **how access to data might be designed to minimize transmission**.</p>
-
-**Answer meeting expectations:** One unintended recipient would be student workers, who should not be allowed to retrieve other students' photos, addresses, or phone numbers. Access to data could be minimized by making contact information available only to the manager, in case a student needs to be notified that food was mislabeled.
-
-**Answer approaching expectations:** One unintended recipient would be students who don't work for the food service [incorrect] who could get private information [too vague]. Access to data could be minimized by keeping the data encrypted [does not address the privacy threat].
-
-</details>
-<details>
-<summary> Practice Problem</summary>
-<p>A city is considering hiring a company to run an automated license plate scanning service to cut down
-on parking violations (parking too long in a spot, no-parking zones, etc.). The company is planning to
-have vehicles constantly patrol the streets, transmitting video footage as well as location and time
-information back to their central server, where optical recognition systems will scan for license plate
-numbers, and record where and when cars were parked. The system would also automatically issue parking
-violation tickets when appropriate.
-The company plans to archive all of the data, including the raw video footage,
-in case people try to contest the ticket. All recorded data is also available to the Department of Motor Vehicles.</p>
-
-|  |  |
-|----------|---------|
-| What type of information is shared? |  Vehicle license plate numbers, location and timestamp, video footage |
-| Who is/are the subject of the information? | Vehicles on public roadways, and their owners |
-| Who is the sender of the information? | The vehicle scanning services company |
-| Who are the potential recipients of the information? | <p> Intended: motor vehicle department, law enforcement. Unintended: **???** </p>|
-| What principles govern the collection and transmission of this information? | Drivers implicitly consent by using public roadways, but may not be aware that their vehicle is being scanned. |
-
-<p>Please **list TWO unintended recipients**, and also **how access to the collected and processed data might be designed to minimize transmission to unexpected recipients?**</p>
-</details>
-
-**More practice:** the Practice sections of [Class 10](/class/10#practice), [Class 21](/class/21#practice).
-
-11. <Link id="11" to="#11">Identifying Stakeholders in Problem Formulation</Link> - **Available:** <DateView id="11" item="skills" />
-
-|  |  |
-| -- | -- |
-| **Meets Expectations** | • Complete stakeholder matrix that lists all relevant stakeholders and at least one relevant interest at stake for each stakeholder<br/> • Answer identifies the specified number of conflicts between stakeholder interests/values (e.g., if the task is to identify 2 values conflicts, the answer identifies 2 values conflicts) |
-| **Approaching Expectations** | • If prompted to provide a complete chart, chart fails to identify relevant stakeholders OR fails to identify their relevant interests/values<br/> • Chart does not identify relevant interests<br/> • Identifies some, but fewer than specified number of conflicts between stakeholder interests/values (e.g., if the task is to identify 2 values conflicts, the answer identifies 1 values conflict) |
-
-<details>
-    <summary>Examples</summary>
-    <p>**Sample question**: A university has a cafeteria and collects information about students' dietary restrictions, which may be due to students' health requirements or strongly-held beliefs. Below is a stakeholder matrix:</p>
-
-| Stakeholder | Interest/Value |
-| -- | -- |
-| University budget managers |  |
-| Vegetarians |  |
-|  |  |
-
-<p>FIRST: Complete the stakeholder matrix for cafeteria system design by identifying, and filling in, interests/values that correspond to the listed stakeholders, and, in the third case, by supplying both the stakeholder and the listed interest/value. SECOND: Explain in one or two sentences which (if any) stakeholder interests/values can come into conflict.</p>
-
-<p>**Answer meeting expectations**</p>
-
-| Stakeholder | Interest/Value |
-| -- | -- |
-| University budget managers | minimizing food waste |
-| Vegetarians | having healthy and tasty food options |
-| Meat eaters | having non-vegetarian food options |
-
-<p>The interests of vegetarians and meat eaters could come into conflict because each group wants multiple options of their preferred food type, but the cafeteria can only offer a limited number of options.</p>
-
-<p>**Answer approaching expectations** (incomplete chart, incorrect conflict)</p>
-
-| Stakeholder | Interest/Value |
-| -- | -- |
-| University budget managers | minimizing food waste |
-| Vegetarians | having soda |
-|  |  |
-
-<p>The interests of budget managers and vegetarians could come into conflict if they like the tastes of different types of soda.</p>
-
-</details>
-<details>
- <summary>Practice Problems</summary>
- <p>A rideshare company, Ryde, is developing an AI-powered rider usage prediction system. The system will analyze existing rideshare patterns and proactively adjust fares, increasing charges for customers based on predicted demand. Below is a stakeholder-value matrix.</p>
-
-| Stakeholder | Interest/Value |
-|-------------|---------------|
-| Customers on Ryde | |
-| Drivers on Ryde | |
-| Stakeholder 3 | Revenue Generation |
-
-<p>FIRST: Complete the stakeholder matrix for AI content moderation design by identifying, and filling in, unique values/interests for the stakeholders listed, and, in the third case, by supplying the stakeholder for the value/interest.</p>
-
-<p>SECOND: Explain in one or two sentences which (if any) stakeholder interests/values can **come into conflict**.</p>
-
-</details>
-
-**More practice:** the Practice section of [Class 6](/class/6#practice).
+---
 
 ## Skill Introduction
 

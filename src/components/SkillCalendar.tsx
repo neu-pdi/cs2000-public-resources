@@ -6,6 +6,7 @@ import {
   ONLINE_OH_CSV_URL,
   parseOnlineOfficeHours,
 } from '../data/online-office-hours';
+import { SKILL_COLORS } from '../data/skill-colors';
 import { fetchSheetCsv } from '../utils/sheets';
 
 function isCalLink(item: Lecture | string): item is Lecture {
@@ -214,19 +215,7 @@ export default function SkillCalendar({ data }: { data: CalendarMonth[] }) {
   background-color: color-mix(in srgb, var(--ifm-color-primary) 18%, var(--ifm-background-color));
   box-shadow: inset 0 0 0 2px var(--ifm-color-primary);
 }
-.skill-0 { background-color: #D946EF; }
-.skill-1 { background-color: #FF6B6B; }
-.skill-2 { background-color: #4ECDC4; }
-.skill-3 { background-color: #45B7D1; }
-.skill-4 { background-color: #FFA07A; }
-.skill-5 { background-color: #98D8C8; }
-.skill-6 { background-color: #F7DC6F; }
-.skill-7 { background-color: #BB8FCE; }
-.skill-8 { background-color: #85C1E2; }
-.skill-9 { background-color: #F8B739; }
-.skill-10 { background-color: #52BE80; }
-.skill-11 { background-color: #EC7063; }
-.skill-12 { background-color: #5DADE2; }
+${SKILL_COLORS.map((color, skill) => `.skill-${skill} { background-color: ${color}; }`).join('\n')}
 @media (max-width: 600px) {
   .skill-calendar th {
     padding: 4px 1px;

@@ -90,18 +90,18 @@ Attendance is strongly encouraged, but not required in CS2000. Please do not com
 
 The course will teach the following 12 skills, grading of which will be performed by repeatable (with highest grade taken), on-paper, no-note, assessment that can be scored as "Doesn't meet expectations", "Approaching expectations", or "Meets expectations". Each student will have at least 4 opportunities to master each skill. Beyond the regular 4 opportunities which occur during the semester, as the topics are covered, student may re-attempt 2 skills; such re-attempts can be scheduled on the day of the final exam. See the [Skills](/skills) page for much more detail.
 
-00. Design function signatures, docs, tests
-01. Implement basic functions
-02. Function composition
-03. Construct / Transform Tables
-04. Iteration: Lists
-05. Variable Scope
-06. Structured & Conditional Data
-07. Recursion: Lists
-08. Recursion: Trees
-09. Aliasing & Mutation
-10. Identifying Privacy Issues in Problem Formulation
-11. Identifying Stakeholders in Problem Formulation
+- <SkillBadge skill={0} link /> Design function signatures, docs, tests
+- <SkillBadge skill={1} link /> Implement basic functions
+- <SkillBadge skill={2} link /> Identifying Privacy Issues in Problem Formulation
+- <SkillBadge skill={3} link /> Identifying Stakeholders in Problem Formulation
+- <SkillBadge skill={4} link /> Function composition
+- <SkillBadge skill={5} link /> Construct / Transform Tables
+- <SkillBadge skill={6} link /> Iteration: Lists
+- <SkillBadge skill={7} link /> Variable Scope
+- <SkillBadge skill={8} link /> Structured & Conditional Data
+- <SkillBadge skill={9} link /> Recursion: Lists
+- <SkillBadge skill={10} link /> Recursion: Trees
+- <SkillBadge skill={11} link /> Aliasing & Mutation
 
 ### Assignment Crits {#assignment-crits}
 

@@ -9,6 +9,12 @@
  *
  * Headings that are themselves the content ("Skills: ...", "Reference: ...") get no
  * toggle, since there would be nothing to hide.
+ *
+ * A rule (`---`) just before the next section's heading is left outside the section,
+ * so that it still separates the sections while one is hidden.
+ *
+ * `only`, if given, limits the plugin to the files whose path it matches (the pages
+ * plugin uses it for the Skills page alone).
  */
 
 const SKIP_HEADING = /^(Skills|Reference)\b/;
@@ -20,9 +26,10 @@ function headingText(node: any): string {
     .trim();
 }
 
-export function createCollapsibleSectionsPlugin() {
+export function createCollapsibleSectionsPlugin({ only }: { only?: RegExp } = {}) {
   return function collapsibleSectionsPlugin() {
-    return (tree: any) => {
+    return (tree: any, file: any) => {
+      if (only && !only.test(file?.path ?? '')) return;
       const children: any[] = tree.children ?? [];
       const out: any[] = [];
       let i = 0;
@@ -42,6 +49,8 @@ export function createCollapsibleSectionsPlugin() {
         while (i < children.length) {
           const next = children[i];
           if (next.type === 'heading' && next.depth <= 2) break;
+          const after = children[i + 1];
+          if (next.type === 'thematicBreak' && after?.type === 'heading' && after.depth <= 2) break;
           body.push(next);
           i++;
         }
