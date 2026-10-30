@@ -24,7 +24,8 @@ with the body, even though the body is the part that feels like programming.
 ### Data definition {#data-definition}
 
 What kind of data does the function work on? Until [Class 19](/class/19), we say
-it in words: "a number of pens", or "a row with `month` and `riders` columns".
+it in words: "a temperature in degrees Fahrenheit", or "a row with `time` and
+`amount` columns".
 From then on, we define our own kinds of data, in code, and always follow a data
 definition with a few named examples:
 
@@ -52,19 +53,19 @@ variants. A template is a function named for its kind of data, starting with
 `_`, which marks it as an outline, not a function to call. Each part of the data
 is on a line of its own, with `...` before and after it, since the body's code
 can go around each part, and `return ...` at the end. So the
-[templates below](#templates) all look like this one, for an order amount (\$10
-or less, or more):
+[templates below](#templates) all look like this one, for the weather (a
+temperature below 80 degrees Fahrenheit, or 80 and above):
 
 ```python
-def _order_amount_temp(order_amt: float) -> ...:
-    if order_amt <= 10:
+def _weather_temp(temp_in_f: float) -> ...:
+    if temp_in_f < 80:
         ...
-        order_amt
+        temp_in_f
         ...
         return ...
     else:
         ...
-        order_amt
+        temp_in_f
         ...
         return ...
 ```
@@ -74,14 +75,14 @@ and then used for every function on that kind of data.
 
 ### Signature {#signature}
 
-Now for one function on the data: here, `add_shipping`, on order amounts. Its
+Now for one function on the data: here, `choose_hat`, on the weather. Its
 `def` line: the function's name, the type of each parameter, and the type of its
 result. Work out the types first: the rest of the function depends on them. The
 body is `...` for now, so that the file runs, and the function can already be
 called (PLL says it isn't written yet):
 
 ```python
-def add_shipping(order_amt: float) -> float:
+def choose_hat(temp_in_f: float) -> str:
     ...
 ```
 
@@ -91,8 +92,9 @@ What the function does (not how it does it), for someone who will call it, on th
 first line of the body:
 
 ```python
-def add_shipping(order_amt: float) -> float:
-    """add shipping costs to order total: $4 for $10 or less, $8 above"""
+def choose_hat(temp_in_f: float) -> str:
+    """the hat to wear at temp_in_f degrees Fahrenheit: a sun hat at 80 or
+    above, otherwise none"""
     ...
 ```
 
@@ -103,16 +105,16 @@ they should give. Choose inputs that cover each case of the data (each interval,
 each variant), and its edges:
 
 ```python
-def test_add_shipping():
-    assert add_shipping(10) == 10 + 4
-    assert add_shipping(3.95) == 3.95 + 4
-    assert add_shipping(20) == 20 + 8
-    assert add_shipping(10.01) == 10.01 + 8
+def test_choose_hat():
+    assert choose_hat(80) == "sun hat"
+    assert choose_hat(79.5) == "no hat"
+    assert choose_hat(50) == "no hat"
+    assert choose_hat(95) == "sun hat"
 ```
 
 - Write the expected outputs by working them out (or writing the computation, as
-  `10 + 4`), **never** by running the function: a wrong body would then make the
-  tests agree with it.
+  `0 * 9/5 + 32`), **never** by running the function: a wrong body would then
+  make the tests agree with it.
 - Since the body is `...`, the tests already run, and fail. A mistake in an
   example shows up now, before any code depends on it.
 - Some assignments, and some classes, give you an `#examplar` line to put at the
@@ -129,12 +131,13 @@ names a part is a reminder: use the part, or delete the line. Any `...` left in
 the function stops it with "not written yet" when it runs.
 
 ```python
-def add_shipping(order_amt: float) -> float:
-    """add shipping costs to order total: $4 for $10 or less, $8 above"""
-    if order_amt <= 10:
-        return order_amt + 4
+def choose_hat(temp_in_f: float) -> str:
+    """the hat to wear at temp_in_f degrees Fahrenheit: a sun hat at 80 or
+    above, otherwise none"""
+    if temp_in_f < 80:
+        return "no hat"
     else:
-        return order_amt + 8
+        return "sun hat"
 ```
 
 ### Test and revise {#test-and-revise}
@@ -158,9 +161,9 @@ _From [Class 4](/class/4)._ A number (or string, or image) has one part, so the
 template is just the parameter: the body combines it with that kind's operations.
 
 ```python
-def _earth_weight_temp(earth_weight: float) -> ...:
+def _celsius_temp(celsius: float) -> ...:
     ...
-    earth_weight
+    celsius
     ...
     return ...
 ```
@@ -169,9 +172,8 @@ def _earth_weight_temp(earth_weight: float) -> ...:
 
 _From [Class 5](/class/5)._ A boolean is `True` or `False`, so its template is an
 `if` with two branches. A number split into intervals has one branch per
-interval, with the conditions taken from the intervals' edges: with the third
-charge from Class 5 (\$10 or less, up to \$30, and more), an order amount has
-three. The Examples step has a test in each interval, and at each edge.
+interval, with the conditions taken from the intervals' edges: with the winter
+hat from Class 5 (below 50, below 80, and 80 or above), the weather has three. The Examples step has a test in each interval, and at each edge.
 
 ```python
 def _bool_temp(b: bool) -> ...:
@@ -180,20 +182,20 @@ def _bool_temp(b: bool) -> ...:
     else:
         return ...
 
-def _order_amount_temp(order_amt: float) -> ...:
-    if order_amt <= 10:
+def _weather_temp(temp_in_f: float) -> ...:
+    if temp_in_f < 50:
         ...
-        order_amt
+        temp_in_f
         ...
         return ...
-    elif order_amt <= 30:
+    elif temp_in_f < 80:
         ...
-        order_amt
+        temp_in_f
         ...
         return ...
     else:
         ...
-        order_amt
+        temp_in_f
         ...
         return ...
 ```
@@ -204,14 +206,15 @@ edges?
 ### Rows {#template-rows}
 
 _From [Class 8](/class/8)._ A row's parts are its columns, so the template has a
-line for each column the function can use:
+line for each column the function can use. For a coffee cart's orders, with a
+`time` and an `amount`:
 
 ```python
-def _shuttle_row_temp(r: dict) -> ...:
+def _order_row_temp(r: dict) -> ...:
     ...
-    r["month"]
+    r["time"]
     ...
-    r["riders"]
+    r["amount"]
     ...
     return ...
 ```
@@ -271,11 +274,11 @@ making a new one, summarizes a column instead (`t.sum`, `t.mean`, a chart), and
 ### A fixed set of strings {#template-strings}
 
 _From [Class 11](/class/11)._ A string that is one of a few known values (a
-discount code, a kind of delivery) has one branch per value, and an `else` for
+promo code, a kind of delivery) has one branch per value, and an `else` for
 anything else, which is what cleaning data needs:
 
 ```python
-def _discount_code_temp(s: str) -> ...:
+def _promo_code_temp(s: str) -> ...:
     if s == "":
         return ...
     elif s == "none":
@@ -364,52 +367,61 @@ interval template again, with the cases taken from the data definition:
 
 <!-- python setup
 @dataclass
-class Boa:
-    name: str
-    length: float
-
-@dataclass
-class Armadillo:
-    name: str
-    liveness: bool
-
-Animal = Boa | Armadillo
-
-@dataclass
-class NoInfo:
+class Cash:
     pass
 
 @dataclass
-class Person:
-    name: str
-    birthyear: int
-    eye: str
-    mother: "AncTree"
-    father: "AncTree"
-
-AncTree = NoInfo | Person
+class Credit:
+    card_number: str
+    expiry: str
 
 @dataclass
-class Account:
+class Checking:
+    bank_account: str
+    routing: str
+    check_number: int
+
+PaymentMethod = Cash | Credit | Checking
+
+@dataclass
+class Spring:
+    pass
+
+@dataclass
+class River:
+    name: str
+    length: float
+    left: "RiverTree"
+    right: "RiverTree"
+
+RiverTree = Spring | River
+
+@dataclass
+class LibraryBook:
     id: int
-    balance: float
+    title: str
+    copies: int
 -->
 
 ```python
-def _animal_temp(a: Animal) -> ...:
-    match a:
-        case Boa(n, l):
+def _payment_method_temp(p: PaymentMethod) -> ...:
+    match p:
+        case Cash():
+            return ...
+        case Credit(cn, exp):
             ...
-            n
+            cn
             ...
-            l
+            exp
             ...
             return ...
-        case Armadillo(n, live):
+        case Checking(acc, rout, num):
             ...
-            n
+            acc
             ...
-            live
+            rout
+            ...
+            num
             ...
             return ...
 ```
@@ -418,8 +430,8 @@ def _animal_temp(a: Animal) -> ...:
 
 _From [Classes 21 to 24](/class/22)._ A `case` per variant, its fields named, and a
 recursive call on each field of the same type. For a list (first and rest), a
-`NumList`, and a tree, the rule is the same; only the number of recursive fields
-changes:
+stack of pancakes, and a tree, the rule is the same; only the number of
+recursive fields changes:
 
 ```python
 def _list_temp(lst: list) -> ...:
@@ -434,21 +446,19 @@ def _list_temp(lst: list) -> ...:
             ...
             return ...
 
-def _anc_tree_temp(t: AncTree) -> ...:
+def _river_tree_temp(t: RiverTree) -> ...:
     match t:
-        case NoInfo():
+        case Spring():
             return ...
-        case Person(n, y, e, m, f):
+        case River(n, l, left, right):
             ...
             n
             ...
-            y
+            l
             ...
-            e
+            _river_tree_temp(left)
             ...
-            _anc_tree_temp(m)
-            ...
-            _anc_tree_temp(f)
+            _river_tree_temp(right)
             ...
             return ...
 ```
@@ -463,13 +473,15 @@ examples are Setup, Call, and Check, and its template ends by setting the fields
 it changes, rather than with `return ...`:
 
 ```python
-def _account_temp(ac: Account) -> None:
+def _library_book_temp(b: LibraryBook) -> None:
     ...
-    ac.id
+    b.id
     ...
-    ac.balance
+    b.title
     ...
-    ac.balance = ...
+    b.copies
+    ...
+    b.copies = ...
 ```
 
 ### Pandas and PLL tables {#pandas}

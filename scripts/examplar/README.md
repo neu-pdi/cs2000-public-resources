@@ -5,9 +5,9 @@ class page links to with an `#examplar` line:
 
 | Source | Bundle | Used in |
 | --- | --- | --- |
-| `class5-add-shipping/` | `static/examplar/class5-add-shipping.json` | Class 5 |
+| `class5-choose-hat/` | `static/examplar/class5-choose-hat.json` | Class 5 |
 | `class10-apply-discounts/` | `static/examplar/class10-apply-discounts.json` | Class 10 |
-| `class22-contains-3/` | `static/examplar/class22-contains-3.json` | Class 22 |
+| `class22-has-blueberry/` | `static/examplar/class22-has-blueberry.json` | Class 22 |
 
 The pages link to the copy on `main` on GitHub, as they do for the support
 CSVs, so a bundle only works from the notes once it is pushed there.
@@ -26,8 +26,8 @@ staff_tests.py                our own tests, for --verify
 ```
 
 - No `#level` lines. The bundle's code runs in the student's file, so a
-  function can use the student's data definitions (`NlEmpty`, in
-  `class22-contains-3`) and PLL's libraries (`table`, in
+  function can use the student's data definitions (`Plate`, in
+  `class22-has-blueberry`) and PLL's libraries (`table`, in
   `class10-apply-discounts`).
 - `staff_tests.py` runs without a level, so it has to import what a level
   would give it: `from dataclasses import dataclass`.
