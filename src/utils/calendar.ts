@@ -1,18 +1,18 @@
 import { calendarData, type CalendarDay } from '../data/calendar-data';
 
-type CalendarItem = keyof Pick<CalendarDay, 'lectures' | 'lab' | 'homework'>;
+type CalendarItem = keyof Pick<CalendarDay, 'lectures' | 'homework'>;
 
 /**
  * Gets the latest document ID for the given calendar item
  * 
- * @param item The item to get the latest document ID for (lectures, lab, homework)
+ * @param item The item to get the latest document ID for (lectures, homework)
  * @returns The latest document ID
  * 
  * @author Logan Gill
  */
 export function getDocumentId(item: CalendarItem): string {
   const href = getLatestCalendarHref(item);
-  const fallback = item === 'lectures' ? 'l0-summary' : item === 'lab' ? '0' : '1';
+  const fallback = item === 'lectures' ? 'l0-summary' : '1';
   if (isCalendarExpired()) {
     return fallback;
   }
@@ -62,7 +62,7 @@ function getDocumentIdFromHref(href: string | undefined, fallback: string): stri
 /**
  * Gets the latest href for the given calendar item
  * 
- * @param item The item to get the latest href for (lectures, lab, homework)
+ * @param item The item to get the latest href for (lectures, homework)
  * @returns The latest href, or undefined if not found
  * 
  * @author Logan Gill
@@ -78,13 +78,13 @@ function getLatestCalendarHref(item: CalendarItem): string | undefined {
     return calendarDay.lectures?.find(({ href }) => href.startsWith('/class/'))?.href;
   }
 
-  return item === 'lab' ? calendarDay.lab?.href : calendarDay.homework?.href;
+  return calendarDay.homework?.href;
 }
 
 /**
  * Gets the latest calendar day for the given calendar item
  * 
- * @param item The item to get the latest calendar day for (lectures, lab, homework)
+ * @param item The item to get the latest calendar day for (lectures, homework)
  * @returns The latest calendar day, or undefined if not found
  * 
  * @author Logan Gill
@@ -140,11 +140,11 @@ function getLatestCalendarDay(item: CalendarItem): CalendarDay | undefined {
         return calendarDay.lectures?.some(({ href }) => href.startsWith('/class/')) ?? false;
       }
 
-      return item === 'lab' ? calendarDay.lab !== undefined : calendarDay.homework !== undefined;
+      return calendarDay.homework !== undefined;
     })?.calendarDay;
 }
 
-export type DateItem = keyof Pick<CalendarDay, 'lectures' | 'lab' | 'homework' | 'skills'>;
+export type DateItem = keyof Pick<CalendarDay, 'lectures' | 'homework' | 'skills'>;
 
 export interface SkillDateRange {
     start: Date;

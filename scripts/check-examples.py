@@ -5,7 +5,7 @@ Run from the repository root, with the PLL command line available:
     PLL="npx pll-python" python3 scripts/check-examples.py [options] [PAGE ...]
 
 (PLL defaults to `npx pll-python`.) With no PAGEs, every page is checked:
-the ones in class/, lab/, homework/, practice/, pll/, and src/pages/. Each problem is reported at its line in the page, e.g.
+the ones in class/, homework/, pll/, and src/pages/. Each problem is reported at its line in the page, e.g.
 
     class/5.md:212: Reassignment: `pens` is already assigned ...
 
@@ -85,7 +85,7 @@ import tempfile
 import textwrap
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SECTIONS = ["class", "lab", "homework", "practice", "pll", os.path.join("src", "pages")]
+SECTIONS = ["class", "homework", "pll", os.path.join("src", "pages")]
 PLL = shlex.split(os.environ.get("PLL", "npx pll-python"))
 TIMEOUT = 180
 

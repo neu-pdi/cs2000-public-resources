@@ -6,7 +6,6 @@ import UpcomingAnnotation from '../UpcomingAnnotation/UpcomingAnnotation';
 
 interface CalendarPageFrontMatter {
     class_number?: number;
-    lab_number?: number;
     homework_number?: number;
 }
 
@@ -82,12 +81,6 @@ export function ClassDate() {
 
         <UpcomingAnnotation id={String(class_number)} />
     </>);
-}
-
-export function LabDate() {
-    const { frontMatter } = useDoc();
-    const { lab_number } = frontMatter as DatePageFrontMatter;
-    return <DateView id={String(lab_number)} item="lab" />;
 }
 
 export function HomeworkDate() {

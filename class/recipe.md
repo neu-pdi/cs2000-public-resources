@@ -23,7 +23,7 @@ with the body, even though the body is the part that feels like programming.
 
 ### Data definition {#data-definition}
 
-What kind of data does the function work on? Until [Class 19](/class/19), we say
+What kind of data does the function work on? Until [Class 20](/class/20), we say
 it in words: "a temperature in degrees Fahrenheit", or "a row with `time` and
 `amount` columns".
 From then on, we define our own kinds of data, in code, and always follow a data
@@ -321,7 +321,7 @@ takes an element and gives its new value.
 
 ### `for` loops {#template-loops}
 
-_From [Class 15](/class/15)._ A loop visits each element of a list, and builds the
+_From [Class 16](/class/16)._ A loop visits each element of a list, and builds the
 answer as it goes, starting from the answer for an empty list:
 
 ```python
@@ -344,7 +344,7 @@ negative, whether all are short).
 
 ### Structured data {#template-fields}
 
-_From [Class 19](/class/19)._ A dataclass's parts are its fields, so the template
+_From [Class 20](/class/20)._ A dataclass's parts are its fields, so the template
 has a line for each:
 
 ```python
@@ -361,7 +361,7 @@ def _book_record_temp(b: BookRecord) -> ...:
 
 ### Conditional data {#template-variants}
 
-_From [Class 20](/class/20)._ A union's parts are its variants, so the template is
+_From [Class 21](/class/21)._ A union's parts are its variants, so the template is
 a `match` with one `case` per variant, naming each variant's fields. It is the
 interval template again, with the cases taken from the data definition:
 
@@ -428,7 +428,7 @@ def _payment_method_temp(p: PaymentMethod) -> ...:
 
 ### Recursive data {#template-recursive}
 
-_From [Classes 21 to 24](/class/22)._ A `case` per variant, its fields named, and a
+_From [Classes 22 to 25](/class/23)._ A `case` per variant, its fields named, and a
 recursive call on each field of the same type. For a list (first and rest), a
 stack of pancakes, and a tree, the rule is the same; only the number of
 recursive fields changes:
@@ -467,7 +467,7 @@ When you copy one into a function, rename the recursive calls too.
 
 ### Data that changes {#template-mutation}
 
-_From [Class 25](/class/25)._ A function that changes its input, rather than making
+_From [Class 26](/class/26)._ A function that changes its input, rather than making
 a new value: its result type is `None`, its docstring says what changes, its
 examples are Setup, Call, and Check, and its template ends by setting the fields
 it changes, rather than with `return ...`:
@@ -486,7 +486,7 @@ def _library_book_temp(b: LibraryBook) -> None:
 
 ### Pandas and PLL tables {#pandas}
 
-_From [Classes 26 and 27](/class/26)._ pandas is too large to have one template.
+_From [Classes 27 and 28](/class/27)._ pandas is too large to have one template.
 Instead, for each PLL table operation, there is a pandas way to do the same job:
 
 | PLL table | pandas |

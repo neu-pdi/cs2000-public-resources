@@ -241,7 +241,7 @@ You'll build it in several steps:
 
 ## Live
 
-Telephone, in groups of four, as in Classes 5, 14 and 20: a small
+Telephone, in groups of four, as in Classes 5, 14 and 21: a small
 recommender, in four parts, each changing what came before. Everyone does part
 1 on their own sheet, then passes it on, and does the next part on the sheet
 they receive.

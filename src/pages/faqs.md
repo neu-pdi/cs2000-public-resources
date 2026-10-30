@@ -29,10 +29,10 @@ Check out our [regrade request policy](/syllabus/#regrade-requests) for info on 
 Assignments are due on Wednesday at midnight, specifically Wednesdays at 11:59 UTC-12
 
 ### How are assignments graded?
-Assignments are graded based on the Assignment Chats, which occur during lab with a TA
+Assignments are graded based on the [Assignment Crits](/syllabus/#assignment-crits), which occur during lab
 
 ### I see an Autograder that gave me a grade. Does that count as part of my score?
-No! Your grade for an assignment is based on the Assignment chat, *not the Autograder*. The Autograder is meant to provide feedback
+No! Your grade for an assignment is based on the Assignment Crit, *not the Autograder*. The Autograder is meant to provide feedback
 
 ### I don't agree with a grade I got, what do I do?
 Check out our [regrade request policy](/syllabus/#regrade-requests) for info on how to submit a regrade request for an assignment. You will have 7 days to do so. Keep in mind abusing the regrade request system may result in you losing the privilege, so please only submit a regrade if you genuinly believe there was a mistake and *NOT* just because you think you deserve a better score or get more points

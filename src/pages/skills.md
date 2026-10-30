@@ -5,6 +5,7 @@ description: Skills
 hide_table_of_contents: true
 ---
 
+import Link from '@docusaurus/Link';
 import DateView from '@site/src/components/DateView/DateView';
 import AssessmentHours from '@site/src/components/AssessmentHours';
 import styles from './index.module.css';
@@ -27,7 +28,7 @@ during Assessment Hours. Assessment Hours are held at the following times
 
 For more info on Assessment Hours, and to see what skills are available each week, check out the [home page](/#assessment-hours).
 
-0. <a id="0" href="#0">Design Function Signatures, Docs, Tests</a> - **Available:** <DateView id="0" item="skills" />
+0. <Link id="0" to="#0">Design Function Signatures, Docs, Tests</Link> - **Available:** <DateView id="0" item="skills" />
    |  |  |
    | -- | -- |
    | **Meets Expectations** | • Correct signature, with types<br/>• Docstring that describes behavior, doesn't repeat the signature's types.<br/>• A few (2+) correct, meaningfully different tests<br/>• minor typos are okay |
@@ -69,7 +70,9 @@ def test_nm_square():
  <p>Design the signature, docstring, and tests for a function `check_year`, that takes a year as input, and returns "Past", "Current", or "Future" depending on the year. NOTE: you should not implement the function!</p>
 </details>
 
-1. <a id="1" href="#1">Implement Basic Functions</a> - **Available:** <DateView id="1" item="skills" />
+**More practice:** the Practice sections of [Class 4](/class/4#practice), [Class 5](/class/5#practice), [Class 8](/class/8#practice), [Class 9](/class/9#practice), [Class 10](/class/10#practice), [Class 15](/class/15#practice).
+
+1. <Link id="1" to="#1">Implement Basic Functions</Link> - **Available:** <DateView id="1" item="skills" />
    |  |  |
    | -- | -- |
    | **Meets Expectations** | • Well-formatted, correct implementation:<br/>    • may include numbers, strings, `if` (NOT images)<br/>    • minor typos errors are okay |
@@ -134,7 +137,9 @@ def test_check_year():
 
 </details>
 
-2. <a id="2" href="#2">Function Composition</a> - **Available:** <DateView id="2" item="skills" />
+**More practice:** the Practice sections of [Class 4](/class/4#practice), [Class 5](/class/5#practice), [Class 8](/class/8#practice), [Class 9](/class/9#practice), [Class 10](/class/10#practice), [Class 15](/class/15#practice).
+
+2. <Link id="2" to="#2">Function Composition</Link> - **Available:** <DateView id="2" item="skills" />
    |  |  |
    | -- | -- |
    | **Meets Expectations** | • Helper function and main function each have a signature (with types), docstring, and at least one test<br/>• Helper correctly performs its one task<br/>• Main function calls the helper (rather than repeating its logic), passing appropriate arguments and using the result to solve the problem<br/>• minor typos are okay |
@@ -187,7 +192,9 @@ def test_room_wall_area():
  <p>Design a helper function <code>letter_grade</code> that takes a numeric score and returns <code>"A"</code> for scores of 90 or above, <code>"B"</code> for 80 to 89, <code>"C"</code> for 70 to 79, and <code>"F"</code> otherwise. Then, design a function <code>grade_report</code> that takes a student's name and score and returns a string like <code>"Ana: B"</code>. <code>grade_report</code> must use <code>letter_grade</code>.</p>
 </details>
 
-03. <a id="3" href="#3">Construct / Transform Tables</a> - **Available:** <DateView id="3" item="skills" />
+**More practice:** the Practice sections of [Class 5](/class/5#practice), [Class 9](/class/9#practice), [Class 10](/class/10#practice).
+
+03. <Link id="3" to="#3">Construct / Transform Tables</Link> - **Available:** <DateView id="3" item="skills" />
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Function designed has signature (with types), docstring, and at least one test<br/>• Function uses correct table function (skill covers `filter`, `add_column`, and `transform_column`)<br/>• Row helper does what is expected, whether defined with `lambda` or named |
@@ -249,7 +256,10 @@ and false otherwise.</p>
 <p>Design a function `find_drought_risks` that takes a table with "region", "rainfall-2023" and "rainfall-2024" columns
 and returns a new table containing only those regions where rainfall amounts decreased from 2023 to 2024.</p>
 </details>
-04. <a id="4" href="#4">Iteration: Lists</a> - **Available:** <DateView id="4" item="skills" />
+
+**More practice:** the Practice sections of [Class 7](/class/7#practice), [Class 8](/class/8#practice), [Class 9](/class/9#practice), [Class 10](/class/10#practice), [Class 11](/class/11#practice), [Class 12](/class/12#practice), [Class 13](/class/13#practice).
+
+04. <Link id="4" to="#4">Iteration: Lists</Link> - **Available:** <DateView id="4" item="skills" />
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Uses a `for` loop properly, drawing elements from the list<br/>• Mutates a single variable within the loop to correctly accumulate the result<br/>• Returns the final result after the loop |
@@ -307,7 +317,10 @@ def test_list_of_squares():
    <summary>Practice Problem 2</summary>
    <p>Design a function <code>all_increasing</code> that takes a list of numbers, and returns <code>True</code> if each number is greater than the preceding number, <code>False</code> otherwise. It should return <code>True</code> for the empty list. You must use a <code>for</code> loop, rather than a built in list function or recursion.</p>
 </details> 
-05. <a id="5" href="#5">Variable Scope</a> - **Available:** <DateView id="5" item="skills" />
+
+**More practice:** the Practice sections of [Class 16](/class/16#practice), [Class 17](/class/17#practice).
+
+05. <Link id="5" to="#5">Variable Scope</Link> - **Available:** <DateView id="5" item="skills" />
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Output of given code, that uses variables, defined locally, in functions, globally, etc, is correct<br/>• Explanation of behavior, including global keyword if needed, is correct |
@@ -412,7 +425,9 @@ print("Global value:", value)
 ```
 </details>
 
-06. <a id="6" href="#6">Structured & Conditional Data</a> - **Available:** <DateView id="6" item="skills" />
+**More practice:** the Practice sections of [Class 18](/class/18#practice), [Class 19](/class/19#practice).
+
+06. <Link id="6" to="#6">Structured & Conditional Data</Link> - **Available:** <DateView id="6" item="skills" />
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Uses `@dataclass` classes for the variants as needed, fields with appropriate type annotations<br/>• Function uses either field access or `match` as needed<br/>• Function has signature (with types), doc string, and tests |
@@ -489,7 +504,10 @@ def test_is_strong():
  <summary>Practice Problem 2</summary>
     <p>Design a data definition for Book that can be either rating with title, stars, and number of reviews, or sales ranking with title and position. Then, write a function <code>is_popular</code> that returns <code>True</code> if the book is a rating with at least 500 reviews, or a sales ranking with position less than 500.</p>
 </details>
-07. <a id="7" href="#7">Recursion: Lists</a> - **Available:** <DateView id="7" item="skills" />
+
+**More practice:** the Practice sections of [Class 20](/class/20#practice), [Class 21](/class/21#practice).
+
+07. <Link id="7" to="#7">Recursion: Lists</Link> - **Available:** <DateView id="7" item="skills" />
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Function has appropriate signature (with types), doc string, and tests<br/>• Function uses `match` to handle the empty (`[]`) case and the first-and-rest (`[first, *rest]`) case<br/>• In the first-and-rest case, calls function recursively on rest of list appropriately |
@@ -542,7 +560,9 @@ def test_make_positive():
     <p>Using recursion, design a function <code>build_string</code> that takes a list of strings and returns a single large string containing the original strings concatenated together in order.</p>
 </details>
 
-08. <a id="8" href="#8">Recursion: Trees</a> - **Available:** <DateView id="8" item="skills" />
+**More practice:** the Practice sections of [Class 22](/class/22#practice), [Class 23](/class/23#practice).
+
+08. <Link id="8" to="#8">Recursion: Trees</Link> - **Available:** <DateView id="8" item="skills" />
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Function has appropriate signature (with types), doc string, and tests<br/>• Function uses `match` to handle base case and recursive case<br/>• In recursive case, calls function recursively on subtrees appropriately |
@@ -598,7 +618,9 @@ def test_count_internal_nodes():
 
 </details>
 
-9. <a id="9" href="#9">Aliasing & Mutation</a> - **Available:** <DateView id="9" item="skills" />
+**More practice:** the Practice sections of [Class 24](/class/24#practice), [Class 25](/class/25#practice).
+
+9. <Link id="9" to="#9">Aliasing & Mutation</Link> - **Available:** <DateView id="9" item="skills" />
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Output of given code that uses mutation of values like lists, aliasing, etc, is correct<br/>• Explanation of behavior is correct |
@@ -712,7 +734,10 @@ print("Same object?", my_book is updated_book)
 
 </details>
     
-10. <a id="10" href="#10">Identifying Privacy Issues in Problem Formulation</a> - **Available:** <DateView id="10" item="skills" />
+
+**More practice:** the Practice section of [Class 26](/class/26#practice).
+
+10. <Link id="10" to="#10">Identifying Privacy Issues in Problem Formulation</Link> - **Available:** <DateView id="10" item="skills" />
     |  |  |
     | -- | -- |
     | **Meets Expectations** | • Privacy analysis chart is complete and each entry is correct<br/> • Identify named privacy issue in a new context<br/> • Proposed mitigation strategy is appropriate given context |
@@ -761,7 +786,9 @@ in case people try to contest the ticket. All recorded data is also available to
 <p>Please **list TWO unintended recipients**, and also **how access to the collected and processed data might be designed to minimize transmission to unexpected recipients?**</p>
 </details>
 
-11. <a id="11" href="#11">Identifying Stakeholders in Problem Formulation</a> - **Available:** <DateView id="11" item="skills" />
+**More practice:** the Practice sections of [Class 10](/class/10#practice), [Class 21](/class/21#practice).
+
+11. <Link id="11" to="#11">Identifying Stakeholders in Problem Formulation</Link> - **Available:** <DateView id="11" item="skills" />
 
 |  |  |
 | -- | -- |
@@ -817,11 +844,12 @@ in case people try to contest the ticket. All recorded data is also available to
 
 </details>
 
+**More practice:** the Practice section of [Class 6](/class/6#practice).
 
 ## Skill Introduction
 
 Skills will be introduced in certain weeks (and may be re-inforced in later
-weeks), via class, practice, labs, and HW. Each of these will be marked with what skill is being introduced or reinforced by the material.
+weeks), via class, practice, and HW. Each of these will be marked with what skill is being introduced or reinforced by the material.
 
 ## Skill Assessment
 

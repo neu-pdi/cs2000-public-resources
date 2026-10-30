@@ -6,7 +6,6 @@ import { getChakraThemeSyncPlugin } from './src/plugins/chakra-theme-sync';
 import { createCollapsibleSectionsPlugin } from './src/plugins/collapsible-sections';
 import { createVariableSubstitutionPlugin } from './src/plugins/variable-substitution';
 import { oneDarkTheme, oneLightTheme } from './src/theme/one-dark-themes';
-import { getDocumentId } from './src/utils/calendar';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -70,9 +69,11 @@ const config: Config = {
   projectName: 'cs2000-public-resources', // Usually your repo name.
 
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
   markdown: {
     mermaid: true,
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
   },
   themes: ['@docusaurus/theme-mermaid'],
 
@@ -120,26 +121,6 @@ const config: Config = {
         path: 'homework',
         sidebarPath: './sidebars/homework.ts',
         routeBasePath: 'homework',
-        remarkPlugins: [createVariableSubstitutionPlugin(dcicDomain)],
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'lab',
-        path: 'lab',
-        sidebarPath: './sidebars/lab.ts',
-        routeBasePath: 'lab',
-        remarkPlugins: [createVariableSubstitutionPlugin(dcicDomain)],
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'practice',
-        path: 'practice',
-        sidebarPath: './sidebars/practice.ts',
-        routeBasePath: 'practice',
         remarkPlugins: [createVariableSubstitutionPlugin(dcicDomain)],
       },
     ],
@@ -201,20 +182,6 @@ const config: Config = {
           position: 'left',
           label: 'Homework',
           docsPluginId: 'homework',
-        },
-        {
-          to: '/current-lab/',
-          activeBasePath: '/lab',
-          position: 'left',
-          label: 'Labs',
-          docsPluginId: 'lab',
-        },
-        {
-          type: 'doc',
-          docId: getDocumentId('homework'),
-          position: 'left',
-          label: 'Extra Practice',
-          docsPluginId: 'practice',
         },
         {
           position: 'left',

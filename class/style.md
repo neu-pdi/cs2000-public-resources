@@ -15,4 +15,4 @@ Programs are generally written once, read many times, and edited over and over a
 
 For Python programs, we follow the style guide conventions outlined at [https://peps.python.org/pep-0008/](https://peps.python.org/pep-0008/).
 
-Significant violations of this guide may result in deductions the [Assignment Chats](/syllabus#assignment-chats) for this assignment.
+Significant violations of this guide may count against you in the [Assignment Crit](/syllabus#assignment-crits) for that assignment.

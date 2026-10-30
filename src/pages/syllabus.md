@@ -18,15 +18,15 @@ There are no formal quizzes or exams in this class, though the skill assessments
 
 #### Classes
 
-Each class period (of CS2000) has a **Notes** section, at the top of that day's page, that you are **expected to review _before_ class**. During the class we will briefly review the new material that was covered in the notes (but, in much less depth — it is not a substitute for reviewing the notes), and then the majority of class will be dedicated to working with classmates, assisted by your instructor, on exercises related to the new material.
+Each class period (of CS2000) has a page, in three parts. Its **Notes**, at the top, you are **expected to review _before_ class** (only Class 1's are read after it): class time doesn't repeat them, but builds on them. Its **Live** section says briefly what happens in class, which changes from day to day: for example, worksheets on paper, alone or with a partner; tracing programs by hand; designing a function in turns with a small group; practice crits; short lectures on tricky ideas; and predicting what code will do, then arguing for your answer. Most of the time, you will be working with classmates, assisted by your instructor. Its **Practice** is for after class: more problems on that day's material, to do on your own (the [Skills](/skills) page lists the Practice that goes with each skill).
 
 #### Homeworks
 
-There will also be **weekly homework** assignments. The purpose of these assignments, which are half programming practice and half open ended projects, is to give you hands-on experience with the course material. They will both teach you the skills used for the **skill assessments**, and are the subject of [Assignment Chats](/syllabus#assignment-chats) during lab, which are the only assessment that is done on them. 
+There will also be **weekly homework** assignments. The purpose of these assignments, which are half programming practice and half open ended projects, is to give you hands-on experience with the course material. They will both teach you the skills used for the **skill assessments**, and are the subject of [Assignment Crits](/syllabus#assignment-crits) in lab, which are the only assessment that is done on them. 
 
 #### Labs
 
-The lab period (CS2001) will include a set of exercises to be done with a partner in your lab section, guided by those running the lab (TAs or instructors). In addition to working through the lab exercises, you will also do [Assignment Chats](/syllabus#assignment-chats) each week, where you individually will present work done at home to TAs. Grading of Assignment Chats forms part of your final grade, and lab attendance is required to do them. 
+The lab period (CS2001) is for [Assignment Crits](/syllabus#assignment-crits): each week, you present the homework you submitted that Wednesday to a panel of classmates, and are on the panel for theirs. Grading of Assignment Crits forms part of your final grade, and lab attendance is required to do them.
 
 Students can register for any CS 2001 lab section that is on their campus with available seats! Students must stick to the lab they registered for and cannot go to other labs if they miss their scheduled one.
 
@@ -34,7 +34,7 @@ Students can register for any CS 2001 lab section that is on their campus with a
 
 There are three primary sources of communication for this course:
 
-1. This website. This is where you will find policies, homework assignments, lab assignments, practice material, notes from each day of class.
+1. This website. This is where you will find policies, homework assignments, and the notes and practice for each day of class.
 2. [Pawtograder](https://pawtograder.khoury.northeastern.edu/). This is where you will find links to start your homework assignments / projects, and where you will see all grades (including for the on-paper skill assessments). 
 3. Discord. Please join at [https://discord.gg/GaXQSPDyYz](https://discord.gg/GaXQSPDyYz). Note you must set your Display Name for the server to your full name before you will be given access to private course channels. This will be a place for any discussions that are not direct questions about homework. Discord will also be used for lab communication and for announcements about the course. It is also the place where you will ask questions online about homework, and where you will do online office hours.
 
@@ -61,16 +61,16 @@ The only software you will need is a web browser (and a computer or tablet that 
 
 All homework assignments / project checkpoints will be due Anywhere-on-earth on Wednesday (i.e., if it's still Wednesday in some timezone, you are good).
 
-Each homework assignment forms the material used for the [Assignment Chat](#assignment-chats) that occurs during the lab following the deadline of that assignment; the only grading of homework assignments is via that conversation. While you will see grades in the Pawtograder gradebook, you will not get any written feedback on assignments there, and the results of any autograders that occur are just to help you improve your programs; they do not count towards any part of your grade. 
+Each homework assignment forms the material used for the [Assignment Crit](#assignment-crits) that occurs during the lab following the deadline of that assignment; the only grading of homework assignments is via that presentation. While you will see grades in the Pawtograder gradebook, you will not get any written feedback on assignments there, and the results of any autograders that occur are just to help you improve your programs; they do not count towards any part of your grade. 
 
-If you turn in work late, it can contribute to a later assignment chat in the case of the project. While this late work on a homework assignment may have improved your understanding, the actual material used for the [Assignment Chat](#assignment-chats) will be whatever was turned in by the deadline. **If you did not turn anything in by the deadline, you will receive no credit for the Assignment Chat.**
+If you turn in work late, it can contribute to a later crit in the case of the project. While this late work on a homework assignment may have improved your understanding, the actual material used for the [Assignment Crit](#assignment-crits) will be whatever was turned in by the deadline. **If you did not turn anything in by the deadline, you will receive no credit for your presentation in that crit.**
 
 ### Regrade Requests
 
 If you believe a mistake was made in the grading of a Skill Assessment, or if you'd like to understand better what you got wrong,
 you should request an in-person meeting to go over it.
 
-If you think an Assignment Chat or Pairing Session was misgraded, you have 7 days from when the grade was released to make a regrade request on Pawtograder.
+If you think an Assignment Crit or Pairing Session was misgraded, you have 7 days from when the grade was released to make a regrade request on Pawtograder.
 Abuse of the regrade request mechanism may result in less of an ability to request regrades.
 
 ### Office Hours
@@ -84,7 +84,7 @@ Do NOT send any screenshots or snippets of your homework programming exercises i
 
 ### Attendance
 
-Attendance is strongly encouraged, but not required in CS2000. Please do not come to class when you're sick. We'd much rather you stay home and take care of yourself. If you need to stay home and miss class, no need to notify us in advance. You are still responsible for completing assigned work and keeping up with content that you may have missed due to an absence. The course website describes the classwork for each day, available for review. Feel free to stop by instructor office hours with any questions or help with the missed classwork, or post questions on Discord.
+Attendance is strongly encouraged, but not required in CS2000. Please do not come to class when you're sick. We'd much rather you stay home and take care of yourself. If you need to stay home and miss class, no need to notify us in advance. You are still responsible for completing assigned work and keeping up with content that you may have missed due to an absence. Each class's page summarizes what happened in class, in its Live section, and its Practice is the way to catch up on that day's material. Feel free to stop by instructor office hours with any questions or help with the missed classwork, or post questions on Discord.
 
 ### Skills
 
@@ -103,21 +103,19 @@ The course will teach the following 12 skills, grading of which will be performe
 10. Identifying Privacy Issues in Problem Formulation
 11. Identifying Stakeholders in Problem Formulation
 
-### Assignment Chats {#assignment-chats}
+### Assignment Crits {#assignment-crits}
 
-Each week, Lab sessions will have two purposes. One of them will be working with a student partner (different each week) to complete the exercises described in the lab, assisted by TAs. The second purpose will be to present work that you have submitted the previous Wednesday to a TA. The latter is called an Assignment Chat, and is described below.
+Each week's lab is for crits: presentations of the homework you submitted that Wednesday. The lab sits in panels of 5 or 6 students, with TAs moving between them, and everyone on a panel takes a turn presenting. Lab 0 introduces how crits work (and Class 7 has a practice crit); the first crit is in Lab 1, on Homework 1.
 
-A pair of TAs will walk around the room, stopping a pair of students from working on the lab exercises, and pulling up the work they submitted for the previous week's Homework assignment. Each TA will talk to one of the students, separately — students will each be talking about their own assignment, one-on-one, with a TA. The TA will move to particular parts of the work, asking questions, asking the student to describe what they did, why they did it, other alternate approaches they could have taken, etc. This conversation will not be long — approximately 5 minutes long — but will be in enough detail to cover parts (but not all, of course) of the assignment in depth. Afterwards, both the TA and the student will fill out an assessment of the conversation — the student's will be a self-assessment (DONE AFTER, VIA THIS LINK: [https://forms.gle/9s6YbANjnNTo51jo7](https://forms.gle/9s6YbANjnNTo51jo7)), the TA's will be an assessment recorded on Pawtograder. The TA's assessment covers both the student's demonstrated familiarity with their own material, with the course material, their ability to engage with the questions posed to them, etc. 
+A crit is one presentation, about 15 minutes including questions. The presenter starts it in vscode.dev, with the Assignment Crits extension, and reads out its join code; the panel joins in the browser, on their own laptops, and follows the presenter's code as they walk through their work: what they did, why they did it, and what else they could have done. Panelists raise a hand (in the browser) to ask a question aloud, and the presenter takes the questions in order. Every five minutes, and once at the end, each panelist rates the presentation, with one tap; when a question has been answered, the rest of the panel rates the question too. No one sees anyone else's ratings.
 
-The first two assignment chats will be practice, so will be graded on completion only (i.e., you will get full credit if you are there and participate) — the rest will be graded based on the TA assessment. Two total will be dropped (to account for missing labs due to being sick, using wellness days, etc.), and the rest weighted evenly.
-
-**After doing the Assignment Chat, fill out this self-reflection: [https://forms.gle/9s6YbANjnNTo51jo7](https://forms.gle/9s6YbANjnNTo51jo7).**
+A presentation's score is the mean of the panel's ratings, each weighted by how reliable that rater has been (how well their ratings agree with everyone else's), and every score shows how reliable it is. Your grade for a lab has two parts: the score of your presentation, and your participation as a panelist, which counts the ratings you give (and how reliable they are) and the questions you ask (as the panel rates them). Staff mark who is present: nothing done by someone not marked present counts.
 
 ### Pair Programming Sessions
 
 Working with others is a fundamentally important skill, and one of the best ways to learn is to work with someone who is more experienced than you. As a result, over the course of the semester you will have **three 1hr pair programming sessions with a TA**. These will be scheduled in the first, middle, and last third of the class, beginning a few weeks into the semester. You will have the opportunity to pick a time that is convenient to you, and will work with whomever of the TAs is available at the selected time.
 
-The sessions will take place in rooms with multiple TA / student pairs, and each will be given a problem that is new to them from a pool of problems appropriate at that point in the semester (beginning, middle, end). The two will work together, with the student's computer the only one that is open — they are the driver/pilot, whereas the TA serves as the copilot, helping to brainstorm, point out typos, etc. While the problems are intended to take roughly an hour to complete, grading of these sessions is not based on functional completeness of the solution, but rather, based on the quality of interaction — working together, coming up with ideas, demonstrating familiarity with the course material, etc. Like with the Assignment Chats, after the session is over, both the TA and the student will fill out an assessment (SELF REFLECTION LINK: [https://forms.gle/dXaDBbQqL52RNjjy5](https://forms.gle/dXaDBbQqL52RNjjy5)). The TA's assessment will be used for the grade, with the assessment on the first session being worth 10% of the overall Pairing Session grade, and the second and third each being worth 45% of the grade.
+The sessions will take place in rooms with multiple TA / student pairs, and each will be given a problem that is new to them from a pool of problems appropriate at that point in the semester (beginning, middle, end). The two will work together, with the student's computer the only one that is open — they are the driver/pilot, whereas the TA serves as the copilot, helping to brainstorm, point out typos, etc. While the problems are intended to take roughly an hour to complete, grading of these sessions is not based on functional completeness of the solution, but rather, based on the quality of interaction — working together, coming up with ideas, demonstrating familiarity with the course material, etc. After the session is over, both the TA and the student will fill out an assessment (SELF REFLECTION LINK: [https://forms.gle/dXaDBbQqL52RNjjy5](https://forms.gle/dXaDBbQqL52RNjjy5)). The TA's assessment will be used for the grade, with the assessment on the first session being worth 10% of the overall Pairing Session grade, and the second and third each being worth 45% of the grade.
 
 If your schedule changes, you must notify the course coordinator (Kayla McLaughlin, k.mclaughlin@northeastern.edu) at least **a week** before your scheduled session, and we'll cancel it and you can pick a different time. If it is less than a week, you can still contact Kayla, but you need to tell us why you need to reschedule, and we may not be able to accommodate it. **If you do not show up to a scheduled session**, you will receive a 35% for the session; there are no make-ups. Note that if you attend and participate, your grade is guaranteed to be higher than 35%!
 
@@ -125,14 +123,14 @@ AFTER YOUR SESSION, FILL OUT THE FOLLOWING FORM: [https://forms.gle/dXaDBbQqL52R
 
 ### Grading
 
-Your final grade will be calculated by your results in the **Skill Assessments**, **Assignment Chats**, and **Pair Programming** sessions, as described above. The exact grade associated with performance in each of those categories is captured by the following table — the highest row that a student satisfies all columns of will be their grade, and **if no rows are completely satisfied, the student will not pass the course.**
+Your final grade will be calculated by your results in the **Skill Assessments**, **Assignment Crits**, and **Pair Programming** sessions, as described above. The exact grade associated with performance in each of those categories is captured by the following table — the highest row that a student satisfies all columns of will be their grade, and **if no rows are completely satisfied, the student will not pass the course.**
 
 <table>
 <thead>
 <tr>
 <th>Grade</th>
 <th colSpan="3" align="center">Skills Needed (out of 12 total)</th>
-<th>Assignment Chat Average</th>
+<th>Assignment Crit Average</th>
 <th>Pairing Session Average</th>
 </tr>
 <tr>
@@ -257,7 +255,7 @@ Specifically:
 
 You _must_ _write_ all code for assignments yourself. Even if you discuss solutions, or approaches, with others, do the actual typing on your own! And avoid playing games or trying to find loopholes — i.e., do not merely type what someone says, or type what you see on another's screen. While we do not consider collaboration a violation, relying on others for your solutions may result in you not learning the material, and in this class, not learning the material will result in not being able to pass the skill assessments. 
 
-Remember, what you turn in as homework is not graded directly, rather, it is the basis of a conversation with a TA — if you do not understand what you submitted, you will fail that assessment, nevermind that without the practice of homework, you will find it difficult to pass the skill assessments that form the core of your grade in the course (consult the [grading table](#grading)), so take homework for what it is intended: extensive opportunity to practice what we are teaching, plus the opportunity to practice talking about your work.
+Remember, what you turn in as homework is not graded directly, rather, it is the basis of your crit, where you present it and answer questions about it — if you do not understand what you submitted, you will fail that assessment, nevermind that without the practice of homework, you will find it difficult to pass the skill assessments that form the core of your grade in the course (consult the [grading table](#grading)), so take homework for what it is intended: extensive opportunity to practice what we are teaching, plus the opportunity to practice talking about your work.
 
 The minimum penalty for an academic integrity violation is a zero on the assignment and a report to the [Office of Student Conduct and Conflict Resolution (OSCCR)](https://osccr.sites.northeastern.edu/). Penalties are increased if there are aggravating factors, such as stealing another student's work or lying about cheating. Also, see the [Official University Academic Integrity Policy](https://osccr.sites.northeastern.edu/academic-integrity-policy/).
 
@@ -265,7 +263,7 @@ The minimum penalty for an academic integrity violation is a zero on the assignm
 
 AI coding assistants like Cursor, Windsurf, and Copilot should not be used in this course. We believe that using an AI assistant is an important skill that should be covered _after_ the basics (which is why there is a different policy in CS 3100). Until you have the ability to design, understand, and review code, using an AI assistant amounts to wandering around in the dark, with no ability to determine if you are getting closer to what you want. (Using these tools to get decent grades while learning nothing is pretty clearly shooting yourself in the foot: you are in college to learn; if you end up unable to do anything but prompt engineer, you will have essentially no skills, given these models are intentionally rendering whatever "skill" underlying prompt engineering obsolete in every generation.)
 
-The same is true of asking questions of chat models like ChatGPT, Claude, Gemini, etc. Putting assignment instructions into such a model and getting out code or test cases amounts to getting the model to do the thinking for you — and as a result, you will not learn. "Only looking" at AI-generated solutions "before writing your own" undermines the learning just the same, as you will not be learning to actually solve problems, you will just be copying (and, importantly, never developing the ability to recognize when the AI-generated solution isn't what you need). It will also backfire, as if you do this, you will find yourself unable to have the conversations that form the grade for these assignments. 
+The same is true of asking questions of chat models like ChatGPT, Claude, Gemini, etc. Putting assignment instructions into such a model and getting out code or test cases amounts to getting the model to do the thinking for you — and as a result, you will not learn. "Only looking" at AI-generated solutions "before writing your own" undermines the learning just the same, as you will not be learning to actually solve problems, you will just be copying (and, importantly, never developing the ability to recognize when the AI-generated solution isn't what you need). It will also backfire, as if you do this, you will find yourself unable to present your work, and answer questions about it, in the crits that form the grade for these assignments. 
 
 Emerging research is beginning to show that substituting practice on fundamental skills by delegating that practice to LLMs can decrease learning. While using an LLM might reduce the immediate strain of learning something new, it can also [diminish the development of critical thinking skills](https://doi.org/10.1016/j.chb.2024.108386) by decreasing engagement and [impeding independent problem-solving](https://doi.org/10.1186/s41239-024-00467-0). Moreover, even the [benefits of using LLMs for experienced developers](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) have been questioned. LLMs can be useful once you have gained competence in program design and are able to break down a problem and specify it precisely — which are the skills we are trying to develop in CS 2000 and CS 2100.
 
