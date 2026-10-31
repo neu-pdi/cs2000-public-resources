@@ -116,15 +116,17 @@ A presentation's score is the mean of the panel's ratings, each weighted by how 
 
 Working with others is a fundamentally important skill, and one of the best ways to learn is to work with someone who is more experienced than you. As a result, over the course of the semester you will have **three 1hr pair programming sessions with a TA**. These will be scheduled in the first, middle, and last third of the class, beginning a few weeks into the semester. You will have the opportunity to pick a time that is convenient to you, and will work with whomever of the TAs is available at the selected time.
 
-The sessions will take place in rooms with multiple TA / student pairs, and each will be given a problem that is new to them from a pool of problems appropriate at that point in the semester (beginning, middle, end). The two will work together, with the student's computer the only one that is open — they are the driver/pilot, whereas the TA serves as the copilot, helping to brainstorm, point out typos, etc. While the problems are intended to take roughly an hour to complete, grading of these sessions is not based on functional completeness of the solution, but rather, based on the quality of interaction — working together, coming up with ideas, demonstrating familiarity with the course material, etc. After the session is over, both the TA and the student will fill out an assessment (SELF REFLECTION LINK: [https://forms.gle/dXaDBbQqL52RNjjy5](https://forms.gle/dXaDBbQqL52RNjjy5)). The TA's assessment will be used for the grade, with the assessment on the first session being worth 10% of the overall Pairing Session grade, and the second and third each being worth 45% of the grade.
+The sessions will take place in rooms with multiple TA / student pairs, and each will be given a problem that is new to them from a pool of problems appropriate at that point in the semester (beginning, middle, end). The two will work together, with the student's computer the only one that is open — they are the driver/pilot, whereas the TA serves as the copilot, helping to brainstorm, point out typos, etc. While the problems are intended to take roughly an hour to complete, grading of these sessions is not based on functional completeness of the solution, but rather, based on the quality of interaction — working together, coming up with ideas, demonstrating familiarity with the course material, etc. After the session is over, both the TA and the student will fill out an assessment (SELF REFLECTION LINK: [https://forms.gle/dXaDBbQqL52RNjjy5](https://forms.gle/dXaDBbQqL52RNjjy5)). The TA's assessment will be used for the grade, with each assessment being worth 1/3 of the total grade.
 
-If your schedule changes, you must notify the course coordinator (Kayla McLaughlin, k.mclaughlin@northeastern.edu) at least **a week** before your scheduled session, and we'll cancel it and you can pick a different time. If it is less than a week, you can still contact Kayla, but you need to tell us why you need to reschedule, and we may not be able to accommodate it. **If you do not show up to a scheduled session**, you will receive a 35% for the session; there are no make-ups. Note that if you attend and participate, your grade is guaranteed to be higher than 35%!
+If your schedule changes, you must notify the course coordinator (Kayla McLaughlin, k.mclaughlin@northeastern.edu) at least **a week** before your scheduled session, and we'll cancel it and you can pick a different time. If it is less than a week, you can still contact Kayla, but you need to tell us why you need to reschedule, and we may not be able to accommodate it. **If you do not show up to a scheduled session**, you will receive a 0 for that session, which drops a full third of your **Pairing Session Average**; there are no make-ups. Attending and participating always scores you better than not showing up.
 
 AFTER YOUR SESSION, FILL OUT THE FOLLOWING FORM: [https://forms.gle/dXaDBbQqL52RNjjy5](https://forms.gle/dXaDBbQqL52RNjjy5).
 
 ### Grading
 
 Your final grade will be calculated by your results in the **Skill Assessments**, **Assignment Crits**, and **Pair Programming** sessions, as described above. The exact grade associated with performance in each of those categories is captured by the following table — the highest row that a student satisfies all columns of will be their grade, and **if no rows are completely satisfied, the student will not pass the course.**
+
+Because each of the three pairing sessions is worth a third of the **Pairing Session Average**, and a missed session scores 0 (see [Pair Programming Sessions](#pair-programming-sessions)), the thresholds in the last column are set around what missing a session costs: with full credit on the sessions you do attend, one miss averages 66.7%, two misses 33.3%, and three misses 0. So one missed session still clears the 65% needed for an **A-** but not the 70% needed for an **A**; two missed sessions leave you at a **C+**; missing all three leaves that column short of every row from A through C-, so the highest row you can still reach is **D+**, which asks for nothing there.
 
 <table>
 <thead>
@@ -150,7 +152,7 @@ Your final grade will be calculated by your results in the **Skill Assessments**
 <td>1 or fewer</td>
 <td>0</td>
 <td>80% or better</td>
-<td>80% or better</td>
+<td>70% or better</td>
 </tr>
 <tr>
 <td><strong>A-</strong></td>
@@ -158,7 +160,7 @@ Your final grade will be calculated by your results in the **Skill Assessments**
 <td>1 or fewer</td>
 <td>0</td>
 <td>70% or better</td>
-<td>70% or better</td>
+<td>65% or better</td>
 </tr>
 <tr>
 <td><strong>B+</strong></td>
@@ -166,7 +168,7 @@ Your final grade will be calculated by your results in the **Skill Assessments**
 <td>3 or fewer</td>
 <td>0</td>
 <td>70% or better</td>
-<td>70% or better</td>
+<td>55% or better</td>
 </tr>
 <tr>
 <td><strong>B</strong></td>
@@ -174,7 +176,7 @@ Your final grade will be calculated by your results in the **Skill Assessments**
 <td>3 or fewer</td>
 <td>0</td>
 <td>60% or better</td>
-<td>60% or better</td>
+<td>50% or better</td>
 </tr>
 <tr>
 <td><strong>B-</strong></td>
@@ -182,7 +184,7 @@ Your final grade will be calculated by your results in the **Skill Assessments**
 <td>3 or fewer</td>
 <td>0</td>
 <td>50% or better</td>
-<td>50% or better</td>
+<td>40% or better</td>
 </tr>
 <tr>
 <td><strong>C+</strong></td>
@@ -190,7 +192,7 @@ Your final grade will be calculated by your results in the **Skill Assessments**
 <td>4 or fewer</td>
 <td>1 or fewer</td>
 <td>60% or better</td>
-<td>60% or better</td>
+<td>30% or better</td>
 </tr>
 <tr>
 <td><strong>C</strong></td>
@@ -198,7 +200,7 @@ Your final grade will be calculated by your results in the **Skill Assessments**
 <td>4 or fewer</td>
 <td>1 or fewer</td>
 <td>50% or better</td>
-<td>50% or better</td>
+<td>25% or better</td>
 </tr>
 <tr>
 <td><strong>C-</strong></td>
@@ -206,7 +208,7 @@ Your final grade will be calculated by your results in the **Skill Assessments**
 <td>4 or fewer</td>
 <td>1 or fewer</td>
 <td>40% or better</td>
-<td>40% or better</td>
+<td>20% or better</td>
 </tr>
 <tr>
 <td><strong>D+</strong></td>
