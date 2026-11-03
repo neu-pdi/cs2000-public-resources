@@ -129,6 +129,16 @@ const config: Config = {
     [
       '@docusaurus/plugin-content-docs',
       {
+        id: 'lab',
+        path: 'lab',
+        sidebarPath: './sidebars/lab.ts',
+        routeBasePath: 'lab',
+        remarkPlugins: [createVariableSubstitutionPlugin(dcicDomain)],
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
         id: 'pll',
         path: 'pll',
         sidebarPath: './sidebars/pll.ts',
@@ -184,6 +194,13 @@ const config: Config = {
           position: 'left',
           label: 'Homework',
           docsPluginId: 'homework',
+        },
+        {
+          to: '/current-lab/',
+          activeBasePath: '/lab',
+          position: 'left',
+          label: 'Labs',
+          docsPluginId: 'lab',
         },
         {
           position: 'left',

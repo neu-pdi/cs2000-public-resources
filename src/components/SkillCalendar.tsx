@@ -126,11 +126,17 @@ export default function SkillCalendar({ data }: { data: CalendarMonth[] }) {
 .day-items a:hover {
   text-decoration: underline;
 }
+.day-lecture {
+  font-weight: 600;
+}
 .day-lecture a {
   color: inherit;
 }
 .day-lab {
   font-weight: 600;
+}
+.day-lab a {
+  color: inherit;
 }
 .day-hw a {
   color: inherit;
@@ -324,7 +330,7 @@ ${SKILL_COLORS.map((color, skill) => `.skill-${skill} { background-color: ${colo
                                 )}
                               {day.lab && (
                                 <div className="day-lab">
-                                  {day.lab.label}
+                                  {day.lab.href ? <Link to={day.lab.href}>{day.lab.label}</Link> : day.lab.label}
                                   {day.lab.note && (
                                     <div className="day-note">{day.lab.note}</div>
                                   )}

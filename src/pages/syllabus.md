@@ -22,11 +22,14 @@ Each class period (of CS2000) has a page, in three parts. Its **Notes**, at the 
 
 #### Homeworks
 
-There will also be **weekly homework** assignments. The purpose of these assignments, which are half programming practice and half open ended projects, is to give you hands-on experience with the course material. They will both teach you the skills used for the **skill assessments**, and are the subject of [Assignment Crits](/syllabus#assignment-crits) in lab, which are the only assessment that is done on them. 
+There will also be **homework** assignments, due every two weeks. The purpose of these assignments, which are half programming practice and half open ended projects, is to give you hands-on experience with the course material. They will both teach you the skills used for the **skill assessments**, and are the subject of [Assignment Crits](/syllabus#assignment-crits) in lab, which are the only assessment that is done on them. 
 
 #### Labs
 
-The lab period (CS2001) is for [Assignment Crits](/syllabus#assignment-crits): each week, you present the homework you submitted that Wednesday to a panel of classmates, and are on the panel for theirs. Grading of Assignment Crits forms part of your final grade, and lab attendance is required to do them.
+The lab period (CS2001) alternates between two kinds of lab, as the [calendar](/) shows:
+
+- **Practice labs** ([Lab 0](/lab/0) to Lab 6, each with its own page) are for pair programming, on problems from the classes since the last practice lab. You work in pairs, with one laptop open: the **driver** types, and the **copilot** reads ahead, suggests what to try, and catches mistakes, and you switch roles at each problem. This is how your [Pair Programming Sessions](#pair-programming-sessions) with a TA work, with you as the driver. Staff take attendance, and attending them can raise your grade (see [Grading](#grading)).
+- **Crit labs** are for [Assignment Crits](/syllabus#assignment-crits): you present the homework you submitted that Wednesday to a panel of classmates, and are on the panel for theirs. Grading of Assignment Crits forms part of your final grade, and lab attendance is required to do them.
 
 Students can register for any CS 2001 lab section that is on their campus with available seats! Students must stick to the lab they registered for and cannot go to other labs if they miss their scheduled one.
 
@@ -106,7 +109,7 @@ The course will teach the following 12 skills, grading of which will be performe
 
 ### Assignment Crits {#assignment-crits}
 
-Each week's lab is for crits: presentations of the homework you submitted that Wednesday. The lab sits in panels of 5 or 6 students, with TAs moving between them, and everyone on a panel takes a turn presenting. Lab 0 introduces how crits work (and Class 7 has a practice crit); the first crit is in Lab 1, on Homework 1.
+Every other week's lab is for crits: presentations of the homework you submitted that Wednesday. The lab sits in panels of 5 or 6 students, with TAs moving between them, and everyone on a panel takes a turn presenting. The second lab of the semester introduces how crits work (and Class 7 has a practice crit); the first crit, on Homework 1, is two weeks after it.
 
 A crit is one presentation, about 15 minutes including questions. The presenter starts it in vscode.dev, with the Assignment Crits extension, and reads out its join code; the panel joins in the browser, on their own laptops, and follows the presenter's code as they walk through their work: what they did, why they did it, and what else they could have done. Panelists raise a hand (in the browser) to ask a question aloud, and the presenter takes the questions in order. Every five minutes, and once at the end, each panelist rates the presentation, with one tap; when a question has been answered, the rest of the panel rates the question too. No one sees anyone else's ratings.
 
@@ -124,7 +127,7 @@ AFTER YOUR SESSION, FILL OUT THE FOLLOWING FORM: [https://forms.gle/dXaDBbQqL52R
 
 ### Grading
 
-Your final grade will be calculated by your results in the **Skill Assessments**, **Assignment Crits**, and **Pair Programming** sessions, as described above. The exact grade associated with performance in each of those categories is captured by the following table — the highest row that a student satisfies all columns of will be their grade, and **if no rows are completely satisfied, the student will not pass the course.**
+Your final grade will be calculated by your results in the **Skill Assessments**, **Assignment Crits**, and **Pair Programming** sessions, as described above, with a bonus for attending **practice labs** (below the table). The exact grade associated with performance in each of those categories is captured by the following table — the highest row that a student satisfies all columns of will be their grade, and **if no rows are completely satisfied, the student will not pass the course.**
 
 Because each of the three pairing sessions is worth a third of the **Pairing Session Average**, and a missed session scores 0 (see [Pair Programming Sessions](#pair-programming-sessions)), the thresholds in the last column are set around what missing a session costs: with full credit on the sessions you do attend, one miss averages 66.7%, two misses 33.3%, and three misses 0. So one missed session still clears the 65% needed for an **A-** but not the 70% needed for an **A**; two missed sessions leave you at a **C+**; missing all three leaves that column short of every row from A through C-, so the highest row you can still reach is **D+**, which asks for nothing there.
 
@@ -236,6 +239,8 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 </tr>
 </tbody>
 </table>
+
+**Practice labs.** If you attend all but at most one of the seven [practice labs](#labs), your grade moves up one row of the table: for example, a **B** becomes a **B+**, and an **A** stays an **A**. The bonus moves a grade from the table; it can't turn a failing grade into a passing one.
 
 
 ### Collaboration and Academic Honesty

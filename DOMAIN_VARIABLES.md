@@ -26,6 +26,7 @@ This works in:
 
 - `days/*.md` files
 - `homework/*.md` files
+- `lab/*.md` files
 
 ### In React Components
 

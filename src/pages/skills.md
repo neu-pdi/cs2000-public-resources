@@ -72,7 +72,7 @@ def test_nm_square():
  <p>Design the signature, docstring, and tests for a function `check_year`, that takes a year as input, and returns "Past", "Current", or "Future" depending on the year. NOTE: you should not implement the function!</p>
 </details>
 
-**More practice:** the Practice sections of [Class 4](/class/4#practice), [Class 5](/class/5#practice), [Class 8](/class/8#practice), [Class 9](/class/9#practice), [Class 10](/class/10#practice).
+**More practice:** the Practice sections of [Class 4](/class/4#practice), [Class 5](/class/5#practice), [Class 8](/class/8#practice), [Class 9](/class/9#practice), [Class 10](/class/10#practice); and [Lab 1](/lab/1), [Lab 2](/lab/2).
 
 ---
 
@@ -144,7 +144,7 @@ def test_check_year():
 
 </details>
 
-**More practice:** the Practice sections of [Class 4](/class/4#practice), [Class 5](/class/5#practice), [Class 8](/class/8#practice), [Class 9](/class/9#practice), [Class 10](/class/10#practice).
+**More practice:** the Practice sections of [Class 4](/class/4#practice), [Class 5](/class/5#practice), [Class 8](/class/8#practice), [Class 9](/class/9#practice), [Class 10](/class/10#practice); and [Lab 1](/lab/1), [Lab 2](/lab/2).
 
 ---
 
@@ -201,7 +201,7 @@ in case people try to contest the ticket. All recorded data is also available to
 <p>Please **list TWO unintended recipients**, and also **how access to the collected and processed data might be designed to minimize transmission to unexpected recipients?**</p>
 </details>
 
-**More practice:** the Practice section of [Class 10](/class/10#practice).
+**More practice:** the Practice section of [Class 10](/class/10#practice); and [Lab 2](/lab/2).
 
 ---
 
@@ -263,7 +263,7 @@ in case people try to contest the ticket. All recorded data is also available to
 
 </details>
 
-**More practice:** the Practice section of [Class 6](/class/6#practice).
+**More practice:** the Practice section of [Class 6](/class/6#practice); and [Lab 1](/lab/1).
 
 ---
 
@@ -394,7 +394,7 @@ and false otherwise.</p>
 and returns a new table containing only those regions where rainfall amounts decreased from 2023 to 2024.</p>
 </details>
 
-**More practice:** the Practice sections of [Class 7](/class/7#practice), [Class 8](/class/8#practice), [Class 9](/class/9#practice), [Class 10](/class/10#practice), [Class 11](/class/11#practice), [Class 12](/class/12#practice), [Class 13](/class/13#practice).
+**More practice:** the Practice sections of [Class 7](/class/7#practice), [Class 8](/class/8#practice), [Class 9](/class/9#practice), [Class 10](/class/10#practice), [Class 11](/class/11#practice), [Class 12](/class/12#practice), [Class 13](/class/13#practice); and [Lab 2](/lab/2).
 
 ---
 
@@ -461,7 +461,7 @@ def test_list_of_squares():
    <p>Design a function <code>all_increasing</code> that takes a list of numbers, and returns <code>True</code> if each number is greater than the preceding number, <code>False</code> otherwise. It should return <code>True</code> for the empty list. You must use a <code>for</code> loop, rather than a built in list function or recursion.</p>
 </details> 
 
-**More practice:** the Practice sections of [Class 16](/class/16#practice), [Class 17](/class/17#practice).
+**More practice:** the Practice sections of [Class 16](/class/16#practice), [Class 17](/class/17#practice); and [Lab 3](/lab/3).
 
 ---
 
@@ -573,7 +573,7 @@ print("Global value:", value)
 ```
 </details>
 
-**More practice:** the Practice sections of [Class 18](/class/18#practice), [Class 19](/class/19#practice).
+**More practice:** the Practice sections of [Class 18](/class/18#practice), [Class 19](/class/19#practice); and [Lab 4](/lab/4).
 
 ---
 
@@ -659,7 +659,7 @@ def test_is_strong():
     <p>Design a data definition for Book that can be either rating with title, stars, and number of reviews, or sales ranking with title and position. Then, write a function <code>is_popular</code> that returns <code>True</code> if the book is a rating with at least 500 reviews, or a sales ranking with position less than 500.</p>
 </details>
 
-**More practice:** the Practice sections of [Class 20](/class/20#practice), [Class 21](/class/21#practice).
+**More practice:** the Practice sections of [Class 20](/class/20#practice), [Class 21](/class/21#practice); and [Lab 4](/lab/4).
 
 ---
 
@@ -720,7 +720,7 @@ def test_make_positive():
     <p>Using recursion, design a function <code>build_string</code> that takes a list of strings and returns a single large string containing the original strings concatenated together in order.</p>
 </details>
 
-**More practice:** the Practice sections of [Class 22](/class/22#practice), [Class 23](/class/23#practice).
+**More practice:** the Practice sections of [Class 22](/class/22#practice), [Class 23](/class/23#practice); and [Lab 4](/lab/4).
 
 ---
 
@@ -784,7 +784,7 @@ def test_count_internal_nodes():
 
 </details>
 
-**More practice:** the Practice sections of [Class 24](/class/24#practice), [Class 25](/class/25#practice).
+**More practice:** the Practice sections of [Class 24](/class/24#practice), [Class 25](/class/25#practice); and [Lab 5](/lab/5).
 
 ---
 
