@@ -13,8 +13,9 @@ The pages link to the copy on `main` on GitHub, as they do for the support
 CSVs, so a bundle only works from the notes once it is pushed there.
 
 These sources are public, since this repository is. That's only fine because
-each function's solution is already in the notes. Keep homework bundles in
-the staff repository.
+each function's solution is already in the notes. Keep the sources of other
+bundles in the staff repository. The labs' bundles are built from there, and
+only the built bundles (`static/examplar/lab*.json`, bytecode) are here.
 
 ## Layout
 

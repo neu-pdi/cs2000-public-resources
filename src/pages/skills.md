@@ -201,7 +201,7 @@ in case people try to contest the ticket. All recorded data is also available to
 <p>Please **list TWO unintended recipients**, and also **how access to the collected and processed data might be designed to minimize transmission to unexpected recipients?**</p>
 </details>
 
-**More practice:** the Practice section of [Class 10](/class/10#practice); and [Lab 2](/lab/2).
+**More practice:** the Practice sections of [Class 6](/class/6#practice), [Class 10](/class/10#practice), [Class 16](/class/16#practice); and [Lab 2](/lab/2).
 
 ---
 
@@ -263,7 +263,7 @@ in case people try to contest the ticket. All recorded data is also available to
 
 </details>
 
-**More practice:** the Practice section of [Class 6](/class/6#practice); and [Lab 1](/lab/1).
+**More practice:** the Practice sections of [Class 6](/class/6#practice), [Class 9](/class/9#practice), [Class 12](/class/12#practice); and [Lab 1](/lab/1).
 
 ---
 

@@ -22,7 +22,7 @@ Each class period (of CS2000) has a page, in three parts. Its **Notes**, at the 
 
 #### Homeworks
 
-There will also be **homework** assignments, due every two weeks. The purpose of these assignments, which are half programming practice and half open ended projects, is to give you hands-on experience with the course material. They will both teach you the skills used for the **skill assessments**, and are the subject of [Assignment Crits](/syllabus#assignment-crits) in lab, which are the only assessment that is done on them. 
+There will also be **homework** assignments, due every two weeks. Each homework is half of one of three open-ended projects, which you design, for an audience you choose: [Project 1](/homework/1) is Homeworks 1 and 2, [Project 2](/homework/3) is Homeworks 3 and 4, and [Project 3](/homework/5) is Homeworks 5 and 6. Each homework lists the **required pieces** your project must have, which practice the skills used for the **skill assessments**. Homeworks are the subject of [Assignment Crits](/syllabus#assignment-crits) in lab, which are the only assessment that is done on them. 
 
 #### Labs
 
@@ -82,7 +82,7 @@ Assignment Crits are graded based on peer feedback, calibrated based on TA (and 
 There are online office hours provided via one-on-one video chat on [Discord](https://discord.gg/GaXQSPDyYz). 
 
 **Rules and Procedures**
-Do NOT send any screenshots or snippets of your homework programming exercises in any channels (you are welcome to discuss your projects!). Screenshots of your environment setup are ok as long as there isn't any homework programming exercises visible, and of course lecture or practice code is okay.
+Do NOT send any screenshots or snippets of your homework code in any channels (you are welcome to discuss your projects' ideas!). Screenshots of your environment setup are ok as long as there isn't any homework code visible, and of course lecture or practice code is okay.
 
 **To join online office hours**: Make a post in the office hours text channel before joining the waiting room, so the TAs can better assist you. Once they move you into a private voice channel, you are free to screen share your hw code. Alternatively, you can send code privately to a TA over DMs (the TA will initiate the DM).
 
