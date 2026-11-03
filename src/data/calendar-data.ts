@@ -7,6 +7,8 @@ export interface CalendarMonth {
 export interface CalendarWeek {
   label: string;
   topic: string;
+  /** Which of the three pair programming sessions with a TA students book this week, if any. */
+  pairing?: number;
   days: CalendarDay[];
 };
 
@@ -109,6 +111,7 @@ export const calendarData: CalendarMonth[] = [
       },
       {
         label: 'Week 4',
+        pairing: 1,
         topic: 'More on tables: transforming, filtering',
         days: [
           { date: '2027-01-31' },
@@ -128,6 +131,7 @@ export const calendarData: CalendarMonth[] = [
     weeks: [
       {
         label: 'Week 5',
+        pairing: 1,
         topic:
           'From tables to lists: extracting columns, performing operations on them, visualizing data',
         days: [
@@ -142,6 +146,7 @@ export const calendarData: CalendarMonth[] = [
       },
       {
         label: 'Week 6',
+        pairing: 1,
         topic: 'Operating on lists: map & filter',
         days: [
           { date: '2027-02-14' },
@@ -155,6 +160,7 @@ export const calendarData: CalendarMonth[] = [
       },
       {
         label: 'Week 7',
+        pairing: 2,
         topic: 'Reactors; loops & variables that change',
         days: [
           { date: '2027-02-21' },
@@ -168,6 +174,7 @@ export const calendarData: CalendarMonth[] = [
       },
       {
         label: 'Week 8',
+        pairing: 2,
         topic: 'Variables that change, scope & structured data',
         days: [
           { date: '2027-02-28' },
@@ -200,6 +207,7 @@ export const calendarData: CalendarMonth[] = [
       },
       {
         label: 'Week 9',
+        pairing: 2,
         topic: 'Conditional data; recursion on lists',
         days: [
           { date: '2027-03-14' },
@@ -213,6 +221,7 @@ export const calendarData: CalendarMonth[] = [
       },
       {
         label: 'Week 10',
+        pairing: 3,
         topic: 'Trees',
         days: [
           { date: '2027-03-21' },
@@ -226,6 +235,7 @@ export const calendarData: CalendarMonth[] = [
       },
       {
         label: 'Week 11',
+        pairing: 3,
         topic: 'Mutable data & the heap; tables in pandas',
         days: [
           { date: '2027-03-28' },
@@ -245,6 +255,7 @@ export const calendarData: CalendarMonth[] = [
     weeks: [
       {
         label: 'Week 12',
+        pairing: 3,
         topic: 'To be determined',
         days: [
           { date: '2027-04-04' },

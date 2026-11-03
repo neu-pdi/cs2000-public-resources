@@ -210,6 +210,33 @@ export default function SkillCalendar({ data }: { data: CalendarMonth[] }) {
 .week-topic-bar strong {
   margin-right: 0.35em;
 }
+.week-topic-bar.has-pairing {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.week-topic-text {
+  flex: 1;
+  min-width: 0;
+}
+.week-pairing {
+  flex: none;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 1px 8px;
+  border-radius: 4px;
+  border: 1px solid color-mix(in srgb, var(--ifm-color-primary) 45%, transparent);
+  background: color-mix(in srgb, var(--ifm-color-primary) 15%, var(--ifm-background-color));
+  color: var(--ifm-font-color-base);
+  white-space: nowrap;
+}
+a.week-pairing:hover {
+  color: var(--ifm-font-color-base);
+  text-decoration: underline;
+}
+.week-pairing-short {
+  display: none;
+}
 .holiday {
   background-color: var(--ifm-color-emphasis-100);
   color: var(--ifm-color-emphasis-700);
@@ -251,6 +278,16 @@ ${SKILL_COLORS.map((color, skill) => `.skill-${skill} { background-color: ${colo
     font-size: 11px;
     border-left-width: 3px;
   }
+  .week-pairing {
+    font-size: 10px;
+    padding: 1px 5px;
+  }
+  .week-pairing-long {
+    display: none;
+  }
+  .week-pairing-short {
+    display: inline;
+  }
 }
 </style>
 `,
@@ -282,9 +319,17 @@ ${SKILL_COLORS.map((color, skill) => `.skill-${skill} { background-color: ${colo
                   {(week.label || week.topic) && (
                     <tr className="week-topic-row">
                       <td colSpan={7}>
-                        <div className="week-topic-bar">
-                          {week.label && <strong>{week.label}</strong>}
-                          {week.topic}
+                        <div className={`week-topic-bar${week.pairing ? ' has-pairing' : ''}`}>
+                          <span className="week-topic-text">
+                            {week.label && <strong>{week.label}</strong>}
+                            {week.topic}
+                          </span>
+                          {week.pairing && (
+                            <Link className="week-pairing" to="/syllabus#pair-programming-sessions">
+                              <span className="week-pairing-long">Pairing session {week.pairing}</span>
+                              <span className="week-pairing-short">Pairing {week.pairing}</span>
+                            </Link>
+                          )}
                         </div>
                       </td>
                     </tr>
