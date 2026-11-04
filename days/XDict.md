@@ -10,10 +10,14 @@ title: Extra - Dictionaries
 
 ## Intro (15 mins)
 
+**Level:** this page needs `#level advanced`. It builds results up in loops written at the top level of the file, which `#level intermediate` refuses (see [Language Levels](/levels)).
+
 - Today we explore **dictionaries** in Python, a data structure that maps unique keys to values.
 - Dictionaries are useful for fast lookups and flexible data storage, while dataclasses provide a fixed, type-checked structure.
 - Example: Conference session data, where each session has a unique session ID, a title, a speaker, and a list of topics.
   ```python
+  #level advanced
+
   # Dictionary mapping session IDs to session details (as dictionaries)
   sessions = {
       "CS101": {"title": "Introduction to AI", "speaker": "Dr. Martinez", "topics": ["AI", "Machine Learning"]},

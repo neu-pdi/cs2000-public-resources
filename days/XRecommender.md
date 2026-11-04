@@ -10,6 +10,8 @@ title: Extra - Recommendation Systems
 
 ## Intro (15 mins)
 
+**Level:** start your file with `#level intermediate` (see [Language Levels](/levels)).
+
 - **Dictionaries are useful for fast lookups and tracking relationships**, which we will leverage to build a movie recommendation system.
 - Today we explore how to use **dictionaries** to analyze movie preferences and make recommendations based on what other people liked.
 - Our goal: Given a movie someone likes, recommend other movies they might enjoy based on what movies tend to appear together in people's lists.
@@ -17,6 +19,8 @@ title: Extra - Recommendation Systems
 ### Understanding Co-occurrence with Dictionaries
 When we say movies "co-occur," we mean they appear together in the same person's list. For example:
 ```python
+#level intermediate
+
 # If Alice likes these movies:
 alice_movies = ["Inception", "The Matrix", "Interstellar"]
 

@@ -1,8 +1,26 @@
 # Python for Pyreteers
 
-*Daniel Patterson v2025-6-4*
+*Daniel Patterson v2026-11-4*
 
 This page shows language features in Pyret, and how they show up in Python, very briefly. It is intended as a handy reference, not an alternative to learning via attending class, doing reading, attending lab, and doing HW.
+
+## Language Levels
+
+This one has no Pyret counterpart. Every Python file in this course begins with a `#level` line, which tells the PLL extension how much to check for you:
+
+**Python:**
+
+```python
+#level intermediate
+
+def f(y : int) -> int:
+    """ adds 10 """
+    return y + 10
+```
+
+We use `#level intermediate` from [Day 24](/days/24), then `#level advanced` from [Day 27](/days/27), where we need `global` and start changing values in place. At `intermediate` you may give a name a new value inside a function (what a `for` loop accumulator needs), but not at the top level of a file.
+
+A file with **no** `#level` line runs at `raw`, which means **nothing** is checked -- it is just plain Python. At every level except `raw`, PLL checks your type annotations as the program runs, rather than leaving them as comments. See [Language Levels](/levels) for what each level does.
 
 ## Definitions & Whitespace & Annotations
 
@@ -53,19 +71,23 @@ end
 **Python:**
 
 ```python
-# Annotations optional, can be checked by mypy
+#level intermediate
+
+# Annotations are checked by PLL as the program runs
 def f(y : int) -> int:
     """ adds 10 """
     return y + 10
 
-# in a separate file, `test_foo.py`:
-def test_f_10():
+# Tests go in the SAME file, in functions named test_...
+def test_f_10() -> None:
     assert f(10) == 20
 
-def test_f_20()
+def test_f_20() -> None:
     assert f(20) == 30
-# Run via pytest
+# Run with PLL: Run Python File -- not pytest in a terminal
 ```
+
+Tests run first, and PLL shows a pass/fail card in the interactions panel; the rest of the file runs afterwards. For decimals use `pytest.approx` (Pyret's `is-roughly`), which needs `import pytest` at the top of the file.
 
 ## Operators & Numbers
 

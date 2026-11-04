@@ -10,6 +10,8 @@ title: Extra - Datavis in Python
 
 ## Intro (15 mins)
 
+**Level:** start your file with `#level intermediate` (see [Language Levels](/levels)).
+
 Today we learn Python data visualization, which is more complex than Pyret but offers more control and customization options.
 
 ### Pyret visualization (as you saw in [Day 12](/days/12))
@@ -39,6 +41,8 @@ scatter-plot(orders, "quantity", "total_price")  # Scatter plot
 ### Python visualization
 
 ```python
+#level intermediate
+
 import pandas as pd
 import matplotlib.pyplot as plt
 

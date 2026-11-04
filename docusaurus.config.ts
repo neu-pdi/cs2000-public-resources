@@ -38,8 +38,8 @@ function notesDropdownItems() {
 
   if (new Date() >= new Date(2026, 10, 3)) {
     startingItems.push({
-      to: '/python-setup/',
-      label: 'Python Setup + FAQs',
+      to: '/levels/',
+      label: 'Language Levels',
     });
     startingItems.push({
       to: '/pyret-cheatsheet-python/',
