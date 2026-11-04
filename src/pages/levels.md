@@ -7,8 +7,22 @@ hide_table_of_contents: false
 
 # Language Levels
 
-We write Python with the **Python Language Levels** (PLL) extension. The first
-line of your file chooses how much PLL checks for you:
+## Installing PLL
+
+We write Python with the **Python Language Levels** (PLL) extension, which runs
+Python in the browser -- you do not need to install Python on your computer. In
+vscode.dev, click the Extensions icon in the left sidebar, search for **Python
+Language Levels**, and press Install. If vscode.dev offers you Microsoft's
+**Python** extension as well, don't install it: we use PLL instead.
+
+To run a file, click **PLL: Run Python File** at the top right of the editor,
+and look for the **PLL** panel at the bottom of the window for output, errors,
+and a prompt you can type expressions into. [Day 24](/days/24) walks through all
+of this in more detail.
+
+## The `#level` line
+
+The first line of your file chooses how much PLL checks for you:
 
 ```python
 #level intermediate
