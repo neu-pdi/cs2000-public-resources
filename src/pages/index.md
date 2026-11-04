@@ -17,7 +17,7 @@ This course owes a great debt to two texts, which each had courses based on them
 
 ## Assessment Hours {#assessment-hours}
 
-In-person hours where you can attempt [skill](/skills) assessments, by campus. Assessment Hours are not held on holidays or on Skill Days (Feb. 18, Mar. 25, Apr. 8, and Apr. 15).
+In-person hours where you can attempt [skill](/skills) assessments, by campus. Assessment Hours are not held on holidays or on Skill Days (Feb. 11, Mar. 4, Apr. 1, and Apr. 22).
 
 <div className={styles.assessmentHours}>
   <AssessmentHours />
