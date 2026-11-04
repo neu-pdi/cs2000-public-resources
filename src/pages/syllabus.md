@@ -92,7 +92,7 @@ Attendance is strongly encouraged, but not required in CS2000. Please do not com
 
 ### Skills
 
-The course will teach the following 12 skills, grading of which will be performed by repeatable (with highest grade taken), on-paper, no-note, assessment that can be scored as "Doesn't meet expectations", "Approaching expectations", or "Meets expectations". Each student will have at least 4 opportunities to master each skill. Beyond the regular 4 opportunities which occur during the semester, as the topics are covered, student may re-attempt 2 skills; such re-attempts can be scheduled on the day of the final exam. See the [Skills](/skills) page for much more detail.
+The course will teach the following 13 skills, grading of which will be performed by repeatable (with highest grade taken), on-paper, no-note, assessment that can be scored as "Doesn't meet expectations", "Approaching expectations", or "Meets expectations". Each student will have at least 4 opportunities to master each skill. Beyond the regular 4 opportunities which occur during the semester, as the topics are covered, student may re-attempt 2 skills; such re-attempts can be scheduled on the day of the final exam. See the [Skills](/skills) page for much more detail.
 
 - <SkillBadge skill={0} link /> Design function signatures, docs, tests
 - <SkillBadge skill={1} link /> Implement basic functions
@@ -105,7 +105,8 @@ The course will teach the following 12 skills, grading of which will be performe
 - <SkillBadge skill={8} link /> Structured & Conditional Data
 - <SkillBadge skill={9} link /> Recursion: Lists
 - <SkillBadge skill={10} link /> Recursion: Trees
-- <SkillBadge skill={11} link /> Aliasing & Mutation
+- <SkillBadge skill={11} link /> Designing Abstractions
+- <SkillBadge skill={12} link /> Aliasing & Mutation
 
 ### Assignment Crits {#assignment-crits}
 
@@ -135,7 +136,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 <thead>
 <tr>
 <th>Grade</th>
-<th colSpan="3" align="center">Skills Needed (out of 12 total)</th>
+<th colSpan="3" align="center">Skills Needed (out of 13 total)</th>
 <th>Assignment Crit Average</th>
 <th>Pairing Session Average</th>
 </tr>
@@ -151,7 +152,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 <tbody>
 <tr>
 <td><strong>A</strong></td>
-<td>10+</td>
+<td>11+</td>
 <td>1 or fewer</td>
 <td>0</td>
 <td>80% or better</td>
@@ -159,7 +160,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 </tr>
 <tr>
 <td><strong>A-</strong></td>
-<td>10+</td>
+<td>11+</td>
 <td>1 or fewer</td>
 <td>0</td>
 <td>70% or better</td>
@@ -167,7 +168,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 </tr>
 <tr>
 <td><strong>B+</strong></td>
-<td>8+</td>
+<td>9+</td>
 <td>3 or fewer</td>
 <td>0</td>
 <td>70% or better</td>
@@ -175,7 +176,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 </tr>
 <tr>
 <td><strong>B</strong></td>
-<td>8+</td>
+<td>9+</td>
 <td>3 or fewer</td>
 <td>0</td>
 <td>60% or better</td>
@@ -183,7 +184,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 </tr>
 <tr>
 <td><strong>B-</strong></td>
-<td>8+</td>
+<td>9+</td>
 <td>3 or fewer</td>
 <td>0</td>
 <td>50% or better</td>
@@ -191,7 +192,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 </tr>
 <tr>
 <td><strong>C+</strong></td>
-<td>6+</td>
+<td>7+</td>
 <td>4 or fewer</td>
 <td>1 or fewer</td>
 <td>60% or better</td>
@@ -199,7 +200,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 </tr>
 <tr>
 <td><strong>C</strong></td>
-<td>6+</td>
+<td>7+</td>
 <td>4 or fewer</td>
 <td>1 or fewer</td>
 <td>50% or better</td>
@@ -207,7 +208,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 </tr>
 <tr>
 <td><strong>C-</strong></td>
-<td>6+</td>
+<td>7+</td>
 <td>4 or fewer</td>
 <td>1 or fewer</td>
 <td>40% or better</td>

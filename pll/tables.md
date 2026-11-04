@@ -1055,29 +1055,6 @@ function_plot(lambda x: x * x, -3, 3)
 
 </div>
 
-## Using pandas
-
-Later in the semester, we'll learn [pandas](https://pandas.pydata.org/), a widely
-used Python library for working with tables. `t.to_pandas()` turns a PLL table
-into a pandas DataFrame:
-
-```python
-workouts.to_pandas()
-```
-
-<div className="pll-output">
-
-```text
-         date activity  duration
-0  2025-04-01  Running        30
-1  2025-04-02     Yoga        45
-2  2025-04-03  Cycling        60
-3  2025-04-04  Running        25
-4  2025-04-05     Yoga        50
-```
-
-</div>
-
 ## Charts with matplotlib
 
 [matplotlib](https://matplotlib.org/), the most widely used Python library for

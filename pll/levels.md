@@ -39,7 +39,7 @@ come first. In Python, and at `#level raw`, `...` is a value that does nothing.
 
 In this class, we use `#level beginner` at first, then `#level intermediate`
 once we start writing `for` loops, and `#level advanced` once we change values
-in place (a list, a dictionary, a pandas DataFrame), need `global`, or want to
+in place (a list, a dictionary, or a dataclass), need `global`, or want to
 experiment with how Python's variables work. Each class's notes say which level
 to use.
 

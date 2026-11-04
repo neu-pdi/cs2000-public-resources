@@ -37,14 +37,12 @@ FENCE = re.compile(r"^```python example( error)?\n(.*?)^```\n", re.S | re.M)
 def run_examples(examples):
     work = tempfile.mkdtemp(prefix="pll-docs-")
     try:
-        # PLL loads packages (like pandas) by looking for imports in the file it
-        # runs, which can't see inside the examples, so copy their imports in.
+        # PLL loads packages (like matplotlib) by looking for imports in the
+        # file it runs, which can't see inside the examples, so copy their
+        # imports in.
         imports = sorted({m.group(0).strip() for _, code in examples
                           for m in re.finditer(r"^\s*(import \w+|from \w+ import)", code, re.M)
                           if m.group(0).strip().startswith("import ")})
-        # (PLL loads pandas for a file that calls to_pandas, as it does for an import)
-        if any("to_pandas" in code for _, code in examples) and "import pandas" not in imports:
-            imports.append("import pandas")
         with open(os.path.join(HERE, "harness.py")) as f:
             harness = f.read()
         level, rest = harness.split("\n", 1)

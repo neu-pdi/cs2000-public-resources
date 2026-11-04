@@ -606,16 +606,6 @@ it doesn't need a table.)
 function_plot(lambda x: x * x, -3, 3)
 ```
 
-## Using pandas
-
-Later in the semester, we'll learn [pandas](https://pandas.pydata.org/), a widely
-used Python library for working with tables. `t.to_pandas()` turns a PLL table
-into a pandas DataFrame:
-
-```python example
-workouts.to_pandas()
-```
-
 ## Charts with matplotlib
 
 [matplotlib](https://matplotlib.org/), the most widely used Python library for

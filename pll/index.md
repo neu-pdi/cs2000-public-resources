@@ -19,7 +19,7 @@ These pages describe everything PLL adds to Python:
 - [Language levels](/pll/levels) — the `#level` line at the top of your file, and type annotations.
 - [Tests](/pll/testing) — `test_` functions, `assert`, `pytest.approx`, and checking your tests against the course's code.
 - [Images](/pll/images) — shapes, combining images, and loading pictures.
-- [Tables and charts](/pll/tables) — tables, loading CSV files, charts, pandas, and matplotlib.
+- [Tables and charts](/pll/tables) — tables, loading CSV files, charts, and matplotlib.
 - [Reactors](/pll/reactors) — animations and interactive programs.
 - [Input and files](/pll/input-and-files) — `input()`, files next to your program, and reading from the web.
 
@@ -99,7 +99,7 @@ works the same way while your tests run: the test that was running is marked as
 stopped, and the rest of the tests are not run.
 
 This works for ordinary Python code. If your program is stuck inside a library (a
-very long pandas operation, for example), or it catches `KeyboardInterrupt`
+very long numpy calculation, for example), or it catches `KeyboardInterrupt`
 itself, PLL tells you it could not stop it; reload the window in that case.
 
 ## Errors

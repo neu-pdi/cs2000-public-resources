@@ -752,7 +752,7 @@ type BinTree[T] = Leaf[T] | Node[T]
     <p>**Answer meeting expectations:**</p>
     
 ```python
-def count_internal_nodes(tree: BinTree) -> int:
+def count_internal_nodes[T](tree: BinTree[T]) -> int:
     """counts the number of nodes that are not leafs"""
     match tree:
         case Leaf(val):
@@ -769,7 +769,7 @@ def test_count_internal_nodes():
 <p>**Answer approaching expectations (lacking doc string, does not give correct result):**</p>
     
 ```python error
-def count_internal_nodes(tree: BinTree) -> int:
+def count_internal_nodes[T](tree: BinTree[T]) -> int:
     match tree:
         case Leaf(val):
             return 0
@@ -784,13 +784,113 @@ def test_count_internal_nodes():
 
 </details>
 
-**More practice:** the Practice sections of [Class 24](/class/24#practice), [Class 25](/class/25#practice); and [Lab 5](/lab/5).
+**More practice:** the Practice sections of [Class 25](/class/25#practice), [Class 28](/class/28#practice); and [Lab 5](/lab/5).
 
 ---
 
-## <SkillBadge skill={11} /> Aliasing & Mutation {#11}
+## <SkillBadge skill={11} /> Designing Abstractions {#11}
 
 **Available:** <DateView id="11" item="skills" />
+
+|  |  |
+| -- | -- |
+| **Meets Expectations** | • The abstraction takes what differs between the given functions (a value or a function) as parameters<br/>• Signature with types: a type variable wherever the given functions' types differ, and `Callable` for a function parameter<br/>• Docstring that describes the abstraction's behavior, and tests<br/>• Each given function rewritten as a call of the abstraction |
+| **Approaching Expectations** | • The abstraction works for both given functions, but its signature has types missing, or too specific to cover both<br/>• or a given function isn't rewritten as a call of it |
+
+<details>
+    <summary>Examples</summary>
+    <p>Sample question: Design an abstraction of the two functions below, then rewrite each of them as a call of your abstraction.</p>
+
+```python
+def count_short(words: list[str]) -> int:
+    """how many of the words have fewer than 5 letters"""
+    match words:
+        case []:
+            return 0
+        case [w, *rest]:
+            if len(w) < 5:
+                return 1 + count_short(rest)
+            else:
+                return count_short(rest)
+
+def count_passing(scores: list[int]) -> int:
+    """how many of the scores are 60 or more"""
+    match scores:
+        case []:
+            return 0
+        case [s, *rest]:
+            if s >= 60:
+                return 1 + count_passing(rest)
+            else:
+                return count_passing(rest)
+```
+    <p>**Answer meeting expectations:**</p>
+
+```python
+def count_matching[T](check: Callable[[T], bool], lst: list[T]) -> int:
+    """how many of the elements of lst check gives True for"""
+    match lst:
+        case []:
+            return 0
+        case [f, *rest]:
+            if check(f):
+                return 1 + count_matching(check, rest)
+            else:
+                return count_matching(check, rest)
+
+def is_short(w: str) -> bool:
+    """whether w has fewer than 5 letters"""
+    return len(w) < 5
+
+def is_passing(s: int) -> bool:
+    """whether s is 60 or more"""
+    return s >= 60
+
+def count_short(words: list[str]) -> int:
+    """how many of the words have fewer than 5 letters"""
+    return count_matching(is_short, words)
+
+def count_passing(scores: list[int]) -> int:
+    """how many of the scores are 60 or more"""
+    return count_matching(is_passing, scores)
+
+def test_count_matching():
+    assert count_matching(is_short, []) == 0
+    assert count_matching(is_short, ["oak", "maple", "elm"]) == 2
+    assert count_matching(is_passing, [59, 60, 100]) == 2
+```
+
+<p>**Answer approaching expectations (no types for the parameters, and the given functions aren't rewritten):**</p>
+
+```python
+def count_matching(check, lst) -> int:
+    """how many of the elements of lst check gives True for"""
+    match lst:
+        case []:
+            return 0
+        case [f, *rest]:
+            if check(f):
+                return 1 + count_matching(check, rest)
+            else:
+                return count_matching(check, rest)
+
+def is_short(w: str) -> bool:
+    """whether w has fewer than 5 letters"""
+    return len(w) < 5
+
+def test_count_matching():
+    assert count_matching(is_short, ["oak", "maple", "elm"]) == 2
+```
+
+</details>
+
+**More practice:** the Practice sections of [Class 24](/class/24#practice), [Class 26](/class/26#practice), [Class 29](/class/29#practice); and [Lab 6](/lab/6).
+
+---
+
+## <SkillBadge skill={12} /> Aliasing & Mutation {#12}
+
+**Available:** <DateView id="12" item="skills" />
 
 |  |  |
 | -- | -- |
@@ -907,7 +1007,7 @@ print("Same object?", my_book is updated_book)
 </details>
     
 
-**More practice:** the Practice section of [Class 26](/class/26#practice).
+**More practice:** the Practice section of [Class 27](/class/27#practice).
 
 ---
 

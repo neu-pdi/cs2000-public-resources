@@ -26,16 +26,15 @@ terminal.
 Your program can read files that are in the **same folder** as the `.py` file
 you ran, or in a folder inside it — for example, with
 [`load_table`](/pll/tables#load_table), [`load_image`](/pll/images#load_image),
-`open("data.csv")`, `open("data/2024.csv")`, or pandas' `pd.read_csv("data.csv")`.
-This works in vscode.dev, as well as in desktop VSCode. Files are read exactly as
-they are on disk, so a CSV saved in another encoding, or a picture, arrives
-intact.
+`open("data.csv")`, or `open("data/2024.csv")`. This works in vscode.dev, as
+well as in desktop VSCode. Files are read exactly as they are on disk, so a CSV
+saved in another encoding, or a picture, arrives intact.
 
 After the program finishes, files it wrote or changed — for example, with
-`open("out.csv", "w")`, `open("results/out.csv", "w")`, or pandas'
-`to_csv("out.csv")` — show up in that folder, where you can open them in the
-editor, and a file it deleted is deleted. Some are never saved, and the panel
-names each one, and says why ("Not saved: ..."):
+`open("out.csv", "w")` or `open("results/out.csv", "w")` — show up in that
+folder, where you can open them in the editor, and a file it deleted is
+deleted. Some are never saved, and the panel names each one, and says why
+("Not saved: ..."):
 
 - your `.py` files, which PLL never overwrites or deletes;
 - a file the program was not given (because it was too big, say), since saving
@@ -65,10 +64,10 @@ checked at the level its own first line names (see
 
 [`load_table`](/pll/tables#load_table) and [`load_image`](/pll/images#load_image)
 take an address (starting `https://`) as well as a file name. Python's own ways of
-reading from the web work too: pandas' `pd.read_csv("https://...")`, and the
-`urllib` and `requests` libraries. An address that answers with an error (a 404)
-raises `HTTPError`, as in Python; one that does not answer at all gives up after
-60 seconds (or the `timeout` a program gives), and **Stop** ends the wait.
+reading from the web work too: the `urllib` and `requests` libraries. An address
+that answers with an error (a 404) raises `HTTPError`, as in Python; one that
+does not answer at all gives up after 60 seconds (or the `timeout` a program
+gives), and **Stop** ends the wait.
 
 In the browser (including vscode.dev), an address only works if its site allows
 other sites to read it. If one doesn't, download the file, add it to your

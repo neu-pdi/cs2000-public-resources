@@ -428,7 +428,7 @@ def _payment_method_temp(p: PaymentMethod) -> ...:
 
 ### Recursive data {#template-recursive}
 
-_From [Classes 22 to 25](/class/23)._ A `case` per variant, its fields named, and a
+_From [Class 22](/class/22) on._ A `case` per variant, its fields named, and a
 recursive call on each field of the same type. For a list (first and rest), a
 stack of pancakes, and a tree, the rule is the same; only the number of
 recursive fields changes:
@@ -438,11 +438,11 @@ def _list_temp(lst: list) -> ...:
     match lst:
         case []:
             return ...
-        case [first, *rest]:
+        case [f, *r]:
             ...
-            first
+            f
             ...
-            _list_temp(rest)
+            _list_temp(r)
             ...
             return ...
 
@@ -465,9 +465,44 @@ def _river_tree_temp(t: RiverTree) -> ...:
 
 When you copy one into a function, rename the recursive calls too.
 
+Generic data ([Class 24](/class/24)) has the same template, with its type
+variable in the Signature: `def _chain_temp[T](c: Chain[T]) -> ...:`.
+
+### Accumulators {#template-accumulators}
+
+_From [Classes 17](/class/17) (loops), [30](/class/30) (lists) and
+[31](/class/31) (trees)._ When a function needs to know something about the part
+of the data it has already passed, an **accumulator** holds it, and its
+**accumulator statement** says what it means. In a loop, it is a variable that
+each trip changes. In recursion, it is an extra parameter of a helper, whose
+Docstring gives the statement; the function people call gives it its first
+value, and each recursive call gets its next value:
+
+```python
+def _list_acc_temp(lst: list, acc: ...) -> ...:
+    match lst:
+        case []:
+            ...
+            acc
+            ...
+            return ...
+        case [f, *r]:
+            ...
+            f
+            ...
+            acc
+            ...
+            _list_acc_temp(r, ...)
+            ...
+            return ...
+```
+
+The `...` in the recursive call is the accumulator's next value, from `f` and
+`acc`. On a tree, each subtree's recursive call gets its own next value.
+
 ### Data that changes {#template-mutation}
 
-_From [Class 26](/class/26)._ A function that changes its input, rather than making
+_From [Class 27](/class/27)._ A function that changes its input, rather than making
 a new value: its result type is `None`, its docstring says what changes, its
 examples are Setup, Call, and Check, and its template ends by setting the fields
 it changes, rather than with `return ...`:
@@ -484,18 +519,30 @@ def _library_book_temp(b: LibraryBook) -> None:
     b.copies = ...
 ```
 
-### Pandas and PLL tables {#pandas}
+## Designing Abstractions {#abstractions}
 
-_From [Classes 27 and 28](/class/27)._ pandas is too large to have one template.
-Instead, for each PLL table operation, there is a pandas way to do the same job:
+_From [Classes 26](/class/26) and [29](/class/29)._ When two functions are the
+same but for a few places, one function, an **abstraction**, can do the work of
+both:
 
-| PLL table | pandas |
-| --- | --- |
-| `t.filter(keep)` | a mask: `df[df["col"] < 10]` |
-| `t.add_column("new", compute)` | `df["new"] = ...` |
-| `t.transform_column("col", change)` | `df["col"] = df["col"].apply(change)` |
-| `t.order_by("col")` | `df.sort_values("col")` |
-| `t.mean("col")` | `df["col"].mean()` |
+1. **Compare** them, and mark each place where they differ.
+2. **Abstract**: copy one, give it a new name, and replace each difference with
+   a new parameter. A difference in a value becomes a value parameter; a
+   difference in what's done becomes a function parameter.
+3. **Check**: write each original as a call of the abstraction, with a helper
+   for each function it passes. The originals' tests should still pass.
+4. **Signature**: compare the originals' Signatures. Where their types differ,
+   put a type variable. A function parameter's type is a `Callable`:
+   `Callable[[T], bool]` takes a `T` and gives a `bool`.
+5. **Docstring and Examples** for the abstraction itself.
 
-The recipe itself doesn't change: a function that uses pandas still has a
-signature, a docstring, and examples.
+A template can be abstracted the same way, since it is the outline of every
+function on its data: its `...`s become parameters. The list template's is a
+**fold**, `fold(combine, base, lst)`. Then a function on a list often needs no
+template of its own, and the shape of its answer picks the abstraction:
+
+| The answer | The abstraction | Its helper says |
+| --- | --- | --- |
+| some of the elements | `filter` (or `my_filter`) | whether to keep an element |
+| each element, changed | `map` (or `my_map`) | the new value of an element |
+| one value, from all of them | `fold` | how one element combines with the answer for the rest |

@@ -249,20 +249,20 @@ they receive.
 ## Practice
 
 ### Part 1: Loading and Converting Data
-1. Download the CSV file from [here](https://raw.githubusercontent.com/neu-pdi/cs2000-public-resources/refs/heads/main/static/support/movies-data.csv). Load the CSV file using `pd.read_csv`.
-1. Create a list called containing the strings `"Movie 1"`, `"Movie 2"`, ..., `"Movie 10"`, for your column names.
-1. Convert the DataFrame to a list of dictionaries using `df.to_dict(orient="records")`. Print the first dictionary to observe the data structure.
+1. Load the CSV file at `https://raw.githubusercontent.com/neu-pdi/cs2000-public-resources/refs/heads/main/static/support/movies-data.csv` with `load_table`.
+1. Create a list, `movie_columns`, containing the strings `"Movie 1"`, `"Movie 2"`, ..., `"Movie 10"`, for your column names.
+1. Make a list of the table's rows, each a dictionary, called `data_lst` (the table's `rows` gives it, as in the [Tables](/pll/tables#rows) reference). Print the first dictionary to observe the data structure.
 1. Write a loop that iterates through `data_lst`. For each `row`, print the `Movie 1`.
 
 ### Part 2: Extracting Movies from a Row
-5. Write a function `get_movies` that takes a single row dictionary as input and returns a list of all non-NaN movie titles from that row. Use `pd.notna()` to check for NaN values. You can use the list you created in the above exercise here.
+5. Write a function `get_movies` that takes a single row dictionary as input and returns a list of the movie titles in that row, leaving out its blank cells (a blank cell is the empty string, `""`). You can use the list you created in the above exercise here.
 6. Test your function with the first few rows. Do all students list the same number of movies?
 
 ### Part 3: Building the Co-occurrence Dictionary
 7. What does the dict.get() method do? What happens if you call .get(key, []) on a key that doesn't exist?
 8. Suppose one student listed these movies: ["Inception", "The Matrix", "Interstellar"]. We want to track that these three movies appeared together. For each movie in this list, we need to store ALL the movies (including itself) in a dictionary. Write a function `update_occurrences` that takes in the movies list and a dictionary. The function should loop through the movie list and updates the dictionary by adding all the movies for each movie in this list.
-9. Write a function build_cooccurrence_dict(df) that:
-    - Converts the DataFrame to a list of dictionaries
+9. Write a function build_cooccurrence_dict(t) that:
+    - Makes a list of the table's rows, as dictionaries
     - Creates an (empty) dictionary for tracking cooccurrences,
     - For each row, uses your function from above to extract the list of movies,
     - Uses your function above to update the cooccurrence dictionary, and
@@ -277,4 +277,4 @@ they receive.
     - Returns the top 10 most common items(look up `.most_common()` for counters)
 
 ### Part 5: Testing the System
-13. Test your system! Connect your functions to the dataframe from step 1 and try a movie ("The Shawshank Redemption") to see the recommendations.
+13. Test your system! Connect your functions to the table from step 1 and try a movie ("The Shawshank Redemption") to see the recommendations.

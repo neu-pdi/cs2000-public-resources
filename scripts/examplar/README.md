@@ -7,15 +7,16 @@ class page links to with an `#examplar` line:
 | --- | --- | --- |
 | `class5-choose-hat/` | `static/examplar/class5-choose-hat.json` | Class 5 |
 | `class10-apply-discounts/` | `static/examplar/class10-apply-discounts.json` | Class 10 |
-| `class23-has-blueberry/` | `static/examplar/class23-has-blueberry.json` | Class 23 |
+| `class22-has-blueberry/` | `static/examplar/class22-has-blueberry.json` | Class 22 |
 
-The pages link to the copy on `main` on GitHub, as they do for the support
-CSVs, so a bundle only works from the notes once it is pushed there.
+The pages link to the copy on the `python` branch on GitHub, so a bundle only
+works from the notes once it is pushed there.
 
 These sources are public, since this repository is. That's only fine because
 each function's solution is already in the notes. Keep the sources of other
-bundles in the staff repository. The labs' bundles are built from there, and
-only the built bundles (`static/examplar/lab*.json`, bytecode) are here.
+bundles in the staff repository. The labs' bundles, and the bundle for Class
+27's Practice, are built from there, and only the built bundles
+(`static/examplar/lab*.json` and `class27-tools.json`, bytecode) are here.
 
 ## Layout
 
@@ -28,7 +29,7 @@ staff_tests.py                our own tests, for --verify
 
 - No `#level` lines. The bundle's code runs in the student's file, so a
   function can use the student's data definitions (`Plate`, in
-  `class23-has-blueberry`) and PLL's libraries (`table`, in
+  `class22-has-blueberry`) and PLL's libraries (`table`, in
   `class10-apply-discounts`).
 - `staff_tests.py` runs without a level, so it has to import what a level
   would give it: `from dataclasses import dataclass`.

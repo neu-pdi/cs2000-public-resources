@@ -207,7 +207,7 @@ export const calendarData: CalendarMonth[] = [
       {
         label: 'Week 9',
         pairing: 2,
-        topic: 'Structured & conditional data; recursion on lists',
+        topic: 'Structured & conditional data; self-referential data',
         days: [
           { date: '2027-03-14' },
           { date: '2027-03-15', onlineOH: true, skills: [6, 7], lectures: [{ label: 'Class 20', href: '/class/20' }] },
@@ -221,7 +221,7 @@ export const calendarData: CalendarMonth[] = [
       {
         label: 'Week 10',
         pairing: 3,
-        topic: 'Templates for lists; trees',
+        topic: 'Lists by the recipe; polymorphism; trees',
         days: [
           { date: '2027-03-21' },
           { date: '2027-03-22', onlineOH: true, skills: [6, 7, 8, 9], lectures: [{ label: 'Class 23', href: '/class/23' }] },
@@ -235,7 +235,7 @@ export const calendarData: CalendarMonth[] = [
       {
         label: 'Week 11',
         pairing: 3,
-        topic: 'Mutable data & the heap; tables in pandas; Skill Day',
+        topic: 'Designing abstractions; mutable data & the heap; Skill Day',
         days: [
           { date: '2027-03-28' },
           { date: '2027-03-29', onlineOH: true, skills: [7, 8, 9, 10], lectures: [{ label: 'Class 26', href: '/class/26' }] },
@@ -255,27 +255,27 @@ export const calendarData: CalendarMonth[] = [
       {
         label: 'Week 12',
         pairing: 3,
-        topic: 'Filtering, sorting & transforming with pandas; then to be determined',
+        topic: 'More trees; abstractions from templates; accumulators',
         days: [
           { date: '2027-04-04' },
-          { date: '2027-04-05', onlineOH: true, skills: [8, 9, 10, 11], lectures: [{ label: 'Class 28', href: '/class/28' }] },
-          { date: '2027-04-06', onlineOH: true, skills: [8, 9, 10, 11] },
-          { date: '2027-04-07', homework: { label: 'HW 5 due', href: '/homework/5' }, onlineOH: true, skills: [8, 9, 10, 11] },
-          { date: '2027-04-08', onlineOH: true, skills: [8, 9, 10, 11] },
-          { date: '2027-04-09', onlineOH: true, skills: [8, 9, 10, 11], lab: { label: 'Lab: Crit on HW 5' } },
+          { date: '2027-04-05', onlineOH: true, skills: [8, 9, 10, 11, 12], lectures: [{ label: 'Class 28', href: '/class/28' }] },
+          { date: '2027-04-06', onlineOH: true, skills: [8, 9, 10, 11, 12] },
+          { date: '2027-04-07', homework: { label: 'HW 5 due', href: '/homework/5' }, onlineOH: true, skills: [8, 9, 10, 11, 12], lectures: [{ label: 'Class 29', href: '/class/29' }] },
+          { date: '2027-04-08', onlineOH: true, skills: [8, 9, 10, 11, 12], lectures: [{ label: 'Class 30', href: '/class/30' }] },
+          { date: '2027-04-09', onlineOH: true, skills: [8, 9, 10, 11, 12], lab: { label: 'Lab: Crit on HW 5' } },
           { date: '2027-04-10' },
         ],
       },
       {
         label: 'Week 13',
-        topic: 'To be determined',
+        topic: 'Accumulators on trees; then to be determined',
         days: [
           { date: '2027-04-11' },
-          { date: '2027-04-12', onlineOH: true, skills: [10, 11] },
-          { date: '2027-04-13', onlineOH: true, skills: [10, 11] },
-          { date: '2027-04-14', onlineOH: true, skills: [10, 11] },
-          { date: '2027-04-15', onlineOH: true, skills: [10, 11] },
-          { date: '2027-04-16', onlineOH: true, skills: [10, 11], lab: { label: 'Lab 6: Pandas', href: '/lab/6' } },
+          { date: '2027-04-12', onlineOH: true, skills: [10, 11, 12], lectures: [{ label: 'Class 31', href: '/class/31' }] },
+          { date: '2027-04-13', onlineOH: true, skills: [10, 11, 12] },
+          { date: '2027-04-14', onlineOH: true, skills: [10, 11, 12] },
+          { date: '2027-04-15', onlineOH: true, skills: [10, 11, 12] },
+          { date: '2027-04-16', onlineOH: true, skills: [10, 11, 12], lab: { label: 'Lab 6: Accumulators & Abstraction', href: '/lab/6' } },
           { date: '2027-04-17' },
         ],
       },
@@ -285,20 +285,20 @@ export const calendarData: CalendarMonth[] = [
         days: [
           { date: '2027-04-18' },
           { date: '2027-04-19', isHoliday: true, holidayName: "Patriots' Day" },
-          { date: '2027-04-20', onlineOH: true, skills: [11] },
+          { date: '2027-04-20', onlineOH: true, skills: [11, 12] },
           {
             date: '2027-04-21',
             homework: { label: 'HW 6 due', href: '/homework/6' },
             onlineOH: true,
-            skills: [11],
+            skills: [11, 12],
             lectures: [
               { label: 'Dictionaries', href: '/class/XDict' },
               { label: 'λ Calculus', href: '/class/Xλ' },
               { label: 'Y Combinator', href: '/class/XλY' },
             ],
           },
-          { date: '2027-04-22', note: 'Other half: instructor\'s choice', onlineOH: true, skills: [11], lectures: [{ label: 'Half Skill Day', href: '/skills/#skill-days-in-class' }] },
-          { date: '2027-04-23', onlineOH: true, skills: [11], lab: { label: 'Lab: Crit on HW 6' } },
+          { date: '2027-04-22', note: 'Other half: instructor\'s choice', onlineOH: true, skills: [11, 12], lectures: [{ label: 'Half Skill Day', href: '/skills/#skill-days-in-class' }] },
+          { date: '2027-04-23', onlineOH: true, skills: [11, 12], lab: { label: 'Lab: Crit on HW 6' } },
           { date: '2027-04-24' },
         ],
       },
