@@ -22,6 +22,12 @@ export interface CalendarDay {
    */
   note?: string;
   lectures?: Lecture[];
+  /**
+   * Lectures that might be given on other days, listed on this one, such as the bonus
+   * lectures each section chooses from at the end. They are shown like lectures, but give
+   * no class page a date, and never count as the current class.
+   */
+  possibleLectures?: Lecture[];
   lab?: Lab;
   homework?: Homework;
   /**
@@ -283,30 +289,26 @@ export const calendarData: CalendarMonth[] = [
         label: 'Week 14',
         topic: 'Catch up, bonus content, etc. Depends on section / instructor.',
         days: [
-          { date: '2027-04-18' },
+          {
+            date: '2027-04-18',
+            note: 'Possible lectures this week:',
+            possibleLectures: [
+              { label: 'Dictionaries', href: '/class/XDict' },
+              { label: 'Recommendation Systems', href: '/class/XRecommender' },
+              { label: 'λ Calculus', href: '/class/Xλ' },
+              { label: 'Y Combinator', href: '/class/XλY' },
+            ],
+          },
           { date: '2027-04-19', isHoliday: true, holidayName: "Patriots' Day" },
           { date: '2027-04-20', onlineOH: true, skills: [11, 12] },
           {
             date: '2027-04-21',
+            note: "A lecture from Sunday's list, or something else",
             homework: { label: 'HW 6 due', href: '/homework/6' },
             onlineOH: true,
             skills: [11, 12],
-            lectures: [
-              { label: 'Dictionaries', href: '/class/XDict' },
-              { label: 'λ Calculus', href: '/class/Xλ' },
-              { label: 'Y Combinator', href: '/class/XλY' },
-            ],
           },
-          {
-            date: '2027-04-22',
-            onlineOH: true,
-            skills: [11, 12],
-            lectures: [
-              { label: 'Dictionaries', href: '/class/XDict' },
-              { label: 'λ Calculus', href: '/class/Xλ' },
-              { label: 'Y Combinator', href: '/class/XλY' },
-            ],
-          },
+          { date: '2027-04-22', note: "A lecture from Sunday's list, or something else", onlineOH: true, skills: [11, 12] },
           { date: '2027-04-23', onlineOH: true, skills: [11, 12], lab: { label: 'Lab: Crit on HW 6' } },
           { date: '2027-04-24' },
         ],

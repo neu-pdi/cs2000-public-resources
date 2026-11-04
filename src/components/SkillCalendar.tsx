@@ -373,6 +373,12 @@ ${SKILL_COLORS.map((color, skill) => `.skill-${skill} { background-color: ${colo
                                     </div>
                                   )
                                 )}
+                              {day.possibleLectures &&
+                                day.possibleLectures.map((item) => (
+                                  <div className="day-lecture" key={`possible-${item.href}`}>
+                                    <Link to={item.href}>{item.label}</Link>
+                                  </div>
+                                ))}
                               {day.lab && (
                                 <div className="day-lab">
                                   {day.lab.href ? <Link to={day.lab.href}>{day.lab.label}</Link> : day.lab.label}
