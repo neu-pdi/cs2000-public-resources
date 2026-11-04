@@ -1,11 +1,11 @@
 ---
-title: Language Levels
+title: Python Language Levels
 id: levels
 description: The #level line in PLL, and which level to use when
 hide_table_of_contents: false
 ---
 
-# Language Levels
+# Python Language Levels
 
 ## Installing PLL
 
