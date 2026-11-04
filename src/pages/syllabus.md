@@ -10,9 +10,9 @@ Introduces computer science and data science to students with no prior programmi
 
 ### Course Structure
 
-There will be three in-person **classes** and one **lab** per week. All content is directed around teaching a set of 12 **skills**, assessment of which will form the primary assessment of the class, and which are described in detail at [Skills](/skills).
+There will be three in-person **classes** and one **lab** per week. All content is directed around teaching a set of 13 **skills**, assessment of which will form the primary assessment of the class, and which are described in detail at [Skills](/skills).
 
-There are [12 **skills**](/syllabus#skills), which have repeatable assessments (taken on paper without notes over the course of the semester), and form the primary grading for the class. 
+There are [13 **skills**](/syllabus#skills), which have repeatable assessments (taken on paper without notes over the course of the semester), and form the primary grading for the class. 
 
 There are no formal quizzes or exams in this class, though the skill assessments are similar in form to quizzes; unlike traditional quizzes, skill assessments allow you to be assessed at your own pace, and repeat as you need.
 
@@ -88,7 +88,9 @@ Do NOT send any screenshots or snippets of your homework code in any channels (y
 
 ### Attendance
 
-Attendance is strongly encouraged, but not required in CS2000. Please do not come to class when you're sick. We'd much rather you stay home and take care of yourself. If you need to stay home and miss class, no need to notify us in advance. You are still responsible for completing assigned work and keeping up with content that you may have missed due to an absence. Each class's page summarizes what happened in class, in its Live section, and its Practice is the way to catch up on that day's material. Feel free to stop by instructor office hours with any questions or help with the missed classwork, or post questions on Discord.
+Attendance is not required, but it can improve your grade. There are 32 classes (Skill Days do not count). If you are present (and complete the activity, or otherwise demonstrate participation) in 26 or more of them, we will give you a bonus in both the Assignment Crits and Pairing Session categories; this will give you significant leeway in case you miss some Assignment Crits or a Pairing Session, as neither of those can be made up if missed. 
+
+The reason why we do not require attendance on all classes is that we do not want you to come to class when you're sick! We'd much rather you stay home and take care of yourself. If you need to stay home and miss class, no need to notify us in advance. You are still responsible for completing assigned work and keeping up with content that you may have missed due to an absence. Each class's page summarizes what happened in class, in its Live section, and its Practice is the way to catch up on that day's material. Feel free to stop by instructor office hours with any questions or help with the missed classwork, or post questions on Discord.
 
 ### Skills
 
@@ -145,8 +147,8 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 <th><strong>Meets Expectations</strong></th>
 <th><strong>Approaching Expectations</strong></th>
 <th><strong>Not Approaching</strong></th>
-<th></th>
-<th></th>
+<th>If attendance > 26/32, subtract 10% on all below</th>
+<th>If attendance > 26/32, subtract 10% on all below</th>
 </tr>
 </thead>
 <tbody>
