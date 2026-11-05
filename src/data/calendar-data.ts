@@ -220,7 +220,7 @@ export const calendarData: CalendarMonth[] = [
           { date: '2027-03-16', onlineOH: true, skills: [6, 7] },
           { date: '2027-03-17', onlineOH: true, skills: [6, 7], lectures: [{ label: 'Class 21', href: '/class/21' }] },
           { date: '2027-03-18', onlineOH: true, skills: [6, 7], lectures: [{ label: 'Class 22', href: '/class/22' }] },
-          { date: '2027-03-19', onlineOH: true, skills: [6, 7], lab: { label: 'Lab 4: Data & Scope', href: '/lab/4' } },
+          { date: '2027-03-19', onlineOH: true, skills: [6, 7], lab: { label: 'Lab 4: Conditional Data', href: '/lab/4' } },
           { date: '2027-03-20' },
         ],
       },

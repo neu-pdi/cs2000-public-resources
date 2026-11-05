@@ -72,7 +72,7 @@ def test_nm_square():
  <p>Design the signature, docstring, and tests for a function `check_year`, that takes a year as input, and returns "Past", "Current", or "Future" depending on the year. NOTE: you should not implement the function!</p>
 </details>
 
-**More practice:** the Practice sections of [Class 4](/class/4#practice), [Class 5](/class/5#practice), [Class 8](/class/8#practice), [Class 9](/class/9#practice), [Class 10](/class/10#practice); and [Lab 1](/lab/1), [Lab 2](/lab/2).
+**More practice:** the Practice sections of [Class 4](/class/4#practice), [Class 5](/class/5#practice), [Class 8](/class/8#practice), [Class 9](/class/9#practice), [Class 10](/class/10#practice), [Class 12](/class/12#practice); and [Lab 1](/lab/1), [Lab 2](/lab/2).
 
 ---
 
@@ -144,7 +144,7 @@ def test_check_year():
 
 </details>
 
-**More practice:** the Practice sections of [Class 4](/class/4#practice), [Class 5](/class/5#practice), [Class 8](/class/8#practice), [Class 9](/class/9#practice), [Class 10](/class/10#practice); and [Lab 1](/lab/1), [Lab 2](/lab/2).
+**More practice:** the Practice sections of [Class 4](/class/4#practice), [Class 5](/class/5#practice), [Class 8](/class/8#practice), [Class 9](/class/9#practice), [Class 10](/class/10#practice), [Class 12](/class/12#practice); and [Lab 1](/lab/1), [Lab 2](/lab/2).
 
 ---
 
@@ -201,7 +201,7 @@ in case people try to contest the ticket. All recorded data is also available to
 <p>Please **list TWO unintended recipients**, and also **how access to the collected and processed data might be designed to minimize transmission to unexpected recipients?**</p>
 </details>
 
-**More practice:** the Practice sections of [Class 6](/class/6#practice), [Class 10](/class/10#practice), [Class 16](/class/16#practice); and [Lab 2](/lab/2).
+**More practice:** the Practice sections of [Class 6](/class/6#practice), [Class 10](/class/10#practice), [Class 12](/class/12#practice), [Class 16](/class/16#practice).
 
 ---
 
@@ -263,7 +263,7 @@ in case people try to contest the ticket. All recorded data is also available to
 
 </details>
 
-**More practice:** the Practice sections of [Class 6](/class/6#practice), [Class 9](/class/9#practice), [Class 12](/class/12#practice); and [Lab 1](/lab/1).
+**More practice:** the Practice sections of [Class 6](/class/6#practice), [Class 9](/class/9#practice), [Class 12](/class/12#practice).
 
 ---
 
@@ -573,7 +573,7 @@ print("Global value:", value)
 ```
 </details>
 
-**More practice:** the Practice sections of [Class 18](/class/18#practice), [Class 19](/class/19#practice); and [Lab 4](/lab/4).
+**More practice:** the Practice sections of [Class 18](/class/18#practice), [Class 19](/class/19#practice).
 
 ---
 
