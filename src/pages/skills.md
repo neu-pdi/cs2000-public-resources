@@ -744,8 +744,8 @@ class Leaf[T]:
 
 @dataclass
 class Node[T]:
-    left: "BinTree[T]"
-    right: "BinTree[T]"
+    left: BinTree[T]
+    right: BinTree[T]
 
 type BinTree[T] = Leaf[T] | Node[T]
 ```

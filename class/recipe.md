@@ -392,8 +392,8 @@ class Spring:
 class River:
     name: str
     length: float
-    left: "RiverTree"
-    right: "RiverTree"
+    left: RiverTree
+    right: RiverTree
 
 RiverTree = Spring | River
 
