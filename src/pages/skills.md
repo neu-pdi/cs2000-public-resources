@@ -201,7 +201,7 @@ in case people try to contest the ticket. All recorded data is also available to
 <p>Please **list TWO unintended recipients**, and also **how access to the collected and processed data might be designed to minimize transmission to unexpected recipients?**</p>
 </details>
 
-**More practice:** the Practice sections of [Class 6](/class/6#practice), [Class 10](/class/10#practice), [Class 12](/class/12#practice), [Class 16](/class/16#practice).
+**More practice:** the Practice sections of [Class 6](/class/6#practice), [Class 10](/class/10#practice), [Class 12](/class/12#practice), [Class 16](/class/16#practice); and [Lab 4](/lab/4).
 
 ---
 
@@ -606,10 +606,10 @@ Beverage = Coffee | Tea
 def is_strong(b: Beverage) -> bool:
     """determine if beverage is strong (coffee >2 shots or tea >5 minutes)"""
     match b:
-        case Coffee(shots):
-            return shots > 2
-        case Tea(name, brew_time):
-            return brew_time > 5
+        case Coffee():
+            return b.shots > 2
+        case Tea():
+            return b.brew_time > 5
 
 def test_is_strong():
     regular = Coffee(1)
@@ -639,10 +639,10 @@ Beverage = Coffee | Tea
 
 def is_strong(b):
     match b:
-        case Coffee(shots):
-            return shots > 2
-        case Tea(name, brew_time):
-            return brew_time > 5
+        case Coffee():
+            return b.shots > 2
+        case Tea():
+            return b.brew_time > 5
 
 def test_is_strong():
     regular = Coffee(1)
@@ -755,10 +755,10 @@ type BinTree[T] = Leaf[T] | Node[T]
 def count_internal_nodes[T](tree: BinTree[T]) -> int:
     """counts the number of nodes that are not leafs"""
     match tree:
-        case Leaf(val):
+        case Leaf():
             return 0
-        case Node(left, right):
-            return 1 + count_internal_nodes(left) + count_internal_nodes(right)
+        case Node():
+            return 1 + count_internal_nodes(tree.left) + count_internal_nodes(tree.right)
 
 def test_count_internal_nodes():
     tree = Node(Node(Leaf(0), Leaf(0)), Node(Node(Leaf(0), Leaf(0)), Leaf(0)))
@@ -771,10 +771,10 @@ def test_count_internal_nodes():
 ```python error
 def count_internal_nodes[T](tree: BinTree[T]) -> int:
     match tree:
-        case Leaf(val):
+        case Leaf():
             return 0
-        case Node(left, right):
-            return count_internal_nodes(left) + count_internal_nodes(right)
+        case Node():
+            return count_internal_nodes(tree.left) + count_internal_nodes(tree.right)
 
 def test_count_internal_nodes():
     tree = Node(Node(Leaf(0), Leaf(0)), Node(Node(Leaf(0), Leaf(0)), Leaf(0)))

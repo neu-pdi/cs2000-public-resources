@@ -29,6 +29,10 @@ export interface CalendarDay {
    */
   possibleLectures?: Lecture[];
   lab?: Lab;
+  /**
+   * The homework presented at this day's crit lab, which is its deadline. Its label names the
+   * lab ("Lab: Crit on HW 1"), so the day has no `lab` of its own.
+   */
   homework?: Homework;
   /**
    * Set on days that online (Discord) office hours run. The times themselves are not
@@ -47,7 +51,7 @@ export interface Lecture {
 
 export interface Lab {
   label: string;
-  /** A practice lab's page. Crit labs have none. */
+  /** A practice lab's page. The lab that introduces crits has none. */
   href?: string;
   note?: string;
 };
@@ -123,9 +127,9 @@ export const calendarData: CalendarMonth[] = [
           { date: '2027-01-31' },
           { date: '2027-02-01', onlineOH: true, skills: [0, 1], lectures: [{ label: 'Class 8', href: '/class/8' }] },
           { date: '2027-02-02', onlineOH: true, skills: [0, 1] },
-          { date: '2027-02-03', homework: { label: 'HW 1 due', href: '/homework/1' }, onlineOH: true, skills: [0, 1], lectures: [{ label: 'Class 9', href: '/class/9' }] },
+          { date: '2027-02-03', onlineOH: true, skills: [0, 1], lectures: [{ label: 'Class 9', href: '/class/9' }] },
           { date: '2027-02-04', onlineOH: true, skills: [0, 1], lectures: [{ label: 'Class 10', href: '/class/10' }] },
-          { date: '2027-02-05', onlineOH: true, skills: [0, 1], lab: { label: 'Lab: Crit on HW 1' } },
+          { date: '2027-02-05', onlineOH: true, skills: [0, 1], homework: { label: 'Lab: Crit on HW 1', href: '/homework/1' } },
           { date: '2027-02-06' },
         ],
       },
@@ -157,9 +161,9 @@ export const calendarData: CalendarMonth[] = [
           { date: '2027-02-14' },
           { date: '2027-02-15', isHoliday: true, holidayName: 'Presidents Day' },
           { date: '2027-02-16', onlineOH: true, skills: [1, 2, 3, 4, 5] },
-          { date: '2027-02-17', homework: { label: 'HW 2 due', href: '/homework/2' }, onlineOH: true, skills: [1, 2, 3, 4, 5], lectures: [{ label: 'Class 13', href: '/class/13' }] },
+          { date: '2027-02-17', onlineOH: true, skills: [1, 2, 3, 4, 5], lectures: [{ label: 'Class 13', href: '/class/13' }] },
           { date: '2027-02-18', onlineOH: true, skills: [1, 2, 3, 4, 5], lectures: [{ label: 'Class 14', href: '/class/14' }] },
-          { date: '2027-02-19', onlineOH: true, skills: [1, 2, 3, 4, 5], lab: { label: 'Lab: Crit on HW 2' } },
+          { date: '2027-02-19', onlineOH: true, skills: [1, 2, 3, 4, 5], homework: { label: 'Lab: Crit on HW 2', href: '/homework/2' } },
           { date: '2027-02-20' },
         ],
       },
@@ -185,9 +189,9 @@ export const calendarData: CalendarMonth[] = [
           { date: '2027-02-28' },
           { date: '2027-03-01', onlineOH: true, skills: [4, 5, 6], lectures: [{ label: 'Class 18', href: '/class/18' }] },
           { date: '2027-03-02', onlineOH: true, skills: [4, 5, 6] },
-          { date: '2027-03-03', homework: { label: 'HW 3 due', href: '/homework/3' }, onlineOH: true, skills: [4, 5, 6], lectures: [{ label: 'Class 19', href: '/class/19' }] },
+          { date: '2027-03-03', onlineOH: true, skills: [4, 5, 6], lectures: [{ label: 'Class 19', href: '/class/19' }] },
           { date: '2027-03-04', onlineOH: true, skills: [4, 5, 6], lectures: [{ label: 'Skill Day', href: '/skills/#skill-days-in-class' }] },
-          { date: '2027-03-05', onlineOH: true, skills: [4, 5, 6], lab: { label: 'Lab: Crit on HW 3' } },
+          { date: '2027-03-05', onlineOH: true, skills: [4, 5, 6], homework: { label: 'Lab: Crit on HW 3', href: '/homework/3' } },
           { date: '2027-03-06' },
         ],
       },
@@ -232,9 +236,9 @@ export const calendarData: CalendarMonth[] = [
           { date: '2027-03-21' },
           { date: '2027-03-22', onlineOH: true, skills: [6, 7, 8, 9], lectures: [{ label: 'Class 23', href: '/class/23' }] },
           { date: '2027-03-23', onlineOH: true, skills: [6, 7, 8, 9] },
-          { date: '2027-03-24', homework: { label: 'HW 4 due', href: '/homework/4' }, onlineOH: true, skills: [6, 7, 8, 9], lectures: [{ label: 'Class 24', href: '/class/24' }] },
+          { date: '2027-03-24', onlineOH: true, skills: [6, 7, 8, 9], lectures: [{ label: 'Class 24', href: '/class/24' }] },
           { date: '2027-03-25', onlineOH: true, skills: [6, 7, 8, 9], lectures: [{ label: 'Class 25', href: '/class/25' }] },
-          { date: '2027-03-26', onlineOH: true, skills: [6, 7, 8, 9], lab: { label: 'Lab: Crit on HW 4' } },
+          { date: '2027-03-26', onlineOH: true, skills: [6, 7, 8, 9], homework: { label: 'Lab: Crit on HW 4', href: '/homework/4' } },
           { date: '2027-03-27' },
         ],
       },
@@ -266,9 +270,9 @@ export const calendarData: CalendarMonth[] = [
           { date: '2027-04-04' },
           { date: '2027-04-05', onlineOH: true, skills: [8, 9, 10, 11, 12], lectures: [{ label: 'Class 28', href: '/class/28' }] },
           { date: '2027-04-06', onlineOH: true, skills: [8, 9, 10, 11, 12] },
-          { date: '2027-04-07', homework: { label: 'HW 5 due', href: '/homework/5' }, onlineOH: true, skills: [8, 9, 10, 11, 12], lectures: [{ label: 'Class 29', href: '/class/29' }] },
+          { date: '2027-04-07', onlineOH: true, skills: [8, 9, 10, 11, 12], lectures: [{ label: 'Class 29', href: '/class/29' }] },
           { date: '2027-04-08', onlineOH: true, skills: [8, 9, 10, 11, 12], lectures: [{ label: 'Class 30', href: '/class/30' }] },
-          { date: '2027-04-09', onlineOH: true, skills: [8, 9, 10, 11, 12], lab: { label: 'Lab: Crit on HW 5' } },
+          { date: '2027-04-09', onlineOH: true, skills: [8, 9, 10, 11, 12], homework: { label: 'Lab: Crit on HW 5', href: '/homework/5' } },
           { date: '2027-04-10' },
         ],
       },
@@ -301,15 +305,9 @@ export const calendarData: CalendarMonth[] = [
           },
           { date: '2027-04-19', isHoliday: true, holidayName: "Patriots' Day" },
           { date: '2027-04-20', onlineOH: true, skills: [11, 12] },
-          {
-            date: '2027-04-21',
-            note: "A lecture from Sunday's list, or something else",
-            homework: { label: 'HW 6 due', href: '/homework/6' },
-            onlineOH: true,
-            skills: [11, 12],
-          },
+          { date: '2027-04-21', note: "A lecture from Sunday's list, or something else", onlineOH: true, skills: [11, 12] },
           { date: '2027-04-22', note: "A lecture from Sunday's list, or something else", onlineOH: true, skills: [11, 12] },
-          { date: '2027-04-23', onlineOH: true, skills: [11, 12], lab: { label: 'Lab: Crit on HW 6' } },
+          { date: '2027-04-23', onlineOH: true, skills: [11, 12], homework: { label: 'Lab: Crit on HW 6', href: '/homework/6' } },
           { date: '2027-04-24' },
         ],
       },

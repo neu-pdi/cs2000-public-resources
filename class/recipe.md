@@ -362,8 +362,9 @@ def _book_record_temp(b: BookRecord) -> ...:
 ### Conditional data {#template-variants}
 
 _From [Class 21](/class/21)._ A union's parts are its variants, so the template is
-a `match` with one `case` per variant, naming each variant's fields. It is the
-interval template again, with the cases taken from the data definition:
+a `match` with one `case` per variant, and in each, a line for each of that
+variant's fields, read with the `.` as for structured data. It is the interval
+template again, with the cases taken from the data definition:
 
 <!-- python setup
 @dataclass
@@ -408,30 +409,31 @@ def _payment_method_temp(p: PaymentMethod) -> ...:
     match p:
         case Cash():
             return ...
-        case Credit(cn, exp):
+        case Credit():
             ...
-            cn
+            p.card_number
             ...
-            exp
+            p.expiry
             ...
             return ...
-        case Checking(acc, rout, num):
+        case Checking():
             ...
-            acc
+            p.bank_account
             ...
-            rout
+            p.routing
             ...
-            num
+            p.check_number
             ...
             return ...
 ```
 
 ### Recursive data {#template-recursive}
 
-_From [Class 22](/class/22) on._ A `case` per variant, its fields named, and a
-recursive call on each field of the same type. For a list (first and rest), a
-stack of pancakes, and a tree, the rule is the same; only the number of
-recursive fields changes:
+_From [Class 22](/class/22) on._ A `case` per variant, a line for each of its
+fields, and a recursive call on each field of the same type. A list has no
+fields to read with the `.`, so its `case` names its first element and the rest.
+For a list, a stack of pancakes, and a tree, the rule is the same; only the
+number of recursive fields changes:
 
 ```python
 def _list_temp(lst: list) -> ...:
@@ -450,15 +452,15 @@ def _river_tree_temp(t: RiverTree) -> ...:
     match t:
         case Spring():
             return ...
-        case River(n, l, left, right):
+        case River():
             ...
-            n
+            t.name
             ...
-            l
+            t.length
             ...
-            _river_tree_temp(left)
+            _river_tree_temp(t.left)
             ...
-            _river_tree_temp(right)
+            _river_tree_temp(t.right)
             ...
             return ...
 ```

@@ -27,7 +27,7 @@ In-person hours where you can attempt [skill](/skills) assessments, by campus. A
 
 Dates are for Spring 2027, Boston campus; they will differ for other semesters or campuses.
 
-Lectures meet **Monday, Wednesday, and Thursday**. Labs meet **Friday**. Homework is due **Wednesday** (Anywhere-on-Earth).
+Lectures meet **Monday, Wednesday, and Thursday**. Labs meet **Friday**. Homework is due at its **crit**, in lab every other Friday.
 
 **Colored stripes** at the bottom of each day indicate which skills are assessable during office hours on that day. Past days are faded.
 

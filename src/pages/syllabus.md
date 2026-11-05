@@ -29,7 +29,7 @@ There will also be **homework** assignments, due every two weeks. Each homework 
 The lab period (CS2001) alternates between two kinds of lab, as the [calendar](/) shows:
 
 - **Practice labs** ([Lab 0](/lab/0) to Lab 6, each with its own page) are for pair programming, on problems from the classes since the last practice lab. You work in pairs, with one laptop open: the **driver** types, and the **copilot** reads ahead, suggests what to try, and catches mistakes, and you switch roles at each problem. This is how your [Pair Programming Sessions](#pair-programming-sessions) with a TA work, with you as the driver. Staff take attendance, and attending them can raise your grade (see [Grading](#grading)).
-- **Crit labs** are for [Assignment Crits](/syllabus#assignment-crits): you present the homework you submitted that Wednesday to a panel of classmates, and are on the panel for theirs. Grading of Assignment Crits forms part of your final grade, and lab attendance is required to do them.
+- **Crit labs** are for [Assignment Crits](/syllabus#assignment-crits): you present your homework, which is due then, to a panel of classmates, and are on the panel for theirs. Grading of Assignment Crits forms part of your final grade, and lab attendance is required to do them.
 
 Students can register for any CS 2001 lab section that is on their campus with available seats! Students must stick to the lab they registered for and cannot go to other labs if they miss their scheduled one.
 
@@ -38,7 +38,7 @@ Students can register for any CS 2001 lab section that is on their campus with a
 There are three primary sources of communication for this course:
 
 1. This website. This is where you will find policies, homework assignments, and the notes and practice for each day of class.
-2. [Pawtograder](https://pawtograder.khoury.northeastern.edu/). This is where you will find links to start your homework assignments / projects, and where you will see all grades (including for the on-paper skill assessments). 
+2. [Pawtograder](https://pawtograder.khoury.northeastern.edu/). This is where you will see all grades (including for the on-paper skill assessments).
 3. Discord. Please join at [https://discord.gg/GaXQSPDyYz](https://discord.gg/GaXQSPDyYz). Note you must set your Display Name for the server to your full name before you will be given access to private course channels. This will be a place for any discussions that are not direct questions about homework. Discord will also be used for lab communication and for announcements about the course. It is also the place where you will ask questions online about homework, and where you will do online office hours.
 
 Individual instructors might use other communication channels (such as Canvas announcements and email), which students are expected to monitor and respond to as needed.
@@ -60,11 +60,7 @@ The only software you will need is a web browser (and a computer or tablet that 
 
 ### Due Dates
 
-All homework assignments / project checkpoints will be due Anywhere-on-earth on Wednesday (i.e., if it's still Wednesday in some timezone, you are good).
-
-Each homework assignment forms the material used for the [Assignment Crit](#assignment-crits) that occurs during the lab following the deadline of that assignment; the only grading of homework assignments is via that presentation. While you will see grades in the Pawtograder gradebook, you will not get any written feedback on assignments there, and the results of any autograders that occur are just to help you improve your programs; they do not count towards any part of your grade. 
-
-If you turn in work late, it can contribute to a later crit in the case of the project. While this late work on a homework assignment may have improved your understanding, the actual material used for the [Assignment Crit](#assignment-crits) will be whatever was turned in by the deadline. **If you did not turn anything in by the deadline, you will receive no credit for your presentation in that crit.**
+Each homework assignment (a checkpoint of one of the three projects) is due at its [Assignment Crit](#assignment-crits), in lab every other Friday; the calendar and the assignment's page give the date. Each project is in a GitHub repository you make, public or private as you choose. Be sure to complete all work before the Assignment Crit, as you will present your project repository at that point. That presentation is the only grading of homework assignments. While you will see grades in the Pawtograder gradebook, you will not get any written feedback on assignments there.
 
 ### Regrade Requests
 
@@ -112,7 +108,7 @@ The course will teach the following 13 skills, grading of which will be performe
 
 ### Assignment Crits {#assignment-crits}
 
-Every other week's lab is for crits: presentations of the homework you submitted that Wednesday. The lab sits in panels of 5 or 6 students, with TAs moving between them, and everyone on a panel takes a turn presenting. The second lab of the semester introduces how crits work (and Class 7 has a practice crit); the first crit, on Homework 1, is two weeks after it.
+Every other week's lab is for crits: presentations of the homework due then. The lab sits in panels of 5 or 6 students, with TAs moving between them, and everyone on a panel takes a turn presenting. The second lab of the semester introduces how crits work (and Class 7 has a practice crit); the first crit, on Homework 1, is two weeks after it.
 
 A crit is one presentation, about 15 minutes including questions. The presenter starts it in vscode.dev, with the Assignment Crits extension, and reads out its join code; the panel joins in the browser, on their own laptops, and follows the presenter's code as they walk through their work: what they did, why they did it, and what else they could have done. Panelists raise a hand (in the browser) to ask a question aloud, and the presenter takes the questions in order. Every five minutes, and once at the end, each panelist rates the presentation, with one tap; when a question has been answered, the rest of the panel rates the question too. No one sees anyone else's ratings.
 
@@ -254,13 +250,13 @@ Specifically:
 
 - You are responsible for any material you turn in. The professor reserves the right to ask you to verbally explain the reasoning behind any answer or code that you turn in and to modify your grade based on your answers. It is vitally important that you turn in work that you understand.
 - Copying material from another person with or without their knowledge is not allowed.
-- Additionally, sharing solutions in forums (e.g., posting to public questions, posting code online, etc.) constitutes an academic integrity violation, as it may make it harder for other students to do work on their own, harming their own learning.
+- Additionally, sharing solutions in forums (e.g., posting to public questions, posting code online, etc.) constitutes an academic integrity violation, as it may make it harder for other students to do work on their own, harming their own learning. Your projects are the exception: each is your own, so you may make its repository public, to show it to anyone. Copying from someone else's project, public or not, is still not allowed.
 - Any sharing or receiving information about the content of skill assessments is an academic integrity violation, and may result in failing the class.
 - Trying to access any electronics during skill assessments is an academic integrity violation and will result in a 0 on that skill. This includes having a phone in your lap, no matter what is accessed on the phone. You will also be prohibited from re-attempting said skill.
 
 You _should_ _write_ all code for assignments yourself. Even if you discuss solutions, or approaches, with others, do the actual typing on your own! And avoid playing games or trying to find loopholes — i.e., do not merely type what someone says, or type what you see on another's screen. While we do not consider collaboration a violation, relying on others for your solutions may result in you not learning the material, and in this class, not learning the material will result in not being able to pass the skill assessments. 
 
-Remember, what you turn in as homework is not graded directly, rather, it is the basis of your crit, where you present it and answer questions about it — if you do not understand what you submitted, you will fail that assessment, nevermind that without the practice of homework, you will find it difficult to pass the skill assessments that form the core of your grade in the course (consult the [grading table](#grading)), so take homework for what it is intended: extensive opportunity to practice what we are teaching, plus the opportunity to practice talking about your work.
+Remember, your homework is not graded directly, rather, it is the basis of your crit, where you present it and answer questions about it — if you do not understand what you present, you will fail that assessment, nevermind that without the practice of homework, you will find it difficult to pass the skill assessments that form the core of your grade in the course (consult the [grading table](#grading)), so take homework for what it is intended: extensive opportunity to practice what we are teaching, plus the opportunity to practice talking about your work.
 
 The minimum penalty for an academic integrity violation is a zero on the assignment and a report to the [Office of Student Conduct and Conflict Resolution (OSCCR)](https://osccr.sites.northeastern.edu/). Penalties are increased if there are aggravating factors, such as stealing another student's work or lying about cheating. Also, see the [Official University Academic Integrity Policy](https://osccr.sites.northeastern.edu/academic-integrity-policy/).
 

@@ -26,16 +26,13 @@ Check out our [regrade request policy](/syllabus/#regrade-requests) for info on 
 ---
 ## Assignments
 ### When are assignments due?
-Assignments are due on Wednesday at midnight, specifically Wednesdays at 11:59 UTC-12
+Each assignment is due at its [Assignment Crit](/syllabus/#assignment-crits), in lab every other Friday: the calendar and the assignment's page give the date. Be sure to complete all work before the Assignment Crit, as you will present your project repository at that point
 
 ### How are assignments graded?
 Assignments are graded based on the [Assignment Crits](/syllabus/#assignment-crits), which occur during lab
 
-### I see an Autograder that gave me a grade. Does that count as part of my score?
-No! Your grade for an assignment is based on the Assignment Crit, *not the Autograder*. The Autograder is meant to provide feedback
-
 ### I don't agree with a grade I got, what do I do?
-Check out our [regrade request policy](/syllabus/#regrade-requests) for info on how to submit a regrade request for an assignment. You will have 7 days to do so. Keep in mind abusing the regrade request system may result in you losing the privilege, so please only submit a regrade if you genuinly believe there was a mistake and *NOT* just because you think you deserve a better score or get more points
+Assignment Crits have no regrades, though several of your least reliable crit scores are dropped (see the [regrade request policy](/syllabus/#regrade-requests))
 
 
 <!-- --- -->
@@ -60,4 +57,4 @@ This is likely because you are trying to edit the template repo rather than your
 Try restarting Safari and clearing the cache. If that does not work, let us know in the Discord and try using another browser if you can
 
 ### Can I use VS Code on my device instead of on the web?
-Sure, if you are familiar with VS Code and would like to use it locally, then you may do so, following the same setup steps. However, keep in mind that if you choose to do so, you **must push all your work to GitHub on the right repo** to get credit. If you forget to do so, you will not be given any credit on the homework, so we encourage you to use the online version to avoid this issue if you are not comfortable doing so
+Sure, if you are familiar with VS Code and would like to use it locally, then you may do so, following the same setup steps. However, you present your crits from vscode.dev, so you **must push all your work to GitHub** before each crit. If you're not comfortable doing that, we encourage you to use the online version

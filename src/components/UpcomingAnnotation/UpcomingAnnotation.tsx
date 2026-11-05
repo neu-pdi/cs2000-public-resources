@@ -100,7 +100,7 @@ export default function UpcomingAnnotation({ id }: UpcomingAnnotationProps) {
             {upcomingHomework && (
             <Admonition type="warning" icon="⚠️" title="Homework">
                 <Text as="span" className="text-sm text-gray-500">
-                Homework {upcomingHomework[0]} due {FormatDate(upcomingHomework[1])}
+                Crit on Homework {upcomingHomework[0]}: {FormatDate(upcomingHomework[1])}
                 </Text>
             </Admonition>
             )}
