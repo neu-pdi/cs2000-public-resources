@@ -27,12 +27,15 @@ chaffs/<function>/1.py, ...   known incorrect, one bug each
 staff_tests.py                our own tests, for --verify
 ```
 
-- No `#level` lines. The bundle's code runs in the student's file, so a
-  function can use the student's data definitions (`Plate`, in
-  `class22-has-blueberry`) and PLL's libraries (`table`, in
+- No `#level` lines in wheats and chaffs. The bundle's code runs in the
+  student's file, so a function can use the student's data definitions
+  (`Plate`, in `class22-has-blueberry`) and PLL's libraries (`table`, in
   `class10-apply-discounts`).
 - `staff_tests.py` runs without a level, so it has to import what a level
-  would give it: `from dataclasses import dataclass`.
+  would give it: `from dataclasses import dataclass`. The exception is one that
+  defines data that refers to itself, like `class22-has-blueberry`'s `Stack`:
+  it starts `#level intermediate` instead, since only at a level can a type
+  name one defined later in the file without quotes (`below: Stack`).
 - A chaff's id is its number, and a student who misses one sees only that
   number, so the comment at the top of each file is the only place that says
   what the bug is.

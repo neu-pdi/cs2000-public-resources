@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+#level intermediate
 
 
 @dataclass
@@ -9,7 +9,7 @@ class Plate:
 @dataclass
 class Pancake:
     flavor: str
-    below: "Stack"
+    below: Stack
 
 
 Stack = Plate | Pancake
