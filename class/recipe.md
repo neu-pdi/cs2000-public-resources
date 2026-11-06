@@ -508,9 +508,10 @@ The `...` in the recursive call is the accumulator's next value, from `f` and
 
 _From [Class 29](/class/29)._ A function that changes its input, rather than making
 a new value: its result type is `None`, its docstring says what changes, its
-examples are Setup, Call, and Check, and its template ends by setting the fields
-it changes (or, for a list, by changing it, with `append` or by assigning to a
-position), rather than with `return ...`:
+examples are Setup, Call, and Check, and its template ends by setting each field
+(or, for a list, by changing it, with `append` or by assigning to a position),
+rather than with `return ...`, since a function on that data might change any of
+them:
 
 ```python
 def _library_book_temp(b: LibraryBook) -> None:
@@ -521,8 +522,12 @@ def _library_book_temp(b: LibraryBook) -> None:
     ...
     b.copies
     ...
+    b.id = ...
+    b.title = ...
     b.copies = ...
 ```
+
+A function's body keeps only the lines that set the fields it changes.
 
 ## Designing Abstractions {#abstractions}
 
