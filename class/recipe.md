@@ -474,8 +474,8 @@ variable in the Signature: `def _chain_temp[T](c: Chain[T]) -> ...:`.
 
 ### Accumulators {#template-accumulators}
 
-_From [Classes 17](/class/17) (loops), [30](/class/30) (lists) and
-[31](/class/31) (trees)._ When a function needs to know something about the part
+_From [Classes 17](/class/17) (loops), [31](/class/31) (lists) and
+[32](/class/32) (trees)._ When a function needs to know something about the part
 of the data it has already passed, an **accumulator** holds it, and its
 **accumulator statement** says what it means. In a loop, it is a variable that
 each trip changes. In recursion, it is an extra parameter of a helper, whose
@@ -506,10 +506,11 @@ The `...` in the recursive call is the accumulator's next value, from `f` and
 
 ### Data that changes {#template-mutation}
 
-_From [Class 27](/class/27)._ A function that changes its input, rather than making
+_From [Class 29](/class/29)._ A function that changes its input, rather than making
 a new value: its result type is `None`, its docstring says what changes, its
 examples are Setup, Call, and Check, and its template ends by setting the fields
-it changes, rather than with `return ...`:
+it changes (or, for a list, by changing it, with `append` or by assigning to a
+position), rather than with `return ...`:
 
 ```python
 def _library_book_temp(b: LibraryBook) -> None:
@@ -525,7 +526,7 @@ def _library_book_temp(b: LibraryBook) -> None:
 
 ## Designing Abstractions {#abstractions}
 
-_From [Classes 26](/class/26) and [29](/class/29)._ When two functions are the
+_From [Classes 27](/class/27) and [28](/class/28)._ When two functions are the
 same but for a few places, one function, an **abstraction**, can do the work of
 both:
 

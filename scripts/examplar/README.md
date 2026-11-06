@@ -15,8 +15,8 @@ works from the notes once it is pushed there.
 These sources are public, since this repository is. That's only fine because
 each function's solution is already in the notes. Keep the sources of other
 bundles in the staff repository. The labs' bundles, and the bundle for Class
-27's Practice, are built from there, and only the built bundles
-(`static/examplar/lab*.json` and `class27-tools.json`, bytecode) are here.
+30's Practice, are built from there, and only the built bundles
+(`static/examplar/lab*.json` and `class30-tools.json`, bytecode) are here.
 
 ## Layout
 

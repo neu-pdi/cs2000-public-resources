@@ -245,7 +245,7 @@ export const calendarData: CalendarMonth[] = [
       {
         label: 'Week 11',
         pairing: 3,
-        topic: 'Designing abstractions; mutable data & the heap; Skill Day',
+        topic: 'More trees; designing abstractions; Skill Day',
         days: [
           { date: '2027-03-28' },
           { date: '2027-03-29', onlineOH: true, skills: [7, 8, 9, 10], lectures: [{ label: 'Class 26', href: '/class/26' }] },
@@ -265,20 +265,20 @@ export const calendarData: CalendarMonth[] = [
       {
         label: 'Week 12',
         pairing: 3,
-        topic: 'More trees; abstractions from templates; accumulators',
+        topic: 'Abstractions from templates; mutable data; aliasing & the heap',
         days: [
           { date: '2027-04-04' },
-          { date: '2027-04-05', onlineOH: true, skills: [8, 9, 10, 11, 12], lectures: [{ label: 'Class 28', href: '/class/28' }] },
-          { date: '2027-04-06', onlineOH: true, skills: [8, 9, 10, 11, 12] },
-          { date: '2027-04-07', onlineOH: true, skills: [8, 9, 10, 11, 12], lectures: [{ label: 'Class 29', href: '/class/29' }] },
-          { date: '2027-04-08', onlineOH: true, skills: [8, 9, 10, 11, 12], lectures: [{ label: 'Class 30', href: '/class/30' }] },
-          { date: '2027-04-09', onlineOH: true, skills: [8, 9, 10, 11, 12], homework: { label: 'Lab: Crit on HW 5', href: '/homework/5' } },
+          { date: '2027-04-05', onlineOH: true, skills: [8, 9, 10, 11], lectures: [{ label: 'Class 28', href: '/class/28' }] },
+          { date: '2027-04-06', onlineOH: true, skills: [8, 9, 10, 11] },
+          { date: '2027-04-07', onlineOH: true, skills: [8, 9, 10, 11], lectures: [{ label: 'Class 29', href: '/class/29' }] },
+          { date: '2027-04-08', onlineOH: true, skills: [8, 9, 10, 11], lectures: [{ label: 'Class 30', href: '/class/30' }] },
+          { date: '2027-04-09', onlineOH: true, skills: [8, 9, 10, 11], homework: { label: 'Lab: Crit on HW 5', href: '/homework/5' } },
           { date: '2027-04-10' },
         ],
       },
       {
         label: 'Week 13',
-        topic: 'Accumulators on trees; to be determined; Skill Day',
+        topic: 'Accumulators in recursion and on trees; Skill Day',
         days: [
           { date: '2027-04-11' },
           { date: '2027-04-12', onlineOH: true, skills: [10, 11, 12], lectures: [{ label: 'Class 31', href: '/class/31' }] },

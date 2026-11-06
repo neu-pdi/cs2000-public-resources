@@ -74,6 +74,11 @@ export default function DateView({ id, item }: DateViewProps) {
     );
 }
 
+/**
+ * The class's date, then its notices (the next homework crit, skills starting or
+ * ending). The notices are blocks, so the "Date: <ClassDate />" line they sit in
+ * is a <div>, not a <p>: see `P` in src/theme/MDXComponents.tsx.
+ */
 export function ClassDate() {
     const { frontMatter } = useDoc();
     const { class_number } = frontMatter as DatePageFrontMatter;

@@ -786,7 +786,7 @@ def test_count_internal_nodes():
 
 </details>
 
-**More practice:** the Practice sections of [Class 25](/class/25#practice), [Class 28](/class/28#practice); and [Lab 5](/lab/5).
+**More practice:** the Practice sections of [Class 25](/class/25#practice), [Class 26](/class/26#practice); and [Lab 5](/lab/5).
 
 ---
 
@@ -886,7 +886,7 @@ def test_count_matching():
 
 </details>
 
-**More practice:** the Practice sections of [Class 24](/class/24#practice), [Class 26](/class/26#practice), [Class 29](/class/29#practice); and [Lab 6](/lab/6).
+**More practice:** the Practice sections of [Class 24](/class/24#practice), [Class 27](/class/27#practice), [Class 28](/class/28#practice); and [Lab 6](/lab/6).
 
 ---
 
@@ -1009,7 +1009,7 @@ print("Same object?", my_book is updated_book)
 </details>
     
 
-**More practice:** the Practice section of [Class 27](/class/27#practice).
+**More practice:** the Practice sections of [Class 29](/class/29#practice), [Class 30](/class/30#practice).
 
 ---
 

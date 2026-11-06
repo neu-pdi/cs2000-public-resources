@@ -193,14 +193,12 @@ const config: Config = {
           activeBasePath: '/homework',
           position: 'left',
           label: 'Homework',
-          docsPluginId: 'homework',
         },
         {
           to: '/current-lab/',
           activeBasePath: '/lab',
           position: 'left',
           label: 'Labs',
-          docsPluginId: 'lab',
         },
         {
           position: 'left',
