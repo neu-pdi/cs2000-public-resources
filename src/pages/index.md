@@ -9,6 +9,8 @@ import SkillCalendar from '@site/src/components/SkillCalendar';
 import { calendarData } from '../data/calendar-data';
 import styles from './index.module.css';
 
+<Unreviewed />
+
 # CS 2000: Introduction to Program Design and Implementation
 
 Introduces computer science and data science to students with no programming experience. Starts by building programs with numbers, text, and images, then moves to exploring real, complex data sets both interactively and through coding. Students then practice coding using a popular industrial language with a professional programmer's interface to the code. Students learn to identify and respond to ethical challenges in program design.

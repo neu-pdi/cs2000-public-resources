@@ -88,3 +88,24 @@ ul > li:has(pre)::before {
 .pll-output table {
   font-size: 0.9rem;
 }
+
+/* A page with <Unreviewed /> on it (src/components/Unreviewed.tsx) is tinted
+   pink, with a label near its top, until it has been reviewed. */
+html:has(.unreviewed-marker) {
+  --ifm-background-color: #fff0f5;
+}
+html[data-theme='dark']:has(.unreviewed-marker) {
+  --ifm-background-color: #33202b;
+}
+.unreviewed-marker {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.1rem 0.6rem;
+  border-radius: 999px;
+  background: #c2185b;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}

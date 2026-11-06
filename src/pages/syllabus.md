@@ -4,6 +4,8 @@ description: Syllabus
 hide_table_of_contents: true
 ---
 
+<Unreviewed />
+
 ## Course Description
 
 Introduces computer science and data science to students with no prior programming experience. Starts by building programs with numbers, text, and images. Explores real, complex datasets both interactively and through coding by doing data analysis, constructing graphs, and computing interesting results. Offers students an opportunity to build a solid foundation and practice coding with a popular industrial coding language with a professional programmer’s interface to the code. Covers skills needed to identify and respond to ethical challenges that arise in the program design process.

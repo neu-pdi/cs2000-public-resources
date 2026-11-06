@@ -3,6 +3,8 @@ pll_level: intermediate
 title: Extra - λ
 ---
 
+<Unreviewed />
+
 > Thanks to Chris Coombes for feedback on an earlier draft of this, and for doing so much with a much earlier presentation so as to inspire the work at all.
 
 For today, we are going back to foundations -- some of the **oldest**, and most **fundamental** and **fascinating** ideas in the entire field of computer science.

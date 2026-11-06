@@ -3,6 +3,8 @@ pll_level: intermediate
 title: Extra - λY
 ---
 
+<Unreviewed />
+
 Today, we'll continue with the lambda calculus, and explore a fascinating and challenging problem: **how to construct recursive functions**. This is important, as recursion can be used to express iteration, and all sorts of other important computational patterns. It might seem initially easy, by just having functions call themselves (indeed, while recursion in Python may have been confusing, it wasn't hard to do), but when we stop to think about it, we run into a problem -- **lambdas have no name, and therefore have no way of "calling themselves"**. 
 
 How, then, can we construct functions that call themselves? **This is the puzzle we'll figure out today.**

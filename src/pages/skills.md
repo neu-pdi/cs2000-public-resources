@@ -9,6 +9,8 @@ import DateView from '@site/src/components/DateView/DateView';
 import AssessmentHours from '@site/src/components/AssessmentHours';
 import styles from './index.module.css';
 
+<Unreviewed />
+
 # Skills
 
 This course will teach the following skills, assessment of which will

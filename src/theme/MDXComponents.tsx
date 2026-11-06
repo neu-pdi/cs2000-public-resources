@@ -4,6 +4,7 @@ import Aside from '@site/src/components/Aside';
 import CollapsibleSection from '@site/src/components/CollapsibleSection';
 import DesignRecipe from '@site/src/components/DesignRecipe';
 import SkillBadge from '@site/src/components/SkillBadge';
+import Unreviewed from '@site/src/components/Unreviewed';
 
 const SKILL_LINK = /^\/skills\/?#(\d+)$/;
 
@@ -17,9 +18,9 @@ function A(props: ComponentProps<'a'>) {
   return <MDXComponents.a {...props} />;
 }
 
-// Registered globally so pages can use <Aside>, <DesignRecipe> and <SkillBadge>
-// without an import, and so the collapsible-sections remark plugin can emit
-// <CollapsibleSection>.
+// Registered globally so pages can use <Aside>, <DesignRecipe>, <SkillBadge> and
+// <Unreviewed> without an import, and so the collapsible-sections remark plugin
+// can emit <CollapsibleSection>.
 export default {
   ...MDXComponents,
   a: A,
@@ -27,4 +28,5 @@ export default {
   CollapsibleSection,
   DesignRecipe,
   SkillBadge,
+  Unreviewed,
 };
