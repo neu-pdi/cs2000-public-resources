@@ -112,9 +112,13 @@ countdown = reactor(
     stop_when=lambda n: n <= 0,
 )
 
-def test_countdown():
+def test_countdown_trace():
     assert countdown.simulate_trace(20).get_trace() == [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+
+def test_countdown_of_the_original():
     assert countdown.get_value() == 10  # the original is unchanged
+
+def test_countdown_after_one_tick():
     assert countdown.tick().get_value() == 9
 ```
 

@@ -138,10 +138,12 @@ def sessions_by_speaker(sessions: dict[str, Session]) -> dict[str, list[str]]:
         result[s.speaker] = result.get(s.speaker, []) + [sid]
     return result
 
-def test_sessions_by_speaker():
+def test_sessions_by_speaker_of_two_talks():
     two_talks = {"A1": Session("A1", "Graphs", "Dr. Kim", 30),
                  "A2": Session("A2", "Trees", "Dr. Kim", 30)}
     assert sessions_by_speaker(two_talks) == {"Dr. Kim": ["A1", "A2"]}
+
+def test_sessions_by_speaker_of_no_sessions():
     assert sessions_by_speaker({}) == {}
 ```
 
@@ -206,13 +208,19 @@ def like_counts(favs: dict[str, list[str]]) -> Counter:
             all_likes.append(movie)
     return Counter(all_likes)
 
-def test_fans_by_movie():
+def test_fans_by_movie_of_inception():
     assert fans_by_movie(favorites)["Inception"] == ["Alice", "Chidi"]
+
+def test_fans_by_movie_of_the_dark_knight():
     assert fans_by_movie(favorites)["The Dark Knight"] == ["Ben"]
+
+def test_fans_by_movie_of_no_favorites():
     assert fans_by_movie({}) == {}
 
-def test_like_counts():
+def test_like_counts_of_the_matrix():
     assert like_counts(favorites)["The Matrix"] == 3
+
+def test_like_counts_of_the_most_liked():
     assert like_counts(favorites).most_common(1) == [("The Matrix", 3)]
 ```
 

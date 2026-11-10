@@ -551,8 +551,10 @@ def EQUAL0(n):
         return FALSE
     return n(always_false, TRUE)
 
-def test_equal0():
+def test_equal0_of_zero():
     assert tobool(EQUAL0(ZERO))
+
+def test_equal0_of_ten():
     assert not tobool(EQUAL0(ofnum(10)))
 ```
 

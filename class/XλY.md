@@ -118,23 +118,39 @@ def EQUAL0(n):
 Let's do a little review -- we'll use some normal Python features (including `lambda`) in these tests, and then we'll stick with pure lambda calculus for the rest of the lecture:
 
 ```python
-def test_review():
+def test_if_when_the_condition_is_true():
     assert IF(TRUE, lambda: 1, lambda: 2) == 1
+
+def test_if_when_the_condition_is_false():
     assert IF(FALSE, lambda: 1, lambda: 2) == 2
+
+def test_if_of_and_or_not():
     assert IF(AND(OR(FALSE, TRUE), NOT(FALSE)), lambda: "a", lambda: "b") == "a"
 
+def test_four_with_y_plus_1_from_0():
     FOUR = ofnum(4)
-
     assert FOUR(lambda y: y + 1, 0) == 4
+
+def test_four_with_y_plus_1_from_3():
+    FOUR = ofnum(4)
     assert FOUR(lambda y: y + 1, 3) == 7
+
+def test_four_with_y_plus_2_from_1():
+    FOUR = ofnum(4)
     assert FOUR(lambda y: y + 2, 1) == 9
 
+def test_two_building_a_string():
     assert TWO(lambda s: "Hi! " + s, "Bye!") == "Hi! Hi! Bye!"
 
-    # Python's `not` is an operator, rather than a function, so we
-    # write `lambda b: not b` to get a function that does the same thing.
+# Python's `not` is an operator, rather than a function, so we
+# write `lambda b: not b` to get a function that does the same thing.
+def test_zero_is_not_true():
     assert ZERO(lambda b: not b, True)
+
+def test_one_is_true():
     assert not ONE(lambda b: not b, True)
+
+def test_two_is_true():
     assert TWO(lambda b: not b, True)
 ```
 

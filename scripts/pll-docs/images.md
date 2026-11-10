@@ -643,8 +643,10 @@ def dot(r: float) -> Image:
     """a red dot of radius r"""
     return circle(r, "solid", "red")
 
-def test_dot():
+def test_dot_of_radius_3():
     assert dot(3) == circle(3, "solid", "red")
+
+def test_dot_of_radius_5():
     assert image_width(dot(5)) == 10
 ```
 

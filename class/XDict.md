@@ -138,10 +138,12 @@ def sessions_by_speaker(sessions: dict[str, Session]) -> dict[str, list[str]]:
         result[s.speaker] = result.get(s.speaker, []) + [sid]
     return result
 
-def test_sessions_by_speaker():
+def test_sessions_by_speaker_of_two_talks():
     two_talks = {"A1": Session("A1", "Graphs", "Dr. Kim", 30),
                  "A2": Session("A2", "Trees", "Dr. Kim", 30)}
     assert sessions_by_speaker(two_talks) == {"Dr. Kim": ["A1", "A2"]}
+
+def test_sessions_by_speaker_of_no_sessions():
     assert sessions_by_speaker({}) == {}
 ```
 
