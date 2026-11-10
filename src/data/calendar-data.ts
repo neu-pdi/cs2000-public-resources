@@ -227,6 +227,10 @@ export const calendarData: CalendarInfo = {
         { label: 'No HW Due', kind: 'note', startDate: '2026-11-22' },
         { label: 'No Lab', skillsAvailable: true, startDate: '2026-11-24' },
         { label: 'Thanks. Break', startDate: '2026-11-25', endDate: '2026-11-27' },
+        // Retake periods. One entry per date: holidayOn takes the first match, so a
+        // second entry on the same day would be dropped.
+        { label: 'RETAKES 1–3pm: CPM 100 (Alvaro & Ellen)', kind: 'note', startDate: '2026-12-14' },
+        { label: 'RETAKES 10:30–12:30: Ell Hall Aud. (Rush), WVF 020 (Daniel)', kind: 'note', startDate: '2026-12-17' },
     ],
     officeHours: [
         { kind: 'weekly', weekdays: ['mon', 'tue', 'wed', 'thu', 'fri'], startDate: '2026-09-09', endDate: '2026-12-11' },

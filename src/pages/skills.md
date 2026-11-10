@@ -16,11 +16,11 @@ form the primary source of final grades.
 
 Each skill will be assessed as "Doesn't meet expectations", "Approaching
 expectations", and "Meets expectations", and students may attempt any skill
-assessment up to four times with the best result being used for their grade.
+assessment at least four times with the best result being used for their grade.
 
 Skills can be attempted in class on Skill Days (Oct. 8, Nov. 5, Nov. 19, and Dec. 3) and
 during Assessment Hours. Assessment Hours are held at the following times
-(except on holidays and Skill Days):
+(except on holidays and Skill Days). **Note: assessments during assessment hours must be completed within the given time, as we must leave the room at end of hours, and arriving before the end of hours does not guarantee right to take assessment. Show up early, or not on the last day an assessment is available.** 
 <div className={styles.assessmentHours}>
   <AssessmentHours />
 </div>
@@ -899,4 +899,4 @@ attempt any of those available (likely, due to time, a couple of them). The asse
 
 ## End of Semester Re-attempts
 
-While most skill assessments must take place during the schedule below, each student may re-attempt 2 skills; such re-attempts can be scheduled in the last two weeks of classes or on the day of the final exam. (Note: there is no final exam, we will only use this time for the re-attempts.) They must contact the course coordinator (Kayla McLaughlin, k.mclaughlin@northeastern.edu) in order to do schedule these. These late semester retakes can be done regardless of how many attempts of a given skill the student has made previously.
+While most skill assessments must take place during the schedule below, each student may re-attempt 3 distinct skills (one attempt per skill); such re-attempts can be scheduled during our final exam period, on the [dates in the schedule](/#schedule). (Note: there is no final exam, we will only use this time for the re-attempts.) They must contact the course coordinator (Kayla McLaughlin, k.mclaughlin@northeastern.edu) in order to do schedule these. These late semester retakes can be done regardless of how many attempts of a given skill the student has made previously.
