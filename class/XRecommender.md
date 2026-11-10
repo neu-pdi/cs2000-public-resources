@@ -259,7 +259,7 @@ they receive.
 ## Practice
 
 ### Part 1: Loading and Converting Data
-1. Load the CSV file at `https://raw.githubusercontent.com/neu-pdi/cs2000-public-resources/refs/heads/main/static/support/movies-data.csv` with `load_table`.
+1. Load the CSV file at `https://raw.githubusercontent.com/neu-pdi/cs2000-public-resources/refs/heads/python/static/support/movies-data.csv` with `load_table`.
 1. Create a list, `movie_columns`, containing the strings `"Movie 1"`, `"Movie 2"`, ..., `"Movie 10"`, for your column names.
 1. Make a list of the table's rows, each a dictionary, called `data_lst` (the table's `rows` gives it, as in the [Tables](/pll/tables#rows) reference). Print the first dictionary to observe the data structure.
 1. Write a loop that iterates through `data_lst`. For each `row`, print the `Movie 1`.

@@ -130,7 +130,7 @@ one on the web (when `source` starts with `https://`). The first line of the CSV
 gives the names of the columns.
 
 ```python
-recipes_raw = load_table("https://raw.githubusercontent.com/neu-pdi/cs2000-public-resources/refs/heads/main/static/support/5-recipes.csv")
+recipes_raw = load_table("https://raw.githubusercontent.com/neu-pdi/cs2000-public-resources/refs/heads/python/static/support/5-recipes.csv")
 recipes_raw.head(3)
 ```
 

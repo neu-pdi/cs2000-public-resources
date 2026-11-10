@@ -665,7 +665,7 @@ works on it. PNG, JPEG, GIF, WebP, and SVG files are understood, up to 2 MB each
 these are for the graphics a program draws with, not for photographs.
 
 ```python example
-doghouse = load_image("https://raw.githubusercontent.com/neu-pdi/cs2000-public-resources/refs/heads/main/static/img/lab5-doghouse.png")
+doghouse = load_image("https://raw.githubusercontent.com/neu-pdi/cs2000-public-resources/refs/heads/python/static/img/lab5-doghouse.png")
 scale(0.25, doghouse)
 ```
 
