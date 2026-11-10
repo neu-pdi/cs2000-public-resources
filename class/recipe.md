@@ -5,7 +5,6 @@ pll_level: intermediate
 title: Design Recipe
 ---
 
-<Unreviewed />
 
 ## The Design Recipe
 
@@ -117,8 +116,8 @@ def test_choose_hat():
 - Write the expected outputs by working them out (or writing the computation, as
   `0 * 9/5 + 32`), **never** by running the function: a wrong body would then
   make the tests agree with it.
-- Since the body is `...`, the tests already run, and fail. A mistake in an
-  example shows up now, before any code depends on it.
+- Since the body is `...`, the tests already run, and fail. We can think through different possible behaviors now,
+  before any code depends on it.
 - Some assignments, and some classes, give you an `#examplar` line to put at the
   top of the file. With it, every run checks your examples against
   implementations the course wrote: some known to be correct (are your examples
@@ -128,7 +127,7 @@ def test_choose_hat():
 ### Body {#body}
 
 Copy the template's body into the function, in place of its `...`, and fill
-in each `...`, using the examples to decide what it becomes. A line that only
+in each `...` (or remove it), using the examples to decide what it becomes. A line that only
 names a part is a reminder: use the part, or delete the line. Any `...` left in
 the function stops it with "not written yet" when it runs.
 
@@ -276,19 +275,14 @@ making a new one, summarizes a column instead (`t.sum`, `t.mean`, a chart), and
 ### A fixed set of strings {#template-strings}
 
 _From [Class 11](/class/11)._ A string that is one of a few known values (a
-promo code, a kind of delivery) has one branch per value, and an `else` for
-anything else, which is what cleaning data needs:
+promo code, a kind of delivery) has one branch per value. There should be no `else` 
+unless the data is known to be dirty, but in that case, it should first be cleaned.
 
 ```python
 def _promo_code_temp(s: str) -> ...:
     if s == "":
         return ...
     elif s == "none":
-        return ...
-    else:
-        ...
-        s
-        ...
         return ...
 ```
 
