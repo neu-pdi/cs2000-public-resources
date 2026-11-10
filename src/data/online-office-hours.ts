@@ -9,7 +9,7 @@
 import { sheetCsvUrl } from '../utils/sheets';
 
 /** The "online office hours" tab of the scheduling sheet. */
-export const ONLINE_OH_CSV_URL = sheetCsvUrl('434058018');
+export const ONLINE_OH_CSV_URL = ''; //sheetCsvUrl('434058018');
 
 /** Eastern is always three hours ahead of Pacific, so one offset covers the year. */
 const ET_MINUS_PT_MINUTES = 3 * 60;

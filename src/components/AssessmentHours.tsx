@@ -8,8 +8,8 @@ import { parseCsv } from '@site/src/utils/csv';
  * Google's export endpoint does send `Access-Control-Allow-Origin` (on both the 307
  * and the redirected response), so CORS itself is not an obstacle.
  */
-const CSV_URL =
-  'https://docs.google.com/spreadsheets/d/1kDfzuVIM3s-NDJVf6rdgna06Cl1MGMQAVSqm1XEHFyY/export?format=csv&gid=1134536581';
+const CSV_URL = ''
+  //'https://docs.google.com/spreadsheets/d/1kDfzuVIM3s-NDJVf6rdgna06Cl1MGMQAVSqm1XEHFyY/export?format=csv&gid=1134536581';
 
 /**
  * Origin of a path-preserving proxy for docs.google.com, used as a fallback: Google
