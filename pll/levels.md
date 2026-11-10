@@ -48,11 +48,10 @@ to use.
 ## The `#level` line in the editor
 
 PLL keeps a file's `#level` line where it is, so that it isn't lost by accident.
-The line is tinted, and above it **🔒 Level: beginner · change** opens a list of
-the levels, where you can also remove the line. The status bar shows the level
-too (**PLL: beginner**, or **PLL: raw** for a file with no line), and clicking it
-opens the same list; so does **PLL: Change Level** in the Command Palette, which
-also gives a file with no line one.
+The line is tinted, and the status bar, at the bottom right of the window, shows
+the level: **PLL: beginner**, or **PLL: raw** for a file with no line. Clicking
+it opens a list of the levels, where you can also remove the line, or give a
+file with no line one; so does **PLL: Change Level** in the Command Palette.
 
 Editing the line itself does nothing to it. Typing on it puts what you typed on
 the line below, and deleting it puts it back. **Select All** selects everything
