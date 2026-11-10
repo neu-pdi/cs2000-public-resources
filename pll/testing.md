@@ -10,16 +10,18 @@ description: Writing tests with test_ functions and assert
 
 You put tests in the **same file** as the code they check. A test is a
 function whose name starts with `test_`, and that uses `assert` to check that
-something is `True`. We write one test function right after each function we
-design, with several `assert`s in it:
+something is `True`. We write **one test function per example**, right after the
+function it checks, each named for the function and the example:
 
 ```python
 def add(x: int, y: int) -> int:
     """adds x and y"""
     return x + y
 
-def test_add():
+def test_add_two_numbers():
     assert add(2, 3) == 5
+
+def test_add_a_negative_number():
     assert add(-1, 1) == 0
 ```
 
@@ -30,13 +32,16 @@ defined. If a test fails, you can click it to jump to that test. Anything the
 test printed is shown with it. If the program stops with an error, or ends itself
 with `sys.exit()`, the tests are not run, and PLL says so.
 
-A test function stops at its first `assert` that fails, so the `assert`s after
-that one aren't checked until you fix it.
+One example per test function is what makes that card useful: each test function
+is reported as one test, so `test_add_a_negative_number` says which example
+failed, where a single `test_add` holding four examples would only say that
+`test_add` failed. And a test function stops at its first `assert` that fails, so
+the examples after it aren't checked until you fix it.
 
 A test takes no parameters: PLL calls it with nothing. One written with
-parameters, like `def test_add(x):`, is not run; PLL says what is wrong with it,
-above the card. Clicking **Stop** while the tests run stops them: the test that
-was running is marked as stopped, and the rest are not run.
+parameters, like `def test_add_two_numbers(x):`, is not run; PLL says what is
+wrong with it, above the card. Clicking **Stop** while the tests run stops them:
+the test that was running is marked as stopped, and the rest are not run.
 
 To check that a function returns `True` or `False`, `assert` its result directly, or use `assert not`:
 
@@ -47,8 +52,10 @@ def is_even(n: int) -> bool:
 -->
 
 ```python
-def test_is_even():
+def test_is_even_4():
     assert is_even(4)
+
+def test_is_even_3():
     assert not is_even(3)
 ```
 
@@ -101,9 +108,11 @@ def first_letter(s: str) -> str:
 ```python
 import pytest
 
-def test_first_letter():
+def test_first_letter_of_an_empty_string():
     with pytest.raises(IndexError):
         first_letter("")
+
+def test_first_letter_of_hello():
     assert first_letter("hello") == "h"
 ```
 

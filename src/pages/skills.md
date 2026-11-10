@@ -48,9 +48,13 @@ def nm_square(n: float) -> float:
     """Multiplies the input by itself"""
     ...
 
-def test_nm_square():
+def test_nm_square_of_a_negative():
     assert nm_square(-1) == 1
+
+def test_nm_square_of_0():
     assert nm_square(0) == 0
+
+def test_nm_square_of_2():
     assert nm_square(2) == 4
 ```
 <p>**Answer approaching expectations (docstring, insufficient tests):**</p>
@@ -95,9 +99,13 @@ def nm_square(n: float) -> float:
     """Multiplies the input by itself"""
     ...
 
-def test_nm_square():
+def test_nm_square_of_a_negative():
     assert nm_square(-1) == 1
+
+def test_nm_square_of_0():
     assert nm_square(0) == 0
+
+def test_nm_square_of_2():
     assert nm_square(2) == 4
 ```
 
@@ -122,9 +130,13 @@ def check_age(age: int) -> bool:
     """Returns True when the age is above or equal to 21"""
     ...
 
-def test_check_age():
+def test_check_age_of_20():
     assert not check_age(20)
+
+def test_check_age_of_21():
     assert check_age(21)
+
+def test_check_age_of_45():
     assert check_age(45)
 ```
 
@@ -138,9 +150,13 @@ def check_year(year: int) -> str:
     """Returns 'Past', 'Current', or 'Future' depending on whether the year is before, equal to, or after 2026"""
     ...
 
-def test_check_year():
+def test_check_year_in_the_past():
     assert check_year(2020) == "Past"
+
+def test_check_year_in_the_present():
     assert check_year(2026) == "Current"
+
+def test_check_year_in_the_future():
     assert check_year(2030) == "Future"
 ```
 
@@ -288,16 +304,20 @@ def wall_area(width: float, height: float) -> float:
     """area of a rectangular wall"""
     return width * height
 
-def test_wall_area():
+def test_wall_area_of_2_by_3():
     assert wall_area(2, 3) == 6
+
+def test_wall_area_of_10_by_8():
     assert wall_area(10, 8) == 80
 
 def room_wall_area(length: float, width: float, height: float) -> float:
     """total area of the four walls of a rectangular room"""
     return 2 * wall_area(length, height) + 2 * wall_area(width, height)
 
-def test_room_wall_area():
+def test_room_wall_area_of_a_unit_room():
     assert room_wall_area(1, 1, 1) == 4
+
+def test_room_wall_area_of_a_large_room():
     assert room_wall_area(10, 12, 8) == 352
 ```
 
@@ -429,9 +449,13 @@ def list_of_squares(numbers: list[float]) -> list[float]:
 
     return result
 
-def test_list_of_squares():
+def test_list_of_squares_of_no_numbers():
     assert list_of_squares([]) == []
+
+def test_list_of_squares_of_positives():
     assert list_of_squares([5, 6]) == [25, 36]
+
+def test_list_of_squares_of_negatives_and_zero():
     assert list_of_squares([-1, 0, 1]) == [1, 0, 1]
 ```
 
@@ -448,9 +472,13 @@ def list_of_squares(numbers: list[float]) -> list[float]:
 
     return numbers
 
-def test_list_of_squares():
+def test_list_of_squares_of_no_numbers():
     assert list_of_squares([]) == []
+
+def test_list_of_squares_of_positives():
     assert list_of_squares([5, 6]) == [25, 36]
+
+def test_list_of_squares_of_negatives_and_zero():
     assert list_of_squares([-1, 0, 1]) == [1, 0, 1]
 ```
 </details>
@@ -613,16 +641,17 @@ def is_strong(b: Beverage) -> bool:
         case Tea():
             return b.brew_time > 5
 
-def test_is_strong():
-    regular = Coffee(1)
-    strong_coffee = Coffee(3)
-    weak_tea = Tea("Green Tea", 3)
-    strong_tea = Tea("Black Tea", 7)
+def test_is_strong_regular_coffee():
+    assert not is_strong(Coffee(1))
 
-    assert not is_strong(regular)
-    assert is_strong(strong_coffee)
-    assert not is_strong(weak_tea)
-    assert is_strong(strong_tea)
+def test_is_strong_strong_coffee():
+    assert is_strong(Coffee(3))
+
+def test_is_strong_weak_tea():
+    assert not is_strong(Tea("Green Tea", 3))
+
+def test_is_strong_strong_tea():
+    assert is_strong(Tea("Black Tea", 7))
 ```
 
 <p>**Answer approaching expectations (missing docstring, signature without types, incorrect field types, only one test):**</p>
@@ -692,15 +721,17 @@ def make_positive(lon: list[float]) -> list[float]:
             else:
                 return [0 - first] + make_positive(rest)
 
-def test_make_positive():
+def test_make_positive_of_no_numbers():
     assert make_positive([]) == []
+
+def test_make_positive_of_a_mix():
     assert make_positive([-1, 0, 2]) == [1, 0, 2]
 ```
 
 <p>**Answer approaching expectations (missing docstring, incorrect behavior, inadequate tests):**</p>
 
    
-```python
+```python error
 def make_positive(lon: list[float]) -> list[float]:
     match lon:
         case []:
@@ -762,9 +793,11 @@ def count_internal_nodes[T](tree: BinTree[T]) -> int:
         case Node():
             return 1 + count_internal_nodes(tree.left) + count_internal_nodes(tree.right)
 
-def test_count_internal_nodes():
+def test_count_internal_nodes_of_a_tree():
     tree = Node(Node(Leaf(0), Leaf(0)), Node(Node(Leaf(0), Leaf(0)), Leaf(0)))
     assert count_internal_nodes(tree) == 4
+
+def test_count_internal_nodes_of_a_leaf():
     assert count_internal_nodes(Leaf(1)) == 0
 ```
 
@@ -778,9 +811,11 @@ def count_internal_nodes[T](tree: BinTree[T]) -> int:
         case Node():
             return count_internal_nodes(tree.left) + count_internal_nodes(tree.right)
 
-def test_count_internal_nodes():
+def test_count_internal_nodes_of_a_tree():
     tree = Node(Node(Leaf(0), Leaf(0)), Node(Node(Leaf(0), Leaf(0)), Leaf(0)))
     assert count_internal_nodes(tree) == 4
+
+def test_count_internal_nodes_of_a_leaf():
     assert count_internal_nodes(Leaf(1)) == 0
 ```
 
@@ -856,9 +891,13 @@ def count_passing(scores: list[int]) -> int:
     """how many of the scores are 60 or more"""
     return count_matching(is_passing, scores)
 
-def test_count_matching():
+def test_count_matching_over_no_elements():
     assert count_matching(is_short, []) == 0
+
+def test_count_matching_with_is_short():
     assert count_matching(is_short, ["oak", "maple", "elm"]) == 2
+
+def test_count_matching_with_is_passing():
     assert count_matching(is_passing, [59, 60, 100]) == 2
 ```
 

@@ -101,15 +101,22 @@ def choose_hat(temp_in_f: float) -> str:
 
 ### Examples {#examples}
 
-A test function, right after the function, with concrete inputs and the outputs
-they should give. Choose inputs that cover each case of the data (each interval,
-each variant), and its edges:
+Tests right after the function, with concrete inputs and the outputs they should
+give: **one test function per example**, each named for its example, so that a
+failure names the case ([Tests](/pll/testing#tests)). Choose inputs that cover
+each case of the data (each interval, each variant), and its edges:
 
 ```python
-def test_choose_hat():
+def test_choose_hat_at_the_boundary():
     assert choose_hat(80) == "sun hat"
+
+def test_choose_hat_just_under():
     assert choose_hat(79.5) == "no hat"
+
+def test_choose_hat_well_under():
     assert choose_hat(50) == "no hat"
+
+def test_choose_hat_well_above():
     assert choose_hat(95) == "sun hat"
 ```
 
