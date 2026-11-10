@@ -4,8 +4,6 @@ title: Language levels
 description: The #level line, the checks it turns on, and type annotation checking
 ---
 
-<Unreviewed />
-
 # Language levels
 
 The first line of your file (that is not blank) chooses how strict PLL is:
@@ -92,8 +90,9 @@ and does not run the file:
   of its data is on a line of its own;
 - `assert(x, 1)`, which checks a pair, and a pair is always true;
 - a function annotated to return something, with no `return` in it;
-- `is` used to compare with a number or a string (`x is 60.5`), where `==` is
-  meant;
+- any comparison with `is` or `is not`, even `x is None`, where `==` or `!=` is
+  meant: `is` asks whether two values are the very same object, which matters
+  only once values change in place, so only `#level advanced` allows it;
 - an annotation that is not a type: `t: table` (`table` is the function that
   makes tables; the type is `Table`), or `name: string` (write `str`);
 - a dataclass field with no type, or written `year = int` rather than
