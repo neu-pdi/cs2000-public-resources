@@ -103,7 +103,7 @@ def choose_hat(temp_in_f: float) -> str:
 
 Tests right after the function, with concrete inputs and the outputs they should
 give: **one test function per example**, each named for its example, so that a
-failure names the case ([Tests](/pll/testing#tests)). Choose inputs that cover
+failure names the case ([Tests](/pll/testing)). Choose inputs that cover
 each case of the data (each interval, each variant), and its edges:
 
 ```python
