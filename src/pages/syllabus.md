@@ -86,7 +86,7 @@ The reason why we do not require attendance on all classes is that we do not wan
 
 ### Skills
 
-The course will teach the following 13 skills, grading of which will be performed by repeatable (with highest grade taken), on-paper, no-note, assessment that can be scored as "Doesn't meet expectations", "Approaching expectations", or "Meets expectations". Each student will have at least 4 opportunities to master each skill. Beyond the regular 4 opportunities which occur during the semester, as the topics are covered, student may re-attempt 2 skills; such re-attempts can be scheduled on the day of the final exam. See the [Skills](/skills) page for much more detail.
+The course will teach the following 13 skills, grading of which will be performed by repeatable (with highest grade taken), on-paper, no-note, assessment that can be scored as "Doesn't meet expectations", "Approaching expectations", or "Meets expectations". Each student will have at least 4 opportunities to master each skill. Beyond the regular 4 opportunities which occur during the semester, as the topics are covered, student may re-attempt 2 distinct skills; such re-attempts can be scheduled on the day of the final exam (the [dates are in the schedule](/#schedule)). See the [Skills](/skills) page for much more detail.
 
 - <SkillBadge skill={0} link /> Design function signatures, docs, tests
 - <SkillBadge skill={1} link /> Implement basic functions
@@ -101,6 +101,8 @@ The course will teach the following 13 skills, grading of which will be performe
 - <SkillBadge skill={10} link /> Recursion: Trees
 - <SkillBadge skill={11} link /> Designing Abstractions
 - <SkillBadge skill={12} link /> Aliasing & Mutation
+
+**Note: assessments during [Assessment Hours](/#assessment-hours) must be completed within the given time, as we must leave the room at end of hours, and arriving before the end of hours does not guarantee right to take assessment. Show up early, or not on the last day an assessment is available.**
 
 ### Assignment Crits {#assignment-crits}
 

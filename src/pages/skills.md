@@ -9,20 +9,18 @@ import DateView from '@site/src/components/DateView/DateView';
 import AssessmentHours from '@site/src/components/AssessmentHours';
 import styles from './index.module.css';
 
-<Unreviewed />
-
 # Skills
 
 This course will teach the following skills, assessment of which will
 form the primary source of final grades.
 
 Each skill will be assessed as "Doesn't meet expectations", "Approaching
-expectations", and "Meets expectations", and students may attempt any skill
-assessment up to four times with the best result being used for their grade.
+expectations", and "Meets expectations" (our grading platform, Pawtograder, only supports numbers, so these show up as 0, 1, and 2), and students may attempt any skill
+assessment at least four times with the best result being used for their grade.
 
 Skills can be attempted in class on Skill Days (Feb. 11, Mar. 4, Apr. 1, and Apr. 15) and
 during Assessment Hours. Assessment Hours are held at the following times
-(except on holidays and Skill Days):
+(except on holidays and Skill Days). **Note: assessments during assessment hours must be completed within the given time, as we must leave the room at end of hours, and arriving before the end of hours does not guarantee right to take assessment. Show up early, or not on the last day an assessment is available.**
 <div className={styles.assessmentHours}>
   <AssessmentHours />
 </div>
@@ -304,9 +302,6 @@ def wall_area(width: float, height: float) -> float:
     """area of a rectangular wall"""
     return width * height
 
-def test_wall_area_of_2_by_3():
-    assert wall_area(2, 3) == 6
-
 def test_wall_area_of_10_by_8():
     assert wall_area(10, 8) == 80
 
@@ -316,9 +311,6 @@ def room_wall_area(length: float, width: float, height: float) -> float:
 
 def test_room_wall_area_of_a_unit_room():
     assert room_wall_area(1, 1, 1) == 4
-
-def test_room_wall_area_of_a_large_room():
-    assert room_wall_area(10, 12, 8) == 352
 ```
 
 <p>**Answer approaching expectations (missing docstring and test for helper, calls helper with incorrect arguments):**</p>
@@ -1081,4 +1073,4 @@ attempt any of those available (likely, due to time, a couple of them). The asse
 
 ## End of Semester Re-attempts
 
-While most skill assessments must take place during the schedule below, each student may re-attempt 2 skills; such re-attempts can be scheduled in the last two weeks of classes or on the day of the final exam. (Note: there is no final exam, we will only use this time for the re-attempts.) They must contact the course coordinator (Kayla McLaughlin, k.mclaughlin@northeastern.edu) in order to do schedule these. These late semester retakes can be done regardless of how many attempts of a given skill the student has made previously.
+While most skill assessments must take place during the schedule below, each student may re-attempt 2 distinct skills (one attempt per skill); such re-attempts can be scheduled during our final exam period, on the [dates in the schedule](/#schedule). (Note: there is no final exam, we will only use this time for the re-attempts.) They must contact the course coordinator (Amy Gately, a.gately@northeastern.edu) in order to do schedule these. These late semester retakes can be done regardless of how many attempts of a given skill the student has made previously.
