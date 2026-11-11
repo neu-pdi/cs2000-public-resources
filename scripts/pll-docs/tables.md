@@ -16,7 +16,7 @@ output), followed by some examples and what they produce.
 
 Tables never change: every operation on a table produces a **new** table, and
 leaves the original as it was. Operations on tables are _methods_, written after
-the table with a dot, like `workouts.filter(is_long)`. For type annotations, the
+the table with a dot, like `WORKOUTS.filter(is_long)`. For type annotations, the
 type of a table is `Table`, and the type of a row is `dict`.
 
 A table is not a list or a dictionary: its rows and columns are taken out with
@@ -39,7 +39,7 @@ A table with the given column names, and the given rows, each of which is a list
 with one value for each column (in the same order as `columns`).
 
 ```python example
-workouts = table(
+WORKOUTS = table(
     ["date", "activity", "duration"],
     [
         ["2025-04-01", "Running", 30],
@@ -49,14 +49,14 @@ workouts = table(
         ["2025-04-05", "Yoga", 50],
     ],
 )
-workouts
+WORKOUTS
 ```
 
 A row can also be a `dict`, like the ones [`t.row(n)`](#row) gives you, so you
 can make a new table from some of the rows of another:
 
 ```python example
-table(workouts.columns(), [workouts.row(0), workouts.row(2)])
+table(WORKOUTS.columns(), [WORKOUTS.row(0), WORKOUTS.row(2)])
 ```
 
 ### table_from_columns
@@ -87,23 +87,23 @@ one on the web (when `source` starts with `https://`). The first line of the CSV
 gives the names of the columns.
 
 ```python example
-recipes_raw = load_table("https://raw.githubusercontent.com/neu-pdi/cs2000-public-resources/refs/heads/python/static/support/5-recipes.csv")
-recipes_raw.head(3)
+RECIPES_RAW = load_table("https://raw.githubusercontent.com/neu-pdi/cs2000-public-resources/refs/heads/python/static/support/5-recipes.csv")
+RECIPES_RAW.head(3)
 ```
 
 **Every value loaded from a CSV is a string**, including the ones that look like
 numbers, and an empty cell is the empty string `""`:
 
 ```python example
-recipes_raw.row(0)
+RECIPES_RAW.row(0)
 ```
 
 To convert a column of numbers, use [`transform_column`](#transform_column) with
 `int` (for whole numbers) or `float`:
 
 ```python example
-recipes = recipes_raw.transform_column("servings", int).transform_column("prep time", int)
-recipes.row(0)
+RECIPES = RECIPES_RAW.transform_column("servings", int).transform_column("prep time", int)
+RECIPES.row(0)
 ```
 
 If some values in a column aren't numbers (e.g., `""`, or `"1,234"`), `int` and
@@ -130,7 +130,7 @@ t.columns() -> list[str]
 The names of the table's columns, in order.
 
 ```python example
-workouts.columns()
+WORKOUTS.columns()
 ```
 
 ### length
@@ -142,7 +142,7 @@ t.length() -> int
 The number of rows in the table. (`len(t)` gives the same thing.)
 
 ```python example
-workouts.length()
+WORKOUTS.length()
 ```
 
 ### row
@@ -155,21 +155,21 @@ Row number `n` of the table, as a `dict` from column names to values. The first
 row is number `0`, and the last is one less than the number of rows.
 
 ```python example
-workouts.row(1)
+WORKOUTS.row(1)
 ```
 
 ```python example error
-workouts.row(5)
+WORKOUTS.row(5)
 ```
 
 To get one value from a row, write the column's name in square brackets after it:
 
 ```python example
-workouts.row(1)["activity"]
+WORKOUTS.row(1)["activity"]
 ```
 
 ```python example error
-workouts.row(1)["time"]
+WORKOUTS.row(1)["time"]
 ```
 
 ### column
@@ -181,7 +181,7 @@ t.column(name: str) -> list
 All of the values in a column, as a list, in order.
 
 ```python example
-workouts.column("duration")
+WORKOUTS.column("duration")
 ```
 
 ### rows
@@ -193,7 +193,7 @@ t.rows() -> list[dict]
 All of the rows, as a list of `dict`s.
 
 ```python example
-workouts.rows()
+WORKOUTS.rows()
 ```
 
 ## Making new tables
@@ -213,11 +213,11 @@ def is_long(r: dict) -> bool:
     """whether the workout lasted at least 45 minutes"""
     return r["duration"] >= 45
 
-workouts.filter(is_long)
+WORKOUTS.filter(is_long)
 ```
 
 ```python example
-workouts.filter(lambda r: r["activity"] == "Yoga")
+WORKOUTS.filter(lambda r: r["activity"] == "Yoga")
 ```
 
 ### transform_column
@@ -229,11 +229,11 @@ t.transform_column(name: str, change: function) -> Table
 A table where every value `v` in the column `name` is replaced by `change(v)`.
 
 ```python example
-workouts.transform_column("duration", lambda minutes: minutes / 60)
+WORKOUTS.transform_column("duration", lambda minutes: minutes / 60)
 ```
 
 ```python example
-workouts.transform_column("activity", lambda a: a.upper())
+WORKOUTS.transform_column("activity", lambda a: a.upper())
 ```
 
 ### add_column
@@ -252,11 +252,11 @@ def calories(r: dict) -> float:
     """estimated calories burned in the workout"""
     return r["duration"] * 8
 
-workouts.add_column("calories", calories)
+WORKOUTS.add_column("calories", calories)
 ```
 
 ```python example
-workouts.add_column("rating", [4, 5, 3, 4, 5])
+WORKOUTS.add_column("rating", [4, 5, 3, 4, 5])
 ```
 
 ### add_row
@@ -269,11 +269,11 @@ A table with one more row, at the end: either a list with one value for each
 column, in order, or a `dict` from column names to values.
 
 ```python example
-workouts.add_row(["2025-04-06", "Swimming", 40])
+WORKOUTS.add_row(["2025-04-06", "Swimming", 40])
 ```
 
 ```python example
-workouts.add_row({"date": "2025-04-06", "activity": "Swimming", "duration": 40})
+WORKOUTS.add_row({"date": "2025-04-06", "activity": "Swimming", "duration": 40})
 ```
 
 ### select_columns
@@ -285,7 +285,7 @@ t.select_columns(names: list[str]) -> Table
 A table with only the columns in `names`, in that order.
 
 ```python example
-workouts.select_columns(["activity", "date"])
+WORKOUTS.select_columns(["activity", "date"])
 ```
 
 ### order_by
@@ -300,11 +300,11 @@ are sorted in dictionary order (with all uppercase letters before all lowercase
 ones).
 
 ```python example
-workouts.order_by("duration", ascending=True)
+WORKOUTS.order_by("duration", ascending=True)
 ```
 
 ```python example
-workouts.order_by("activity", ascending=False)
+WORKOUTS.order_by("activity", ascending=False)
 ```
 
 ### head and tail
@@ -318,11 +318,11 @@ A table of just the first (`head`) or last (`tail`) `n` rows: 10, if `n` is left
 out.
 
 ```python example
-workouts.head(2)
+WORKOUTS.head(2)
 ```
 
 ```python example
-workouts.tail(2)
+WORKOUTS.tail(2)
 ```
 
 ## Summarizing columns
@@ -347,23 +347,23 @@ text, when comparing it as text would give a different answer (as text, `"9"`
 comes after `"100"`), and say to convert it first:
 
 ```python example error
-recipes_raw.max("servings")
+RECIPES_RAW.max("servings")
 ```
 
 ```python example
-workouts.sum("duration")
+WORKOUTS.sum("duration")
 ```
 
 ```python example
-workouts.mean("duration")
+WORKOUTS.mean("duration")
 ```
 
 ```python example
-workouts.min("duration")
+WORKOUTS.min("duration")
 ```
 
 ```python example
-workouts.max("activity")
+WORKOUTS.max("activity")
 ```
 
 For anything else, like the median or the standard deviation, use a column (a
@@ -373,11 +373,11 @@ library:
 ```python example
 import statistics
 
-statistics.median(workouts.column("duration"))
+statistics.median(WORKOUTS.column("duration"))
 ```
 
 ```python example
-statistics.stdev(workouts.column("duration"))
+statistics.stdev(WORKOUTS.column("duration"))
 ```
 
 ## Comparing tables
@@ -386,7 +386,7 @@ Two tables are `==` when they have the same columns, in the same order, holding
 the same values, in the same order:
 
 ```python example
-workouts.head(2) == table(
+WORKOUTS.head(2) == table(
     ["date", "activity", "duration"],
     [
         ["2025-04-01", "Running", 30],
@@ -396,7 +396,7 @@ workouts.head(2) == table(
 ```
 
 ```python example
-workouts.head(2) == workouts.tail(2)
+WORKOUTS.head(2) == WORKOUTS.tail(2)
 ```
 
 So you can test a function that produces a table by comparing its result with
@@ -408,7 +408,7 @@ def long_workouts(t: Table) -> Table:
     return t.filter(is_long)
 
 def test_long_workouts():
-    assert long_workouts(workouts.head(3)) == table(
+    assert long_workouts(WORKOUTS.head(3)) == table(
         ["date", "activity", "duration"],
         [
             ["2025-04-02", "Yoga", 45],
@@ -429,7 +429,7 @@ Every chart can also be given a `title=`, and needs a table with at least one
 row. The examples use this table:
 
 ```python example
-study = table(
+STUDY = table(
     ["name", "year", "hours", "score"],
     [
         ["Avery", "first", 2, 62],
@@ -442,7 +442,7 @@ study = table(
         ["Harper", "second", 6, 79],
     ],
 )
-study
+STUDY
 ```
 
 ### bar_chart
@@ -455,7 +455,7 @@ One bar per row, labeled with the row's value in the `labels` column, and as tal
 as its value in the `values` column.
 
 ```python example
-study.bar_chart("name", "score")
+STUDY.bar_chart("name", "score")
 ```
 
 ### freq_bar_chart
@@ -468,7 +468,7 @@ One bar for each different value in the column `name`, as tall as the number of
 rows that have that value.
 
 ```python example
-study.freq_bar_chart("year")
+STUDY.freq_bar_chart("year")
 ```
 
 ### pie_chart
@@ -481,7 +481,7 @@ One slice per row, labeled with the row's value in the `labels` column, and size
 by its share of the total of the `values` column.
 
 ```python example
-study.pie_chart("name", "hours", title="Hours studied")
+STUDY.pie_chart("name", "hours", title="Hours studied")
 ```
 
 ### histogram
@@ -495,11 +495,11 @@ How many rows have values in each range (or _bin_) of the column `name`. Give it
 each one is (a histogram can have at most 1,000 bins).
 
 ```python example
-study.histogram("score", bin_width=5)
+STUDY.histogram("score", bin_width=5)
 ```
 
 ```python example
-study.histogram("score", bins=3)
+STUDY.histogram("score", bins=3)
 ```
 
 ### scatter_plot
@@ -511,7 +511,7 @@ t.scatter_plot(x: str, y: str) -> Image
 One point per row, at its values in the `x` and `y` columns.
 
 ```python example
-study.scatter_plot("hours", "score")
+STUDY.scatter_plot("hours", "score")
 ```
 
 ### line_chart
@@ -523,7 +523,7 @@ t.line_chart(x: str, y: str) -> Image
 The same points as `scatter_plot`, joined by lines, in order of `x`.
 
 ```python example
-study.line_chart("hours", "score")
+STUDY.line_chart("hours", "score")
 ```
 
 ### dot_plot
@@ -536,7 +536,7 @@ One dot per row, along the values of the column `name`, stacked where rows share
 a value.
 
 ```python example
-study.dot_plot("hours")
+STUDY.dot_plot("hours")
 ```
 
 ### box_plot
@@ -549,7 +549,7 @@ A box and whisker plot of the column `name`: its quartiles, range, and any
 outliers.
 
 ```python example
-study.box_plot("score")
+STUDY.box_plot("score")
 ```
 
 ### lr_plot
@@ -562,7 +562,7 @@ A scatter plot, with the line that best fits the points (a _linear regression_),
 and how well it fits (r²) in the title.
 
 ```python example
-study.lr_plot("hours", "score")
+STUDY.lr_plot("hours", "score")
 ```
 
 ### Labeled plots
@@ -577,7 +577,7 @@ Like `scatter_plot`, `dot_plot`, and `lr_plot`, but with each point colored by
 its value in the `labels` column, with a key.
 
 ```python example
-study.labeled_scatter_plot("year", "hours", "score")
+STUDY.labeled_scatter_plot("year", "hours", "score")
 ```
 
 ### linear_regression
@@ -590,7 +590,7 @@ The line of best fit (the one `lr_plot` draws) as numbers instead of a picture: 
 tuple of its slope, its intercept, and r².
 
 ```python example
-study.linear_regression("hours", "score")
+STUDY.linear_regression("hours", "score")
 ```
 
 ### function_plot

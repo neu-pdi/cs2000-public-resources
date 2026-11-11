@@ -37,8 +37,8 @@ class BookRecord:
     author: str
     pages: int
 
-the_dispossessed = BookRecord("The Dispossessed", "Ursula K. Le Guin", 387)
-to_the_lighthouse = BookRecord("To the Lighthouse", "Virginia Woolf", 209)
+THE_DISPOSSESSED = BookRecord("The Dispossessed", "Ursula K. Le Guin", 387)
+TO_THE_LIGHTHOUSE = BookRecord("To the Lighthouse", "Virginia Woolf", 209)
 ```
 
 The examples are used again in the Examples step, and the data definition decides

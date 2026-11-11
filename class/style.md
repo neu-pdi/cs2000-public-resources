@@ -5,7 +5,6 @@ hide_table_of_contents: true
 title: Style Guide
 ---
 
-<Unreviewed />
 
 ## Style Guide
 
@@ -24,9 +23,9 @@ The class notes follow these rules, and your programs should too.
 - Dataclasses, and other types, are capitalized words run together:
   `LibraryBook`, `PhoneTree`.
 - **Constants** are uppercase words joined by underscores: `TAX_RATE`, `WIDTH`,
-  `BACKGROUND`. A constant is a name defined outside any function, for a value
-  the program never changes, that its functions use: a rate, a size, a picture.
-  Changing it is then a change to one line.
+  `KINDRED`. A constant is a name defined outside any function, for a value
+  the program never changes: a rate, a size, a picture, or an example of data,
+  such as `KINDRED = LibraryBook(205, "Kindred", 3)`.
 
 ```python
 TAX_RATE = 0.0625
@@ -36,18 +35,15 @@ def price_with_tax(price: float) -> float:
     return price * (1 + TAX_RATE)
 ```
 
-- An example of data, made to test functions with or to try at the prompt, is
-  not a constant: `kindred = LibraryBook(205, "Kindred", 3)`.
-
 ### Spacing
 
 - One space on each side of `=`, and of every operator, the same for all of
-  them: `celsius * 9 / 5 + 32`, `x ** 2 + y ** 2`. Brackets, not spaces, show
-  what is worked out first: `(f - 32) * 5 / 9`.
+  them: `celsius * 9 / 5 + 32`, `x ** 2 + y ** 2`. Parentheses, not spaces,
+  show what is worked out first: `(f - 32) * 5 / 9`.
 - One space after a comma, and after the colon of an annotation
   (`price: float`), and none before them.
-- No space inside brackets, or between a function's name and its `(`:
-  `rectangle(10, 20, "solid", "blue")`, `prices["boots"]`.
+- No space inside parentheses or square brackets, or between a function's name
+  and its `(`: `rectangle(10, 20, "solid", "blue")`, `prices["boots"]`.
 - No spaces around the `=` of a keyword argument:
   `order_by("hours", ascending=True)`.
 

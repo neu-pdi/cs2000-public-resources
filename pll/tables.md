@@ -18,7 +18,7 @@ output), followed by some examples and what they produce.
 
 Tables never change: every operation on a table produces a **new** table, and
 leaves the original as it was. Operations on tables are _methods_, written after
-the table with a dot, like `workouts.filter(is_long)`. For type annotations, the
+the table with a dot, like `WORKOUTS.filter(is_long)`. For type annotations, the
 type of a table is `Table`, and the type of a row is `dict`.
 
 A table is not a list or a dictionary: its rows and columns are taken out with
@@ -49,7 +49,7 @@ A table with the given column names, and the given rows, each of which is a list
 with one value for each column (in the same order as `columns`).
 
 ```python
-workouts = table(
+WORKOUTS = table(
     ["date", "activity", "duration"],
     [
         ["2025-04-01", "Running", 30],
@@ -59,7 +59,7 @@ workouts = table(
         ["2025-04-05", "Yoga", 50],
     ],
 )
-workouts
+WORKOUTS
 ```
 
 <div className="pll-output">
@@ -78,7 +78,7 @@ A row can also be a `dict`, like the ones [`t.row(n)`](#row) gives you, so you
 can make a new table from some of the rows of another:
 
 ```python
-table(workouts.columns(), [workouts.row(0), workouts.row(2)])
+table(WORKOUTS.columns(), [WORKOUTS.row(0), WORKOUTS.row(2)])
 ```
 
 <div className="pll-output">
@@ -128,8 +128,8 @@ one on the web (when `source` starts with `https://`). The first line of the CSV
 gives the names of the columns.
 
 ```python
-recipes_raw = load_table("https://raw.githubusercontent.com/neu-pdi/cs2000-public-resources/refs/heads/python/static/support/5-recipes.csv")
-recipes_raw.head(3)
+RECIPES_RAW = load_table("https://raw.githubusercontent.com/neu-pdi/cs2000-public-resources/refs/heads/python/static/support/5-recipes.csv")
+RECIPES_RAW.head(3)
 ```
 
 <div className="pll-output">
@@ -146,7 +146,7 @@ recipes_raw.head(3)
 numbers, and an empty cell is the empty string `""`:
 
 ```python
-recipes_raw.row(0)
+RECIPES_RAW.row(0)
 ```
 
 <div className="pll-output">
@@ -161,8 +161,8 @@ To convert a column of numbers, use [`transform_column`](#transform_column) with
 `int` (for whole numbers) or `float`:
 
 ```python
-recipes = recipes_raw.transform_column("servings", int).transform_column("prep time", int)
-recipes.row(0)
+RECIPES = RECIPES_RAW.transform_column("servings", int).transform_column("prep time", int)
+RECIPES.row(0)
 ```
 
 <div className="pll-output">
@@ -197,7 +197,7 @@ t.columns() -> list[str]
 The names of the table's columns, in order.
 
 ```python
-workouts.columns()
+WORKOUTS.columns()
 ```
 
 <div className="pll-output">
@@ -217,7 +217,7 @@ t.length() -> int
 The number of rows in the table. (`len(t)` gives the same thing.)
 
 ```python
-workouts.length()
+WORKOUTS.length()
 ```
 
 <div className="pll-output">
@@ -238,7 +238,7 @@ Row number `n` of the table, as a `dict` from column names to values. The first
 row is number `0`, and the last is one less than the number of rows.
 
 ```python
-workouts.row(1)
+WORKOUTS.row(1)
 ```
 
 <div className="pll-output">
@@ -250,7 +250,7 @@ workouts.row(1)
 </div>
 
 ```python error
-workouts.row(5)
+WORKOUTS.row(5)
 ```
 
 <div className="pll-output">
@@ -264,7 +264,7 @@ IndexError: there is no row 5: this table's rows are numbered 0 to 4.
 To get one value from a row, write the column's name in square brackets after it:
 
 ```python
-workouts.row(1)["activity"]
+WORKOUTS.row(1)["activity"]
 ```
 
 <div className="pll-output">
@@ -276,7 +276,7 @@ workouts.row(1)["activity"]
 </div>
 
 ```python error
-workouts.row(1)["time"]
+WORKOUTS.row(1)["time"]
 ```
 
 <div className="pll-output">
@@ -296,7 +296,7 @@ t.column(name: str) -> list
 All of the values in a column, as a list, in order.
 
 ```python
-workouts.column("duration")
+WORKOUTS.column("duration")
 ```
 
 <div className="pll-output">
@@ -316,7 +316,7 @@ t.rows() -> list[dict]
 All of the rows, as a list of `dict`s.
 
 ```python
-workouts.rows()
+WORKOUTS.rows()
 ```
 
 <div className="pll-output">
@@ -348,7 +348,7 @@ def is_long(r: dict) -> bool:
     """whether the workout lasted at least 45 minutes"""
     return r["duration"] >= 45
 
-workouts.filter(is_long)
+WORKOUTS.filter(is_long)
 ```
 
 <div className="pll-output">
@@ -362,7 +362,7 @@ workouts.filter(is_long)
 </div>
 
 ```python
-workouts.filter(lambda r: r["activity"] == "Yoga")
+WORKOUTS.filter(lambda r: r["activity"] == "Yoga")
 ```
 
 <div className="pll-output">
@@ -383,7 +383,7 @@ t.transform_column(name: str, change: function) -> Table
 A table where every value `v` in the column `name` is replaced by `change(v)`.
 
 ```python
-workouts.transform_column("duration", lambda minutes: minutes / 60)
+WORKOUTS.transform_column("duration", lambda minutes: minutes / 60)
 ```
 
 <div className="pll-output">
@@ -399,7 +399,7 @@ workouts.transform_column("duration", lambda minutes: minutes / 60)
 </div>
 
 ```python
-workouts.transform_column("activity", lambda a: a.upper())
+WORKOUTS.transform_column("activity", lambda a: a.upper())
 ```
 
 <div className="pll-output">
@@ -430,7 +430,7 @@ def calories(r: dict) -> float:
     """estimated calories burned in the workout"""
     return r["duration"] * 8
 
-workouts.add_column("calories", calories)
+WORKOUTS.add_column("calories", calories)
 ```
 
 <div className="pll-output">
@@ -446,7 +446,7 @@ workouts.add_column("calories", calories)
 </div>
 
 ```python
-workouts.add_column("rating", [4, 5, 3, 4, 5])
+WORKOUTS.add_column("rating", [4, 5, 3, 4, 5])
 ```
 
 <div className="pll-output">
@@ -471,7 +471,7 @@ A table with one more row, at the end: either a list with one value for each
 column, in order, or a `dict` from column names to values.
 
 ```python
-workouts.add_row(["2025-04-06", "Swimming", 40])
+WORKOUTS.add_row(["2025-04-06", "Swimming", 40])
 ```
 
 <div className="pll-output">
@@ -488,7 +488,7 @@ workouts.add_row(["2025-04-06", "Swimming", 40])
 </div>
 
 ```python
-workouts.add_row({"date": "2025-04-06", "activity": "Swimming", "duration": 40})
+WORKOUTS.add_row({"date": "2025-04-06", "activity": "Swimming", "duration": 40})
 ```
 
 <div className="pll-output">
@@ -513,7 +513,7 @@ t.select_columns(names: list[str]) -> Table
 A table with only the columns in `names`, in that order.
 
 ```python
-workouts.select_columns(["activity", "date"])
+WORKOUTS.select_columns(["activity", "date"])
 ```
 
 <div className="pll-output">
@@ -540,7 +540,7 @@ are sorted in dictionary order (with all uppercase letters before all lowercase
 ones).
 
 ```python
-workouts.order_by("duration", ascending=True)
+WORKOUTS.order_by("duration", ascending=True)
 ```
 
 <div className="pll-output">
@@ -556,7 +556,7 @@ workouts.order_by("duration", ascending=True)
 </div>
 
 ```python
-workouts.order_by("activity", ascending=False)
+WORKOUTS.order_by("activity", ascending=False)
 ```
 
 <div className="pll-output">
@@ -582,7 +582,7 @@ A table of just the first (`head`) or last (`tail`) `n` rows: 10, if `n` is left
 out.
 
 ```python
-workouts.head(2)
+WORKOUTS.head(2)
 ```
 
 <div className="pll-output">
@@ -595,7 +595,7 @@ workouts.head(2)
 </div>
 
 ```python
-workouts.tail(2)
+WORKOUTS.tail(2)
 ```
 
 <div className="pll-output">
@@ -629,7 +629,7 @@ text, when comparing it as text would give a different answer (as text, `"9"`
 comes after `"100"`), and say to convert it first:
 
 ```python error
-recipes_raw.max("servings")
+RECIPES_RAW.max("servings")
 ```
 
 <div className="pll-output">
@@ -641,7 +641,7 @@ TypeError: max compares column "servings" as text, and as text "12" comes before
 </div>
 
 ```python
-workouts.sum("duration")
+WORKOUTS.sum("duration")
 ```
 
 <div className="pll-output">
@@ -653,7 +653,7 @@ workouts.sum("duration")
 </div>
 
 ```python
-workouts.mean("duration")
+WORKOUTS.mean("duration")
 ```
 
 <div className="pll-output">
@@ -665,7 +665,7 @@ workouts.mean("duration")
 </div>
 
 ```python
-workouts.min("duration")
+WORKOUTS.min("duration")
 ```
 
 <div className="pll-output">
@@ -677,7 +677,7 @@ workouts.min("duration")
 </div>
 
 ```python
-workouts.max("activity")
+WORKOUTS.max("activity")
 ```
 
 <div className="pll-output">
@@ -695,7 +695,7 @@ library:
 ```python
 import statistics
 
-statistics.median(workouts.column("duration"))
+statistics.median(WORKOUTS.column("duration"))
 ```
 
 <div className="pll-output">
@@ -707,7 +707,7 @@ statistics.median(workouts.column("duration"))
 </div>
 
 ```python
-statistics.stdev(workouts.column("duration"))
+statistics.stdev(WORKOUTS.column("duration"))
 ```
 
 <div className="pll-output">
@@ -724,7 +724,7 @@ Two tables are `==` when they have the same columns, in the same order, holding
 the same values, in the same order:
 
 ```python
-workouts.head(2) == table(
+WORKOUTS.head(2) == table(
     ["date", "activity", "duration"],
     [
         ["2025-04-01", "Running", 30],
@@ -742,7 +742,7 @@ True
 </div>
 
 ```python
-workouts.head(2) == workouts.tail(2)
+WORKOUTS.head(2) == WORKOUTS.tail(2)
 ```
 
 <div className="pll-output">
@@ -762,7 +762,7 @@ def long_workouts(t: Table) -> Table:
     return t.filter(is_long)
 
 def test_long_workouts():
-    assert long_workouts(workouts.head(3)) == table(
+    assert long_workouts(WORKOUTS.head(3)) == table(
         ["date", "activity", "duration"],
         [
             ["2025-04-02", "Yoga", 45],
@@ -783,7 +783,7 @@ Every chart can also be given a `title=`, and needs a table with at least one
 row. The examples use this table:
 
 ```python
-study = table(
+STUDY = table(
     ["name", "year", "hours", "score"],
     [
         ["Avery", "first", 2, 62],
@@ -796,7 +796,7 @@ study = table(
         ["Harper", "second", 6, 79],
     ],
 )
-study
+STUDY
 ```
 
 <div className="pll-output">
@@ -824,12 +824,12 @@ One bar per row, labeled with the row's value in the `labels` column, and as tal
 as its value in the `values` column.
 
 ```python
-study.bar_chart("name", "score")
+STUDY.bar_chart("name", "score")
 ```
 
 <div className="pll-output">
 
-![Result of study.bar_chart(name, score)](/img/pll/tables/39.svg)
+![Result of STUDY.bar_chart(name, score)](/img/pll/tables/39.svg)
 
 </div>
 
@@ -843,12 +843,12 @@ One bar for each different value in the column `name`, as tall as the number of
 rows that have that value.
 
 ```python
-study.freq_bar_chart("year")
+STUDY.freq_bar_chart("year")
 ```
 
 <div className="pll-output">
 
-![Result of study.freq_bar_chart(year)](/img/pll/tables/40.svg)
+![Result of STUDY.freq_bar_chart(year)](/img/pll/tables/40.svg)
 
 </div>
 
@@ -862,12 +862,12 @@ One slice per row, labeled with the row's value in the `labels` column, and size
 by its share of the total of the `values` column.
 
 ```python
-study.pie_chart("name", "hours", title="Hours studied")
+STUDY.pie_chart("name", "hours", title="Hours studied")
 ```
 
 <div className="pll-output">
 
-![Result of study.pie_chart(name, hours, title=Hours studied)](/img/pll/tables/41.svg)
+![Result of STUDY.pie_chart(name, hours, title=Hours studied)](/img/pll/tables/41.svg)
 
 </div>
 
@@ -882,22 +882,22 @@ How many rows have values in each range (or _bin_) of the column `name`. Give it
 each one is (a histogram can have at most 1,000 bins).
 
 ```python
-study.histogram("score", bin_width=5)
+STUDY.histogram("score", bin_width=5)
 ```
 
 <div className="pll-output">
 
-![Result of study.histogram(score, bin_width=5)](/img/pll/tables/42.svg)
+![Result of STUDY.histogram(score, bin_width=5)](/img/pll/tables/42.svg)
 
 </div>
 
 ```python
-study.histogram("score", bins=3)
+STUDY.histogram("score", bins=3)
 ```
 
 <div className="pll-output">
 
-![Result of study.histogram(score, bins=3)](/img/pll/tables/43.svg)
+![Result of STUDY.histogram(score, bins=3)](/img/pll/tables/43.svg)
 
 </div>
 
@@ -910,12 +910,12 @@ t.scatter_plot(x: str, y: str) -> Image
 One point per row, at its values in the `x` and `y` columns.
 
 ```python
-study.scatter_plot("hours", "score")
+STUDY.scatter_plot("hours", "score")
 ```
 
 <div className="pll-output">
 
-![Result of study.scatter_plot(hours, score)](/img/pll/tables/44.svg)
+![Result of STUDY.scatter_plot(hours, score)](/img/pll/tables/44.svg)
 
 </div>
 
@@ -928,12 +928,12 @@ t.line_chart(x: str, y: str) -> Image
 The same points as `scatter_plot`, joined by lines, in order of `x`.
 
 ```python
-study.line_chart("hours", "score")
+STUDY.line_chart("hours", "score")
 ```
 
 <div className="pll-output">
 
-![Result of study.line_chart(hours, score)](/img/pll/tables/45.svg)
+![Result of STUDY.line_chart(hours, score)](/img/pll/tables/45.svg)
 
 </div>
 
@@ -947,12 +947,12 @@ One dot per row, along the values of the column `name`, stacked where rows share
 a value.
 
 ```python
-study.dot_plot("hours")
+STUDY.dot_plot("hours")
 ```
 
 <div className="pll-output">
 
-![Result of study.dot_plot(hours)](/img/pll/tables/46.svg)
+![Result of STUDY.dot_plot(hours)](/img/pll/tables/46.svg)
 
 </div>
 
@@ -966,12 +966,12 @@ A box and whisker plot of the column `name`: its quartiles, range, and any
 outliers.
 
 ```python
-study.box_plot("score")
+STUDY.box_plot("score")
 ```
 
 <div className="pll-output">
 
-![Result of study.box_plot(score)](/img/pll/tables/47.svg)
+![Result of STUDY.box_plot(score)](/img/pll/tables/47.svg)
 
 </div>
 
@@ -985,12 +985,12 @@ A scatter plot, with the line that best fits the points (a _linear regression_),
 and how well it fits (r²) in the title.
 
 ```python
-study.lr_plot("hours", "score")
+STUDY.lr_plot("hours", "score")
 ```
 
 <div className="pll-output">
 
-![Result of study.lr_plot(hours, score)](/img/pll/tables/48.svg)
+![Result of STUDY.lr_plot(hours, score)](/img/pll/tables/48.svg)
 
 </div>
 
@@ -1006,12 +1006,12 @@ Like `scatter_plot`, `dot_plot`, and `lr_plot`, but with each point colored by
 its value in the `labels` column, with a key.
 
 ```python
-study.labeled_scatter_plot("year", "hours", "score")
+STUDY.labeled_scatter_plot("year", "hours", "score")
 ```
 
 <div className="pll-output">
 
-![Result of study.labeled_scatter_plot(year, hours, score)](/img/pll/tables/49.svg)
+![Result of STUDY.labeled_scatter_plot(year, hours, score)](/img/pll/tables/49.svg)
 
 </div>
 
@@ -1025,7 +1025,7 @@ The line of best fit (the one `lr_plot` draws) as numbers instead of a picture: 
 tuple of its slope, its intercept, and r².
 
 ```python
-study.linear_regression("hours", "score")
+STUDY.linear_regression("hours", "score")
 ```
 
 <div className="pll-output">

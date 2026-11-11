@@ -53,14 +53,14 @@ def back_husky(x: float, key: str) -> float:
     """if the key is 'b', move left by 40; otherwise return x as given"""
     ...
 
-husky_reactor = reactor(
+HUSKY_REACTOR = reactor(
     init=0,
     to_draw=draw_husky,
     on_tick=next_x,
     on_key=back_husky,
 )
 
-husky_reactor.interact()
+HUSKY_REACTOR.interact()
 ```
 
 `init` and `to_draw` are required; the others are optional:
@@ -77,7 +77,7 @@ husky_reactor.interact()
 | `title` | a string to show at the top of the card | — |
 
 The handlers' signatures are below, where `State` stands for the type of your
-state (`float`, for `husky_reactor` above). Their names are yours to choose.
+state (`float`, for `HUSKY_REACTOR` above). Their names are yours to choose.
 
 ```python skip
 # to_draw
@@ -123,7 +123,7 @@ A reactor is a value, so you can run it without any of the animation, which
 makes it possible to test:
 
 ```python
-countdown = reactor(
+COUNTDOWN = reactor(
     init=10,
     to_draw=lambda n: text(str(n), 40, "black"),
     on_tick=lambda n: n - 1,
@@ -131,13 +131,13 @@ countdown = reactor(
 )
 
 def test_countdown_trace():
-    assert countdown.simulate_trace(20).get_trace() == [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+    assert COUNTDOWN.simulate_trace(20).get_trace() == [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
 
 def test_countdown_of_the_original():
-    assert countdown.get_value() == 10  # the original is unchanged
+    assert COUNTDOWN.get_value() == 10  # the original is unchanged
 
 def test_countdown_after_one_tick():
-    assert countdown.tick().get_value() == 9
+    assert COUNTDOWN.tick().get_value() == 9
 ```
 
 | Method | Gives you |

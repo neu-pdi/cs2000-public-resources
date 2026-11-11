@@ -24,7 +24,7 @@ class Session:
     speaker: str
     seats: int
 
-program = [Session("CS101", "Introduction to AI", "Dr. Martinez", 120),
+PROGRAM = [Session("CS101", "Introduction to AI", "Dr. Martinez", 120),
            Session("CS102", "Deep Learning Techniques", "Prof. Nguyen", 80),
            Session("CS103", "Quantum Computing Basics", "Dr. Patel", 40),
            Session("CS104", "Cybersecurity Trends", "Ms. Lee", 60)]
@@ -38,7 +38,7 @@ def find_session(for_id: str, sessions: list[Session]) -> Session | None:
 ```
 
 - Looking up a session's title, speaker, seats, etc. all need this loop, so it
-  is a helper: e.g., `find_session(sid, program).speaker`.
+  is a helper: e.g., `find_session(sid, PROGRAM).speaker`.
 - For this pattern, Python has the **dictionary** (other languages have
   _hashmaps_, _hash tables_, or _associative arrays_).
 
@@ -48,13 +48,13 @@ A dictionary maps unique **keys** to a **value** for each, written
 `{key1: value1, key2: value2, ...}`:
 
 ```python
-by_id = {"CS101": Session("CS101", "Introduction to AI", "Dr. Martinez", 120),
+BY_ID = {"CS101": Session("CS101", "Introduction to AI", "Dr. Martinez", 120),
          "CS102": Session("CS102", "Deep Learning Techniques", "Prof. Nguyen", 80),
          "CS103": Session("CS103", "Quantum Computing Basics", "Dr. Patel", 40),
          "CS104": Session("CS104", "Cybersecurity Trends", "Ms. Lee", 60)}
 ```
 
-- `by_id["CS103"]` is the `Session` with that key, and `by_id["CS103"].seats`
+- `BY_ID["CS103"]` is the `Session` with that key, and `BY_ID["CS103"].seats`
   its seats.
 - The lookup goes straight to the value, without looking at others: assume it
   is much faster than searching a list.
@@ -72,9 +72,9 @@ session with more than 50 seats:
 
 ```python
 over_50 = []
-for sid in by_id:
-    if by_id[sid].seats > 50:
-        over_50.append(by_id[sid])
+for sid in BY_ID:
+    if BY_ID[sid].seats > 50:
+        over_50.append(BY_ID[sid])
 ```
 
 - `for v in d.values()` goes through just the values, and
@@ -118,9 +118,9 @@ A **`Counter`** maps each value in a list to how many times it appears:
 ```python
 from collections import Counter
 
-counts = Counter(["Dr. Martinez", "Prof. Nguyen", "Dr. Martinez", "Ms. Lee"])
-counts["Dr. Martinez"]   # 2
-counts.most_common(1)    # [("Dr. Martinez", 2)]
+COUNTS = Counter(["Dr. Martinez", "Prof. Nguyen", "Dr. Martinez", "Ms. Lee"])
+COUNTS["Dr. Martinez"]   # 2
+COUNTS.most_common(1)    # [("Dr. Martinez", 2)]
 ```
 
 - `most_common(n)`: the `n` most common values, each with its count.
@@ -156,8 +156,8 @@ With field names as keys, a session can be a dataclass or a dictionary (like a
 PLL table row):
 
 ```python
-intro = Session("CS101", "Introduction to AI", "Dr. Martinez", 120)
-intro_dict = {"session_id": "CS101", "title": "Introduction to AI",
+INTRO = Session("CS101", "Introduction to AI", "Dr. Martinez", 120)
+INTRO_DICT = {"session_id": "CS101", "title": "Introduction to AI",
               "speaker": "Dr. Martinez", "seats": 120}
 ```
 
@@ -172,8 +172,8 @@ intro_dict = {"session_id": "CS101", "title": "Introduction to AI",
   ID, a title, a speaker, and a number of seats.)
 - Two uses of dictionaries:
   - keys that identify individuals in a group, with the same information about
-    each (`by_id`): common in nearly all languages, for fast lookup;
-  - keys that name the fields of one individual (`intro_dict`): common in
+    each (`BY_ID`): common in nearly all languages, for fast lookup;
+  - keys that name the fields of one individual (`INTRO_DICT`): common in
     Python, less so elsewhere; when the fields are fixed, a dataclass is
     usually better.
 
@@ -187,12 +187,12 @@ dictionary, and compare them with your neighbors'.
 ## Practice (extra, or if you miss class) {#practice}
 
 1. Create a dictionary mapping student IDs to names. Add a new student, update a name, and remove a student.
-1. Give each session in `by_id` a list of topics (in a new dictionary, from session IDs to lists of topics), then print the IDs of the sessions covering "AI".
+1. Give each session in `BY_ID` a list of topics (in a new dictionary, from session IDs to lists of topics), then print the IDs of the sessions covering "AI".
 1. Count how many sessions have a speaker whose name starts with "Dr.".
 1. Add a new topic to the list of topics for a given session, in your dictionary from exercise 2.
 1. What happens if you try to access a session that doesn't exist? How can you avoid a crash?
 1. Write a function that takes a dictionary of sessions and returns a list of all unique topics covered.
-1. Write a function that converts a list of `Session`s, like `program`, into a dictionary from session IDs to sessions, like `by_id`.
+1. Write a function that converts a list of `Session`s, like `PROGRAM`, into a dictionary from session IDs to sessions, like `BY_ID`.
 1. Filter all sessions where the number of topics is greater than 1.
 1. Download the CSV file from [here](https://raw.githubusercontent.com/neu-pdi/cs2000-public-resources/refs/heads/python/static/support/movies-data.csv) and read it in Python however you like.
 1. Create a dictionary that has people's names as keys and a list of movies for each person as the values.

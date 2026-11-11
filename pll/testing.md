@@ -65,7 +65,7 @@ that would otherwise make a test pass without checking anything (see
 [Language levels](/pll/levels#mistakes-found-before-the-file-runs)):
 
 - a comparison written without `assert`, which is worked out and thrown away;
-- `assert(x, 1)`, with brackets and a comma, which is always true;
+- `assert(x, 1)`, with parentheses and a comma, which is always true;
 - a function with `assert` in it whose name does not start with `test_`, which
   nothing ever runs.
 

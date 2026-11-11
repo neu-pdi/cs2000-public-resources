@@ -24,7 +24,7 @@ class Session:
     speaker: str
     seats: int
 
-program = [Session("CS101", "Introduction to AI", "Dr. Martinez", 120),
+PROGRAM = [Session("CS101", "Introduction to AI", "Dr. Martinez", 120),
            Session("CS102", "Deep Learning Techniques", "Prof. Nguyen", 80),
            Session("CS103", "Quantum Computing Basics", "Dr. Patel", 40),
            Session("CS104", "Cybersecurity Trends", "Ms. Lee", 60)]
@@ -38,7 +38,7 @@ def find_session(for_id: str, sessions: list[Session]) -> Session | None:
 ```
 
 - Looking up a session's title, speaker, seats, etc. all need this loop, so it
-  is a helper: e.g., `find_session(sid, program).speaker`.
+  is a helper: e.g., `find_session(sid, PROGRAM).speaker`.
 - For this pattern, Python has the **dictionary** (other languages have
   _hashmaps_, _hash tables_, or _associative arrays_).
 
@@ -48,13 +48,13 @@ A dictionary maps unique **keys** to a **value** for each, written
 `{key1: value1, key2: value2, ...}`:
 
 ```python
-by_id = {"CS101": Session("CS101", "Introduction to AI", "Dr. Martinez", 120),
+BY_ID = {"CS101": Session("CS101", "Introduction to AI", "Dr. Martinez", 120),
          "CS102": Session("CS102", "Deep Learning Techniques", "Prof. Nguyen", 80),
          "CS103": Session("CS103", "Quantum Computing Basics", "Dr. Patel", 40),
          "CS104": Session("CS104", "Cybersecurity Trends", "Ms. Lee", 60)}
 ```
 
-- `by_id["CS103"]` is the `Session` with that key, and `by_id["CS103"].seats`
+- `BY_ID["CS103"]` is the `Session` with that key, and `BY_ID["CS103"].seats`
   its seats.
 - The lookup goes straight to the value, without looking at others: assume it
   is much faster than searching a list.
@@ -72,9 +72,9 @@ session with more than 50 seats:
 
 ```python
 over_50 = []
-for sid in by_id:
-    if by_id[sid].seats > 50:
-        over_50.append(by_id[sid])
+for sid in BY_ID:
+    if BY_ID[sid].seats > 50:
+        over_50.append(BY_ID[sid])
 ```
 
 - `for v in d.values()` goes through just the values, and
@@ -118,9 +118,9 @@ A **`Counter`** maps each value in a list to how many times it appears:
 ```python
 from collections import Counter
 
-counts = Counter(["Dr. Martinez", "Prof. Nguyen", "Dr. Martinez", "Ms. Lee"])
-counts["Dr. Martinez"]   # 2
-counts.most_common(1)    # [("Dr. Martinez", 2)]
+COUNTS = Counter(["Dr. Martinez", "Prof. Nguyen", "Dr. Martinez", "Ms. Lee"])
+COUNTS["Dr. Martinez"]   # 2
+COUNTS.most_common(1)    # [("Dr. Martinez", 2)]
 ```
 
 - `most_common(n)`: the `n` most common values, each with its count.
@@ -156,8 +156,8 @@ With field names as keys, a session can be a dataclass or a dictionary (like a
 PLL table row):
 
 ```python
-intro = Session("CS101", "Introduction to AI", "Dr. Martinez", 120)
-intro_dict = {"session_id": "CS101", "title": "Introduction to AI",
+INTRO = Session("CS101", "Introduction to AI", "Dr. Martinez", 120)
+INTRO_DICT = {"session_id": "CS101", "title": "Introduction to AI",
               "speaker": "Dr. Martinez", "seats": 120}
 ```
 
@@ -172,8 +172,8 @@ intro_dict = {"session_id": "CS101", "title": "Introduction to AI",
   ID, a title, a speaker, and a number of seats.)
 - Two uses of dictionaries:
   - keys that identify individuals in a group, with the same information about
-    each (`by_id`): common in nearly all languages, for fast lookup;
-  - keys that name the fields of one individual (`intro_dict`): common in
+    each (`BY_ID`): common in nearly all languages, for fast lookup;
+  - keys that name the fields of one individual (`INTRO_DICT`): common in
     Python, less so elsewhere; when the fields are fixed, a dataclass is
     usually better.
 
@@ -186,7 +186,7 @@ to the movies they like:
 ```python
 from collections import Counter
 
-favorites = {
+FAVORITES = {
     "Alice": ["Inception", "The Matrix", "Interstellar"],
     "Ben": ["The Matrix", "The Dark Knight"],
     "Chidi": ["Inception", "The Matrix"],
@@ -209,25 +209,25 @@ def like_counts(favs: dict[str, list[str]]) -> Counter:
     return Counter(all_likes)
 
 def test_fans_by_movie_of_inception():
-    assert fans_by_movie(favorites)["Inception"] == ["Alice", "Chidi"]
+    assert fans_by_movie(FAVORITES)["Inception"] == ["Alice", "Chidi"]
 
 def test_fans_by_movie_of_the_dark_knight():
-    assert fans_by_movie(favorites)["The Dark Knight"] == ["Ben"]
+    assert fans_by_movie(FAVORITES)["The Dark Knight"] == ["Ben"]
 
 def test_fans_by_movie_of_no_favorites():
     assert fans_by_movie({}) == {}
 
 def test_like_counts_of_the_matrix():
-    assert like_counts(favorites)["The Matrix"] == 3
+    assert like_counts(FAVORITES)["The Matrix"] == 3
 
 def test_like_counts_of_the_most_liked():
-    assert like_counts(favorites).most_common(1) == [("The Matrix", 3)]
+    assert like_counts(FAVORITES).most_common(1) == [("The Matrix", 3)]
 ```
 
-- `fans_by_movie(favorites)["The Matrix"]` is `["Alice", "Ben", "Chidi"]`.
+- `fans_by_movie(FAVORITES)["The Matrix"]` is `["Alice", "Ben", "Chidi"]`.
 - With `fans[movie]` in place of `fans.get(movie, [])`, the first movie (here
   `"Inception"`) would be a `KeyError`, since `fans` starts empty.
-- Try: which movies co-occur with `"Inception"` in `favorites`, and how many
+- Try: which movies co-occur with `"Inception"` in `FAVORITES`, and how many
   times each?
 
 In Practice, you'll build a system that recommends the movies that most often
@@ -235,7 +235,7 @@ co-occur with a given one. For each movie in a person's list, it stores all the
 movies in that list (including itself); Alice's list alone gives:
 
 ```python
-cooccurrence = {
+COOCCURRENCE = {
     "Inception": ["Inception", "The Matrix", "Interstellar"],
     "The Matrix": ["Inception", "The Matrix", "Interstellar"],
     "Interstellar": ["Inception", "The Matrix", "Interstellar"]

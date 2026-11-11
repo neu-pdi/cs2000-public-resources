@@ -663,12 +663,12 @@ works on it. PNG, JPEG, GIF, WebP, and SVG files are understood, up to 2 MB each
 these are for the graphics a program draws with, not for photographs.
 
 ```python example
-doghouse = load_image("https://raw.githubusercontent.com/neu-pdi/cs2000-public-resources/refs/heads/python/static/img/lab5-doghouse.png")
-scale(0.25, doghouse)
+DOGHOUSE = load_image("https://raw.githubusercontent.com/neu-pdi/cs2000-public-resources/refs/heads/python/static/img/lab5-doghouse.png")
+scale(0.25, DOGHOUSE)
 ```
 
 ```python example
-beside(scale(0.2, doghouse), scale(0.2, flip_horizontal(doghouse)))
+beside(scale(0.2, DOGHOUSE), scale(0.2, flip_horizontal(DOGHOUSE)))
 ```
 
 In the browser, an address on the web only works if its site allows other sites

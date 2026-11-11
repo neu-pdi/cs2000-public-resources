@@ -72,11 +72,11 @@ the same way, without running the file.
 ```python error
 #level beginner
 
-print(greeting)
-greeting = "hello"
+print(GREETING)
+GREETING = "hello"
 ```
 
-> `greeting` is defined on line 4, after this line.
+> `GREETING` is defined on line 4, after this line.
 
 ## Mistakes found before the file runs
 
