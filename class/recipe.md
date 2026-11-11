@@ -121,7 +121,7 @@ def test_choose_hat_well_above():
 ```
 
 - Write the expected outputs by working them out (or writing the computation, as
-  `0 * 9/5 + 32`), **never** by running the function: a wrong body would then
+  `0 * 9 / 5 + 32`), **never** by running the function: a wrong body would then
   make the tests agree with it.
 - Since the body is `...`, the tests already run, and fail. We can think through different possible behaviors now,
   before any code depends on it.

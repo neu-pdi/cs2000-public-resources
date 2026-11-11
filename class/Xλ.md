@@ -77,7 +77,7 @@ def collatz(n: int) -> int:
     elif n % 2 == 0:
         return collatz(n // 2)  # // divides, producing an int
     else:
-        return collatz(n*3 + 1)
+        return collatz(n * 3 + 1)
 ```
 
 **It's a simple program**. You could have written it a couple weeks into this class. And yet, **we are 88 years later and we still don't know**. We've tried it on very large numbers ([all of them up to `2.36×10^21`](https://en.wikipedia.org/wiki/Collatz_conjecture)), and all that we have tried it has terminated for, but still we have no idea if there might be some very large number for which it runs forever.

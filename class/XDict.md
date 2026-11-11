@@ -184,7 +184,7 @@ replace, or add? Several look like they should do one thing and do another.
 Then, in pairs, you write the Examples for a function that builds a
 dictionary, and compare them with your neighbors'.
 
-## Practice
+## Practice (extra, or if you miss class) {#practice}
 
 1. Create a dictionary mapping student IDs to names. Add a new student, update a name, and remove a student.
 1. Give each session in `by_id` a list of topics (in a new dictionary, from session IDs to lists of topics), then print the IDs of the sessions covering "AI".

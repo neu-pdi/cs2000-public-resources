@@ -256,7 +256,7 @@ recommender, in four parts, each changing what came before. Everyone does part
 1 on their own sheet, then passes it on, and does the next part on the sheet
 they receive.
 
-## Practice
+## Practice (extra, or if you miss class) {#practice}
 
 ### Part 1: Loading and Converting Data
 1. Load the CSV file at `https://raw.githubusercontent.com/neu-pdi/cs2000-public-resources/refs/heads/python/static/support/movies-data.csv` with `load_table`.

@@ -18,11 +18,11 @@ image. The number counts clock ticks, starting at 0, so each tick draws the next
 frame:
 
 ```python
-scene = empty_scene(320, 140)
+SCENE = empty_scene(320, 140)
 
 def draw_ball(n: int) -> Image:
     """a ball that moves right as n increases"""
-    return place_image(circle(14, "solid", "crimson"), (n*4) % 320, 70, scene)
+    return place_image(circle(14, "solid", "crimson"), (n * 4) % 320, 70, SCENE)
 
 animate(draw_ball)
 ```
