@@ -4,8 +4,6 @@ title: Tables and charts
 description: Creating, loading, transforming, and charting tables
 ---
 
-<Unreviewed />
-
 # Tables and charts
 
 PLL adds tables to Python: you do not need to `import` anything to use them. A

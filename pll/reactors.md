@@ -4,8 +4,6 @@ title: Reactors
 description: Animations and interactive programs
 ---
 
-<Unreviewed />
-
 # Reactors
 
 A **reactor** is an interactive program: a starting value (its _state_), a
@@ -70,13 +68,33 @@ husky_reactor.interact()
 | Part | What to give it | Called when |
 | --- | --- | --- |
 | `init` | the starting state | — |
-| `to_draw` | a function `(state)` that returns an image | every frame |
-| `on_tick` | a function `(state)` that returns the new state | on every tick of the clock |
-| `on_key` | a function `(state, key)` that returns the new state | a key is pressed. `key` is a string, like `"a"`, `"b"`, `" "`, `"left"`, `"right"`, `"up"`, or `"down"` |
-| `on_mouse` | a function `(state, x, y, event)` that returns the new state | the mouse does something at `(x, y)`. `event` is `"button-down"`, `"button-up"`, `"drag"`, `"move"`, `"enter"`, or `"leave"` |
-| `stop_when` | a function `(state)` that returns a `bool` | after each change; when it returns `True`, the reactor stops |
+| `to_draw` | a function from the state to an `Image` | every frame |
+| `on_tick` | a function from the state to the new state | on every tick of the clock |
+| `on_key` | a function from the state and a key to the new state | a key is pressed. `key` is a string, like `"a"`, `"b"`, `" "`, `"left"`, `"right"`, `"up"`, or `"down"` |
+| `on_mouse` | a function from the state, the mouse's `x` and `y`, and what it did, to the new state | the mouse does something at `(x, y)`. `event` is `"button-down"`, `"button-up"`, `"drag"`, `"move"`, `"enter"`, or `"leave"` |
+| `stop_when` | a function from the state to a `bool` | after each change; when it returns `True`, the reactor stops |
 | `tick_rate` | the number of seconds between ticks (about 1/28 if you leave it out) | — |
 | `title` | a string to show at the top of the card | — |
+
+The handlers' signatures are below, where `State` stands for the type of your
+state (`float`, for `husky_reactor` above). Their names are yours to choose.
+
+```python skip
+# to_draw
+def draw(state: State) -> Image: ...
+
+# on_tick
+def tick(state: State) -> State: ...
+
+# on_key
+def press(state: State, key: str) -> State: ...
+
+# on_mouse
+def mouse(state: State, x: int, y: int, event: str) -> State: ...
+
+# stop_when
+def done(state: State) -> bool: ...
+```
 
 Each handler returns the **new state**; it doesn't change the old one. A mistake
 in a handler is explained like any other error, and anything a handler prints
@@ -138,7 +156,9 @@ A reactor that is given `register="wss://..."` (the address of a server) is a
 **world**: it connects to the server, and can send and receive messages. A
 handler that returns `package(new_state, message)` changes the state to
 `new_state` **and** sends `message` to the server; whatever the server sends
-back arrives at the `on_receive` handler, as `(state, message)`. Messages are
-values like numbers, strings, lists, and dictionaries. The card shows whether it
+back arrives at the `on_receive` handler, a function like
+`def receive(state: State, message: Message) -> State`, where `Message` is the
+type of the messages. Messages are values like numbers, strings, lists, and
+dictionaries. The card shows whether it
 is connected. If an assignment uses this, it will tell you the address of the
 server to use.

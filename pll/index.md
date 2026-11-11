@@ -5,6 +5,7 @@ title: Overview
 description: Python Language Levels (PLL) reference
 ---
 
+
 # PLL Reference
 
 In this class, we write Python with **Python Language Levels** (PLL), an
@@ -48,8 +49,7 @@ it, don't: PLL is all you need.
 
 3. Click **PLL: Run Python File**, at the top right of the editor, on the same bar as the file name.
 
-   If you do not see it, open the Command Palette (`Ctrl+Shift+P` on Windows,
-   `Cmd+Shift+P` on a Mac) and run **PLL: Run Python File**.
+   `Ctrl+Enter` (`Cmd+Enter` on a Mac) in the editor does the same.
 
 The first run can take a little while: PLL is starting Python in the browser.
 Later runs are faster.
@@ -117,7 +117,7 @@ All of these are available from the Command Palette:
 
 | Command | What it does |
 | --- | --- |
-| **PLL: Run Python File** | Run the file, then its tests (if any). |
+| **PLL: Run Python File** | Run the file, then its tests (if any). Also `Ctrl+Enter` (`Cmd+Enter` on a Mac) in the editor. |
 | **PLL: Show Interactions** | Open the interactions panel. |
 | **PLL: Start REPL** | Show the session with no file, at `#level beginner`, whatever file is open. |
 | **PLL: Change Level** | Change the file's `#level` line (or give a file with no line one). |
