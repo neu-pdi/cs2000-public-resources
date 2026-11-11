@@ -4,7 +4,6 @@ id: faqs
 description: Frequently Asked Questions
 ---
 
-<Unreviewed />
 
 # FAQs
 
@@ -34,7 +33,7 @@ Each assignment is due at its [Assignment Crit](/syllabus/#assignment-crits), in
 Assignments are graded based on the [Assignment Crits](/syllabus/#assignment-crits), which occur during lab.
 
 ### I don't agree with a grade I got, what do I do?
-Assignment Crits have no regrades, though several of your least reliable crit scores are dropped (see the [regrade request policy](/syllabus/#regrade-requests)).
+Assignment Crits have no regrades, since they are based on the feedback of the panel that saw the presentation. However, by going to class, you can essentially bring up this grade (see [Grading](/syllabus/#grading)).
 
 
 <!-- --- -->
