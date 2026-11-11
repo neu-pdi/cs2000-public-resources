@@ -88,7 +88,9 @@ def output_block(page, n, code, result, expect_error):
                 f.write(value["svg"])
             lines = [l.strip() for l in code.strip().split("\n")]
             shown = " ".join(lines) if len(lines) <= 4 and "def " not in code else lines[-1]
-            alt = "Result of " + shown.replace("[", "(").replace("]", ")").replace('"', "'")
+            # Docusaurus escapes an image's alt text a second time, so a quote
+            # in it is read out as "&#39;" (and so would be &, < or >).
+            alt = "Result of " + shown.replace("[", "(").replace("]", ")").replace('"', "").replace("'", "")
             parts.append("![%s](/img/pll/%s/%s)" % (alt, page, name))
         elif value["kind"] == "table":
             parts.append(markdown_table(value["columns"], value["rows"]))

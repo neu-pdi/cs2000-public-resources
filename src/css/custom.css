@@ -78,12 +78,17 @@ ul > li:has(pre)::before {
 .pll-output {
   margin: -0.5rem 0 1.25rem;
 }
+/* Docusaurus gives each image width and height attributes of the picture's own
+   size, so the card's padding and border go outside them (content-box): inside,
+   as the site's border-box would put them, they take 18px from every picture's
+   width, and a 20-pixel-wide one is drawn 2 pixels wide. */
 .pll-output img {
   background: #fff;
   border: 1px solid var(--ifm-color-emphasis-300);
   border-radius: var(--ifm-code-border-radius);
   padding: 0.5rem;
-  max-width: 100%;
+  box-sizing: content-box;
+  max-width: calc(100% - 1rem - 2px);
 }
 .pll-output table {
   font-size: 0.9rem;

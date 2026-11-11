@@ -831,7 +831,7 @@ study.bar_chart("name", "score")
 
 <div className="pll-output">
 
-![Result of study.bar_chart('name', 'score')](/img/pll/tables/39.svg)
+![Result of study.bar_chart(name, score)](/img/pll/tables/39.svg)
 
 </div>
 
@@ -850,7 +850,7 @@ study.freq_bar_chart("year")
 
 <div className="pll-output">
 
-![Result of study.freq_bar_chart('year')](/img/pll/tables/40.svg)
+![Result of study.freq_bar_chart(year)](/img/pll/tables/40.svg)
 
 </div>
 
@@ -869,7 +869,7 @@ study.pie_chart("name", "hours", title="Hours studied")
 
 <div className="pll-output">
 
-![Result of study.pie_chart('name', 'hours', title='Hours studied')](/img/pll/tables/41.svg)
+![Result of study.pie_chart(name, hours, title=Hours studied)](/img/pll/tables/41.svg)
 
 </div>
 
@@ -889,7 +889,7 @@ study.histogram("score", bin_width=5)
 
 <div className="pll-output">
 
-![Result of study.histogram('score', bin_width=5)](/img/pll/tables/42.svg)
+![Result of study.histogram(score, bin_width=5)](/img/pll/tables/42.svg)
 
 </div>
 
@@ -899,7 +899,7 @@ study.histogram("score", bins=3)
 
 <div className="pll-output">
 
-![Result of study.histogram('score', bins=3)](/img/pll/tables/43.svg)
+![Result of study.histogram(score, bins=3)](/img/pll/tables/43.svg)
 
 </div>
 
@@ -917,7 +917,7 @@ study.scatter_plot("hours", "score")
 
 <div className="pll-output">
 
-![Result of study.scatter_plot('hours', 'score')](/img/pll/tables/44.svg)
+![Result of study.scatter_plot(hours, score)](/img/pll/tables/44.svg)
 
 </div>
 
@@ -935,7 +935,7 @@ study.line_chart("hours", "score")
 
 <div className="pll-output">
 
-![Result of study.line_chart('hours', 'score')](/img/pll/tables/45.svg)
+![Result of study.line_chart(hours, score)](/img/pll/tables/45.svg)
 
 </div>
 
@@ -954,7 +954,7 @@ study.dot_plot("hours")
 
 <div className="pll-output">
 
-![Result of study.dot_plot('hours')](/img/pll/tables/46.svg)
+![Result of study.dot_plot(hours)](/img/pll/tables/46.svg)
 
 </div>
 
@@ -973,7 +973,7 @@ study.box_plot("score")
 
 <div className="pll-output">
 
-![Result of study.box_plot('score')](/img/pll/tables/47.svg)
+![Result of study.box_plot(score)](/img/pll/tables/47.svg)
 
 </div>
 
@@ -992,7 +992,7 @@ study.lr_plot("hours", "score")
 
 <div className="pll-output">
 
-![Result of study.lr_plot('hours', 'score')](/img/pll/tables/48.svg)
+![Result of study.lr_plot(hours, score)](/img/pll/tables/48.svg)
 
 </div>
 
@@ -1013,7 +1013,7 @@ study.labeled_scatter_plot("year", "hours", "score")
 
 <div className="pll-output">
 
-![Result of study.labeled_scatter_plot('year', 'hours', 'score')](/img/pll/tables/49.svg)
+![Result of study.labeled_scatter_plot(year, hours, score)](/img/pll/tables/49.svg)
 
 </div>
 
