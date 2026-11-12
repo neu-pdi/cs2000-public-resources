@@ -152,7 +152,7 @@ RECIPES_RAW.row(0)
 <div className="pll-output">
 
 ```text
-{'title': 'Classic Pancakes', 'servings': '4', 'prep time': '15'}
+{"title": "Classic Pancakes", "servings": "4", "prep time": "15"}
 ```
 
 </div>
@@ -168,7 +168,7 @@ RECIPES.row(0)
 <div className="pll-output">
 
 ```text
-{'title': 'Classic Pancakes', 'servings': 4, 'prep time': 15}
+{"title": "Classic Pancakes", "servings": 4, "prep time": 15}
 ```
 
 </div>
@@ -203,7 +203,7 @@ WORKOUTS.columns()
 <div className="pll-output">
 
 ```text
-['date', 'activity', 'duration']
+["date", "activity", "duration"]
 ```
 
 </div>
@@ -244,7 +244,7 @@ WORKOUTS.row(1)
 <div className="pll-output">
 
 ```text
-{'date': '2025-04-02', 'activity': 'Yoga', 'duration': 45}
+{"date": "2025-04-02", "activity": "Yoga", "duration": 45}
 ```
 
 </div>
@@ -270,7 +270,7 @@ WORKOUTS.row(1)["activity"]
 <div className="pll-output">
 
 ```text
-'Yoga'
+"Yoga"
 ```
 
 </div>
@@ -322,11 +322,11 @@ WORKOUTS.rows()
 <div className="pll-output">
 
 ```text
-[{'date': '2025-04-01', 'activity': 'Running', 'duration': 30},
- {'date': '2025-04-02', 'activity': 'Yoga', 'duration': 45},
- {'date': '2025-04-03', 'activity': 'Cycling', 'duration': 60},
- {'date': '2025-04-04', 'activity': 'Running', 'duration': 25},
- {'date': '2025-04-05', 'activity': 'Yoga', 'duration': 50}]
+[{"date": "2025-04-01", "activity": "Running", "duration": 30},
+ {"date": "2025-04-02", "activity": "Yoga", "duration": 45},
+ {"date": "2025-04-03", "activity": "Cycling", "duration": 60},
+ {"date": "2025-04-04", "activity": "Running", "duration": 25},
+ {"date": "2025-04-05", "activity": "Yoga", "duration": 50}]
 ```
 
 </div>
@@ -683,7 +683,7 @@ WORKOUTS.max("activity")
 <div className="pll-output">
 
 ```text
-'Yoga'
+"Yoga"
 ```
 
 </div>

@@ -15,6 +15,26 @@ env = dict(globals())
 results = []
 
 
+def double_quoted(text):
+    """text as a string literal in double quotes, as PLL's panel shows strings"""
+    written = repr(text)
+    if written.startswith('"'):
+        return written
+    if "'" not in text:
+        return '"%s"' % written[1:-1].replace('"', '\\"')
+    return '"%s"' % "".join('\\"' if c == '"' else repr(c)[1:-1] for c in text)
+
+
+class DoubleQuoted(pprint.PrettyPrinter):
+    """pprint, with each string in double quotes - a long one too, left whole"""
+    _dispatch = {k: v for k, v in pprint.PrettyPrinter._dispatch.items() if k is not str.__repr__}
+
+    def format(self, obj, context, maxlevels, level):
+        if type(obj) is str:
+            return double_quoted(obj), True, False
+        return super().format(obj, context, maxlevels, level)
+
+
 def describe(value, n):
     """what to show for the value of an example's last expression"""
     if value is None:
@@ -26,7 +46,7 @@ def describe(value, n):
     if hasattr(value, "to_svg"):  # an image (charts are images too)
         return {"kind": "image", "svg": value.to_svg(),
                 "width": image_width(value), "height": image_height(value)}
-    return {"kind": "text", "text": pprint.pformat(value, width=80, sort_dicts=False)}
+    return {"kind": "text", "text": DoubleQuoted(width=80, sort_dicts=False).pformat(value)}
 
 
 for n, example in enumerate(examples):
