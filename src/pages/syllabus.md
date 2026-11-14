@@ -45,7 +45,7 @@ Individual instructors might use other communication channels (such as Canvas an
 
 ### Course Tools
 
-The only software you will need is a web browser (and a computer or tablet that can run a relatively up-to-date one). All programming will be done via the online programming environment VSCode (note that VSCode exists also as a program installed on your computer, but we won't use that), which we will refer to as vscode.dev (as this is the website for it).
+You need a laptop (Windows, Mac, or Linux) that can run [VS Code](https://code.visualstudio.com), the code editor we use, with the **Python Language Levels** (PLL) extension; a tablet or a Chromebook won't work. We install both together in [Class 1](/class/1#setting-up), and nothing else: PLL brings its own Python. You keep all your work, from classes, labs, and projects, in one folder on your laptop, and you present each homework from there, at its crit.
 
 ### People
 | Instructor | Campus | Office | Office Hours |
@@ -60,7 +60,7 @@ The only software you will need is a web browser (and a computer or tablet that 
 
 ### Due Dates
 
-Each homework assignment (a checkpoint of one of the three projects) is due at its [Assignment Crit](#assignment-crits), in lab every other Friday; the calendar and the assignment's page give the date. Each project is in a GitHub repository you make, public or private as you choose. Be sure to complete all work before the Assignment Crit, as you will present your project repository at that point. That presentation is the only grading of homework assignments. While you will see grades in the Pawtograder gradebook, you will not get any written feedback on assignments there.
+Each homework assignment (a checkpoint of one of the three projects) is due at its [Assignment Crit](#assignment-crits), in lab every other Friday; the calendar and the assignment's page give the date. Each project is in a folder of its own, in your class work folder on your laptop. Be sure to complete all work before the Assignment Crit, as you will present your project at that point. That presentation is the only grading of homework assignments. While you will see grades in the Pawtograder gradebook, you will not get any written feedback on assignments there.
 
 ### Regrade Requests
 
@@ -108,7 +108,7 @@ The course will teach the following 13 skills, grading of which will be performe
 
 Every other week's lab is for crits: presentations of the homework due then. The lab sits in panels of 5 or 6 students, with TAs moving between them, and everyone on a panel takes a turn presenting. The second lab of the semester introduces how crits work (and Class 7 has a practice crit); the first crit, on Homework 1, is two weeks after it.
 
-A crit is one presentation, about 15 minutes including questions. The presenter starts it in vscode.dev, with the Assignment Crits extension, and reads out its join code; the panel joins in the browser, on their own laptops, and follows the presenter's code as they walk through their work: what they did, why they did it, and what else they could have done. Panelists raise a hand (in the browser) to ask a question aloud, and the presenter takes the questions in order. Every five minutes, and once at the end, each panelist rates the presentation, with one tap; when a question has been answered, the rest of the panel rates the question too. No one sees anyone else's ratings.
+A crit is one presentation, about 15 minutes including questions. The presenter starts it in VS Code, on their laptop, with the Assignment Crits extension, and reads out its join code; the panel joins in the browser, on their own laptops, and follows the presenter's code as they walk through their work: what they did, why they did it, and what else they could have done. Panelists raise a hand (in the browser) to ask a question aloud, and the presenter takes the questions in order. Every five minutes, and once at the end, each panelist rates the presentation, with one tap; when a question has been answered, the rest of the panel rates the question too. No one sees anyone else's ratings.
 
 A presentation's score is the mean of the panel's ratings, each weighted by how careful that rater has been over the semester so far (roughly: how well their ratings agree with everyone else's), and every score shows how reliable it is. Your grade for a lab has two parts: a score on your work (your presentation and the questions you asked) and a second score on the ratings you gave (and how closely they tracked with others). Staff mark who is present: nothing done by someone not marked present counts, so coming late or leaving early may result in no credit on the crit. 
 
@@ -133,7 +133,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 <tr>
 <th>Grade</th>
 <th colSpan="3" align="center">Skills Needed (out of 13 total)</th>
-<th>Assignment Crit Average</th>
+<th>Assignment Crit Scores</th>
 <th>Pairing Session Average</th>
 </tr>
 <tr>
@@ -141,7 +141,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 <th><strong>Meets Expectations</strong></th>
 <th><strong>Approaching Expectations</strong></th>
 <th><strong>Not Approaching</strong></th>
-<th>If attendance > 26/32, subtract 10% on all below</th>
+<th>Lowest 3 dropped in each category</th>
 <th>If attendance > 26/32, subtract 10% on all below</th>
 </tr>
 </thead>
@@ -151,7 +151,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 <td>11+</td>
 <td>1 or fewer</td>
 <td>0</td>
-<td>80% or better</td>
+<td>Remaining all medium or high</td>
 <td>70% or better</td>
 </tr>
 <tr>
@@ -159,7 +159,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 <td>11+</td>
 <td>1 or fewer</td>
 <td>0</td>
-<td>70% or better</td>
+<td>Up to one low remains</td>
 <td>65% or better</td>
 </tr>
 <tr>
@@ -167,7 +167,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 <td>9+</td>
 <td>3 or fewer</td>
 <td>0</td>
-<td>70% or better</td>
+<td>Up to one low remains</td>
 <td>55% or better</td>
 </tr>
 <tr>
@@ -175,7 +175,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 <td>9+</td>
 <td>3 or fewer</td>
 <td>0</td>
-<td>60% or better</td>
+<td>One low in two of three categories</td>
 <td>50% or better</td>
 </tr>
 <tr>
@@ -183,7 +183,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 <td>9+</td>
 <td>3 or fewer</td>
 <td>0</td>
-<td>50% or better</td>
+<td>At most one low in each category</td>
 <td>40% or better</td>
 </tr>
 <tr>
@@ -191,7 +191,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 <td>7+</td>
 <td>4 or fewer</td>
 <td>1 or fewer</td>
-<td>60% or better</td>
+<td>Two lows in one category, one low in others</td>
 <td>30% or better</td>
 </tr>
 <tr>
@@ -199,7 +199,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 <td>7+</td>
 <td>4 or fewer</td>
 <td>1 or fewer</td>
-<td>50% or better</td>
+<td>Two lows in two categories, one low in other</td>
 <td>25% or better</td>
 </tr>
 <tr>
@@ -207,7 +207,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 <td>7+</td>
 <td>4 or fewer</td>
 <td>1 or fewer</td>
-<td>40% or better</td>
+<td>Two lows in each category</td>
 <td>20% or better</td>
 </tr>
 <tr>
@@ -215,7 +215,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 <td></td>
 <td></td>
 <td>4 or fewer</td>
-<td>50% or better</td>
+<td>Two medium or high scores</td>
 <td>any</td>
 </tr>
 <tr>
@@ -223,7 +223,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 <td></td>
 <td></td>
 <td>4 or fewer</td>
-<td>40% or better</td>
+<td>One medium or high score</td>
 <td>any</td>
 </tr>
 <tr>
@@ -237,7 +237,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 </tbody>
 </table>
 
-**Practice labs.** If you attend all but at most one of the seven [practice labs](#labs), your grade moves up one row of the table: for example, a **B** becomes a **B+**, and an **A** stays an **A**. The bonus moves a grade from the table; it can't turn a failing grade into a passing one.
+**Practice labs.** If you attend all but one of the seven [practice labs](#labs), your grade moves up one row of the table: for example, a **B** becomes a **B+**, and an **A** stays an **A**. The bonus moves a grade from the table; it can't turn a failing grade into a passing one.
 
 
 ### Collaboration and Academic Honesty

@@ -27,8 +27,7 @@ terminal.
 Your program can read files that are in the **same folder** as the `.py` file
 you ran, or in a folder inside it — for example, with
 [`load_table`](/pll/tables#load_table), [`load_image`](/pll/images#load_image),
-`open("data.csv")`, or `open("data/2024.csv")`. This works in vscode.dev, as
-well as in desktop VSCode. Files are read exactly as they are on disk, so a CSV
+`open("data.csv")`, or `open("data/2024.csv")`. Files are read exactly as they are on disk, so a CSV
 saved in another encoding, or a picture, arrives intact.
 
 After the program finishes, files it wrote or changed — for example, with
@@ -70,9 +69,8 @@ that answers with an error (a 404) raises `HTTPError`, as in Python; one that
 does not answer at all gives up after 60 seconds (or the `timeout` a program
 gives), and **Stop** ends the wait.
 
-In the browser (including vscode.dev), an address only works if its site allows
-other sites to read it. If one doesn't, download the file, add it to your
-repository (next to your program), and load it by its file name instead.
+If an address doesn't work, download the file, put it in your folder (next to
+your program), and load it by its file name instead.
 
 ## Before you have a file
 

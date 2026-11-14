@@ -11,9 +11,8 @@ description: Python Language Levels (PLL) reference
 In this class, we write Python with **Python Language Levels** (PLL), an
 extension for the VSCode editor. PLL runs your programs right in the editor, and
 shows the results in an **interactions** panel — output, errors, images, tables,
-and a prompt where you can try extra Python after a run. It works in
-[vscode.dev](https://vscode.dev), in the browser, so you do **not** need to
-install Python on your computer.
+and a prompt where you can try extra Python after a run. It brings its own
+Python, so you do **not** need to install Python on your computer.
 
 These pages describe everything PLL adds to Python:
 
@@ -28,7 +27,8 @@ For the Python language itself, see the [Python documentation](https://docs.pyth
 
 ## Installing PLL
 
-1. Open [vscode.dev](https://vscode.dev) (or desktop VSCode).
+1. Open VS Code (download it from https://code.visualstudio.com, if you don't
+   have it yet).
 2. Open the Extensions view (the four squares in the left sidebar).
 3. Search for **Python Language Levels**.
 4. Click **Install**. If you are asked to trust the publisher, do that.
@@ -68,7 +68,7 @@ Python does).
 
 With no Python file open, the interactions panel has a session of its own, called
 **No file**: type Python at its prompt and press Enter. It is for the very first
-things you try, before you have a repository to make a file in, and it always uses
+things you try, before you've made a file, and it always uses
 `#level beginner`. Once you open a Python file, the panel shows that file's
 session instead; **PLL: Start REPL** switches back to the session with no file.
 

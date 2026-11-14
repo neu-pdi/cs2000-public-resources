@@ -113,10 +113,9 @@ handles those values, and use that with `transform_column` instead.
 A CSV saved by Excel loads either way it can be saved ("CSV UTF-8", or a plain
 "CSV"). An address that gives back a web page rather than a CSV, such as a file's
 page on GitHub, is said to be one, with the fix (use the address of its **Raw**
-button). A file next to your program can be up to 50 MB. In the browser, an address
-on the web only works if its site allows other sites to read it: if
-`load_table` reports that it could not reach an address, download the CSV, add
-it to your repository (next to your program), and load it by its file name
+button). A file next to your program can be up to 50 MB. If
+`load_table` reports that it could not reach an address, download the CSV, put
+it in your folder (next to your program), and load it by its file name
 instead.
 
 ## Getting information from tables

@@ -27,7 +27,7 @@ Check out our [regrade request policy](/syllabus/#regrade-requests) for info on 
 ---
 ## Assignments
 ### When are assignments due?
-Each assignment is due at its [Assignment Crit](/syllabus/#assignment-crits), in lab every other Friday: the calendar and the assignment's page give the date. Be sure to complete all work before the Assignment Crit, as you will present your project repository at that point.
+Each assignment is due at its [Assignment Crit](/syllabus/#assignment-crits), in lab every other Friday: the calendar and the assignment's page give the date. Be sure to complete all work before the Assignment Crit, as you will present your project at that point.
 
 ### How are assignments graded?
 Assignments are graded based on the [Assignment Crits](/syllabus/#assignment-crits), which occur during lab.
@@ -46,16 +46,8 @@ Assignment Crits have no regrades, since they are based on the feedback of the p
 ### When trying to edit a file, no run button is showing
 The **PLL: Run Python File** button only appears for files whose names end in `.py`. If you are editing a `.py` file and still don't see it, you can run it from the Command Palette (`Ctrl+Shift+P` on Windows, `Cmd+Shift+P` on a Mac) with **PLL: Run Python File**. If that doesn't work either, try the following to fix the issue:
 1) Uninstall the Python Language Levels (PLL) extension
-2) Restart the browser and/or clear website cache
+2) Restart VS Code
 3) Re-install the Python Language Levels (PLL) extension
 
-If the issue continues, try using another browser if you can and let us know in the Discord
+If the issue continues, let us know in the Discord
 
-### When trying to commit, I get a notice to create a fork
-This is likely because you are trying to edit the template repo rather than your own. Make sure you create your own repo via the tempate, and are in your own repository. Your username should be in the URL
-
-### When opening VS Code in Safari, all I see is a blank screen
-Try restarting Safari and clearing the cache. If that does not work, let us know in the Discord and try using another browser if you can
-
-### Can I use VS Code on my device instead of on the web?
-Sure, if you are familiar with VS Code and would like to use it locally, then you may do so, following the same setup steps. However, you present your crits from vscode.dev, so you **must push all your work to GitHub** before each crit. If you're not comfortable doing that, we encourage you to use the online version

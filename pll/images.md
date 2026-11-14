@@ -1063,9 +1063,8 @@ beside(scale(0.2, DOGHOUSE), scale(0.2, flip_horizontal(DOGHOUSE)))
 
 </div>
 
-In the browser, an address on the web only works if its site allows other sites
-to read it. If loading fails, download the picture, add it to your repository
-(next to your program), and load it by its file name instead.
+If loading an address fails, download the picture, put it in your folder (next
+to your program), and load it by its file name instead.
 
 ## Colors
 

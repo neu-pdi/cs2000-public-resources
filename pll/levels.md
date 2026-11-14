@@ -58,8 +58,9 @@ below it, so Select All and Delete empties the file but keeps the line. Pasting
 in a whole program that has its own `#level` line gives the file that program's
 level.
 
-In this class's repositories, a new `.py` file starts with `#level beginner`
-already written in.
+Once PLL's **New File Level** setting is `beginner`, as you set it in
+[Class 2](/class/2#your-class-work-folder), a new `.py` file starts with
+`#level beginner` already written in.
 
 ## Names without a value
 
