@@ -212,7 +212,7 @@ export const calendarData: CalendarInfo = {
         { number: 3, startDate: '2026-10-19', endDate: '2026-11-06' },
         { number: 4, startDate: '2026-10-26', endDate: '2026-11-20' },
         { number: 5, startDate: '2026-11-02', endDate: '2026-11-20' },
-        { number: 6, startDate: '2026-11-09', endDate: '2026-11-24' },
+        { number: 6, startDate: '2026-11-09', endDate: '2026-12-04' },
         { number: 7, startDate: '2026-11-16', endDate: '2026-12-11' },
         { number: 8, startDate: '2026-11-16', endDate: '2026-12-11' },
         { number: 9, startDate: '2026-11-23', endDate: '2026-12-11' },
