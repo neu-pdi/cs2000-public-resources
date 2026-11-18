@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Link from '@docusaurus/Link';
 import CalendarHighlighter from './CalendarHighlighter';
 import type { CalendarMonth, Lecture } from '../data/calendar-data';
+import { pairingSkills } from '../data/calendar-data';
 import {
   ONLINE_OH_CSV_URL,
   parseOnlineOfficeHours,
@@ -237,6 +238,34 @@ a.week-pairing:hover {
 .week-pairing-short {
   display: none;
 }
+.week-pairing-group {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.week-pairing-tests {
+  font-size: 11px;
+  color: var(--ifm-color-emphasis-700);
+}
+.week-pairing-skill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: bold;
+  color: #000;
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+}
+.week-pairing-skill:hover {
+  color: #000;
+  text-decoration: none;
+  box-shadow: 0 0 5px light-dark(rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0.5));
+}
 .holiday {
   background-color: var(--ifm-color-emphasis-100);
   color: var(--ifm-color-emphasis-700);
@@ -282,11 +311,21 @@ ${SKILL_COLORS.map((color, skill) => `.skill-${skill} { background-color: ${colo
     font-size: 10px;
     padding: 1px 5px;
   }
-  .week-pairing-long {
+  .week-pairing-long,
+  .week-pairing-tests {
     display: none;
   }
   .week-pairing-short {
     display: inline;
+  }
+  .week-pairing-group {
+    gap: 3px;
+  }
+  .week-pairing-skill {
+    min-width: 16px;
+    height: 16px;
+    padding: 0 3px;
+    font-size: 9px;
   }
 }
 </style>
@@ -325,10 +364,26 @@ ${SKILL_COLORS.map((color, skill) => `.skill-${skill} { background-color: ${colo
                             {week.topic}
                           </span>
                           {week.pairing && (
-                            <Link className="week-pairing" to="/syllabus#pair-programming-sessions">
-                              <span className="week-pairing-long">Pairing session {week.pairing}</span>
-                              <span className="week-pairing-short">Pairing {week.pairing}</span>
-                            </Link>
+                            <span className="week-pairing-group">
+                              <Link className="week-pairing" to="/syllabus#pair-programming-sessions">
+                                <span className="week-pairing-long">Pairing session {week.pairing}</span>
+                                <span className="week-pairing-short">Pairing {week.pairing}</span>
+                              </Link>
+                              {(pairingSkills[week.pairing] ?? []).length > 0 && (
+                                <span className="week-pairing-tests">tests</span>
+                              )}
+                              {(pairingSkills[week.pairing] ?? []).map((skill) => (
+                                <Link
+                                  key={skill}
+                                  to={`/skills/#${skill}`}
+                                  className={`week-pairing-skill skill-${skill}`}
+                                  title={`Skill ${skill}`}
+                                  aria-label={`Skill ${skill}`}
+                                >
+                                  {skill}
+                                </Link>
+                              ))}
+                            </span>
                           )}
                         </div>
                       </td>

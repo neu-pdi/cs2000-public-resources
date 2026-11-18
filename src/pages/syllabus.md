@@ -4,6 +4,8 @@ description: Syllabus
 hide_table_of_contents: true
 ---
 
+<Unreviewed />
+
 ## Course Description
 
 Introduces computer science and data science to students with no prior programming experience. Starts by building programs with numbers, text, and images. Explores real, complex datasets both interactively and through coding by doing data analysis, constructing graphs, and computing interesting results. Offers students an opportunity to build a solid foundation and practice coding with a popular industrial coding language with a professional programmer’s interface to the code. Covers skills needed to identify and respond to ethical challenges that arise in the program design process.
@@ -116,7 +118,17 @@ A presentation's score is the mean of the panel's ratings, each weighted by how 
 
 Working with others is a fundamentally important skill, and one of the best ways to learn is to work or supervised by someone who is more experienced than you. As a result, over the course of the semester you will have **three 1hr pair programming sessions with a TA**. These will be scheduled in the first, middle, and last third of the class, beginning a few weeks into the semester. You will have the opportunity to pick a time that is convenient to you, and will work with whomever of the TAs is available at the selected time. You can sign up on your own, or, if you'd like, together with a classmate: two students and one TA. If you want to work with anothers 
 
-The sessions will take place in rooms with several TAs and their students, and each session is given a problem that is new to everyone in it, from a pool of problems appropriate at that point in the semester (beginning, middle, end). The material covered will only be up to the _beginning_ of the phase (consult the semester calendar). Only one computer is open: the student is the driver/pilot, whereas the TA serves as the copilot, helping to brainstorm, point out typos, etc. If you signed up with a classmate, you take turns: one of you drives while the other is a copilot alongside the TA, and you switch roles at each part of the problem. While the problems are intended to take roughly an hour to complete, grading of these sessions is not based on functional completeness of the solution, but rather, based on the quality of interaction — working together, coming up with ideas, demonstrating familiarity with the course material, etc. In a session with a classmate, each of you is graded on your own part in it. After the session is over, the TA and each student will fill out an assessment (SELF REFLECTION LINK: FIXME). The TA's assessment will be used for the grade, with each assessment being worth 1/3 of the total grade.
+The sessions will take place in rooms with several TAs and their students, and each session is given a problem that is new to everyone in it, from a pool of problems for that session. Each session tests several skills, shown beside it in the [calendar](/#schedule), and its weeks start at least a week after those skills are open for assessment, so that you can attempt them first; its problems use only material from before its first week. Only one computer is open: the student is the driver/pilot, whereas the TA serves as the copilot, helping to brainstorm, point out typos, etc. If you signed up with a classmate, you take turns: one of you drives while the other is a copilot alongside the TA, and you switch roles at each part of the problem. While the problems are intended to take roughly an hour to complete, grading of these sessions is not based on functional completeness of the solution, but rather, based on the quality of interaction — working together, coming up with ideas, demonstrating familiarity with the course material, etc. In a session with a classmate, each of you is graded on your own part in it. After the session is over, the TA and each student will fill out an assessment (SELF REFLECTION LINK: FIXME). The TA's assessment will be used for the grade, with each assessment being worth 1/3 of the total grade.
+
+The problems come in three versions. Your best result on the part's skills, when your session starts, decides which version you get, and so the most that part can earn:
+
+| Your result on all the part's skill | Your version of the part | Most it can earn |
+| --- | --- | --- |
+| Meets expectations | the task and its examples: you design the function from start to finish | 100% |
+| Approaching expectations | the same, with some steps of the design recipe given, such as the function's signature and docstring | 80% |
+| Doesn't meet expectations, or not yet attempted | the same, with more steps given, and a start on the function's body | 60% |
+
+The TA grades the session as described above, out of that maximum. So attempt the skills before your session: full credit is only possible once you meet expectations on the skills. If you signed up with a classmate, we'll use the minimum of your assessed skills to determine which problems to work on.
 
 If your schedule changes, you must notify the course coordinator (Amy Gately, a.gately@northeastern.edu) at least **a week** before your scheduled session, and we'll cancel it and you can pick a different time. If it is less than a week, you can still contact Amy, but you need to tell us why you need to reschedule, and we may not be able to accommodate it. **If you do not show up to a scheduled session** (showing up 15mins+ late to the 1hr appointment counts as not showing up), you will receive a 0 for that session, which drops a full third of your **Pairing Session Average**; there are no make-ups. If you signed up with a classmate and they don't come, you do the session with the TA on your own. Attending and participating always scores you better than not showing up.
 
@@ -126,7 +138,7 @@ AFTER YOUR SESSION, FILL OUT THE FOLLOWING FORM: FIXME.
 
 Your final grade will be calculated by your results in the **Skill Assessments**, **Assignment Crits**, and **Pair Programming** sessions, as described above, with a bonus for attending **practice labs** (below the table) and **class attendance** (above Assignment Crits & Pairing Sessions). The exact grade associated with performance in each of those categories is captured by the following table — the highest row that a student satisfies all columns of will be their grade, and **if no rows are completely satisfied, the student will not pass the course.**
 
-Because each of the three pairing sessions is worth a third of the **Pairing Session Average**, and a missed session scores 0 (see [Pair Programming Sessions](#pair-programming-sessions)), the thresholds in the last column are set around what missing a session costs: with full credit on the sessions you do attend, one miss averages 66.7%, two misses 33.3%, and three misses 0. So one missed session still clears the 65% needed for an **A-** but not the 70% needed for an **A**; two missed sessions leave you at a **C+**; missing all three leaves that column short of every row from A through C-, so the highest row you can still reach is **D+**, which asks for nothing there.
+Because each of the three pairing sessions is worth a third of the **Pairing Session Average**, and a missed session scores 0 (see [Pair Programming Sessions](#pair-programming-sessions)), the thresholds in the last column are set around what missing a session costs: with full credit on the sessions you do attend (which takes meeting expectations on each session's skills), one miss averages 66.7%, two misses 33.3%, and three misses 0. So one missed session still clears the 65% needed for an **A-** but not the 70% needed for an **A**; two missed sessions leave you at a **C+**; missing all three leaves that column short of every row from A through C-, so the highest row you can still reach is **D+**, which asks for nothing there.
 
 <table>
 <thead>
@@ -141,7 +153,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 <th><strong>Meets Expectations</strong></th>
 <th><strong>Approaching Expectations</strong></th>
 <th><strong>Not Approaching</strong></th>
-<th>Lowest 3 dropped in each category</th>
+<th>Lowest 3 dropped in each category; lows left, in all three</th>
 <th>If attendance > 26/32, subtract 10% on all below</th>
 </tr>
 </thead>
@@ -151,7 +163,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 <td>11+</td>
 <td>1 or fewer</td>
 <td>0</td>
-<td>Remaining all medium or high</td>
+<td>None</td>
 <td>70% or better</td>
 </tr>
 <tr>
@@ -159,7 +171,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 <td>11+</td>
 <td>1 or fewer</td>
 <td>0</td>
-<td>Up to one low remains</td>
+<td>1 or fewer</td>
 <td>65% or better</td>
 </tr>
 <tr>
@@ -167,7 +179,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 <td>9+</td>
 <td>3 or fewer</td>
 <td>0</td>
-<td>Up to one low remains</td>
+<td>1 or fewer</td>
 <td>55% or better</td>
 </tr>
 <tr>
@@ -175,7 +187,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 <td>9+</td>
 <td>3 or fewer</td>
 <td>0</td>
-<td>One low in two of three categories</td>
+<td>2 or fewer</td>
 <td>50% or better</td>
 </tr>
 <tr>
@@ -183,7 +195,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 <td>9+</td>
 <td>3 or fewer</td>
 <td>0</td>
-<td>At most one low in each category</td>
+<td>3 or fewer</td>
 <td>40% or better</td>
 </tr>
 <tr>
@@ -191,7 +203,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 <td>7+</td>
 <td>4 or fewer</td>
 <td>1 or fewer</td>
-<td>Two lows in one category, one low in others</td>
+<td>4 or fewer</td>
 <td>30% or better</td>
 </tr>
 <tr>
@@ -199,7 +211,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 <td>7+</td>
 <td>4 or fewer</td>
 <td>1 or fewer</td>
-<td>Two lows in two categories, one low in other</td>
+<td>5 or fewer</td>
 <td>25% or better</td>
 </tr>
 <tr>
@@ -207,7 +219,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 <td>7+</td>
 <td>4 or fewer</td>
 <td>1 or fewer</td>
-<td>Two lows in each category</td>
+<td>6 or fewer</td>
 <td>20% or better</td>
 </tr>
 <tr>
@@ -215,7 +227,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 <td></td>
 <td></td>
 <td>4 or fewer</td>
-<td>Two medium or high scores</td>
+<td>7 or fewer</td>
 <td>any</td>
 </tr>
 <tr>
@@ -223,7 +235,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 <td></td>
 <td></td>
 <td>4 or fewer</td>
-<td>One medium or high score</td>
+<td>8 or fewer</td>
 <td>any</td>
 </tr>
 <tr>

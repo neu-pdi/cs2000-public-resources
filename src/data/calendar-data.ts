@@ -7,7 +7,10 @@ export interface CalendarMonth {
 export interface CalendarWeek {
   label: string;
   topic: string;
-  /** Which of the three pair programming sessions with a TA students book this week, if any. */
+  /**
+   * Which of the three pair programming sessions with a TA students book this week, if any.
+   * The calendar shows the skills it tests, from {@link pairingSkills}, beside it.
+   */
   pairing?: number;
   days: CalendarDay[];
 };
@@ -62,6 +65,18 @@ export interface Homework {
 };
 
 export type Skill = number;
+
+/**
+ * The skills each pair programming session tests, by session number. Each session's weeks
+ * start at least a week after these skills open for assessment, so that students can attempt
+ * them first: a student's results on them decide which version of each part of the problem
+ * they get (see the syllabus's Pair Programming Sessions).
+ */
+export const pairingSkills: Record<number, Skill[]> = {
+  1: [0, 1],
+  2: [5, 6],
+  3: [9, 10],
+};
 
 /**
  * Calendar data: each week.days is [Sun, Mon, Tue, Wed, Thu, Fri, Sat]. A {@link CalendarDay} may include: 
@@ -121,7 +136,6 @@ export const calendarData: CalendarMonth[] = [
       },
       {
         label: 'Week 4',
-        pairing: 1,
         topic: 'More on tables: transforming, filtering',
         days: [
           { date: '2027-01-31' },
@@ -169,7 +183,7 @@ export const calendarData: CalendarMonth[] = [
       },
       {
         label: 'Week 7',
-        pairing: 2,
+        pairing: 1,
         topic: 'Reactors; loops & variables that change',
         days: [
           { date: '2027-02-21' },
@@ -183,7 +197,6 @@ export const calendarData: CalendarMonth[] = [
       },
       {
         label: 'Week 8',
-        pairing: 2,
         topic: 'Variables that change & scope; Skill Day',
         days: [
           { date: '2027-02-28' },
@@ -230,7 +243,7 @@ export const calendarData: CalendarMonth[] = [
       },
       {
         label: 'Week 10',
-        pairing: 3,
+        pairing: 2,
         topic: 'Lists by the recipe; polymorphism; trees',
         days: [
           { date: '2027-03-21' },
@@ -244,7 +257,7 @@ export const calendarData: CalendarMonth[] = [
       },
       {
         label: 'Week 11',
-        pairing: 3,
+        pairing: 2,
         topic: 'More trees; designing abstractions; Skill Day',
         days: [
           { date: '2027-03-28' },
@@ -278,6 +291,7 @@ export const calendarData: CalendarMonth[] = [
       },
       {
         label: 'Week 13',
+        pairing: 3,
         topic: 'Accumulators in recursion and on trees; Skill Day',
         days: [
           { date: '2027-04-11' },
@@ -291,6 +305,7 @@ export const calendarData: CalendarMonth[] = [
       },
       {
         label: 'Week 14',
+        pairing: 3,
         topic: 'Catch up, bonus content, etc. Depends on section / instructor.',
         days: [
           {
