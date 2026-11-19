@@ -9,7 +9,7 @@ export interface CalendarWeek {
   topic: string;
   /**
    * Which of the three pair programming sessions with a TA students book this week, if any.
-   * The calendar shows the skills it tests, from {@link pairingSkills}, beside it.
+   * The calendar shows the skills it covers, from {@link pairingSkills}, beside it.
    */
   pairing?: number;
   days: CalendarDay[];
@@ -67,7 +67,7 @@ export interface Homework {
 export type Skill = number;
 
 /**
- * The skills each pair programming session tests, by session number. Each session's weeks
+ * The skills each pair programming session covers, by session number. Each session's weeks
  * start at least a week after these skills open for assessment, so that students can attempt
  * them first: a student's results on them decide which version of each part of the problem
  * they get (see the syllabus's Pair Programming Sessions).

@@ -5,6 +5,7 @@ pll_level: intermediate
 title: Design Recipe
 ---
 
+<Unreviewed />
 
 ## The Design Recipe
 
@@ -287,7 +288,9 @@ unless the data is known to be dirty, but in that case, it should first be clean
 
 ```python
 def _promo_code_temp(s: str) -> ...:
-    if s == "":
+    if s == "BAKE10":
+        return ...
+    elif s == "FRIEND":
         return ...
     elif s == "none":
         return ...
@@ -361,6 +364,10 @@ def _book_record_temp(b: BookRecord) -> ...:
     ...
     return ...
 ```
+
+A field whose type has a template of its own (another dataclass, say) gets a
+call to that template, rather than a bare line: `_date_temp(loan.due)`
+([Data Inside Data](/class/20#aside-data-inside-data)).
 
 ### Conditional data {#template-variants}
 

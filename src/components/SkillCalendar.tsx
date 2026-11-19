@@ -244,7 +244,7 @@ a.week-pairing:hover {
   align-items: center;
   gap: 4px;
 }
-.week-pairing-tests {
+.week-pairing-covers {
   font-size: 11px;
   color: var(--ifm-color-emphasis-700);
 }
@@ -312,7 +312,7 @@ ${SKILL_COLORS.map((color, skill) => `.skill-${skill} { background-color: ${colo
     padding: 1px 5px;
   }
   .week-pairing-long,
-  .week-pairing-tests {
+  .week-pairing-covers {
     display: none;
   }
   .week-pairing-short {
@@ -370,7 +370,7 @@ ${SKILL_COLORS.map((color, skill) => `.skill-${skill} { background-color: ${colo
                                 <span className="week-pairing-short">Pairing {week.pairing}</span>
                               </Link>
                               {(pairingSkills[week.pairing] ?? []).length > 0 && (
-                                <span className="week-pairing-tests">tests</span>
+                                <span className="week-pairing-covers">covers</span>
                               )}
                               {(pairingSkills[week.pairing] ?? []).map((skill) => (
                                 <Link
