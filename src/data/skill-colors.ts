@@ -8,7 +8,7 @@ export const SKILL_COLORS: string[] = [
   '#4ECDC4',
   '#45B7D1',
   '#FFA07A',
-  '#98D8C8',
+  '#F8BBD0',
   '#F7DC6F',
   '#BB8FCE',
   '#85C1E2',

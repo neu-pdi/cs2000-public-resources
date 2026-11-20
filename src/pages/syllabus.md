@@ -80,19 +80,19 @@ There are online office hours provided via one-on-one video chat on [Discord](#c
 
 ### Attendance
 
-Attendance is not required, but it can improve your grade. There are 32 classes (Skill Days do not count). If you are present (and complete the activity, or otherwise demonstrate participation) in 26 or more of them, we will give you a bonus in both the Assignment Crits and Pairing Session categories; this will give you significant leeway in case you miss some Assignment Crits or a Pairing Session, as neither of those can be made up if missed. 
+Attendance is really important for learning the class material (and meeting other students!), and as a result, if you are present at the majority of the classes (26 or more of 32), it can improve your grade. We do this by giving you a bonus in the Pairing Session categories; this will give you significant leeway in case you miss a Pairing Session, as neither of those can be made up if missed. 
 
-The reason why we do not require attendance on all classes is that we do not want you to come to class when you're sick! We'd much rather you stay home and take care of yourself. If you need to stay home and miss class, no need to notify us in advance. You are still responsible for completing assigned work and keeping up with content that you may have missed due to an absence. Each class's page summarizes what happened in class, in its Live section, and its Practice is the way to catch up on that day's material, or to do additional work when you find a particular topic challenging. Feel free to stop by instructor office hours with any questions or help with the missed classwork, or post questions on Discord.
+The reason why we do not _require_ attendance on all classes is that we do not want you to come to class when you're sick! We'd much rather you stay home and take care of yourself. If you need to stay home and miss class, no need to notify us in advance. You are still responsible for completing assigned work and keeping up with content that you may have missed due to an absence. Each class's page summarizes what happened in class, in its Live section, and its Practice is the way to catch up on that day's material, or to do additional work when you find a particular topic challenging. Feel free to stop by instructor office hours with any questions or help with the missed classwork, or post questions on Discord.
 
 ### Skills
 
-The course will teach the following 13 skills, grading of which will be performed by repeatable (with highest grade taken), on-paper, no-note, assessment that can be scored as "Doesn't meet expectations", "Approaching expectations", or "Meets expectations". Each student will have at least 4 opportunities to master each skill. Beyond the regular 4 opportunities which occur during the semester, as the topics are covered, student may re-attempt 2 distinct skills; such re-attempts can be scheduled on the day of the final exam (the [dates are in the schedule](/#schedule)). See the [Skills](/skills) page for much more detail.
+The course will teach the following 13 skills, grading of which will be performed by repeatable (with highest grade taken), on-paper, no-note, assessment that can be scored as "Doesn't meet expectations", "Approaching expectations", or "Meets expectations". Each student will have at least 4 opportunities to reach "meets expectations" on each skill. Beyond the regular 4 opportunities which occur during the semester, as the topics are covered, student may re-attempt 2 distinct skills; such re-attempts can be scheduled on the day of the final exam (the [dates are in the schedule](/#schedule)). See the [Skills](/skills) page for much more detail.
 
-- <SkillBadge skill={0} link /> Design function signatures, docs, tests
-- <SkillBadge skill={1} link /> Implement basic functions
+- <SkillBadge skill={0} link /> Design Function Signatures, Docs, Tests
+- <SkillBadge skill={1} link /> Implement Basic Functions
 - <SkillBadge skill={2} link /> Identifying Privacy Issues in Problem Formulation
 - <SkillBadge skill={3} link /> Identifying Stakeholders in Problem Formulation
-- <SkillBadge skill={4} link /> Function composition
+- <SkillBadge skill={4} link /> Function Composition
 - <SkillBadge skill={5} link /> Construct / Transform Tables
 - <SkillBadge skill={6} link /> Iteration: Lists
 - <SkillBadge skill={7} link /> Variable Scope
@@ -112,21 +112,22 @@ A crit is one presentation, about 15 minutes including questions. The presenter 
 
 A presentation's score is the mean of the panel's ratings, each weighted by how careful that rater has been over the semester so far (roughly: how well their ratings agree with everyone else's), and every score shows how reliable it is. Your grade for a lab has two parts: a score on your work (your presentation and the questions you asked) and a second score on the ratings you gave (and how closely they tracked with others). Staff mark who is present: nothing done by someone not marked present counts, so coming late or leaving early may result in no credit on the crit. 
 
+Scores are not numeric -- you get "high", "medium", or "low" on each of the three categories. 
+
 ### Pair Programming Sessions
 
-Working with others is a fundamentally important skill, and one of the best ways to learn is to work or supervised by someone who is more experienced than you. As a result, over the course of the semester you will have **three 1hr pair programming sessions with a TA**. These will be scheduled in the first, middle, and last third of the class, beginning a few weeks into the semester. You will have the opportunity to pick a time that is convenient to you, and will work with whomever of the TAs is available at the selected time. You can sign up on your own, or, if you'd like, together with a classmate: two students and one TA. If you want to work with anothers 
+Working with others is a fundamentally important skill, and one of the best ways to learn is to work or supervised by someone who is more experienced than you. As a result, over the course of the semester you will have **three 1hr pair programming sessions with a TA**. These will be scheduled in the first, middle, and last third of the class, beginning a few weeks into the semester. You will have the opportunity to pick a time that is convenient to you, and will work with whomever of the TAs is available at the selected time. You can sign up on your own, or, if you'd like, together with a classmate: two students and one TA. If you want to work with another student, it is up to you to find a time that works for both of you.
 
 The sessions will take place in rooms with several TAs and their students, and each session is given a problem that is new to everyone in it, from a pool of problems for that session. Each session covers several skills, shown beside it in the [calendar](/#schedule), and its weeks start at least a week after those skills are open for assessment, so that you can attempt them first; its problems use only material from before its first week. Only one computer is open: the student is the driver/pilot, whereas the TA serves as the copilot, helping to brainstorm, point out typos, etc. If you signed up with a classmate, you take turns: one of you drives while the other is a copilot alongside the TA, and you switch roles at each part of the problem. While the problems are intended to take roughly an hour to complete, grading of these sessions is not based on functional completeness of the solution, but rather, based on the quality of interaction — working together, coming up with ideas, demonstrating familiarity with the course material, etc. In a session with a classmate, each of you is graded on your own part in it. After the session is over, the TA and each student will fill out an assessment (SELF REFLECTION LINK: FIXME). The TA's assessment will be used for the grade, with each assessment being worth 1/3 of the total grade.
 
-The problems come in three versions. Your best result on the part's skills, when your session starts, decides which version you get, and so the most that part can earn:
+The problems come in two versions. Your best result on the part's skills, when your session starts, decides which version you get, and so the most that part can earn:
 
 | Your result on all the part's skill | Your version of the part | Most it can earn |
 | --- | --- | --- |
-| Meets expectations | the task and its examples: you design the function from start to finish | 100% |
-| Approaching expectations | the same, with some steps of the design recipe given, such as the function's signature and docstring | 80% |
-| Doesn't meet expectations, or not yet attempted | the same, with more steps given, and a start on the function's body | 60% |
+| All meets or approaching expectations | the task and its examples: you design the function from start to finish | 100% |
+| Some doesn't meet expectations or not attempted | the same, with some steps of the design recipe given | 75% |
 
-The TA grades the session as described above, out of that maximum. So attempt the skills before your session: full credit is only possible once you meet expectations on the skills. If you signed up with a classmate, we'll use the minimum of your assessed skills to determine which problems to work on.
+The TA grades the session as described above, out of that maximum. So attempt the skills before your session: full credit is only possible once you at least approach expectations on all listed skills. If you signed up with a classmate, we'll use the minimum of your assessed skills to determine which problems to work on (so you both have to at least approach on all for full credit)
 
 If your schedule changes, you must notify the course coordinator (Amy Gately, a.gately@northeastern.edu) at least **a week** before your scheduled session, and we'll cancel it and you can pick a different time. If it is less than a week, you can still contact Amy, but you need to tell us why you need to reschedule, and we may not be able to accommodate it. **If you do not show up to a scheduled session** (showing up 15mins+ late to the 1hr appointment counts as not showing up), you will receive a 0 for that session, which drops a full third of your **Pairing Session Average**; there are no make-ups. If you signed up with a classmate and they don't come, you do the session with the TA on your own. Attending and participating always scores you better than not showing up.
 
@@ -247,7 +248,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 </tbody>
 </table>
 
-**Practice labs.** If you attend all but one of the seven [practice labs](#labs), your grade moves up one row of the table: for example, a **B** becomes a **B+**, and an **A** stays an **A**. The bonus moves a grade from the table; it can't turn a failing grade into a passing one.
+**Practice labs.** If you attend all but two of the seven [practice labs](#labs), your grade moves up one row of the table: for example, a **B** becomes a **B+**, and an **A** stays an **A**. The bonus moves a grade from the table; it can't turn a failing grade into a passing one.
 
 
 ### Collaboration and Academic Honesty
@@ -260,7 +261,7 @@ Specifically:
 - Copying material from another person with or without their knowledge is not allowed.
 - Any sharing or receiving information about the content of skill assessments is an academic integrity violation, and may result in failing the class.
 - Attempting the same skill assessment variant twice without notifying the proctor of the error is an academic integrity violation.
-- Trying to access any electronics during skill assessments is an academic integrity violation and will result in a 0 on that skill. This includes having a phone in your lap, no matter what is accessed on the phone. You will also be prohibited from re-attempting said skill.
+- Trying to access any notes or electronics during skill assessments is an academic integrity violation and will result in a 0 on that skill. This includes having a phone in your lap, no matter what is accessed on the phone. You will also be prohibited from re-attempting said skill.
 
 You _should_ _write_ all code for projects yourself. Even if you discuss solutions, or approaches, with others, do the actual typing on your own! And avoid playing games or trying to find loopholes — i.e., do not merely type what someone says, or type what you see on another's screen. While we do not consider collaboration a violation, relying on others for your solutions may result in you not learning the material, and in this class, not learning the material will result in not being able to pass the skill assessments. 
 
@@ -270,7 +271,7 @@ The minimum penalty for an academic integrity violation is a zero on that aspect
 
 ### The AI Policy
 
-AI coding assistants like Claude, Copilot, or Cursor should not be used in this course. Producing project solutions with these tools will both prevent you from learning the techniques needed for the skill assessments, and it will make doing your assignment crits much more difficult.Until you have the ability to design, understand, and review code, using an AI assistant amounts to wandering around in the dark, with no ability to determine if you are getting closer to what you want. 
+AI coding assistants like Claude, Copilot, or Cursor should not be used in this course. Producing project solutions with these tools will both prevent you from learning the techniques needed for the skill assessments, and it will make doing your assignment crits much more difficult. Until you have the ability to design, understand, and review code, using an AI assistant amounts to wandering around in the dark, with no ability to determine if you are getting closer to what you want. 
 
 The same is true of asking questions of chat models like ChatGPT, Claude, Gemini, etc. Putting assignment instructions into such a model and getting out code or test cases amounts to getting the model to do the thinking for you — and as a result, you will not learn. "Only looking" at AI-generated solutions "before writing your own" undermines the learning just the same, as you will not be learning to actually solve problems, you will just be copying. It will also backfire, as if you do this, you will find yourself unable to present your work, and answer questions about it, in the crits that form the grade for these assignments.
 
