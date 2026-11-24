@@ -5,6 +5,8 @@ hide_table_of_contents: true
 title: Style Guide
 ---
 
+<Unreviewed />
+
 
 ## Style Guide
 
@@ -57,6 +59,8 @@ def price_with_tax(price: float) -> float:
 
 - Every function has a Signature, with types, and a Docstring, as in the
   [design recipe](/class/recipe).
+- Every dataclass has a Docstring too: what its data represents, not what it
+  contains, which its fields say.
 - A test is a function whose name starts with `test_`.
 - A comment starts with `# `. What a function does goes in its Docstring; a
   comment says what the code can't, such as why.

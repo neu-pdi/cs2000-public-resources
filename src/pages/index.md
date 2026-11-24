@@ -4,11 +4,10 @@ description: Introduction to Program Design and Implementation
 hide_table_of_contents: true
 ---
 
-import AssessmentHours from '@site/src/components/AssessmentHours';
 import SkillCalendar from '@site/src/components/SkillCalendar';
 import { calendarData } from '../data/calendar-data';
-import styles from './index.module.css';
 
+<Unreviewed />
 
 # CS 2000: Introduction to Program Design and Implementation
 
@@ -16,20 +15,12 @@ Introduces computer science and data science to students with no programming exp
 
 This course owes a great debt to two texts, which each had courses based on them. The first is [How to Design Programs](https://htdp.org/) by Felleisen et al, which originated the Design Recipe that still forms the core of our course, as well as inspiring countless other aspects. The second is [A Data-Centric Introduction to Computing](https://dcic-world.org/) by Fisler et al, which created the combined computer science and data science curriculum that we follow quite closely, though our language and tooling is distinct. Past versions of this course followed DCIC directly, just as even older versions followed HtDP directly.
 
-## Assessment Hours {#assessment-hours}
-
-In-person hours where you can attempt [skill](/skills) assessments, by campus. Assessment Hours are not held on holidays or on Skill Days (Feb. 11, Mar. 4, Apr. 1, and Apr. 15). **Note: assessments must be completed within the given time, as we must leave the room at end of hours, and arriving before the end of hours does not guarantee right to take assessment. Show up early, or not on the last day an assessment is available.**
-
-<div className={styles.assessmentHours}>
-  <AssessmentHours />
-</div>
-
 ## Schedule (Boston) {#schedule}
 
 Dates are for Spring 2027, Boston campus; they will differ for other semesters or campuses.
 
 Lectures meet **Monday, Wednesday, and Thursday**. Labs meet **Friday**. Homework is due at its **crit**, in lab every other Friday.
 
-**Colored stripes** at the bottom of each day indicate which skills are assessable during office hours on that day. Past days are faded.
+**Colored stripes** at the bottom of each day indicate which skills can be taken at the [testing facility](/skills#skill-assessment) that day. Past days are faded.
 
 <SkillCalendar data={calendarData} />

@@ -6,8 +6,8 @@ hide_table_of_contents: true
 ---
 
 import DateView from '@site/src/components/DateView/DateView';
-import AssessmentHours from '@site/src/components/AssessmentHours';
-import styles from './index.module.css';
+
+<Unreviewed />
 
 # Skills
 
@@ -18,14 +18,10 @@ Each skill will be assessed as "Doesn't meet expectations", "Approaching
 expectations", and "Meets expectations" (our grading platform, Pawtograder, only supports numbers, so these show up as 0, 1, and 2), and students may attempt any skill
 assessment at least four times with the best result being used for their grade.
 
-Skills can be attempted in class on Skill Days (Feb. 11, Mar. 4, Apr. 1, and Apr. 15) and
-during Assessment Hours. Assessment Hours are held at the following times
-(except on holidays and Skill Days). **Note: assessments during assessment hours must be completed within the given time, as we must leave the room at end of hours, and arriving before the end of hours does not guarantee right to take assessment. Show up early, or not on the last day an assessment is available.**
-<div className={styles.assessmentHours}>
-  <AssessmentHours />
-</div>
-
-For more info on Assessment Hours, and to see what skills are available each week, check out the [home page](/#assessment-hours).
+Skills are assessed on a computer at the testing facility: book a time
+yourself, whenever it is open, on a day the skill is available. Each skill's
+dates are under its name below, and the [schedule](/#schedule) shows them as
+colored stripes.
 
 ## <SkillBadge skill={0} /> Design Function Signatures, Docs, Tests {#0}
 
@@ -605,8 +601,8 @@ print("Global value:", value)
 
 |  |  |
 | -- | -- |
-| **Meets Expectations** | • Uses `@dataclass` classes for the variants as needed, fields with appropriate type annotations<br/>• Function uses either field access or `match` as needed<br/>• Function has signature (with types), doc string, and tests |
-| **Approaching Expectations** | • Uses `@dataclass` classes for the variants as needed, fields if needed (possibly missing or incorrect annotations)<br/>• Function should use either field access or `match`, but may not do it correctly, or to match the problem |
+| **Meets Expectations** | • Uses `@dataclass` classes for the variants as needed, fields with appropriate type annotations<br/>• Each dataclass has a doc string saying what its data represents<br/>• Function uses either field access or `match` as needed<br/>• Function has signature (with types), doc string, and tests |
+| **Approaching Expectations** | • Uses `@dataclass` classes for the variants as needed, fields if needed (possibly missing or incorrect annotations, or missing doc strings)<br/>• Function should use either field access or `match`, but may not do it correctly, or to match the problem |
 
 <details>
     <summary>Examples</summary>
@@ -616,10 +612,12 @@ print("Global value:", value)
 ```python
 @dataclass
 class Coffee:
+    """a coffee, made with espresso"""
     shots: int
 
 @dataclass
 class Tea:
+    """a cup of tea"""
     name: str
     brew_time: float
 
@@ -765,10 +763,12 @@ def test_make_positive():
 ```python
 @dataclass
 class Leaf[T]:
+    """a binary tree that is a single value"""
     val: T
 
 @dataclass
 class Node[T]:
+    """a binary tree that splits in two"""
     left: BinTree[T]
     right: BinTree[T]
 
@@ -936,6 +936,7 @@ def test_count_matching():
 ```python
 @dataclass
 class Account:
+    """a bank account"""
     name: str
     value: float
 
@@ -977,6 +978,7 @@ Objects with different heap locations can be equal but are not the same object.
 ```python
 @dataclass
 class Sensor:
+    """a temperature sensor"""
     name: str
     temperature: float
 
@@ -1000,6 +1002,7 @@ print("Are they the same?", outdoor_sensor is result)
 ```python
 @dataclass
 class Player:
+    """a player in a game"""
     name: str
     score: int
 
@@ -1022,6 +1025,7 @@ print("Same player object?", player1 is player2)
 ```python
 @dataclass
 class Book:
+    """a book someone is reading"""
     title: str
     pages: int
 
@@ -1051,25 +1055,15 @@ weeks), via class, practice, and HW. Each of these will be marked with what skil
 
 ## Skill Assessment
 
-Assessment of skills can be done at many different opportunities.
-
-### Assessment Hours
-
-Every week, there will be several hours held by instructors, course
-coordinators, or graduate TAs, for the purpose of taking
-assessments. The skills assessable at these hours are those that were introduced
-the previous several weeks -- see the [Calendar](/#schedule) to see what skill is
-assessable in any given day via this mechanism.
+Skill assessments are taken on a computer at the testing facility, at a time you
+book yourself whenever it is open. The skills you can take are those introduced
+in the previous several weeks -- see the [Calendar](/#schedule) for the skills
+you can take on any given day.
 
 This is intended to allow you several attempts at the skill after the content is
 introduced, but require you to keep up with the material -- all assessments
 cannot be deferred to the end of the semester, since only the last few skills
 can be attempted at the end of the semester.
-
-### Skill Days (in Class)
-
-Several class days will be dedicated to skill assessments. These will function identically to the Assessment Hours, except that they are during classtime, in your normal classroom. Instructors will bring a set of assessments -- students are able to
-attempt any of those available (likely, due to time, a couple of them). The assessments available will be the same as what are available during assessment hours on the day that the class occurs.
 
 ## End of Semester Re-attempts
 

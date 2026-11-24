@@ -135,7 +135,7 @@ function getLatestCalendarDay(item: CalendarItem): CalendarDay | undefined {
         return false;
       }
 
-      // We only show lectures that have days, since we do not want to show skill days or summary days
+      // Only a lecture with a class page counts, so a day listing other lectures is skipped
       if (item === 'lectures') {
         return calendarDay.lectures?.some(({ href }) => href.startsWith('/class/')) ?? false;
       }

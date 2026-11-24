@@ -20,7 +20,7 @@ const STEPS: { name: string; id: string; text: React.ReactNode }[] = [
   {
     name: 'Data definition',
     id: 'data-definition',
-    text: <>what kind of data the function works on, with examples of it</>,
+    text: <>what kind of data the function works on, and what it represents, with examples of it</>,
   },
   {
     name: 'Template',

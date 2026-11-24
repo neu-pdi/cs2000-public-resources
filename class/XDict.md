@@ -19,6 +19,7 @@ information. A conference keeps its program as a list of sessions:
 ```python
 @dataclass
 class Session:
+    """a session in the conference's program"""
     session_id: str
     title: str
     speaker: str

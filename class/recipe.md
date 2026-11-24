@@ -34,6 +34,7 @@ definition with a few named examples:
 ```python
 @dataclass
 class BookRecord:
+    """a book in the library's collection"""
     title: str
     author: str
     pages: int
@@ -41,6 +42,11 @@ class BookRecord:
 THE_DISPOSSESSED = BookRecord("The Dispossessed", "Ursula K. Le Guin", 387)
 TO_THE_LIGHTHOUSE = BookRecord("To the Lighthouse", "Virginia Woolf", 209)
 ```
+
+Every dataclass has a **Docstring**, on its first line, as every function does:
+it says what the data represents (a book in the library's collection), not what
+it contains, which its fields already say. A dataclass with no fields (a variant
+like [Class 21](/class/21)'s `Idle`) needs nothing else in its body.
 
 The examples are used again in the Examples step, and the data definition decides
 the Template.
@@ -379,15 +385,17 @@ template again, with the cases taken from the data definition:
 <!-- python setup
 @dataclass
 class Cash:
-    pass
+    """a payment made in cash"""
 
 @dataclass
 class Credit:
+    """a payment made by credit card"""
     card_number: str
     expiry: str
 
 @dataclass
 class Checking:
+    """a payment made by check"""
     bank_account: str
     routing: str
     check_number: int
@@ -396,10 +404,11 @@ PaymentMethod = Cash | Credit | Checking
 
 @dataclass
 class Spring:
-    pass
+    """the spring where a river begins"""
 
 @dataclass
 class River:
+    """a river, with all the rivers that flow into it"""
     name: str
     length: float
     left: RiverTree
@@ -409,6 +418,7 @@ RiverTree = Spring | River
 
 @dataclass
 class LibraryBook:
+    """a book in the library's collection"""
     id: int
     title: str
     copies: int
@@ -511,6 +521,33 @@ def _list_acc_temp(lst: list, acc: ...) -> ...:
 
 The `...` in the recursive call is the accumulator's next value, from `f` and
 `acc`. On a tree, each subtree's recursive call gets its own next value.
+
+### Generative recursion {#template-generative}
+
+_From [Classes 33](/class/33), [34](/class/34) and [35](/class/35)._ When the
+smaller problems aren't parts of the data, but are made from it by an idea
+(`gcd(b, a % b)`, the numbers smaller than a pivot), there's no template from
+the data. Instead, four questions: what's trivial, how to make smaller
+problems, how to combine their answers, and why it ends. The answer to the last
+is the **termination statement**, in the Docstring. Every such function has
+the same outline, with one recursive call or more:
+
+```python
+def _generative_temp(p: ...) -> ...:
+    if ...:
+        return ...
+    else:
+        ...
+        _generative_temp(...)
+        ...
+        _generative_temp(...)
+        ...
+        return ...
+```
+
+The `if` asks whether `p` is trivial, and its branch answers it directly. The
+`...` in each recursive call is a smaller problem made from `p`, and the lines
+around the calls combine their answers.
 
 ### Data that changes {#template-mutation}
 

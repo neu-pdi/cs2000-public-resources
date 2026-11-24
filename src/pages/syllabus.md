@@ -4,6 +4,8 @@ description: Syllabus
 hide_table_of_contents: true
 ---
 
+<Unreviewed />
+
 ## Course Description
 
 Introduces computer science and data science to students with no prior programming experience. Starts by building programs with numbers, text, and images. Explores real, complex datasets both interactively and through coding by doing data analysis, constructing graphs, and computing interesting results. Offers students an opportunity to build a solid foundation and practice coding with a popular industrial coding language with a professional programmer’s interface to the code. Covers skills needed to identify and respond to ethical challenges that arise in the program design process.
@@ -12,7 +14,7 @@ Introduces computer science and data science to students with no prior programmi
 
 There will be three in-person **classes** and one **lab** per week. All content is directed around teaching a set of 13 **skills**, assessment of which will form the primary assessment of the class, and which are described in detail at [Skills](/skills).
 
-There are [13 **skills**](/syllabus#skills), which have repeatable assessments (taken on paper without notes over the course of the semester), and form the primary grading for the class. 
+There are [13 **skills**](/syllabus#skills), which have repeatable assessments (taken without notes, on a computer at the testing facility, over the course of the semester), and form the primary grading for the class. 
 
 There are no formal quizzes or exams in this class, though the skill assessments are similar in form to quizzes; unlike traditional quizzes, skill assessments allow you to be assessed at your own pace, and repeat as you need.
 
@@ -38,7 +40,7 @@ Students can register for any CS 2001 lab section that is on their campus with a
 There are three primary sources of communication for this course:
 
 1. This website. This is where you will find policies, homework assignments, and the notes and practice for each day of class.
-2. [Pawtograder](https://pawtograder.khoury.northeastern.edu/). This is where you will see all grades (including for the on-paper skill assessments).
+2. [Pawtograder](https://pawtograder.khoury.northeastern.edu/). This is where you will see all grades (including for the skill assessments).
 3. Discord. Please join at FIXME. Note you must set your Display Name for the server to your full name before you will be given access to private course channels. This will be a place for any discussions that are not direct questions about homework. Discord will also be used for lab communication and for announcements about the course -- students are expected to monitor the #announcements channel. It is also the place where you will ask questions online about projects, and where you will do online office hours.
 
 Individual instructors might use other communication channels (such as Canvas announcements and email), which students are expected to monitor and respond to as needed.
@@ -70,7 +72,7 @@ If you think a Pairing Session was misgraded, you have 7 days from when the grad
 
 Abuse of the regrade request mechanism may result in less of an ability to request regrades.
 
-Assignment Crits are graded based on peer feedback, calibrated based on TA (and occasional Professor) presence; no regrades are available, though participating in practice labs and attending class can indirectly improve your grade in this category (see [Grading](#grading)).
+Assignment Crits are graded based on peer feedback, calibrated based on TA (and occasional Professor) presence; no regrades are available, though participating in practice labs can indirectly improve your grade in this category (see [Grading](#grading)).
 
 ### Office Hours
 
@@ -80,13 +82,13 @@ There are online office hours provided via one-on-one video chat on [Discord](#c
 
 ### Attendance
 
-Attendance is really important for learning the class material (and meeting other students!), and as a result, if you are present at the majority of the classes (26 or more of 32), it can improve your grade. We do this by giving you a bonus in the Pairing Session categories; this will give you significant leeway in case you miss a Pairing Session, as neither of those can be made up if missed. 
+Attendance is really important for learning the class material (and meeting other students!), and as a result, if you are present at the majority of the classes (28 or more of 35), it can improve your grade. We do this by giving you a bonus in the Pairing Session category; this will give you significant leeway in case you miss a Pairing Session, as a missed session can't be made up. 
 
 The reason why we do not _require_ attendance on all classes is that we do not want you to come to class when you're sick! We'd much rather you stay home and take care of yourself. If you need to stay home and miss class, no need to notify us in advance. You are still responsible for completing assigned work and keeping up with content that you may have missed due to an absence. Each class's page summarizes what happened in class, in its Live section, and its Practice is the way to catch up on that day's material, or to do additional work when you find a particular topic challenging. Feel free to stop by instructor office hours with any questions or help with the missed classwork, or post questions on Discord.
 
 ### Skills
 
-The course will teach the following 13 skills, grading of which will be performed by repeatable (with highest grade taken), on-paper, no-note, assessment that can be scored as "Doesn't meet expectations", "Approaching expectations", or "Meets expectations". Each student will have at least 4 opportunities to reach "meets expectations" on each skill. Beyond the regular 4 opportunities which occur during the semester, as the topics are covered, student may re-attempt 2 distinct skills; such re-attempts can be scheduled on the day of the final exam (the [dates are in the schedule](/#schedule)). See the [Skills](/skills) page for much more detail.
+The course will teach the following 13 skills, grading of which will be performed by repeatable (with highest grade taken), computer-based, no-note, assessment that can be scored as "Doesn't meet expectations", "Approaching expectations", or "Meets expectations". Each student will have at least 4 opportunities to reach "meets expectations" on each skill. Beyond the regular 4 opportunities which occur during the semester, as the topics are covered, student may re-attempt 2 distinct skills; such re-attempts can be scheduled on the day of the final exam (the [dates are in the schedule](/#schedule)). See the [Skills](/skills) page for much more detail.
 
 - <SkillBadge skill={0} link /> Design Function Signatures, Docs, Tests
 - <SkillBadge skill={1} link /> Implement Basic Functions
@@ -102,7 +104,7 @@ The course will teach the following 13 skills, grading of which will be performe
 - <SkillBadge skill={11} link /> Designing Abstractions
 - <SkillBadge skill={12} link /> Aliasing & Mutation
 
-**Note: assessments during [Assessment Hours](/#assessment-hours) must be completed within the given time, as we must leave the room at end of hours, and arriving before the end of hours does not guarantee right to take assessment. Show up early, or not on the last day an assessment is available.**
+Assessments are taken on a computer at the testing facility, at a time you book yourself whenever it is open, on a day the skill is available: the [schedule](/#schedule) shows which skills are available each day.
 
 ### Assignment Crits {#assignment-crits}
 
@@ -135,7 +137,7 @@ AFTER YOUR SESSION, FILL OUT THE FOLLOWING FORM: FIXME.
 
 ### Grading
 
-Your final grade will be calculated by your results in the **Skill Assessments**, **Assignment Crits**, and **Pair Programming** sessions, as described above, with a bonus for attending **practice labs** (below the table) and **class attendance** (above Assignment Crits & Pairing Sessions). The exact grade associated with performance in each of those categories is captured by the following table — the highest row that a student satisfies all columns of will be their grade, and **if no rows are completely satisfied, the student will not pass the course.**
+Your final grade will be calculated by your results in the **Skill Assessments**, **Assignment Crits**, and **Pair Programming** sessions, as described above, with a bonus for attending **practice labs** (below the table) and **class attendance** (above the Pairing Session Average column). The exact grade associated with performance in each of those categories is captured by the following table — the highest row that a student satisfies all columns of will be their grade, and **if no rows are completely satisfied, the student will not pass the course.**
 
 Because each of the three pairing sessions is worth a third of the **Pairing Session Average**, and a missed session scores 0 (see [Pair Programming Sessions](#pair-programming-sessions)), the thresholds in the last column are set around what missing a session costs: with full credit on the sessions you do attend (which takes meeting expectations on each session's skills), one miss averages 66.7%, two misses 33.3%, and three misses 0. So one missed session still clears the 65% needed for an **A-** but not the 70% needed for an **A**; two missed sessions leave you at a **C+**; missing all three leaves that column short of every row from A through C-, so the highest row you can still reach is **D+**, which asks for nothing there.
 
@@ -153,7 +155,7 @@ Because each of the three pairing sessions is worth a third of the **Pairing Ses
 <th><strong>Approaching Expectations</strong></th>
 <th><strong>Not Approaching</strong></th>
 <th>Lowest 3 dropped in each category; lows left, in all three</th>
-<th>If attendance > 26/32, subtract 10% on all below</th>
+<th>If attendance ≥ 28/35, subtract 10% on all below</th>
 </tr>
 </thead>
 <tbody>
@@ -261,7 +263,7 @@ Specifically:
 - Copying material from another person with or without their knowledge is not allowed.
 - Any sharing or receiving information about the content of skill assessments is an academic integrity violation, and may result in failing the class.
 - Attempting the same skill assessment variant twice without notifying the proctor of the error is an academic integrity violation.
-- Trying to access any notes or electronics during skill assessments is an academic integrity violation and will result in a 0 on that skill. This includes having a phone in your lap, no matter what is accessed on the phone. You will also be prohibited from re-attempting said skill.
+- Trying to access any notes or other electronics during skill assessments is an academic integrity violation and will result in a 0 on that skill. This includes having a phone in your lap, no matter what is accessed on the phone. You will also be prohibited from re-attempting said skill.
 
 You _should_ _write_ all code for projects yourself. Even if you discuss solutions, or approaches, with others, do the actual typing on your own! And avoid playing games or trying to find loopholes — i.e., do not merely type what someone says, or type what you see on another's screen. While we do not consider collaboration a violation, relying on others for your solutions may result in you not learning the material, and in this class, not learning the material will result in not being able to pass the skill assessments. 
 
